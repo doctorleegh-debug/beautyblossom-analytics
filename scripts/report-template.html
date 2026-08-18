@@ -129,7 +129,7 @@
   <h2>네이버 서치어드바이저</h2>
   <div id="naverBody"></div>
 
-  <h2>Instagram</h2>
+  <h2>Instagram · Threads</h2>
   <div id="igBody"></div>
 
   <h2>데이터 수집 상태</h2>
@@ -326,7 +326,7 @@ function render(){
     { s: 'YouTube', ok: true, detail: '1개 채널 · Analytics API' },
     { s: 'Search Console', ok: gscCount > 0, detail: gscCount + '개 속성 · API' },
     { s: '네이버', ok: okSites.length > 0, detail: okSites.length + '/' + ((nv && nv.sites) || []).length + '개 사이트 · UI 수집' },
-    { s: 'Instagram', ok: false, detail: D.meta.instagram.accounts.length + '개 계정 확인 · 지표 미연동' }
+    { s: 'Instagram', ok: false, detail: D.meta.instagram.accounts.length + '개 계정 · 앱 비활성으로 차단' }
   ];
   document.getElementById('srcPills').innerHTML = pills.map(x =>
     '<span class="pill ' + (x.ok ? 'ok' : 'pend') + '">' + (x.ok ? '●' : '○') + ' ' +
@@ -584,15 +584,18 @@ function render(){
   }
 
   document.getElementById('igBody').innerHTML = '<div class="card" style="margin-top:14px">' +
-    '<p class="sub">' + esc(D.meta.instagram.reason) + '</p>' +
-    '<div style="overflow-x:auto"><table><thead><tr><th>계정</th><th>팔로워</th><th>게시물</th><th>상태</th></tr></thead><tbody>' +
+    '<p class="sub"><b>Instagram</b> — ' + esc(D.meta.instagram.reason) + '</p>' +
+    '<div style="overflow-x:auto"><table><thead><tr><th>계정</th><th>팔로워</th><th>게시물</th><th>자산 공유</th><th>지표</th></tr></thead><tbody>' +
     D.meta.instagram.accounts.map(h => {
       const row = (D.ig || []).filter(r => r.handle === h)[0];
       return '<tr><td>@' + esc(h) + '</td><td>' + (row && row.followers ? nf(row.followers) : '—') + '</td>' +
         '<td>' + (row && row.posts ? nf(row.posts) : '—') + '</td>' +
-        '<td>' + (row && row.status === 'OK' ? '공개 프로필 확인' : '인증 필요') + '</td></tr>';
+        '<td class="up">완료</td><td class="dn">앱 비활성</td></tr>';
     }).join('') +
-    '</tbody></table></div><p class="note">지표 연동에는 Meta Graph API 권한이 필요합니다 — 앱을 자산 소유 포트폴리오에 등록해야 합니다.</p></div>';
+    '</tbody></table></div>' +
+    '<p class="note">파트너 자산 공유(인사이트 권한)는 5개 계정 모두 설정 완료. 앱이 재활성화되면 재수집만 하면 됩니다. ' +
+    '팔로워·게시물 수치는 공개 프로필에서 읽은 값입니다.</p>' +
+    '<p class="sub" style="margin-top:16px"><b>Threads</b> — ' + esc(D.meta.threads.reason) + '</p></div>';
 
   document.getElementById('statusTable').innerHTML =
     '<thead><tr><th>소스</th><th>범위</th><th>수집 방식</th><th>상태</th></tr></thead><tbody>' +
@@ -602,7 +605,8 @@ function render(){
     '<td>Search Analytics API</td><td class="' + (gscOk.length ? 'up' : 'dn') + '">' + (gscOk.length ? '완료' : '미수집') + '</td></tr>' +
     '<tr><td>네이버 서치어드바이저</td><td>' + ((nv && nv.sites) || []).length + '개 사이트 · 최근 30일</td><td>로그인 콘솔 UI 수집</td>' +
     '<td class="' + (okSites.length ? 'up' : 'dn') + '">' + (okSites.length ? '완료 (' + okSites.length + ')' : '미수집') + '</td></tr>' +
-    '<tr><td>Instagram</td><td>' + D.meta.instagram.accounts.length + '개 계정</td><td>Meta Graph API (미승인)</td><td class="dn">대기</td></tr></tbody>';
+    '<tr><td>Instagram</td><td>' + D.meta.instagram.accounts.length + '개 계정</td><td>Meta Graph API</td><td class="dn">앱 비활성 — 차단</td></tr>' +
+    '<tr><td>Threads</td><td>' + D.meta.threads.accounts.length + '개 계정</td><td>Threads API (미추가)</td><td class="dn">다음 기간</td></tr></tbody>';
 }
 render();
 addEventListener('resize', hideTip);

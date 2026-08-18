@@ -31,8 +31,13 @@ const payload = {
       reason: 'Naver publishes no performance API; figures are read from the logged-in Search Advisor console.'
     },
     instagram: {
+      status: 'blocked',
+      reason: '계정 5개와 파트너 자산 공유(인사이트 권한)는 설정이 끝났지만, Meta 앱이 신원 확인 대기로 비활성화되어 Graph API 호출이 차단된 상태입니다. 앱이 재활성화되면 추가 설정 없이 바로 수집됩니다.',
+      accounts: ['beautyblossom_clinic', 'beautyblossom_jp', 'beautyblossom_tw', 'beautyblossom_th', 'beautyblossom_global']
+    },
+    threads: {
       status: 'pending',
-      reason: 'Meta Graph API access is not granted yet: the app is registered in a different business portfolio than the one that owns these accounts.',
+      reason: 'Threads 프로필 5개가 포트폴리오에 있고 Instagram과 동일한 접근 권한을 갖지만, 수집에는 앱에 Threads API 제품 추가가 필요합니다. 다음 기간에 진행합니다.',
       accounts: ['beautyblossom_clinic', 'beautyblossom_jp', 'beautyblossom_tw', 'beautyblossom_th', 'beautyblossom_global']
     }
   }

@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>뷰티블라썸 통합 성과 보고서</title>
+<style>
+  :root{
+    --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,0.10);
+    --good:#006300; --bad:#d03b3b; --warn:#fab219;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300;
+  }
+  :root[data-theme="dark"]{
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,0.10);
+    --good:#0ca30c; --bad:#d03b3b; --warn:#fab219;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+      --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,0.10);
+      --good:#0ca30c;
+      --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--ink);
+       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;line-height:1.55}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+  header{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;margin-bottom:6px}
+  h1{font-size:26px;margin:0;letter-spacing:-.01em}
+  h2{font-size:18px;margin:38px 0 4px;letter-spacing:-.01em}
+  h3{font-size:14px;margin:0 0 10px;color:var(--ink2);font-weight:600}
+  .sub{color:var(--ink2);font-size:13px;margin:2px 0 0}
+  .card{background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:18px}
+  .grid{display:grid;gap:14px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:860px){.g2{grid-template-columns:1fr}}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:12px;margin-top:14px}
+  .tile{background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:14px 16px}
+  .tile .k{font-size:12px;color:var(--ink2);display:flex;align-items:center;gap:6px}
+  .tile .v{font-size:26px;font-weight:650;margin-top:4px;letter-spacing:-.02em}
+  .tile .d{font-size:12px;margin-top:2px;color:var(--ink2)}
+  .up{color:var(--good);font-weight:600} .dn{color:var(--bad);font-weight:600}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 10px;font-size:12px;color:var(--ink2)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--grid);font-variant-numeric:tabular-nums}
+  th:first-child,td:first-child{text-align:left;font-variant-numeric:normal}
+  th{color:var(--ink2);font-weight:600;font-size:12px}
+  tbody tr:hover{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+  .note{font-size:12px;color:var(--ink2);margin-top:10px}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 9px;border-radius:999px;border:1px solid var(--ring);color:var(--ink2)}
+  .pill.ok{color:var(--good)} .pill.pend{color:var(--warn)}
+  button.theme{background:var(--surface);border:1px solid var(--ring);color:var(--ink2);
+     border-radius:8px;padding:7px 12px;cursor:pointer;font-size:12px;font-family:inherit}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .tt{position:fixed;pointer-events:none;background:var(--surface);border:1px solid var(--ring);
+      border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 6px 24px rgba(0,0,0,.13);
+      opacity:0;transition:opacity .1s;z-index:50;max-width:280px}
+  .tt b{font-weight:650}
+  .tt .r{display:flex;justify-content:space-between;gap:14px;align-items:center}
+  .src{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  a{color:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>뷰티블라썸 통합 성과 보고서</h1>
+      <p class="sub" id="rangeLine"></p>
+    </div>
+    <button class="theme" id="themeBtn" type="button">테마 전환</button>
+  </header>
+  <div class="src" id="srcPills"></div>
+
+  <h2>전체 요약</h2>
+  <div class="tiles" id="heroTiles"></div>
+
+  <h2>GA4 · 웹사이트</h2>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h3>속성별 활성 사용자 (30일)</h3>
+      <div id="ga4Bars"></div>
+    </div>
+    <div class="card">
+      <h3>일별 활성 사용자</h3>
+      <div class="legend" id="ga4Legend"></div>
+      <div id="ga4Lines"></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>채널 구성 (세션 기준)</h3>
+    <div class="legend" id="chanLegend"></div>
+    <div id="ga4Channels"></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>속성별 상세</h3>
+    <div style="overflow-x:auto"><table id="ga4Table"></table></div>
+    <p class="note">직전 기간은 바로 앞의 동일 일수 구간입니다. 이탈률과 평균 세션 시간은 GA4 원값입니다.</p>
+  </div>
+
+  <h2>YouTube</h2>
+  <div class="tiles" id="ytTiles"></div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card"><h3>일별 조회수</h3><div id="ytLine"></div></div>
+    <div class="card"><h3>트래픽 소스 (조회수)</h3><div id="ytTraffic"></div></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>상위 영상</h3>
+    <div style="overflow-x:auto"><table id="ytTable"></table></div>
+  </div>
+
+  <h2>검색 유입 · 구글 vs 네이버</h2>
+  <div class="card" style="margin-top:14px">
+    <h3>검색엔진별 클릭 · 노출</h3>
+    <div class="legend" id="seLegend"></div>
+    <div id="seCompare"></div>
+    <p class="note" id="seNote"></p>
+  </div>
+
+  <h2>Google Search Console</h2>
+  <div id="gscBody"></div>
+
+  <h2>네이버 서치어드바이저</h2>
+  <div id="naverBody"></div>
+
+  <h2>Instagram</h2>
+  <div id="igBody"></div>
+
+  <h2>데이터 수집 상태</h2>
+  <div class="card" style="margin-top:14px">
+    <div style="overflow-x:auto"><table id="statusTable"></table></div>
+  </div>
+</div>
+<div class="tt" id="tt"></div>
+
+<script id="payload" type="application/json">/*__PAYLOAD__*/null</script>
+<script>
+const D = JSON.parse(document.getElementById('payload').textContent);
+const SERIES = ['--s1','--s2','--s3','--s4','--s5','--s6'];
+const cssv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nf = n => (n==null||isNaN(n)) ? '—' : Math.round(n).toLocaleString('ko-KR');
+const nf1 = n => (n==null||isNaN(n)) ? '—' : (Math.round(n*10)/10).toLocaleString('ko-KR');
+const pct = (a,b) => (!b) ? null : ((a-b)/b*100);
+const dstr = p => p==null ? '—' : (p>=0?'+':'') + nf1(p) + '%';
+const dcls = p => p==null ? '' : (p>=0?'up':'dn');
+const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const tt = document.getElementById('tt');
+function showTip(ev, html){
+  tt.innerHTML = html; tt.style.opacity = 1;
+  const p = 14, w = tt.offsetWidth, h = tt.offsetHeight;
+  let x = ev.clientX + p, y = ev.clientY + p;
+  if (x + w > innerWidth - 8) x = ev.clientX - w - p;
+  if (y + h > innerHeight - 8) y = ev.clientY - h - p;
+  tt.style.left = x + 'px'; tt.style.top = y + 'px';
+}
+function hideTip(){ tt.style.opacity = 0; }
+
+document.getElementById('themeBtn').onclick = () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+  render();
+};
+
+const SVGNS = 'http://www.w3.org/2000/svg';
+function el(n, a, kids){
+  const e = document.createElementNS(SVGNS, n);
+  for (const k in (a||{})) e.setAttribute(k, a[k]);
+  for (const c of [].concat(kids||[])) e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+  return e;
+}
+
+function hbars(mount, rows, opt){
+  opt = opt || {};
+  const W = 560, rowH = 34, padL = opt.padL || 128, padR = 92, top = 6;
+  const H = top + rows.length * rowH + 6;
+  const max = Math.max.apply(null, rows.map(r => r.value).concat([1]));
+  const svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img' });
+  rows.forEach((r, i) => {
+    const y = top + i * rowH, bh = 16, w = Math.max(2, (r.value / max) * (W - padL - padR));
+    svg.appendChild(el('text', { x: padL - 10, y: y + bh - 3, 'text-anchor': 'end',
+      'font-size': 12, fill: cssv('--ink2') }, r.label));
+    const bar = el('rect', { x: padL, y: y, width: w, height: bh, rx: 4, fill: r.color || cssv('--s1') });
+    bar.addEventListener('mousemove', e => showTip(e,
+      '<b>' + esc(r.label) + '</b><div class="r"><span>' + esc(opt.metric || '값') + '</span><span>' + nf(r.value) + '</span></div>' +
+      (r.extra ? '<div class="r"><span>' + esc(r.extra.k) + '</span><span>' + esc(r.extra.v) + '</span></div>' : '')));
+    bar.addEventListener('mouseleave', hideTip);
+    svg.appendChild(bar);
+    svg.appendChild(el('text', { x: padL + w + 8, y: y + bh - 3, 'font-size': 12,
+      fill: cssv('--ink'), 'font-weight': 600 }, nf(r.value)));
+  });
+  mount.innerHTML = ''; mount.appendChild(svg);
+}
+
+function stacked(mount, groups, keys, colors){
+  const W = 900, rowH = 42, padL = 74, padR = 8, top = 4;
+  const H = top + groups.length * rowH;
+  const svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img' });
+  groups.forEach((g, i) => {
+    const y = top + i * rowH, bh = 18;
+    let total = 0; keys.forEach(k => { total += (g.values[k] || 0); });
+    if (!total) total = 1;
+    svg.appendChild(el('text', { x: padL - 10, y: y + bh - 4, 'text-anchor': 'end',
+      'font-size': 12, fill: cssv('--ink2') }, g.label));
+    let x = padL;
+    keys.forEach((k, ki) => {
+      const v = g.values[k] || 0; if (!v) return;
+      const w = (v / total) * (W - padL - padR);
+      const seg = el('rect', { x: x, y: y, width: Math.max(0, w - 2), height: bh, rx: 3, fill: colors[ki] });
+      seg.addEventListener('mousemove', e => showTip(e,
+        '<b>' + esc(g.label) + '</b><div class="r"><span>' + esc(k) + '</span><span>' + nf(v) + ' (' + (v / total * 100).toFixed(1) + '%)</span></div>'));
+      seg.addEventListener('mouseleave', hideTip);
+      svg.appendChild(seg);
+      if (w > 56) svg.appendChild(el('text', { x: x + w / 2, y: y + bh + 13, 'text-anchor': 'middle',
+        'font-size': 10, fill: cssv('--muted') }, Math.round(v / total * 100) + '%'));
+      x += w;
+    });
+  });
+  mount.innerHTML = ''; mount.appendChild(svg);
+}
+
+function lines(mount, series, opt){
+  opt = opt || {};
+  const W = 560, H = 230, padL = 46, padR = 34, padT = 10, padB = 24;
+  const n = Math.max.apply(null, series.map(s => s.points.length));
+  const max = Math.max.apply(null, [1].concat(series.reduce((a, s) => a.concat(s.points.map(p => p.y)), [])));
+  const X = i => padL + (n <= 1 ? 0 : i * (W - padL - padR) / (n - 1));
+  const Y = v => padT + (1 - v / max) * (H - padT - padB);
+  const svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img' });
+  for (let t = 0; t <= 4; t++) {
+    const v = max * t / 4, y = Y(v);
+    svg.appendChild(el('line', { x1: padL, x2: W - padR, y1: y, y2: y, stroke: cssv('--grid'), 'stroke-width': 1 }));
+    svg.appendChild(el('text', { x: padL - 8, y: y + 4, 'text-anchor': 'end', 'font-size': 10, fill: cssv('--muted') },
+      v >= 1000 ? (v / 1000).toFixed(v >= 10000 ? 0 : 1) + 'k' : String(Math.round(v))));
+  }
+  series.forEach(s => {
+    const d = s.points.map((p, i) => (i ? 'L' : 'M') + X(i) + ' ' + Y(p.y)).join(' ');
+    svg.appendChild(el('path', { d: d, fill: 'none', stroke: s.color, 'stroke-width': 2,
+      'stroke-linejoin': 'round', 'stroke-linecap': 'round' }));
+    const last = s.points[s.points.length - 1];
+    if (last && opt.labelEnds !== false)
+      svg.appendChild(el('text', { x: X(s.points.length - 1) + 5, y: Y(last.y) + 3, 'font-size': 10,
+        fill: s.color, 'font-weight': 600 }, s.name));
+  });
+  const first = (series[0] || {}).points || [];
+  if (first.length) {
+    [0, Math.floor(n / 2), n - 1].forEach(i => {
+      const p = first[i]; if (!p) return;
+      svg.appendChild(el('text', { x: X(i), y: H - 6,
+        'text-anchor': i === 0 ? 'start' : (i === n - 1 ? 'end' : 'middle'),
+        'font-size': 10, fill: cssv('--muted') }, p.x.slice(4, 6) + '/' + p.x.slice(6, 8)));
+    });
+  }
+  const cross = el('line', { x1: 0, x2: 0, y1: padT, y2: H - padB, stroke: cssv('--axis'), 'stroke-width': 1, opacity: 0 });
+  svg.appendChild(cross);
+  const hit = el('rect', { x: padL, y: padT, width: W - padL - padR, height: H - padT - padB, fill: 'transparent' });
+  hit.addEventListener('mousemove', ev => {
+    const r = svg.getBoundingClientRect();
+    const rel = (ev.clientX - r.left) / r.width * W;
+    let i = Math.round((rel - padL) / ((W - padL - padR) / Math.max(1, n - 1)));
+    i = Math.max(0, Math.min(n - 1, i));
+    cross.setAttribute('x1', X(i)); cross.setAttribute('x2', X(i)); cross.setAttribute('opacity', 1);
+    const date = (series[0].points[i] || {}).x || '';
+    const body = series.map(s => '<div class="r"><span><span class="dot" style="background:' + s.color + '"></span> ' +
+      esc(s.name) + '</span><span>' + nf((s.points[i] || {}).y) + '</span></div>').join('');
+    showTip(ev, '<b>' + date.slice(0, 4) + '-' + date.slice(4, 6) + '-' + date.slice(6, 8) + '</b>' + body);
+  });
+  hit.addEventListener('mouseleave', () => { cross.setAttribute('opacity', 0); hideTip(); });
+  svg.appendChild(hit);
+  mount.innerHTML = ''; mount.appendChild(svg);
+}
+
+// Month-over-month change: polarity, so a diverging bar around a zero baseline.
+// Direction is carried by the glyph and the number too, never by colour alone.
+function diverging(mount, rows){
+  const W = 900, rowH = 30, padL = 116, padR = 92, top = 8;
+  const H = top + rows.length * rowH + 10;
+  const mid = padL + (W - padL - padR) / 2;
+  const max = Math.max.apply(null, rows.map(r => Math.abs(r.value)).concat([1]));
+  const half = (W - padL - padR) / 2 - 6;
+  const svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img' });
+  svg.appendChild(el('line', { x1: mid, x2: mid, y1: top - 4, y2: H - 8, stroke: cssv('--axis'), 'stroke-width': 1 }));
+  rows.forEach((r, i) => {
+    const y = top + i * rowH, bh = 15;
+    const up = r.value >= 0;
+    const w = Math.max(2, Math.abs(r.value) / max * half);
+    svg.appendChild(el('text', { x: padL - 12, y: y + bh - 3, 'text-anchor': 'end',
+      'font-size': 12, fill: cssv('--ink2') }, r.label));
+    const bar = el('rect', { x: up ? mid + 1 : mid - w - 1, y: y, width: w, height: bh, rx: 4,
+      fill: up ? cssv('--good') : cssv('--bad') });
+    bar.addEventListener('mousemove', e => showTip(e,
+      '<b>' + esc(r.label) + '</b><div class="r"><span>전월 대비</span><span>' +
+      (up ? '▲ +' : '▼ ') + nf1(r.value) + '%</span></div>'));
+    bar.addEventListener('mouseleave', hideTip);
+    svg.appendChild(bar);
+    svg.appendChild(el('text', { x: up ? mid + w + 8 : mid - w - 8, y: y + bh - 3,
+      'text-anchor': up ? 'start' : 'end', 'font-size': 11, 'font-weight': 600,
+      fill: up ? cssv('--good') : cssv('--bad') }, (up ? '▲ +' : '▼ ') + nf1(r.value) + '%'));
+  });
+  mount.innerHTML = ''; mount.appendChild(svg);
+}
+
+function tile(k, v, d, colorVar){
+  const dot = colorVar ? '<span class="dot" style="background:' + cssv(colorVar) + '"></span>' : '';
+  return '<div class="tile"><div class="k">' + dot + esc(k) + '</div><div class="v">' + v +
+         '</div><div class="d">' + (d || '') + '</div></div>';
+}
+
+function render(){
+  const g = D.ga4, y = D.yt, nv = D.naver;
+  const okSites = ((nv && nv.sites) || []).filter(s => s.status === 'OK');
+
+  document.getElementById('rangeLine').textContent =
+    '측정 기간 ' + g.range.start + ' ~ ' + g.range.end + ' (' + g.range.days + '일) · 직전 기간 ' +
+    g.prev_range.start + ' ~ ' + g.prev_range.end + ' 대비 · 생성 ' + new Date(D.meta.builtAt).toLocaleString('ko-KR');
+
+  const gscCount = ((D.gsc && D.gsc.sites) || []).filter(s => s.status === 'OK').length;
+  const pills = [
+    { s: 'GA4', ok: true, detail: g.properties.length + '개 속성 · API' },
+    { s: 'YouTube', ok: true, detail: '1개 채널 · Analytics API' },
+    { s: 'Search Console', ok: gscCount > 0, detail: gscCount + '개 속성 · API' },
+    { s: '네이버', ok: okSites.length > 0, detail: okSites.length + '/' + ((nv && nv.sites) || []).length + '개 사이트 · UI 수집' },
+    { s: 'Instagram', ok: false, detail: D.meta.instagram.accounts.length + '개 계정 확인 · 지표 미연동' }
+  ];
+  document.getElementById('srcPills').innerHTML = pills.map(x =>
+    '<span class="pill ' + (x.ok ? 'ok' : 'pend') + '">' + (x.ok ? '●' : '○') + ' ' +
+    esc(x.s) + ' · ' + esc(x.detail) + '</span>').join('');
+
+  const tot = k => g.properties.reduce((s, p) => s + p.current[k], 0);
+  const ptot = k => g.properties.reduce((s, p) => s + p.previous[k], 0);
+  const du = pct(tot('activeUsers'), ptot('activeUsers'));
+  const ds = pct(tot('sessions'), ptot('sessions'));
+  const dv = pct(y.current.views, y.previous.views);
+  const dm = pct(y.current.minutesWatched, y.previous.minutesWatched);
+
+  document.getElementById('heroTiles').innerHTML =
+    tile('웹 활성 사용자', nf(tot('activeUsers')), '<span class="' + dcls(du) + '">' + dstr(du) + '</span> 직전 대비') +
+    tile('웹 세션', nf(tot('sessions')), '<span class="' + dcls(ds) + '">' + dstr(ds) + '</span> 직전 대비') +
+    tile('웹 이벤트', nf(tot('eventCount')), g.properties.length + '개 속성 합계') +
+    tile('YouTube 조회수', nf(y.current.views), '<span class="' + dcls(dv) + '">' + dstr(dv) + '</span> 직전 대비') +
+    tile('YouTube 시청 시간', nf(y.current.minutesWatched) + '분', '<span class="' + dcls(dm) + '">' + dstr(dm) + '</span> 직전 대비') +
+    tile('구독자 순증', '+' + nf(y.current.subsGained - y.current.subsLost), '총 ' + nf(y.channel.subscribers) + '명');
+
+  const order = g.properties.map(p => p.label);
+  const sorted = g.properties.slice().sort((a, b) => b.current.activeUsers - a.current.activeUsers);
+  hbars(document.getElementById('ga4Bars'), sorted.map(p => ({
+    label: p.label + ' · ' + p.name.replace('Beauty Blossom', 'BB'),
+    value: p.current.activeUsers,
+    color: cssv(SERIES[order.indexOf(p.label)]),
+    extra: { k: '직전 대비', v: dstr(pct(p.current.activeUsers, p.previous.activeUsers)) }
+  })), { metric: '활성 사용자' });
+
+  document.getElementById('ga4Legend').innerHTML = g.properties.map((p, i) =>
+    '<span><span class="dot" style="background:' + cssv(SERIES[i]) + '"></span>' + esc(p.label) + '</span>').join('');
+  lines(document.getElementById('ga4Lines'), g.properties.map((p, i) => ({
+    name: p.label, color: cssv(SERIES[i]),
+    points: p.daily.map(d => ({ x: d.date, y: d.activeUsers }))
+  })));
+
+  const agg = {};
+  g.properties.forEach(p => p.channels.forEach(c => { agg[c.channel] = (agg[c.channel] || 0) + c.sessions; }));
+  const chanKeys = Object.keys(agg).sort((a, b) => agg[b] - agg[a]).slice(0, 6);
+  const chanColors = chanKeys.map((_, i) => cssv(SERIES[i]));
+  document.getElementById('chanLegend').innerHTML = chanKeys.map((k, i) =>
+    '<span><span class="dot" style="background:' + chanColors[i] + '"></span>' + esc(k) + '</span>').join('');
+  stacked(document.getElementById('ga4Channels'), g.properties.map(p => {
+    const values = {};
+    chanKeys.forEach(k => { const c = p.channels.find(x => x.channel === k); values[k] = c ? c.sessions : 0; });
+    return { label: p.label, values: values };
+  }), chanKeys, chanColors);
+
+  document.getElementById('ga4Table').innerHTML =
+    '<thead><tr><th>속성</th><th>활성 사용자</th><th>직전 대비</th><th>세션</th><th>신규</th><th>페이지뷰</th><th>이벤트</th><th>이탈률</th><th>평균 세션(초)</th></tr></thead><tbody>' +
+    g.properties.map((p, i) => {
+      const d = pct(p.current.activeUsers, p.previous.activeUsers);
+      return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i]) + '"></span> ' + esc(p.label) + ' · ' + esc(p.name) + '</td>' +
+        '<td>' + nf(p.current.activeUsers) + '</td><td class="' + dcls(d) + '">' + dstr(d) + '</td>' +
+        '<td>' + nf(p.current.sessions) + '</td><td>' + nf(p.current.newUsers) + '</td>' +
+        '<td>' + nf(p.current.pageViews) + '</td><td>' + nf(p.current.eventCount) + '</td>' +
+        '<td>' + nf1(p.current.bounceRate * 100) + '%</td><td>' + nf(p.current.avgSessionDuration) + '</td></tr>';
+    }).join('') +
+    '<tr style="font-weight:650"><td>합계</td><td>' + nf(tot('activeUsers')) + '</td><td class="' + dcls(du) + '">' + dstr(du) + '</td>' +
+    '<td>' + nf(tot('sessions')) + '</td><td>' + nf(tot('newUsers')) + '</td><td>' + nf(tot('pageViews')) + '</td>' +
+    '<td>' + nf(tot('eventCount')) + '</td><td>—</td><td>—</td></tr></tbody>';
+
+  document.getElementById('ytTiles').innerHTML =
+    tile('조회수', nf(y.current.views), '<span class="' + dcls(dv) + '">' + dstr(dv) + '</span> 직전 대비') +
+    tile('시청 시간', nf(y.current.minutesWatched) + '분', '평균 ' + nf(y.current.avgViewDuration) + '초 · ' + nf1(y.current.avgViewPercentage) + '%') +
+    tile('구독', '+' + nf(y.current.subsGained), '이탈 ' + nf(y.current.subsLost) + ' · 순증 ' + nf(y.current.subsGained - y.current.subsLost)) +
+    tile('참여', nf(y.current.likes + y.current.comments + y.current.shares),
+      '좋아요 ' + nf(y.current.likes) + ' · 댓글 ' + nf(y.current.comments) + ' · 공유 ' + nf(y.current.shares)) +
+    tile('채널 규모', nf(y.channel.subscribers), '영상 ' + nf(y.channel.videoCount) + '개 · 누적 ' + nf(y.channel.totalViews) + '회');
+
+  lines(document.getElementById('ytLine'),
+    [{ name: '조회수', color: cssv('--s1'), points: y.daily.map(d => ({ x: d.date, y: d.views })) }], { labelEnds: false });
+
+  hbars(document.getElementById('ytTraffic'), y.traffic.slice(0, 8).map(t => ({
+    label: t.source, value: t.views, color: cssv('--s1'),
+    extra: { k: '시청 시간', v: nf(t.minutes) + '분' }
+  })), { metric: '조회수', padL: 132 });
+
+  document.getElementById('ytTable').innerHTML =
+    '<thead><tr><th>영상</th><th>길이</th><th>조회수</th><th>시청 시간(분)</th><th>평균 시청(초)</th><th>좋아요</th></tr></thead><tbody>' +
+    y.topVideos.map(v =>
+      '<tr><td><a href="https://www.youtube.com/watch?v=' + esc(v.videoId) + '" target="_blank" rel="noopener">' + esc(v.title) + '</a></td>' +
+      '<td>' + esc(String(v.duration || '').replace('PT', '').toLowerCase()) + '</td>' +
+      '<td>' + nf(v.views) + '</td><td>' + nf(v.minutes) + '</td><td>' + nf(v.avgViewDuration) + '</td><td>' + nf(v.likes) + '</td></tr>').join('') +
+    '</tbody>';
+
+  // ---- Google Search Console ----
+  const gsc = D.gsc, gscOk = ((gsc && gsc.sites) || []).filter(s => s.status === 'OK');
+  const gb = document.getElementById('gscBody');
+  if (gscOk.length) {
+    let gc = 0, gi = 0, wpos = 0;
+    gscOk.forEach(s => { gc += s.current.clicks; gi += s.current.impressions; wpos += s.current.position * s.current.impressions; });
+    const pc = gscOk.reduce((a, s) => a + s.previous.clicks, 0);
+    const pi = gscOk.reduce((a, s) => a + s.previous.impressions, 0);
+    gb.innerHTML =
+      '<div class="tiles" id="gscTiles"></div>' +
+      '<div class="grid g2" style="margin-top:14px">' +
+        '<div class="card"><h3>속성별 클릭 (30일)</h3><div id="gscBars"></div></div>' +
+        '<div class="card"><h3>전월 대비 변화</h3>' +
+          '<div class="legend"><span><span class="dot" style="background:' + cssv('--good') + '"></span>▲ 상승</span>' +
+          '<span><span class="dot" style="background:' + cssv('--bad') + '"></span>▼ 하락</span></div>' +
+          '<div id="gscDelta"></div></div>' +
+      '</div>' +
+      '<div class="card" style="margin-top:14px">' +
+        '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px">' +
+          '<h3 style="margin:0">검색어 · 페이지</h3><div id="gscTabs" class="legend" style="margin:0"></div></div>' +
+        '<div class="grid g2"><div><h3>검색어 TOP</h3><div style="overflow-x:auto"><table id="gscQ"></table></div></div>' +
+        '<div><h3>페이지 TOP</h3><div style="overflow-x:auto"><table id="gscP"></table></div></div></div>' +
+        '<p class="note">' + esc(gsc.note) + ' 순위는 평균 게재순위입니다 (낮을수록 상위).</p></div>';
+
+    document.getElementById('gscTiles').innerHTML =
+      tile('총 클릭', nf(gc), '<span class="' + dcls(pct(gc, pc)) + '">' + dstr(pct(gc, pc)) + '</span> 직전 대비') +
+      tile('총 노출', nf(gi), '<span class="' + dcls(pct(gi, pi)) + '">' + dstr(pct(gi, pi)) + '</span> 직전 대비') +
+      tile('평균 CTR', gi ? nf1(gc / gi * 100) + '%' : '—', '클릭 ÷ 노출') +
+      tile('평균 게재순위', gi ? nf1(wpos / gi) : '—', '노출 가중 평균') +
+      tile('연결 속성', String(gscOk.length) + '개', '블로그 · 하위 도메인 포함');
+
+    const gsorted = gscOk.slice().sort((a, b) => b.current.clicks - a.current.clicks);
+    hbars(document.getElementById('gscBars'), gsorted.map((s, i) => ({
+      label: (s.label === '?' ? '기타' : s.label) + ' · ' + String(s.siteUrl).replace(/^https?:\/\//, '').replace(/^sc-domain:/, '').replace(/\/$/, '').slice(0, 22),
+      value: s.current.clicks, color: cssv(SERIES[i % 6]),
+      extra: { k: '노출', v: nf(s.current.impressions) }
+    })), { metric: '클릭', padL: 190 });
+
+    diverging(document.getElementById('gscDelta'), gsorted.filter(s => s.previous.clicks > 0).map(s => ({
+      label: (s.label === '?' ? '기타' : s.label) + ' · 클릭',
+      value: pct(s.current.clicks, s.previous.clicks)
+    })));
+
+    let gActive = gsorted[0].siteUrl;
+    function gTabs() {
+      document.getElementById('gscTabs').innerHTML = gsorted.map(s =>
+        '<span><button type="button" class="theme" data-u="' + esc(s.siteUrl) + '" style="' +
+        (s.siteUrl === gActive ? 'border-color:' + cssv('--s1') + ';color:' + cssv('--ink') + ';font-weight:600' : '') + '">' +
+        esc(s.label === '?' ? '기타' : s.label) + '</button></span>').join('');
+      Array.prototype.forEach.call(document.querySelectorAll('#gscTabs button'), b => {
+        b.onclick = () => { gActive = b.getAttribute('data-u'); gTabs(); gDraw(); };
+      });
+    }
+    function gDraw() {
+      const s = gscOk.filter(x => x.siteUrl === gActive)[0] || { queries: [], pages: [] };
+      document.getElementById('gscQ').innerHTML = (s.queries || []).length
+        ? '<thead><tr><th>#</th><th>검색어</th><th>클릭</th><th>노출</th><th>CTR</th><th>순위</th></tr></thead><tbody>' +
+          s.queries.slice(0, 15).map((q, i) => '<tr><td>' + (i + 1) + '</td><td>' + esc(q.query) + '</td><td>' + nf(q.clicks) +
+            '</td><td>' + nf(q.impressions) + '</td><td>' + nf1(q.ctr * 100) + '%</td><td>' + nf1(q.position) + '</td></tr>').join('') + '</tbody>'
+        : '<tbody><tr><td>검색어 데이터가 없습니다.</td></tr></tbody>';
+      document.getElementById('gscP').innerHTML = (s.pages || []).length
+        ? '<thead><tr><th>#</th><th>페이지</th><th>클릭</th><th>노출</th><th>CTR</th></tr></thead><tbody>' +
+          s.pages.slice(0, 15).map((p, i) => '<tr><td>' + (i + 1) + '</td><td><a href="' + esc(p.page) + '" target="_blank" rel="noopener">' +
+            esc(String(p.page).replace(/^https?:\/\//, '')) + '</a></td><td>' + nf(p.clicks) + '</td><td>' + nf(p.impressions) +
+            '</td><td>' + nf1(p.ctr * 100) + '%</td></tr>').join('') + '</tbody>'
+        : '<tbody><tr><td>페이지 데이터가 없습니다.</td></tr></tbody>';
+    }
+    gTabs(); gDraw();
+
+    // Google vs Naver, matched on the labels both sources share.
+    let nvC = 0, nvI = 0;
+    okSites.forEach(s => { nvC += (s.clicks || 0); nvI += (s.impressions || 0); });
+    document.getElementById('seLegend').innerHTML =
+      '<span><span class="dot" style="background:' + cssv('--s1') + '"></span>Google</span>' +
+      '<span><span class="dot" style="background:' + cssv('--s3') + '"></span>네이버</span>';
+    stacked(document.getElementById('seCompare'),
+      [{ label: '클릭', values: { Google: gc, '네이버': nvC } },
+       { label: '노출', values: { Google: gi, '네이버': nvI } }],
+      ['Google', '네이버'], [cssv('--s1'), cssv('--s3')]);
+    document.getElementById('seNote').textContent =
+      'Google 클릭 ' + nf(gc) + ' · 노출 ' + nf(gi) + '  /  네이버 클릭 ' + nf(nvC) + ' · 노출 ' + nf(nvI) +
+      ' — 네이버 합계는 콘솔의 축약 표기를 되돌린 근사치라 직접 비교보다는 규모 비교로 읽어야 합니다.';
+  } else {
+    gb.innerHTML = '<div class="card" style="margin-top:14px"><p class="sub">Search Console 데이터가 아직 수집되지 않았습니다.</p></div>';
+    document.getElementById('seCompare').innerHTML = '';
+    document.getElementById('seNote').textContent = '';
+  }
+
+  const nb = document.getElementById('naverBody');
+  if (okSites.length) {
+    nb.innerHTML =
+      '<div class="tiles" id="nvTiles"></div>' +
+      '<div class="card" style="margin-top:14px"><h3>전월 대비 변화</h3>' +
+        '<div class="legend"><span><span class="dot" style="background:' + cssv('--good') + '"></span>▲ 상승</span>' +
+        '<span><span class="dot" style="background:' + cssv('--bad') + '"></span>▼ 하락</span></div>' +
+        '<div id="nvDelta"></div>' +
+        '<p class="note">네이버 콘솔이 표시하는 전월 대비 증감률입니다. 막대 길이는 변화폭, 기호와 숫자가 방향을 함께 나타냅니다.</p></div>' +
+      '<div class="card" style="margin-top:14px"><h3>사이트별 검색 성과 (최근 30일)</h3>' +
+        '<div style="overflow-x:auto"><table id="nvTable"></table></div>' +
+        '<p class="note">' + esc(nv.note) + '</p></div>' +
+      '<div class="card" style="margin-top:14px">' +
+        '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px">' +
+          '<h3 style="margin:0">노출 키워드 · 웹문서</h3>' +
+          '<div id="nvSiteTabs" class="legend" style="margin:0"></div>' +
+        '</div>' +
+        '<div class="grid g2"><div><h3>검색 키워드 TOP</h3><div style="overflow-x:auto"><table id="nvKw"></table></div></div>' +
+        '<div><h3>검색 웹문서 TOP</h3><div style="overflow-x:auto"><table id="nvDoc"></table></div></div></div>' +
+        '<p class="note">네이버 콘솔은 한 페이지에 10행씩 표시하며, 여기에는 각 사이트의 상위 10개가 담겨 있습니다.</p></div>';
+
+    let sumC = 0, sumI = 0;
+    okSites.forEach(x => { sumC += (x.clicks || 0); sumI += (x.impressions || 0); });
+    document.getElementById('nvTiles').innerHTML =
+      tile('총 클릭 (근사)', nf(sumC), okSites.length + '개 사이트 합계') +
+      tile('총 노출 (근사)', nf(sumI), okSites.length + '개 사이트 합계') +
+      tile('전체 CTR (근사)', sumI ? nf1(sumC / sumI * 100) + '%' : '—', '클릭 ÷ 노출');
+
+    const pnum = s => { const m = String(s == null ? '' : s).match(/-?[\d.]+/); return m ? parseFloat(m[0]) * (String(s).indexOf('-') === 0 ? -1 : 1) : null; };
+    const deltaRows = [];
+    okSites.forEach(s => {
+      [['클릭', s.clicks_delta], ['노출', s.impressions_delta]].forEach(pair => {
+        const v = pnum(pair[1]);
+        if (v == null) return;
+        deltaRows.push({ label: s.label + ' · ' + pair[0], value: v });
+      });
+    });
+    diverging(document.getElementById('nvDelta'), deltaRows);
+
+    document.getElementById('nvTable').innerHTML =
+      '<thead><tr><th>사이트</th><th>클릭</th><th>전월 대비</th><th>노출</th><th>전월 대비</th><th>평균 CTR</th><th>전월 대비</th></tr></thead><tbody>' +
+      okSites.map(s => {
+        const cell = d => { const v = pnum(d); if (v == null || v === 0) return '<td>—</td>';
+          return '<td class="' + (v > 0 ? 'up' : 'dn') + '">' + (v > 0 ? '▲' : '▼') + ' ' + nf1(Math.abs(v)) + '%</td>'; };
+        return '<tr><td>' + esc(s.label) + ' · ' + esc(String(s.url).replace('https://', '')) + '</td>' +
+          '<td>' + esc(s.clicks_raw || '—') + '</td>' + cell(s.clicks_delta) +
+          '<td>' + esc(s.impressions_raw || '—') + '</td>' + cell(s.impressions_delta) +
+          '<td>' + esc(s.ctr_raw || '—') + '</td>' + cell(s.ctr_delta) + '</tr>';
+      }).join('') + '</tbody>';
+
+    const withKw = okSites.filter(s => (s.keywords && s.keywords.length) || (s.documents && s.documents.length));
+    let activeSite = (withKw[0] || okSites[0]).label;
+    function drawTabs() {
+      document.getElementById('nvSiteTabs').innerHTML = withKw.map(s =>
+        '<span><button type="button" class="theme" data-site="' + esc(s.label) + '" style="' +
+        (s.label === activeSite ? 'border-color:' + cssv('--s1') + ';color:' + cssv('--ink') + ';font-weight:600' : '') +
+        '">' + esc(s.label) + '</button></span>').join('');
+      Array.prototype.forEach.call(document.querySelectorAll('#nvSiteTabs button'), b => {
+        b.onclick = () => { activeSite = b.getAttribute('data-site'); drawTabs(); drawKw(); };
+      });
+    }
+    function drawKw() {
+      const s = withKw.filter(x => x.label === activeSite)[0] || { keywords: [], documents: [] };
+      const kw = s.keywords || [], dc = s.documents || [];
+      document.getElementById('nvKw').innerHTML = kw.length
+        ? '<thead><tr><th>#</th><th>키워드</th><th>클릭</th><th>노출</th><th>CTR</th></tr></thead><tbody>' +
+          kw.map(k => '<tr><td>' + k.rank + '</td><td>' + esc(k.label) + '</td><td>' + nf(k.clicks) +
+            '</td><td>' + nf(k.impressions) + '</td><td>' + nf1(k.ctr) + '%</td></tr>').join('') + '</tbody>'
+        : '<tbody><tr><td>수집된 키워드가 없습니다.</td></tr></tbody>';
+      document.getElementById('nvDoc').innerHTML = dc.length
+        ? '<thead><tr><th>#</th><th>웹문서</th><th>클릭</th><th>노출</th><th>CTR</th></tr></thead><tbody>' +
+          dc.map(k => '<tr><td>' + k.rank + '</td><td><a href="' + esc(k.label) + '" target="_blank" rel="noopener">' +
+            esc(String(k.label).replace(/^https?:\/\//, '')) + '</a></td><td>' + nf(k.clicks) +
+            '</td><td>' + nf(k.impressions) + '</td><td>' + nf1(k.ctr) + '%</td></tr>').join('') + '</tbody>'
+        : '<tbody><tr><td>수집된 웹문서가 없습니다.</td></tr></tbody>';
+    }
+    drawTabs(); drawKw();
+  } else {
+    nb.innerHTML = '<div class="card" style="margin-top:14px"><p class="sub">' + esc(D.meta.naver.reason) + '</p>' +
+      '<p class="note">네이버는 성과 조회용 공개 API가 없어 로그인된 콘솔 화면에서만 수집됩니다.</p></div>';
+  }
+
+  document.getElementById('igBody').innerHTML = '<div class="card" style="margin-top:14px">' +
+    '<p class="sub">' + esc(D.meta.instagram.reason) + '</p>' +
+    '<div style="overflow-x:auto"><table><thead><tr><th>계정</th><th>팔로워</th><th>게시물</th><th>상태</th></tr></thead><tbody>' +
+    D.meta.instagram.accounts.map(h => {
+      const row = (D.ig || []).filter(r => r.handle === h)[0];
+      return '<tr><td>@' + esc(h) + '</td><td>' + (row && row.followers ? nf(row.followers) : '—') + '</td>' +
+        '<td>' + (row && row.posts ? nf(row.posts) : '—') + '</td>' +
+        '<td>' + (row && row.status === 'OK' ? '공개 프로필 확인' : '인증 필요') + '</td></tr>';
+    }).join('') +
+    '</tbody></table></div><p class="note">지표 연동에는 Meta Graph API 권한이 필요합니다 — 앱을 자산 소유 포트폴리오에 등록해야 합니다.</p></div>';
+
+  document.getElementById('statusTable').innerHTML =
+    '<thead><tr><th>소스</th><th>범위</th><th>수집 방식</th><th>상태</th></tr></thead><tbody>' +
+    '<tr><td>GA4</td><td>' + g.properties.length + '개 속성 · ' + g.range.days + '일</td><td>Analytics Data API</td><td class="up">완료</td></tr>' +
+    '<tr><td>YouTube</td><td>1개 채널 · ' + y.range.days + '일</td><td>Data API v3 + Analytics API v2</td><td class="up">완료</td></tr>' +
+    '<tr><td>Google Search Console</td><td>' + gscOk.length + '개 속성 · ' + ((D.gsc && D.gsc.range) ? D.gsc.range.days : 0) + '일</td>' +
+    '<td>Search Analytics API</td><td class="' + (gscOk.length ? 'up' : 'dn') + '">' + (gscOk.length ? '완료' : '미수집') + '</td></tr>' +
+    '<tr><td>네이버 서치어드바이저</td><td>' + ((nv && nv.sites) || []).length + '개 사이트 · 최근 30일</td><td>로그인 콘솔 UI 수집</td>' +
+    '<td class="' + (okSites.length ? 'up' : 'dn') + '">' + (okSites.length ? '완료 (' + okSites.length + ')' : '미수집') + '</td></tr>' +
+    '<tr><td>Instagram</td><td>' + D.meta.instagram.accounts.length + '개 계정</td><td>Meta Graph API (미승인)</td><td class="dn">대기</td></tr></tbody>';
+}
+render();
+addEventListener('resize', hideTip);
+</script>
+</body>
+</html>

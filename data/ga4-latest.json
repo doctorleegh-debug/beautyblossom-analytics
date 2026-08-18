@@ -1,0 +1,1568 @@
+﻿{
+    "prev_range":  {
+                       "start":  "2026-06-19",
+                       "end":  "2026-07-18"
+                   },
+    "properties":  [
+                       {
+                           "devices":  [
+                                           {
+                                               "sessions":  7752,
+                                               "device":  "mobile"
+                                           },
+                                           {
+                                               "sessions":  4885,
+                                               "device":  "desktop"
+                                           },
+                                           {
+                                               "sessions":  69,
+                                               "device":  "tablet"
+                                           }
+                                       ],
+                           "id":  "526090588",
+                           "previous":  {
+                                            "sessions":  11252,
+                                            "newUsers":  8078,
+                                            "bounceRate":  0.48622467116956986,
+                                            "activeUsers":  8558,
+                                            "eventCount":  100687,
+                                            "avgSessionDuration":  137.34150035309278,
+                                            "pageViews":  30398
+                                        },
+                           "label":  "KR",
+                           "daily":  [
+                                         {
+                                             "date":  "20260719",
+                                             "sessions":  347,
+                                             "activeUsers":  305
+                                         },
+                                         {
+                                             "date":  "20260720",
+                                             "sessions":  458,
+                                             "activeUsers":  393
+                                         },
+                                         {
+                                             "date":  "20260721",
+                                             "sessions":  517,
+                                             "activeUsers":  455
+                                         },
+                                         {
+                                             "date":  "20260722",
+                                             "sessions":  389,
+                                             "activeUsers":  327
+                                         },
+                                         {
+                                             "date":  "20260723",
+                                             "sessions":  326,
+                                             "activeUsers":  277
+                                         },
+                                         {
+                                             "date":  "20260724",
+                                             "sessions":  307,
+                                             "activeUsers":  260
+                                         },
+                                         {
+                                             "date":  "20260725",
+                                             "sessions":  344,
+                                             "activeUsers":  310
+                                         },
+                                         {
+                                             "date":  "20260726",
+                                             "sessions":  339,
+                                             "activeUsers":  308
+                                         },
+                                         {
+                                             "date":  "20260727",
+                                             "sessions":  409,
+                                             "activeUsers":  361
+                                         },
+                                         {
+                                             "date":  "20260728",
+                                             "sessions":  383,
+                                             "activeUsers":  340
+                                         },
+                                         {
+                                             "date":  "20260729",
+                                             "sessions":  373,
+                                             "activeUsers":  320
+                                         },
+                                         {
+                                             "date":  "20260730",
+                                             "sessions":  568,
+                                             "activeUsers":  502
+                                         },
+                                         {
+                                             "date":  "20260731",
+                                             "sessions":  684,
+                                             "activeUsers":  623
+                                         },
+                                         {
+                                             "date":  "20260801",
+                                             "sessions":  388,
+                                             "activeUsers":  353
+                                         },
+                                         {
+                                             "date":  "20260802",
+                                             "sessions":  452,
+                                             "activeUsers":  424
+                                         },
+                                         {
+                                             "date":  "20260803",
+                                             "sessions":  624,
+                                             "activeUsers":  551
+                                         },
+                                         {
+                                             "date":  "20260804",
+                                             "sessions":  489,
+                                             "activeUsers":  438
+                                         },
+                                         {
+                                             "date":  "20260805",
+                                             "sessions":  651,
+                                             "activeUsers":  592
+                                         },
+                                         {
+                                             "date":  "20260806",
+                                             "sessions":  415,
+                                             "activeUsers":  374
+                                         },
+                                         {
+                                             "date":  "20260807",
+                                             "sessions":  460,
+                                             "activeUsers":  395
+                                         },
+                                         {
+                                             "date":  "20260808",
+                                             "sessions":  378,
+                                             "activeUsers":  337
+                                         },
+                                         {
+                                             "date":  "20260809",
+                                             "sessions":  348,
+                                             "activeUsers":  315
+                                         },
+                                         {
+                                             "date":  "20260810",
+                                             "sessions":  428,
+                                             "activeUsers":  355
+                                         },
+                                         {
+                                             "date":  "20260811",
+                                             "sessions":  410,
+                                             "activeUsers":  347
+                                         },
+                                         {
+                                             "date":  "20260812",
+                                             "sessions":  434,
+                                             "activeUsers":  385
+                                         },
+                                         {
+                                             "date":  "20260813",
+                                             "sessions":  387,
+                                             "activeUsers":  336
+                                         },
+                                         {
+                                             "date":  "20260814",
+                                             "sessions":  402,
+                                             "activeUsers":  340
+                                         },
+                                         {
+                                             "date":  "20260815",
+                                             "sessions":  328,
+                                             "activeUsers":  290
+                                         },
+                                         {
+                                             "date":  "20260816",
+                                             "sessions":  294,
+                                             "activeUsers":  260
+                                         },
+                                         {
+                                             "date":  "20260817",
+                                             "sessions":  341,
+                                             "activeUsers":  301
+                                         }
+                                     ],
+                           "name":  "Beauty Blossom Korea",
+                           "countries":  [
+                                             {
+                                                 "country":  "South Korea",
+                                                 "activeUsers":  8125
+                                             },
+                                             {
+                                                 "country":  "Singapore",
+                                                 "activeUsers":  410
+                                             },
+                                             {
+                                                 "country":  "United States",
+                                                 "activeUsers":  297
+                                             },
+                                             {
+                                                 "country":  "China",
+                                                 "activeUsers":  254
+                                             },
+                                             {
+                                                 "country":  "Brazil",
+                                                 "activeUsers":  155
+                                             },
+                                             {
+                                                 "country":  "Hong Kong",
+                                                 "activeUsers":  149
+                                             },
+                                             {
+                                                 "country":  "Japan",
+                                                 "activeUsers":  103
+                                             },
+                                             {
+                                                 "country":  "Vietnam",
+                                                 "activeUsers":  84
+                                             }
+                                         ],
+                           "current":  {
+                                           "sessions":  12639,
+                                           "newUsers":  9675,
+                                           "bounceRate":  0.50565709312445606,
+                                           "activeUsers":  10146,
+                                           "eventCount":  108449,
+                                           "avgSessionDuration":  123.75859233649814,
+                                           "pageViews":  31589
+                                       },
+                           "channels":  [
+                                            {
+                                                "channel":  "Direct",
+                                                "sessions":  4598
+                                            },
+                                            {
+                                                "channel":  "Organic Search",
+                                                "sessions":  3882
+                                            },
+                                            {
+                                                "channel":  "Paid Social",
+                                                "sessions":  2617
+                                            },
+                                            {
+                                                "channel":  "Referral",
+                                                "sessions":  1060
+                                            },
+                                            {
+                                                "channel":  "Organic Social",
+                                                "sessions":  241
+                                            },
+                                            {
+                                                "channel":  "AI Assistant",
+                                                "sessions":  85
+                                            },
+                                            {
+                                                "channel":  "Paid Search",
+                                                "sessions":  53
+                                            },
+                                            {
+                                                "channel":  "Unassigned",
+                                                "sessions":  16
+                                            },
+                                            {
+                                                "channel":  "Organic Video",
+                                                "sessions":  5
+                                            },
+                                            {
+                                                "channel":  "Paid Other",
+                                                "sessions":  2
+                                            }
+                                        ]
+                       },
+                       {
+                           "devices":  [
+                                           {
+                                               "sessions":  9008,
+                                               "device":  "mobile"
+                                           },
+                                           {
+                                               "sessions":  2084,
+                                               "device":  "desktop"
+                                           },
+                                           {
+                                               "sessions":  70,
+                                               "device":  "tablet"
+                                           }
+                                       ],
+                           "id":  "534097409",
+                           "previous":  {
+                                            "sessions":  6229,
+                                            "newUsers":  5351,
+                                            "bounceRate":  0.71391876705731261,
+                                            "activeUsers":  5481,
+                                            "eventCount":  37120,
+                                            "avgSessionDuration":  63.621306609086531,
+                                            "pageViews":  9759
+                                        },
+                           "label":  "JP",
+                           "daily":  [
+                                         {
+                                             "date":  "20260719",
+                                             "sessions":  246,
+                                             "activeUsers":  238
+                                         },
+                                         {
+                                             "date":  "20260720",
+                                             "sessions":  345,
+                                             "activeUsers":  339
+                                         },
+                                         {
+                                             "date":  "20260721",
+                                             "sessions":  292,
+                                             "activeUsers":  284
+                                         },
+                                         {
+                                             "date":  "20260722",
+                                             "sessions":  274,
+                                             "activeUsers":  262
+                                         },
+                                         {
+                                             "date":  "20260723",
+                                             "sessions":  197,
+                                             "activeUsers":  191
+                                         },
+                                         {
+                                             "date":  "20260724",
+                                             "sessions":  171,
+                                             "activeUsers":  165
+                                         },
+                                         {
+                                             "date":  "20260725",
+                                             "sessions":  392,
+                                             "activeUsers":  385
+                                         },
+                                         {
+                                             "date":  "20260726",
+                                             "sessions":  389,
+                                             "activeUsers":  375
+                                         },
+                                         {
+                                             "date":  "20260727",
+                                             "sessions":  380,
+                                             "activeUsers":  370
+                                         },
+                                         {
+                                             "date":  "20260728",
+                                             "sessions":  329,
+                                             "activeUsers":  318
+                                         },
+                                         {
+                                             "date":  "20260729",
+                                             "sessions":  303,
+                                             "activeUsers":  290
+                                         },
+                                         {
+                                             "date":  "20260730",
+                                             "sessions":  372,
+                                             "activeUsers":  357
+                                         },
+                                         {
+                                             "date":  "20260731",
+                                             "sessions":  331,
+                                             "activeUsers":  325
+                                         },
+                                         {
+                                             "date":  "20260801",
+                                             "sessions":  431,
+                                             "activeUsers":  425
+                                         },
+                                         {
+                                             "date":  "20260802",
+                                             "sessions":  497,
+                                             "activeUsers":  470
+                                         },
+                                         {
+                                             "date":  "20260803",
+                                             "sessions":  389,
+                                             "activeUsers":  372
+                                         },
+                                         {
+                                             "date":  "20260804",
+                                             "sessions":  382,
+                                             "activeUsers":  366
+                                         },
+                                         {
+                                             "date":  "20260805",
+                                             "sessions":  674,
+                                             "activeUsers":  658
+                                         },
+                                         {
+                                             "date":  "20260806",
+                                             "sessions":  712,
+                                             "activeUsers":  698
+                                         },
+                                         {
+                                             "date":  "20260807",
+                                             "sessions":  259,
+                                             "activeUsers":  243
+                                         },
+                                         {
+                                             "date":  "20260808",
+                                             "sessions":  449,
+                                             "activeUsers":  438
+                                         },
+                                         {
+                                             "date":  "20260809",
+                                             "sessions":  470,
+                                             "activeUsers":  449
+                                         },
+                                         {
+                                             "date":  "20260810",
+                                             "sessions":  310,
+                                             "activeUsers":  298
+                                         },
+                                         {
+                                             "date":  "20260811",
+                                             "sessions":  307,
+                                             "activeUsers":  295
+                                         },
+                                         {
+                                             "date":  "20260812",
+                                             "sessions":  429,
+                                             "activeUsers":  415
+                                         },
+                                         {
+                                             "date":  "20260813",
+                                             "sessions":  421,
+                                             "activeUsers":  402
+                                         },
+                                         {
+                                             "date":  "20260814",
+                                             "sessions":  352,
+                                             "activeUsers":  333
+                                         },
+                                         {
+                                             "date":  "20260815",
+                                             "sessions":  469,
+                                             "activeUsers":  448
+                                         },
+                                         {
+                                             "date":  "20260816",
+                                             "sessions":  335,
+                                             "activeUsers":  330
+                                         },
+                                         {
+                                             "date":  "20260817",
+                                             "sessions":  356,
+                                             "activeUsers":  333
+                                         }
+                                     ],
+                           "name":  "Beauty Blossom JP",
+                           "countries":  [
+                                             {
+                                                 "country":  "Japan",
+                                                 "activeUsers":  7973
+                                             },
+                                             {
+                                                 "country":  "Singapore",
+                                                 "activeUsers":  981
+                                             },
+                                             {
+                                                 "country":  "United States",
+                                                 "activeUsers":  305
+                                             },
+                                             {
+                                                 "country":  "South Korea",
+                                                 "activeUsers":  230
+                                             },
+                                             {
+                                                 "country":  "Brazil",
+                                                 "activeUsers":  122
+                                             },
+                                             {
+                                                 "country":  "Hong Kong",
+                                                 "activeUsers":  109
+                                             },
+                                             {
+                                                 "country":  "Indonesia",
+                                                 "activeUsers":  62
+                                             },
+                                             {
+                                                 "country":  "India",
+                                                 "activeUsers":  61
+                                             }
+                                         ],
+                           "current":  {
+                                           "sessions":  11182,
+                                           "newUsers":  10060,
+                                           "bounceRate":  0.72303702378823109,
+                                           "activeUsers":  10211,
+                                           "eventCount":  59037,
+                                           "avgSessionDuration":  47.346250807190124,
+                                           "pageViews":  14621
+                                       },
+                           "channels":  [
+                                            {
+                                                "channel":  "Paid Social",
+                                                "sessions":  5446
+                                            },
+                                            {
+                                                "channel":  "Paid Search",
+                                                "sessions":  2493
+                                            },
+                                            {
+                                                "channel":  "Direct",
+                                                "sessions":  2094
+                                            },
+                                            {
+                                                "channel":  "Organic Search",
+                                                "sessions":  648
+                                            },
+                                            {
+                                                "channel":  "Organic Social",
+                                                "sessions":  383
+                                            },
+                                            {
+                                                "channel":  "Referral",
+                                                "sessions":  63
+                                            },
+                                            {
+                                                "channel":  "Unassigned",
+                                                "sessions":  15
+                                            },
+                                            {
+                                                "channel":  "AI Assistant",
+                                                "sessions":  9
+                                            },
+                                            {
+                                                "channel":  "Cross-network",
+                                                "sessions":  7
+                                            },
+                                            {
+                                                "channel":  "Paid Other",
+                                                "sessions":  1
+                                            }
+                                        ]
+                       },
+                       {
+                           "devices":  [
+                                           {
+                                               "sessions":  4534,
+                                               "device":  "desktop"
+                                           },
+                                           {
+                                               "sessions":  620,
+                                               "device":  "mobile"
+                                           },
+                                           {
+                                               "sessions":  8,
+                                               "device":  "tablet"
+                                           }
+                                       ],
+                           "id":  "534099303",
+                           "previous":  {
+                                            "sessions":  5668,
+                                            "newUsers":  4928,
+                                            "bounceRate":  0.754940014114326,
+                                            "activeUsers":  5250,
+                                            "eventCount":  31404,
+                                            "avgSessionDuration":  51.543126284932953,
+                                            "pageViews":  7682
+                                        },
+                           "label":  "CN",
+                           "daily":  [
+                                         {
+                                             "date":  "20260719",
+                                             "sessions":  179,
+                                             "activeUsers":  171
+                                         },
+                                         {
+                                             "date":  "20260720",
+                                             "sessions":  184,
+                                             "activeUsers":  175
+                                         },
+                                         {
+                                             "date":  "20260721",
+                                             "sessions":  170,
+                                             "activeUsers":  157
+                                         },
+                                         {
+                                             "date":  "20260722",
+                                             "sessions":  158,
+                                             "activeUsers":  146
+                                         },
+                                         {
+                                             "date":  "20260723",
+                                             "sessions":  174,
+                                             "activeUsers":  165
+                                         },
+                                         {
+                                             "date":  "20260724",
+                                             "sessions":  145,
+                                             "activeUsers":  141
+                                         },
+                                         {
+                                             "date":  "20260725",
+                                             "sessions":  168,
+                                             "activeUsers":  161
+                                         },
+                                         {
+                                             "date":  "20260726",
+                                             "sessions":  154,
+                                             "activeUsers":  144
+                                         },
+                                         {
+                                             "date":  "20260727",
+                                             "sessions":  161,
+                                             "activeUsers":  144
+                                         },
+                                         {
+                                             "date":  "20260728",
+                                             "sessions":  180,
+                                             "activeUsers":  168
+                                         },
+                                         {
+                                             "date":  "20260729",
+                                             "sessions":  152,
+                                             "activeUsers":  143
+                                         },
+                                         {
+                                             "date":  "20260730",
+                                             "sessions":  166,
+                                             "activeUsers":  154
+                                         },
+                                         {
+                                             "date":  "20260731",
+                                             "sessions":  125,
+                                             "activeUsers":  119
+                                         },
+                                         {
+                                             "date":  "20260801",
+                                             "sessions":  129,
+                                             "activeUsers":  125
+                                         },
+                                         {
+                                             "date":  "20260802",
+                                             "sessions":  157,
+                                             "activeUsers":  151
+                                         },
+                                         {
+                                             "date":  "20260803",
+                                             "sessions":  175,
+                                             "activeUsers":  159
+                                         },
+                                         {
+                                             "date":  "20260804",
+                                             "sessions":  160,
+                                             "activeUsers":  145
+                                         },
+                                         {
+                                             "date":  "20260805",
+                                             "sessions":  169,
+                                             "activeUsers":  157
+                                         },
+                                         {
+                                             "date":  "20260806",
+                                             "sessions":  184,
+                                             "activeUsers":  171
+                                         },
+                                         {
+                                             "date":  "20260807",
+                                             "sessions":  190,
+                                             "activeUsers":  168
+                                         },
+                                         {
+                                             "date":  "20260808",
+                                             "sessions":  225,
+                                             "activeUsers":  216
+                                         },
+                                         {
+                                             "date":  "20260809",
+                                             "sessions":  193,
+                                             "activeUsers":  184
+                                         },
+                                         {
+                                             "date":  "20260810",
+                                             "sessions":  211,
+                                             "activeUsers":  200
+                                         },
+                                         {
+                                             "date":  "20260811",
+                                             "sessions":  171,
+                                             "activeUsers":  169
+                                         },
+                                         {
+                                             "date":  "20260812",
+                                             "sessions":  199,
+                                             "activeUsers":  191
+                                         },
+                                         {
+                                             "date":  "20260813",
+                                             "sessions":  167,
+                                             "activeUsers":  159
+                                         },
+                                         {
+                                             "date":  "20260814",
+                                             "sessions":  178,
+                                             "activeUsers":  170
+                                         },
+                                         {
+                                             "date":  "20260815",
+                                             "sessions":  157,
+                                             "activeUsers":  154
+                                         },
+                                         {
+                                             "date":  "20260816",
+                                             "sessions":  164,
+                                             "activeUsers":  161
+                                         },
+                                         {
+                                             "date":  "20260817",
+                                             "sessions":  158,
+                                             "activeUsers":  156
+                                         }
+                                     ],
+                           "name":  "Beauty Blossom CN",
+                           "countries":  [
+                                             {
+                                                 "country":  "China",
+                                                 "activeUsers":  4153
+                                             },
+                                             {
+                                                 "country":  "South Korea",
+                                                 "activeUsers":  129
+                                             },
+                                             {
+                                                 "country":  "Hong Kong",
+                                                 "activeUsers":  128
+                                             },
+                                             {
+                                                 "country":  "Taiwan",
+                                                 "activeUsers":  107
+                                             },
+                                             {
+                                                 "country":  "United States",
+                                                 "activeUsers":  62
+                                             },
+                                             {
+                                                 "country":  "Japan",
+                                                 "activeUsers":  28
+                                             },
+                                             {
+                                                 "country":  "Singapore",
+                                                 "activeUsers":  14
+                                             },
+                                             {
+                                                 "country":  "India",
+                                                 "activeUsers":  12
+                                             }
+                                         ],
+                           "current":  {
+                                           "sessions":  5208,
+                                           "newUsers":  4324,
+                                           "bounceRate":  0.66321044546850993,
+                                           "activeUsers":  4673,
+                                           "eventCount":  29629,
+                                           "avgSessionDuration":  62.830417070276496,
+                                           "pageViews":  7280
+                                       },
+                           "channels":  [
+                                            {
+                                                "channel":  "Direct",
+                                                "sessions":  4329
+                                            },
+                                            {
+                                                "channel":  "Unassigned",
+                                                "sessions":  376
+                                            },
+                                            {
+                                                "channel":  "Organic Search",
+                                                "sessions":  322
+                                            },
+                                            {
+                                                "channel":  "Referral",
+                                                "sessions":  109
+                                            },
+                                            {
+                                                "channel":  "Organic Social",
+                                                "sessions":  36
+                                            },
+                                            {
+                                                "channel":  "AI Assistant",
+                                                "sessions":  4
+                                            }
+                                        ]
+                       },
+                       {
+                           "devices":  [
+                                           {
+                                               "sessions":  38064,
+                                               "device":  "mobile"
+                                           },
+                                           {
+                                               "sessions":  1880,
+                                               "device":  "tablet"
+                                           },
+                                           {
+                                               "sessions":  1872,
+                                               "device":  "desktop"
+                                           }
+                                       ],
+                           "id":  "534100156",
+                           "previous":  {
+                                            "sessions":  38005,
+                                            "newUsers":  27902,
+                                            "bounceRate":  0.66993816603078538,
+                                            "activeUsers":  30388,
+                                            "eventCount":  167785,
+                                            "avgSessionDuration":  54.54396686251809,
+                                            "pageViews":  46888
+                                        },
+                           "label":  "EN",
+                           "daily":  [
+                                         {
+                                             "date":  "20260719",
+                                             "sessions":  1681,
+                                             "activeUsers":  1616
+                                         },
+                                         {
+                                             "date":  "20260720",
+                                             "sessions":  1706,
+                                             "activeUsers":  1588
+                                         },
+                                         {
+                                             "date":  "20260721",
+                                             "sessions":  1755,
+                                             "activeUsers":  1614
+                                         },
+                                         {
+                                             "date":  "20260722",
+                                             "sessions":  1579,
+                                             "activeUsers":  1446
+                                         },
+                                         {
+                                             "date":  "20260723",
+                                             "sessions":  1096,
+                                             "activeUsers":  1016
+                                         },
+                                         {
+                                             "date":  "20260724",
+                                             "sessions":  232,
+                                             "activeUsers":  215
+                                         },
+                                         {
+                                             "date":  "20260725",
+                                             "sessions":  1892,
+                                             "activeUsers":  1810
+                                         },
+                                         {
+                                             "date":  "20260726",
+                                             "sessions":  2075,
+                                             "activeUsers":  1883
+                                         },
+                                         {
+                                             "date":  "20260727",
+                                             "sessions":  1813,
+                                             "activeUsers":  1673
+                                         },
+                                         {
+                                             "date":  "20260728",
+                                             "sessions":  1717,
+                                             "activeUsers":  1556
+                                         },
+                                         {
+                                             "date":  "20260729",
+                                             "sessions":  1688,
+                                             "activeUsers":  1518
+                                         },
+                                         {
+                                             "date":  "20260730",
+                                             "sessions":  1425,
+                                             "activeUsers":  1298
+                                         },
+                                         {
+                                             "date":  "20260731",
+                                             "sessions":  1274,
+                                             "activeUsers":  1194
+                                         },
+                                         {
+                                             "date":  "20260801",
+                                             "sessions":  872,
+                                             "activeUsers":  833
+                                         },
+                                         {
+                                             "date":  "20260802",
+                                             "sessions":  1500,
+                                             "activeUsers":  1421
+                                         },
+                                         {
+                                             "date":  "20260803",
+                                             "sessions":  1334,
+                                             "activeUsers":  1251
+                                         },
+                                         {
+                                             "date":  "20260804",
+                                             "sessions":  1490,
+                                             "activeUsers":  1407
+                                         },
+                                         {
+                                             "date":  "20260805",
+                                             "sessions":  1336,
+                                             "activeUsers":  1285
+                                         },
+                                         {
+                                             "date":  "20260806",
+                                             "sessions":  452,
+                                             "activeUsers":  430
+                                         },
+                                         {
+                                             "date":  "20260807",
+                                             "sessions":  1058,
+                                             "activeUsers":  1018
+                                         },
+                                         {
+                                             "date":  "20260808",
+                                             "sessions":  1478,
+                                             "activeUsers":  1371
+                                         },
+                                         {
+                                             "date":  "20260809",
+                                             "sessions":  1773,
+                                             "activeUsers":  1669
+                                         },
+                                         {
+                                             "date":  "20260810",
+                                             "sessions":  1826,
+                                             "activeUsers":  1747
+                                         },
+                                         {
+                                             "date":  "20260811",
+                                             "sessions":  1354,
+                                             "activeUsers":  1282
+                                         },
+                                         {
+                                             "date":  "20260812",
+                                             "sessions":  1211,
+                                             "activeUsers":  1152
+                                         },
+                                         {
+                                             "date":  "20260813",
+                                             "sessions":  1057,
+                                             "activeUsers":  998
+                                         },
+                                         {
+                                             "date":  "20260814",
+                                             "sessions":  1228,
+                                             "activeUsers":  1139
+                                         },
+                                         {
+                                             "date":  "20260815",
+                                             "sessions":  1383,
+                                             "activeUsers":  1312
+                                         },
+                                         {
+                                             "date":  "20260816",
+                                             "sessions":  1461,
+                                             "activeUsers":  1374
+                                         },
+                                         {
+                                             "date":  "20260817",
+                                             "sessions":  1284,
+                                             "activeUsers":  1223
+                                         }
+                                     ],
+                           "name":  "Beauty Blossom EN",
+                           "countries":  [
+                                             {
+                                                 "country":  "Philippines",
+                                                 "activeUsers":  22204
+                                             },
+                                             {
+                                                 "country":  "Indonesia",
+                                                 "activeUsers":  3144
+                                             },
+                                             {
+                                                 "country":  "United Arab Emirates",
+                                                 "activeUsers":  1839
+                                             },
+                                             {
+                                                 "country":  "India",
+                                                 "activeUsers":  1519
+                                             },
+                                             {
+                                                 "country":  "Qatar",
+                                                 "activeUsers":  1283
+                                             },
+                                             {
+                                                 "country":  "United States",
+                                                 "activeUsers":  735
+                                             },
+                                             {
+                                                 "country":  "Singapore",
+                                                 "activeUsers":  528
+                                             },
+                                             {
+                                                 "country":  "South Korea",
+                                                 "activeUsers":  398
+                                             }
+                                         ],
+                           "current":  {
+                                           "sessions":  42605,
+                                           "newUsers":  32421,
+                                           "bounceRate":  0.58920314517075456,
+                                           "activeUsers":  34494,
+                                           "eventCount":  202190,
+                                           "avgSessionDuration":  63.340090674146218,
+                                           "pageViews":  57778
+                                       },
+                           "channels":  [
+                                            {
+                                                "channel":  "Paid Social",
+                                                "sessions":  34917
+                                            },
+                                            {
+                                                "channel":  "Paid Search",
+                                                "sessions":  3154
+                                            },
+                                            {
+                                                "channel":  "Organic Search",
+                                                "sessions":  1640
+                                            },
+                                            {
+                                                "channel":  "Direct",
+                                                "sessions":  1300
+                                            },
+                                            {
+                                                "channel":  "Referral",
+                                                "sessions":  365
+                                            },
+                                            {
+                                                "channel":  "Organic Social",
+                                                "sessions":  316
+                                            },
+                                            {
+                                                "channel":  "Paid Other",
+                                                "sessions":  216
+                                            },
+                                            {
+                                                "channel":  "AI Assistant",
+                                                "sessions":  51
+                                            },
+                                            {
+                                                "channel":  "Unassigned",
+                                                "sessions":  17
+                                            },
+                                            {
+                                                "channel":  "Cross-network",
+                                                "sessions":  15
+                                            }
+                                        ]
+                       },
+                       {
+                           "devices":  [
+                                           {
+                                               "sessions":  22464,
+                                               "device":  "mobile"
+                                           },
+                                           {
+                                               "sessions":  935,
+                                               "device":  "desktop"
+                                           },
+                                           {
+                                               "sessions":  516,
+                                               "device":  "tablet"
+                                           }
+                                       ],
+                           "id":  "534131940",
+                           "previous":  {
+                                            "sessions":  19609,
+                                            "newUsers":  14793,
+                                            "bounceRate":  0.75485746340965887,
+                                            "activeUsers":  15947,
+                                            "eventCount":  112220,
+                                            "avgSessionDuration":  85.16231499433934,
+                                            "pageViews":  30350
+                                        },
+                           "label":  "TW",
+                           "daily":  [
+                                         {
+                                             "date":  "20260719",
+                                             "sessions":  905,
+                                             "activeUsers":  860
+                                         },
+                                         {
+                                             "date":  "20260720",
+                                             "sessions":  828,
+                                             "activeUsers":  773
+                                         },
+                                         {
+                                             "date":  "20260721",
+                                             "sessions":  773,
+                                             "activeUsers":  703
+                                         },
+                                         {
+                                             "date":  "20260722",
+                                             "sessions":  696,
+                                             "activeUsers":  640
+                                         },
+                                         {
+                                             "date":  "20260723",
+                                             "sessions":  610,
+                                             "activeUsers":  571
+                                         },
+                                         {
+                                             "date":  "20260724",
+                                             "sessions":  120,
+                                             "activeUsers":  96
+                                         },
+                                         {
+                                             "date":  "20260725",
+                                             "sessions":  865,
+                                             "activeUsers":  828
+                                         },
+                                         {
+                                             "date":  "20260726",
+                                             "sessions":  983,
+                                             "activeUsers":  933
+                                         },
+                                         {
+                                             "date":  "20260727",
+                                             "sessions":  818,
+                                             "activeUsers":  773
+                                         },
+                                         {
+                                             "date":  "20260728",
+                                             "sessions":  789,
+                                             "activeUsers":  745
+                                         },
+                                         {
+                                             "date":  "20260729",
+                                             "sessions":  726,
+                                             "activeUsers":  693
+                                         },
+                                         {
+                                             "date":  "20260730",
+                                             "sessions":  637,
+                                             "activeUsers":  603
+                                         },
+                                         {
+                                             "date":  "20260731",
+                                             "sessions":  613,
+                                             "activeUsers":  572
+                                         },
+                                         {
+                                             "date":  "20260801",
+                                             "sessions":  804,
+                                             "activeUsers":  760
+                                         },
+                                         {
+                                             "date":  "20260802",
+                                             "sessions":  1145,
+                                             "activeUsers":  1092
+                                         },
+                                         {
+                                             "date":  "20260803",
+                                             "sessions":  972,
+                                             "activeUsers":  900
+                                         },
+                                         {
+                                             "date":  "20260804",
+                                             "sessions":  835,
+                                             "activeUsers":  790
+                                         },
+                                         {
+                                             "date":  "20260805",
+                                             "sessions":  705,
+                                             "activeUsers":  660
+                                         },
+                                         {
+                                             "date":  "20260806",
+                                             "sessions":  138,
+                                             "activeUsers":  125
+                                         },
+                                         {
+                                             "date":  "20260807",
+                                             "sessions":  634,
+                                             "activeUsers":  607
+                                         },
+                                         {
+                                             "date":  "20260808",
+                                             "sessions":  960,
+                                             "activeUsers":  921
+                                         },
+                                         {
+                                             "date":  "20260809",
+                                             "sessions":  1109,
+                                             "activeUsers":  1070
+                                         },
+                                         {
+                                             "date":  "20260810",
+                                             "sessions":  954,
+                                             "activeUsers":  929
+                                         },
+                                         {
+                                             "date":  "20260811",
+                                             "sessions":  752,
+                                             "activeUsers":  720
+                                         },
+                                         {
+                                             "date":  "20260812",
+                                             "sessions":  683,
+                                             "activeUsers":  653
+                                         },
+                                         {
+                                             "date":  "20260813",
+                                             "sessions":  708,
+                                             "activeUsers":  653
+                                         },
+                                         {
+                                             "date":  "20260814",
+                                             "sessions":  829,
+                                             "activeUsers":  790
+                                         },
+                                         {
+                                             "date":  "20260815",
+                                             "sessions":  1032,
+                                             "activeUsers":  985
+                                         },
+                                         {
+                                             "date":  "20260816",
+                                             "sessions":  992,
+                                             "activeUsers":  948
+                                         },
+                                         {
+                                             "date":  "20260817",
+                                             "sessions":  766,
+                                             "activeUsers":  731
+                                         }
+                                     ],
+                           "name":  "Beauty Blossom TW",
+                           "countries":  [
+                                             {
+                                                 "country":  "Taiwan",
+                                                 "activeUsers":  19262
+                                             },
+                                             {
+                                                 "country":  "United States",
+                                                 "activeUsers":  220
+                                             },
+                                             {
+                                                 "country":  "Hong Kong",
+                                                 "activeUsers":  211
+                                             },
+                                             {
+                                                 "country":  "South Korea",
+                                                 "activeUsers":  182
+                                             },
+                                             {
+                                                 "country":  "Japan",
+                                                 "activeUsers":  86
+                                             },
+                                             {
+                                                 "country":  "China",
+                                                 "activeUsers":  73
+                                             },
+                                             {
+                                                 "country":  "Singapore",
+                                                 "activeUsers":  45
+                                             },
+                                             {
+                                                 "country":  "Ireland",
+                                                 "activeUsers":  43
+                                             }
+                                         ],
+                           "current":  {
+                                           "sessions":  23951,
+                                           "newUsers":  19408,
+                                           "bounceRate":  0.78731576969646366,
+                                           "activeUsers":  20227,
+                                           "eventCount":  124681,
+                                           "avgSessionDuration":  61.088670292305125,
+                                           "pageViews":  32223
+                                       },
+                           "channels":  [
+                                            {
+                                                "channel":  "Paid Social",
+                                                "sessions":  20620
+                                            },
+                                            {
+                                                "channel":  "Direct",
+                                                "sessions":  1482
+                                            },
+                                            {
+                                                "channel":  "Organic Search",
+                                                "sessions":  688
+                                            },
+                                            {
+                                                "channel":  "Paid Search",
+                                                "sessions":  404
+                                            },
+                                            {
+                                                "channel":  "Organic Social",
+                                                "sessions":  342
+                                            },
+                                            {
+                                                "channel":  "Referral",
+                                                "sessions":  116
+                                            },
+                                            {
+                                                "channel":  "Paid Other",
+                                                "sessions":  103
+                                            },
+                                            {
+                                                "channel":  "Unassigned",
+                                                "sessions":  13
+                                            },
+                                            {
+                                                "channel":  "Cross-network",
+                                                "sessions":  3
+                                            }
+                                        ]
+                       },
+                       {
+                           "devices":  [
+                                           {
+                                               "sessions":  233,
+                                               "device":  "desktop"
+                                           },
+                                           {
+                                               "sessions":  121,
+                                               "device":  "mobile"
+                                           },
+                                           {
+                                               "sessions":  1,
+                                               "device":  "tablet"
+                                           }
+                                       ],
+                           "id":  "537583229",
+                           "previous":  {
+                                            "sessions":  735,
+                                            "newUsers":  481,
+                                            "bounceRate":  0.62312925170068023,
+                                            "activeUsers":  485,
+                                            "eventCount":  4830,
+                                            "avgSessionDuration":  185.7339992,
+                                            "pageViews":  1640
+                                        },
+                           "label":  "TH",
+                           "daily":  [
+                                         {
+                                             "date":  "20260719",
+                                             "sessions":  5,
+                                             "activeUsers":  5
+                                         },
+                                         {
+                                             "date":  "20260720",
+                                             "sessions":  6,
+                                             "activeUsers":  5
+                                         },
+                                         {
+                                             "date":  "20260721",
+                                             "sessions":  9,
+                                             "activeUsers":  8
+                                         },
+                                         {
+                                             "date":  "20260722",
+                                             "sessions":  9,
+                                             "activeUsers":  7
+                                         },
+                                         {
+                                             "date":  "20260723",
+                                             "sessions":  22,
+                                             "activeUsers":  19
+                                         },
+                                         {
+                                             "date":  "20260724",
+                                             "sessions":  4,
+                                             "activeUsers":  3
+                                         },
+                                         {
+                                             "date":  "20260725",
+                                             "sessions":  19,
+                                             "activeUsers":  18
+                                         },
+                                         {
+                                             "date":  "20260726",
+                                             "sessions":  14,
+                                             "activeUsers":  13
+                                         },
+                                         {
+                                             "date":  "20260727",
+                                             "sessions":  29,
+                                             "activeUsers":  21
+                                         },
+                                         {
+                                             "date":  "20260728",
+                                             "sessions":  6,
+                                             "activeUsers":  6
+                                         },
+                                         {
+                                             "date":  "20260729",
+                                             "sessions":  33,
+                                             "activeUsers":  23
+                                         },
+                                         {
+                                             "date":  "20260730",
+                                             "sessions":  6,
+                                             "activeUsers":  3
+                                         },
+                                         {
+                                             "date":  "20260731",
+                                             "sessions":  8,
+                                             "activeUsers":  6
+                                         },
+                                         {
+                                             "date":  "20260801",
+                                             "sessions":  2,
+                                             "activeUsers":  2
+                                         },
+                                         {
+                                             "date":  "20260802",
+                                             "sessions":  5,
+                                             "activeUsers":  5
+                                         },
+                                         {
+                                             "date":  "20260803",
+                                             "sessions":  13,
+                                             "activeUsers":  10
+                                         },
+                                         {
+                                             "date":  "20260804",
+                                             "sessions":  14,
+                                             "activeUsers":  9
+                                         },
+                                         {
+                                             "date":  "20260805",
+                                             "sessions":  9,
+                                             "activeUsers":  6
+                                         },
+                                         {
+                                             "date":  "20260806",
+                                             "sessions":  9,
+                                             "activeUsers":  4
+                                         },
+                                         {
+                                             "date":  "20260807",
+                                             "sessions":  14,
+                                             "activeUsers":  11
+                                         },
+                                         {
+                                             "date":  "20260808",
+                                             "sessions":  8,
+                                             "activeUsers":  7
+                                         },
+                                         {
+                                             "date":  "20260809",
+                                             "sessions":  15,
+                                             "activeUsers":  10
+                                         },
+                                         {
+                                             "date":  "20260810",
+                                             "sessions":  18,
+                                             "activeUsers":  11
+                                         },
+                                         {
+                                             "date":  "20260811",
+                                             "sessions":  14,
+                                             "activeUsers":  6
+                                         },
+                                         {
+                                             "date":  "20260812",
+                                             "sessions":  8,
+                                             "activeUsers":  7
+                                         },
+                                         {
+                                             "date":  "20260813",
+                                             "sessions":  8,
+                                             "activeUsers":  5
+                                         },
+                                         {
+                                             "date":  "20260814",
+                                             "sessions":  11,
+                                             "activeUsers":  5
+                                         },
+                                         {
+                                             "date":  "20260815",
+                                             "sessions":  16,
+                                             "activeUsers":  14
+                                         },
+                                         {
+                                             "date":  "20260816",
+                                             "sessions":  6,
+                                             "activeUsers":  5
+                                         },
+                                         {
+                                             "date":  "20260817",
+                                             "sessions":  15,
+                                             "activeUsers":  14
+                                         }
+                                     ],
+                           "name":  "Beauty Blossom Thailand",
+                           "countries":  [
+                                             {
+                                                 "country":  "South Korea",
+                                                 "activeUsers":  63
+                                             },
+                                             {
+                                                 "country":  "Thailand",
+                                                 "activeUsers":  48
+                                             },
+                                             {
+                                                 "country":  "(not set)",
+                                                 "activeUsers":  31
+                                             },
+                                             {
+                                                 "country":  "United States",
+                                                 "activeUsers":  27
+                                             },
+                                             {
+                                                 "country":  "China",
+                                                 "activeUsers":  8
+                                             },
+                                             {
+                                                 "country":  "Germany",
+                                                 "activeUsers":  8
+                                             },
+                                             {
+                                                 "country":  "United Kingdom",
+                                                 "activeUsers":  4
+                                             },
+                                             {
+                                                 "country":  "India",
+                                                 "activeUsers":  3
+                                             }
+                                         ],
+                           "current":  {
+                                           "sessions":  355,
+                                           "newUsers":  199,
+                                           "bounceRate":  0.49295774647887325,
+                                           "activeUsers":  210,
+                                           "eventCount":  2703,
+                                           "avgSessionDuration":  248.04213409577468,
+                                           "pageViews":  913
+                                       },
+                           "channels":  [
+                                            {
+                                                "channel":  "Referral",
+                                                "sessions":  154
+                                            },
+                                            {
+                                                "channel":  "Direct",
+                                                "sessions":  120
+                                            },
+                                            {
+                                                "channel":  "Organic Search",
+                                                "sessions":  56
+                                            },
+                                            {
+                                                "channel":  "Paid Search",
+                                                "sessions":  21
+                                            },
+                                            {
+                                                "channel":  "AI Assistant",
+                                                "sessions":  2
+                                            },
+                                            {
+                                                "channel":  "Organic Social",
+                                                "sessions":  2
+                                            }
+                                        ]
+                       }
+                   ],
+    "generated_at_utc":  "2026-08-18T09:00:21.3885676Z",
+    "range":  {
+                  "days":  30,
+                  "end":  "2026-08-17",
+                  "start":  "2026-07-19"
+              }
+}

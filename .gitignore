@@ -1,0 +1,10 @@
+.env.local
+*.local.json
+.secrets/
+.omx/
+graphify-out/
+.playwright-mcp/
+node_modules/
+naver-kr-test.json
+naver-tw.json
+*.png

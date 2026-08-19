@@ -19,11 +19,12 @@ const yt    = read('youtube-latest.json');
 const ig    = read('instagram-public.json');
 const naver = read('naver-latest.json');
 const gsc   = read('searchconsole-latest.json');
+const igApi = read('instagram-latest.json');
 
 if (!ga4 || !yt) { console.error('missing ga4 or youtube payload'); process.exit(1); }
 
 const payload = {
-  ga4, yt, ig, naver, gsc,
+  ga4, yt, ig, naver, gsc, igApi,
   meta: {
     builtAt: new Date().toISOString(),
     naver: {
@@ -31,8 +32,8 @@ const payload = {
       reason: 'Naver publishes no performance API; figures are read from the logged-in Search Advisor console.'
     },
     instagram: {
-      status: 'blocked',
-      reason: '계정 5개와 파트너 자산 공유(인사이트 권한)는 설정이 끝났지만, Meta 앱이 신원 확인 대기로 비활성화되어 Graph API 호출이 차단된 상태입니다. 앱이 재활성화되면 추가 설정 없이 바로 수집됩니다.',
+      status: igApi ? (igApi.insights_available ? 'ok' : 'partial') : 'pending',
+      reason: igApi ? igApi.note : 'Meta Graph API 접근이 아직 설정되지 않았습니다.',
       accounts: ['beautyblossom_clinic', 'beautyblossom_jp', 'beautyblossom_tw', 'beautyblossom_th', 'beautyblossom_global']
     },
     threads: {

@@ -321,12 +321,13 @@ function render(){
     g.prev_range.start + ' ~ ' + g.prev_range.end + ' 대비 · 생성 ' + new Date(D.meta.builtAt).toLocaleString('ko-KR');
 
   const gscCount = ((D.gsc && D.gsc.sites) || []).filter(s => s.status === 'OK').length;
+  const igOk = ((D.igApi && D.igApi.accounts) || []).filter(a => a.status === 'OK' && a.ig).length;
   const pills = [
     { s: 'GA4', ok: true, detail: g.properties.length + '개 속성 · API' },
     { s: 'YouTube', ok: true, detail: '1개 채널 · Analytics API' },
     { s: 'Search Console', ok: gscCount > 0, detail: gscCount + '개 속성 · API' },
     { s: '네이버', ok: okSites.length > 0, detail: okSites.length + '/' + ((nv && nv.sites) || []).length + '개 사이트 · UI 수집' },
-    { s: 'Instagram', ok: false, detail: D.meta.instagram.accounts.length + '개 계정 · 앱 비활성으로 차단' }
+    { s: 'Instagram', ok: igOk > 0, detail: igOk + '개 계정 · ' + (D.igApi && D.igApi.insights_available ? '인사이트 포함' : '기본 지표') }
   ];
   document.getElementById('srcPills').innerHTML = pills.map(x =>
     '<span class="pill ' + (x.ok ? 'ok' : 'pend') + '">' + (x.ok ? '●' : '○') + ' ' +
@@ -583,19 +584,87 @@ function render(){
       '<p class="note">네이버는 성과 조회용 공개 API가 없어 로그인된 콘솔 화면에서만 수집됩니다.</p></div>';
   }
 
-  document.getElementById('igBody').innerHTML = '<div class="card" style="margin-top:14px">' +
-    '<p class="sub"><b>Instagram</b> — ' + esc(D.meta.instagram.reason) + '</p>' +
-    '<div style="overflow-x:auto"><table><thead><tr><th>계정</th><th>팔로워</th><th>게시물</th><th>자산 공유</th><th>지표</th></tr></thead><tbody>' +
-    D.meta.instagram.accounts.map(h => {
-      const row = (D.ig || []).filter(r => r.handle === h)[0];
-      return '<tr><td>@' + esc(h) + '</td><td>' + (row && row.followers ? nf(row.followers) : '—') + '</td>' +
-        '<td>' + (row && row.posts ? nf(row.posts) : '—') + '</td>' +
-        '<td class="up">완료</td><td class="dn">앱 비활성</td></tr>';
-    }).join('') +
-    '</tbody></table></div>' +
-    '<p class="note">파트너 자산 공유(인사이트 권한)는 5개 계정 모두 설정 완료. 앱이 재활성화되면 재수집만 하면 됩니다. ' +
-    '팔로워·게시물 수치는 공개 프로필에서 읽은 값입니다.</p>' +
-    '<p class="sub" style="margin-top:16px"><b>Threads</b> — ' + esc(D.meta.threads.reason) + '</p></div>';
+  const iga = ((D.igApi && D.igApi.accounts) || []).filter(a => a.status === 'OK' && a.ig);
+  const igb = document.getElementById('igBody');
+  if (iga.length) {
+    const totF = iga.reduce((s, a) => s + a.ig.followers, 0);
+    const totM = iga.reduce((s, a) => s + a.ig.media_count, 0);
+    const totE = iga.reduce((s, a) => s + ((a.recent && a.recent.engagement) || 0), 0);
+    igb.innerHTML =
+      '<div class="tiles" id="igTiles"></div>' +
+      '<div class="grid g2" style="margin-top:14px">' +
+        '<div class="card"><h3>계정별 팔로워</h3><div id="igFollowers"></div></div>' +
+        '<div class="card"><h3>계정별 게시물 수</h3><div id="igMedia"></div></div>' +
+      '</div>' +
+      '<div class="card" style="margin-top:14px"><h3>계정 현황</h3>' +
+        '<div style="overflow-x:auto"><table id="igTable"></table></div>' +
+        '<p class="note">' + esc(D.igApi.note) + '</p></div>' +
+      '<div class="card" style="margin-top:14px">' +
+        '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px">' +
+          '<h3 style="margin:0">최근 게시물</h3><div id="igTabs" class="legend" style="margin:0"></div></div>' +
+        '<div style="overflow-x:auto"><table id="igMediaTable"></table></div>' +
+        '<p class="note">최근 게시물 25건 기준입니다. 좋아요·댓글은 게시물 단위 공개 수치이며, 도달·노출·저장은 인사이트 권한이 있어야 조회됩니다.</p></div>' +
+      '<div class="card" style="margin-top:14px"><p class="sub"><b>Threads</b> — ' + esc(D.meta.threads.reason) + '</p></div>';
+
+    document.getElementById('igTiles').innerHTML =
+      tile('총 팔로워', nf(totF), iga.length + '개 계정 합계') +
+      tile('총 게시물', nf(totM), '누적') +
+      tile('최근 참여', nf(totE), '최근 게시물 좋아요 + 댓글') +
+      tile('연동 계정', iga.length + '개', 'Facebook 페이지 경유');
+
+    const igSorted = iga.slice().sort((a, b) => b.ig.followers - a.ig.followers);
+    hbars(document.getElementById('igFollowers'), igSorted.map((a, i) => ({
+      label: a.label + ' · @' + a.ig.username.replace('beautyblossom_', ''),
+      value: a.ig.followers, color: cssv(SERIES[i % 6]),
+      extra: { k: '게시물', v: nf(a.ig.media_count) }
+    })), { metric: '팔로워', padL: 150 });
+    hbars(document.getElementById('igMedia'), igSorted.map((a, i) => ({
+      label: a.label + ' · @' + a.ig.username.replace('beautyblossom_', ''),
+      value: a.ig.media_count, color: cssv(SERIES[i % 6]),
+      extra: { k: '팔로워', v: nf(a.ig.followers) }
+    })), { metric: '게시물', padL: 150 });
+
+    document.getElementById('igTable').innerHTML =
+      '<thead><tr><th>계정</th><th>팔로워</th><th>팔로잉</th><th>게시물</th><th>최근 좋아요</th><th>최근 댓글</th><th>게시물당 참여</th></tr></thead><tbody>' +
+      igSorted.map((a, i) => {
+        const r = a.recent || { likes: 0, comments: 0, avgEngagement: 0 };
+        return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i % 6]) + '"></span> ' +
+          esc(a.label) + ' · @' + esc(a.ig.username) + '</td>' +
+          '<td>' + nf(a.ig.followers) + '</td><td>' + nf(a.ig.follows) + '</td><td>' + nf(a.ig.media_count) + '</td>' +
+          '<td>' + nf(r.likes) + '</td><td>' + nf(r.comments) + '</td><td>' + nf1(r.avgEngagement) + '</td></tr>';
+      }).join('') +
+      '<tr style="font-weight:650"><td>합계</td><td>' + nf(totF) + '</td><td>—</td><td>' + nf(totM) + '</td>' +
+      '<td>' + nf(iga.reduce((s, a) => s + ((a.recent && a.recent.likes) || 0), 0)) + '</td>' +
+      '<td>' + nf(iga.reduce((s, a) => s + ((a.recent && a.recent.comments) || 0), 0)) + '</td><td>—</td></tr></tbody>';
+
+    let igActive = igSorted[0].ig.username;
+    function igTabs() {
+      document.getElementById('igTabs').innerHTML = igSorted.map(a =>
+        '<span><button type="button" class="theme" data-u="' + esc(a.ig.username) + '" style="' +
+        (a.ig.username === igActive ? 'border-color:' + cssv('--s1') + ';color:' + cssv('--ink') + ';font-weight:600' : '') +
+        '">' + esc(a.label) + '</button></span>').join('');
+      Array.prototype.forEach.call(document.querySelectorAll('#igTabs button'), b => {
+        b.onclick = () => { igActive = b.getAttribute('data-u'); igTabs(); igMediaDraw(); };
+      });
+    }
+    function igMediaDraw() {
+      const a = igSorted.filter(x => x.ig.username === igActive)[0];
+      const md = (a && a.media) || [];
+      document.getElementById('igMediaTable').innerHTML = md.length
+        ? '<thead><tr><th>게시일</th><th>유형</th><th>내용</th><th>좋아요</th><th>댓글</th></tr></thead><tbody>' +
+          md.slice(0, 15).map(m => '<tr><td>' + esc(String(m.timestamp || '').slice(0, 10)) + '</td>' +
+            '<td>' + esc(m.product || m.type || '') + '</td>' +
+            '<td><a href="' + esc(m.permalink) + '" target="_blank" rel="noopener">' +
+            esc(m.caption || '(설명 없음)') + '</a></td>' +
+            '<td>' + nf(m.likes) + '</td><td>' + nf(m.comments) + '</td></tr>').join('') + '</tbody>'
+        : '<tbody><tr><td>게시물 데이터가 없습니다.</td></tr></tbody>';
+    }
+    igTabs(); igMediaDraw();
+  } else {
+    igb.innerHTML = '<div class="card" style="margin-top:14px">' +
+      '<p class="sub"><b>Instagram</b> — ' + esc(D.meta.instagram.reason) + '</p>' +
+      '<p class="sub" style="margin-top:16px"><b>Threads</b> — ' + esc(D.meta.threads.reason) + '</p></div>';
+  }
 
   document.getElementById('statusTable').innerHTML =
     '<thead><tr><th>소스</th><th>범위</th><th>수집 방식</th><th>상태</th></tr></thead><tbody>' +
@@ -605,7 +674,8 @@ function render(){
     '<td>Search Analytics API</td><td class="' + (gscOk.length ? 'up' : 'dn') + '">' + (gscOk.length ? '완료' : '미수집') + '</td></tr>' +
     '<tr><td>네이버 서치어드바이저</td><td>' + ((nv && nv.sites) || []).length + '개 사이트 · 최근 30일</td><td>로그인 콘솔 UI 수집</td>' +
     '<td class="' + (okSites.length ? 'up' : 'dn') + '">' + (okSites.length ? '완료 (' + okSites.length + ')' : '미수집') + '</td></tr>' +
-    '<tr><td>Instagram</td><td>' + D.meta.instagram.accounts.length + '개 계정</td><td>Meta Graph API</td><td class="dn">앱 비활성 — 차단</td></tr>' +
+    '<tr><td>Instagram</td><td>' + igOk + '개 계정</td><td>Meta Graph API (instagram_basic)</td>' +
+    '<td class="' + (igOk ? 'up' : 'dn') + '">' + (igOk ? '완료 — 인사이트 권한 대기' : '미수집') + '</td></tr>' +
     '<tr><td>Threads</td><td>' + D.meta.threads.accounts.length + '개 계정</td><td>Threads API (미추가)</td><td class="dn">다음 기간</td></tr></tbody>';
 }
 render();

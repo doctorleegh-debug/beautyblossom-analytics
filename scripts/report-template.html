@@ -327,7 +327,7 @@ function render(){
     { s: 'YouTube', ok: true, detail: '1개 채널 · Analytics API' },
     { s: 'Search Console', ok: gscCount > 0, detail: gscCount + '개 속성 · API' },
     { s: '네이버', ok: okSites.length > 0, detail: okSites.length + '/' + ((nv && nv.sites) || []).length + '개 사이트 · UI 수집' },
-    { s: 'Instagram', ok: igOk > 0, detail: igOk + '개 계정 · ' + (D.igApi && D.igApi.insights_available ? '인사이트 포함' : '기본 지표') }
+    { s: 'Instagram', ok: igOk > 0, detail: igOk + '개 계정 · ' + (D.igApi && D.igApi.insights_available ? '조회수·도달 포함' : '기본 지표') }
   ];
   document.getElementById('srcPills').innerHTML = pills.map(x =>
     '<span class="pill ' + (x.ok ? 'ok' : 'pend') + '">' + (x.ok ? '●' : '○') + ' ' +
@@ -377,18 +377,26 @@ function render(){
   }), chanKeys, chanColors);
 
   document.getElementById('ga4Table').innerHTML =
-    '<thead><tr><th>속성</th><th>활성 사용자</th><th>직전 대비</th><th>세션</th><th>신규</th><th>페이지뷰</th><th>이벤트</th><th>이탈률</th><th>평균 세션(초)</th></tr></thead><tbody>' +
+    '<thead><tr><th>속성</th><th>활성 사용자</th><th>세션</th><th>신규</th><th>페이지뷰</th><th>이벤트</th><th>이탈률</th><th>평균 세션(초)</th></tr></thead><tbody>' +
     g.properties.map((p, i) => {
-      const d = pct(p.current.activeUsers, p.previous.activeUsers);
+      const wd = (v, pv, f) => { const fn = f || nf; const d = pct(v, pv);
+        if (d == null) return '<td>' + fn(v) + '</td>';
+        return '<td>' + fn(v) + '<span class="' + (d >= 0 ? 'up' : 'dn') +
+          '" style="font-size:11px;margin-left:6px;white-space:nowrap">' + (d >= 0 ? '▲' : '▼') + nf1(Math.abs(d)) + '%</span></td>'; };
       return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i]) + '"></span> ' + esc(p.label) + ' · ' + esc(p.name) + '</td>' +
-        '<td>' + nf(p.current.activeUsers) + '</td><td class="' + dcls(d) + '">' + dstr(d) + '</td>' +
-        '<td>' + nf(p.current.sessions) + '</td><td>' + nf(p.current.newUsers) + '</td>' +
-        '<td>' + nf(p.current.pageViews) + '</td><td>' + nf(p.current.eventCount) + '</td>' +
+        wd(p.current.activeUsers, p.previous.activeUsers) +
+        wd(p.current.sessions, p.previous.sessions) +
+        wd(p.current.newUsers, p.previous.newUsers) +
+        wd(p.current.pageViews, p.previous.pageViews) +
+        wd(p.current.eventCount, p.previous.eventCount) +
         '<td>' + nf1(p.current.bounceRate * 100) + '%</td><td>' + nf(p.current.avgSessionDuration) + '</td></tr>';
     }).join('') +
-    '<tr style="font-weight:650"><td>합계</td><td>' + nf(tot('activeUsers')) + '</td><td class="' + dcls(du) + '">' + dstr(du) + '</td>' +
-    '<td>' + nf(tot('sessions')) + '</td><td>' + nf(tot('newUsers')) + '</td><td>' + nf(tot('pageViews')) + '</td>' +
-    '<td>' + nf(tot('eventCount')) + '</td><td>—</td><td>—</td></tr></tbody>';
+    '<tr style="font-weight:650"><td>합계</td>' +
+    ['activeUsers','sessions','newUsers','pageViews','eventCount'].map(k => {
+      const d = pct(tot(k), ptot(k));
+      return '<td>' + nf(tot(k)) + (d == null ? '' : '<span class="' + (d >= 0 ? 'up' : 'dn') +
+        '" style="font-size:11px;margin-left:6px;white-space:nowrap">' + (d >= 0 ? '▲' : '▼') + nf1(Math.abs(d)) + '%</span>') + '</td>';
+    }).join('') + '<td>—</td><td>—</td></tr></tbody>';
 
   document.getElementById('ytTiles').innerHTML =
     tile('조회수', nf(y.current.views), '<span class="' + dcls(dv) + '">' + dstr(dv) + '</span> 직전 대비') +
@@ -593,67 +601,84 @@ function render(){
     igb.innerHTML =
       '<div class="tiles" id="igTiles"></div>' +
       '<div class="grid g2" style="margin-top:14px">' +
-        '<div class="card"><h3>계정별 팔로워</h3><div id="igFollowers"></div></div>' +
+        '<div class="card"><h3>계정별 조회수 (30일)</h3><div id="igFollowers"></div></div>' +
         '<div class="card"><h3>전월 대비 참여 변화</h3>' +
           '<div class="legend"><span><span class="dot" style="background:' + cssv('--good') + '"></span>▲ 상승</span>' +
           '<span><span class="dot" style="background:' + cssv('--bad') + '"></span>▼ 하락</span></div>' +
           '<div id="igDelta"></div></div>' +
       '</div>' +
-      '<div class="card" style="margin-top:14px"><h3>계정별 상세 · 전월 대비</h3>' +
+      '<div class="card" style="margin-top:14px"><h3>계정별 상세</h3>' +
         '<div style="overflow-x:auto"><table id="igTable"></table></div>' +
         '<p class="note">' + esc(D.igApi.note) + '</p></div>' +
       '<div class="card" style="margin-top:14px">' +
         '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px">' +
-          '<h3 style="margin:0">참여 상위 게시물 (최근 30일)</h3><div id="igTabs" class="legend" style="margin:0"></div></div>' +
+          '<h3 style="margin:0">조회수 상위 게시물 (최근 30일)</h3><div id="igTabs" class="legend" style="margin:0"></div></div>' +
         '<div style="overflow-x:auto"><table id="igMediaTable"></table></div>' +
-        '<p class="note">최근 30일 발행분 중 참여(좋아요+댓글) 상위입니다. 도달·조회·저장은 인사이트 권한이 있어야 조회됩니다.</p></div>' +
+        '<p class="note">최근 30일 발행분 중 조회수 상위입니다.</p></div>' +
       '';
 
     const cSum = k => iga.reduce((s, a) => s + ((a.current && a.current[k]) || 0), 0);
     const pSum = k => iga.reduce((s, a) => s + ((a.previous && a.previous[k]) || 0), 0);
+    const iSum = k => iga.reduce((s, a) => s + ((a.insights && a.insights[k]) || 0), 0);
+    const fGrow = iga.reduce((s, a) => s + (a.follower_growth || 0), 0);
+    const hasIns = !!(D.igApi && D.igApi.insights_available);
     const dPosts = pct(cSum('posts'), pSum('posts'));
     const dLikes = pct(cSum('likes'), pSum('likes'));
-    const dEng   = pct(cSum('engagement'), pSum('engagement'));
-    const fPrev  = iga.reduce((s, a) => s + (a.followers_prev || 0), 0);
-    const dFoll  = fPrev ? pct(totF, fPrev) : null;
     document.getElementById('igTiles').innerHTML =
-      tile('총 팔로워', nf(totF), dFoll == null
-        ? iga.length + '개 계정 합계 · 증감은 다음 수집부터'
-        : '<span class="' + dcls(dFoll) + '">' + dstr(dFoll) + '</span> ' + esc(D.igApi.follower_baseline.date) + ' 대비') +
+      (hasIns ? tile('조회수 (30일)', nf(iSum('views')), '릴스 포함') : '') +
+      (hasIns ? tile('도달 (30일)', nf(iSum('reach')), '고유 계정 수') : '') +
+      tile('총 팔로워', nf(totF), fGrow
+        ? '<span class="' + (fGrow >= 0 ? 'up' : 'dn') + '">' + (fGrow >= 0 ? '▲ +' : '▼ ') + nf(Math.abs(fGrow)) + '</span> 30일 순증'
+        : iga.length + '개 계정 합계') +
       tile('게시물 (30일)', nf(cSum('posts')), '<span class="' + dcls(dPosts) + '">' + dstr(dPosts) + '</span> 직전 30일 대비') +
-      tile('좋아요 (30일)', nf(cSum('likes')), '<span class="' + dcls(dLikes) + '">' + dstr(dLikes) + '</span> 직전 30일 대비') +
-      tile('참여 (30일)', nf(cSum('engagement')), '<span class="' + dcls(dEng) + '">' + dstr(dEng) + '</span> 좋아요 + 댓글') +
-      tile('누적 게시물', nf(totM), iga.length + '개 계정 합계');
+      (hasIns ? tile('프로필 조회', nf(iSum('profile_views')), '저장 ' + nf(iSum('saves')) + ' · 공유 ' + nf(iSum('shares')))
+              : tile('좋아요 (30일)', nf(cSum('likes')), '<span class="' + dcls(dLikes) + '">' + dstr(dLikes) + '</span> 직전 30일 대비'));
 
     const igSorted = iga.slice().sort((a, b) => b.ig.followers - a.ig.followers);
-    hbars(document.getElementById('igFollowers'), igSorted.map((a, i) => ({
+    const byViews = iga.slice().sort((a, b) =>
+      ((b.insights && b.insights.views) || 0) - ((a.insights && a.insights.views) || 0));
+    hbars(document.getElementById('igFollowers'), (hasIns ? byViews : igSorted).map((a, i) => ({
       label: a.label + ' · @' + a.ig.username.replace('beautyblossom_', ''),
-      value: a.ig.followers, color: cssv(SERIES[i % 6]),
-      extra: { k: '게시물', v: nf(a.ig.media_count) }
-    })), { metric: '팔로워', padL: 150 });
+      value: hasIns ? ((a.insights && a.insights.views) || 0) : a.ig.followers,
+      color: cssv(SERIES[i % 6]),
+      extra: hasIns ? { k: '도달', v: nf((a.insights && a.insights.reach) || 0) }
+                    : { k: '게시물', v: nf(a.ig.media_count) }
+    })), { metric: hasIns ? '조회수' : '팔로워', padL: 150 });
     diverging(document.getElementById('igDelta'), igSorted
       .filter(a => a.previous && a.previous.engagement > 0)
       .map(a => ({ label: a.label + ' · 참여', value: pct(a.current.engagement, a.previous.engagement) })));
 
-    const dcell = v => (v == null) ? '<td>—</td>'
-      : '<td class="' + (v >= 0 ? 'up' : 'dn') + '">' + (v >= 0 ? '▲ +' : '▼ ') + nf1(v) + '%</td>';
+    // Delta sits inside the value cell: a number beside its own change reads in one pass.
+    const withDelta = (val, prev, fmt) => {
+      const f = fmt || nf;
+      const d = pct(val, prev);
+      if (d == null) return '<td>' + f(val) + '</td>';
+      return '<td>' + f(val) +
+        '<span class="' + (d >= 0 ? 'up' : 'dn') + '" style="font-size:11px;margin-left:6px;white-space:nowrap">' +
+        (d >= 0 ? '▲' : '▼') + nf1(Math.abs(d)) + '%</span></td>';
+    };
     document.getElementById('igTable').innerHTML =
-      '<thead><tr><th>계정</th><th>팔로워</th><th>누적 게시물</th>' +
-      '<th>게시물 30일</th><th>전월 대비</th><th>좋아요 30일</th><th>전월 대비</th>' +
-      '<th>댓글 30일</th><th>게시물당 참여</th></tr></thead><tbody>' +
-      igSorted.map((a, i) => {
-        const c = a.current || {}, p = a.previous || {};
+      '<thead><tr><th>계정</th><th>조회수</th><th>도달</th><th>프로필 조회</th><th>저장</th>' +
+      '<th>팔로워</th><th>게시물 30일</th><th>좋아요 30일</th></tr></thead><tbody>' +
+      byViews.map((a, i) => {
+        const c = a.current || {}, p = a.previous || {}, ins = a.insights || {};
+        const g = a.follower_growth;
         return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i % 6]) + '"></span> ' +
           esc(a.label) + ' · @' + esc(a.ig.username) + '</td>' +
-          '<td>' + nf(a.ig.followers) + '</td><td>' + nf(a.ig.media_count) + '</td>' +
-          '<td>' + nf(c.posts) + '</td>' + dcell(pct(c.posts, p.posts)) +
-          '<td>' + nf(c.likes) + '</td>' + dcell(pct(c.likes, p.likes)) +
-          '<td>' + nf(c.comments) + '</td><td>' + nf1(c.avgEngagement) + '</td></tr>';
+          '<td>' + nf(ins.views) + '</td><td>' + nf(ins.reach) + '</td>' +
+          '<td>' + nf(ins.profile_views) + '</td><td>' + nf(ins.saves) + '</td>' +
+          '<td>' + nf(a.ig.followers) + (g ? '<span class="' + (g >= 0 ? 'up' : 'dn') +
+            '" style="font-size:11px;margin-left:6px;white-space:nowrap">' + (g >= 0 ? '▲+' : '▼') + nf(Math.abs(g)) + '</span>' : '') + '</td>' +
+          withDelta(c.posts, p.posts) +
+          withDelta(c.likes, p.likes) + '</tr>';
       }).join('') +
-      '<tr style="font-weight:650"><td>합계</td><td>' + nf(totF) + '</td><td>' + nf(totM) + '</td>' +
-      '<td>' + nf(cSum('posts')) + '</td>' + dcell(dPosts) +
-      '<td>' + nf(cSum('likes')) + '</td>' + dcell(dLikes) +
-      '<td>' + nf(cSum('comments')) + '</td><td>—</td></tr></tbody>';
+      '<tr style="font-weight:650"><td>합계</td>' +
+      '<td>' + nf(iSum('views')) + '</td><td>' + nf(iSum('reach')) + '</td>' +
+      '<td>' + nf(iSum('profile_views')) + '</td><td>' + nf(iSum('saves')) + '</td>' +
+      '<td>' + nf(totF) + (fGrow ? '<span class="' + (fGrow >= 0 ? 'up' : 'dn') +
+        '" style="font-size:11px;margin-left:6px">' + (fGrow >= 0 ? '▲+' : '▼') + nf(Math.abs(fGrow)) + '</span>' : '') + '</td>' +
+      withDelta(cSum('posts'), pSum('posts')) +
+      withDelta(cSum('likes'), pSum('likes')) + '</tr></tbody>';
 
     let igActive = igSorted[0].ig.username;
     function igTabs() {
@@ -669,12 +694,13 @@ function render(){
       const a = igSorted.filter(x => x.ig.username === igActive)[0];
       const md = (a && a.media) || [];
       document.getElementById('igMediaTable').innerHTML = md.length
-        ? '<thead><tr><th>게시일</th><th>유형</th><th>내용</th><th>좋아요</th><th>댓글</th></tr></thead><tbody>' +
+        ? '<thead><tr><th>게시일</th><th>유형</th><th>내용</th><th>조회수</th><th>도달</th><th>좋아요</th><th>저장</th></tr></thead><tbody>' +
           md.slice(0, 15).map(m => '<tr><td>' + esc(String(m.timestamp || '').slice(0, 10)) + '</td>' +
             '<td>' + esc(m.product || m.type || '') + '</td>' +
             '<td><a href="' + esc(m.permalink) + '" target="_blank" rel="noopener">' +
             esc(m.caption || '(설명 없음)') + '</a></td>' +
-            '<td>' + nf(m.likes) + '</td><td>' + nf(m.comments) + '</td></tr>').join('') + '</tbody>'
+            '<td>' + nf(m.views) + '</td><td>' + nf(m.reach) + '</td>' +
+            '<td>' + nf(m.likes) + '</td><td>' + nf(m.saved) + '</td></tr>').join('') + '</tbody>'
         : '<tbody><tr><td>게시물 데이터가 없습니다.</td></tr></tbody>';
     }
     igTabs(); igMediaDraw();
@@ -692,7 +718,7 @@ function render(){
     '<tr><td>네이버 서치어드바이저</td><td>' + ((nv && nv.sites) || []).length + '개 사이트 · 최근 30일</td><td>로그인 콘솔 UI 수집</td>' +
     '<td class="' + (okSites.length ? 'up' : 'dn') + '">' + (okSites.length ? '완료 (' + okSites.length + ')' : '미수집') + '</td></tr>' +
     '<tr><td>Instagram</td><td>' + igOk + '개 계정</td><td>Meta Graph API (instagram_basic)</td>' +
-    '<td class="' + (igOk ? 'up' : 'dn') + '">' + (igOk ? '완료 — 인사이트 권한 대기' : '미수집') + '</td></tr>' +
+    '<td class="' + (igOk ? 'up' : 'dn') + '">' + (igOk ? '완료' : '미수집') + '</td></tr>' +
     '</tbody>';
 }
 render();

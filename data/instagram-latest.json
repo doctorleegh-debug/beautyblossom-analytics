@@ -1,5 +1,5 @@
 ﻿{
-    "source":  "Meta Graph API via linked Facebook Pages",
+    "source":  "Meta Graph API (system user token) via linked Facebook Pages",
     "prev_range":  {
                        "start":  "2026-06-20",
                        "end":  "2026-07-20"
@@ -7,348 +7,1026 @@
     "granted_permissions":  [
                                 "pages_show_list",
                                 "instagram_basic",
+                                "instagram_manage_insights",
                                 "pages_read_engagement",
                                 "public_profile"
                             ],
-    "insights_available":  false,
+    "insights_available":  true,
     "accounts":  [
                      {
                          "media":  [
                                        {
-                                           "id":  "18362008198215031",
-                                           "timestamp":  "2026-07-25T15:00:29+0000",
+                                           "total_interactions":  3,
+                                           "id":  "18114932828294795",
+                                           "timestamp":  "2026-07-29T01:17:28+0000",
+                                           "saved":  0,
+                                           "reach":  196,
                                            "type":  "VIDEO",
                                            "comments":  0,
-                                           "likes":  55,
-                                           "product":  "REELS",
-                                           "caption":  "Client: \"Please don\u0027t show my face.\"\nUs: \"Sure.\" 🐱✨💄\nPrivacy guaranteed, plump lips non-",
-                                           "permalink":  "https://www.instagram.com/reel/DbOFiWtjGBh/"
-                                       },
-                                       {
-                                           "id":  "17938824111299098",
-                                           "timestamp":  "2026-07-28T08:02:50+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  30,
-                                           "product":  "REELS",
-                                           "caption":  "Wishing the happiest of birthdays to our Head Doctor, Dr. Lee! 🍰✨ \nThank you for always g",
-                                           "permalink":  "https://www.instagram.com/reel/DbVEIW7gVMY/"
-                                       },
-                                       {
-                                           "id":  "18109148687101901",
-                                           "timestamp":  "2026-07-31T16:01:43+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  7,
-                                           "product":  "REELS",
-                                           "caption":  "Precision matters when it comes to your smile 💋👨‍⚕️\n\nAt Beauty Blossom, every injection ",
-                                           "permalink":  "https://www.instagram.com/reel/DbdpSihjoPN/"
-                                       },
-                                       {
-                                           "id":  "17926191987394894",
-                                           "timestamp":  "2026-08-12T10:30:59+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
+                                           "shares":  0,
                                            "likes":  3,
                                            "product":  "REELS",
-                                           "caption":  "Elf ear filler isn’t just about making the ears look more pointed 👂✨\n\nBy adding a small a",
-                                           "permalink":  "https://www.instagram.com/reel/Db78_zFlELP/"
+                                           "caption":  "Happy Birthday คุณหมอผู้อำนวยการ Beauty Blossom 🎂🌸\n\nขอบคุณที่คอยดูแลลูกค้าและทีมด้วยความ",
+                                           "views":  228,
+                                           "permalink":  "https://www.instagram.com/reel/DbW6iIlkxxP/"
                                        },
                                        {
-                                           "id":  "18109174684969220",
-                                           "timestamp":  "2026-07-30T16:01:41+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  2,
-                                           "likes":  0,
-                                           "product":  "REELS",
-                                           "caption":  "Not every double chin is caused by fat.\n\nBefore choosing DCA, it\u0027s important to understand",
-                                           "permalink":  "https://www.instagram.com/reel/DbbEgegiVoy/"
-                                       },
-                                       {
-                                           "id":  "17900651616516724",
-                                           "timestamp":  "2026-08-02T04:01:46+0000",
+                                           "total_interactions":  4,
+                                           "id":  "18109667648058634",
+                                           "timestamp":  "2026-08-15T05:01:34+0000",
+                                           "saved":  0,
+                                           "reach":  149,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
+                                           "likes":  3,
+                                           "product":  "REELS",
+                                           "caption":  "เมื่อคุณหมอบอก \"เต้นไม่เป็นครับ\" ... แต่ทีมมาร์เกตติ้งไม่ยอมแพ้! 🕺ซ\nเรื่องเต้นยกหน้าที่ให",
+                                           "views":  167,
+                                           "permalink":  "https://www.instagram.com/reel/DcDFrk-iHee/"
+                                       },
+                                       {
+                                           "total_interactions":  3,
+                                           "id":  "18081858857273894",
+                                           "timestamp":  "2026-08-07T09:01:34+0000",
+                                           "saved":  0,
+                                           "reach":  118,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  3,
+                                           "product":  "REELS",
+                                           "caption":  "ONDA + DCA ใต้คาง เหมาะกับใคร?\n\nการดูแลใต้คางไม่ได้มีแค่การ “ลดเหนียง” อย่างเดียว\nเพราะควา",
+                                           "views":  152,
+                                           "permalink":  "https://www.instagram.com/reel/Dbu6yjzjXOV/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "18474872290106341",
+                                           "timestamp":  "2026-08-18T01:01:34+0000",
+                                           "saved":  0,
+                                           "reach":  103,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
                                            "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "Say goodbye to stubborn double chin fat! 👋✨\n\nIntroducing Nuviju—the next-generation fat-d",
-                                           "permalink":  "https://www.instagram.com/reel/Dbhgf84AgzU/"
+                                           "caption":  "ULTRACOL | ไม่ใช่ฟิลเลอร์เติมเต็มทันที\n\nULTRACOL ต้องวางแผนตามชั้นผิวและรอการเปลี่ยนแปลงขอ",
+                                           "views":  146,
+                                           "permalink":  "https://www.instagram.com/reel/DcKYmeTgVJa/"
                                        },
                                        {
-                                           "id":  "17903655687470167",
-                                           "timestamp":  "2026-08-04T06:01:03+0000",
+                                           "total_interactions":  3,
+                                           "id":  "18219282763331926",
+                                           "timestamp":  "2026-08-04T01:01:45+0000",
+                                           "saved":  1,
+                                           "reach":  120,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
                                            "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "More shots = better results? Not necessarily. 💡✨\n\nWhen treating skin laxity with Density ",
-                                           "permalink":  "https://www.instagram.com/reel/Dbm3vdQgCXe/"
+                                           "caption":  "DCA ใต้คาง ไม่ใช่การลดไขมันทันที\n\nหลังฉีดช่วงแรกอาจมีอาการบวม ตึง หรือแข็งบริเวณใต้คางได้\n",
+                                           "views":  138,
+                                           "permalink":  "https://www.instagram.com/reel/DbmVfdBD4N4/"
                                        },
                                        {
-                                           "id":  "18123907552799906",
-                                           "timestamp":  "2026-08-16T04:01:34+0000",
+                                           "total_interactions":  2,
+                                           "id":  "18484589329098018",
+                                           "timestamp":  "2026-08-05T02:00:56+0000",
+                                           "saved":  0,
+                                           "reach":  107,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
                                            "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "POV: You work at an aesthetic clinic ✨\nToday’s staff perk: HiloWave 🤭💕\nAn HA-based treat",
-                                           "permalink":  "https://www.instagram.com/reel/DcFjnEglcum/"
+                                           "caption":  "ONDA ต้นแขน ไม่ใช่การลดน้ำหนักทั้งตัว\nแต่เป็นการดูแลรูปร่างเฉพาะจุด สำหรับคนที่กังวลต้นแขน",
+                                           "views":  126,
+                                           "permalink":  "https://www.instagram.com/reel/DbpBEOjEf8_/"
                                        },
                                        {
-                                           "id":  "17893612968574425",
-                                           "timestamp":  "2026-07-24T04:00:55+0000",
+                                           "total_interactions":  1,
+                                           "id":  "17913623193242025",
+                                           "timestamp":  "2026-08-03T02:01:30+0000",
+                                           "saved":  0,
+                                           "reach":  17,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "ฟิลเลอร์หูเอลฟ์ ทำให้หน้าดูเล็กลงจริงไหม?\n\nหากใบหูแนบกับศีรษะ ฟิลเลอร์หูเอลฟ์อาจทำให้ภาพที",
+                                           "views":  75,
+                                           "permalink":  "https://www.instagram.com/reel/Dbj3hutiOd9/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "18059993570779595",
+                                           "timestamp":  "2026-07-30T02:01:50+0000",
+                                           "saved":  0,
+                                           "reach":  51,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
                                            "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "Tired of skipping the most delicate part of your face? 👁️✨ \nEye XERF is made specifically",
-                                           "permalink":  "https://www.instagram.com/reel/DbKVQUkGvDj/"
+                                           "caption":  "DENSITY 300 หรือ 600 ช็อต\nไม่ใช่ว่ายิ่งเยอะ = ยิ่งดีเสมอไป\n\nการเลือกจำนวนช็อตต้องดูจากบริเ",
+                                           "views":  67,
+                                           "permalink":  "https://www.instagram.com/reel/DbZkY1dCNz0/"
                                        },
                                        {
-                                           "id":  "18023095334849465",
-                                           "timestamp":  "2026-07-22T01:50:50+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "Lift deeper with Ultherapy Prime\n\n✔️ Targets deep layers to stimulate collagen\n✔️ Firms sa",
-                                           "permalink":  "https://www.instagram.com/reel/DbE8yZbCiLm/"
-                                       },
-                                       {
-                                           "id":  "18127949431709164",
-                                           "timestamp":  "2026-08-02T10:01:09+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "Lift, firm, and restore—without downtime. ✨\n\nMeet Sofwave™, the next-generation ultrasound",
-                                           "permalink":  "https://www.instagram.com/reel/DbiJopdDAJG/"
-                                       },
-                                       {
-                                           "id":  "18098065820220281",
-                                           "timestamp":  "2026-08-01T10:01:00+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "Sculpted. Refined. Defined. 📐✨\n\nA subtle touch of chin or jawline filler can completely t",
-                                           "permalink":  "https://www.instagram.com/reel/Dbfkzvqga7U/"
-                                       },
-                                       {
-                                           "id":  "18072097244391003",
-                                           "timestamp":  "2026-07-29T20:01:00+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "✨ You\u0027ve done the workouts. 🏋️‍♀️\n🥗 You\u0027ve cleaned up your diet.\n\nSometimes, those last ",
-                                           "permalink":  "https://www.instagram.com/reel/DbY7GXlDipX/"
-                                       },
-                                       {
-                                           "id":  "18121370689870515",
-                                           "timestamp":  "2026-07-25T04:01:31+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  1,
-                                           "likes":  0,
-                                           "product":  "REELS",
-                                           "caption":  "4 Benefits. 2 Modes. Immediate Results with Fortra Lifting! ✨\n\nTransform your skin with Fo",
-                                           "permalink":  "https://www.instagram.com/reel/DbM6HsSEgB5/"
-                                       },
-                                       {
-                                           "id":  "17948532927232679",
-                                           "timestamp":  "2026-07-23T04:00:18+0000",
+                                           "total_interactions":  1,
+                                           "id":  "18071916725702071",
+                                           "timestamp":  "2026-07-23T02:00:21+0000",
+                                           "saved":  0,
+                                           "reach":  10,
                                            "type":  "CAROUSEL_ALBUM",
                                            "comments":  0,
+                                           "shares":  0,
                                            "likes":  1,
                                            "product":  "FEED",
-                                           "caption":  "✨ Meet the new generation of double chin contouring.\n\nIntroducing NUVIJU—the world\u0027s first",
-                                           "permalink":  "https://www.instagram.com/p/DbHwcQMASq_/"
+                                           "caption":  "เหนียงดื้อ กรอบหน้าไม่ชัด… ถึงเวลาจัดการแบบตรงจุด 👀✨\n\nเปิดตัว NUVIJU CA โปรแกรมดูแลไขมันใ",
+                                           "views":  30,
+                                           "permalink":  "https://www.instagram.com/p/DbHitnKDL6u/"
+                                       },
+                                       {
+                                           "total_interactions":  1,
+                                           "id":  "17898169128557253",
+                                           "timestamp":  "2026-08-02T02:01:30+0000",
+                                           "saved":  0,
+                                           "reach":  20,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "บอกลาเหนียงย้อยด้วยไอเทมตัวใหม่ล่าสุด! ✨ NUVUJU (นูวิจู) นวัตกรรมยาสลายไขมันใต้คางจากเกาหล",
+                                           "views":  30,
+                                           "permalink":  "https://www.instagram.com/reel/DbhSvLzDQ2g/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "18405418522095798",
+                                           "timestamp":  "2026-07-29T10:33:23+0000",
+                                           "saved":  0,
+                                           "reach":  14,
+                                           "type":  "CAROUSEL_ALBUM",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  2,
+                                           "product":  "FEED",
+                                           "caption":  "ก่อนซัมเมอร์จะจบ อย่าลืมดูแลผิวให้พร้อมค่ะ ✨\n\nช่วงหน้าร้อน ผิวต้องเจอทั้งแดดแรงและแอร์เย็น",
+                                           "views":  28,
+                                           "permalink":  "https://www.instagram.com/p/DbX6Mhkkutt/"
+                                       },
+                                       {
+                                           "total_interactions":  1,
+                                           "id":  "18462766156119980",
+                                           "timestamp":  "2026-07-23T04:35:30+0000",
+                                           "saved":  0,
+                                           "reach":  10,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "ยกกระชับผิวอย่างอ่อนโยน แม้ผิวบอบบางก็รู้สึกสบาย ✨\nกับ Sofwave หัตถการยกกระชับที่ช่วยดูแลค",
+                                           "views":  27,
+                                           "permalink":  "https://www.instagram.com/reel/DbH0bwUgMfN/"
                                        }
                                    ],
-                         "previous":  {
-                                          "likes":  41,
-                                          "posts":  29,
-                                          "reels":  17,
-                                          "avgEngagement":  1.5172413793103448,
-                                          "comments":  3,
-                                          "engagement":  44
+                         "follower_daily":  [
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-21"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-22"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-23"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-24"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-25"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-26"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-27"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-28"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-29"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-30"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-31"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-01"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-02"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-03"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-04"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-05"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-06"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-07"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-08"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-09"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-10"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-11"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-12"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-13"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-14"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-15"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-16"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-17"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-18"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-19"
+                                                }
+                                            ],
+                         "follower_growth":  12,
+                         "insights":  {
+                                          "likes":  51,
+                                          "profile_views":  57,
+                                          "reach":  2373,
+                                          "saves":  4,
+                                          "views":  4562,
+                                          "accounts_engaged":  28,
+                                          "shares":  2,
+                                          "comments":  0,
+                                          "total_interactions":  60
                                       },
-                         "label":  "EN",
+                         "label":  "TH",
+                         "previous":  {
+                                          "likes":  38,
+                                          "posts":  27,
+                                          "reels":  17,
+                                          "avgEngagement":  1.4074074074074074,
+                                          "comments":  0,
+                                          "engagement":  38
+                                      },
                          "ig":  {
-                                    "website":  "http://pf.kakao.com/_yrHCn",
-                                    "id":  "17841472036938631",
-                                    "username":  "beautyblossom_global",
-                                    "media_count":  448,
-                                    "name":  "Beauty Blossom Clinic Korea",
-                                    "followers":  4354,
-                                    "follows":  23,
-                                    "biography":  "🌸 BEAUTY BLOSSOM Dermatology Clinic 🌸\nWHATSAPP +82 10 7215 7511\nInterpreter * Consulting Manager On-site"
+                                    "website":  null,
+                                    "id":  "17841426455224263",
+                                    "username":  "beautyblossom_th",
+                                    "media_count":  75,
+                                    "name":  "beautyblossom_th",
+                                    "followers":  416,
+                                    "follows":  5,
+                                    "biography":  "🌼🇰🇷 BEAUTY BLOSSOM CLINIC🌼\n🌸คลินิกความงามเกาหลี\n🌸ผิวฉ่ำ หน้าเรียว งานผิวเกาหลี\n📍Hapjeong Exit 3\n📞จองคิว DM / LINE\n@beautyblossom_th"
                                 },
-                         "pageId":  "525561800648808",
-                         "page":  "BeautyblossomGlobal",
+                         "pageId":  "1238648375987634",
+                         "page":  "BeautyblossomThailand",
                          "status":  "OK",
                          "current":  {
-                                         "likes":  120,
-                                         "posts":  43,
-                                         "reels":  35,
-                                         "avgEngagement":  2.86046511627907,
-                                         "comments":  3,
-                                         "engagement":  123
+                                         "likes":  37,
+                                         "posts":  45,
+                                         "reels":  37,
+                                         "avgEngagement":  0.82222222222222219,
+                                         "comments":  0,
+                                         "engagement":  37
                                      }
                      },
                      {
                          "media":  [
                                        {
-                                           "id":  "18090174185637745",
-                                           "timestamp":  "2026-07-28T08:25:26+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  1,
-                                           "likes":  25,
-                                           "product":  "REELS",
-                                           "caption":  "🎂 대표원장님 생일을 진심으로 축하드립니다! 🥳\n\n오늘은 대표원장님의 생일🎉\n다 같이 준비한 깜짝 생일 파티,\n성공했습니다! 🎂✨\n\n항상 따뜻하게 이끌어 ",
-                                           "permalink":  "https://www.instagram.com/reel/DbVGuorAuJy/"
-                                       },
-                                       {
-                                           "id":  "18437147650192420",
-                                           "timestamp":  "2026-07-29T08:01:15+0000",
-                                           "type":  "CAROUSEL_ALBUM",
-                                           "comments":  0,
-                                           "likes":  8,
-                                           "product":  "FEED",
-                                           "caption":  "여름 끝나기 전에 챙기는 피부, 합정 피부과 8월 이벤트 ✨\n\n강한 자외선과 에어컨 실내를 오가며\n속은 마르고 겉은 처지기 쉬운 계절이에요.\n뷰티블라썸의원이 이번",
-                                           "permalink":  "https://www.instagram.com/p/DbXoyMFDTv-/"
-                                       },
-                                       {
-                                           "id":  "18061546880593797",
-                                           "timestamp":  "2026-08-16T02:00:01+0000",
+                                           "total_interactions":  8,
+                                           "id":  "18015154133712830",
+                                           "timestamp":  "2026-07-26T07:21:15+0000",
+                                           "saved":  1,
+                                           "reach":  413,
                                            "type":  "VIDEO",
                                            "comments":  0,
-                                           "likes":  8,
-                                           "product":  "REELS",
-                                           "caption":  "뷰티블라썸 직원이 직접 받아본 힐로웨이브💙\n\n요즘 피부가 푸석하고 컨디션이 떨어진 것 같아서 이번에는 힐로웨이브를 직접 받아봤어요✨\n\n꺼져 보이는 부위의 볼륨감",
-                                           "permalink":  "https://www.instagram.com/reel/DcFV104kiEd/"
-                                       },
-                                       {
-                                           "id":  "18093718361379431",
-                                           "timestamp":  "2026-07-29T08:02:18+0000",
-                                           "type":  "CAROUSEL_ALBUM",
-                                           "comments":  0,
+                                           "shares":  0,
                                            "likes":  7,
-                                           "product":  "FEED",
-                                           "caption":  "합정 피부과 내부, 이런 공간에서 시술받아본 적 있으세요? 🌸\n\n핑크빛 아치 복도, 은은한 간접 조명,\n그리고 넓고 조용한 1인 시술실까지.\n뷰티블라썸의원은 홍",
-                                           "permalink":  "https://www.instagram.com/p/DbXo54PguHh/"
+                                           "product":  "REELS",
+                                           "caption":  "院長：那我懂你意思了😏\n\n📅 8-9月預約進行中\n📍 首爾合井 Beauty Blossom Clinic\n📲 LINE 官方帳號：beautyblossom_tw\n\n#緊",
+                                           "views":  618,
+                                           "permalink":  "https://www.instagram.com/reel/DbP1yqsgRCw/"
                                        },
                                        {
+                                           "total_interactions":  8,
+                                           "id":  "18084765812447622",
+                                           "timestamp":  "2026-07-28T08:38:39+0000",
+                                           "saved":  0,
+                                           "reach":  365,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  8,
+                                           "product":  "REELS",
+                                           "caption":  "🎉 Happy Birthday～院長！生日粗咖嘿！🥳\n\n麗朵又陪院長度過了一個生日啦！\n這一年真的辛苦了，也謝謝院長一直以來的照顧與付出✨\n\n接下來的日子，也請院長多多指教！",
+                                           "views":  543,
+                                           "permalink":  "https://www.instagram.com/reel/DbVIOzuFK66/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "18141444256515877",
+                                           "timestamp":  "2026-08-04T04:00:02+0000",
+                                           "saved":  1,
+                                           "reach":  367,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "🦵 小腿線條不順？先看懂你是哪一種腿型！\n想改善小腿線條，第一步不是盲目跟風，而是精準判斷原因！到底是脂肪堆積、肌肉發達，還是日常浮腫呢？\n\n💡 ONDA 超微波 能針對局部脂",
+                                           "views":  481,
+                                           "permalink":  "https://www.instagram.com/reel/Dbmp9TECau3/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "17984997228009775",
+                                           "timestamp":  "2026-08-02T03:01:11+0000",
+                                           "saved":  1,
+                                           "reach":  306,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "✨ 雙下巴總是瘦不下來？\n不一定是胖，有時候只是脂肪堆積造成輪廓線不夠俐落！\n\n💉 NUVIJU CA溶脂針，針對雙下巴與下顎線進行集中改善，\n打造更清晰、自然的臉部輪廓✨\n\n療",
+                                           "views":  415,
+                                           "permalink":  "https://www.instagram.com/reel/DbhZkbICgZi/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "18615173761036804",
+                                           "timestamp":  "2026-08-06T04:00:02+0000",
+                                           "saved":  0,
+                                           "reach":  320,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  2,
+                                           "product":  "REELS",
+                                           "caption":  "🫄 小腹凸出別盲目減脂！先找對原因才是關鍵\n想告別頑固小腹？第一步不是猛打能量，而是精準判斷凸出的原因！\n\n腹部線條不順，往往不只是皮下脂肪堆積，還可能同時受到皮膚鬆弛、日常姿勢",
+                                           "views":  402,
+                                           "permalink":  "https://www.instagram.com/reel/DbrzlhDERrt/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "17943243984056508",
+                                           "timestamp":  "2026-07-24T07:55:29+0000",
+                                           "saved":  0,
+                                           "reach":  300,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  2,
+                                           "product":  "REELS",
+                                           "caption":  "想施作 DCA 脂肪溶解針嗎？🤔\n\n先了解療程前後的注意事項，才能讓療程更安心、更順利。\n\n✔ 術前諮詢重點\n✔ 術後照護須知\n✔ 常見反應與回診時機\n✔ 療程間隔與規劃\n\n每個",
+                                           "views":  399,
+                                           "permalink":  "https://www.instagram.com/reel/DbKwGVzCdRW/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "18116411119901964",
+                                           "timestamp":  "2026-07-29T10:06:21+0000",
+                                           "saved":  0,
+                                           "reach":  161,
+                                           "type":  "CAROUSEL_ALBUM",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  2,
+                                           "product":  "FEED",
+                                           "caption":  "Beauty Blossom🌸8月營業時間\n\n⏰麗朵Beauty Blossom皮膚科門診時間⏰⌛\n平日：10:00 - 20:00（最後接待時間 18:30）\n週末：10:00",
+                                           "views":  367,
+                                           "permalink":  "https://www.instagram.com/p/DbX3GgOiSt0/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "17957265957207208",
+                                           "timestamp":  "2026-08-16T04:00:02+0000",
+                                           "saved":  0,
+                                           "reach":  248,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  1,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "在皮膚科上班的好處？直接搶當療程模特！💉\n\n最近照鏡子總覺得眼下凹陷好明顯，整個人看起來超累…🥲\n身為員工福利，這次直接實測 HILOWAVE，拯救疲憊眼下 💧\n\n✨ 3 秒",
+                                           "views":  330,
+                                           "permalink":  "https://www.instagram.com/reel/DcFjgXiEToH/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "17896652154572876",
+                                           "timestamp":  "2026-08-15T04:00:02+0000",
+                                           "saved":  0,
+                                           "reach":  237,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  2,
+                                           "product":  "REELS",
+                                           "caption":  "雖然院長的舞蹈細胞可能還在加載中\n但對於診所的熱門療程，他可是精準到不行 ✨\n\n影片裡被院長「跳」出來的三大護膚神器：\n\n💧 HILOWAVE｜深層補水，立現水光保濕力\n💉 麗",
+                                           "views":  313,
+                                           "permalink":  "https://www.instagram.com/reel/DcC-sLFCU06/"
+                                       },
+                                       {
+                                           "total_interactions":  1,
+                                           "id":  "17964993039136066",
+                                           "timestamp":  "2026-07-30T03:00:16+0000",
+                                           "saved":  0,
+                                           "reach":  118,
+                                           "type":  "CAROUSEL_ALBUM",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "FEED",
+                                           "caption":  "💧 肌膚的水分，不是擦上去，而是存進去。\nSKINVIVE 真皮補水，從肌底提升保濕力，打造自然透亮的水光肌。\n讓每一次近看，都看得見肌膚質感的改變。✨\n\n📅 7-8月預約進行",
+                                           "views":  276,
+                                           "permalink":  "https://www.instagram.com/p/DbZrIqMDHEB/"
+                                       },
+                                       {
+                                           "total_interactions":  1,
+                                           "id":  "17908430289452086",
+                                           "timestamp":  "2026-07-29T04:01:22+0000",
+                                           "saved":  0,
+                                           "reach":  155,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "DENSITY 300發 vs 600發，只看數字就夠了嗎？⬇️\n\n臉部每個區域的皮膚厚度、脂肪量與鬆弛方向都不同。\n比起單純追求發數，更重要的是探頭選擇、能量配置，以及實際施作的",
+                                           "views":  203,
+                                           "permalink":  "https://www.instagram.com/reel/DbXNRI-Cs2h/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "18122268514704049",
+                                           "timestamp":  "2026-07-25T02:01:16+0000",
+                                           "saved":  0,
+                                           "reach":  153,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  1,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "Fortra 鈦拉提 全新登場！✨\n結合 4 種光波與智能冰感技術，過程就像做高級 SPA 一樣舒適 🌿 \n在放鬆的療程空間裡，輕鬆拉緊輪廓線、找回澎潤光采。\n\n告別鬆弛，綻放妳",
+                                           "views":  195,
+                                           "permalink":  "https://www.instagram.com/reel/DbMsWaMCDc9/"
+                                       }
+                                   ],
+                         "follower_daily":  [
+                                                {
+                                                    "value":  4,
+                                                    "date":  "2026-07-21"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-07-22"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-23"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-24"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-25"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-07-26"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-27"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-28"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-29"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-30"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-31"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-01"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-02"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-03"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-04"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-05"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-06"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-07"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-08"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-09"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-10"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-11"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-12"
+                                                },
+                                                {
+                                                    "value":  4,
+                                                    "date":  "2026-08-13"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-14"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-15"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-16"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-17"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-18"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-19"
+                                                }
+                                            ],
+                         "follower_growth":  49,
+                         "insights":  {
+                                          "likes":  44,
+                                          "profile_views":  1262,
+                                          "reach":  17280,
+                                          "saves":  22,
+                                          "views":  59202,
+                                          "accounts_engaged":  72,
+                                          "shares":  13,
+                                          "comments":  2,
+                                          "total_interactions":  94
+                                      },
+                         "label":  "TW",
+                         "previous":  {
+                                          "likes":  16,
+                                          "posts":  26,
+                                          "reels":  16,
+                                          "avgEngagement":  0.61538461538461542,
+                                          "comments":  0,
+                                          "engagement":  16
+                                      },
+                         "ig":  {
+                                    "website":  null,
+                                    "id":  "17841472278461928",
+                                    "username":  "beautyblossom_tw",
+                                    "media_count":  367,
+                                    "name":  "BEAUTY BLOSSOM CLINIC",
+                                    "followers":  2054,
+                                    "follows":  9,
+                                    "biography":  "🌼🇰🇷BEAUTY BLOSSOM CLINIC🌼\n🌸 您的美麗，從這裡綻放！\n\t•\t專業的肌膚管理\n\t•\t舒適的環境與優質服務\n📍 地址：首爾市麻浦區楊花路66號，合井站3號出口6樓\n讓您的美麗由內而外綻放光彩！"
+                                },
+                         "pageId":  "520121534528292",
+                         "page":  "BeautyblossomTaiwan",
+                         "status":  "OK",
+                         "current":  {
+                                         "likes":  32,
+                                         "posts":  40,
+                                         "reels":  33,
+                                         "avgEngagement":  0.8,
+                                         "comments":  0,
+                                         "engagement":  32
+                                     }
+                     },
+                     {
+                         "media":  [
+                                       {
+                                           "total_interactions":  8,
                                            "id":  "18245849893308276",
                                            "timestamp":  "2026-08-10T09:10:02+0000",
+                                           "saved":  1,
+                                           "reach":  1331,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  1,
                                            "likes":  6,
                                            "product":  "REELS",
                                            "caption":  "\"리쥬란 맞던 사람들 요즘 다 이걸로 갈아탔대요.\"\n\n그 뒤에 꼭 따라오는 질문. 사체에서 뽑은 거라던데 괜찮냐고요.\n그건 과장이에요. 세포는 다 제거하고 구조 ",
+                                           "views":  1527,
                                            "permalink":  "https://www.instagram.com/reel/Db2qIuUD5QE/"
                                        },
                                        {
+                                           "total_interactions":  28,
+                                           "id":  "18090174185637745",
+                                           "timestamp":  "2026-07-28T08:25:26+0000",
+                                           "saved":  0,
+                                           "reach":  413,
+                                           "type":  "VIDEO",
+                                           "comments":  1,
+                                           "shares":  2,
+                                           "likes":  25,
+                                           "product":  "REELS",
+                                           "caption":  "🎂 대표원장님 생일을 진심으로 축하드립니다! 🥳\n\n오늘은 대표원장님의 생일🎉\n다 같이 준비한 깜짝 생일 파티,\n성공했습니다! 🎂✨\n\n항상 따뜻하게 이끌어 ",
+                                           "views":  598,
+                                           "permalink":  "https://www.instagram.com/reel/DbVGuorAuJy/"
+                                       },
+                                       {
+                                           "total_interactions":  7,
                                            "id":  "18005124140767908",
                                            "timestamp":  "2026-07-26T05:53:20+0000",
+                                           "saved":  2,
+                                           "reach":  520,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
                                            "likes":  5,
                                            "product":  "REELS",
                                            "caption":  "덴서티 300샷 vs 600샷, 숫자만 비교하고 있었다면 ⬇️ 이번엔 리니어지(하이푸)까지 함께한 조합 시술이에요.\n\n얼굴은 부위마다 피부 두께·볼륨·처짐 방향이",
+                                           "views":  576,
                                            "permalink":  "https://www.instagram.com/reel/DbPrtKfjsQU/"
                                        },
                                        {
-                                           "id":  "18091814882436173",
-                                           "timestamp":  "2026-07-29T08:00:27+0000",
-                                           "type":  "IMAGE",
-                                           "comments":  0,
-                                           "likes":  5,
-                                           "product":  "FEED",
-                                           "caption":  "주말도 공휴일도 여는 합정 피부과, 8월 진료일정 안내 🗓️\n\n뷰티블라썸의원은 8월 한 달 내내 쉬는 날 없이 진료합니다.\n휴가 일정에 맞춰 주말에도 편한 시간",
-                                           "permalink":  "https://www.instagram.com/p/DbXosQrDd2r/"
-                                       },
-                                       {
-                                           "id":  "18101488106268045",
-                                           "timestamp":  "2026-07-24T08:06:43+0000",
+                                           "total_interactions":  8,
+                                           "id":  "18061546880593797",
+                                           "timestamp":  "2026-08-16T02:00:01+0000",
+                                           "saved":  0,
+                                           "reach":  205,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
+                                           "likes":  8,
+                                           "product":  "REELS",
+                                           "caption":  "뷰티블라썸 직원이 직접 받아본 힐로웨이브💙\n\n요즘 피부가 푸석하고 컨디션이 떨어진 것 같아서 이번에는 힐로웨이브를 직접 받아봤어요✨\n\n꺼져 보이는 부위의 볼륨감",
+                                           "views":  287,
+                                           "permalink":  "https://www.instagram.com/reel/DcFV104kiEd/"
+                                       },
+                                       {
+                                           "total_interactions":  6,
+                                           "id":  "18101488106268045",
+                                           "timestamp":  "2026-07-24T08:06:43+0000",
+                                           "saved":  0,
+                                           "reach":  208,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  1,
                                            "likes":  5,
                                            "product":  "REELS",
                                            "caption":  "콜라겐 부스터라고 하면 보통 \u0027자극을 줘서 콜라겐을 만든다\u0027고 생각하시죠. 힐로웨이브는 그 반대편에서 접근하는 시술입니다.\n\n기존 바이오스티뮬레이터는 이물 반응으",
+                                           "views":  241,
                                            "permalink":  "https://www.instagram.com/reel/DbKxYVZj23Z/"
                                        },
                                        {
-                                           "id":  "18107441381098683",
-                                           "timestamp":  "2026-07-25T07:32:28+0000",
+                                           "total_interactions":  8,
+                                           "id":  "18093718361379431",
+                                           "timestamp":  "2026-07-29T08:02:18+0000",
+                                           "saved":  1,
+                                           "reach":  84,
                                            "type":  "CAROUSEL_ALBUM",
                                            "comments":  0,
-                                           "likes":  5,
+                                           "shares":  0,
+                                           "likes":  7,
                                            "product":  "FEED",
-                                           "caption":  "🩵 여름만 되면 몸이 방전되는 사람\n\n열대야에 잠은 설치고, 냉방에 온도차는 심하고,\n아침에 일어나도 개운하지가 않죠.\n여름 타서 입맛도 기운도 없고요.\n\n이거",
-                                           "permalink":  "https://www.instagram.com/p/DbNST4Ej_hb/"
+                                           "caption":  "합정 피부과 내부, 이런 공간에서 시술받아본 적 있으세요? 🌸\n\n핑크빛 아치 복도, 은은한 간접 조명,\n그리고 넓고 조용한 1인 시술실까지.\n뷰티블라썸의원은 홍",
+                                           "views":  215,
+                                           "permalink":  "https://www.instagram.com/p/DbXo54PguHh/"
                                        },
                                        {
+                                           "total_interactions":  5,
+                                           "id":  "18091814882436173",
+                                           "timestamp":  "2026-07-29T08:00:27+0000",
+                                           "saved":  0,
+                                           "reach":  111,
+                                           "type":  "IMAGE",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  5,
+                                           "product":  "FEED",
+                                           "caption":  "주말도 공휴일도 여는 합정 피부과, 8월 진료일정 안내 🗓️\n\n뷰티블라썸의원은 8월 한 달 내내 쉬는 날 없이 진료합니다.\n휴가 일정에 맞춰 주말에도 편한 시간",
+                                           "views":  203,
+                                           "permalink":  "https://www.instagram.com/p/DbXosQrDd2r/"
+                                       },
+                                       {
+                                           "total_interactions":  6,
                                            "id":  "18074194856370375",
                                            "timestamp":  "2026-07-31T08:21:16+0000",
+                                           "saved":  1,
+                                           "reach":  158,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
                                            "likes":  5,
                                            "product":  "REELS",
                                            "caption":  "써마지 안 아프면 돈 버린 걸까? 🤔 결론은 그렇지 않아요. 통증을 참았다고 효과가 보장되는 게 아니거든요.\n\n단극성 고주파 열은 피부 두께·부위에 따라 전달이",
+                                           "views":  198,
                                            "permalink":  "https://www.instagram.com/reel/Dbc0nhPDjsd/"
                                        },
                                        {
-                                           "id":  "18423703297199483",
-                                           "timestamp":  "2026-08-05T07:30:07+0000",
+                                           "total_interactions":  5,
+                                           "id":  "18107441381098683",
+                                           "timestamp":  "2026-07-25T07:32:28+0000",
+                                           "saved":  0,
+                                           "reach":  66,
                                            "type":  "CAROUSEL_ALBUM",
                                            "comments":  0,
-                                           "likes":  4,
+                                           "shares":  0,
+                                           "likes":  5,
                                            "product":  "FEED",
-                                           "caption":  "처짐은 채워서 해결되는 게 아니더라고요.\n\n올타이트는 끌어올리는 쪽입니다.\n표피는 지키고, 진피와 SMAS층에만 열을 모으는 방식이에요.\n\n층마다 온도 환경이 다",
-                                           "permalink":  "https://www.instagram.com/p/DbpmyTbDKNR/"
+                                           "caption":  "🩵 여름만 되면 몸이 방전되는 사람\n\n열대야에 잠은 설치고, 냉방에 온도차는 심하고,\n아침에 일어나도 개운하지가 않죠.\n여름 타서 입맛도 기운도 없고요.\n\n이거",
+                                           "views":  167,
+                                           "permalink":  "https://www.instagram.com/p/DbNST4Ej_hb/"
                                        },
                                        {
+                                           "total_interactions":  9,
+                                           "id":  "18437147650192420",
+                                           "timestamp":  "2026-07-29T08:01:15+0000",
+                                           "saved":  1,
+                                           "reach":  85,
+                                           "type":  "CAROUSEL_ALBUM",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  8,
+                                           "product":  "FEED",
+                                           "caption":  "여름 끝나기 전에 챙기는 피부, 합정 피부과 8월 이벤트 ✨\n\n강한 자외선과 에어컨 실내를 오가며\n속은 마르고 겉은 처지기 쉬운 계절이에요.\n뷰티블라썸의원이 이번",
+                                           "views":  155,
+                                           "permalink":  "https://www.instagram.com/p/DbXoyMFDTv-/"
+                                       },
+                                       {
+                                           "total_interactions":  5,
                                            "id":  "18118384624850868",
                                            "timestamp":  "2026-07-29T07:59:29+0000",
+                                           "saved":  1,
+                                           "reach":  102,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
                                            "likes":  4,
                                            "product":  "REELS",
                                            "caption":  "시술 다음 날 얼굴이 울퉁불퉁하면 \"효과 좋은 건가?\" 싶죠. 근데 그거, 흔한 오해예요 ⬇️\n\n리쥬란 엠보싱은 약물이 들어간 자리가 잠시 도드라져 보이는 현상일",
+                                           "views":  150,
                                            "permalink":  "https://www.instagram.com/reel/DbXohfBE1B7/"
                                        },
                                        {
-                                           "id":  "18327253729302808",
-                                           "timestamp":  "2026-08-09T05:17:42+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  4,
-                                           "product":  "REELS",
-                                           "caption":  "입술필러 받고 한쪽이 더 크게 보인다면, 지금 보이는 모양이 최종 입술은 아닙니다. ⬇️\n\n입술은 혈류가 많고 움직임이 잦아 마취와 주입 자극 후 붓기가 잘 보여",
-                                           "permalink":  "https://www.instagram.com/reel/Dbzqwesk0tX/"
-                                       },
-                                       {
-                                           "id":  "18337095778250747",
-                                           "timestamp":  "2026-08-01T04:51:07+0000",
+                                           "total_interactions":  4,
+                                           "id":  "18423703297199483",
+                                           "timestamp":  "2026-08-05T07:30:07+0000",
+                                           "saved":  0,
+                                           "reach":  56,
                                            "type":  "CAROUSEL_ALBUM",
                                            "comments":  0,
+                                           "shares":  0,
                                            "likes":  4,
                                            "product":  "FEED",
-                                           "caption":  "마운자로 부작용, 약 때문만은 아닐 수 있어요 💉\n\n메스꺼움·설사·변비로 중단을 고민하는 분들이\n생각보다 많은데요, 급한 증량이나 무리한 단식이\n원인인 경우가 ",
-                                           "permalink":  "https://www.instagram.com/p/DbfBaRFFFc3/"
-                                       },
-                                       {
-                                           "id":  "18141659281503390",
-                                           "timestamp":  "2026-08-03T07:08:11+0000",
-                                           "type":  "CAROUSEL_ALBUM",
-                                           "comments":  0,
-                                           "likes":  4,
-                                           "product":  "FEED",
-                                           "caption":  "여름만 되면 옷 색깔부터 고민되는 사람 손 🙋‍♀️\n\n땀은 체질이라 어쩔 수 없다고들 하지만,\n땀샘으로 가는 신경전달물질 분비를 조절하는 방식으로\n관리해볼 수 ",
-                                           "permalink":  "https://www.instagram.com/p/Dbkar7hjq8_/"
+                                           "caption":  "처짐은 채워서 해결되는 게 아니더라고요.\n\n올타이트는 끌어올리는 쪽입니다.\n표피는 지키고, 진피와 SMAS층에만 열을 모으는 방식이에요.\n\n층마다 온도 환경이 다",
+                                           "views":  121,
+                                           "permalink":  "https://www.instagram.com/p/DbpmyTbDKNR/"
                                        }
                                    ],
+                         "follower_daily":  [
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-07-21"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-22"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-23"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-24"
+                                                },
+                                                {
+                                                    "value":  5,
+                                                    "date":  "2026-07-25"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-26"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-27"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-28"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-29"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-30"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-31"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-01"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-02"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-03"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-04"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-05"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-06"
+                                                },
+                                                {
+                                                    "value":  4,
+                                                    "date":  "2026-08-07"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-08"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-09"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-10"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-11"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-12"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-13"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-14"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-15"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-16"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-17"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-18"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-19"
+                                                }
+                                            ],
+                         "follower_growth":  39,
+                         "insights":  {
+                                          "likes":  272,
+                                          "profile_views":  916,
+                                          "reach":  26601,
+                                          "saves":  37,
+                                          "views":  57525,
+                                          "accounts_engaged":  115,
+                                          "shares":  30,
+                                          "comments":  4,
+                                          "total_interactions":  374
+                                      },
+                         "label":  "KR",
                          "previous":  {
                                           "likes":  247,
                                           "posts":  58,
@@ -357,7 +1035,6 @@
                                           "comments":  2,
                                           "engagement":  249
                                       },
-                         "label":  "KR",
                          "ig":  {
                                     "website":  "http://pf.kakao.com/_yrHCn/friend",
                                     "id":  "17841472100620789",
@@ -383,156 +1060,321 @@
                      {
                          "media":  [
                                        {
-                                           "id":  "18119910968507122",
-                                           "timestamp":  "2026-07-28T08:31:11+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  4,
-                                           "product":  "REELS",
-                                           "caption":  "今日はビューティーブロッサムの顔、\nイゴンホ院長のバースデー🎉\n\n院長先生にとって、\n輝きに満ちた素敵な一年になりますように。\n\nHappy Birthday, Doctor �",
-                                           "permalink":  "https://www.instagram.com/reel/DbVHYc_hBYH/"
-                                       },
-                                       {
-                                           "id":  "18020936471902458",
-                                           "timestamp":  "2026-07-25T02:02:15+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  3,
-                                           "product":  "REELS",
-                                           "caption":  "4つの波長で、肌の浅い層から深い層までアプローチ✨\n\nポトラ クワトロリフティングは、\n755・808・940・1064nmの4波長を同時に照射し、\n肌のハリ・トーン・フェイスライ",
-                                           "permalink":  "https://www.instagram.com/reel/DbMsd45CNCK/"
-                                       },
-                                       {
-                                           "id":  "18002144849777778",
-                                           "timestamp":  "2026-07-24T06:03:14+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "REELS",
-                                           "caption":  "何を変えてもお昼にはテカる。その繰り返し、地味にしんどいですよね。\n\n皮脂が多い肌質は、スキンケアだけで押さえ込むのが難しいことがあります。ニードルRF（ポテンツァ）は針先の高周波",
-                                           "permalink":  "https://www.instagram.com/reel/DbKjO76B9lg/"
-                                       },
-                                       {
-                                           "id":  "17908574091445901",
-                                           "timestamp":  "2026-07-26T02:01:03+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "REELS",
-                                           "caption":  "私の顔はアップロードしないでもらえますか？😭\n\n📍ビューティーブロッサムクリニック🌸\n　弘大入口駅の隣駅、合井駅3番出口すぐ！\n\n🌐イベント価格や施術についてはこちら！\n　",
-                                           "permalink":  "https://www.instagram.com/reel/DbPRIxoD5Hx/"
-                                       },
-                                       {
-                                           "id":  "17901428691498240",
-                                           "timestamp":  "2026-07-29T09:56:11+0000",
-                                           "type":  "CAROUSEL_ALBUM",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "FEED",
-                                           "caption":  "合井（ハプチョン）の美容クリニック。\nこんな空間で施術を受けたことはありますか？🌸\n\nピンクのアーチが続く廊下、やわらかな間接照明、\nそして広々とした静かな完全個室の施術ルーム。",
-                                           "permalink":  "https://www.instagram.com/p/DbX17_7FHyZ/"
-                                       },
-                                       {
-                                           "id":  "17957534367192305",
-                                           "timestamp":  "2026-08-02T02:01:38+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "REELS",
-                                           "caption":  "フェイスラインのもたつきや二重あごが気になる方へ✨\n\n今回は、カウンセリングと3D肌診断で顔のバランスや気になる部分を確認したあと、ニュービジュCA注射を受けました。\n\n一人ひとり",
-                                           "permalink":  "https://www.instagram.com/reel/DbhSw0AjEFr/"
-                                       },
-                                       {
-                                           "id":  "17975756340083668",
-                                           "timestamp":  "2026-08-06T10:00:52+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "REELS",
-                                           "caption":  "マリオネットラインは、口角の下の溝だけでなく、口横のボリューム、皮膚や脂肪のたるみ、骨格、筋肉の動きが重なって目立つことがあります。ヒアルロン酸で直接埋める方法が合う場合もあります",
-                                           "permalink":  "https://www.instagram.com/reel/Dbscx73FOGC/"
-                                       },
-                                       {
-                                           "id":  "18140149477848062",
-                                           "timestamp":  "2026-08-07T10:01:21+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "REELS",
-                                           "caption":  "こめかみや頬がくぼみ、頬骨やあご横が目立つ輪郭は、韓国で「ピーナッツ型」と表現されることがあります。くぼみを全部フィラーで埋めるのではなく、骨格、ボリューム不足、たるみ、咬筋、過去",
-                                           "permalink":  "https://www.instagram.com/reel/DbvBoUfjyjJ/"
-                                       },
-                                       {
+                                           "total_interactions":  2,
                                            "id":  "18073234523401819",
                                            "timestamp":  "2026-08-16T10:01:29+0000",
+                                           "saved":  0,
+                                           "reach":  443,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
                                            "likes":  2,
                                            "product":  "REELS",
                                            "caption":  "脂肪溶解注射は、炎症と腫れが落ち着く時期を待って輪郭を評価します。\n\n💡 ポイント\n· 直後は変化より 腫れが先に出る\n· 炎症反応で 硬さや圧痛も\n· 腫れた段階で 追加を急が",
+                                           "views":  468,
                                            "permalink":  "https://www.instagram.com/reel/DcGMz3Mj9vQ/"
                                        },
                                        {
-                                           "id":  "18109674842087123",
-                                           "timestamp":  "2026-08-15T10:01:02+0000",
+                                           "total_interactions":  5,
+                                           "id":  "17901428691498240",
+                                           "timestamp":  "2026-07-29T09:56:11+0000",
+                                           "saved":  3,
+                                           "reach":  151,
+                                           "type":  "CAROUSEL_ALBUM",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  2,
+                                           "product":  "FEED",
+                                           "caption":  "合井（ハプチョン）の美容クリニック。\nこんな空間で施術を受けたことはありますか？🌸\n\nピンクのアーチが続く廊下、やわらかな間接照明、\nそして広々とした静かな完全個室の施術ルーム。",
+                                           "views":  345,
+                                           "permalink":  "https://www.instagram.com/p/DbX17_7FHyZ/"
+                                       },
+                                       {
+                                           "total_interactions":  4,
+                                           "id":  "18119910968507122",
+                                           "timestamp":  "2026-07-28T08:31:11+0000",
+                                           "saved":  0,
+                                           "reach":  241,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
+                                           "likes":  4,
+                                           "product":  "REELS",
+                                           "caption":  "今日はビューティーブロッサムの顔、\nイゴンホ院長のバースデー🎉\n\n院長先生にとって、\n輝きに満ちた素敵な一年になりますように。\n\nHappy Birthday, Doctor �",
+                                           "views":  305,
+                                           "permalink":  "https://www.instagram.com/reel/DbVHYc_hBYH/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "17908574091445901",
+                                           "timestamp":  "2026-07-26T02:01:03+0000",
+                                           "saved":  0,
+                                           "reach":  226,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
                                            "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "組み合わせ治療は、機械の順番より各層の担当を明確にすることが先です。\n\n💡 ポイント\n· 順番に固定の 正解はない\n· ONDAは選択した 皮下ボリューム\n· Sofwaveは ",
-                                           "permalink":  "https://www.instagram.com/reel/DcDn9ypj3Vk/"
+                                           "caption":  "私の顔はアップロードしないでもらえますか？😭\n\n📍ビューティーブロッサムクリニック🌸\n　弘大入口駅の隣駅、合井駅3番出口すぐ！\n\n🌐イベント価格や施術についてはこちら！\n　",
+                                           "views":  294,
+                                           "permalink":  "https://www.instagram.com/reel/DbPRIxoD5Hx/"
                                        },
                                        {
-                                           "id":  "18140310304560527",
-                                           "timestamp":  "2026-07-24T08:58:01+0000",
+                                           "total_interactions":  3,
+                                           "id":  "18140149477848062",
+                                           "timestamp":  "2026-08-07T10:01:21+0000",
+                                           "saved":  1,
+                                           "reach":  242,
                                            "type":  "VIDEO",
                                            "comments":  0,
-                                           "likes":  1,
+                                           "shares":  0,
+                                           "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "フェイスラインのもたつきや、二重あごが気になる方へ🩵\n\nマイクロ波エネルギーで脂肪層にアプローチし、すっきりとした輪郭を目指すオンダリフト。\n\n夏の写真映えに向けて、横顔まできれ",
-                                           "permalink":  "https://www.instagram.com/reel/DbK3SB0xQW7/"
+                                           "caption":  "こめかみや頬がくぼみ、頬骨やあご横が目立つ輪郭は、韓国で「ピーナッツ型」と表現されることがあります。くぼみを全部フィラーで埋めるのではなく、骨格、ボリューム不足、たるみ、咬筋、過去",
+                                           "views":  283,
+                                           "permalink":  "https://www.instagram.com/reel/DbvBoUfjyjJ/"
                                        },
                                        {
+                                           "total_interactions":  1,
                                            "id":  "17970051749934876",
                                            "timestamp":  "2026-08-02T10:01:50+0000",
+                                           "saved":  0,
+                                           "reach":  228,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
                                            "likes":  1,
                                            "product":  "REELS",
                                            "caption":  "立ち耳ヒアルロン酸は、耳の後ろ側などへ注入し、正面から見える耳の角度や輪郭を調整する施術です。耳が見えると小顔に見えるのか、左右差や耳の形で何が変わるのかを、検討前のポイントとして",
+                                           "views":  257,
                                            "permalink":  "https://www.instagram.com/reel/DbiJsthCmmx/"
                                        },
                                        {
-                                           "id":  "17971477895917316",
-                                           "timestamp":  "2026-07-29T10:13:17+0000",
-                                           "type":  "IMAGE",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "FEED",
-                                           "caption":  "土日・祝日も診療する合井（ハプチョン）の美容クリニック\n8月の診療スケジュールのご案内🗓️\n\nビューティーブロッサムクリニックは、\n8月も休診日なしで毎日診療いたします。\n\n夏休",
-                                           "permalink":  "https://www.instagram.com/p/DbX35SdFK9p/"
-                                       },
-                                       {
-                                           "id":  "18089168114538093",
-                                           "timestamp":  "2026-08-01T10:01:10+0000",
+                                           "total_interactions":  2,
+                                           "id":  "18002144849777778",
+                                           "timestamp":  "2026-07-24T06:03:14+0000",
+                                           "saved":  0,
+                                           "reach":  213,
                                            "type":  "VIDEO",
                                            "comments":  0,
-                                           "likes":  1,
+                                           "shares":  0,
+                                           "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "肩フィラーは、肩先だけを大きく見せるのではなく、鎖骨・上腕・背中へ続くラインと左右差を見ながら輪郭を検討する注入施術です。直角肩、なで肩、肩のラインで検索している方へ、写真の角度や",
-                                           "permalink":  "https://www.instagram.com/reel/Dbfk1vAAeqZ/"
+                                           "caption":  "何を変えてもお昼にはテカる。その繰り返し、地味にしんどいですよね。\n\n皮脂が多い肌質は、スキンケアだけで押さえ込むのが難しいことがあります。ニードルRF（ポテンツァ）は針先の高周波",
+                                           "views":  254,
+                                           "permalink":  "https://www.instagram.com/reel/DbKjO76B9lg/"
                                        },
                                        {
-                                           "id":  "18099071192366254",
-                                           "timestamp":  "2026-07-31T02:01:00+0000",
+                                           "total_interactions":  2,
+                                           "id":  "18109674842087123",
+                                           "timestamp":  "2026-08-15T10:01:02+0000",
+                                           "saved":  0,
+                                           "reach":  202,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
+                                           "likes":  2,
+                                           "product":  "REELS",
+                                           "caption":  "組み合わせ治療は、機械の順番より各層の担当を明確にすることが先です。\n\n💡 ポイント\n· 順番に固定の 正解はない\n· ONDAは選択した 皮下ボリューム\n· Sofwaveは ",
+                                           "views":  237,
+                                           "permalink":  "https://www.instagram.com/reel/DcDn9ypj3Vk/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "17957534367192305",
+                                           "timestamp":  "2026-08-02T02:01:38+0000",
+                                           "saved":  0,
+                                           "reach":  147,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  2,
+                                           "product":  "REELS",
+                                           "caption":  "フェイスラインのもたつきや二重あごが気になる方へ✨\n\n今回は、カウンセリングと3D肌診断で顔のバランスや気になる部分を確認したあと、ニュービジュCA注射を受けました。\n\n一人ひとり",
+                                           "views":  174,
+                                           "permalink":  "https://www.instagram.com/reel/DbhSw0AjEFr/"
+                                       },
+                                       {
+                                           "total_interactions":  3,
+                                           "id":  "18020936471902458",
+                                           "timestamp":  "2026-07-25T02:02:15+0000",
+                                           "saved":  0,
+                                           "reach":  134,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  3,
+                                           "product":  "REELS",
+                                           "caption":  "4つの波長で、肌の浅い層から深い層までアプローチ✨\n\nポトラ クワトロリフティングは、\n755・808・940・1064nmの4波長を同時に照射し、\n肌のハリ・トーン・フェイスライ",
+                                           "views":  154,
+                                           "permalink":  "https://www.instagram.com/reel/DbMsd45CNCK/"
+                                       },
+                                       {
+                                           "total_interactions":  1,
+                                           "id":  "18140310304560527",
+                                           "timestamp":  "2026-07-24T08:58:01+0000",
+                                           "saved":  0,
+                                           "reach":  89,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
                                            "likes":  1,
                                            "product":  "REELS",
-                                           "caption":  "二重あごのDCA注射は即時の脂肪減少ではありません。初期は腫れや硬さが出ることがあり、体が反応を整理する時間が必要です。一般的な減量注射ではなく、選んだ顎下脂肪が対象です。適応、し",
-                                           "permalink":  "https://www.instagram.com/reel/DbcJF6UD4Rs/"
+                                           "caption":  "フェイスラインのもたつきや、二重あごが気になる方へ🩵\n\nマイクロ波エネルギーで脂肪層にアプローチし、すっきりとした輪郭を目指すオンダリフト。\n\n夏の写真映えに向けて、横顔まできれ",
+                                           "views":  121,
+                                           "permalink":  "https://www.instagram.com/reel/DbK3SB0xQW7/"
+                                       },
+                                       {
+                                           "total_interactions":  3,
+                                           "id":  "17975756340083668",
+                                           "timestamp":  "2026-08-06T10:00:52+0000",
+                                           "saved":  0,
+                                           "reach":  93,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  2,
+                                           "product":  "REELS",
+                                           "caption":  "マリオネットラインは、口角の下の溝だけでなく、口横のボリューム、皮膚や脂肪のたるみ、骨格、筋肉の動きが重なって目立つことがあります。ヒアルロン酸で直接埋める方法が合う場合もあります",
+                                           "views":  105,
+                                           "permalink":  "https://www.instagram.com/reel/Dbscx73FOGC/"
                                        }
                                    ],
+                         "follower_daily":  [
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-21"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-22"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-23"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-24"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-25"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-26"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-27"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-28"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-29"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-30"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-31"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-01"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-02"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-03"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-04"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-05"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-06"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-07"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-08"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-09"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-10"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-11"
+                                                },
+                                                {
+                                                    "value":  6,
+                                                    "date":  "2026-08-12"
+                                                },
+                                                {
+                                                    "value":  5,
+                                                    "date":  "2026-08-13"
+                                                },
+                                                {
+                                                    "value":  4,
+                                                    "date":  "2026-08-14"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-15"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-16"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-17"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-18"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-19"
+                                                }
+                                            ],
+                         "follower_growth":  33,
+                         "insights":  {
+                                          "likes":  190,
+                                          "profile_views":  1196,
+                                          "reach":  40589,
+                                          "saves":  104,
+                                          "views":  69283,
+                                          "accounts_engaged":  217,
+                                          "shares":  1,
+                                          "comments":  7,
+                                          "total_interactions":  305
+                                      },
+                         "label":  "JP",
                          "previous":  {
                                           "likes":  51,
                                           "posts":  26,
@@ -541,7 +1383,6 @@
                                           "comments":  0,
                                           "engagement":  51
                                       },
-                         "label":  "JP",
                          "ig":  {
                                     "website":  "https://litt.ly/beautyblossom_jp",
                                     "id":  "17841471771385621",
@@ -567,374 +1408,354 @@
                      {
                          "media":  [
                                        {
-                                           "id":  "18084765812447622",
-                                           "timestamp":  "2026-07-28T08:38:39+0000",
+                                           "total_interactions":  32,
+                                           "id":  "17938824111299098",
+                                           "timestamp":  "2026-07-28T08:02:50+0000",
+                                           "saved":  1,
+                                           "reach":  1418,
                                            "type":  "VIDEO",
                                            "comments":  0,
-                                           "likes":  8,
+                                           "shares":  1,
+                                           "likes":  30,
                                            "product":  "REELS",
-                                           "caption":  "🎉 Happy Birthday～院長！生日粗咖嘿！🥳\n\n麗朵又陪院長度過了一個生日啦！\n這一年真的辛苦了，也謝謝院長一直以來的照顧與付出✨\n\n接下來的日子，也請院長多多指教！",
-                                           "permalink":  "https://www.instagram.com/reel/DbVIOzuFK66/"
+                                           "caption":  "Wishing the happiest of birthdays to our Head Doctor, Dr. Lee! 🍰✨ \nThank you for always g",
+                                           "views":  1844,
+                                           "permalink":  "https://www.instagram.com/reel/DbVEIW7gVMY/"
                                        },
                                        {
-                                           "id":  "18015154133712830",
-                                           "timestamp":  "2026-07-26T07:21:15+0000",
+                                           "total_interactions":  62,
+                                           "id":  "18362008198215031",
+                                           "timestamp":  "2026-07-25T15:00:29+0000",
+                                           "saved":  3,
+                                           "reach":  1480,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  4,
+                                           "likes":  55,
+                                           "product":  "REELS",
+                                           "caption":  "Client: \"Please don\u0027t show my face.\"\nUs: \"Sure.\" 🐱✨💄\nPrivacy guaranteed, plump lips non-",
+                                           "views":  1771,
+                                           "permalink":  "https://www.instagram.com/reel/DbOFiWtjGBh/"
+                                       },
+                                       {
+                                           "total_interactions":  7,
+                                           "id":  "18109148687101901",
+                                           "timestamp":  "2026-07-31T16:01:43+0000",
+                                           "saved":  0,
+                                           "reach":  576,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
                                            "likes":  7,
                                            "product":  "REELS",
-                                           "caption":  "院長：那我懂你意思了😏\n\n📅 8-9月預約進行中\n📍 首爾合井 Beauty Blossom Clinic\n📲 LINE 官方帳號：beautyblossom_tw\n\n#緊",
-                                           "permalink":  "https://www.instagram.com/reel/DbP1yqsgRCw/"
+                                           "caption":  "Precision matters when it comes to your smile 💋👨‍⚕️\n\nAt Beauty Blossom, every injection ",
+                                           "views":  678,
+                                           "permalink":  "https://www.instagram.com/reel/DbdpSihjoPN/"
                                        },
                                        {
-                                           "id":  "18116411119901964",
-                                           "timestamp":  "2026-07-29T10:06:21+0000",
-                                           "type":  "CAROUSEL_ALBUM",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "FEED",
-                                           "caption":  "Beauty Blossom🌸8月營業時間\n\n⏰麗朵Beauty Blossom皮膚科門診時間⏰⌛\n平日：10:00 - 20:00（最後接待時間 18:30）\n週末：10:00",
-                                           "permalink":  "https://www.instagram.com/p/DbX3GgOiSt0/"
-                                       },
-                                       {
-                                           "id":  "18615173761036804",
-                                           "timestamp":  "2026-08-06T04:00:02+0000",
+                                           "total_interactions":  6,
+                                           "id":  "17893612968574425",
+                                           "timestamp":  "2026-07-24T04:00:55+0000",
+                                           "saved":  2,
+                                           "reach":  375,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  2,
                                            "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "🫄 小腹凸出別盲目減脂！先找對原因才是關鍵\n想告別頑固小腹？第一步不是猛打能量，而是精準判斷凸出的原因！\n\n腹部線條不順，往往不只是皮下脂肪堆積，還可能同時受到皮膚鬆弛、日常姿勢",
-                                           "permalink":  "https://www.instagram.com/reel/DbrzlhDERrt/"
+                                           "caption":  "Tired of skipping the most delicate part of your face? 👁️✨ \nEye XERF is made specifically",
+                                           "views":  445,
+                                           "permalink":  "https://www.instagram.com/reel/DbKVQUkGvDj/"
                                        },
                                        {
-                                           "id":  "17896652154572876",
-                                           "timestamp":  "2026-08-15T04:00:02+0000",
+                                           "total_interactions":  3,
+                                           "id":  "17926191987394894",
+                                           "timestamp":  "2026-08-12T10:30:59+0000",
+                                           "saved":  0,
+                                           "reach":  294,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
+                                           "likes":  3,
+                                           "product":  "REELS",
+                                           "caption":  "Elf ear filler isn’t just about making the ears look more pointed 👂✨\n\nBy adding a small a",
+                                           "views":  346,
+                                           "permalink":  "https://www.instagram.com/reel/Db78_zFlELP/"
+                                       },
+                                       {
+                                           "total_interactions":  3,
+                                           "id":  "17900651616516724",
+                                           "timestamp":  "2026-08-02T04:01:46+0000",
+                                           "saved":  0,
+                                           "reach":  228,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  1,
                                            "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "雖然院長的舞蹈細胞可能還在加載中\n但對於診所的熱門療程，他可是精準到不行 ✨\n\n影片裡被院長「跳」出來的三大護膚神器：\n\n💧 HILOWAVE｜深層補水，立現水光保濕力\n💉 麗",
-                                           "permalink":  "https://www.instagram.com/reel/DcC-sLFCU06/"
+                                           "caption":  "Say goodbye to stubborn double chin fat! 👋✨\n\nIntroducing Nuviju—the next-generation fat-d",
+                                           "views":  315,
+                                           "permalink":  "https://www.instagram.com/reel/Dbhgf84AgzU/"
                                        },
                                        {
-                                           "id":  "17943243984056508",
-                                           "timestamp":  "2026-07-24T07:55:29+0000",
+                                           "total_interactions":  1,
+                                           "id":  "18098065820220281",
+                                           "timestamp":  "2026-08-01T10:01:00+0000",
+                                           "saved":  0,
+                                           "reach":  213,
                                            "type":  "VIDEO",
                                            "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "Sculpted. Refined. Defined. 📐✨\n\nA subtle touch of chin or jawline filler can completely t",
+                                           "views":  289,
+                                           "permalink":  "https://www.instagram.com/reel/Dbfkzvqga7U/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "18023095334849465",
+                                           "timestamp":  "2026-07-22T01:50:50+0000",
+                                           "saved":  1,
+                                           "reach":  191,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "Lift deeper with Ultherapy Prime\n\n✔️ Targets deep layers to stimulate collagen\n✔️ Firms sa",
+                                           "views":  281,
+                                           "permalink":  "https://www.instagram.com/reel/DbE8yZbCiLm/"
+                                       },
+                                       {
+                                           "total_interactions":  1,
+                                           "id":  "18127949431709164",
+                                           "timestamp":  "2026-08-02T10:01:09+0000",
+                                           "saved":  0,
+                                           "reach":  240,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
+                                           "likes":  1,
+                                           "product":  "REELS",
+                                           "caption":  "Lift, firm, and restore—without downtime. ✨\n\nMeet Sofwave™, the next-generation ultrasound",
+                                           "views":  268,
+                                           "permalink":  "https://www.instagram.com/reel/DbiJopdDAJG/"
+                                       },
+                                       {
+                                           "total_interactions":  3,
+                                           "id":  "18109174684969220",
+                                           "timestamp":  "2026-07-30T16:01:41+0000",
+                                           "saved":  0,
+                                           "reach":  202,
+                                           "type":  "VIDEO",
+                                           "comments":  2,
+                                           "shares":  1,
+                                           "likes":  0,
+                                           "product":  "REELS",
+                                           "caption":  "Not every double chin is caused by fat.\n\nBefore choosing DCA, it\u0027s important to understand",
+                                           "views":  266,
+                                           "permalink":  "https://www.instagram.com/reel/DbbEgegiVoy/"
+                                       },
+                                       {
+                                           "total_interactions":  2,
+                                           "id":  "17903655687470167",
+                                           "timestamp":  "2026-08-04T06:01:03+0000",
+                                           "saved":  0,
+                                           "reach":  172,
+                                           "type":  "VIDEO",
+                                           "comments":  0,
+                                           "shares":  0,
                                            "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "想施作 DCA 脂肪溶解針嗎？🤔\n\n先了解療程前後的注意事項，才能讓療程更安心、更順利。\n\n✔ 術前諮詢重點\n✔ 術後照護須知\n✔ 常見反應與回診時機\n✔ 療程間隔與規劃\n\n每個",
-                                           "permalink":  "https://www.instagram.com/reel/DbKwGVzCdRW/"
+                                           "caption":  "More shots = better results? Not necessarily. 💡✨\n\nWhen treating skin laxity with Density ",
+                                           "views":  220,
+                                           "permalink":  "https://www.instagram.com/reel/Dbm3vdQgCXe/"
                                        },
                                        {
-                                           "id":  "17984997228009775",
-                                           "timestamp":  "2026-08-02T03:01:11+0000",
+                                           "total_interactions":  2,
+                                           "id":  "18123907552799906",
+                                           "timestamp":  "2026-08-16T04:01:34+0000",
+                                           "saved":  0,
+                                           "reach":  127,
                                            "type":  "VIDEO",
                                            "comments":  0,
-                                           "likes":  1,
+                                           "shares":  0,
+                                           "likes":  2,
                                            "product":  "REELS",
-                                           "caption":  "✨ 雙下巴總是瘦不下來？\n不一定是胖，有時候只是脂肪堆積造成輪廓線不夠俐落！\n\n💉 NUVIJU CA溶脂針，針對雙下巴與下顎線進行集中改善，\n打造更清晰、自然的臉部輪廓✨\n\n療",
-                                           "permalink":  "https://www.instagram.com/reel/DbhZkbICgZi/"
-                                       },
-                                       {
-                                           "id":  "18122268514704049",
-                                           "timestamp":  "2026-07-25T02:01:16+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "Fortra 鈦拉提 全新登場！✨\n結合 4 種光波與智能冰感技術，過程就像做高級 SPA 一樣舒適 🌿 \n在放鬆的療程空間裡，輕鬆拉緊輪廓線、找回澎潤光采。\n\n告別鬆弛，綻放妳",
-                                           "permalink":  "https://www.instagram.com/reel/DbMsWaMCDc9/"
-                                       },
-                                       {
-                                           "id":  "17964993039136066",
-                                           "timestamp":  "2026-07-30T03:00:16+0000",
-                                           "type":  "CAROUSEL_ALBUM",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "FEED",
-                                           "caption":  "💧 肌膚的水分，不是擦上去，而是存進去。\nSKINVIVE 真皮補水，從肌底提升保濕力，打造自然透亮的水光肌。\n讓每一次近看，都看得見肌膚質感的改變。✨\n\n📅 7-8月預約進行",
-                                           "permalink":  "https://www.instagram.com/p/DbZrIqMDHEB/"
-                                       },
-                                       {
-                                           "id":  "17957265957207208",
-                                           "timestamp":  "2026-08-16T04:00:02+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "在皮膚科上班的好處？直接搶當療程模特！💉\n\n最近照鏡子總覺得眼下凹陷好明顯，整個人看起來超累…🥲\n身為員工福利，這次直接實測 HILOWAVE，拯救疲憊眼下 💧\n\n✨ 3 秒",
-                                           "permalink":  "https://www.instagram.com/reel/DcFjgXiEToH/"
-                                       },
-                                       {
-                                           "id":  "17908430289452086",
-                                           "timestamp":  "2026-07-29T04:01:22+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "DENSITY 300發 vs 600發，只看數字就夠了嗎？⬇️\n\n臉部每個區域的皮膚厚度、脂肪量與鬆弛方向都不同。\n比起單純追求發數，更重要的是探頭選擇、能量配置，以及實際施作的",
-                                           "permalink":  "https://www.instagram.com/reel/DbXNRI-Cs2h/"
-                                       },
-                                       {
-                                           "id":  "18141444256515877",
-                                           "timestamp":  "2026-08-04T04:00:02+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "🦵 小腿線條不順？先看懂你是哪一種腿型！\n想改善小腿線條，第一步不是盲目跟風，而是精準判斷原因！到底是脂肪堆積、肌肉發達，還是日常浮腫呢？\n\n💡 ONDA 超微波 能針對局部脂",
-                                           "permalink":  "https://www.instagram.com/reel/Dbmp9TECau3/"
-                                       },
-                                       {
-                                           "id":  "18073215971707675",
-                                           "timestamp":  "2026-08-01T03:01:17+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "💋 想擁有自然又精緻的韓系唇形嗎？\n\n從術前諮詢、客製化設計，到院長親自施打，每一步都依照個人五官比例細緻調整，打造適合自己的自然唇型，而不是一味追求過度豐唇✨\n\n自然立體、柔和",
-                                           "permalink":  "https://www.instagram.com/reel/Dbe0yUCjJgW/"
-                                       },
-                                       {
-                                           "id":  "18210777379359937",
-                                           "timestamp":  "2026-08-10T04:00:02+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "XERF射頻｜同一區為何不只走一次 ⚡\n\n打 XERF 射頻時，不是發數狂打、次數直直加就好！多次走向的重點是「分層作用與均勻發散」💡\n\n✨ 3 秒看懂 XERF 關鍵：\n1️⃣",
-                                           "permalink":  "https://www.instagram.com/reel/Db2Gz8WEaYd/"
-                                       },
-                                       {
-                                           "id":  "18087339848644924",
-                                           "timestamp":  "2026-08-06T04:17:08+0000",
-                                           "type":  "CAROUSEL_ALBUM",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "FEED",
-                                           "caption":  "ONDA 到底是什麼？✨\n\n不是電波，也不是音波。\nONDA 使用的是 2.45GHz 微波（Coolwaves®），能量更集中作用於深層脂肪組織，打造更俐落的輪廓。\n\n✔ 3mm",
-                                           "permalink":  "https://www.instagram.com/p/Dbr1fswEpVj/"
+                                           "caption":  "POV: You work at an aesthetic clinic ✨\nToday’s staff perk: HiloWave 🤭💕\nAn HA-based treat",
+                                           "views":  179,
+                                           "permalink":  "https://www.instagram.com/reel/DcFjnEglcum/"
                                        }
                                    ],
-                         "previous":  {
-                                          "likes":  16,
-                                          "posts":  26,
-                                          "reels":  16,
-                                          "avgEngagement":  0.61538461538461542,
-                                          "comments":  0,
-                                          "engagement":  16
+                         "follower_daily":  [
+                                                {
+                                                    "value":  4,
+                                                    "date":  "2026-07-21"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-07-22"
+                                                },
+                                                {
+                                                    "value":  4,
+                                                    "date":  "2026-07-23"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-24"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-07-25"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-07-26"
+                                                },
+                                                {
+                                                    "value":  5,
+                                                    "date":  "2026-07-27"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-28"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-07-29"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-07-30"
+                                                },
+                                                {
+                                                    "value":  11,
+                                                    "date":  "2026-07-31"
+                                                },
+                                                {
+                                                    "value":  7,
+                                                    "date":  "2026-08-01"
+                                                },
+                                                {
+                                                    "value":  7,
+                                                    "date":  "2026-08-02"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-03"
+                                                },
+                                                {
+                                                    "value":  5,
+                                                    "date":  "2026-08-04"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-05"
+                                                },
+                                                {
+                                                    "value":  1,
+                                                    "date":  "2026-08-06"
+                                                },
+                                                {
+                                                    "value":  5,
+                                                    "date":  "2026-08-07"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-08"
+                                                },
+                                                {
+                                                    "value":  6,
+                                                    "date":  "2026-08-09"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-10"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-11"
+                                                },
+                                                {
+                                                    "value":  4,
+                                                    "date":  "2026-08-12"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-13"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-14"
+                                                },
+                                                {
+                                                    "value":  6,
+                                                    "date":  "2026-08-15"
+                                                },
+                                                {
+                                                    "value":  2,
+                                                    "date":  "2026-08-16"
+                                                },
+                                                {
+                                                    "value":  3,
+                                                    "date":  "2026-08-17"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-18"
+                                                },
+                                                {
+                                                    "value":  0,
+                                                    "date":  "2026-08-19"
+                                                }
+                                            ],
+                         "follower_growth":  96,
+                         "insights":  {
+                                          "likes":  900,
+                                          "profile_views":  1330,
+                                          "reach":  77319,
+                                          "saves":  178,
+                                          "views":  146600,
+                                          "accounts_engaged":  1081,
+                                          "shares":  65,
+                                          "comments":  29,
+                                          "total_interactions":  1238
                                       },
-                         "label":  "TW",
-                         "ig":  {
-                                    "website":  null,
-                                    "id":  "17841472278461928",
-                                    "username":  "beautyblossom_tw",
-                                    "media_count":  367,
-                                    "name":  "BEAUTY BLOSSOM CLINIC",
-                                    "followers":  2053,
-                                    "follows":  9,
-                                    "biography":  "🌼🇰🇷BEAUTY BLOSSOM CLINIC🌼\n🌸 您的美麗，從這裡綻放！\n\t•\t專業的肌膚管理\n\t•\t舒適的環境與優質服務\n📍 地址：首爾市麻浦區楊花路66號，合井站3號出口6樓\n讓您的美麗由內而外綻放光彩！"
-                                },
-                         "pageId":  "520121534528292",
-                         "page":  "BeautyblossomTaiwan",
-                         "status":  "OK",
-                         "current":  {
-                                         "likes":  32,
-                                         "posts":  40,
-                                         "reels":  33,
-                                         "avgEngagement":  0.8,
-                                         "comments":  0,
-                                         "engagement":  32
-                                     }
-                     },
-                     {
-                         "media":  [
-                                       {
-                                           "id":  "18081858857273894",
-                                           "timestamp":  "2026-08-07T09:01:34+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  3,
-                                           "product":  "REELS",
-                                           "caption":  "ONDA + DCA ใต้คาง เหมาะกับใคร?\n\nการดูแลใต้คางไม่ได้มีแค่การ “ลดเหนียง” อย่างเดียว\nเพราะควา",
-                                           "permalink":  "https://www.instagram.com/reel/Dbu6yjzjXOV/"
-                                       },
-                                       {
-                                           "id":  "18109667648058634",
-                                           "timestamp":  "2026-08-15T05:01:34+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  3,
-                                           "product":  "REELS",
-                                           "caption":  "เมื่อคุณหมอบอก \"เต้นไม่เป็นครับ\" ... แต่ทีมมาร์เกตติ้งไม่ยอมแพ้! 🕺ซ\nเรื่องเต้นยกหน้าที่ให",
-                                           "permalink":  "https://www.instagram.com/reel/DcDFrk-iHee/"
-                                       },
-                                       {
-                                           "id":  "18114932828294795",
-                                           "timestamp":  "2026-07-29T01:17:28+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  3,
-                                           "product":  "REELS",
-                                           "caption":  "Happy Birthday คุณหมอผู้อำนวยการ Beauty Blossom 🎂🌸\n\nขอบคุณที่คอยดูแลลูกค้าและทีมด้วยความ",
-                                           "permalink":  "https://www.instagram.com/reel/DbW6iIlkxxP/"
-                                       },
-                                       {
-                                           "id":  "18219282763331926",
-                                           "timestamp":  "2026-08-04T01:01:45+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "REELS",
-                                           "caption":  "DCA ใต้คาง ไม่ใช่การลดไขมันทันที\n\nหลังฉีดช่วงแรกอาจมีอาการบวม ตึง หรือแข็งบริเวณใต้คางได้\n",
-                                           "permalink":  "https://www.instagram.com/reel/DbmVfdBD4N4/"
-                                       },
-                                       {
-                                           "id":  "18405418522095798",
-                                           "timestamp":  "2026-07-29T10:33:23+0000",
-                                           "type":  "CAROUSEL_ALBUM",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "FEED",
-                                           "caption":  "ก่อนซัมเมอร์จะจบ อย่าลืมดูแลผิวให้พร้อมค่ะ ✨\n\nช่วงหน้าร้อน ผิวต้องเจอทั้งแดดแรงและแอร์เย็น",
-                                           "permalink":  "https://www.instagram.com/p/DbX6Mhkkutt/"
-                                       },
-                                       {
-                                           "id":  "18484589329098018",
-                                           "timestamp":  "2026-08-05T02:00:56+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "REELS",
-                                           "caption":  "ONDA ต้นแขน ไม่ใช่การลดน้ำหนักทั้งตัว\nแต่เป็นการดูแลรูปร่างเฉพาะจุด สำหรับคนที่กังวลต้นแขน",
-                                           "permalink":  "https://www.instagram.com/reel/DbpBEOjEf8_/"
-                                       },
-                                       {
-                                           "id":  "18059993570779595",
-                                           "timestamp":  "2026-07-30T02:01:50+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "REELS",
-                                           "caption":  "DENSITY 300 หรือ 600 ช็อต\nไม่ใช่ว่ายิ่งเยอะ = ยิ่งดีเสมอไป\n\nการเลือกจำนวนช็อตต้องดูจากบริเ",
-                                           "permalink":  "https://www.instagram.com/reel/DbZkY1dCNz0/"
-                                       },
-                                       {
-                                           "id":  "18474872290106341",
-                                           "timestamp":  "2026-08-18T01:01:34+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  2,
-                                           "product":  "REELS",
-                                           "caption":  "ULTRACOL | ไม่ใช่ฟิลเลอร์เติมเต็มทันที\n\nULTRACOL ต้องวางแผนตามชั้นผิวและรอการเปลี่ยนแปลงขอ",
-                                           "permalink":  "https://www.instagram.com/reel/DcKYmeTgVJa/"
-                                       },
-                                       {
-                                           "id":  "18462766156119980",
-                                           "timestamp":  "2026-07-23T04:35:30+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "ยกกระชับผิวอย่างอ่อนโยน แม้ผิวบอบบางก็รู้สึกสบาย ✨\nกับ Sofwave หัตถการยกกระชับที่ช่วยดูแลค",
-                                           "permalink":  "https://www.instagram.com/reel/DbH0bwUgMfN/"
-                                       },
-                                       {
-                                           "id":  "17898169128557253",
-                                           "timestamp":  "2026-08-02T02:01:30+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "บอกลาเหนียงย้อยด้วยไอเทมตัวใหม่ล่าสุด! ✨ NUVUJU (นูวิจู) นวัตกรรมยาสลายไขมันใต้คางจากเกาหล",
-                                           "permalink":  "https://www.instagram.com/reel/DbhSvLzDQ2g/"
-                                       },
-                                       {
-                                           "id":  "18071916725702071",
-                                           "timestamp":  "2026-07-23T02:00:21+0000",
-                                           "type":  "CAROUSEL_ALBUM",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "FEED",
-                                           "caption":  "เหนียงดื้อ กรอบหน้าไม่ชัด… ถึงเวลาจัดการแบบตรงจุด 👀✨\n\nเปิดตัว NUVIJU CA โปรแกรมดูแลไขมันใ",
-                                           "permalink":  "https://www.instagram.com/p/DbHitnKDL6u/"
-                                       },
-                                       {
-                                           "id":  "17913623193242025",
-                                           "timestamp":  "2026-08-03T02:01:30+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "ฟิลเลอร์หูเอลฟ์ ทำให้หน้าดูเล็กลงจริงไหม?\n\nหากใบหูแนบกับศีรษะ ฟิลเลอร์หูเอลฟ์อาจทำให้ภาพที",
-                                           "permalink":  "https://www.instagram.com/reel/Dbj3hutiOd9/"
-                                       },
-                                       {
-                                           "id":  "18052431887549365",
-                                           "timestamp":  "2026-07-23T04:33:35+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "🔥 ONDA กระชับผิว ลดสัดส่วน ดูแลไขมันสะสมแบบตรงจุด ✨\nโปรพิเศษฉลอง ONDA ครบ 150,000,000J ที",
-                                           "permalink":  "https://www.instagram.com/reel/DbH0NLNCNky/"
-                                       },
-                                       {
-                                           "id":  "18108410615084975",
-                                           "timestamp":  "2026-08-01T02:01:07+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "บินมาอัปหน้าปังถึงเกาหลีทั้งที ต้องเอาให้สุด! ✨🇰🇷\n\nรอบนี้จัดเต็มทั้งงานผิวและงานปาก เริ่",
-                                           "permalink":  "https://www.instagram.com/reel/Dbet6J9DU-R/"
-                                       },
-                                       {
-                                           "id":  "18058756631749782",
-                                           "timestamp":  "2026-07-23T04:42:55+0000",
-                                           "type":  "VIDEO",
-                                           "comments":  0,
-                                           "likes":  1,
-                                           "product":  "REELS",
-                                           "caption":  "ผิวแต่ละชั้น ต้องการการดูแลที่แตกต่างกัน 💗\nXERF โปรแกรมยกกระชับด้วยพลังงาน RF ความถี่คู่ ",
-                                           "permalink":  "https://www.instagram.com/reel/DbH1SNFlNyy/"
-                                       }
-                                   ],
+                         "label":  "EN",
                          "previous":  {
-                                          "likes":  38,
-                                          "posts":  27,
+                                          "likes":  41,
+                                          "posts":  29,
                                           "reels":  17,
-                                          "avgEngagement":  1.4074074074074074,
-                                          "comments":  0,
-                                          "engagement":  38
+                                          "avgEngagement":  1.5172413793103448,
+                                          "comments":  3,
+                                          "engagement":  44
                                       },
-                         "label":  "TH",
                          "ig":  {
-                                    "website":  null,
-                                    "id":  "17841426455224263",
-                                    "username":  "beautyblossom_th",
-                                    "media_count":  75,
-                                    "name":  "beautyblossom_th",
-                                    "followers":  416,
-                                    "follows":  5,
-                                    "biography":  "🌼🇰🇷 BEAUTY BLOSSOM CLINIC🌼\n🌸คลินิกความงามเกาหลี\n🌸ผิวฉ่ำ หน้าเรียว งานผิวเกาหลี\n📍Hapjeong Exit 3\n📞จองคิว DM / LINE\n@beautyblossom_th"
+                                    "website":  "http://pf.kakao.com/_yrHCn",
+                                    "id":  "17841472036938631",
+                                    "username":  "beautyblossom_global",
+                                    "media_count":  448,
+                                    "name":  "Beauty Blossom Clinic Korea",
+                                    "followers":  4354,
+                                    "follows":  23,
+                                    "biography":  "🌸 BEAUTY BLOSSOM Dermatology Clinic 🌸\nWHATSAPP +82 10 7215 7511\nInterpreter * Consulting Manager On-site"
                                 },
-                         "pageId":  "1238648375987634",
-                         "page":  "BeautyblossomThailand",
+                         "pageId":  "525561800648808",
+                         "page":  "BeautyblossomGlobal",
                          "status":  "OK",
                          "current":  {
-                                         "likes":  37,
-                                         "posts":  45,
-                                         "reels":  37,
-                                         "avgEngagement":  0.82222222222222219,
-                                         "comments":  0,
-                                         "engagement":  37
+                                         "likes":  120,
+                                         "posts":  43,
+                                         "reels":  35,
+                                         "avgEngagement":  2.86046511627907,
+                                         "comments":  3,
+                                         "engagement":  123
                                      }
                      }
                  ],
-    "note":  "instagram_basic 범위로 수집했습니다. 기간 비교는 게시물 발행일 기준이며, 도달·조회·저장은 instagram_manage_insights 권한이 있어야 조회됩니다.",
-    "generated_at_utc":  "2026-08-19T08:36:12.1057991Z",
+    "note":  "조회수·도달·저장·프로필 조회는 계정 인사이트 값이고, 게시물 수·좋아요·댓글의 전월 대비는 게시물 발행일로 기간을 나눠 계산했습니다.",
+    "generated_at_utc":  "2026-08-19T09:23:52.0525913Z",
     "range":  {
                   "days":  30,
                   "end":  "2026-08-19",

@@ -21,167 +21,291 @@
                                        ],
                            "id":  "526090588",
                            "previous":  {
-                                            "sessions":  11372,
-                                            "newUsers":  8135,
-                                            "bounceRate":  0.48821667252901862,
                                             "activeUsers":  8590,
-                                            "eventCount":  101267,
                                             "avgSessionDuration":  137.63754547502637,
-                                            "pageViews":  30607
+                                            "newUsers":  8135,
+                                            "keyEvents":  41,
+                                            "sessions":  11372,
+                                            "bounceRate":  0.48821667252901862,
+                                            "pageViews":  30607,
+                                            "eventCount":  101267
                                         },
                            "label":  "KR",
+                           "key_events_from":  "20260714",
                            "daily":  [
                                          {
                                              "date":  "20260720",
+                                             "keyEvents":  23,
                                              "sessions":  458,
                                              "activeUsers":  393
                                          },
                                          {
                                              "date":  "20260721",
+                                             "keyEvents":  8,
                                              "sessions":  517,
                                              "activeUsers":  455
                                          },
                                          {
                                              "date":  "20260722",
+                                             "keyEvents":  11,
                                              "sessions":  389,
                                              "activeUsers":  327
                                          },
                                          {
                                              "date":  "20260723",
+                                             "keyEvents":  9,
                                              "sessions":  326,
                                              "activeUsers":  277
                                          },
                                          {
                                              "date":  "20260724",
+                                             "keyEvents":  10,
                                              "sessions":  307,
                                              "activeUsers":  260
                                          },
                                          {
                                              "date":  "20260725",
+                                             "keyEvents":  9,
                                              "sessions":  344,
                                              "activeUsers":  310
                                          },
                                          {
                                              "date":  "20260726",
+                                             "keyEvents":  11,
                                              "sessions":  339,
                                              "activeUsers":  308
                                          },
                                          {
                                              "date":  "20260727",
+                                             "keyEvents":  4,
                                              "sessions":  409,
                                              "activeUsers":  361
                                          },
                                          {
                                              "date":  "20260728",
+                                             "keyEvents":  13,
                                              "sessions":  383,
                                              "activeUsers":  340
                                          },
                                          {
                                              "date":  "20260729",
+                                             "keyEvents":  12,
                                              "sessions":  373,
                                              "activeUsers":  320
                                          },
                                          {
                                              "date":  "20260730",
+                                             "keyEvents":  13,
                                              "sessions":  568,
                                              "activeUsers":  502
                                          },
                                          {
                                              "date":  "20260731",
+                                             "keyEvents":  5,
                                              "sessions":  684,
                                              "activeUsers":  623
                                          },
                                          {
                                              "date":  "20260801",
+                                             "keyEvents":  9,
                                              "sessions":  388,
                                              "activeUsers":  353
                                          },
                                          {
                                              "date":  "20260802",
+                                             "keyEvents":  6,
                                              "sessions":  452,
                                              "activeUsers":  424
                                          },
                                          {
                                              "date":  "20260803",
+                                             "keyEvents":  15,
                                              "sessions":  624,
                                              "activeUsers":  551
                                          },
                                          {
                                              "date":  "20260804",
+                                             "keyEvents":  14,
                                              "sessions":  489,
                                              "activeUsers":  438
                                          },
                                          {
                                              "date":  "20260805",
+                                             "keyEvents":  14,
                                              "sessions":  651,
                                              "activeUsers":  592
                                          },
                                          {
                                              "date":  "20260806",
+                                             "keyEvents":  8,
                                              "sessions":  415,
                                              "activeUsers":  374
                                          },
                                          {
                                              "date":  "20260807",
+                                             "keyEvents":  9,
                                              "sessions":  460,
                                              "activeUsers":  395
                                          },
                                          {
                                              "date":  "20260808",
+                                             "keyEvents":  9,
                                              "sessions":  378,
                                              "activeUsers":  337
                                          },
                                          {
                                              "date":  "20260809",
+                                             "keyEvents":  5,
                                              "sessions":  348,
                                              "activeUsers":  315
                                          },
                                          {
                                              "date":  "20260810",
+                                             "keyEvents":  20,
                                              "sessions":  428,
                                              "activeUsers":  355
                                          },
                                          {
                                              "date":  "20260811",
+                                             "keyEvents":  17,
                                              "sessions":  410,
                                              "activeUsers":  347
                                          },
                                          {
                                              "date":  "20260812",
+                                             "keyEvents":  12,
                                              "sessions":  434,
                                              "activeUsers":  385
                                          },
                                          {
                                              "date":  "20260813",
+                                             "keyEvents":  8,
                                              "sessions":  387,
                                              "activeUsers":  336
                                          },
                                          {
                                              "date":  "20260814",
+                                             "keyEvents":  9,
                                              "sessions":  402,
                                              "activeUsers":  340
                                          },
                                          {
                                              "date":  "20260815",
+                                             "keyEvents":  5,
                                              "sessions":  328,
                                              "activeUsers":  290
                                          },
                                          {
                                              "date":  "20260816",
+                                             "keyEvents":  5,
                                              "sessions":  294,
                                              "activeUsers":  260
                                          },
                                          {
                                              "date":  "20260817",
+                                             "keyEvents":  7,
                                              "sessions":  341,
                                              "activeUsers":  301
                                          },
                                          {
                                              "date":  "20260818",
+                                             "keyEvents":  43,
                                              "sessions":  346,
                                              "activeUsers":  289
                                          }
                                      ],
+                           "events":  [
+                                          {
+                                              "prevCount":  30607,
+                                              "keyEvents":  0,
+                                              "name":  "page_view",
+                                              "count":  32060
+                                          },
+                                          {
+                                              "prevCount":  23990,
+                                              "keyEvents":  0,
+                                              "name":  "user_engagement",
+                                              "count":  25245
+                                          },
+                                          {
+                                              "prevCount":  14542,
+                                              "keyEvents":  0,
+                                              "name":  "view_search_results",
+                                              "count":  16077
+                                          },
+                                          {
+                                              "prevCount":  11806,
+                                              "keyEvents":  0,
+                                              "name":  "scroll",
+                                              "count":  13202
+                                          },
+                                          {
+                                              "prevCount":  11099,
+                                              "keyEvents":  0,
+                                              "name":  "session_start",
+                                              "count":  12711
+                                          },
+                                          {
+                                              "prevCount":  8135,
+                                              "keyEvents":  0,
+                                              "name":  "first_visit",
+                                              "count":  9651
+                                          },
+                                          {
+                                              "prevCount":  703,
+                                              "keyEvents":  0,
+                                              "name":  "click",
+                                              "count":  700
+                                          },
+                                          {
+                                              "prevCount":  29,
+                                              "keyEvents":  0,
+                                              "name":  "naver_booking_click",
+                                              "count":  187
+                                          },
+                                          {
+                                              "prevCount":  22,
+                                              "keyEvents":  162,
+                                              "name":  "kakao_click",
+                                              "count":  162
+                                          },
+                                          {
+                                              "prevCount":  154,
+                                              "keyEvents":  131,
+                                              "name":  "form_submit",
+                                              "count":  131
+                                          },
+                                          {
+                                              "prevCount":  155,
+                                              "keyEvents":  0,
+                                              "name":  "form_start",
+                                              "count":  117
+                                          },
+                                          {
+                                              "prevCount":  6,
+                                              "keyEvents":  50,
+                                              "name":  "phone_click",
+                                              "count":  50
+                                          },
+                                          {
+                                              "prevCount":  12,
+                                              "keyEvents":  0,
+                                              "name":  "video_start",
+                                              "count":  10
+                                          },
+                                          {
+                                              "prevCount":  0,
+                                              "keyEvents":  0,
+                                              "name":  "video_complete",
+                                              "count":  2
+                                          },
+                                          {
+                                              "prevCount":  7,
+                                              "keyEvents":  0,
+                                              "name":  "video_progress",
+                                              "count":  2
+                                          }
+                                      ],
                            "name":  "Beauty Blossom Korea",
                            "countries":  [
                                              {
@@ -218,54 +342,95 @@
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  12666,
-                                           "newUsers":  9651,
-                                           "bounceRate":  0.50639507342491707,
                                            "activeUsers":  10072,
-                                           "eventCount":  110307,
                                            "avgSessionDuration":  125.11560373132795,
-                                           "pageViews":  32060
+                                           "newUsers":  9651,
+                                           "keyEvents":  343,
+                                           "sessions":  12666,
+                                           "bounceRate":  0.50639507342491707,
+                                           "pageViews":  32060,
+                                           "eventCount":  110307
                                        },
                            "channels":  [
                                             {
+                                                "bounceRate":  0.58959913326110513,
+                                                "sessions":  4615,
                                                 "channel":  "Direct",
-                                                "sessions":  4615
+                                                "prevSessions":  3171,
+                                                "keyEvents":  75,
+                                                "prevKeyEvents":  8
                                             },
                                             {
+                                                "bounceRate":  0.30415922429191122,
+                                                "sessions":  3919,
                                                 "channel":  "Organic Search",
-                                                "sessions":  3919
+                                                "prevSessions":  4261,
+                                                "keyEvents":  187,
+                                                "prevKeyEvents":  28
                                             },
                                             {
+                                                "bounceRate":  0.673733804475854,
+                                                "sessions":  2547,
                                                 "channel":  "Paid Social",
-                                                "sessions":  2547
+                                                "prevSessions":  2283,
+                                                "keyEvents":  7,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.27582938388625594,
+                                                "sessions":  1055,
                                                 "channel":  "Referral",
-                                                "sessions":  1055
+                                                "prevSessions":  1010,
+                                                "keyEvents":  56,
+                                                "prevKeyEvents":  4
                                             },
                                             {
+                                                "bounceRate":  0.636734693877551,
+                                                "sessions":  245,
                                                 "channel":  "Organic Social",
-                                                "sessions":  245
+                                                "prevSessions":  305,
+                                                "keyEvents":  10,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.47619047619047616,
+                                                "sessions":  84,
                                                 "channel":  "AI Assistant",
-                                                "sessions":  84
+                                                "prevSessions":  65,
+                                                "keyEvents":  7,
+                                                "prevKeyEvents":  1
                                             },
                                             {
+                                                "bounceRate":  0.57407407407407407,
+                                                "sessions":  54,
                                                 "channel":  "Paid Search",
-                                                "sessions":  54
+                                                "prevSessions":  56,
+                                                "keyEvents":  1,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  1,
+                                                "sessions":  17,
                                                 "channel":  "Unassigned",
-                                                "sessions":  17
+                                                "prevSessions":  24,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.2,
+                                                "sessions":  5,
                                                 "channel":  "Organic Video",
-                                                "sessions":  5
+                                                "prevSessions":  3,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  1,
+                                                "sessions":  2,
                                                 "channel":  "Paid Other",
-                                                "sessions":  2
+                                                "prevSessions":  0,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             }
                                         ]
                        },
@@ -286,167 +451,291 @@
                                        ],
                            "id":  "534097409",
                            "previous":  {
-                                            "sessions":  6316,
-                                            "newUsers":  5445,
-                                            "bounceRate":  0.71453451551614944,
                                             "activeUsers":  5572,
-                                            "eventCount":  37560,
                                             "avgSessionDuration":  63.396466028182395,
-                                            "pageViews":  9874
+                                            "newUsers":  5445,
+                                            "keyEvents":  17,
+                                            "sessions":  6316,
+                                            "bounceRate":  0.71453451551614944,
+                                            "pageViews":  9874,
+                                            "eventCount":  37560
                                         },
                            "label":  "JP",
+                           "key_events_from":  "20260715",
                            "daily":  [
                                          {
                                              "date":  "20260720",
+                                             "keyEvents":  4,
                                              "sessions":  345,
                                              "activeUsers":  339
                                          },
                                          {
                                              "date":  "20260721",
+                                             "keyEvents":  0,
                                              "sessions":  292,
                                              "activeUsers":  284
                                          },
                                          {
                                              "date":  "20260722",
+                                             "keyEvents":  4,
                                              "sessions":  274,
                                              "activeUsers":  262
                                          },
                                          {
                                              "date":  "20260723",
+                                             "keyEvents":  1,
                                              "sessions":  197,
                                              "activeUsers":  191
                                          },
                                          {
                                              "date":  "20260724",
+                                             "keyEvents":  4,
                                              "sessions":  171,
                                              "activeUsers":  165
                                          },
                                          {
                                              "date":  "20260725",
+                                             "keyEvents":  5,
                                              "sessions":  392,
                                              "activeUsers":  385
                                          },
                                          {
                                              "date":  "20260726",
+                                             "keyEvents":  5,
                                              "sessions":  389,
                                              "activeUsers":  375
                                          },
                                          {
                                              "date":  "20260727",
+                                             "keyEvents":  1,
                                              "sessions":  380,
                                              "activeUsers":  370
                                          },
                                          {
                                              "date":  "20260728",
+                                             "keyEvents":  6,
                                              "sessions":  329,
                                              "activeUsers":  318
                                          },
                                          {
                                              "date":  "20260729",
+                                             "keyEvents":  3,
                                              "sessions":  303,
                                              "activeUsers":  290
                                          },
                                          {
                                              "date":  "20260730",
+                                             "keyEvents":  5,
                                              "sessions":  372,
                                              "activeUsers":  357
                                          },
                                          {
                                              "date":  "20260731",
+                                             "keyEvents":  2,
                                              "sessions":  331,
                                              "activeUsers":  325
                                          },
                                          {
                                              "date":  "20260801",
+                                             "keyEvents":  3,
                                              "sessions":  431,
                                              "activeUsers":  425
                                          },
                                          {
                                              "date":  "20260802",
+                                             "keyEvents":  7,
                                              "sessions":  497,
                                              "activeUsers":  470
                                          },
                                          {
                                              "date":  "20260803",
+                                             "keyEvents":  4,
                                              "sessions":  389,
                                              "activeUsers":  372
                                          },
                                          {
                                              "date":  "20260804",
+                                             "keyEvents":  8,
                                              "sessions":  382,
                                              "activeUsers":  366
                                          },
                                          {
                                              "date":  "20260805",
+                                             "keyEvents":  7,
                                              "sessions":  674,
                                              "activeUsers":  658
                                          },
                                          {
                                              "date":  "20260806",
+                                             "keyEvents":  4,
                                              "sessions":  712,
                                              "activeUsers":  698
                                          },
                                          {
                                              "date":  "20260807",
+                                             "keyEvents":  4,
                                              "sessions":  259,
                                              "activeUsers":  243
                                          },
                                          {
                                              "date":  "20260808",
+                                             "keyEvents":  6,
                                              "sessions":  449,
                                              "activeUsers":  438
                                          },
                                          {
                                              "date":  "20260809",
+                                             "keyEvents":  4,
                                              "sessions":  470,
                                              "activeUsers":  449
                                          },
                                          {
                                              "date":  "20260810",
+                                             "keyEvents":  17,
                                              "sessions":  310,
                                              "activeUsers":  298
                                          },
                                          {
                                              "date":  "20260811",
+                                             "keyEvents":  12,
                                              "sessions":  307,
                                              "activeUsers":  295
                                          },
                                          {
                                              "date":  "20260812",
+                                             "keyEvents":  6,
                                              "sessions":  429,
                                              "activeUsers":  415
                                          },
                                          {
                                              "date":  "20260813",
+                                             "keyEvents":  7,
                                              "sessions":  421,
                                              "activeUsers":  402
                                          },
                                          {
                                              "date":  "20260814",
+                                             "keyEvents":  5,
                                              "sessions":  352,
                                              "activeUsers":  333
                                          },
                                          {
                                              "date":  "20260815",
+                                             "keyEvents":  6,
                                              "sessions":  469,
                                              "activeUsers":  448
                                          },
                                          {
                                              "date":  "20260816",
+                                             "keyEvents":  1,
                                              "sessions":  335,
                                              "activeUsers":  330
                                          },
                                          {
                                              "date":  "20260817",
+                                             "keyEvents":  2,
                                              "sessions":  356,
                                              "activeUsers":  333
                                          },
                                          {
                                              "date":  "20260818",
+                                             "keyEvents":  0,
                                              "sessions":  203,
                                              "activeUsers":  196
                                          }
                                      ],
+                           "events":  [
+                                          {
+                                              "prevCount":  9874,
+                                              "keyEvents":  0,
+                                              "name":  "page_view",
+                                              "count":  14555
+                                          },
+                                          {
+                                              "prevCount":  6298,
+                                              "keyEvents":  0,
+                                              "name":  "session_start",
+                                              "count":  11227
+                                          },
+                                          {
+                                              "prevCount":  5445,
+                                              "keyEvents":  0,
+                                              "name":  "first_visit",
+                                              "count":  10018
+                                          },
+                                          {
+                                              "prevCount":  6225,
+                                              "keyEvents":  0,
+                                              "name":  "view_search_results",
+                                              "count":  9401
+                                          },
+                                          {
+                                              "prevCount":  4638,
+                                              "keyEvents":  0,
+                                              "name":  "scroll",
+                                              "count":  7341
+                                          },
+                                          {
+                                              "prevCount":  4559,
+                                              "keyEvents":  0,
+                                              "name":  "user_engagement",
+                                              "count":  5757
+                                          },
+                                          {
+                                              "prevCount":  329,
+                                              "keyEvents":  0,
+                                              "name":  "click",
+                                              "count":  320
+                                          },
+                                          {
+                                              "prevCount":  10,
+                                              "keyEvents":  103,
+                                              "name":  "line_click",
+                                              "count":  103
+                                          },
+                                          {
+                                              "prevCount":  88,
+                                              "keyEvents":  28,
+                                              "name":  "form_submit",
+                                              "count":  28
+                                          },
+                                          {
+                                              "prevCount":  88,
+                                              "keyEvents":  0,
+                                              "name":  "form_start",
+                                              "count":  24
+                                          },
+                                          {
+                                              "prevCount":  3,
+                                              "keyEvents":  8,
+                                              "name":  "phone_click",
+                                              "count":  8
+                                          },
+                                          {
+                                              "prevCount":  0,
+                                              "keyEvents":  4,
+                                              "name":  "kakao_click",
+                                              "count":  4
+                                          },
+                                          {
+                                              "prevCount":  2,
+                                              "keyEvents":  0,
+                                              "name":  "video_progress",
+                                              "count":  4
+                                          },
+                                          {
+                                              "prevCount":  0,
+                                              "keyEvents":  0,
+                                              "name":  "video_complete",
+                                              "count":  1
+                                          },
+                                          {
+                                              "prevCount":  1,
+                                              "keyEvents":  0,
+                                              "name":  "video_start",
+                                              "count":  1
+                                          }
+                                      ],
                            "name":  "Beauty Blossom JP",
                            "countries":  [
                                              {
@@ -483,54 +772,95 @@
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  11165,
-                                           "newUsers":  10018,
-                                           "bounceRate":  0.71849529780564259,
                                            "activeUsers":  10131,
-                                           "eventCount":  58792,
                                            "avgSessionDuration":  49.163901743036277,
-                                           "pageViews":  14555
+                                           "newUsers":  10018,
+                                           "keyEvents":  143,
+                                           "sessions":  11165,
+                                           "bounceRate":  0.71849529780564259,
+                                           "pageViews":  14555,
+                                           "eventCount":  58792
                                        },
                            "channels":  [
                                             {
+                                                "bounceRate":  0.85656041512231285,
+                                                "sessions":  5396,
                                                 "channel":  "Paid Social",
-                                                "sessions":  5396
+                                                "prevSessions":  3486,
+                                                "keyEvents":  12,
+                                                "prevKeyEvents":  1
                                             },
                                             {
+                                                "bounceRate":  0.47622820919175912,
+                                                "sessions":  2524,
                                                 "channel":  "Paid Search",
-                                                "sessions":  2524
+                                                "prevSessions":  997,
+                                                "keyEvents":  27,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.81900237529691211,
+                                                "sessions":  2105,
                                                 "channel":  "Direct",
-                                                "sessions":  2105
+                                                "prevSessions":  790,
+                                                "keyEvents":  37,
+                                                "prevKeyEvents":  3
                                             },
                                             {
+                                                "bounceRate":  0.28885400313971743,
+                                                "sessions":  637,
                                                 "channel":  "Organic Search",
-                                                "sessions":  637
+                                                "prevSessions":  660,
+                                                "keyEvents":  45,
+                                                "prevKeyEvents":  11
                                             },
                                             {
+                                                "bounceRate":  0.61333333333333329,
+                                                "sessions":  375,
                                                 "channel":  "Organic Social",
-                                                "sessions":  375
+                                                "prevSessions":  216,
+                                                "keyEvents":  13,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.46875,
+                                                "sessions":  64,
                                                 "channel":  "Referral",
-                                                "sessions":  64
+                                                "prevSessions":  109,
+                                                "keyEvents":  8,
+                                                "prevKeyEvents":  2
                                             },
                                             {
+                                                "bounceRate":  1,
+                                                "sessions":  15,
                                                 "channel":  "Unassigned",
-                                                "sessions":  15
+                                                "prevSessions":  12,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.27272727272727271,
+                                                "sessions":  11,
                                                 "channel":  "AI Assistant",
-                                                "sessions":  11
+                                                "prevSessions":  1,
+                                                "keyEvents":  1,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0,
+                                                "sessions":  7,
                                                 "channel":  "Cross-network",
-                                                "sessions":  7
+                                                "prevSessions":  1,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  1,
+                                                "sessions":  1,
                                                 "channel":  "Paid Other",
-                                                "sessions":  1
+                                                "prevSessions":  0,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             }
                                         ]
                        },
@@ -551,167 +881,273 @@
                                        ],
                            "id":  "534099303",
                            "previous":  {
-                                            "sessions":  5629,
-                                            "newUsers":  4895,
-                                            "bounceRate":  0.749511458518387,
                                             "activeUsers":  5213,
-                                            "eventCount":  31375,
                                             "avgSessionDuration":  53.1387604229881,
-                                            "pageViews":  7705
+                                            "newUsers":  4895,
+                                            "keyEvents":  10,
+                                            "sessions":  5629,
+                                            "bounceRate":  0.749511458518387,
+                                            "pageViews":  7705,
+                                            "eventCount":  31375
                                         },
                            "label":  "CN",
+                           "key_events_from":  "20260715",
                            "daily":  [
                                          {
                                              "date":  "20260720",
+                                             "keyEvents":  1,
                                              "sessions":  184,
                                              "activeUsers":  175
                                          },
                                          {
                                              "date":  "20260721",
+                                             "keyEvents":  1,
                                              "sessions":  170,
                                              "activeUsers":  157
                                          },
                                          {
                                              "date":  "20260722",
+                                             "keyEvents":  1,
                                              "sessions":  158,
                                              "activeUsers":  146
                                          },
                                          {
                                              "date":  "20260723",
+                                             "keyEvents":  1,
                                              "sessions":  174,
                                              "activeUsers":  165
                                          },
                                          {
                                              "date":  "20260724",
+                                             "keyEvents":  0,
                                              "sessions":  145,
                                              "activeUsers":  141
                                          },
                                          {
                                              "date":  "20260725",
+                                             "keyEvents":  1,
                                              "sessions":  168,
                                              "activeUsers":  161
                                          },
                                          {
                                              "date":  "20260726",
+                                             "keyEvents":  2,
                                              "sessions":  154,
                                              "activeUsers":  144
                                          },
                                          {
                                              "date":  "20260727",
+                                             "keyEvents":  4,
                                              "sessions":  161,
                                              "activeUsers":  144
                                          },
                                          {
                                              "date":  "20260728",
+                                             "keyEvents":  1,
                                              "sessions":  180,
                                              "activeUsers":  168
                                          },
                                          {
                                              "date":  "20260729",
+                                             "keyEvents":  2,
                                              "sessions":  152,
                                              "activeUsers":  143
                                          },
                                          {
                                              "date":  "20260730",
+                                             "keyEvents":  2,
                                              "sessions":  166,
                                              "activeUsers":  154
                                          },
                                          {
                                              "date":  "20260731",
+                                             "keyEvents":  6,
                                              "sessions":  125,
                                              "activeUsers":  119
                                          },
                                          {
                                              "date":  "20260801",
+                                             "keyEvents":  0,
                                              "sessions":  129,
                                              "activeUsers":  125
                                          },
                                          {
                                              "date":  "20260802",
+                                             "keyEvents":  4,
                                              "sessions":  157,
                                              "activeUsers":  151
                                          },
                                          {
                                              "date":  "20260803",
+                                             "keyEvents":  3,
                                              "sessions":  175,
                                              "activeUsers":  159
                                          },
                                          {
                                              "date":  "20260804",
+                                             "keyEvents":  6,
                                              "sessions":  160,
                                              "activeUsers":  145
                                          },
                                          {
                                              "date":  "20260805",
+                                             "keyEvents":  1,
                                              "sessions":  169,
                                              "activeUsers":  157
                                          },
                                          {
                                              "date":  "20260806",
+                                             "keyEvents":  4,
                                              "sessions":  184,
                                              "activeUsers":  171
                                          },
                                          {
                                              "date":  "20260807",
+                                             "keyEvents":  0,
                                              "sessions":  190,
                                              "activeUsers":  168
                                          },
                                          {
                                              "date":  "20260808",
+                                             "keyEvents":  0,
                                              "sessions":  225,
                                              "activeUsers":  216
                                          },
                                          {
                                              "date":  "20260809",
+                                             "keyEvents":  2,
                                              "sessions":  193,
                                              "activeUsers":  184
                                          },
                                          {
                                              "date":  "20260810",
+                                             "keyEvents":  3,
                                              "sessions":  211,
                                              "activeUsers":  200
                                          },
                                          {
                                              "date":  "20260811",
+                                             "keyEvents":  1,
                                              "sessions":  171,
                                              "activeUsers":  169
                                          },
                                          {
                                              "date":  "20260812",
+                                             "keyEvents":  6,
                                              "sessions":  199,
                                              "activeUsers":  191
                                          },
                                          {
                                              "date":  "20260813",
+                                             "keyEvents":  1,
                                              "sessions":  167,
                                              "activeUsers":  159
                                          },
                                          {
                                              "date":  "20260814",
+                                             "keyEvents":  0,
                                              "sessions":  178,
                                              "activeUsers":  170
                                          },
                                          {
                                              "date":  "20260815",
+                                             "keyEvents":  0,
                                              "sessions":  157,
                                              "activeUsers":  154
                                          },
                                          {
                                              "date":  "20260816",
+                                             "keyEvents":  0,
                                              "sessions":  164,
                                              "activeUsers":  161
                                          },
                                          {
                                              "date":  "20260817",
+                                             "keyEvents":  1,
                                              "sessions":  162,
                                              "activeUsers":  160
                                          },
                                          {
                                              "date":  "20260818",
+                                             "keyEvents":  6,
                                              "sessions":  166,
                                              "activeUsers":  158
                                          }
                                      ],
+                           "events":  [
+                                          {
+                                              "prevCount":  7705,
+                                              "keyEvents":  0,
+                                              "name":  "page_view",
+                                              "count":  7339
+                                          },
+                                          {
+                                              "prevCount":  4293,
+                                              "keyEvents":  0,
+                                              "name":  "user_engagement",
+                                              "count":  5296
+                                          },
+                                          {
+                                              "prevCount":  5649,
+                                              "keyEvents":  0,
+                                              "name":  "scroll",
+                                              "count":  5256
+                                          },
+                                          {
+                                              "prevCount":  5421,
+                                              "keyEvents":  0,
+                                              "name":  "session_start",
+                                              "count":  4789
+                                          },
+                                          {
+                                              "prevCount":  4895,
+                                              "keyEvents":  0,
+                                              "name":  "first_visit",
+                                              "count":  4314
+                                          },
+                                          {
+                                              "prevCount":  3077,
+                                              "keyEvents":  0,
+                                              "name":  "view_search_results",
+                                              "count":  2645
+                                          },
+                                          {
+                                              "prevCount":  216,
+                                              "keyEvents":  0,
+                                              "name":  "click",
+                                              "count":  171
+                                          },
+                                          {
+                                              "prevCount":  57,
+                                              "keyEvents":  23,
+                                              "name":  "form_submit",
+                                              "count":  23
+                                          },
+                                          {
+                                              "prevCount":  1,
+                                              "keyEvents":  22,
+                                              "name":  "wechat_click",
+                                              "count":  22
+                                          },
+                                          {
+                                              "prevCount":  57,
+                                              "keyEvents":  0,
+                                              "name":  "form_start",
+                                              "count":  21
+                                          },
+                                          {
+                                              "prevCount":  4,
+                                              "keyEvents":  15,
+                                              "name":  "line_click",
+                                              "count":  15
+                                          },
+                                          {
+                                              "prevCount":  0,
+                                              "keyEvents":  0,
+                                              "name":  "naver_booking_click",
+                                              "count":  1
+                                          }
+                                      ],
                            "name":  "Beauty Blossom CN",
                            "countries":  [
                                              {
@@ -748,38 +1184,63 @@
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  5167,
-                                           "newUsers":  4314,
-                                           "bounceRate":  0.65666731178633642,
                                            "activeUsers":  4660,
-                                           "eventCount":  29892,
                                            "avgSessionDuration":  66.840876113218513,
-                                           "pageViews":  7339
+                                           "newUsers":  4314,
+                                           "keyEvents":  60,
+                                           "sessions":  5167,
+                                           "bounceRate":  0.65666731178633642,
+                                           "pageViews":  7339,
+                                           "eventCount":  29892
                                        },
                            "channels":  [
                                             {
+                                                "bounceRate":  0.65197215777262185,
+                                                "sessions":  4310,
                                                 "channel":  "Direct",
-                                                "sessions":  4310
+                                                "prevSessions":  4873,
+                                                "keyEvents":  32,
+                                                "prevKeyEvents":  8
                                             },
                                             {
+                                                "bounceRate":  1,
+                                                "sessions":  381,
                                                 "channel":  "Unassigned",
-                                                "sessions":  381
+                                                "prevSessions":  287,
+                                                "keyEvents":  6,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.48125,
+                                                "sessions":  320,
                                                 "channel":  "Organic Search",
-                                                "sessions":  320
+                                                "prevSessions":  390,
+                                                "keyEvents":  12,
+                                                "prevKeyEvents":  2
                                             },
                                             {
+                                                "bounceRate":  0.18691588785046728,
+                                                "sessions":  107,
                                                 "channel":  "Referral",
-                                                "sessions":  107
+                                                "prevSessions":  98,
+                                                "keyEvents":  10,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.55555555555555558,
+                                                "sessions":  36,
                                                 "channel":  "Organic Social",
-                                                "sessions":  36
+                                                "prevSessions":  12,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0,
+                                                "sessions":  4,
                                                 "channel":  "AI Assistant",
-                                                "sessions":  4
+                                                "prevSessions":  2,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             }
                                         ]
                        },
@@ -800,167 +1261,285 @@
                                        ],
                            "id":  "534100156",
                            "previous":  {
-                                            "sessions":  37673,
-                                            "newUsers":  28202,
-                                            "bounceRate":  0.66535715233721759,
                                             "activeUsers":  30644,
-                                            "eventCount":  169265,
                                             "avgSessionDuration":  55.57551307206753,
-                                            "pageViews":  47302
+                                            "newUsers":  28202,
+                                            "keyEvents":  234,
+                                            "sessions":  37673,
+                                            "bounceRate":  0.66535715233721759,
+                                            "pageViews":  47302,
+                                            "eventCount":  169265
                                         },
                            "label":  "EN",
+                           "key_events_from":  "20260714",
                            "daily":  [
                                          {
                                              "date":  "20260720",
+                                             "keyEvents":  36,
                                              "sessions":  1706,
                                              "activeUsers":  1588
                                          },
                                          {
                                              "date":  "20260721",
+                                             "keyEvents":  40,
                                              "sessions":  1755,
                                              "activeUsers":  1614
                                          },
                                          {
                                              "date":  "20260722",
+                                             "keyEvents":  53,
                                              "sessions":  1579,
                                              "activeUsers":  1446
                                          },
                                          {
                                              "date":  "20260723",
+                                             "keyEvents":  55,
                                              "sessions":  1096,
                                              "activeUsers":  1016
                                          },
                                          {
                                              "date":  "20260724",
+                                             "keyEvents":  43,
                                              "sessions":  232,
                                              "activeUsers":  215
                                          },
                                          {
                                              "date":  "20260725",
+                                             "keyEvents":  58,
                                              "sessions":  1892,
                                              "activeUsers":  1810
                                          },
                                          {
                                              "date":  "20260726",
+                                             "keyEvents":  61,
                                              "sessions":  2075,
                                              "activeUsers":  1883
                                          },
                                          {
                                              "date":  "20260727",
+                                             "keyEvents":  59,
                                              "sessions":  1813,
                                              "activeUsers":  1673
                                          },
                                          {
                                              "date":  "20260728",
+                                             "keyEvents":  40,
                                              "sessions":  1717,
                                              "activeUsers":  1556
                                          },
                                          {
                                              "date":  "20260729",
+                                             "keyEvents":  56,
                                              "sessions":  1688,
                                              "activeUsers":  1518
                                          },
                                          {
                                              "date":  "20260730",
+                                             "keyEvents":  34,
                                              "sessions":  1425,
                                              "activeUsers":  1298
                                          },
                                          {
                                              "date":  "20260731",
+                                             "keyEvents":  73,
                                              "sessions":  1274,
                                              "activeUsers":  1194
                                          },
                                          {
                                              "date":  "20260801",
+                                             "keyEvents":  28,
                                              "sessions":  872,
                                              "activeUsers":  833
                                          },
                                          {
                                              "date":  "20260802",
+                                             "keyEvents":  41,
                                              "sessions":  1500,
                                              "activeUsers":  1421
                                          },
                                          {
                                              "date":  "20260803",
+                                             "keyEvents":  88,
                                              "sessions":  1334,
                                              "activeUsers":  1251
                                          },
                                          {
                                              "date":  "20260804",
+                                             "keyEvents":  54,
                                              "sessions":  1490,
                                              "activeUsers":  1407
                                          },
                                          {
                                              "date":  "20260805",
+                                             "keyEvents":  21,
                                              "sessions":  1336,
                                              "activeUsers":  1285
                                          },
                                          {
                                              "date":  "20260806",
+                                             "keyEvents":  26,
                                              "sessions":  452,
                                              "activeUsers":  430
                                          },
                                          {
                                              "date":  "20260807",
+                                             "keyEvents":  25,
                                              "sessions":  1058,
                                              "activeUsers":  1018
                                          },
                                          {
                                              "date":  "20260808",
+                                             "keyEvents":  42,
                                              "sessions":  1478,
                                              "activeUsers":  1371
                                          },
                                          {
                                              "date":  "20260809",
+                                             "keyEvents":  55,
                                              "sessions":  1773,
                                              "activeUsers":  1669
                                          },
                                          {
                                              "date":  "20260810",
+                                             "keyEvents":  36,
                                              "sessions":  1826,
                                              "activeUsers":  1747
                                          },
                                          {
                                              "date":  "20260811",
+                                             "keyEvents":  158,
                                              "sessions":  1354,
                                              "activeUsers":  1282
                                          },
                                          {
                                              "date":  "20260812",
+                                             "keyEvents":  49,
                                              "sessions":  1211,
                                              "activeUsers":  1152
                                          },
                                          {
                                              "date":  "20260813",
+                                             "keyEvents":  43,
                                              "sessions":  1057,
                                              "activeUsers":  998
                                          },
                                          {
                                              "date":  "20260814",
+                                             "keyEvents":  19,
                                              "sessions":  1228,
                                              "activeUsers":  1139
                                          },
                                          {
                                              "date":  "20260815",
+                                             "keyEvents":  38,
                                              "sessions":  1383,
                                              "activeUsers":  1312
                                          },
                                          {
                                              "date":  "20260816",
+                                             "keyEvents":  41,
                                              "sessions":  1461,
                                              "activeUsers":  1374
                                          },
                                          {
                                              "date":  "20260817",
+                                             "keyEvents":  37,
                                              "sessions":  1284,
                                              "activeUsers":  1223
                                          },
                                          {
                                              "date":  "20260818",
+                                             "keyEvents":  23,
                                              "sessions":  984,
                                              "activeUsers":  918
                                          }
                                      ],
+                           "events":  [
+                                          {
+                                              "prevCount":  47302,
+                                              "keyEvents":  0,
+                                              "name":  "page_view",
+                                              "count":  57119
+                                          },
+                                          {
+                                              "prevCount":  37137,
+                                              "keyEvents":  0,
+                                              "name":  "view_search_results",
+                                              "count":  42231
+                                          },
+                                          {
+                                              "prevCount":  37285,
+                                              "keyEvents":  0,
+                                              "name":  "session_start",
+                                              "count":  42108
+                                          },
+                                          {
+                                              "prevCount":  28202,
+                                              "keyEvents":  0,
+                                              "name":  "first_visit",
+                                              "count":  31749
+                                          },
+                                          {
+                                              "prevCount":  10227,
+                                              "keyEvents":  0,
+                                              "name":  "user_engagement",
+                                              "count":  13102
+                                          },
+                                          {
+                                              "prevCount":  5499,
+                                              "keyEvents":  0,
+                                              "name":  "scroll",
+                                              "count":  7123
+                                          },
+                                          {
+                                              "prevCount":  3159,
+                                              "keyEvents":  0,
+                                              "name":  "click",
+                                              "count":  4631
+                                          },
+                                          {
+                                              "prevCount":  223,
+                                              "keyEvents":  1363,
+                                              "name":  "whatsapp_click",
+                                              "count":  1363
+                                          },
+                                          {
+                                              "prevCount":  109,
+                                              "keyEvents":  42,
+                                              "name":  "form_submit",
+                                              "count":  42
+                                          },
+                                          {
+                                              "prevCount":  106,
+                                              "keyEvents":  0,
+                                              "name":  "form_start",
+                                              "count":  37
+                                          },
+                                          {
+                                              "prevCount":  6,
+                                              "keyEvents":  27,
+                                              "name":  "kakao_click",
+                                              "count":  27
+                                          },
+                                          {
+                                              "prevCount":  5,
+                                              "keyEvents":  0,
+                                              "name":  "naver_booking_click",
+                                              "count":  16
+                                          },
+                                          {
+                                              "prevCount":  4,
+                                              "keyEvents":  0,
+                                              "name":  "video_progress",
+                                              "count":  1
+                                          },
+                                          {
+                                              "prevCount":  1,
+                                              "keyEvents":  0,
+                                              "name":  "video_start",
+                                              "count":  1
+                                          }
+                                      ],
                            "name":  "Beauty Blossom EN",
                            "countries":  [
                                              {
@@ -997,65 +1576,106 @@
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  41923,
-                                           "newUsers":  31749,
-                                           "bounceRate":  0.59709467356820833,
                                            "activeUsers":  33956,
-                                           "eventCount":  199550,
-                                           "avgSessionDuration":  65.925749608854318,
-                                           "pageViews":  57119
+                                           "avgSessionDuration":  65.925749608854332,
+                                           "newUsers":  31749,
+                                           "keyEvents":  1432,
+                                           "sessions":  41923,
+                                           "bounceRate":  0.59709467356820833,
+                                           "pageViews":  57119,
+                                           "eventCount":  199550
                                        },
                            "channels":  [
                                             {
+                                                "bounceRate":  0.60948713460528614,
+                                                "sessions":  34278,
                                                 "channel":  "Paid Social",
-                                                "sessions":  34278
+                                                "prevSessions":  31203,
+                                                "keyEvents":  251,
+                                                "prevKeyEvents":  24
                                             },
                                             {
+                                                "bounceRate":  0.43756210665783374,
+                                                "sessions":  3019,
                                                 "channel":  "Paid Search",
-                                                "sessions":  3019
+                                                "prevSessions":  2446,
+                                                "keyEvents":  845,
+                                                "prevKeyEvents":  158
                                             },
                                             {
+                                                "bounceRate":  0.33150517976843386,
+                                                "sessions":  1641,
                                                 "channel":  "Organic Search",
-                                                "sessions":  1641
+                                                "prevSessions":  1391,
+                                                "keyEvents":  204,
+                                                "prevKeyEvents":  36
                                             },
                                             {
+                                                "bounceRate":  0.70820668693009114,
+                                                "sessions":  1316,
                                                 "channel":  "Direct",
-                                                "sessions":  1316
+                                                "prevSessions":  1324,
+                                                "keyEvents":  74,
+                                                "prevKeyEvents":  11
                                             },
                                             {
+                                                "bounceRate":  0.99255121042830541,
+                                                "sessions":  537,
                                                 "channel":  "Unassigned",
-                                                "sessions":  537
+                                                "prevSessions":  239,
+                                                "keyEvents":  13,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.34520547945205482,
+                                                "sessions":  365,
                                                 "channel":  "Referral",
-                                                "sessions":  365
+                                                "prevSessions":  438,
+                                                "keyEvents":  27,
+                                                "prevKeyEvents":  4
                                             },
                                             {
+                                                "bounceRate":  0.62745098039215685,
+                                                "sessions":  306,
                                                 "channel":  "Organic Social",
-                                                "sessions":  306
+                                                "prevSessions":  266,
+                                                "keyEvents":  3,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.47031963470319632,
+                                                "sessions":  219,
                                                 "channel":  "Paid Other",
-                                                "sessions":  219
+                                                "prevSessions":  45,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.81111111111111112,
+                                                "sessions":  90,
                                                 "channel":  "Cross-network",
-                                                "sessions":  90
+                                                "prevSessions":  31,
+                                                "keyEvents":  9,
+                                                "prevKeyEvents":  1
                                             },
                                             {
+                                                "bounceRate":  0.47058823529411764,
+                                                "sessions":  51,
                                                 "channel":  "AI Assistant",
-                                                "sessions":  51
+                                                "prevSessions":  48,
+                                                "keyEvents":  6,
+                                                "prevKeyEvents":  0
                                             }
                                         ]
                        },
                        {
                            "devices":  [
                                            {
-                                               "sessions":  22090,
+                                               "sessions":  22045,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  944,
+                                               "sessions":  945,
                                                "device":  "desktop"
                                            },
                                            {
@@ -1065,172 +1685,296 @@
                                        ],
                            "id":  "534131940",
                            "previous":  {
-                                            "sessions":  19708,
-                                            "newUsers":  14922,
-                                            "bounceRate":  0.75532778567079362,
                                             "activeUsers":  16021,
-                                            "eventCount":  113130,
                                             "avgSessionDuration":  84.726501333113461,
-                                            "pageViews":  30591
+                                            "newUsers":  14922,
+                                            "keyEvents":  33,
+                                            "sessions":  19708,
+                                            "bounceRate":  0.75532778567079362,
+                                            "pageViews":  30591,
+                                            "eventCount":  113130
                                         },
                            "label":  "TW",
+                           "key_events_from":  "20260714",
                            "daily":  [
                                          {
                                              "date":  "20260720",
+                                             "keyEvents":  2,
                                              "sessions":  828,
                                              "activeUsers":  773
                                          },
                                          {
                                              "date":  "20260721",
+                                             "keyEvents":  6,
                                              "sessions":  773,
                                              "activeUsers":  703
                                          },
                                          {
                                              "date":  "20260722",
+                                             "keyEvents":  7,
                                              "sessions":  696,
                                              "activeUsers":  640
                                          },
                                          {
                                              "date":  "20260723",
+                                             "keyEvents":  9,
                                              "sessions":  610,
                                              "activeUsers":  571
                                          },
                                          {
                                              "date":  "20260724",
+                                             "keyEvents":  5,
                                              "sessions":  120,
                                              "activeUsers":  96
                                          },
                                          {
                                              "date":  "20260725",
+                                             "keyEvents":  8,
                                              "sessions":  865,
                                              "activeUsers":  828
                                          },
                                          {
                                              "date":  "20260726",
+                                             "keyEvents":  9,
                                              "sessions":  983,
                                              "activeUsers":  933
                                          },
                                          {
                                              "date":  "20260727",
+                                             "keyEvents":  8,
                                              "sessions":  818,
                                              "activeUsers":  773
                                          },
                                          {
                                              "date":  "20260728",
+                                             "keyEvents":  6,
                                              "sessions":  789,
                                              "activeUsers":  745
                                          },
                                          {
                                              "date":  "20260729",
+                                             "keyEvents":  2,
                                              "sessions":  726,
                                              "activeUsers":  693
                                          },
                                          {
                                              "date":  "20260730",
+                                             "keyEvents":  3,
                                              "sessions":  637,
                                              "activeUsers":  603
                                          },
                                          {
                                              "date":  "20260731",
+                                             "keyEvents":  5,
                                              "sessions":  613,
                                              "activeUsers":  572
                                          },
                                          {
                                              "date":  "20260801",
+                                             "keyEvents":  6,
                                              "sessions":  804,
                                              "activeUsers":  760
                                          },
                                          {
                                              "date":  "20260802",
+                                             "keyEvents":  1,
                                              "sessions":  1145,
                                              "activeUsers":  1092
                                          },
                                          {
                                              "date":  "20260803",
+                                             "keyEvents":  11,
                                              "sessions":  972,
                                              "activeUsers":  900
                                          },
                                          {
                                              "date":  "20260804",
+                                             "keyEvents":  13,
                                              "sessions":  835,
                                              "activeUsers":  790
                                          },
                                          {
                                              "date":  "20260805",
+                                             "keyEvents":  17,
                                              "sessions":  705,
                                              "activeUsers":  660
                                          },
                                          {
                                              "date":  "20260806",
+                                             "keyEvents":  2,
                                              "sessions":  138,
                                              "activeUsers":  125
                                          },
                                          {
                                              "date":  "20260807",
+                                             "keyEvents":  6,
                                              "sessions":  634,
                                              "activeUsers":  607
                                          },
                                          {
                                              "date":  "20260808",
+                                             "keyEvents":  9,
                                              "sessions":  960,
                                              "activeUsers":  921
                                          },
                                          {
                                              "date":  "20260809",
+                                             "keyEvents":  8,
                                              "sessions":  1109,
                                              "activeUsers":  1070
                                          },
                                          {
                                              "date":  "20260810",
+                                             "keyEvents":  6,
                                              "sessions":  954,
                                              "activeUsers":  929
                                          },
                                          {
                                              "date":  "20260811",
+                                             "keyEvents":  3,
                                              "sessions":  752,
                                              "activeUsers":  720
                                          },
                                          {
                                              "date":  "20260812",
+                                             "keyEvents":  3,
                                              "sessions":  683,
                                              "activeUsers":  653
                                          },
                                          {
                                              "date":  "20260813",
+                                             "keyEvents":  5,
                                              "sessions":  708,
                                              "activeUsers":  653
                                          },
                                          {
                                              "date":  "20260814",
+                                             "keyEvents":  4,
                                              "sessions":  829,
                                              "activeUsers":  790
                                          },
                                          {
                                              "date":  "20260815",
+                                             "keyEvents":  10,
                                              "sessions":  1032,
                                              "activeUsers":  985
                                          },
                                          {
                                              "date":  "20260816",
+                                             "keyEvents":  9,
                                              "sessions":  992,
                                              "activeUsers":  948
                                          },
                                          {
                                              "date":  "20260817",
+                                             "keyEvents":  6,
                                              "sessions":  766,
                                              "activeUsers":  731
                                          },
                                          {
                                              "date":  "20260818",
-                                             "sessions":  514,
-                                             "activeUsers":  481
+                                             "keyEvents":  3,
+                                             "sessions":  531,
+                                             "activeUsers":  498
                                          }
                                      ],
+                           "events":  [
+                                          {
+                                              "prevCount":  30591,
+                                              "keyEvents":  0,
+                                              "name":  "page_view",
+                                              "count":  31716
+                                          },
+                                          {
+                                              "prevCount":  23888,
+                                              "keyEvents":  0,
+                                              "name":  "view_search_results",
+                                              "count":  26605
+                                          },
+                                          {
+                                              "prevCount":  19405,
+                                              "keyEvents":  0,
+                                              "name":  "session_start",
+                                              "count":  23096
+                                          },
+                                          {
+                                              "prevCount":  14922,
+                                              "keyEvents":  0,
+                                              "name":  "first_visit",
+                                              "count":  19084
+                                          },
+                                          {
+                                              "prevCount":  12828,
+                                              "keyEvents":  0,
+                                              "name":  "scroll",
+                                              "count":  13589
+                                          },
+                                          {
+                                              "prevCount":  10643,
+                                              "keyEvents":  0,
+                                              "name":  "user_engagement",
+                                              "count":  7884
+                                          },
+                                          {
+                                              "prevCount":  671,
+                                              "keyEvents":  0,
+                                              "name":  "click",
+                                              "count":  527
+                                          },
+                                          {
+                                              "prevCount":  20,
+                                              "keyEvents":  118,
+                                              "name":  "line_click",
+                                              "count":  118
+                                          },
+                                          {
+                                              "prevCount":  78,
+                                              "keyEvents":  0,
+                                              "name":  "form_start",
+                                              "count":  38
+                                          },
+                                          {
+                                              "prevCount":  74,
+                                              "keyEvents":  38,
+                                              "name":  "form_submit",
+                                              "count":  38
+                                          },
+                                          {
+                                              "prevCount":  8,
+                                              "keyEvents":  36,
+                                              "name":  "wechat_click",
+                                              "count":  36
+                                          },
+                                          {
+                                              "prevCount":  1,
+                                              "keyEvents":  0,
+                                              "name":  "naver_booking_click",
+                                              "count":  8
+                                          },
+                                          {
+                                              "prevCount":  0,
+                                              "keyEvents":  0,
+                                              "name":  "video_progress",
+                                              "count":  4
+                                          },
+                                          {
+                                              "prevCount":  1,
+                                              "keyEvents":  0,
+                                              "name":  "video_start",
+                                              "count":  3
+                                          },
+                                          {
+                                              "prevCount":  0,
+                                              "keyEvents":  0,
+                                              "name":  "video_complete",
+                                              "count":  1
+                                          }
+                                      ],
                            "name":  "Beauty Blossom TW",
                            "countries":  [
                                              {
                                                  "country":  "Taiwan",
-                                                 "activeUsers":  18910
+                                                 "activeUsers":  18926
                                              },
                                              {
                                                  "country":  "United States",
@@ -1262,50 +2006,87 @@
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  23530,
-                                           "newUsers":  19032,
-                                           "bounceRate":  0.791075223119422,
-                                           "activeUsers":  19895,
-                                           "eventCount":  122493,
-                                           "avgSessionDuration":  62.911712168763295,
-                                           "pageViews":  31649
+                                           "activeUsers":  19917,
+                                           "avgSessionDuration":  61.338331809523808,
+                                           "newUsers":  19084,
+                                           "keyEvents":  192,
+                                           "sessions":  23541,
+                                           "bounceRate":  0.78565056709570535,
+                                           "pageViews":  31716,
+                                           "eventCount":  122747
                                        },
                            "channels":  [
                                             {
+                                                "bounceRate":  0.83483483483483478,
+                                                "sessions":  20313,
                                                 "channel":  "Paid Social",
-                                                "sessions":  20283
+                                                "prevSessions":  16010,
+                                                "keyEvents":  42,
+                                                "prevKeyEvents":  5
                                             },
                                             {
+                                                "bounceRate":  0.342447026657553,
+                                                "sessions":  1463,
                                                 "channel":  "Direct",
-                                                "sessions":  1457
+                                                "prevSessions":  1714,
+                                                "keyEvents":  61,
+                                                "prevKeyEvents":  15
                                             },
                                             {
+                                                "bounceRate":  0.41193595342066958,
+                                                "sessions":  687,
                                                 "channel":  "Organic Search",
-                                                "sessions":  686
+                                                "prevSessions":  517,
+                                                "keyEvents":  42,
+                                                "prevKeyEvents":  10
                                             },
                                             {
+                                                "bounceRate":  0.49318801089918257,
+                                                "sessions":  367,
                                                 "channel":  "Paid Search",
-                                                "sessions":  360
+                                                "prevSessions":  630,
+                                                "keyEvents":  10,
+                                                "prevKeyEvents":  2
                                             },
                                             {
+                                                "bounceRate":  0.69788519637462232,
+                                                "sessions":  331,
                                                 "channel":  "Organic Social",
-                                                "sessions":  330
+                                                "prevSessions":  215,
+                                                "keyEvents":  6,
+                                                "prevKeyEvents":  1
                                             },
                                             {
-                                                "channel":  "Unassigned",
-                                                "sessions":  289
-                                            },
-                                            {
+                                                "bounceRate":  0.29729729729729731,
+                                                "sessions":  111,
                                                 "channel":  "Referral",
-                                                "sessions":  111
+                                                "prevSessions":  335,
+                                                "keyEvents":  30,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.56730769230769229,
+                                                "sessions":  104,
                                                 "channel":  "Paid Other",
-                                                "sessions":  104
+                                                "prevSessions":  0,
+                                                "keyEvents":  1,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  1,
+                                                "sessions":  13,
+                                                "channel":  "Unassigned",
+                                                "prevSessions":  8,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
+                                            },
+                                            {
+                                                "bounceRate":  0.33333333333333331,
+                                                "sessions":  3,
                                                 "channel":  "Cross-network",
-                                                "sessions":  8
+                                                "prevSessions":  8,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             }
                                         ]
                        },
@@ -1326,167 +2107,255 @@
                                        ],
                            "id":  "537583229",
                            "previous":  {
-                                            "sessions":  726,
-                                            "newUsers":  482,
-                                            "bounceRate":  0.62258953168044073,
                                             "activeUsers":  486,
-                                            "eventCount":  4759,
                                             "avgSessionDuration":  187.54856109504132,
-                                            "pageViews":  1611
+                                            "newUsers":  482,
+                                            "keyEvents":  9,
+                                            "sessions":  726,
+                                            "bounceRate":  0.62258953168044073,
+                                            "pageViews":  1611,
+                                            "eventCount":  4759
                                         },
                            "label":  "TH",
+                           "key_events_from":  "20260714",
                            "daily":  [
                                          {
                                              "date":  "20260720",
+                                             "keyEvents":  0,
                                              "sessions":  6,
                                              "activeUsers":  5
                                          },
                                          {
                                              "date":  "20260721",
+                                             "keyEvents":  1,
                                              "sessions":  9,
                                              "activeUsers":  8
                                          },
                                          {
                                              "date":  "20260722",
+                                             "keyEvents":  1,
                                              "sessions":  9,
                                              "activeUsers":  7
                                          },
                                          {
                                              "date":  "20260723",
+                                             "keyEvents":  0,
                                              "sessions":  22,
                                              "activeUsers":  19
                                          },
                                          {
                                              "date":  "20260724",
+                                             "keyEvents":  0,
                                              "sessions":  4,
                                              "activeUsers":  3
                                          },
                                          {
                                              "date":  "20260725",
+                                             "keyEvents":  0,
                                              "sessions":  19,
                                              "activeUsers":  18
                                          },
                                          {
                                              "date":  "20260726",
+                                             "keyEvents":  0,
                                              "sessions":  14,
                                              "activeUsers":  13
                                          },
                                          {
                                              "date":  "20260727",
+                                             "keyEvents":  1,
                                              "sessions":  29,
                                              "activeUsers":  21
                                          },
                                          {
                                              "date":  "20260728",
+                                             "keyEvents":  0,
                                              "sessions":  6,
                                              "activeUsers":  6
                                          },
                                          {
                                              "date":  "20260729",
+                                             "keyEvents":  3,
                                              "sessions":  33,
                                              "activeUsers":  23
                                          },
                                          {
                                              "date":  "20260730",
+                                             "keyEvents":  0,
                                              "sessions":  6,
                                              "activeUsers":  3
                                          },
                                          {
                                              "date":  "20260731",
+                                             "keyEvents":  0,
                                              "sessions":  8,
                                              "activeUsers":  6
                                          },
                                          {
                                              "date":  "20260801",
+                                             "keyEvents":  0,
                                              "sessions":  2,
                                              "activeUsers":  2
                                          },
                                          {
                                              "date":  "20260802",
+                                             "keyEvents":  0,
                                              "sessions":  5,
                                              "activeUsers":  5
                                          },
                                          {
                                              "date":  "20260803",
+                                             "keyEvents":  0,
                                              "sessions":  13,
                                              "activeUsers":  10
                                          },
                                          {
                                              "date":  "20260804",
+                                             "keyEvents":  0,
                                              "sessions":  14,
                                              "activeUsers":  9
                                          },
                                          {
                                              "date":  "20260805",
+                                             "keyEvents":  0,
                                              "sessions":  9,
                                              "activeUsers":  6
                                          },
                                          {
                                              "date":  "20260806",
+                                             "keyEvents":  0,
                                              "sessions":  9,
                                              "activeUsers":  4
                                          },
                                          {
                                              "date":  "20260807",
+                                             "keyEvents":  2,
                                              "sessions":  14,
                                              "activeUsers":  11
                                          },
                                          {
                                              "date":  "20260808",
+                                             "keyEvents":  16,
                                              "sessions":  8,
                                              "activeUsers":  7
                                          },
                                          {
                                              "date":  "20260809",
+                                             "keyEvents":  0,
                                              "sessions":  15,
                                              "activeUsers":  10
                                          },
                                          {
                                              "date":  "20260810",
+                                             "keyEvents":  1,
                                              "sessions":  18,
                                              "activeUsers":  11
                                          },
                                          {
                                              "date":  "20260811",
+                                             "keyEvents":  0,
                                              "sessions":  14,
                                              "activeUsers":  6
                                          },
                                          {
                                              "date":  "20260812",
+                                             "keyEvents":  0,
                                              "sessions":  8,
                                              "activeUsers":  7
                                          },
                                          {
                                              "date":  "20260813",
+                                             "keyEvents":  2,
                                              "sessions":  8,
                                              "activeUsers":  5
                                          },
                                          {
                                              "date":  "20260814",
+                                             "keyEvents":  0,
                                              "sessions":  11,
                                              "activeUsers":  5
                                          },
                                          {
                                              "date":  "20260815",
+                                             "keyEvents":  0,
                                              "sessions":  16,
                                              "activeUsers":  14
                                          },
                                          {
                                              "date":  "20260816",
+                                             "keyEvents":  0,
                                              "sessions":  6,
                                              "activeUsers":  5
                                          },
                                          {
                                              "date":  "20260817",
+                                             "keyEvents":  0,
                                              "sessions":  15,
                                              "activeUsers":  14
                                          },
                                          {
                                              "date":  "20260818",
+                                             "keyEvents":  4,
                                              "sessions":  9,
                                              "activeUsers":  8
                                          }
                                      ],
+                           "events":  [
+                                          {
+                                              "prevCount":  1611,
+                                              "keyEvents":  0,
+                                              "name":  "page_view",
+                                              "count":  917
+                                          },
+                                          {
+                                              "prevCount":  949,
+                                              "keyEvents":  0,
+                                              "name":  "user_engagement",
+                                              "count":  684
+                                          },
+                                          {
+                                              "prevCount":  740,
+                                              "keyEvents":  0,
+                                              "name":  "session_start",
+                                              "count":  363
+                                          },
+                                          {
+                                              "prevCount":  680,
+                                              "keyEvents":  0,
+                                              "name":  "scroll",
+                                              "count":  325
+                                          },
+                                          {
+                                              "prevCount":  482,
+                                              "keyEvents":  0,
+                                              "name":  "first_visit",
+                                              "count":  201
+                                          },
+                                          {
+                                              "prevCount":  229,
+                                              "keyEvents":  0,
+                                              "name":  "view_search_results",
+                                              "count":  152
+                                          },
+                                          {
+                                              "prevCount":  59,
+                                              "keyEvents":  0,
+                                              "name":  "click",
+                                              "count":  52
+                                          },
+                                          {
+                                              "prevCount":  3,
+                                              "keyEvents":  17,
+                                              "name":  "phone_click",
+                                              "count":  17
+                                          },
+                                          {
+                                              "prevCount":  6,
+                                              "keyEvents":  14,
+                                              "name":  "whatsapp_click",
+                                              "count":  14
+                                          }
+                                      ],
                            "name":  "Beauty Blossom Thailand",
                            "countries":  [
                                              {
@@ -1523,43 +2392,68 @@
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  359,
-                                           "newUsers":  201,
-                                           "bounceRate":  0.48189415041782729,
                                            "activeUsers":  212,
-                                           "eventCount":  2725,
                                            "avgSessionDuration":  248.60985294707521,
-                                           "pageViews":  917
+                                           "newUsers":  201,
+                                           "keyEvents":  31,
+                                           "sessions":  359,
+                                           "bounceRate":  0.48189415041782729,
+                                           "pageViews":  917,
+                                           "eventCount":  2725
                                        },
                            "channels":  [
                                             {
+                                                "bounceRate":  0.310126582278481,
+                                                "sessions":  158,
                                                 "channel":  "Referral",
-                                                "sessions":  158
+                                                "prevSessions":  207,
+                                                "keyEvents":  26,
+                                                "prevKeyEvents":  4
                                             },
                                             {
+                                                "bounceRate":  0.62393162393162394,
+                                                "sessions":  117,
                                                 "channel":  "Direct",
-                                                "sessions":  117
+                                                "prevSessions":  103,
+                                                "keyEvents":  1,
+                                                "prevKeyEvents":  5
                                             },
                                             {
+                                                "bounceRate":  0.4576271186440678,
+                                                "sessions":  59,
                                                 "channel":  "Organic Search",
-                                                "sessions":  59
+                                                "prevSessions":  14,
+                                                "keyEvents":  4,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  1,
+                                                "sessions":  21,
                                                 "channel":  "Paid Search",
-                                                "sessions":  21
+                                                "prevSessions":  0,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  0.5,
+                                                "sessions":  2,
                                                 "channel":  "AI Assistant",
-                                                "sessions":  2
+                                                "prevSessions":  0,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  1,
+                                                "sessions":  2,
                                                 "channel":  "Organic Social",
-                                                "sessions":  2
+                                                "prevSessions":  0,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
                                             }
                                         ]
                        }
                    ],
-    "generated_at_utc":  "2026-08-19T09:40:17.0147758Z",
+    "generated_at_utc":  "2026-08-19T10:53:27.1180995Z",
     "range":  {
                   "days":  30,
                   "end":  "2026-08-18",

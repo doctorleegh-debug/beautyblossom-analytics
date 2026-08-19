@@ -39,6 +39,7 @@ $L_IMPR   = "최근 총 노출"
 $L_CTR    = "평균 CTR"
 $L_30D    = "최근 30일"
 $L_UPD    = "^최근 업데이트"
+$L_NEXT   = "다음 페이지"
 $NOTE     = "헤드라인 합계는 네이버가 화면에 축약 표기한 값이라 근사치입니다. 키워드·웹문서 표의 수치는 원값입니다."
 
 function ChromeHandles() {
@@ -51,10 +52,14 @@ function ChromeHandles() {
     [void][NVW]::EnumWindows($cb,[IntPtr]::Zero)
     return $script:hs
 }
+# Chrome hands out a window handle before its UIA tree exists, so FromHandle can throw
+# ElementNotAvailableException. Return null and let the caller's wait loop retry.
 function AllOf($handle) {
-    $r = [System.Windows.Automation.AutomationElement]::FromHandle([IntPtr]$handle)
-    if (-not $r) { return $null }
-    return $r.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
+    try {
+        $r = [System.Windows.Automation.AutomationElement]::FromHandle([IntPtr]$handle)
+        if (-not $r) { return $null }
+        return $r.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
+    } catch { return $null }
 }
 function TypeOf($e) { return ($e.Current.ControlType.ProgrammaticName -replace 'ControlType\.','') }
 function TextsOf($all) { return @($all | Where-Object { (TypeOf $_) -eq 'Text' } | ForEach-Object { $_.Current.Name }) }
@@ -123,21 +128,30 @@ function Parse-Table($tableEl, [int]$startRank = 1) {
     return $out
 }
 
-# Click page N in the pager that sits under a table, then let it re-render.
-function Goto-Page($all, $tableEl, [int]$page) {
-    $rect = $tableEl.Current.BoundingRectangle
-    if ([double]::IsInfinity($rect.Y)) { return $false }
-    $ty = $rect.Y + $rect.Height
-    $cand = @($all | Where-Object {
-        (TypeOf $_) -in @('Button','ListItem','Hyperlink','DataItem') -and
-        $_.Current.Name.Trim() -eq [string]$page -and
-        -not [double]::IsInfinity($_.Current.BoundingRectangle.Y) -and
-        $_.Current.BoundingRectangle.Y -gt ($ty - 140) -and
-        $_.Current.BoundingRectangle.Y -lt ($ty + 220)
-    })
-    foreach ($c in $cand) {
-        try { $c.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern).Invoke(); Start-Sleep -Milliseconds 2200; return $true } catch {}
-        try { $c.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern).Select(); Start-Sleep -Milliseconds 2200; return $true } catch {}
+# The page-number ListItems expose no interaction pattern at all - only the
+# "다음 페이지" button does - so paging walks forward one step at a time.
+# The pager sits ~50px under its own table, which is what tells the keyword
+# pager apart from the web-document one.
+function Next-Page($all, $tableEl) {
+    $ty = $null
+    try {
+        $r = $tableEl.Current.BoundingRectangle
+        if (-not [double]::IsInfinity($r.Y)) { $ty = $r.Y + $r.Height }
+    } catch { return $false }
+    if ($null -eq $ty) { return $false }
+    foreach ($c in $all) {
+        try {
+            if ((TypeOf $c) -ne 'Button') { continue }
+            if ($c.Current.Name.Trim() -ne $L_NEXT) { continue }
+            $r = $c.Current.BoundingRectangle
+            if ([double]::IsInfinity($r.Y)) { continue }
+            if ($r.Y -lt ($ty - 40) -or $r.Y -gt ($ty + 200)) { continue }
+            # A disabled pager arrow drops out of the focus order; that is the last page.
+            if (-not $c.Current.IsKeyboardFocusable) { return $false }
+            $c.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern).Invoke()
+            Start-Sleep -Milliseconds 2600
+            return $true
+        } catch { continue }
     }
     return $false
 }
@@ -145,16 +159,17 @@ function Goto-Page($all, $tableEl, [int]$page) {
 function Collect-Table($handle, [int]$tableIndex, [int]$maxPages) {
     $acc = @{}
     for ($p = 1; $p -le $maxPages; $p++) {
+        # Re-query after every page: the click re-renders the grid and the
+        # previously held elements go stale.
         $all = AllOf $handle
         if (-not $all) { break }
         $tables = @($all | Where-Object { (TypeOf $_) -eq 'Table' })
         if ($tables.Count -le $tableIndex) { break }
+        $before = $acc.Count
         foreach ($row in (Parse-Table $tables[$tableIndex] ((($p - 1) * 10) + 1))) { $acc[[string]$row.rank] = $row }
+        if ($acc.Count -eq $before) { break }
         if ($p -lt $maxPages) {
-            $all2 = AllOf $handle
-            $tables2 = @($all2 | Where-Object { (TypeOf $_) -eq 'Table' })
-            if ($tables2.Count -le $tableIndex) { break }
-            if (-not (Goto-Page $all2 $tables2[$tableIndex] ($p + 1))) { break }
+            if (-not (Next-Page $all $tables[$tableIndex])) { break }
         }
     }
     return @($acc.Values | Sort-Object { $_.rank })
@@ -190,6 +205,8 @@ foreach ($s in $sites) {
     if (-not $ready) {
         $out.sites += @{ url=$s.url; label=$s.label; status='NO_DATA'; screen=@($txt | Select-Object -Unique -First 12) }
     } else {
+      # A stale UIA element throws mid-scrape; keep whatever the other sites produced.
+      try {
         Start-Sleep -Milliseconds 2500
         $keywords = Collect-Table $new 0 $MaxPages
         $docs     = Collect-Table $new 1 $MaxPages
@@ -205,6 +222,10 @@ foreach ($s in $sites) {
             documents = $docs
         }
         "   clicks=$(After $txt $L_CLICKS)  impressions=$(After $txt $L_IMPR)  keywords=$($keywords.Count)  docs=$($docs.Count)"
+      } catch {
+        $out.sites += @{ url=$s.url; label=$s.label; status='PARTIAL'; error=$_.Exception.Message }
+        "   PARTIAL $($_.Exception.Message)"
+      }
     }
     [void][NVW]::PostMessage([IntPtr]$new, 0x0010, [IntPtr]::Zero, [IntPtr]::Zero)
     Start-Sleep -Milliseconds 2000

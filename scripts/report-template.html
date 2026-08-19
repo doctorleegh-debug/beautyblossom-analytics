@@ -104,6 +104,30 @@
     <p class="note">직전 기간은 바로 앞의 동일 일수 구간입니다. 이탈률과 평균 세션 시간은 GA4 원값입니다.</p>
   </div>
 
+  <h2>문의 · 전환</h2>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h3>사이트별 전환율</h3>
+      <div id="cvrBars"></div>
+      <p class="note">전환율 = 문의 ÷ 활성 사용자. 트래픽이 아니라 문의로 이어진 비율입니다.</p>
+    </div>
+    <div class="card">
+      <h3>문의 수단</h3>
+      <div id="evChart"></div>
+      <p class="note" id="evNote"></p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>채널별 문의 · 전환율</h3>
+    <div style="overflow-x:auto"><table id="chanCvrTable"></table></div>
+    <p class="note">어느 유입 채널이 실제 문의를 만드는지 보여줍니다. 세션은 많은데 전환율이 낮은 채널이 예산이 새는 곳입니다.</p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>문의 이벤트 상세</h3>
+    <div style="overflow-x:auto"><table id="evTable"></table></div>
+    <p class="note" id="keNote"></p>
+  </div>
+
   <h2>YouTube</h2>
   <div class="tiles" id="ytTiles"></div>
   <div class="grid g2" style="margin-top:14px">
@@ -186,14 +210,15 @@ function hbars(mount, rows, opt){
     const y = top + i * rowH, bh = 16, w = Math.max(2, (r.value / max) * (W - padL - padR));
     svg.appendChild(el('text', { x: padL - 10, y: y + bh - 3, 'text-anchor': 'end',
       'font-size': 12, fill: cssv('--ink2') }, r.label));
+    const fmt = opt.fmt || nf;
     const bar = el('rect', { x: padL, y: y, width: w, height: bh, rx: 4, fill: r.color || cssv('--s1') });
     bar.addEventListener('mousemove', e => showTip(e,
-      '<b>' + esc(r.label) + '</b><div class="r"><span>' + esc(opt.metric || '값') + '</span><span>' + nf(r.value) + '</span></div>' +
+      '<b>' + esc(r.label) + '</b><div class="r"><span>' + esc(opt.metric || '값') + '</span><span>' + fmt(r.value) + '</span></div>' +
       (r.extra ? '<div class="r"><span>' + esc(r.extra.k) + '</span><span>' + esc(r.extra.v) + '</span></div>' : '')));
     bar.addEventListener('mouseleave', hideTip);
     svg.appendChild(bar);
     svg.appendChild(el('text', { x: padL + w + 8, y: y + bh - 3, 'font-size': 12,
-      fill: cssv('--ink'), 'font-weight': 600 }, nf(r.value)));
+      fill: cssv('--ink'), 'font-weight': 600 }, fmt(r.value)));
   });
   mount.innerHTML = ''; mount.appendChild(svg);
 }
@@ -340,10 +365,21 @@ function render(){
   const dv = pct(y.current.views, y.previous.views);
   const dm = pct(y.current.minutesWatched, y.previous.minutesWatched);
 
+  // Key events were switched on part-way through the previous window, so a
+  // month-over-month figure would compare a full month against a few instrumented
+  // days. Show the level and say from when it is trustworthy instead.
+  const keFrom = g.properties.map(p => p.key_events_from).filter(Boolean).sort()[0] || null;
+  const keFromLabel = keFrom ? keFrom.slice(0, 4) + '-' + keFrom.slice(4, 6) + '-' + keFrom.slice(6, 8) : null;
+  const keComparable = !!(keFrom && keFrom <= g.prev_range.start.replace(/-/g, ''));
+  const dke = keComparable ? pct(tot('keyEvents'), ptot('keyEvents')) : null;
+  const cvrAll = tot('activeUsers') ? tot('keyEvents') / tot('activeUsers') * 100 : 0;
+
   document.getElementById('heroTiles').innerHTML =
+    tile('문의 (핵심 이벤트)', nf(tot('keyEvents')),
+      dke != null ? '<span class="' + dcls(dke) + '">' + dstr(dke) + '</span> 직전 대비'
+                  : '전환율 ' + nf1(cvrAll) + '% · ' + (keFromLabel ? keFromLabel + '부터 측정' : '')) +
     tile('웹 활성 사용자', nf(tot('activeUsers')), '<span class="' + dcls(du) + '">' + dstr(du) + '</span> 직전 대비') +
     tile('웹 세션', nf(tot('sessions')), '<span class="' + dcls(ds) + '">' + dstr(ds) + '</span> 직전 대비') +
-    tile('웹 이벤트', nf(tot('eventCount')), g.properties.length + '개 속성 합계') +
     tile('YouTube 조회수', nf(y.current.views), '<span class="' + dcls(dv) + '">' + dstr(dv) + '</span> 직전 대비') +
     tile('YouTube 시청 시간', nf(y.current.minutesWatched) + '분', '<span class="' + dcls(dm) + '">' + dstr(dm) + '</span> 직전 대비') +
     tile('구독자 순증', '+' + nf(y.current.subsGained - y.current.subsLost), '총 ' + nf(y.channel.subscribers) + '명');
@@ -376,27 +412,113 @@ function render(){
     return { label: p.label, values: values };
   }), chanKeys, chanColors);
 
+  const wd = (v, pv, f) => { const fn = f || nf; const d = pct(v, pv);
+    if (d == null) return '<td>' + fn(v) + '</td>';
+    return '<td>' + fn(v) + '<span class="' + (d >= 0 ? 'up' : 'dn') +
+      '" style="font-size:11px;margin-left:6px;white-space:nowrap">' + (d >= 0 ? '▲' : '▼') + nf1(Math.abs(d)) + '%</span></td>'; };
+  const cvrOf = p => p.current.activeUsers ? p.current.keyEvents / p.current.activeUsers * 100 : 0;
+
   document.getElementById('ga4Table').innerHTML =
-    '<thead><tr><th>속성</th><th>활성 사용자</th><th>세션</th><th>신규</th><th>페이지뷰</th><th>이벤트</th><th>이탈률</th><th>평균 세션(초)</th></tr></thead><tbody>' +
+    '<thead><tr><th>속성</th><th>문의</th><th>전환율</th><th>활성 사용자</th><th>세션</th><th>신규</th><th>페이지뷰</th><th>이탈률</th><th>평균 세션(초)</th></tr></thead><tbody>' +
     g.properties.map((p, i) => {
-      const wd = (v, pv, f) => { const fn = f || nf; const d = pct(v, pv);
-        if (d == null) return '<td>' + fn(v) + '</td>';
-        return '<td>' + fn(v) + '<span class="' + (d >= 0 ? 'up' : 'dn') +
-          '" style="font-size:11px;margin-left:6px;white-space:nowrap">' + (d >= 0 ? '▲' : '▼') + nf1(Math.abs(d)) + '%</span></td>'; };
       return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i]) + '"></span> ' + esc(p.label) + ' · ' + esc(p.name) + '</td>' +
+        (keComparable ? wd(p.current.keyEvents, p.previous.keyEvents) : '<td>' + nf(p.current.keyEvents) + '</td>') +
+        '<td>' + nf1(cvrOf(p)) + '%</td>' +
         wd(p.current.activeUsers, p.previous.activeUsers) +
         wd(p.current.sessions, p.previous.sessions) +
         wd(p.current.newUsers, p.previous.newUsers) +
         wd(p.current.pageViews, p.previous.pageViews) +
-        wd(p.current.eventCount, p.previous.eventCount) +
         '<td>' + nf1(p.current.bounceRate * 100) + '%</td><td>' + nf(p.current.avgSessionDuration) + '</td></tr>';
     }).join('') +
     '<tr style="font-weight:650"><td>합계</td>' +
-    ['activeUsers','sessions','newUsers','pageViews','eventCount'].map(k => {
+    (keComparable ? wd(tot('keyEvents'), ptot('keyEvents')) : '<td>' + nf(tot('keyEvents')) + '</td>') +
+    '<td>' + nf1(cvrAll) + '%</td>' +
+    ['activeUsers','sessions','newUsers','pageViews'].map(k => {
       const d = pct(tot(k), ptot(k));
       return '<td>' + nf(tot(k)) + (d == null ? '' : '<span class="' + (d >= 0 ? 'up' : 'dn') +
         '" style="font-size:11px;margin-left:6px;white-space:nowrap">' + (d >= 0 ? '▲' : '▼') + nf1(Math.abs(d)) + '%</span>') + '</td>';
     }).join('') + '<td>—</td><td>—</td></tr></tbody>';
+
+  renderConversions();
+
+  function renderConversions(){
+    const byCvr = g.properties.slice().sort((a, b) => cvrOf(b) - cvrOf(a));
+    hbars(document.getElementById('cvrBars'), byCvr.map(p => ({
+      label: p.label + ' · ' + nf(p.current.keyEvents) + '건',
+      value: Math.round(cvrOf(p) * 100) / 100,
+      color: cssv(SERIES[order.indexOf(p.label)]),
+      extra: { k: '활성 사용자', v: nf(p.current.activeUsers) }
+    })), { metric: '전환율', padL: 150, fmt: v => nf1(v) + '%' });
+
+    // Inquiry channel names as they read to a clinic, not as GA4 event ids.
+    const EV_LABEL = { kakao_click: '카카오톡', whatsapp_click: 'WhatsApp', line_click: 'LINE',
+      wechat_click: '위챗', form_submit: '상담폼 제출', phone_click: '전화', naver_booking_click: '네이버 예약' };
+    const INQUIRY = Object.keys(EV_LABEL);
+    const evAgg = {};
+    g.properties.forEach(p => (p.events || []).forEach(e => {
+      if (INQUIRY.indexOf(e.name) < 0) return;
+      const a = evAgg[e.name] || (evAgg[e.name] = { count: 0, prev: 0, key: 0, byProp: {} });
+      a.count += e.count; a.prev += e.prevCount; a.key += e.keyEvents; a.byProp[p.label] = e.count;
+    }));
+    const evKeys = Object.keys(evAgg).sort((a, b) => evAgg[b].count - evAgg[a].count);
+    const evTotal = evKeys.reduce((s, k) => s + evAgg[k].count, 0);
+
+    // Each bar is already labelled, and with 7 inquiry types the 6-colour palette
+    // would repeat, so no legend here.
+    hbars(document.getElementById('evChart'), evKeys.map((k, i) => ({
+      label: EV_LABEL[k], value: evAgg[k].count, color: cssv(SERIES[i % 6]),
+      extra: { k: '비중', v: evTotal ? (evAgg[k].count / evTotal * 100).toFixed(1) + '%' : '—' }
+    })), { metric: '건수', padL: 120 });
+
+    // An event that fires but is not registered as a key event never reaches the
+    // conversion total, so call it out rather than silently dropping it.
+    const uncounted = evKeys.filter(k => evAgg[k].count > 0 && evAgg[k].key === 0);
+    document.getElementById('evNote').innerHTML = uncounted.length
+      ? '<span class="dn">' + uncounted.map(k => esc(EV_LABEL[k])).join(', ') +
+        '</span> 은(는) GA4에서 핵심 이벤트로 등록되지 않아 위 문의 합계에 빠져 있습니다 (' +
+        nf(uncounted.reduce((s, k) => s + evAgg[k].count, 0)) + '건).'
+      : '모든 문의 이벤트가 핵심 이벤트로 등록되어 있습니다.';
+
+    document.getElementById('evTable').innerHTML =
+      '<thead><tr><th>문의 수단</th><th>건수</th>' + order.map(l => '<th>' + esc(l) + '</th>').join('') +
+      '<th>전환 집계</th></tr></thead><tbody>' +
+      evKeys.map(k => {
+        const a = evAgg[k];
+        return '<tr><td>' + esc(EV_LABEL[k]) + '</td>' +
+          '<td>' + nf(a.count) + '</td>' +
+          order.map(l => '<td>' + nf(a.byProp[l] || 0) + '</td>').join('') +
+          '<td>' + (a.key > 0 ? '<span class="up">포함</span>' : '<span class="dn">제외</span>') + '</td></tr>';
+      }).join('') + '</tbody>';
+
+    document.getElementById('keNote').textContent = keFromLabel
+      ? '핵심 이벤트는 ' + keFromLabel + '부터 측정되어, 직전 기간(' + g.prev_range.start + ' ~ ' +
+        g.prev_range.end + ')은 일부만 계측되었습니다. 문의의 전월 대비 비교는 다음 보고서부터 유효합니다.'
+      : '';
+
+    const cAgg = {};
+    g.properties.forEach(p => (p.channels || []).forEach(c => {
+      const a = cAgg[c.channel] || (cAgg[c.channel] = { sessions: 0, keyEvents: 0, prevSessions: 0, prevKeyEvents: 0 });
+      a.sessions += c.sessions; a.keyEvents += c.keyEvents;
+      a.prevSessions += (c.prevSessions || 0); a.prevKeyEvents += (c.prevKeyEvents || 0);
+    }));
+    const cKeys = Object.keys(cAgg).sort((a, b) => cAgg[b].sessions - cAgg[a].sessions);
+    const sTot = cKeys.reduce((s, k) => s + cAgg[k].sessions, 0);
+    const kTot = cKeys.reduce((s, k) => s + cAgg[k].keyEvents, 0);
+    document.getElementById('chanCvrTable').innerHTML =
+      '<thead><tr><th>채널</th><th>세션</th><th>세션 비중</th><th>문의</th><th>문의 비중</th><th>전환율</th></tr></thead><tbody>' +
+      cKeys.map((k, i) => {
+        const a = cAgg[k];
+        const cvr = a.sessions ? a.keyEvents / a.sessions * 100 : 0;
+        return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i % 6]) + '"></span> ' + esc(k) + '</td>' +
+          wd(a.sessions, a.prevSessions) +
+          '<td>' + nf1(sTot ? a.sessions / sTot * 100 : 0) + '%</td>' +
+          '<td>' + nf(a.keyEvents) + '</td>' +
+          '<td>' + nf1(kTot ? a.keyEvents / kTot * 100 : 0) + '%</td>' +
+          '<td>' + nf1(cvr) + '%</td></tr>';
+      }).join('') +
+      '<tr style="font-weight:650"><td>합계</td><td>' + nf(sTot) + '</td><td>100%</td><td>' + nf(kTot) +
+      '</td><td>100%</td><td>' + nf1(sTot ? kTot / sTot * 100 : 0) + '%</td></tr></tbody>';
+  }
 
   document.getElementById('ytTiles').innerHTML =
     tile('조회수', nf(y.current.views), '<span class="' + dcls(dv) + '">' + dstr(dv) + '</span> 직전 대비') +

@@ -1,4 +1,4 @@
-param(
+﻿param(
     [int]$Days = 30,
     [string]$OutFile = 'C:\Users\metic\Desktop\paseo\project(1)\data\ga4-latest.json'
 )
@@ -48,10 +48,12 @@ $result = @{
 
 foreach ($p in $props) {
     Write-Host "-- $($p.label) $($p.id)"
+    # keyEvents is what the clinic actually cares about: kakao/whatsapp/line/wechat taps,
+    # form submits and phone taps are all registered as key events on every property.
     $metrics = @(
         @{ name='activeUsers' }, @{ name='newUsers' }, @{ name='sessions' },
         @{ name='screenPageViews' }, @{ name='eventCount' },
-        @{ name='averageSessionDuration' }, @{ name='bounceRate' }
+        @{ name='averageSessionDuration' }, @{ name='bounceRate' }, @{ name='keyEvents' }
     )
 
     $cur = Run-Report $p.id @{
@@ -65,15 +67,47 @@ foreach ($p in $props) {
     $daily = Run-Report $p.id @{
         dateRanges = @(@{ startDate=$start.ToString($fmt); endDate=$end.ToString($fmt) })
         dimensions = @(@{ name='date' })
-        metrics = @(@{ name='activeUsers' }, @{ name='sessions' })
+        metrics = @(@{ name='activeUsers' }, @{ name='sessions' }, @{ name='keyEvents' })
         orderBys = @(@{ dimension = @{ dimensionName='date' } })
+    }
+    # Key events were only registered part-way through the history, so a month-over-month
+    # comparison is meaningless until the previous window is fully covered. Record the
+    # first day that ever reported one and let the report decide whether a delta is valid.
+    $firstKe = Run-Report $p.id @{
+        dateRanges = @(@{ startDate='2024-01-01'; endDate=$end.ToString($fmt) })
+        dimensions = @(@{ name='date' })
+        metrics = @(@{ name='keyEvents' })
+        metricFilter = @{ filter = @{ fieldName='keyEvents'; numericFilter = @{ operation='GREATER_THAN'; value = @{ int64Value='0' } } } }
+        orderBys = @(@{ dimension = @{ dimensionName='date' } })
+        limit = 1
     }
     $chan = Run-Report $p.id @{
         dateRanges = @(@{ startDate=$start.ToString($fmt); endDate=$end.ToString($fmt) })
         dimensions = @(@{ name='sessionDefaultChannelGroup' })
-        metrics = @(@{ name='sessions' })
+        metrics = @(@{ name='sessions' }, @{ name='keyEvents' }, @{ name='bounceRate' })
         orderBys = @(@{ metric = @{ metricName='sessions' }; desc=$true })
         limit = 10
+    }
+    $chanPrev = Run-Report $p.id @{
+        dateRanges = @(@{ startDate=$prevStart.ToString($fmt); endDate=$prevEnd.ToString($fmt) })
+        dimensions = @(@{ name='sessionDefaultChannelGroup' })
+        metrics = @(@{ name='sessions' }, @{ name='keyEvents' })
+        limit = 20
+    }
+    # Every event, not just the key ones: naver_booking_click is a real booking intent
+    # but is not registered as a key event, so it would otherwise vanish from the report.
+    $ev = Run-Report $p.id @{
+        dateRanges = @(@{ startDate=$start.ToString($fmt); endDate=$end.ToString($fmt) })
+        dimensions = @(@{ name='eventName' })
+        metrics = @(@{ name='eventCount' }, @{ name='keyEvents' })
+        orderBys = @(@{ metric = @{ metricName='eventCount' }; desc=$true })
+        limit = 40
+    }
+    $evPrev = Run-Report $p.id @{
+        dateRanges = @(@{ startDate=$prevStart.ToString($fmt); endDate=$prevEnd.ToString($fmt) })
+        dimensions = @(@{ name='eventName' })
+        metrics = @(@{ name='eventCount' }, @{ name='keyEvents' })
+        limit = 40
     }
     $geo = Run-Report $p.id @{
         dateRanges = @(@{ startDate=$start.ToString($fmt); endDate=$end.ToString($fmt) })
@@ -89,27 +123,43 @@ foreach ($p in $props) {
         orderBys = @(@{ metric = @{ metricName='sessions' }; desc=$true })
     }
 
-    function Vals($r) { if ($r.rows) { return $r.rows[0].metricValues | ForEach-Object { $_.value } } else { return @(0,0,0,0,0,0,0) } }
+    function Vals($r) { if ($r.rows) { return $r.rows[0].metricValues | ForEach-Object { $_.value } } else { return @(0,0,0,0,0,0,0,0) } }
     $c = Vals $cur; $v = Vals $prev
+
+    $chanPrevMap = @{}
+    foreach ($r in $chanPrev.rows) { $chanPrevMap[$r.dimensionValues[0].value] = @{ sessions=[double]$r.metricValues[0].value; keyEvents=[double]$r.metricValues[1].value } }
+    $evPrevMap = @{}
+    foreach ($r in $evPrev.rows) { $evPrevMap[$r.dimensionValues[0].value] = [double]$r.metricValues[0].value }
 
     $result.properties += @{
         id = $p.id; label = $p.label; name = $p.name
         current = @{
             activeUsers=[double]$c[0]; newUsers=[double]$c[1]; sessions=[double]$c[2]
             pageViews=[double]$c[3]; eventCount=[double]$c[4]
-            avgSessionDuration=[double]$c[5]; bounceRate=[double]$c[6]
+            avgSessionDuration=[double]$c[5]; bounceRate=[double]$c[6]; keyEvents=[double]$c[7]
         }
         previous = @{
             activeUsers=[double]$v[0]; newUsers=[double]$v[1]; sessions=[double]$v[2]
             pageViews=[double]$v[3]; eventCount=[double]$v[4]
-            avgSessionDuration=[double]$v[5]; bounceRate=[double]$v[6]
+            avgSessionDuration=[double]$v[5]; bounceRate=[double]$v[6]; keyEvents=[double]$v[7]
         }
-        daily = @($daily.rows | ForEach-Object { @{ date=$_.dimensionValues[0].value; activeUsers=[double]$_.metricValues[0].value; sessions=[double]$_.metricValues[1].value } })
-        channels = @($chan.rows | ForEach-Object { @{ channel=$_.dimensionValues[0].value; sessions=[double]$_.metricValues[0].value } })
+        key_events_from = $(if ($firstKe.rows) { $firstKe.rows[0].dimensionValues[0].value } else { $null })
+        daily = @($daily.rows | ForEach-Object { @{ date=$_.dimensionValues[0].value; activeUsers=[double]$_.metricValues[0].value; sessions=[double]$_.metricValues[1].value; keyEvents=[double]$_.metricValues[2].value } })
+        channels = @($chan.rows | ForEach-Object {
+            $n = $_.dimensionValues[0].value; $pv = $chanPrevMap[$n]
+            @{ channel=$n; sessions=[double]$_.metricValues[0].value; keyEvents=[double]$_.metricValues[1].value
+               bounceRate=[double]$_.metricValues[2].value
+               prevSessions=$(if ($pv) { $pv.sessions } else { 0 }); prevKeyEvents=$(if ($pv) { $pv.keyEvents } else { 0 }) } })
+        events = @($ev.rows | ForEach-Object {
+            $n = $_.dimensionValues[0].value
+            @{ name=$n; count=[double]$_.metricValues[0].value; keyEvents=[double]$_.metricValues[1].value
+               prevCount=$(if ($evPrevMap.ContainsKey($n)) { $evPrevMap[$n] } else { 0 }) } })
         countries = @($geo.rows | ForEach-Object { @{ country=$_.dimensionValues[0].value; activeUsers=[double]$_.metricValues[0].value } })
         devices = @($dev.rows | ForEach-Object { @{ device=$_.dimensionValues[0].value; sessions=[double]$_.metricValues[0].value } })
     }
-    "   users=$($c[0]) sessions=$($c[2]) events=$($c[4])"
+    $cvr = $(if ([double]$c[0]) { [double]$c[7] / [double]$c[0] * 100 } else { 0 })
+    $kf = $(if ($firstKe.rows) { $firstKe.rows[0].dimensionValues[0].value } else { '없음' })
+    "   users=$($c[0]) sessions=$($c[2]) 문의=$($c[7]) 전환율=$([Math]::Round($cvr,2))%  측정시작=$kf"
 }
 
 $dir = Split-Path $OutFile -Parent

@@ -1,49 +1,49 @@
 ﻿{
     "traffic":  [
                     {
-                        "minutes":  1626,
+                        "minutes":  1650,
                         "source":  "SHORTS",
-                        "views":  17114
+                        "views":  17341
                     },
                     {
-                        "minutes":  1020,
+                        "minutes":  1030,
                         "source":  "YT_SEARCH",
-                        "views":  2702
+                        "views":  2728
                     },
                     {
-                        "minutes":  810,
+                        "minutes":  814,
                         "source":  "EXT_URL",
                         "views":  1411
                     },
                     {
-                        "minutes":  301,
+                        "minutes":  241,
                         "source":  "YT_CHANNEL",
-                        "views":  605
+                        "views":  612
                     },
                     {
-                        "minutes":  170,
+                        "minutes":  178,
                         "source":  "SUBSCRIBER",
-                        "views":  157
+                        "views":  163
                     },
                     {
                         "minutes":  13,
                         "source":  "YT_OTHER_PAGE",
-                        "views":  107
+                        "views":  109
                     },
                     {
-                        "minutes":  59,
+                        "minutes":  62,
                         "source":  "NO_LINK_OTHER",
-                        "views":  54
+                        "views":  53
                     },
                     {
-                        "minutes":  56,
+                        "minutes":  65,
                         "source":  "RELATED_VIDEO",
-                        "views":  40
+                        "views":  42
                     },
                     {
-                        "minutes":  83,
+                        "minutes":  97,
                         "source":  "PLAYLIST",
-                        "views":  35
+                        "views":  38
                     },
                     {
                         "minutes":  4,
@@ -56,14 +56,14 @@
                         "views":  6
                     },
                     {
-                        "minutes":  1,
-                        "source":  "SHORTS_CONTENT_LINKS",
+                        "minutes":  9,
+                        "source":  "END_SCREEN",
                         "views":  5
                     },
                     {
-                        "minutes":  8,
-                        "source":  "END_SCREEN",
-                        "views":  4
+                        "minutes":  1,
+                        "source":  "SHORTS_CONTENT_LINKS",
+                        "views":  5
                     },
                     {
                         "minutes":  0,
@@ -73,25 +73,25 @@
                 ],
     "devices":  [
                     {
-                        "views":  20478,
+                        "views":  20737,
                         "device":  "MOBILE"
                     },
                     {
-                        "views":  905,
+                        "views":  916,
                         "device":  "TABLET"
                     },
                     {
-                        "views":  736,
+                        "views":  742,
                         "device":  "DESKTOP"
                     },
                     {
-                        "views":  136,
+                        "views":  133,
                         "device":  "TV"
                     }
                 ],
     "prev_range":  {
-                       "start":  "2026-06-19",
-                       "end":  "2026-07-18"
+                       "start":  "2026-06-20",
+                       "end":  "2026-07-19"
                    },
     "topVideos":  [
                       {
@@ -112,7 +112,7 @@
                           "videoId":  "8ntDfIcoQI4",
                           "likes":  3,
                           "publishedAt":  "2026-07-28T07:30:37Z",
-                          "views":  1646
+                          "views":  1647
                       },
                       {
                           "title":  "손으로 당긴 그 모습이 실리프팅 결과일까? | 실 개수보다 중요한 것",
@@ -147,12 +147,12 @@
                       {
                           "title":  "리얼 Kbeauty 시술 체험기 I 눈 감고 좋은 생각 하세요 눈밑 리쥬란 + 이마 보톡스",
                           "avgViewDuration":  38,
-                          "minutes":  854,
+                          "minutes":  855,
                           "duration":  "PT6M2S",
                           "videoId":  "SfocFEnc0co",
                           "likes":  25,
                           "publishedAt":  "2026-07-29T07:30:03Z",
-                          "views":  1326
+                          "views":  1329
                       },
                       {
                           "title":  "울트라콜, 맞자마자 보이는 게 최종일까? | 필러와 다른 작동 방식",
@@ -172,7 +172,7 @@
                           "videoId":  "U19uoiOnlhI",
                           "likes":  2,
                           "publishedAt":  "2026-08-07T07:15:02Z",
-                          "views":  1253
+                          "views":  1254
                       },
                       {
                           "title":  "보톡스 맞으면 모든 주름이 펴질까? | 표정주름과 고정주름의 차이",
@@ -185,34 +185,29 @@
                           "views":  1253
                       },
                       {
-                          "title":  "포텐자 후 운동해도 될까? 회복 첫날 주의사항",
+                          "title":  "요정귀필러 후 눌림·수면·헤드폰 관리법",
                           "avgViewDuration":  12,
-                          "minutes":  84,
-                          "duration":  "PT50S",
-                          "videoId":  "J6CvBiwyfAs",
-                          "likes":  2,
-                          "publishedAt":  "2026-08-15T05:15:13Z",
-                          "views":  907
+                          "minutes":  88,
+                          "duration":  "PT55S",
+                          "videoId":  "4detB_9KSMc",
+                          "likes":  1,
+                          "publishedAt":  "2026-08-16T05:15:37Z",
+                          "views":  1097
                       }
                   ],
     "previous":  {
-                     "comments":  12,
-                     "likes":  63,
+                     "comments":  11,
+                     "likes":  39,
                      "subsLost":  10,
-                     "minutesWatched":  2661,
-                     "avgViewDuration":  34,
-                     "views":  10358,
-                     "avgViewPercentage":  21.48,
-                     "shares":  26,
+                     "minutesWatched":  2535,
+                     "avgViewDuration":  36,
+                     "views":  9815,
+                     "avgViewPercentage":  26.74,
+                     "shares":  18,
                      "subsGained":  3
                  },
-    "generated_at_utc":  "2026-08-18T09:02:52.1635433Z",
+    "generated_at_utc":  "2026-08-19T09:41:07.4237866Z",
     "daily":  [
-                  {
-                      "date":  "2026-07-19",
-                      "minutes":  98,
-                      "views":  114
-                  },
                   {
                       "date":  "2026-07-20",
                       "minutes":  75,
@@ -347,24 +342,29 @@
                       "date":  "2026-08-15",
                       "minutes":  114,
                       "views":  965
+                  },
+                  {
+                      "date":  "2026-08-16",
+                      "minutes":  111,
+                      "views":  396
                   }
               ],
     "range":  {
                   "days":  30,
-                  "end":  "2026-08-17",
-                  "start":  "2026-07-19"
+                  "end":  "2026-08-18",
+                  "start":  "2026-07-20"
               },
     "channel":  {
                     "title":  "블라썸1호 | K-Beauty No.1, Beauty Blossom",
                     "subscribers":  1360,
                     "id":  "UCjqwHrk39tox9ToJDiuj5Iw",
-                    "videoCount":  240,
-                    "totalViews":  178109
+                    "videoCount":  242,
+                    "totalViews":  178237
                 },
     "countries":  [
                       {
                           "country":  "KR",
-                          "views":  19604
+                          "views":  19875
                       },
                       {
                           "country":  "US",
@@ -405,13 +405,13 @@
                   ],
     "current":  {
                     "comments":  12,
-                    "likes":  93,
-                    "subsLost":  12,
-                    "minutesWatched":  4163,
+                    "likes":  94,
+                    "subsLost":  13,
+                    "minutesWatched":  4178,
                     "avgViewDuration":  25,
-                    "views":  22261,
-                    "avgViewPercentage":  24.81,
+                    "views":  22586,
+                    "avgViewPercentage":  24.67,
                     "shares":  19,
-                    "subsGained":  136
+                    "subsGained":  137
                 }
 }

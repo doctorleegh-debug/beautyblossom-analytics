@@ -1,41 +1,36 @@
 ﻿{
     "prev_range":  {
-                       "start":  "2026-06-19",
-                       "end":  "2026-07-18"
+                       "start":  "2026-06-20",
+                       "end":  "2026-07-19"
                    },
     "properties":  [
                        {
                            "devices":  [
                                            {
-                                               "sessions":  7752,
+                                               "sessions":  7670,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  4885,
+                                               "sessions":  4970,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  69,
+                                               "sessions":  65,
                                                "device":  "tablet"
                                            }
                                        ],
                            "id":  "526090588",
                            "previous":  {
-                                            "sessions":  11252,
-                                            "newUsers":  8078,
-                                            "bounceRate":  0.48622467116956986,
-                                            "activeUsers":  8558,
-                                            "eventCount":  100687,
-                                            "avgSessionDuration":  137.34150035309278,
-                                            "pageViews":  30398
+                                            "sessions":  11372,
+                                            "newUsers":  8135,
+                                            "bounceRate":  0.48821667252901862,
+                                            "activeUsers":  8590,
+                                            "eventCount":  101267,
+                                            "avgSessionDuration":  137.63754547502637,
+                                            "pageViews":  30607
                                         },
                            "label":  "KR",
                            "daily":  [
-                                         {
-                                             "date":  "20260719",
-                                             "sessions":  347,
-                                             "activeUsers":  305
-                                         },
                                          {
                                              "date":  "20260720",
                                              "sessions":  458,
@@ -180,37 +175,42 @@
                                              "date":  "20260817",
                                              "sessions":  341,
                                              "activeUsers":  301
+                                         },
+                                         {
+                                             "date":  "20260818",
+                                             "sessions":  346,
+                                             "activeUsers":  289
                                          }
                                      ],
                            "name":  "Beauty Blossom Korea",
                            "countries":  [
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  8125
+                                                 "activeUsers":  8078
                                              },
                                              {
                                                  "country":  "Singapore",
-                                                 "activeUsers":  410
+                                                 "activeUsers":  412
                                              },
                                              {
                                                  "country":  "United States",
-                                                 "activeUsers":  297
+                                                 "activeUsers":  294
                                              },
                                              {
                                                  "country":  "China",
-                                                 "activeUsers":  254
+                                                 "activeUsers":  251
                                              },
                                              {
                                                  "country":  "Brazil",
-                                                 "activeUsers":  155
+                                                 "activeUsers":  156
                                              },
                                              {
                                                  "country":  "Hong Kong",
-                                                 "activeUsers":  149
+                                                 "activeUsers":  151
                                              },
                                              {
                                                  "country":  "Japan",
-                                                 "activeUsers":  103
+                                                 "activeUsers":  101
                                              },
                                              {
                                                  "country":  "Vietnam",
@@ -218,46 +218,46 @@
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  12639,
-                                           "newUsers":  9675,
-                                           "bounceRate":  0.50565709312445606,
-                                           "activeUsers":  10146,
-                                           "eventCount":  108449,
-                                           "avgSessionDuration":  123.75859233649814,
-                                           "pageViews":  31589
+                                           "sessions":  12666,
+                                           "newUsers":  9651,
+                                           "bounceRate":  0.50639507342491707,
+                                           "activeUsers":  10072,
+                                           "eventCount":  110307,
+                                           "avgSessionDuration":  125.11560373132795,
+                                           "pageViews":  32060
                                        },
                            "channels":  [
                                             {
                                                 "channel":  "Direct",
-                                                "sessions":  4598
+                                                "sessions":  4615
                                             },
                                             {
                                                 "channel":  "Organic Search",
-                                                "sessions":  3882
+                                                "sessions":  3919
                                             },
                                             {
                                                 "channel":  "Paid Social",
-                                                "sessions":  2617
+                                                "sessions":  2547
                                             },
                                             {
                                                 "channel":  "Referral",
-                                                "sessions":  1060
+                                                "sessions":  1055
                                             },
                                             {
                                                 "channel":  "Organic Social",
-                                                "sessions":  241
+                                                "sessions":  245
                                             },
                                             {
                                                 "channel":  "AI Assistant",
-                                                "sessions":  85
+                                                "sessions":  84
                                             },
                                             {
                                                 "channel":  "Paid Search",
-                                                "sessions":  53
+                                                "sessions":  54
                                             },
                                             {
                                                 "channel":  "Unassigned",
-                                                "sessions":  16
+                                                "sessions":  17
                                             },
                                             {
                                                 "channel":  "Organic Video",
@@ -272,35 +272,30 @@
                        {
                            "devices":  [
                                            {
-                                               "sessions":  9008,
+                                               "sessions":  8995,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  2084,
+                                               "sessions":  2094,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  70,
+                                               "sessions":  74,
                                                "device":  "tablet"
                                            }
                                        ],
                            "id":  "534097409",
                            "previous":  {
-                                            "sessions":  6229,
-                                            "newUsers":  5351,
-                                            "bounceRate":  0.71391876705731261,
-                                            "activeUsers":  5481,
-                                            "eventCount":  37120,
-                                            "avgSessionDuration":  63.621306609086531,
-                                            "pageViews":  9759
+                                            "sessions":  6316,
+                                            "newUsers":  5445,
+                                            "bounceRate":  0.71453451551614944,
+                                            "activeUsers":  5572,
+                                            "eventCount":  37560,
+                                            "avgSessionDuration":  63.396466028182395,
+                                            "pageViews":  9874
                                         },
                            "label":  "JP",
                            "daily":  [
-                                         {
-                                             "date":  "20260719",
-                                             "sessions":  246,
-                                             "activeUsers":  238
-                                         },
                                          {
                                              "date":  "20260720",
                                              "sessions":  345,
@@ -445,25 +440,30 @@
                                              "date":  "20260817",
                                              "sessions":  356,
                                              "activeUsers":  333
+                                         },
+                                         {
+                                             "date":  "20260818",
+                                             "sessions":  203,
+                                             "activeUsers":  196
                                          }
                                      ],
                            "name":  "Beauty Blossom JP",
                            "countries":  [
                                              {
                                                  "country":  "Japan",
-                                                 "activeUsers":  7973
+                                                 "activeUsers":  7923
                                              },
                                              {
                                                  "country":  "Singapore",
-                                                 "activeUsers":  981
+                                                 "activeUsers":  988
                                              },
                                              {
                                                  "country":  "United States",
-                                                 "activeUsers":  305
+                                                 "activeUsers":  303
                                              },
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  230
+                                                 "activeUsers":  225
                                              },
                                              {
                                                  "country":  "Brazil",
@@ -475,46 +475,46 @@
                                              },
                                              {
                                                  "country":  "Indonesia",
-                                                 "activeUsers":  62
+                                                 "activeUsers":  63
                                              },
                                              {
                                                  "country":  "India",
-                                                 "activeUsers":  61
+                                                 "activeUsers":  60
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  11182,
-                                           "newUsers":  10060,
-                                           "bounceRate":  0.72303702378823109,
-                                           "activeUsers":  10211,
-                                           "eventCount":  59037,
-                                           "avgSessionDuration":  47.346250807190124,
-                                           "pageViews":  14621
+                                           "sessions":  11165,
+                                           "newUsers":  10018,
+                                           "bounceRate":  0.71849529780564259,
+                                           "activeUsers":  10131,
+                                           "eventCount":  58792,
+                                           "avgSessionDuration":  49.163901743036277,
+                                           "pageViews":  14555
                                        },
                            "channels":  [
                                             {
                                                 "channel":  "Paid Social",
-                                                "sessions":  5446
+                                                "sessions":  5396
                                             },
                                             {
                                                 "channel":  "Paid Search",
-                                                "sessions":  2493
+                                                "sessions":  2524
                                             },
                                             {
                                                 "channel":  "Direct",
-                                                "sessions":  2094
+                                                "sessions":  2105
                                             },
                                             {
                                                 "channel":  "Organic Search",
-                                                "sessions":  648
+                                                "sessions":  637
                                             },
                                             {
                                                 "channel":  "Organic Social",
-                                                "sessions":  383
+                                                "sessions":  375
                                             },
                                             {
                                                 "channel":  "Referral",
-                                                "sessions":  63
+                                                "sessions":  64
                                             },
                                             {
                                                 "channel":  "Unassigned",
@@ -522,7 +522,7 @@
                                             },
                                             {
                                                 "channel":  "AI Assistant",
-                                                "sessions":  9
+                                                "sessions":  11
                                             },
                                             {
                                                 "channel":  "Cross-network",
@@ -537,11 +537,11 @@
                        {
                            "devices":  [
                                            {
-                                               "sessions":  4534,
+                                               "sessions":  4518,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  620,
+                                               "sessions":  613,
                                                "device":  "mobile"
                                            },
                                            {
@@ -551,21 +551,16 @@
                                        ],
                            "id":  "534099303",
                            "previous":  {
-                                            "sessions":  5668,
-                                            "newUsers":  4928,
-                                            "bounceRate":  0.754940014114326,
-                                            "activeUsers":  5250,
-                                            "eventCount":  31404,
-                                            "avgSessionDuration":  51.543126284932953,
-                                            "pageViews":  7682
+                                            "sessions":  5629,
+                                            "newUsers":  4895,
+                                            "bounceRate":  0.749511458518387,
+                                            "activeUsers":  5213,
+                                            "eventCount":  31375,
+                                            "avgSessionDuration":  53.1387604229881,
+                                            "pageViews":  7705
                                         },
                            "label":  "CN",
                            "daily":  [
-                                         {
-                                             "date":  "20260719",
-                                             "sessions":  179,
-                                             "activeUsers":  171
-                                         },
                                          {
                                              "date":  "20260720",
                                              "sessions":  184,
@@ -708,31 +703,36 @@
                                          },
                                          {
                                              "date":  "20260817",
-                                             "sessions":  158,
-                                             "activeUsers":  156
+                                             "sessions":  162,
+                                             "activeUsers":  160
+                                         },
+                                         {
+                                             "date":  "20260818",
+                                             "sessions":  166,
+                                             "activeUsers":  158
                                          }
                                      ],
                            "name":  "Beauty Blossom CN",
                            "countries":  [
                                              {
                                                  "country":  "China",
-                                                 "activeUsers":  4153
+                                                 "activeUsers":  4145
                                              },
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  129
+                                                 "activeUsers":  130
                                              },
                                              {
                                                  "country":  "Hong Kong",
-                                                 "activeUsers":  128
+                                                 "activeUsers":  127
                                              },
                                              {
                                                  "country":  "Taiwan",
-                                                 "activeUsers":  107
+                                                 "activeUsers":  102
                                              },
                                              {
                                                  "country":  "United States",
-                                                 "activeUsers":  62
+                                                 "activeUsers":  63
                                              },
                                              {
                                                  "country":  "Japan",
@@ -748,30 +748,30 @@
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  5208,
-                                           "newUsers":  4324,
-                                           "bounceRate":  0.66321044546850993,
-                                           "activeUsers":  4673,
-                                           "eventCount":  29629,
-                                           "avgSessionDuration":  62.830417070276496,
-                                           "pageViews":  7280
+                                           "sessions":  5167,
+                                           "newUsers":  4314,
+                                           "bounceRate":  0.65666731178633642,
+                                           "activeUsers":  4660,
+                                           "eventCount":  29892,
+                                           "avgSessionDuration":  66.840876113218513,
+                                           "pageViews":  7339
                                        },
                            "channels":  [
                                             {
                                                 "channel":  "Direct",
-                                                "sessions":  4329
+                                                "sessions":  4310
                                             },
                                             {
                                                 "channel":  "Unassigned",
-                                                "sessions":  376
+                                                "sessions":  381
                                             },
                                             {
                                                 "channel":  "Organic Search",
-                                                "sessions":  322
+                                                "sessions":  320
                                             },
                                             {
                                                 "channel":  "Referral",
-                                                "sessions":  109
+                                                "sessions":  107
                                             },
                                             {
                                                 "channel":  "Organic Social",
@@ -786,35 +786,30 @@
                        {
                            "devices":  [
                                            {
-                                               "sessions":  38064,
+                                               "sessions":  37562,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  1880,
-                                               "device":  "tablet"
+                                               "sessions":  1888,
+                                               "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  1872,
-                                               "device":  "desktop"
+                                               "sessions":  1849,
+                                               "device":  "tablet"
                                            }
                                        ],
                            "id":  "534100156",
                            "previous":  {
-                                            "sessions":  38005,
-                                            "newUsers":  27902,
-                                            "bounceRate":  0.66993816603078538,
-                                            "activeUsers":  30388,
-                                            "eventCount":  167785,
-                                            "avgSessionDuration":  54.54396686251809,
-                                            "pageViews":  46888
+                                            "sessions":  37673,
+                                            "newUsers":  28202,
+                                            "bounceRate":  0.66535715233721759,
+                                            "activeUsers":  30644,
+                                            "eventCount":  169265,
+                                            "avgSessionDuration":  55.57551307206753,
+                                            "pageViews":  47302
                                         },
                            "label":  "EN",
                            "daily":  [
-                                         {
-                                             "date":  "20260719",
-                                             "sessions":  1681,
-                                             "activeUsers":  1616
-                                         },
                                          {
                                              "date":  "20260720",
                                              "sessions":  1706,
@@ -959,68 +954,77 @@
                                              "date":  "20260817",
                                              "sessions":  1284,
                                              "activeUsers":  1223
+                                         },
+                                         {
+                                             "date":  "20260818",
+                                             "sessions":  984,
+                                             "activeUsers":  918
                                          }
                                      ],
                            "name":  "Beauty Blossom EN",
                            "countries":  [
                                              {
                                                  "country":  "Philippines",
-                                                 "activeUsers":  22204
+                                                 "activeUsers":  21778
                                              },
                                              {
                                                  "country":  "Indonesia",
-                                                 "activeUsers":  3144
+                                                 "activeUsers":  3226
                                              },
                                              {
                                                  "country":  "United Arab Emirates",
-                                                 "activeUsers":  1839
+                                                 "activeUsers":  1795
                                              },
                                              {
                                                  "country":  "India",
-                                                 "activeUsers":  1519
+                                                 "activeUsers":  1372
                                              },
                                              {
                                                  "country":  "Qatar",
-                                                 "activeUsers":  1283
+                                                 "activeUsers":  1259
                                              },
                                              {
                                                  "country":  "United States",
-                                                 "activeUsers":  735
+                                                 "activeUsers":  722
                                              },
                                              {
                                                  "country":  "Singapore",
-                                                 "activeUsers":  528
+                                                 "activeUsers":  533
                                              },
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  398
+                                                 "activeUsers":  409
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  42605,
-                                           "newUsers":  32421,
-                                           "bounceRate":  0.58920314517075456,
-                                           "activeUsers":  34494,
-                                           "eventCount":  202190,
-                                           "avgSessionDuration":  63.340090674146218,
-                                           "pageViews":  57778
+                                           "sessions":  41923,
+                                           "newUsers":  31749,
+                                           "bounceRate":  0.59709467356820833,
+                                           "activeUsers":  33956,
+                                           "eventCount":  199550,
+                                           "avgSessionDuration":  65.925749608854318,
+                                           "pageViews":  57119
                                        },
                            "channels":  [
                                             {
                                                 "channel":  "Paid Social",
-                                                "sessions":  34917
+                                                "sessions":  34278
                                             },
                                             {
                                                 "channel":  "Paid Search",
-                                                "sessions":  3154
+                                                "sessions":  3019
                                             },
                                             {
                                                 "channel":  "Organic Search",
-                                                "sessions":  1640
+                                                "sessions":  1641
                                             },
                                             {
                                                 "channel":  "Direct",
-                                                "sessions":  1300
+                                                "sessions":  1316
+                                            },
+                                            {
+                                                "channel":  "Unassigned",
+                                                "sessions":  537
                                             },
                                             {
                                                 "channel":  "Referral",
@@ -1028,58 +1032,49 @@
                                             },
                                             {
                                                 "channel":  "Organic Social",
-                                                "sessions":  316
+                                                "sessions":  306
                                             },
                                             {
                                                 "channel":  "Paid Other",
-                                                "sessions":  216
+                                                "sessions":  219
+                                            },
+                                            {
+                                                "channel":  "Cross-network",
+                                                "sessions":  90
                                             },
                                             {
                                                 "channel":  "AI Assistant",
                                                 "sessions":  51
-                                            },
-                                            {
-                                                "channel":  "Unassigned",
-                                                "sessions":  17
-                                            },
-                                            {
-                                                "channel":  "Cross-network",
-                                                "sessions":  15
                                             }
                                         ]
                        },
                        {
                            "devices":  [
                                            {
-                                               "sessions":  22464,
+                                               "sessions":  22090,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  935,
+                                               "sessions":  944,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  516,
+                                               "sessions":  481,
                                                "device":  "tablet"
                                            }
                                        ],
                            "id":  "534131940",
                            "previous":  {
-                                            "sessions":  19609,
-                                            "newUsers":  14793,
-                                            "bounceRate":  0.75485746340965887,
-                                            "activeUsers":  15947,
-                                            "eventCount":  112220,
-                                            "avgSessionDuration":  85.16231499433934,
-                                            "pageViews":  30350
+                                            "sessions":  19708,
+                                            "newUsers":  14922,
+                                            "bounceRate":  0.75532778567079362,
+                                            "activeUsers":  16021,
+                                            "eventCount":  113130,
+                                            "avgSessionDuration":  84.726501333113461,
+                                            "pageViews":  30591
                                         },
                            "label":  "TW",
                            "daily":  [
-                                         {
-                                             "date":  "20260719",
-                                             "sessions":  905,
-                                             "activeUsers":  860
-                                         },
                                          {
                                              "date":  "20260720",
                                              "sessions":  828,
@@ -1224,13 +1219,18 @@
                                              "date":  "20260817",
                                              "sessions":  766,
                                              "activeUsers":  731
+                                         },
+                                         {
+                                             "date":  "20260818",
+                                             "sessions":  514,
+                                             "activeUsers":  481
                                          }
                                      ],
                            "name":  "Beauty Blossom TW",
                            "countries":  [
                                              {
                                                  "country":  "Taiwan",
-                                                 "activeUsers":  19262
+                                                 "activeUsers":  18910
                                              },
                                              {
                                                  "country":  "United States",
@@ -1238,19 +1238,19 @@
                                              },
                                              {
                                                  "country":  "Hong Kong",
-                                                 "activeUsers":  211
+                                                 "activeUsers":  207
                                              },
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  182
+                                                 "activeUsers":  184
                                              },
                                              {
                                                  "country":  "Japan",
-                                                 "activeUsers":  86
+                                                 "activeUsers":  84
                                              },
                                              {
                                                  "country":  "China",
-                                                 "activeUsers":  73
+                                                 "activeUsers":  70
                                              },
                                              {
                                                  "country":  "Singapore",
@@ -1258,65 +1258,65 @@
                                              },
                                              {
                                                  "country":  "Ireland",
-                                                 "activeUsers":  43
+                                                 "activeUsers":  40
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  23951,
-                                           "newUsers":  19408,
-                                           "bounceRate":  0.78731576969646366,
-                                           "activeUsers":  20227,
-                                           "eventCount":  124681,
-                                           "avgSessionDuration":  61.088670292305125,
-                                           "pageViews":  32223
+                                           "sessions":  23530,
+                                           "newUsers":  19032,
+                                           "bounceRate":  0.791075223119422,
+                                           "activeUsers":  19895,
+                                           "eventCount":  122493,
+                                           "avgSessionDuration":  62.911712168763295,
+                                           "pageViews":  31649
                                        },
                            "channels":  [
                                             {
                                                 "channel":  "Paid Social",
-                                                "sessions":  20620
+                                                "sessions":  20283
                                             },
                                             {
                                                 "channel":  "Direct",
-                                                "sessions":  1482
+                                                "sessions":  1457
                                             },
                                             {
                                                 "channel":  "Organic Search",
-                                                "sessions":  688
+                                                "sessions":  686
                                             },
                                             {
                                                 "channel":  "Paid Search",
-                                                "sessions":  404
+                                                "sessions":  360
                                             },
                                             {
                                                 "channel":  "Organic Social",
-                                                "sessions":  342
-                                            },
-                                            {
-                                                "channel":  "Referral",
-                                                "sessions":  116
-                                            },
-                                            {
-                                                "channel":  "Paid Other",
-                                                "sessions":  103
+                                                "sessions":  330
                                             },
                                             {
                                                 "channel":  "Unassigned",
-                                                "sessions":  13
+                                                "sessions":  289
+                                            },
+                                            {
+                                                "channel":  "Referral",
+                                                "sessions":  111
+                                            },
+                                            {
+                                                "channel":  "Paid Other",
+                                                "sessions":  104
                                             },
                                             {
                                                 "channel":  "Cross-network",
-                                                "sessions":  3
+                                                "sessions":  8
                                             }
                                         ]
                        },
                        {
                            "devices":  [
                                            {
-                                               "sessions":  233,
+                                               "sessions":  236,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  121,
+                                               "sessions":  122,
                                                "device":  "mobile"
                                            },
                                            {
@@ -1326,21 +1326,16 @@
                                        ],
                            "id":  "537583229",
                            "previous":  {
-                                            "sessions":  735,
-                                            "newUsers":  481,
-                                            "bounceRate":  0.62312925170068023,
-                                            "activeUsers":  485,
-                                            "eventCount":  4830,
-                                            "avgSessionDuration":  185.7339992,
-                                            "pageViews":  1640
+                                            "sessions":  726,
+                                            "newUsers":  482,
+                                            "bounceRate":  0.62258953168044073,
+                                            "activeUsers":  486,
+                                            "eventCount":  4759,
+                                            "avgSessionDuration":  187.54856109504132,
+                                            "pageViews":  1611
                                         },
                            "label":  "TH",
                            "daily":  [
-                                         {
-                                             "date":  "20260719",
-                                             "sessions":  5,
-                                             "activeUsers":  5
-                                         },
                                          {
                                              "date":  "20260720",
                                              "sessions":  6,
@@ -1485,17 +1480,22 @@
                                              "date":  "20260817",
                                              "sessions":  15,
                                              "activeUsers":  14
+                                         },
+                                         {
+                                             "date":  "20260818",
+                                             "sessions":  9,
+                                             "activeUsers":  8
                                          }
                                      ],
                            "name":  "Beauty Blossom Thailand",
                            "countries":  [
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  63
+                                                 "activeUsers":  64
                                              },
                                              {
                                                  "country":  "Thailand",
-                                                 "activeUsers":  48
+                                                 "activeUsers":  51
                                              },
                                              {
                                                  "country":  "(not set)",
@@ -1503,15 +1503,15 @@
                                              },
                                              {
                                                  "country":  "United States",
-                                                 "activeUsers":  27
-                                             },
-                                             {
-                                                 "country":  "China",
-                                                 "activeUsers":  8
+                                                 "activeUsers":  26
                                              },
                                              {
                                                  "country":  "Germany",
                                                  "activeUsers":  8
+                                             },
+                                             {
+                                                 "country":  "China",
+                                                 "activeUsers":  7
                                              },
                                              {
                                                  "country":  "United Kingdom",
@@ -1523,26 +1523,26 @@
                                              }
                                          ],
                            "current":  {
-                                           "sessions":  355,
-                                           "newUsers":  199,
-                                           "bounceRate":  0.49295774647887325,
-                                           "activeUsers":  210,
-                                           "eventCount":  2703,
-                                           "avgSessionDuration":  248.04213409577468,
-                                           "pageViews":  913
+                                           "sessions":  359,
+                                           "newUsers":  201,
+                                           "bounceRate":  0.48189415041782729,
+                                           "activeUsers":  212,
+                                           "eventCount":  2725,
+                                           "avgSessionDuration":  248.60985294707521,
+                                           "pageViews":  917
                                        },
                            "channels":  [
                                             {
                                                 "channel":  "Referral",
-                                                "sessions":  154
+                                                "sessions":  158
                                             },
                                             {
                                                 "channel":  "Direct",
-                                                "sessions":  120
+                                                "sessions":  117
                                             },
                                             {
                                                 "channel":  "Organic Search",
-                                                "sessions":  56
+                                                "sessions":  59
                                             },
                                             {
                                                 "channel":  "Paid Search",
@@ -1559,10 +1559,10 @@
                                         ]
                        }
                    ],
-    "generated_at_utc":  "2026-08-18T09:00:21.3885676Z",
+    "generated_at_utc":  "2026-08-19T09:40:17.0147758Z",
     "range":  {
                   "days":  30,
-                  "end":  "2026-08-17",
-                  "start":  "2026-07-19"
+                  "end":  "2026-08-18",
+                  "start":  "2026-07-20"
               }
 }

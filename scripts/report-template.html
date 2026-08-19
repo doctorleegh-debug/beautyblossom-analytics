@@ -595,21 +595,69 @@ function render(){
   const iga = ((D.igApi && D.igApi.accounts) || []).filter(a => a.status === 'OK' && a.ig);
   const igb = document.getElementById('igBody');
   if (iga.length) {
+    const hasIns = !!(D.igApi && D.igApi.insights_available);
     const totF = iga.reduce((s, a) => s + a.ig.followers, 0);
-    const totM = iga.reduce((s, a) => s + a.ig.media_count, 0);
-    const totE = iga.reduce((s, a) => s + ((a.recent && a.recent.engagement) || 0), 0);
+
+    const cSum = k => iga.reduce((s, a) => s + ((a.current && a.current[k]) || 0), 0);
+    const pSum = k => iga.reduce((s, a) => s + ((a.previous && a.previous[k]) || 0), 0);
+    const iSum = k => iga.reduce((s, a) => s + ((a.insights && a.insights[k]) || 0), 0);
+    const ipSum = k => iga.reduce((s, a) => s + ((a.insights_prev && a.insights_prev[k]) || 0), 0);
+    const fSum = (w, k) => iga.reduce((s, a) => s + ((a[w] && a[w][k]) || 0), 0);
+    // Breakdown totals across every account, e.g. bSum('breakdowns','views__follow_type','FOLLOWER')
+    const bSum = (w, key, dim) => iga.reduce((s, a) => s + (((a[w] || {})[key] || {})[dim] || 0), 0);
+    // Some accounts return an unlabelled bucket; it carries no dimension so drop it.
+    const bKeys = key => {
+      const set = {};
+      iga.forEach(a => Object.keys((a.breakdowns || {})[key] || {}).forEach(k => { if (k) set[k] = 1; }));
+      return Object.keys(set);
+    };
+
+    const FOLLOW_LABEL = { FOLLOWER: '팔로워', NON_FOLLOWER: '비팔로워', UNKNOWN: '미상' };
+    const PRODUCT_LABEL = { REEL: '릴스', POST: '게시물', STORY: '스토리', AD: '광고',
+      CAROUSEL_CONTAINER: '캐러셀', CAROUSEL_ITEM: '캐러셀 항목', IGTV: 'IGTV' };
+    const GENDER_LABEL = { F: '여성', M: '남성', U: '미상' };
+    const CONTACT_LABEL = { DIRECTION: '길찾기', CALL: '전화', EMAIL: '이메일', TEXT: '문자', BOOK_NOW: '예약' };
+    const COUNTRY_LABEL = { KR: '대한민국', JP: '일본', TW: '대만', TH: '태국', US: '미국', CN: '중국',
+      VN: '베트남', ID: '인도네시아', IN: '인도', HK: '홍콩', SG: '싱가포르', MY: '말레이시아',
+      PH: '필리핀', AU: '호주', GB: '영국', CA: '캐나다', DE: '독일', FR: '프랑스', BR: '브라질',
+      RU: '러시아', MN: '몽골', KZ: '카자흐스탄', UZ: '우즈베키스탄', AE: '아랍에미리트', SA: '사우디',
+      TR: '튀르키예', EG: '이집트', NG: '나이지리아', DZ: '알제리', MA: '모로코', MX: '멕시코', ES: '스페인', IT: '이탈리아' };
+    const dimLabel = (map, k) => map[k] || k;
+
     igb.innerHTML =
       '<div class="tiles" id="igTiles"></div>' +
       '<div class="grid g2" style="margin-top:14px">' +
-        '<div class="card"><h3>계정별 조회수 (30일)</h3><div id="igFollowers"></div></div>' +
-        '<div class="card"><h3>전월 대비 참여 변화</h3>' +
+        '<div class="card"><h3>계정별 조회수 (30일)</h3><div id="igViews"></div></div>' +
+        '<div class="card"><h3>전월 대비 조회수 변화</h3>' +
           '<div class="legend"><span><span class="dot" style="background:' + cssv('--good') + '"></span>▲ 상승</span>' +
           '<span><span class="dot" style="background:' + cssv('--bad') + '"></span>▼ 하락</span></div>' +
           '<div id="igDelta"></div></div>' +
       '</div>' +
-      '<div class="card" style="margin-top:14px"><h3>계정별 상세</h3>' +
+      '<div class="card" style="margin-top:14px"><h3>계정별 상세 · 전월 대비</h3>' +
         '<div style="overflow-x:auto"><table id="igTable"></table></div>' +
-        '<p class="note">' + esc(D.igApi.note) + '</p></div>' +
+        '<p class="note">각 수치 옆의 ▲▼는 직전 30일(' + esc(D.igApi.prev_range ? D.igApi.prev_range.start + ' ~ ' + D.igApi.prev_range.end : '') + ') 대비 변화입니다. ' + esc(D.igApi.note) + '</p></div>' +
+      (hasIns ?
+      '<div class="grid g2" style="margin-top:14px">' +
+        '<div class="card"><h3>조회수는 누가 봤나 · 팔로워 vs 비팔로워</h3>' +
+          '<div class="legend" id="igFollowLegend"></div><div id="igFollowType"></div>' +
+          '<p class="note">비팔로워 비중이 높을수록 탐색·추천 노출로 새 사람에게 닿고 있다는 뜻입니다.</p></div>' +
+        '<div class="card"><h3>조회수는 어디서 나왔나 · 콘텐츠 유형</h3>' +
+          '<div class="legend" id="igProductLegend"></div><div id="igProduct"></div>' +
+          '<p class="note">광고(AD)가 섞여 있으면 유기적 성과와 분리해서 봐야 합니다.</p></div>' +
+      '</div>' +
+      '<div class="card" style="margin-top:14px"><h3>팔로워 증감 · 신규 팔로우와 언팔로우</h3>' +
+        '<div style="overflow-x:auto"><table id="igFollowTable"></table></div>' +
+        '<p class="note">순증 = 신규 팔로우 − 언팔로우. 팔로워 총수만 보면 이탈이 보이지 않아 양쪽을 함께 표시했습니다.</p></div>' +
+      '<div class="card" style="margin-top:14px"><h3>프로필에서 일어난 행동</h3>' +
+        '<div style="overflow-x:auto"><table id="igActionTable"></table></div>' +
+        '<p class="note">프로필 조회 → 웹사이트 클릭 / 길찾기·전화 탭으로 이어지는 흐름입니다. 실제 내원 문의에 가장 가까운 지표입니다.</p></div>' +
+      '<div class="card" style="margin-top:14px">' +
+        '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px">' +
+          '<h3 style="margin:0">팔로워 구성</h3><div id="igDemoTabs" class="legend" style="margin:0"></div></div>' +
+        '<div class="grid g2"><div><div id="igDemoChart"></div></div>' +
+        '<div style="overflow-x:auto"><table id="igDemoTable"></table></div></div>' +
+        '<p class="note">계정 인사이트의 팔로워 인구통계(이번 달 기준)입니다. 100명 미만 계정은 값이 비어 있을 수 있습니다.</p></div>'
+      : '') +
       '<div class="card" style="margin-top:14px">' +
         '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px">' +
           '<h3 style="margin:0">조회수 상위 게시물 (최근 30일)</h3><div id="igTabs" class="legend" style="margin:0"></div></div>' +
@@ -617,68 +665,183 @@ function render(){
         '<p class="note">최근 30일 발행분 중 조회수 상위입니다.</p></div>' +
       '';
 
-    const cSum = k => iga.reduce((s, a) => s + ((a.current && a.current[k]) || 0), 0);
-    const pSum = k => iga.reduce((s, a) => s + ((a.previous && a.previous[k]) || 0), 0);
-    const iSum = k => iga.reduce((s, a) => s + ((a.insights && a.insights[k]) || 0), 0);
-    const fGrow = iga.reduce((s, a) => s + (a.follower_growth || 0), 0);
-    const hasIns = !!(D.igApi && D.igApi.insights_available);
-    const dPosts = pct(cSum('posts'), pSum('posts'));
-    const dLikes = pct(cSum('likes'), pSum('likes'));
+    // Delta sits inside the value cell: a number beside its own change reads in one pass.
+    const inline = (val, prev) => {
+      const d = pct(val, prev);
+      if (d == null) return '';
+      return '<span class="' + (d >= 0 ? 'up' : 'dn') + '" style="font-size:11px;margin-left:6px;white-space:nowrap">' +
+        (d >= 0 ? '▲' : '▼') + nf1(Math.abs(d)) + '%</span>';
+    };
+    const withDelta = (val, prev, fmt) => '<td>' + (fmt || nf)(val) + inline(val, prev) + '</td>';
+    const netStr = n => n == null ? '—' : '<span class="' + (n >= 0 ? 'up' : 'dn') + '">' +
+      (n >= 0 ? '▲ +' : '▼ ') + nf(Math.abs(n)) + '</span>';
+
+    const netAll = fSum('follows', 'net');
     document.getElementById('igTiles').innerHTML =
-      (hasIns ? tile('조회수 (30일)', nf(iSum('views')), '릴스 포함') : '') +
-      (hasIns ? tile('도달 (30일)', nf(iSum('reach')), '고유 계정 수') : '') +
-      tile('총 팔로워', nf(totF), fGrow
-        ? '<span class="' + (fGrow >= 0 ? 'up' : 'dn') + '">' + (fGrow >= 0 ? '▲ +' : '▼ ') + nf(Math.abs(fGrow)) + '</span> 30일 순증'
-        : iga.length + '개 계정 합계') +
-      tile('게시물 (30일)', nf(cSum('posts')), '<span class="' + dcls(dPosts) + '">' + dstr(dPosts) + '</span> 직전 30일 대비') +
-      (hasIns ? tile('프로필 조회', nf(iSum('profile_views')), '저장 ' + nf(iSum('saves')) + ' · 공유 ' + nf(iSum('shares')))
-              : tile('좋아요 (30일)', nf(cSum('likes')), '<span class="' + dcls(dLikes) + '">' + dstr(dLikes) + '</span> 직전 30일 대비'));
+      (hasIns ? tile('조회수 (30일)', nf(iSum('views')), inline(iSum('views'), ipSum('views')) + ' 전월 대비') : '') +
+      (hasIns ? tile('도달 (30일)', nf(iSum('reach')), inline(iSum('reach'), ipSum('reach')) + ' 전월 대비') : '') +
+      tile('총 팔로워', nf(totF), netStr(netAll) + ' 30일 순증') +
+      (hasIns ? tile('프로필 조회', nf(iSum('profile_views')), inline(iSum('profile_views'), ipSum('profile_views')) + ' 전월 대비') : '') +
+      (hasIns ? tile('저장 + 공유', nf(iSum('saves') + iSum('shares')),
+        inline(iSum('saves') + iSum('shares'), ipSum('saves') + ipSum('shares')) + ' 전월 대비')
+        : tile('게시물 (30일)', nf(cSum('posts')), inline(cSum('posts'), pSum('posts')) + ' 전월 대비'));
 
     const igSorted = iga.slice().sort((a, b) => b.ig.followers - a.ig.followers);
     const byViews = iga.slice().sort((a, b) =>
       ((b.insights && b.insights.views) || 0) - ((a.insights && a.insights.views) || 0));
-    hbars(document.getElementById('igFollowers'), (hasIns ? byViews : igSorted).map((a, i) => ({
+    hbars(document.getElementById('igViews'), (hasIns ? byViews : igSorted).map((a, i) => ({
       label: a.label + ' · @' + a.ig.username.replace('beautyblossom_', ''),
       value: hasIns ? ((a.insights && a.insights.views) || 0) : a.ig.followers,
       color: cssv(SERIES[i % 6]),
       extra: hasIns ? { k: '도달', v: nf((a.insights && a.insights.reach) || 0) }
                     : { k: '게시물', v: nf(a.ig.media_count) }
     })), { metric: hasIns ? '조회수' : '팔로워', padL: 150 });
-    diverging(document.getElementById('igDelta'), igSorted
-      .filter(a => a.previous && a.previous.engagement > 0)
-      .map(a => ({ label: a.label + ' · 참여', value: pct(a.current.engagement, a.previous.engagement) })));
 
-    // Delta sits inside the value cell: a number beside its own change reads in one pass.
-    const withDelta = (val, prev, fmt) => {
-      const f = fmt || nf;
-      const d = pct(val, prev);
-      if (d == null) return '<td>' + f(val) + '</td>';
-      return '<td>' + f(val) +
-        '<span class="' + (d >= 0 ? 'up' : 'dn') + '" style="font-size:11px;margin-left:6px;white-space:nowrap">' +
-        (d >= 0 ? '▲' : '▼') + nf1(Math.abs(d)) + '%</span></td>';
-    };
+    diverging(document.getElementById('igDelta'), byViews
+      .map(a => ({ label: a.label + ' · 조회수',
+                   value: pct((a.insights || {}).views, (a.insights_prev || {}).views) }))
+      .filter(r => r.value != null)
+      .concat(byViews
+        .map(a => ({ label: a.label + ' · 도달',
+                     value: pct((a.insights || {}).reach, (a.insights_prev || {}).reach) }))
+        .filter(r => r.value != null)));
+
     document.getElementById('igTable').innerHTML =
-      '<thead><tr><th>계정</th><th>조회수</th><th>도달</th><th>프로필 조회</th><th>저장</th>' +
-      '<th>팔로워</th><th>게시물 30일</th><th>좋아요 30일</th></tr></thead><tbody>' +
+      '<thead><tr><th>계정</th><th>조회수</th><th>도달</th><th>프로필 조회</th><th>저장</th><th>공유</th>' +
+      '<th>참여</th><th>팔로워</th><th>게시물 30일</th></tr></thead><tbody>' +
       byViews.map((a, i) => {
-        const c = a.current || {}, p = a.previous || {}, ins = a.insights || {};
-        const g = a.follower_growth;
+        const c = a.current || {}, p = a.previous || {};
+        const ins = a.insights || {}, ip = a.insights_prev || {};
+        const net = a.follows ? a.follows.net : null;
         return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i % 6]) + '"></span> ' +
           esc(a.label) + ' · @' + esc(a.ig.username) + '</td>' +
-          '<td>' + nf(ins.views) + '</td><td>' + nf(ins.reach) + '</td>' +
-          '<td>' + nf(ins.profile_views) + '</td><td>' + nf(ins.saves) + '</td>' +
-          '<td>' + nf(a.ig.followers) + (g ? '<span class="' + (g >= 0 ? 'up' : 'dn') +
-            '" style="font-size:11px;margin-left:6px;white-space:nowrap">' + (g >= 0 ? '▲+' : '▼') + nf(Math.abs(g)) + '</span>' : '') + '</td>' +
-          withDelta(c.posts, p.posts) +
-          withDelta(c.likes, p.likes) + '</tr>';
+          withDelta(ins.views, ip.views) + withDelta(ins.reach, ip.reach) +
+          withDelta(ins.profile_views, ip.profile_views) +
+          withDelta(ins.saves, ip.saves) + withDelta(ins.shares, ip.shares) +
+          withDelta(ins.total_interactions, ip.total_interactions) +
+          '<td>' + nf(a.ig.followers) + (net == null ? '' :
+            '<span class="' + (net >= 0 ? 'up' : 'dn') + '" style="font-size:11px;margin-left:6px;white-space:nowrap">' +
+            (net >= 0 ? '▲+' : '▼') + nf(Math.abs(net)) + '</span>') + '</td>' +
+          withDelta(c.posts, p.posts) + '</tr>';
       }).join('') +
       '<tr style="font-weight:650"><td>합계</td>' +
-      '<td>' + nf(iSum('views')) + '</td><td>' + nf(iSum('reach')) + '</td>' +
-      '<td>' + nf(iSum('profile_views')) + '</td><td>' + nf(iSum('saves')) + '</td>' +
-      '<td>' + nf(totF) + (fGrow ? '<span class="' + (fGrow >= 0 ? 'up' : 'dn') +
-        '" style="font-size:11px;margin-left:6px">' + (fGrow >= 0 ? '▲+' : '▼') + nf(Math.abs(fGrow)) + '</span>' : '') + '</td>' +
-      withDelta(cSum('posts'), pSum('posts')) +
-      withDelta(cSum('likes'), pSum('likes')) + '</tr></tbody>';
+      withDelta(iSum('views'), ipSum('views')) + withDelta(iSum('reach'), ipSum('reach')) +
+      withDelta(iSum('profile_views'), ipSum('profile_views')) +
+      withDelta(iSum('saves'), ipSum('saves')) + withDelta(iSum('shares'), ipSum('shares')) +
+      withDelta(iSum('total_interactions'), ipSum('total_interactions')) +
+      '<td>' + nf(totF) + (netAll == null ? '' :
+        '<span class="' + (netAll >= 0 ? 'up' : 'dn') + '" style="font-size:11px;margin-left:6px">' +
+        (netAll >= 0 ? '▲+' : '▼') + nf(Math.abs(netAll)) + '</span>') + '</td>' +
+      withDelta(cSum('posts'), pSum('posts')) + '</tbody>';
+
+    if (hasIns) {
+      const legend = (mount, keys, map) => {
+        document.getElementById(mount).innerHTML = keys.map((k, i) =>
+          '<span><span class="dot" style="background:' + cssv(SERIES[i % 6]) + '"></span>' +
+          esc(dimLabel(map, k)) + '</span>').join('');
+      };
+
+      const ftKeys = bKeys('views__follow_type');
+      legend('igFollowLegend', ftKeys, FOLLOW_LABEL);
+      stacked(document.getElementById('igFollowType'),
+        byViews.map(a => ({ label: a.label,
+          values: ftKeys.reduce((o, k) => {
+            o[dimLabel(FOLLOW_LABEL, k)] = ((a.breakdowns || {})['views__follow_type'] || {})[k] || 0; return o; }, {}) }))
+          .concat([{ label: '전체', values: ftKeys.reduce((o, k) => {
+            o[dimLabel(FOLLOW_LABEL, k)] = bSum('breakdowns', 'views__follow_type', k); return o; }, {}) }]),
+        ftKeys.map(k => dimLabel(FOLLOW_LABEL, k)), ftKeys.map((k, i) => cssv(SERIES[i % 6])));
+
+      // Order product types by total volume so the biggest driver leads the legend.
+      const ptKeys = bKeys('views__media_product_type')
+        .sort((x, z) => bSum('breakdowns', 'views__media_product_type', z) - bSum('breakdowns', 'views__media_product_type', x));
+      legend('igProductLegend', ptKeys, PRODUCT_LABEL);
+      stacked(document.getElementById('igProduct'),
+        byViews.map(a => ({ label: a.label,
+          values: ptKeys.reduce((o, k) => {
+            o[dimLabel(PRODUCT_LABEL, k)] = ((a.breakdowns || {})['views__media_product_type'] || {})[k] || 0; return o; }, {}) }))
+          .concat([{ label: '전체', values: ptKeys.reduce((o, k) => {
+            o[dimLabel(PRODUCT_LABEL, k)] = bSum('breakdowns', 'views__media_product_type', k); return o; }, {}) }]),
+        ptKeys.map(k => dimLabel(PRODUCT_LABEL, k)), ptKeys.map((k, i) => cssv(SERIES[i % 6])));
+
+      document.getElementById('igFollowTable').innerHTML =
+        '<thead><tr><th>계정</th><th>신규 팔로우</th><th>언팔로우</th><th>순증</th><th>현재 팔로워</th><th>이탈률</th></tr></thead><tbody>' +
+        igSorted.map((a, i) => {
+          const f = a.follows, fp = a.follows_prev;
+          if (!f) return '';
+          const churn = f.gained ? (f.lost / f.gained * 100) : null;
+          return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i % 6]) + '"></span> ' + esc(a.label) + '</td>' +
+            withDelta(f.gained, fp && fp.gained) +
+            withDelta(f.lost, fp && fp.lost) +
+            '<td>' + netStr(f.net) + '</td>' +
+            '<td>' + nf(a.ig.followers) + '</td>' +
+            '<td>' + (churn == null ? '—' : nf1(churn) + '%') + '</td></tr>';
+        }).join('') +
+        '<tr style="font-weight:650"><td>합계</td>' +
+        withDelta(fSum('follows', 'gained'), fSum('follows_prev', 'gained')) +
+        withDelta(fSum('follows', 'lost'), fSum('follows_prev', 'lost')) +
+        '<td>' + netStr(netAll) + '</td><td>' + nf(totF) + '</td>' +
+        '<td>' + (fSum('follows', 'gained') ? nf1(fSum('follows', 'lost') / fSum('follows', 'gained') * 100) + '%' : '—') + '</td></tr></tbody>';
+
+      const ctKeys = bKeys('profile_links_taps__contact_button_type');
+      document.getElementById('igActionTable').innerHTML =
+        '<thead><tr><th>계정</th><th>프로필 조회</th><th>웹사이트 클릭</th><th>연락 버튼 탭</th>' +
+        ctKeys.map(k => '<th>' + esc(dimLabel(CONTACT_LABEL, k)) + '</th>').join('') +
+        '<th>참여 계정</th><th>프로필 전환율</th></tr></thead><tbody>' +
+        byViews.map((a, i) => {
+          const ins = a.insights || {}, ip = a.insights_prev || {};
+          const bd = (a.breakdowns || {})['profile_links_taps__contact_button_type'] || {};
+          const conv = ins.reach ? (ins.profile_views / ins.reach * 100) : null;
+          return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i % 6]) + '"></span> ' + esc(a.label) + '</td>' +
+            withDelta(ins.profile_views, ip.profile_views) +
+            withDelta(ins.website_clicks, ip.website_clicks) +
+            withDelta(ins.profile_links_taps, ip.profile_links_taps) +
+            ctKeys.map(k => '<td>' + nf(bd[k] || 0) + '</td>').join('') +
+            withDelta(ins.accounts_engaged, ip.accounts_engaged) +
+            '<td>' + (conv == null ? '—' : nf1(conv) + '%') + '</td></tr>';
+        }).join('') +
+        '<tr style="font-weight:650"><td>합계</td>' +
+        withDelta(iSum('profile_views'), ipSum('profile_views')) +
+        withDelta(iSum('website_clicks'), ipSum('website_clicks')) +
+        withDelta(iSum('profile_links_taps'), ipSum('profile_links_taps')) +
+        ctKeys.map(k => '<td>' + nf(bSum('breakdowns', 'profile_links_taps__contact_button_type', k)) + '</td>').join('') +
+        withDelta(iSum('accounts_engaged'), ipSum('accounts_engaged')) +
+        '<td>' + (iSum('reach') ? nf1(iSum('profile_views') / iSum('reach') * 100) + '%' : '—') + '</td></tr></tbody>';
+
+      // Demographics arrive per account; sum them so the report shows the whole audience.
+      const DEMOS = [{ k: 'country', n: '국가', map: COUNTRY_LABEL }, { k: 'city', n: '도시', map: {} },
+                     { k: 'age', n: '연령', map: {} }, { k: 'gender', n: '성별', map: GENDER_LABEL }];
+      const demoTotals = {};
+      DEMOS.forEach(d => {
+        const acc = {};
+        iga.forEach(a => ((a.demographics || {})[d.k] || []).forEach(r => {
+          acc[r.key] = (acc[r.key] || 0) + r.value; }));
+        demoTotals[d.k] = Object.keys(acc).map(k => ({ key: k, value: acc[k] })).sort((x, z) => z.value - x.value);
+      });
+      let demoActive = 'country';
+      function demoDraw() {
+        const d = DEMOS.filter(x => x.k === demoActive)[0];
+        const rows = demoTotals[d.k] || [];
+        const total = rows.reduce((s, r) => s + r.value, 0);
+        document.getElementById('igDemoTabs').innerHTML = DEMOS.map(x =>
+          '<span><button type="button" class="theme" data-d="' + x.k + '" style="' +
+          (x.k === demoActive ? 'border-color:' + cssv('--s1') + ';color:' + cssv('--ink') + ';font-weight:600' : '') +
+          '">' + esc(x.n) + '</button></span>').join('');
+        Array.prototype.forEach.call(document.querySelectorAll('#igDemoTabs button'), b => {
+          b.onclick = () => { demoActive = b.getAttribute('data-d'); demoDraw(); };
+        });
+        // Age reads as an ordered scale, not a ranking, so keep its natural order.
+        const shown = (d.k === 'age' ? rows.slice().sort((x, z) => x.key.localeCompare(z.key)) : rows).slice(0, 10);
+        hbars(document.getElementById('igDemoChart'), shown.map((r, i) => ({
+          label: dimLabel(d.map, r.key), value: r.value, color: cssv(SERIES[i % 6]),
+          extra: { k: '비중', v: total ? (r.value / total * 100).toFixed(1) + '%' : '—' }
+        })), { metric: '팔로워', padL: 140 });
+        document.getElementById('igDemoTable').innerHTML =
+          '<thead><tr><th>' + esc(d.n) + '</th><th>팔로워</th><th>비중</th></tr></thead><tbody>' +
+          rows.slice(0, 15).map(r => '<tr><td>' + esc(dimLabel(d.map, r.key)) + '</td><td>' + nf(r.value) + '</td>' +
+            '<td>' + (total ? nf1(r.value / total * 100) + '%' : '—') + '</td></tr>').join('') + '</tbody>';
+      }
+      demoDraw();
+    }
 
     let igActive = igSorted[0].ig.username;
     function igTabs() {
@@ -696,7 +859,7 @@ function render(){
       document.getElementById('igMediaTable').innerHTML = md.length
         ? '<thead><tr><th>게시일</th><th>유형</th><th>내용</th><th>조회수</th><th>도달</th><th>좋아요</th><th>저장</th></tr></thead><tbody>' +
           md.slice(0, 15).map(m => '<tr><td>' + esc(String(m.timestamp || '').slice(0, 10)) + '</td>' +
-            '<td>' + esc(m.product || m.type || '') + '</td>' +
+            '<td>' + esc(dimLabel(PRODUCT_LABEL, m.product || m.type || '')) + '</td>' +
             '<td><a href="' + esc(m.permalink) + '" target="_blank" rel="noopener">' +
             esc(m.caption || '(설명 없음)') + '</a></td>' +
             '<td>' + nf(m.views) + '</td><td>' + nf(m.reach) + '</td>' +

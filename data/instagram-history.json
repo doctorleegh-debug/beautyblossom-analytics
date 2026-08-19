@@ -1,0 +1,36 @@
+﻿{
+    "date":  "2026-08-19",
+    "at_utc":  "2026-08-19T08:36:20.4289509Z",
+    "accounts":  [
+                     {
+                         "username":  "beautyblossom_global",
+                         "followers":  4354,
+                         "label":  "EN",
+                         "media_count":  448
+                     },
+                     {
+                         "username":  "beautyblossom_clinic",
+                         "followers":  1698,
+                         "label":  "KR",
+                         "media_count":  347
+                     },
+                     {
+                         "username":  "beautyblossom_jp",
+                         "followers":  1423,
+                         "label":  "JP",
+                         "media_count":  405
+                     },
+                     {
+                         "username":  "beautyblossom_tw",
+                         "followers":  2053,
+                         "label":  "TW",
+                         "media_count":  367
+                     },
+                     {
+                         "username":  "beautyblossom_th",
+                         "followers":  416,
+                         "label":  "TH",
+                         "media_count":  75
+                     }
+                 ]
+}

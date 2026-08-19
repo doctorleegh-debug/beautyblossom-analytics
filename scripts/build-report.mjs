@@ -35,11 +35,6 @@ const payload = {
       status: igApi ? (igApi.insights_available ? 'ok' : 'partial') : 'pending',
       reason: igApi ? igApi.note : 'Meta Graph API 접근이 아직 설정되지 않았습니다.',
       accounts: ['beautyblossom_clinic', 'beautyblossom_jp', 'beautyblossom_tw', 'beautyblossom_th', 'beautyblossom_global']
-    },
-    threads: {
-      status: 'pending',
-      reason: 'Threads 프로필 5개가 포트폴리오에 있고 Instagram과 동일한 접근 권한을 갖지만, 수집에는 앱에 Threads API 제품 추가가 필요합니다. 다음 기간에 진행합니다.',
-      accounts: ['beautyblossom_clinic', 'beautyblossom_jp', 'beautyblossom_tw', 'beautyblossom_th', 'beautyblossom_global']
     }
   }
 };

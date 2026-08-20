@@ -1,44 +1,38 @@
 ﻿{
     "prev_range":  {
-                       "start":  "2026-06-20",
-                       "end":  "2026-07-19"
+                       "start":  "2026-06-21",
+                       "end":  "2026-07-20"
                    },
     "properties":  [
                        {
                            "devices":  [
                                            {
-                                               "sessions":  7670,
+                                               "sessions":  7577,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  4970,
+                                               "sessions":  4955,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  65,
+                                               "sessions":  61,
                                                "device":  "tablet"
                                            }
                                        ],
                            "id":  "526090588",
                            "previous":  {
-                                            "activeUsers":  8590,
-                                            "avgSessionDuration":  137.63754547502637,
-                                            "newUsers":  8135,
-                                            "keyEvents":  41,
-                                            "sessions":  11372,
-                                            "bounceRate":  0.48821667252901862,
-                                            "pageViews":  30607,
-                                            "eventCount":  101267
+                                            "activeUsers":  8688,
+                                            "avgSessionDuration":  138.2300643146136,
+                                            "newUsers":  8211,
+                                            "keyEvents":  64,
+                                            "sessions":  11503,
+                                            "bounceRate":  0.49004607493697294,
+                                            "pageViews":  30848,
+                                            "eventCount":  102258
                                         },
                            "label":  "KR",
                            "key_events_from":  "20260714",
                            "daily":  [
-                                         {
-                                             "date":  "20260720",
-                                             "keyEvents":  23,
-                                             "sessions":  458,
-                                             "activeUsers":  393
-                                         },
                                          {
                                              "date":  "20260721",
                                              "keyEvents":  8,
@@ -212,83 +206,89 @@
                                              "keyEvents":  43,
                                              "sessions":  346,
                                              "activeUsers":  289
+                                         },
+                                         {
+                                             "date":  "20260819",
+                                             "keyEvents":  16,
+                                             "sessions":  355,
+                                             "activeUsers":  301
                                          }
                                      ],
                            "events":  [
                                           {
-                                              "prevCount":  30607,
+                                              "prevCount":  30848,
                                               "keyEvents":  0,
                                               "name":  "page_view",
-                                              "count":  32060
+                                              "count":  32051
                                           },
                                           {
-                                              "prevCount":  23990,
+                                              "prevCount":  24137,
                                               "keyEvents":  0,
                                               "name":  "user_engagement",
-                                              "count":  25245
+                                              "count":  25376
                                           },
                                           {
-                                              "prevCount":  14542,
+                                              "prevCount":  14651,
                                               "keyEvents":  0,
                                               "name":  "view_search_results",
-                                              "count":  16077
+                                              "count":  16140
                                           },
                                           {
-                                              "prevCount":  11806,
+                                              "prevCount":  12059,
                                               "keyEvents":  0,
                                               "name":  "scroll",
-                                              "count":  13202
+                                              "count":  13223
                                           },
                                           {
-                                              "prevCount":  11099,
+                                              "prevCount":  11224,
                                               "keyEvents":  0,
                                               "name":  "session_start",
-                                              "count":  12711
+                                              "count":  12610
                                           },
                                           {
-                                              "prevCount":  8135,
+                                              "prevCount":  8211,
                                               "keyEvents":  0,
                                               "name":  "first_visit",
-                                              "count":  9651
+                                              "count":  9550
                                           },
                                           {
-                                              "prevCount":  703,
+                                              "prevCount":  700,
                                               "keyEvents":  0,
                                               "name":  "click",
-                                              "count":  700
+                                              "count":  695
+                                          },
+                                          {
+                                              "prevCount":  38,
+                                              "keyEvents":  0,
+                                              "name":  "naver_booking_click",
+                                              "count":  186
                                           },
                                           {
                                               "prevCount":  29,
-                                              "keyEvents":  0,
-                                              "name":  "naver_booking_click",
-                                              "count":  187
-                                          },
-                                          {
-                                              "prevCount":  22,
-                                              "keyEvents":  162,
+                                              "keyEvents":  163,
                                               "name":  "kakao_click",
-                                              "count":  162
+                                              "count":  163
                                           },
                                           {
-                                              "prevCount":  154,
-                                              "keyEvents":  131,
+                                              "prevCount":  169,
+                                              "keyEvents":  123,
                                               "name":  "form_submit",
-                                              "count":  131
+                                              "count":  123
                                           },
                                           {
-                                              "prevCount":  155,
+                                              "prevCount":  168,
                                               "keyEvents":  0,
                                               "name":  "form_start",
-                                              "count":  117
+                                              "count":  111
                                           },
                                           {
-                                              "prevCount":  6,
+                                              "prevCount":  7,
                                               "keyEvents":  50,
                                               "name":  "phone_click",
                                               "count":  50
                                           },
                                           {
-                                              "prevCount":  12,
+                                              "prevCount":  11,
                                               "keyEvents":  0,
                                               "name":  "video_start",
                                               "count":  10
@@ -300,7 +300,7 @@
                                               "count":  2
                                           },
                                           {
-                                              "prevCount":  7,
+                                              "prevCount":  6,
                                               "keyEvents":  0,
                                               "name":  "video_progress",
                                               "count":  2
@@ -310,7 +310,7 @@
                            "countries":  [
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  8078
+                                                 "activeUsers":  8020
                                              },
                                              {
                                                  "country":  "Singapore",
@@ -318,107 +318,107 @@
                                              },
                                              {
                                                  "country":  "United States",
-                                                 "activeUsers":  294
+                                                 "activeUsers":  272
                                              },
                                              {
                                                  "country":  "China",
-                                                 "activeUsers":  251
+                                                 "activeUsers":  244
                                              },
                                              {
                                                  "country":  "Brazil",
-                                                 "activeUsers":  156
+                                                 "activeUsers":  157
                                              },
                                              {
                                                  "country":  "Hong Kong",
-                                                 "activeUsers":  151
+                                                 "activeUsers":  150
                                              },
                                              {
                                                  "country":  "Japan",
-                                                 "activeUsers":  101
+                                                 "activeUsers":  102
                                              },
                                              {
                                                  "country":  "Vietnam",
-                                                 "activeUsers":  84
+                                                 "activeUsers":  83
                                              }
                                          ],
                            "current":  {
-                                           "activeUsers":  10072,
-                                           "avgSessionDuration":  125.11560373132795,
-                                           "newUsers":  9651,
-                                           "keyEvents":  343,
-                                           "sessions":  12666,
-                                           "bounceRate":  0.50639507342491707,
-                                           "pageViews":  32060,
-                                           "eventCount":  110307
+                                           "activeUsers":  10000,
+                                           "avgSessionDuration":  127.58673603557531,
+                                           "newUsers":  9550,
+                                           "keyEvents":  336,
+                                           "sessions":  12593,
+                                           "bounceRate":  0.50258079885650764,
+                                           "pageViews":  32051,
+                                           "eventCount":  110292
                                        },
                            "channels":  [
                                             {
-                                                "bounceRate":  0.58959913326110513,
-                                                "sessions":  4615,
+                                                "bounceRate":  0.58976020738820478,
+                                                "sessions":  4629,
                                                 "channel":  "Direct",
-                                                "prevSessions":  3171,
-                                                "keyEvents":  75,
-                                                "prevKeyEvents":  8
+                                                "prevSessions":  3169,
+                                                "keyEvents":  70,
+                                                "prevKeyEvents":  14
                                             },
                                             {
-                                                "bounceRate":  0.30415922429191122,
-                                                "sessions":  3919,
+                                                "bounceRate":  0.30586734693877549,
+                                                "sessions":  3920,
                                                 "channel":  "Organic Search",
-                                                "prevSessions":  4261,
-                                                "keyEvents":  187,
-                                                "prevKeyEvents":  28
+                                                "prevSessions":  4312,
+                                                "keyEvents":  182,
+                                                "prevKeyEvents":  43
                                             },
                                             {
-                                                "bounceRate":  0.673733804475854,
-                                                "sessions":  2547,
+                                                "bounceRate":  0.66518936341659951,
+                                                "sessions":  2482,
                                                 "channel":  "Paid Social",
-                                                "prevSessions":  2283,
+                                                "prevSessions":  2307,
                                                 "keyEvents":  7,
                                                 "prevKeyEvents":  0
                                             },
                                             {
-                                                "bounceRate":  0.27582938388625594,
+                                                "bounceRate":  0.27488151658767773,
                                                 "sessions":  1055,
                                                 "channel":  "Referral",
-                                                "prevSessions":  1010,
+                                                "prevSessions":  1027,
                                                 "keyEvents":  56,
-                                                "prevKeyEvents":  4
+                                                "prevKeyEvents":  6
                                             },
                                             {
-                                                "bounceRate":  0.636734693877551,
-                                                "sessions":  245,
+                                                "bounceRate":  0.62557077625570778,
+                                                "sessions":  219,
                                                 "channel":  "Organic Social",
-                                                "prevSessions":  305,
-                                                "keyEvents":  10,
+                                                "prevSessions":  335,
+                                                "keyEvents":  13,
                                                 "prevKeyEvents":  0
                                             },
                                             {
-                                                "bounceRate":  0.47619047619047616,
-                                                "sessions":  84,
+                                                "bounceRate":  0.46987951807228917,
+                                                "sessions":  83,
                                                 "channel":  "AI Assistant",
-                                                "prevSessions":  65,
+                                                "prevSessions":  67,
                                                 "keyEvents":  7,
                                                 "prevKeyEvents":  1
                                             },
                                             {
-                                                "bounceRate":  0.57407407407407407,
-                                                "sessions":  54,
+                                                "bounceRate":  0.53846153846153844,
+                                                "sessions":  52,
                                                 "channel":  "Paid Search",
-                                                "prevSessions":  56,
+                                                "prevSessions":  57,
                                                 "keyEvents":  1,
                                                 "prevKeyEvents":  0
                                             },
                                             {
                                                 "bounceRate":  1,
-                                                "sessions":  17,
+                                                "sessions":  16,
                                                 "channel":  "Unassigned",
-                                                "prevSessions":  24,
+                                                "prevSessions":  25,
                                                 "keyEvents":  0,
                                                 "prevKeyEvents":  0
                                             },
                                             {
-                                                "bounceRate":  0.2,
-                                                "sessions":  5,
+                                                "bounceRate":  0.16666666666666666,
+                                                "sessions":  6,
                                                 "channel":  "Organic Video",
                                                 "prevSessions":  3,
                                                 "keyEvents":  0,
@@ -437,38 +437,32 @@
                        {
                            "devices":  [
                                            {
-                                               "sessions":  8995,
+                                               "sessions":  8862,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  2094,
+                                               "sessions":  2108,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  74,
+                                               "sessions":  71,
                                                "device":  "tablet"
                                            }
                                        ],
                            "id":  "534097409",
                            "previous":  {
-                                            "activeUsers":  5572,
-                                            "avgSessionDuration":  63.396466028182395,
-                                            "newUsers":  5445,
-                                            "keyEvents":  17,
-                                            "sessions":  6316,
-                                            "bounceRate":  0.71453451551614944,
-                                            "pageViews":  9874,
-                                            "eventCount":  37560
+                                            "activeUsers":  5734,
+                                            "avgSessionDuration":  62.269115511360148,
+                                            "newUsers":  5605,
+                                            "keyEvents":  21,
+                                            "sessions":  6514,
+                                            "bounceRate":  0.71937365673933062,
+                                            "pageViews":  10006,
+                                            "eventCount":  38218
                                         },
                            "label":  "JP",
                            "key_events_from":  "20260715",
                            "daily":  [
-                                         {
-                                             "date":  "20260720",
-                                             "keyEvents":  4,
-                                             "sessions":  345,
-                                             "activeUsers":  339
-                                         },
                                          {
                                              "date":  "20260721",
                                              "keyEvents":  0,
@@ -642,56 +636,62 @@
                                              "keyEvents":  0,
                                              "sessions":  203,
                                              "activeUsers":  196
+                                         },
+                                         {
+                                             "date":  "20260819",
+                                             "keyEvents":  5,
+                                             "sessions":  311,
+                                             "activeUsers":  292
                                          }
                                      ],
                            "events":  [
                                           {
-                                              "prevCount":  9874,
+                                              "prevCount":  10006,
                                               "keyEvents":  0,
                                               "name":  "page_view",
-                                              "count":  14555
+                                              "count":  14620
                                           },
                                           {
-                                              "prevCount":  6298,
+                                              "prevCount":  6476,
                                               "keyEvents":  0,
                                               "name":  "session_start",
-                                              "count":  11227
+                                              "count":  11194
                                           },
                                           {
-                                              "prevCount":  5445,
+                                              "prevCount":  5605,
                                               "keyEvents":  0,
                                               "name":  "first_visit",
-                                              "count":  10018
+                                              "count":  9968
                                           },
                                           {
-                                              "prevCount":  6225,
+                                              "prevCount":  6350,
                                               "keyEvents":  0,
                                               "name":  "view_search_results",
-                                              "count":  9401
+                                              "count":  9346
                                           },
                                           {
-                                              "prevCount":  4638,
+                                              "prevCount":  4677,
                                               "keyEvents":  0,
                                               "name":  "scroll",
-                                              "count":  7341
+                                              "count":  7447
                                           },
                                           {
-                                              "prevCount":  4559,
+                                              "prevCount":  4574,
                                               "keyEvents":  0,
                                               "name":  "user_engagement",
-                                              "count":  5757
+                                              "count":  5920
                                           },
                                           {
-                                              "prevCount":  329,
+                                              "prevCount":  334,
                                               "keyEvents":  0,
                                               "name":  "click",
-                                              "count":  320
+                                              "count":  323
                                           },
                                           {
-                                              "prevCount":  10,
-                                              "keyEvents":  103,
+                                              "prevCount":  13,
+                                              "keyEvents":  105,
                                               "name":  "line_click",
-                                              "count":  103
+                                              "count":  105
                                           },
                                           {
                                               "prevCount":  88,
@@ -706,10 +706,10 @@
                                               "count":  24
                                           },
                                           {
-                                              "prevCount":  3,
-                                              "keyEvents":  8,
+                                              "prevCount":  4,
+                                              "keyEvents":  7,
                                               "name":  "phone_click",
-                                              "count":  8
+                                              "count":  7
                                           },
                                           {
                                               "prevCount":  0,
@@ -740,19 +740,19 @@
                            "countries":  [
                                              {
                                                  "country":  "Japan",
-                                                 "activeUsers":  7923
+                                                 "activeUsers":  7905
                                              },
                                              {
                                                  "country":  "Singapore",
-                                                 "activeUsers":  988
+                                                 "activeUsers":  992
                                              },
                                              {
                                                  "country":  "United States",
-                                                 "activeUsers":  303
+                                                 "activeUsers":  306
                                              },
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  225
+                                                 "activeUsers":  221
                                              },
                                              {
                                                  "country":  "Brazil",
@@ -760,7 +760,7 @@
                                              },
                                              {
                                                  "country":  "Hong Kong",
-                                                 "activeUsers":  109
+                                                 "activeUsers":  108
                                              },
                                              {
                                                  "country":  "Indonesia",
@@ -772,61 +772,61 @@
                                              }
                                          ],
                            "current":  {
-                                           "activeUsers":  10131,
-                                           "avgSessionDuration":  49.163901743036277,
-                                           "newUsers":  10018,
-                                           "keyEvents":  143,
-                                           "sessions":  11165,
-                                           "bounceRate":  0.71849529780564259,
-                                           "pageViews":  14555,
-                                           "eventCount":  58792
+                                           "activeUsers":  10115,
+                                           "avgSessionDuration":  50.133082953979425,
+                                           "newUsers":  9968,
+                                           "keyEvents":  144,
+                                           "sessions":  11082,
+                                           "bounceRate":  0.71232629489261867,
+                                           "pageViews":  14620,
+                                           "eventCount":  58992
                                        },
                            "channels":  [
                                             {
-                                                "bounceRate":  0.85656041512231285,
-                                                "sessions":  5396,
+                                                "bounceRate":  0.852000765843385,
+                                                "sessions":  5223,
                                                 "channel":  "Paid Social",
-                                                "prevSessions":  3486,
+                                                "prevSessions":  3668,
                                                 "keyEvents":  12,
                                                 "prevKeyEvents":  1
                                             },
                                             {
-                                                "bounceRate":  0.47622820919175912,
-                                                "sessions":  2524,
+                                                "bounceRate":  0.47750865051903113,
+                                                "sessions":  2601,
                                                 "channel":  "Paid Search",
-                                                "prevSessions":  997,
-                                                "keyEvents":  27,
-                                                "prevKeyEvents":  0
+                                                "prevSessions":  1035,
+                                                "keyEvents":  26,
+                                                "prevKeyEvents":  2
                                             },
                                             {
-                                                "bounceRate":  0.81900237529691211,
-                                                "sessions":  2105,
+                                                "bounceRate":  0.81758034026465032,
+                                                "sessions":  2116,
                                                 "channel":  "Direct",
-                                                "prevSessions":  790,
+                                                "prevSessions":  794,
                                                 "keyEvents":  37,
-                                                "prevKeyEvents":  3
+                                                "prevKeyEvents":  4
                                             },
                                             {
-                                                "bounceRate":  0.28885400313971743,
-                                                "sessions":  637,
+                                                "bounceRate":  0.29294478527607359,
+                                                "sessions":  652,
                                                 "channel":  "Organic Search",
-                                                "prevSessions":  660,
-                                                "keyEvents":  45,
-                                                "prevKeyEvents":  11
+                                                "prevSessions":  655,
+                                                "keyEvents":  47,
+                                                "prevKeyEvents":  12
                                             },
                                             {
-                                                "bounceRate":  0.61333333333333329,
-                                                "sessions":  375,
+                                                "bounceRate":  0.61398963730569944,
+                                                "sessions":  386,
                                                 "channel":  "Organic Social",
-                                                "prevSessions":  216,
+                                                "prevSessions":  215,
                                                 "keyEvents":  13,
                                                 "prevKeyEvents":  0
                                             },
                                             {
-                                                "bounceRate":  0.46875,
-                                                "sessions":  64,
+                                                "bounceRate":  0.43548387096774194,
+                                                "sessions":  62,
                                                 "channel":  "Referral",
-                                                "prevSessions":  109,
+                                                "prevSessions":  110,
                                                 "keyEvents":  8,
                                                 "prevKeyEvents":  2
                                             },
@@ -867,11 +867,11 @@
                        {
                            "devices":  [
                                            {
-                                               "sessions":  4518,
+                                               "sessions":  4501,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  613,
+                                               "sessions":  618,
                                                "device":  "mobile"
                                            },
                                            {
@@ -881,24 +881,18 @@
                                        ],
                            "id":  "534099303",
                            "previous":  {
-                                            "activeUsers":  5213,
-                                            "avgSessionDuration":  53.1387604229881,
-                                            "newUsers":  4895,
-                                            "keyEvents":  10,
-                                            "sessions":  5629,
-                                            "bounceRate":  0.749511458518387,
-                                            "pageViews":  7705,
-                                            "eventCount":  31375
+                                            "activeUsers":  5151,
+                                            "avgSessionDuration":  53.347333874509104,
+                                            "newUsers":  4831,
+                                            "keyEvents":  11,
+                                            "sessions":  5602,
+                                            "bounceRate":  0.74955373081042487,
+                                            "pageViews":  7664,
+                                            "eventCount":  31138
                                         },
                            "label":  "CN",
                            "key_events_from":  "20260715",
                            "daily":  [
-                                         {
-                                             "date":  "20260720",
-                                             "keyEvents":  1,
-                                             "sessions":  184,
-                                             "activeUsers":  175
-                                         },
                                          {
                                              "date":  "20260721",
                                              "keyEvents":  1,
@@ -1069,77 +1063,83 @@
                                          },
                                          {
                                              "date":  "20260818",
-                                             "keyEvents":  6,
-                                             "sessions":  166,
-                                             "activeUsers":  158
+                                             "keyEvents":  7,
+                                             "sessions":  171,
+                                             "activeUsers":  163
+                                         },
+                                         {
+                                             "date":  "20260819",
+                                             "keyEvents":  7,
+                                             "sessions":  174,
+                                             "activeUsers":  160
                                          }
                                      ],
                            "events":  [
                                           {
-                                              "prevCount":  7705,
+                                              "prevCount":  7664,
                                               "keyEvents":  0,
                                               "name":  "page_view",
-                                              "count":  7339
+                                              "count":  7465
                                           },
                                           {
-                                              "prevCount":  4293,
+                                              "prevCount":  4297,
                                               "keyEvents":  0,
                                               "name":  "user_engagement",
-                                              "count":  5296
+                                              "count":  5462
                                           },
                                           {
-                                              "prevCount":  5649,
+                                              "prevCount":  5656,
                                               "keyEvents":  0,
                                               "name":  "scroll",
-                                              "count":  5256
+                                              "count":  5304
                                           },
                                           {
-                                              "prevCount":  5421,
+                                              "prevCount":  5362,
                                               "keyEvents":  0,
                                               "name":  "session_start",
-                                              "count":  4789
+                                              "count":  4786
                                           },
                                           {
-                                              "prevCount":  4895,
+                                              "prevCount":  4831,
                                               "keyEvents":  0,
                                               "name":  "first_visit",
-                                              "count":  4314
+                                              "count":  4304
                                           },
                                           {
-                                              "prevCount":  3077,
+                                              "prevCount":  2999,
                                               "keyEvents":  0,
                                               "name":  "view_search_results",
-                                              "count":  2645
+                                              "count":  2777
                                           },
                                           {
-                                              "prevCount":  216,
+                                              "prevCount":  209,
                                               "keyEvents":  0,
                                               "name":  "click",
-                                              "count":  171
+                                              "count":  178
                                           },
                                           {
                                               "prevCount":  57,
-                                              "keyEvents":  23,
+                                              "keyEvents":  25,
                                               "name":  "form_submit",
-                                              "count":  23
+                                              "count":  25
                                           },
                                           {
-                                              "prevCount":  1,
-                                              "keyEvents":  22,
+                                              "prevCount":  2,
+                                              "keyEvents":  24,
                                               "name":  "wechat_click",
-                                              "count":  22
+                                              "count":  24
                                           },
                                           {
                                               "prevCount":  57,
                                               "keyEvents":  0,
                                               "name":  "form_start",
-                                              "count":  21
+                                              "count":  23
                                           },
                                           {
                                               "prevCount":  4,
-                                              "keyEvents":  15,
+                                              "keyEvents":  18,
                                               "name":  "line_click",
-                                              "count":  15
+                                              "count":  18
                                           },
                                           {
                                               "prevCount":  0,
@@ -1152,31 +1152,31 @@
                            "countries":  [
                                              {
                                                  "country":  "China",
-                                                 "activeUsers":  4145
+                                                 "activeUsers":  4132
                                              },
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  130
+                                                 "activeUsers":  132
                                              },
                                              {
                                                  "country":  "Hong Kong",
-                                                 "activeUsers":  127
+                                                 "activeUsers":  129
                                              },
                                              {
                                                  "country":  "Taiwan",
-                                                 "activeUsers":  102
+                                                 "activeUsers":  105
                                              },
                                              {
                                                  "country":  "United States",
-                                                 "activeUsers":  63
+                                                 "activeUsers":  64
                                              },
                                              {
                                                  "country":  "Japan",
-                                                 "activeUsers":  28
+                                                 "activeUsers":  26
                                              },
                                              {
                                                  "country":  "Singapore",
-                                                 "activeUsers":  14
+                                                 "activeUsers":  16
                                              },
                                              {
                                                  "country":  "India",
@@ -1184,47 +1184,47 @@
                                              }
                                          ],
                            "current":  {
-                                           "activeUsers":  4660,
-                                           "avgSessionDuration":  66.840876113218513,
-                                           "newUsers":  4314,
-                                           "keyEvents":  60,
-                                           "sessions":  5167,
-                                           "bounceRate":  0.65666731178633642,
-                                           "pageViews":  7339,
-                                           "eventCount":  29892
+                                           "activeUsers":  4655,
+                                           "avgSessionDuration":  90.406815420765028,
+                                           "newUsers":  4304,
+                                           "keyEvents":  67,
+                                           "sessions":  5124,
+                                           "bounceRate":  0.64695550351288056,
+                                           "pageViews":  7465,
+                                           "eventCount":  30367
                                        },
                            "channels":  [
                                             {
-                                                "bounceRate":  0.65197215777262185,
-                                                "sessions":  4310,
+                                                "bounceRate":  0.64400465657741557,
+                                                "sessions":  4295,
                                                 "channel":  "Direct",
-                                                "prevSessions":  4873,
-                                                "keyEvents":  32,
+                                                "prevSessions":  4841,
+                                                "keyEvents":  39,
                                                 "prevKeyEvents":  8
                                             },
                                             {
                                                 "bounceRate":  1,
-                                                "sessions":  381,
+                                                "sessions":  387,
                                                 "channel":  "Unassigned",
-                                                "prevSessions":  287,
-                                                "keyEvents":  6,
+                                                "prevSessions":  284,
+                                                "keyEvents":  5,
                                                 "prevKeyEvents":  0
                                             },
                                             {
-                                                "bounceRate":  0.48125,
+                                                "bounceRate":  0.465625,
                                                 "sessions":  320,
                                                 "channel":  "Organic Search",
-                                                "prevSessions":  390,
-                                                "keyEvents":  12,
+                                                "prevSessions":  392,
+                                                "keyEvents":  13,
                                                 "prevKeyEvents":  2
                                             },
                                             {
-                                                "bounceRate":  0.18691588785046728,
-                                                "sessions":  107,
+                                                "bounceRate":  0.17592592592592593,
+                                                "sessions":  108,
                                                 "channel":  "Referral",
-                                                "prevSessions":  98,
+                                                "prevSessions":  96,
                                                 "keyEvents":  10,
-                                                "prevKeyEvents":  0
+                                                "prevKeyEvents":  1
                                             },
                                             {
                                                 "bounceRate":  0.55555555555555558,
@@ -1235,10 +1235,18 @@
                                                 "prevKeyEvents":  0
                                             },
                                             {
+                                                "bounceRate":  1,
+                                                "sessions":  5,
+                                                "channel":  "Cross-network",
+                                                "prevSessions":  0,
+                                                "keyEvents":  0,
+                                                "prevKeyEvents":  0
+                                            },
+                                            {
                                                 "bounceRate":  0,
-                                                "sessions":  4,
+                                                "sessions":  3,
                                                 "channel":  "AI Assistant",
-                                                "prevSessions":  2,
+                                                "prevSessions":  3,
                                                 "keyEvents":  0,
                                                 "prevKeyEvents":  0
                                             }
@@ -1247,38 +1255,32 @@
                        {
                            "devices":  [
                                            {
-                                               "sessions":  37562,
+                                               "sessions":  36420,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  1888,
+                                               "sessions":  1894,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  1849,
+                                               "sessions":  1813,
                                                "device":  "tablet"
                                            }
                                        ],
                            "id":  "534100156",
                            "previous":  {
-                                            "activeUsers":  30644,
-                                            "avgSessionDuration":  55.57551307206753,
-                                            "newUsers":  28202,
-                                            "keyEvents":  234,
-                                            "sessions":  37673,
-                                            "bounceRate":  0.66535715233721759,
-                                            "pageViews":  47302,
-                                            "eventCount":  169265
+                                            "activeUsers":  30547,
+                                            "avgSessionDuration":  57.835236432346221,
+                                            "newUsers":  28236,
+                                            "keyEvents":  270,
+                                            "sessions":  37618,
+                                            "bounceRate":  0.66470838428411927,
+                                            "pageViews":  47484,
+                                            "eventCount":  169825
                                         },
                            "label":  "EN",
                            "key_events_from":  "20260714",
                            "daily":  [
-                                         {
-                                             "date":  "20260720",
-                                             "keyEvents":  36,
-                                             "sessions":  1706,
-                                             "activeUsers":  1588
-                                         },
                                          {
                                              "date":  "20260721",
                                              "keyEvents":  40,
@@ -1449,59 +1451,65 @@
                                          },
                                          {
                                              "date":  "20260818",
-                                             "keyEvents":  23,
-                                             "sessions":  984,
-                                             "activeUsers":  918
+                                             "keyEvents":  30,
+                                             "sessions":  1006,
+                                             "activeUsers":  946
+                                         },
+                                         {
+                                             "date":  "20260819",
+                                             "keyEvents":  30,
+                                             "sessions":  1098,
+                                             "activeUsers":  1050
                                          }
                                      ],
                            "events":  [
                                           {
-                                              "prevCount":  47302,
+                                              "prevCount":  47484,
                                               "keyEvents":  0,
                                               "name":  "page_view",
-                                              "count":  57119
+                                              "count":  56530
                                           },
                                           {
-                                              "prevCount":  37137,
+                                              "prevCount":  37161,
                                               "keyEvents":  0,
                                               "name":  "view_search_results",
-                                              "count":  42231
+                                              "count":  41614
                                           },
                                           {
-                                              "prevCount":  37285,
+                                              "prevCount":  37264,
                                               "keyEvents":  0,
                                               "name":  "session_start",
-                                              "count":  42108
+                                              "count":  41509
                                           },
                                           {
-                                              "prevCount":  28202,
+                                              "prevCount":  28236,
                                               "keyEvents":  0,
                                               "name":  "first_visit",
-                                              "count":  31749
+                                              "count":  31314
                                           },
                                           {
-                                              "prevCount":  10227,
+                                              "prevCount":  10361,
                                               "keyEvents":  0,
                                               "name":  "user_engagement",
-                                              "count":  13102
+                                              "count":  13127
                                           },
                                           {
-                                              "prevCount":  5499,
+                                              "prevCount":  5561,
                                               "keyEvents":  0,
                                               "name":  "scroll",
-                                              "count":  7123
+                                              "count":  7072
                                           },
                                           {
-                                              "prevCount":  3159,
+                                              "prevCount":  3266,
                                               "keyEvents":  0,
                                               "name":  "click",
-                                              "count":  4631
+                                              "count":  4575
                                           },
                                           {
-                                              "prevCount":  223,
-                                              "keyEvents":  1363,
+                                              "prevCount":  258,
+                                              "keyEvents":  1365,
                                               "name":  "whatsapp_click",
-                                              "count":  1363
+                                              "count":  1365
                                           },
                                           {
                                               "prevCount":  109,
@@ -1516,16 +1524,16 @@
                                               "count":  37
                                           },
                                           {
-                                              "prevCount":  6,
-                                              "keyEvents":  27,
+                                              "prevCount":  7,
+                                              "keyEvents":  26,
                                               "name":  "kakao_click",
-                                              "count":  27
+                                              "count":  26
                                           },
                                           {
-                                              "prevCount":  5,
+                                              "prevCount":  7,
                                               "keyEvents":  0,
                                               "name":  "naver_booking_click",
-                                              "count":  16
+                                              "count":  14
                                           },
                                           {
                                               "prevCount":  4,
@@ -1544,27 +1552,27 @@
                            "countries":  [
                                              {
                                                  "country":  "Philippines",
-                                                 "activeUsers":  21778
+                                                 "activeUsers":  21663
                                              },
                                              {
                                                  "country":  "Indonesia",
-                                                 "activeUsers":  3226
+                                                 "activeUsers":  3222
                                              },
                                              {
                                                  "country":  "United Arab Emirates",
-                                                 "activeUsers":  1795
+                                                 "activeUsers":  1715
                                              },
                                              {
                                                  "country":  "India",
-                                                 "activeUsers":  1372
+                                                 "activeUsers":  1328
                                              },
                                              {
                                                  "country":  "Qatar",
-                                                 "activeUsers":  1259
+                                                 "activeUsers":  1204
                                              },
                                              {
                                                  "country":  "United States",
-                                                 "activeUsers":  722
+                                                 "activeUsers":  673
                                              },
                                              {
                                                  "country":  "Singapore",
@@ -1572,98 +1580,98 @@
                                              },
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  409
+                                                 "activeUsers":  417
                                              }
                                          ],
                            "current":  {
-                                           "activeUsers":  33956,
-                                           "avgSessionDuration":  65.925749608854332,
-                                           "newUsers":  31749,
-                                           "keyEvents":  1432,
-                                           "sessions":  41923,
-                                           "bounceRate":  0.59709467356820833,
-                                           "pageViews":  57119,
-                                           "eventCount":  199550
+                                           "activeUsers":  33635,
+                                           "avgSessionDuration":  63.88219457345798,
+                                           "newUsers":  31314,
+                                           "keyEvents":  1433,
+                                           "sessions":  40758,
+                                           "bounceRate":  0.58334560086363418,
+                                           "pageViews":  56530,
+                                           "eventCount":  197227
                                        },
                            "channels":  [
                                             {
-                                                "bounceRate":  0.60948713460528614,
-                                                "sessions":  34278,
+                                                "bounceRate":  0.59126056464664634,
+                                                "sessions":  33366,
                                                 "channel":  "Paid Social",
-                                                "prevSessions":  31203,
-                                                "keyEvents":  251,
-                                                "prevKeyEvents":  24
+                                                "prevSessions":  31495,
+                                                "keyEvents":  257,
+                                                "prevKeyEvents":  31
                                             },
                                             {
-                                                "bounceRate":  0.43756210665783374,
-                                                "sessions":  3019,
+                                                "bounceRate":  0.43134034165571616,
+                                                "sessions":  3044,
                                                 "channel":  "Paid Search",
-                                                "prevSessions":  2446,
-                                                "keyEvents":  845,
-                                                "prevKeyEvents":  158
+                                                "prevSessions":  2488,
+                                                "keyEvents":  846,
+                                                "prevKeyEvents":  176
                                             },
                                             {
-                                                "bounceRate":  0.33150517976843386,
-                                                "sessions":  1641,
+                                                "bounceRate":  0.31971153846153844,
+                                                "sessions":  1664,
                                                 "channel":  "Organic Search",
-                                                "prevSessions":  1391,
-                                                "keyEvents":  204,
-                                                "prevKeyEvents":  36
+                                                "prevSessions":  1387,
+                                                "keyEvents":  207,
+                                                "prevKeyEvents":  45
                                             },
                                             {
-                                                "bounceRate":  0.70820668693009114,
-                                                "sessions":  1316,
+                                                "bounceRate":  0.695619335347432,
+                                                "sessions":  1324,
                                                 "channel":  "Direct",
-                                                "prevSessions":  1324,
-                                                "keyEvents":  74,
-                                                "prevKeyEvents":  11
+                                                "prevSessions":  1275,
+                                                "keyEvents":  79,
+                                                "prevKeyEvents":  13
                                             },
                                             {
-                                                "bounceRate":  0.99255121042830541,
-                                                "sessions":  537,
-                                                "channel":  "Unassigned",
-                                                "prevSessions":  239,
-                                                "keyEvents":  13,
-                                                "prevKeyEvents":  0
-                                            },
-                                            {
-                                                "bounceRate":  0.34520547945205482,
-                                                "sessions":  365,
+                                                "bounceRate":  0.32533333333333331,
+                                                "sessions":  375,
                                                 "channel":  "Referral",
-                                                "prevSessions":  438,
+                                                "prevSessions":  402,
                                                 "keyEvents":  27,
                                                 "prevKeyEvents":  4
                                             },
                                             {
-                                                "bounceRate":  0.62745098039215685,
-                                                "sessions":  306,
+                                                "bounceRate":  0.57657657657657657,
+                                                "sessions":  222,
                                                 "channel":  "Organic Social",
-                                                "prevSessions":  266,
+                                                "prevSessions":  352,
                                                 "keyEvents":  3,
                                                 "prevKeyEvents":  0
                                             },
                                             {
-                                                "bounceRate":  0.47031963470319632,
-                                                "sessions":  219,
+                                                "bounceRate":  0.463302752293578,
+                                                "sessions":  218,
                                                 "channel":  "Paid Other",
-                                                "prevSessions":  45,
+                                                "prevSessions":  40,
                                                 "keyEvents":  0,
                                                 "prevKeyEvents":  0
                                             },
                                             {
-                                                "bounceRate":  0.81111111111111112,
-                                                "sessions":  90,
-                                                "channel":  "Cross-network",
-                                                "prevSessions":  31,
+                                                "bounceRate":  0.44444444444444442,
+                                                "sessions":  54,
+                                                "channel":  "AI Assistant",
+                                                "prevSessions":  49,
                                                 "keyEvents":  9,
+                                                "prevKeyEvents":  0
+                                            },
+                                            {
+                                                "bounceRate":  0.1875,
+                                                "sessions":  16,
+                                                "channel":  "Cross-network",
+                                                "prevSessions":  30,
+                                                "keyEvents":  4,
                                                 "prevKeyEvents":  1
                                             },
                                             {
-                                                "bounceRate":  0.47058823529411764,
-                                                "sessions":  51,
-                                                "channel":  "AI Assistant",
-                                                "prevSessions":  48,
-                                                "keyEvents":  6,
+                                                "bounceRate":  0.75,
+                                                "sessions":  16,
+                                                "channel":  "Unassigned",
+                                                "prevSessions":  239,
+                                                "keyEvents":  1,
                                                 "prevKeyEvents":  0
                                             }
                                         ]
@@ -1671,38 +1679,32 @@
                        {
                            "devices":  [
                                            {
-                                               "sessions":  22045,
+                                               "sessions":  22140,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  945,
+                                               "sessions":  947,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  481,
+                                               "sessions":  459,
                                                "device":  "tablet"
                                            }
                                        ],
                            "id":  "534131940",
                            "previous":  {
-                                            "activeUsers":  16021,
-                                            "avgSessionDuration":  84.726501333113461,
-                                            "newUsers":  14922,
-                                            "keyEvents":  33,
-                                            "sessions":  19708,
-                                            "bounceRate":  0.75532778567079362,
-                                            "pageViews":  30591,
-                                            "eventCount":  113130
+                                            "activeUsers":  16112,
+                                            "avgSessionDuration":  81.094569048396025,
+                                            "newUsers":  14977,
+                                            "keyEvents":  35,
+                                            "sessions":  19857,
+                                            "bounceRate":  0.757465881049504,
+                                            "pageViews":  30567,
+                                            "eventCount":  113288
                                         },
                            "label":  "TW",
                            "key_events_from":  "20260714",
                            "daily":  [
-                                         {
-                                             "date":  "20260720",
-                                             "keyEvents":  2,
-                                             "sessions":  828,
-                                             "activeUsers":  773
-                                         },
                                          {
                                              "date":  "20260721",
                                              "keyEvents":  6,
@@ -1876,74 +1878,80 @@
                                              "keyEvents":  3,
                                              "sessions":  531,
                                              "activeUsers":  498
+                                         },
+                                         {
+                                             "date":  "20260819",
+                                             "keyEvents":  21,
+                                             "sessions":  681,
+                                             "activeUsers":  633
                                          }
                                      ],
                            "events":  [
                                           {
-                                              "prevCount":  30591,
+                                              "prevCount":  30567,
                                               "keyEvents":  0,
                                               "name":  "page_view",
-                                              "count":  31716
+                                              "count":  31611
                                           },
                                           {
-                                              "prevCount":  23888,
+                                              "prevCount":  23936,
                                               "keyEvents":  0,
                                               "name":  "view_search_results",
-                                              "count":  26605
+                                              "count":  26469
                                           },
                                           {
-                                              "prevCount":  19405,
+                                              "prevCount":  19466,
                                               "keyEvents":  0,
                                               "name":  "session_start",
-                                              "count":  23096
+                                              "count":  22952
                                           },
                                           {
-                                              "prevCount":  14922,
+                                              "prevCount":  14977,
                                               "keyEvents":  0,
                                               "name":  "first_visit",
-                                              "count":  19084
+                                              "count":  19009
                                           },
                                           {
-                                              "prevCount":  12828,
+                                              "prevCount":  12920,
                                               "keyEvents":  0,
                                               "name":  "scroll",
-                                              "count":  13589
+                                              "count":  13518
                                           },
                                           {
-                                              "prevCount":  10643,
+                                              "prevCount":  10577,
                                               "keyEvents":  0,
                                               "name":  "user_engagement",
-                                              "count":  7884
+                                              "count":  7938
                                           },
                                           {
-                                              "prevCount":  671,
+                                              "prevCount":  661,
                                               "keyEvents":  0,
                                               "name":  "click",
-                                              "count":  527
+                                              "count":  537
                                           },
                                           {
-                                              "prevCount":  20,
-                                              "keyEvents":  118,
+                                              "prevCount":  22,
+                                              "keyEvents":  133,
                                               "name":  "line_click",
-                                              "count":  118
+                                              "count":  133
                                           },
                                           {
                                               "prevCount":  78,
                                               "keyEvents":  0,
                                               "name":  "form_start",
-                                              "count":  38
+                                              "count":  39
                                           },
                                           {
                                               "prevCount":  74,
-                                              "keyEvents":  38,
+                                              "keyEvents":  39,
                                               "name":  "form_submit",
-                                              "count":  38
+                                              "count":  39
                                           },
                                           {
                                               "prevCount":  8,
-                                              "keyEvents":  36,
+                                              "keyEvents":  39,
                                               "name":  "wechat_click",
-                                              "count":  36
+                                              "count":  39
                                           },
                                           {
                                               "prevCount":  1,
@@ -1974,99 +1982,99 @@
                            "countries":  [
                                              {
                                                  "country":  "Taiwan",
-                                                 "activeUsers":  18926
-                                             },
-                                             {
-                                                 "country":  "United States",
-                                                 "activeUsers":  220
+                                                 "activeUsers":  18948
                                              },
                                              {
                                                  "country":  "Hong Kong",
-                                                 "activeUsers":  207
+                                                 "activeUsers":  206
                                              },
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  184
+                                                 "activeUsers":  182
+                                             },
+                                             {
+                                                 "country":  "United States",
+                                                 "activeUsers":  156
                                              },
                                              {
                                                  "country":  "Japan",
-                                                 "activeUsers":  84
+                                                 "activeUsers":  85
                                              },
                                              {
                                                  "country":  "China",
-                                                 "activeUsers":  70
+                                                 "activeUsers":  71
                                              },
                                              {
                                                  "country":  "Singapore",
-                                                 "activeUsers":  45
+                                                 "activeUsers":  46
                                              },
                                              {
                                                  "country":  "Ireland",
-                                                 "activeUsers":  40
+                                                 "activeUsers":  30
                                              }
                                          ],
                            "current":  {
-                                           "activeUsers":  19917,
-                                           "avgSessionDuration":  61.338331809523808,
-                                           "newUsers":  19084,
-                                           "keyEvents":  192,
-                                           "sessions":  23541,
-                                           "bounceRate":  0.78565056709570535,
-                                           "pageViews":  31716,
-                                           "eventCount":  122747
+                                           "activeUsers":  19840,
+                                           "avgSessionDuration":  62.199954551641007,
+                                           "newUsers":  19009,
+                                           "keyEvents":  211,
+                                           "sessions":  23644,
+                                           "bounceRate":  0.78408898663508708,
+                                           "pageViews":  31611,
+                                           "eventCount":  122300
                                        },
                            "channels":  [
                                             {
-                                                "bounceRate":  0.83483483483483478,
-                                                "sessions":  20313,
+                                                "bounceRate":  0.833276174611729,
+                                                "sessions":  20411,
                                                 "channel":  "Paid Social",
-                                                "prevSessions":  16010,
-                                                "keyEvents":  42,
-                                                "prevKeyEvents":  5
+                                                "prevSessions":  16100,
+                                                "keyEvents":  45,
+                                                "prevKeyEvents":  6
                                             },
                                             {
-                                                "bounceRate":  0.342447026657553,
-                                                "sessions":  1463,
+                                                "bounceRate":  0.34433962264150941,
+                                                "sessions":  1484,
                                                 "channel":  "Direct",
-                                                "prevSessions":  1714,
-                                                "keyEvents":  61,
-                                                "prevKeyEvents":  15
+                                                "prevSessions":  1687,
+                                                "keyEvents":  68,
+                                                "prevKeyEvents":  16
                                             },
                                             {
-                                                "bounceRate":  0.41193595342066958,
-                                                "sessions":  687,
+                                                "bounceRate":  0.4043795620437956,
+                                                "sessions":  685,
                                                 "channel":  "Organic Search",
-                                                "prevSessions":  517,
-                                                "keyEvents":  42,
+                                                "prevSessions":  530,
+                                                "keyEvents":  50,
                                                 "prevKeyEvents":  10
                                             },
                                             {
-                                                "bounceRate":  0.49318801089918257,
-                                                "sessions":  367,
+                                                "bounceRate":  0.47752808988764045,
+                                                "sessions":  356,
                                                 "channel":  "Paid Search",
-                                                "prevSessions":  630,
+                                                "prevSessions":  621,
                                                 "keyEvents":  10,
                                                 "prevKeyEvents":  2
                                             },
                                             {
-                                                "bounceRate":  0.69788519637462232,
-                                                "sessions":  331,
+                                                "bounceRate":  0.69047619047619047,
+                                                "sessions":  252,
                                                 "channel":  "Organic Social",
-                                                "prevSessions":  215,
-                                                "keyEvents":  6,
+                                                "prevSessions":  302,
+                                                "keyEvents":  7,
                                                 "prevKeyEvents":  1
                                             },
                                             {
-                                                "bounceRate":  0.29729729729729731,
-                                                "sessions":  111,
+                                                "bounceRate":  0.336283185840708,
+                                                "sessions":  113,
                                                 "channel":  "Referral",
-                                                "prevSessions":  335,
+                                                "prevSessions":  336,
                                                 "keyEvents":  30,
                                                 "prevKeyEvents":  0
                                             },
                                             {
-                                                "bounceRate":  0.56730769230769229,
-                                                "sessions":  104,
+                                                "bounceRate":  0.56074766355140182,
+                                                "sessions":  107,
                                                 "channel":  "Paid Other",
                                                 "prevSessions":  0,
                                                 "keyEvents":  1,
@@ -2074,9 +2082,9 @@
                                             },
                                             {
                                                 "bounceRate":  1,
-                                                "sessions":  13,
+                                                "sessions":  10,
                                                 "channel":  "Unassigned",
-                                                "prevSessions":  8,
+                                                "prevSessions":  11,
                                                 "keyEvents":  0,
                                                 "prevKeyEvents":  0
                                             },
@@ -2093,38 +2101,32 @@
                        {
                            "devices":  [
                                            {
-                                               "sessions":  236,
+                                               "sessions":  247,
                                                "device":  "desktop"
                                            },
                                            {
-                                               "sessions":  122,
+                                               "sessions":  125,
                                                "device":  "mobile"
                                            },
                                            {
-                                               "sessions":  1,
+                                               "sessions":  2,
                                                "device":  "tablet"
                                            }
                                        ],
                            "id":  "537583229",
                            "previous":  {
-                                            "activeUsers":  486,
-                                            "avgSessionDuration":  187.54856109504132,
-                                            "newUsers":  482,
+                                            "activeUsers":  487,
+                                            "avgSessionDuration":  186.05982364511692,
+                                            "newUsers":  483,
                                             "keyEvents":  9,
-                                            "sessions":  726,
-                                            "bounceRate":  0.62258953168044073,
-                                            "pageViews":  1611,
-                                            "eventCount":  4759
+                                            "sessions":  727,
+                                            "bounceRate":  0.62585969738651992,
+                                            "pageViews":  1607,
+                                            "eventCount":  4745
                                         },
                            "label":  "TH",
                            "key_events_from":  "20260714",
                            "daily":  [
-                                         {
-                                             "date":  "20260720",
-                                             "keyEvents":  0,
-                                             "sessions":  6,
-                                             "activeUsers":  5
-                                         },
                                          {
                                              "date":  "20260721",
                                              "keyEvents":  1,
@@ -2298,50 +2300,56 @@
                                              "keyEvents":  4,
                                              "sessions":  9,
                                              "activeUsers":  8
+                                         },
+                                         {
+                                             "date":  "20260819",
+                                             "keyEvents":  1,
+                                             "sessions":  21,
+                                             "activeUsers":  13
                                          }
                                      ],
                            "events":  [
                                           {
-                                              "prevCount":  1611,
+                                              "prevCount":  1607,
                                               "keyEvents":  0,
                                               "name":  "page_view",
-                                              "count":  917
+                                              "count":  980
                                           },
                                           {
-                                              "prevCount":  949,
+                                              "prevCount":  946,
                                               "keyEvents":  0,
                                               "name":  "user_engagement",
-                                              "count":  684
+                                              "count":  742
                                           },
                                           {
-                                              "prevCount":  740,
+                                              "prevCount":  741,
                                               "keyEvents":  0,
                                               "name":  "session_start",
-                                              "count":  363
+                                              "count":  378
                                           },
                                           {
-                                              "prevCount":  680,
+                                              "prevCount":  675,
                                               "keyEvents":  0,
                                               "name":  "scroll",
-                                              "count":  325
+                                              "count":  340
                                           },
                                           {
-                                              "prevCount":  482,
+                                              "prevCount":  483,
                                               "keyEvents":  0,
                                               "name":  "first_visit",
-                                              "count":  201
+                                              "count":  204
                                           },
                                           {
-                                              "prevCount":  229,
+                                              "prevCount":  225,
                                               "keyEvents":  0,
                                               "name":  "view_search_results",
-                                              "count":  152
+                                              "count":  167
                                           },
                                           {
                                               "prevCount":  59,
                                               "keyEvents":  0,
                                               "name":  "click",
-                                              "count":  52
+                                              "count":  57
                                           },
                                           {
                                               "prevCount":  3,
@@ -2351,20 +2359,20 @@
                                           },
                                           {
                                               "prevCount":  6,
-                                              "keyEvents":  14,
+                                              "keyEvents":  15,
                                               "name":  "whatsapp_click",
-                                              "count":  14
+                                              "count":  15
                                           }
                                       ],
                            "name":  "Beauty Blossom Thailand",
                            "countries":  [
                                              {
                                                  "country":  "South Korea",
-                                                 "activeUsers":  64
+                                                 "activeUsers":  66
                                              },
                                              {
                                                  "country":  "Thailand",
-                                                 "activeUsers":  51
+                                                 "activeUsers":  53
                                              },
                                              {
                                                  "country":  "(not set)",
@@ -2383,46 +2391,46 @@
                                                  "activeUsers":  7
                                              },
                                              {
-                                                 "country":  "United Kingdom",
-                                                 "activeUsers":  4
+                                                 "country":  "India",
+                                                 "activeUsers":  3
                                              },
                                              {
-                                                 "country":  "India",
+                                                 "country":  "Japan",
                                                  "activeUsers":  3
                                              }
                                          ],
                            "current":  {
-                                           "activeUsers":  212,
-                                           "avgSessionDuration":  248.60985294707521,
-                                           "newUsers":  201,
-                                           "keyEvents":  31,
-                                           "sessions":  359,
-                                           "bounceRate":  0.48189415041782729,
-                                           "pageViews":  917,
-                                           "eventCount":  2725
+                                           "activeUsers":  215,
+                                           "avgSessionDuration":  251.28411209333336,
+                                           "newUsers":  204,
+                                           "keyEvents":  32,
+                                           "sessions":  375,
+                                           "bounceRate":  0.46933333333333332,
+                                           "pageViews":  980,
+                                           "eventCount":  2900
                                        },
                            "channels":  [
                                             {
-                                                "bounceRate":  0.310126582278481,
-                                                "sessions":  158,
+                                                "bounceRate":  0.30994152046783624,
+                                                "sessions":  171,
                                                 "channel":  "Referral",
-                                                "prevSessions":  207,
-                                                "keyEvents":  26,
+                                                "prevSessions":  205,
+                                                "keyEvents":  27,
                                                 "prevKeyEvents":  4
                                             },
                                             {
-                                                "bounceRate":  0.62393162393162394,
-                                                "sessions":  117,
+                                                "bounceRate":  0.60504201680672265,
+                                                "sessions":  119,
                                                 "channel":  "Direct",
-                                                "prevSessions":  103,
+                                                "prevSessions":  104,
                                                 "keyEvents":  1,
                                                 "prevKeyEvents":  5
                                             },
                                             {
-                                                "bounceRate":  0.4576271186440678,
+                                                "bounceRate":  0.44067796610169491,
                                                 "sessions":  59,
                                                 "channel":  "Organic Search",
-                                                "prevSessions":  14,
+                                                "prevSessions":  16,
                                                 "keyEvents":  4,
                                                 "prevKeyEvents":  0
                                             },
@@ -2453,10 +2461,10 @@
                                         ]
                        }
                    ],
-    "generated_at_utc":  "2026-08-19T10:53:27.1180995Z",
+    "generated_at_utc":  "2026-08-20T08:07:01.0799206Z",
     "range":  {
                   "days":  30,
-                  "end":  "2026-08-18",
-                  "start":  "2026-07-20"
+                  "end":  "2026-08-19",
+                  "start":  "2026-07-21"
               }
 }

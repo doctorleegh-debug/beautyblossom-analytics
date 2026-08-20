@@ -1,36 +1,74 @@
-﻿{
-    "date":  "2026-08-19",
-    "at_utc":  "2026-08-19T10:20:00.9613926Z",
-    "accounts":  [
-                     {
-                         "username":  "beautyblossom_th",
-                         "followers":  416,
-                         "label":  "TH",
-                         "media_count":  75
-                     },
-                     {
-                         "username":  "beautyblossom_tw",
-                         "followers":  2054,
-                         "label":  "TW",
-                         "media_count":  367
-                     },
-                     {
-                         "username":  "beautyblossom_clinic",
-                         "followers":  1698,
-                         "label":  "KR",
-                         "media_count":  346
-                     },
-                     {
-                         "username":  "beautyblossom_jp",
-                         "followers":  1423,
-                         "label":  "JP",
-                         "media_count":  405
-                     },
-                     {
-                         "username":  "beautyblossom_global",
-                         "followers":  4355,
-                         "label":  "EN",
-                         "media_count":  448
-                     }
-                 ]
-}
+﻿[
+    {
+        "date":  "2026-08-19",
+        "at_utc":  "2026-08-19T10:20:00.9613926Z",
+        "accounts":  [
+                         {
+                             "username":  "beautyblossom_th",
+                             "followers":  416,
+                             "label":  "TH",
+                             "media_count":  75
+                         },
+                         {
+                             "username":  "beautyblossom_tw",
+                             "followers":  2054,
+                             "label":  "TW",
+                             "media_count":  367
+                         },
+                         {
+                             "username":  "beautyblossom_clinic",
+                             "followers":  1698,
+                             "label":  "KR",
+                             "media_count":  346
+                         },
+                         {
+                             "username":  "beautyblossom_jp",
+                             "followers":  1423,
+                             "label":  "JP",
+                             "media_count":  405
+                         },
+                         {
+                             "username":  "beautyblossom_global",
+                             "followers":  4355,
+                             "label":  "EN",
+                             "media_count":  448
+                         }
+                     ]
+    },
+    {
+        "date":  "2026-08-20",
+        "at_utc":  "2026-08-20T08:18:16.4868300Z",
+        "accounts":  [
+                         {
+                             "username":  "beautyblossom_th",
+                             "followers":  416,
+                             "label":  "TH",
+                             "media_count":  75
+                         },
+                         {
+                             "username":  "beautyblossom_tw",
+                             "followers":  2057,
+                             "label":  "TW",
+                             "media_count":  368
+                         },
+                         {
+                             "username":  "beautyblossom_clinic",
+                             "followers":  1697,
+                             "label":  "KR",
+                             "media_count":  346
+                         },
+                         {
+                             "username":  "beautyblossom_jp",
+                             "followers":  1423,
+                             "label":  "JP",
+                             "media_count":  405
+                         },
+                         {
+                             "username":  "beautyblossom_global",
+                             "followers":  4354,
+                             "label":  "EN",
+                             "media_count":  448
+                         }
+                     ]
+    }
+]

@@ -1,54 +1,54 @@
 ﻿{
     "traffic":  [
                     {
-                        "minutes":  1650,
+                        "minutes":  1659,
                         "source":  "SHORTS",
-                        "views":  17341
+                        "views":  17496
                     },
                     {
-                        "minutes":  1030,
+                        "minutes":  1009,
                         "source":  "YT_SEARCH",
-                        "views":  2728
+                        "views":  2707
                     },
                     {
-                        "minutes":  814,
+                        "minutes":  813,
                         "source":  "EXT_URL",
-                        "views":  1411
+                        "views":  1410
                     },
                     {
-                        "minutes":  241,
+                        "minutes":  245,
                         "source":  "YT_CHANNEL",
-                        "views":  612
+                        "views":  623
                     },
                     {
-                        "minutes":  178,
+                        "minutes":  188,
                         "source":  "SUBSCRIBER",
-                        "views":  163
+                        "views":  175
                     },
                     {
                         "minutes":  13,
                         "source":  "YT_OTHER_PAGE",
-                        "views":  109
+                        "views":  110
                     },
                     {
-                        "minutes":  62,
+                        "minutes":  64,
                         "source":  "NO_LINK_OTHER",
-                        "views":  53
+                        "views":  54
                     },
                     {
-                        "minutes":  65,
+                        "minutes":  70,
                         "source":  "RELATED_VIDEO",
-                        "views":  42
+                        "views":  45
                     },
                     {
                         "minutes":  97,
                         "source":  "PLAYLIST",
-                        "views":  38
+                        "views":  37
                     },
                     {
-                        "minutes":  4,
+                        "minutes":  3,
                         "source":  "HASHTAGS",
-                        "views":  18
+                        "views":  17
                     },
                     {
                         "minutes":  7,
@@ -73,25 +73,25 @@
                 ],
     "devices":  [
                     {
-                        "views":  20737,
+                        "views":  20868,
                         "device":  "MOBILE"
                     },
                     {
-                        "views":  916,
+                        "views":  927,
                         "device":  "TABLET"
                     },
                     {
-                        "views":  742,
+                        "views":  759,
                         "device":  "DESKTOP"
                     },
                     {
-                        "views":  133,
+                        "views":  132,
                         "device":  "TV"
                     }
                 ],
     "prev_range":  {
-                       "start":  "2026-06-20",
-                       "end":  "2026-07-19"
+                       "start":  "2026-06-21",
+                       "end":  "2026-07-20"
                    },
     "topVideos":  [
                       {
@@ -125,16 +125,6 @@
                           "views":  1509
                       },
                       {
-                          "title":  "입술필러 직후 비대칭, 실패한 걸까? | 붓기 빠진 뒤 판단할 것",
-                          "avgViewDuration":  26,
-                          "minutes":  179,
-                          "duration":  "PT51S",
-                          "videoId":  "nJcalObmAFk",
-                          "likes":  3,
-                          "publishedAt":  "2026-08-09T05:30:22Z",
-                          "views":  1459
-                      },
-                      {
                           "title":  "허벅지 온다 하면 체중도 줄어들까? | 다이어트와 국소 윤곽의 차이",
                           "avgViewDuration":  11,
                           "minutes":  123,
@@ -145,14 +135,24 @@
                           "views":  1417
                       },
                       {
+                          "title":  "입술필러 직후 비대칭, 실패한 걸까? | 붓기 빠진 뒤 판단할 것",
+                          "avgViewDuration":  26,
+                          "minutes":  178,
+                          "duration":  "PT51S",
+                          "videoId":  "nJcalObmAFk",
+                          "likes":  3,
+                          "publishedAt":  "2026-08-09T05:30:22Z",
+                          "views":  1415
+                      },
+                      {
                           "title":  "리얼 Kbeauty 시술 체험기 I 눈 감고 좋은 생각 하세요 눈밑 리쥬란 + 이마 보톡스",
                           "avgViewDuration":  38,
-                          "minutes":  855,
+                          "minutes":  860,
                           "duration":  "PT6M2S",
                           "videoId":  "SfocFEnc0co",
                           "likes":  25,
                           "publishedAt":  "2026-07-29T07:30:03Z",
-                          "views":  1329
+                          "views":  1333
                       },
                       {
                           "title":  "울트라콜, 맞자마자 보이는 게 최종일까? | 필러와 다른 작동 방식",
@@ -192,27 +192,22 @@
                           "videoId":  "4detB_9KSMc",
                           "likes":  1,
                           "publishedAt":  "2026-08-16T05:15:37Z",
-                          "views":  1097
+                          "views":  1100
                       }
                   ],
     "previous":  {
-                     "comments":  11,
+                     "comments":  7,
                      "likes":  39,
                      "subsLost":  10,
-                     "minutesWatched":  2535,
-                     "avgViewDuration":  36,
-                     "views":  9815,
-                     "avgViewPercentage":  26.74,
+                     "minutesWatched":  2492,
+                     "avgViewDuration":  37,
+                     "views":  9677,
+                     "avgViewPercentage":  30.29,
                      "shares":  18,
                      "subsGained":  3
                  },
-    "generated_at_utc":  "2026-08-19T09:41:07.4237866Z",
+    "generated_at_utc":  "2026-08-20T08:08:13.0777747Z",
     "daily":  [
-                  {
-                      "date":  "2026-07-20",
-                      "minutes":  75,
-                      "views":  125
-                  },
                   {
                       "date":  "2026-07-21",
                       "minutes":  71,
@@ -336,7 +331,7 @@
                   {
                       "date":  "2026-08-14",
                       "minutes":  125,
-                      "views":  1200
+                      "views":  1191
                   },
                   {
                       "date":  "2026-08-15",
@@ -347,24 +342,29 @@
                       "date":  "2026-08-16",
                       "minutes":  111,
                       "views":  396
+                  },
+                  {
+                      "date":  "2026-08-17",
+                      "minutes":  83,
+                      "views":  284
                   }
               ],
     "range":  {
                   "days":  30,
-                  "end":  "2026-08-18",
-                  "start":  "2026-07-20"
+                  "end":  "2026-08-19",
+                  "start":  "2026-07-21"
               },
     "channel":  {
                     "title":  "블라썸1호 | K-Beauty No.1, Beauty Blossom",
                     "subscribers":  1360,
                     "id":  "UCjqwHrk39tox9ToJDiuj5Iw",
-                    "videoCount":  242,
-                    "totalViews":  178237
+                    "videoCount":  243,
+                    "totalViews":  179033
                 },
     "countries":  [
                       {
                           "country":  "KR",
-                          "views":  19875
+                          "views":  20035
                       },
                       {
                           "country":  "US",
@@ -405,13 +405,13 @@
                   ],
     "current":  {
                     "comments":  12,
-                    "likes":  94,
-                    "subsLost":  13,
-                    "minutesWatched":  4178,
+                    "likes":  95,
+                    "subsLost":  14,
+                    "minutesWatched":  4185,
                     "avgViewDuration":  25,
-                    "views":  22586,
-                    "avgViewPercentage":  24.67,
+                    "views":  22699,
+                    "avgViewPercentage":  24.61,
                     "shares":  19,
-                    "subsGained":  137
+                    "subsGained":  139
                 }
 }

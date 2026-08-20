@@ -351,7 +351,7 @@ function render(){
     { s: 'GA4', ok: true, detail: g.properties.length + '개 속성 · API' },
     { s: 'YouTube', ok: true, detail: '1개 채널 · Analytics API' },
     { s: 'Search Console', ok: gscCount > 0, detail: gscCount + '개 속성 · API' },
-    { s: '네이버', ok: okSites.length > 0, detail: okSites.length + '/' + ((nv && nv.sites) || []).length + '개 사이트 · UI 수집' },
+    { s: '네이버', ok: okSites.length > 0, detail: okSites.length + '/' + ((nv && nv.sites) || []).length + '개 사이트 · 콘솔 수집' },
     { s: 'Instagram', ok: igOk > 0, detail: igOk + '개 계정 · ' + (D.igApi && D.igApi.insights_available ? '조회수·도달 포함' : '기본 지표') }
   ];
   document.getElementById('srcPills').innerHTML = pills.map(x =>
@@ -651,7 +651,7 @@ function render(){
         '</div>' +
         '<div class="grid g2"><div><h3>검색 키워드 TOP</h3><div style="overflow-x:auto"><table id="nvKw"></table></div></div>' +
         '<div><h3>검색 웹문서 TOP</h3><div style="overflow-x:auto"><table id="nvDoc"></table></div></div></div>' +
-        '<p class="note">네이버 콘솔은 한 페이지에 10행씩 표시하며, 여기에는 각 사이트의 상위 10개가 담겨 있습니다.</p></div>';
+        '<p class="note">네이버 콘솔은 한 페이지에 10행씩 표시하므로 페이지를 넘겨가며 각 사이트의 상위 30개를 수집합니다.</p></div>';
 
     let sumC = 0, sumI = 0;
     okSites.forEach(x => { sumC += (x.clicks || 0); sumI += (x.impressions || 0); });
@@ -680,7 +680,15 @@ function render(){
           '<td>' + esc(s.clicks_raw || '—') + '</td>' + cell(s.clicks_delta) +
           '<td>' + esc(s.impressions_raw || '—') + '</td>' + cell(s.impressions_delta) +
           '<td>' + esc(s.ctr_raw || '—') + '</td>' + cell(s.ctr_delta) + '</tr>';
-      }).join('') + '</tbody>';
+      }).join('') +
+      // A registered site that Naver reports no exposure for is a finding, not a gap,
+      // so show it rather than letting it vanish from the table.
+      ((nv && nv.sites) || []).filter(s => s.status !== 'OK').map(s =>
+        '<tr><td>' + esc(s.label) + ' · ' + esc(String(s.url).replace('https://', '')) + '</td>' +
+        '<td colspan="6" class="sub">' + esc(s.reason || (s.status === 'LOGIN_REQUIRED'
+          ? '네이버 로그인 세션이 만료되어 수집하지 못했습니다.'
+          : '수집되지 않았습니다 (' + s.status + ').')) + '</td></tr>').join('') +
+      '</tbody>';
 
     const withKw = okSites.filter(s => (s.keywords && s.keywords.length) || (s.documents && s.documents.length));
     let activeSite = (withKw[0] || okSites[0]).label;

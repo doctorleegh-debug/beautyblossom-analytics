@@ -119,8 +119,16 @@
   </div>
   <div class="card" style="margin-top:14px">
     <h3>채널별 문의 · 전환율</h3>
+    <p class="sub" style="margin:6px 0 4px">방문자가 <b>어디를 거쳐 들어왔는지</b>별로, 그 유입이 실제 문의로 이어졌는지 봅니다.</p>
+    <p class="note" style="margin:0 0 12px">
+      <b>읽는 법:</b> <b>세션 비중</b>은 사람을 얼마나 데려왔는지, <b>문의 비중</b>은 문의를 얼마나 만들었는지입니다.
+      두 값이 벌어지는 채널이 핵심입니다 — 사람만 많이 데려오고 문의는 안 만들거나, 그 반대거나.
+      맨 오른쪽 <b>효율</b>이 그 격차를 한 숫자로 보여줍니다.
+      <b>×1.0</b>이면 데려온 만큼 문의를 만든 것, <b>×1.0 미만</b>이면 방문 수에 비해 문의가 적고,
+      <b>×1.0 초과</b>면 적은 방문으로 문의를 많이 만든 채널입니다.
+    </p>
     <div style="overflow-x:auto"><table id="chanCvrTable"></table></div>
-    <p class="note">어느 유입 채널이 실제 문의를 만드는지 보여줍니다. 세션은 많은데 전환율이 낮은 채널이 예산이 새는 곳입니다.</p>
+    <p class="note" id="chanCvrNote"></p>
   </div>
   <div class="card" style="margin-top:14px">
     <h3>문의 이벤트 상세</h3>
@@ -504,20 +512,75 @@ function render(){
     const cKeys = Object.keys(cAgg).sort((a, b) => cAgg[b].sessions - cAgg[a].sessions);
     const sTot = cKeys.reduce((s, k) => s + cAgg[k].sessions, 0);
     const kTot = cKeys.reduce((s, k) => s + cAgg[k].keyEvents, 0);
+    // GA4 ships these channel names in English; spell out what each one actually is.
+    const CHANNEL = {
+      'Paid Social':    ['유료 소셜 광고',  '인스타그램·페이스북 등에 돈 주고 낸 광고'],
+      'Organic Social': ['소셜 자연 유입',  '인스타 프로필·게시물 링크 등 광고가 아닌 소셜'],
+      'Paid Search':    ['검색 광고',      '구글 등 검색 결과 상단의 유료 광고'],
+      'Organic Search': ['자연 검색',      '구글·네이버 검색 결과에서 광고 없이 들어온 유입'],
+      'Direct':         ['직접 유입',      '주소 직접 입력·즐겨찾기, 또는 경로가 안 잡힌 재방문'],
+      'Referral':       ['외부 링크',      '다른 사이트에 걸린 링크를 타고 들어온 유입'],
+      'Email':          ['이메일',         '메일에 넣은 링크'],
+      'Display':        ['배너 광고',      '디스플레이 네트워크 배너'],
+      'Affiliates':     ['제휴',           '제휴 파트너 경유'],
+      'Cross-network':  ['교차 네트워크',   '구글 P-Max처럼 여러 지면에 동시 노출된 광고'],
+      'Paid Other':     ['기타 유료 광고',  '위 분류에 안 들어가는 유료 매체'],
+      'Organic Video':  ['동영상 자연 유입', '유튜브 등 영상에서 광고 없이 들어온 유입'],
+      'AI Assistant':   ['AI 챗봇',        'ChatGPT 등 AI 답변에 걸린 링크'],
+      'Unassigned':     ['분류 안 됨',      '추적 정보가 부족해 GA4가 출처를 못 가린 유입']
+    };
+    // 문의 비중 ÷ 세션 비중. 1보다 크면 데려온 사람 수에 비해 문의를 많이 만든 채널.
+    const effCell = (share, kshare) => {
+      if (!share) return '<td>—</td>';
+      const e = kshare / share;
+      const cls = e >= 1.5 ? 'up' : (e < 0.6 ? 'dn' : '');
+      return '<td class="' + cls + '">×' + nf1(e) + '</td>';
+    };
+
     document.getElementById('chanCvrTable').innerHTML =
-      '<thead><tr><th>채널</th><th>세션</th><th>세션 비중</th><th>문의</th><th>문의 비중</th><th>전환율</th></tr></thead><tbody>' +
+      '<thead><tr><th>채널</th><th>세션<br><span style="font-weight:400;font-size:11px;color:var(--muted)">방문 수</span></th>' +
+      '<th>세션 비중<br><span style="font-weight:400;font-size:11px;color:var(--muted)">전체 방문 중</span></th>' +
+      '<th>문의<br><span style="font-weight:400;font-size:11px;color:var(--muted)">건수</span></th>' +
+      '<th>문의 비중<br><span style="font-weight:400;font-size:11px;color:var(--muted)">전체 문의 중</span></th>' +
+      '<th>전환율<br><span style="font-weight:400;font-size:11px;color:var(--muted)">문의÷세션</span></th>' +
+      '<th>효율<br><span style="font-weight:400;font-size:11px;color:var(--muted)">문의비중÷세션비중</span></th></tr></thead><tbody>' +
       cKeys.map((k, i) => {
         const a = cAgg[k];
         const cvr = a.sessions ? a.keyEvents / a.sessions * 100 : 0;
-        return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i % 6]) + '"></span> ' + esc(k) + '</td>' +
+        const share = sTot ? a.sessions / sTot * 100 : 0;
+        const kshare = kTot ? a.keyEvents / kTot * 100 : 0;
+        const ko = CHANNEL[k] || [k, ''];
+        return '<tr><td><span class="dot" style="background:' + cssv(SERIES[i % 6]) + '"></span> ' + esc(ko[0]) +
+          '<div style="font-size:11px;color:var(--muted);margin-left:16px">' + esc(k) +
+          (ko[1] ? ' · ' + esc(ko[1]) : '') + '</div></td>' +
           wd(a.sessions, a.prevSessions) +
-          '<td>' + nf1(sTot ? a.sessions / sTot * 100 : 0) + '%</td>' +
+          '<td>' + nf1(share) + '%</td>' +
           '<td>' + nf(a.keyEvents) + '</td>' +
-          '<td>' + nf1(kTot ? a.keyEvents / kTot * 100 : 0) + '%</td>' +
-          '<td>' + nf1(cvr) + '%</td></tr>';
+          '<td>' + nf1(kshare) + '%</td>' +
+          '<td>' + nf1(cvr) + '%</td>' +
+          effCell(share, kshare) + '</tr>';
       }).join('') +
       '<tr style="font-weight:650"><td>합계</td><td>' + nf(sTot) + '</td><td>100%</td><td>' + nf(kTot) +
-      '</td><td>100%</td><td>' + nf1(sTot ? kTot / sTot * 100 : 0) + '%</td></tr></tbody>';
+      '</td><td>100%</td><td>' + nf1(sTot ? kTot / sTot * 100 : 0) + '%</td><td>×1.0</td></tr></tbody>';
+
+    // State the conclusion rather than leaving the reader to derive it from the table.
+    const named = k => (CHANNEL[k] || [k])[0];
+    const meaningful = cKeys.filter(k => cAgg[k].sessions >= sTot * 0.02);
+    const eff = k => {
+      const share = sTot ? cAgg[k].sessions / sTot : 0;
+      const kshare = kTot ? cAgg[k].keyEvents / kTot : 0;
+      return share ? kshare / share : 0;
+    };
+    const best = meaningful.slice().sort((a, b) => eff(b) - eff(a))[0];
+    const worst = meaningful.slice().sort((a, b) => eff(a) - eff(b))[0];
+    const pctOf = (k, key, tot) => nf1(tot ? cAgg[k][key] / tot * 100 : 0);
+    document.getElementById('chanCvrNote').innerHTML = (best && worst && best !== worst)
+      ? '이번 기간에는 <b>' + esc(named(worst)) + '</b>이(가) 전체 방문의 ' + pctOf(worst, 'sessions', sTot) +
+        '%를 차지했지만 문의는 ' + pctOf(worst, 'keyEvents', kTot) + '%만 만들었고(효율 ×' + nf1(eff(worst)) + '), ' +
+        '<b>' + esc(named(best)) + '</b>은(는) 방문의 ' + pctOf(best, 'sessions', sTot) + '%로 문의의 ' +
+        pctOf(best, 'keyEvents', kTot) + '%를 만들었습니다(효율 ×' + nf1(eff(best)) + '). ' +
+        '방문 수만 보면 두 채널의 기여도가 정반대로 보입니다. 전체 방문의 2% 미만인 채널은 표본이 작아 이 비교에서 제외했습니다.'
+      : '';
   }
 
   document.getElementById('ytTiles').innerHTML =

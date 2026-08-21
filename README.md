@@ -40,6 +40,21 @@ node scripts\build-strategy.mjs                    # report/strategy-2026-09.htm
 
 파일명은 `strategy-YYYY-MM.html` 로, **실행 대상 월**을 쓴다. 근거가 되는 실적은 그 전월이다.
 
+### 공유 링크
+
+리포트는 Orca 아티팩트로 공개 링크를 만들어 공유한다.
+
+```powershell
+orca artifacts share  .\report\strategy-2026-09.html   # 최초 1회만
+orca artifacts update .\report\strategy-2026-09.html   # 이후 수정할 때마다
+```
+
+**이미 공유한 파일은 `share` 를 다시 쓰지 말 것.** 새 링크가 생겨 이미 배포된 주소가 옛 내용에 묶인다.
+`update` 는 주소를 유지한 채 내용만 교체하고, 만료일도 그 시점부터 30일로 다시 늘어난다.
+
+링크는 로그인 없이 열리므로 내부 성과 수치가 그대로 공개된다. 시술 가격은 리포트에 담지 않지만
+시장별 전환율·광고 규모·시술 목록은 보인다. 내릴 때는 `orca artifacts unshare` 를 쓴다.
+
 경쟁사 수집은 공개된 Meta 광고 라이브러리를 HTTP로만 읽는다. 로그인도, 브라우저 창도, 사용자 Chrome 프로필도 쓰지 않는다. 원본 응답은 `.cache/adlib/` 에 남으므로 파싱 로직을 고쳐 다시 돌려도 추가 조회가 발생하지 않는다.
 
 소재지·다국어 운영 구조는 광고 라이브러리에 없어 각 클리닉 사이트를 직접 확인해 `data/competitor-profiles.json` 에 출처와 함께 손으로 기록한다. 이 파일은 수집 스크립트가 덮어쓰지 않는다.

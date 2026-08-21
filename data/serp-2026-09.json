@@ -1,0 +1,2644 @@
+{
+  "generated_at_utc": "2026-08-21T02:43:25.034Z",
+  "source": "DuckDuckGo 지역별 검색 결과를 Jina Reader로 조회했습니다. 브라우저나 로그인 없이 HTTP만 사용합니다.",
+  "note": "검색 결과는 조회 시점·지역·개인화에 따라 달라질 수 있습니다. 순위는 절대값이 아니라 \"누가 이 키워드를 쥐고 있는가\"를 보는 용도로만 쓰십시오.",
+  "markets": [
+    {
+      "key": "JP",
+      "label": "일본",
+      "region": "jp-jp"
+    },
+    {
+      "key": "TW",
+      "label": "대만",
+      "region": "tw-tzh"
+    },
+    {
+      "key": "EN",
+      "label": "영어권",
+      "region": "wt-wt"
+    }
+  ],
+  "totals": {
+    "queries": 36,
+    "failed": 0,
+    "weHoldAny": 0
+  },
+  "rows": [
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "리쥬란",
+      "query": "韓国 リジュラン クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "koreaddicted.jp",
+          "url": "https://koreaddicted.jp/29193",
+          "kind": "media"
+        },
+        {
+          "rank": 2,
+          "host": "kr-life.com",
+          "url": "https://kr-life.com/rejuran-clinic/",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "kanbinavi.jp",
+          "url": "https://kanbinavi.jp/procedures/rejuran",
+          "kind": "media"
+        },
+        {
+          "rank": 4,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/5076/",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "konest.com",
+          "url": "https://www.konest.com/contents/hot_report_detail.html?id=24528",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "fukuokab.com",
+          "url": "https://fukuokab.com/kankoku-rejuran/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "aleumtown.com",
+          "url": "https://aleumtown.com/korea-clinic-rejuran/",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "mionni.jp",
+          "url": "https://mionni.jp/rejuran-injection/",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=%E3%83%AA%E3%82%B8%E3%83%A5%E3%83%A9%E3%83%B3S&district=N97",
+          "kind": "media"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": null,
+      "mediaCount": 6,
+      "clinicCount": 0
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "써마지",
+      "query": "韓国 サーマクール クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "mionni.jp",
+          "url": "https://mionni.jp/thermacool/",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/6008/",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "fukuokab.com",
+          "url": "https://fukuokab.com/kankoku-thermacool/",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "kanbinavi.jp",
+          "url": "https://kanbinavi.jp/procedures/saamakuuru",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=%E3%82%B5%E3%83%BC%E3%83%9E%E3%82%AF%E3%83%BC%E3%83%AB%28%E9%AB%98%E5%91%A8%E6%B3%A2%29&district=N97",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "tone-seoul.com",
+          "url": "https://tone-seoul.com/guide/seoul-thermage",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "konest.com",
+          "url": "https://www.konest.com/contents/clinic_mise_search.html?fa=1&sc=13115",
+          "kind": "media"
+        },
+        {
+          "rank": 8,
+          "host": "seyeclinic.com",
+          "url": "https://seyeclinic.com/ja/posts/thermage-flx-price-seoul-gangnam",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 8,
+        "host": "seyeclinic.com",
+        "url": "https://seyeclinic.com/ja/posts/thermage-flx-price-seoul-gangnam",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 4,
+      "clinicCount": 1
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "울쎄라",
+      "query": "韓国 ウルセラ クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "kmedicalbeauty.jp",
+          "url": "https://kmedicalbeauty.jp/ultherapy-in-korea-guide/",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "kanbinavi.jp",
+          "url": "https://kanbinavi.jp/procedures/ulthera",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/5966/",
+          "kind": "media"
+        },
+        {
+          "rank": 4,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=%E3%82%A6%E3%83%AB%E3%82%BB%E3%83%A9&district=N97&s=HIGHEST_POPULARITY",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "fukuokab.com",
+          "url": "https://fukuokab.com/kankoku-ulthera/",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "mionni.jp",
+          "url": "https://mionni.jp/ulthera-treatment/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "tone-seoul.com",
+          "url": "https://tone-seoul.com/guide/seoul-ulthera",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "note.com",
+          "url": "https://note.com/mizu7334/n/n6bf0b0ce54fe",
+          "kind": "media"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": null,
+      "mediaCount": 4,
+      "clinicCount": 0
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "온다",
+      "query": "韓国 オンダリフト クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "konest.com",
+          "url": "https://www.konest.com/contents/clinic_mise_search.html?sc=13150",
+          "kind": "media"
+        },
+        {
+          "rank": 2,
+          "host": "tribeau.jp",
+          "url": "https://tribeau.jp/countries/2/surgeries/286/clinics",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/11608/",
+          "kind": "media"
+        },
+        {
+          "rank": 4,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=%E3%82%AA%E3%83%B3%E3%83%80%E3%83%AA%E3%83%95%E3%83%88",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "note.com",
+          "url": "https://note.com/magazine_korea/n/ne46fcdd0afbe",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "ohanablog.net",
+          "url": "https://ohanablog.net/clinickr/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "oganamagokworld.com",
+          "url": "https://www.oganamagokworld.com/ja/blog/kankoku-onda-lift-guide",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "ledianclinic.jp",
+          "url": "https://ledianclinic.jp/column/korean-aesthetics-guide/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "mabutanoclinic.jp",
+          "url": "https://mabutanoclinic.jp/column/liftup-tightening/ondalift-cheap-recommend/",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 8,
+        "host": "ledianclinic.jp",
+        "url": "https://ledianclinic.jp/column/korean-aesthetics-guide/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 4,
+      "clinicCount": 2
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "포텐자",
+      "query": "韓国 ポテンツァ クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "jennie-log.com",
+          "url": "https://jennie-log.com/korea-potenza",
+          "kind": "media"
+        },
+        {
+          "rank": 2,
+          "host": "kmedicalbeauty.jp",
+          "url": "https://kmedicalbeauty.jp/korea-potenza-guide/",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "koreaddicted.jp",
+          "url": "https://koreaddicted.jp/27618",
+          "kind": "media"
+        },
+        {
+          "rank": 4,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/516/",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "konest.com",
+          "url": "https://www.konest.com/contents/clinic_mise_search.html?sc=13140",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "oganamagokworld.com",
+          "url": "https://www.oganamagokworld.com/ja/blog/kankoku-potenza-nedan-souba",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "kyuen-clinic.jp",
+          "url": "https://kyuen-clinic.jp/blogs/cosmetic-dermatology/potenza-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "aleumtown.com",
+          "url": "https://aleumtown.com/korea-potenza-clinic/",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "mionni.jp",
+          "url": "https://mionni.jp/potenza/",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 7,
+        "host": "kyuen-clinic.jp",
+        "url": "https://kyuen-clinic.jp/blogs/cosmetic-dermatology/potenza-korea",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 4,
+      "clinicCount": 1
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "쥬베룩",
+      "query": "韓国 ジュベルック クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/1425/",
+          "kind": "media"
+        },
+        {
+          "rank": 2,
+          "host": "kanbinavi.jp",
+          "url": "https://kanbinavi.jp/procedures/juvelook",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "note.com",
+          "url": "https://note.com/ippoclinic_jp/n/n82326c034779",
+          "kind": "media"
+        },
+        {
+          "rank": 4,
+          "host": "kmedicalbeauty.jp",
+          "url": "https://kmedicalbeauty.jp/juvelook-korea-guide/",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "fukuokab.com",
+          "url": "https://fukuokab.com/kankoku-juvelook/",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "jpmineps.com",
+          "url": "https://jpmineps.com/blog/%E7%9A%AE%E8%86%9A/%E3%82%B8%E3%83%A5%E3%83%99%E3%83%AB%E3%83%83%E3%82%AF/%E3%82%B8%E3%83%A5%E3%83%99%E3%83%AB%E3%83%83%E3%82%AF%E3%81%AE%E6%96%BD%E8%A1%93%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=%E3%82%B8%E3%83%A5%E3%83%99%E3%83%AB%E3%83%83%E3%82%AF%28Juvelook%29&district=N97",
+          "kind": "media"
+        },
+        {
+          "rank": 8,
+          "host": "tribeau.jp",
+          "url": "https://tribeau.jp/countries/2/surgeries/279/clinics",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "oganamagokworld.com",
+          "url": "https://www.oganamagokworld.com/ja/blog/kankoku-juvelook-guide",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": null,
+      "mediaCount": 4,
+      "clinicCount": 0
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "슈링크",
+      "query": "韓国 シュリンク クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/5052/",
+          "kind": "media"
+        },
+        {
+          "rank": 2,
+          "host": "koreaddicted.jp",
+          "url": "https://koreaddicted.jp/36689",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "fukuokab.com",
+          "url": "https://fukuokab.com/kankoku-shurink/",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "classkim.com",
+          "url": "https://www.classkim.com/ja/blog/40ok",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/search?q=%E3%82%B7%E3%83%A5%E3%83%AA%E3%83%B3%E3%82%AF",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "harpersbazaar.com",
+          "url": "https://www.harpersbazaar.com/jp/beauty/femtech/a43015507/k-beauty-skin-clinic-230318-hb/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "koreanstyle.hatenablog.com",
+          "url": "https://koreanstyle.hatenablog.com/entry/ppeumclinic-2",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "mionni.jp",
+          "url": "https://mionni.jp/shrink/",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "uhcell.com",
+          "url": "https://uhcell.com/ja/procedure/shurink-universe/",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": null,
+      "mediaCount": 3,
+      "clinicCount": 0
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "스컬트라",
+      "query": "韓国 スカルプトラ クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/6953/",
+          "kind": "media"
+        },
+        {
+          "rank": 2,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%97%E3%83%88%E3%83%A9&district=N97",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "ameblo.jp",
+          "url": "https://ameblo.jp/reyouclinicjp/entry-12961387026.html",
+          "kind": "media"
+        },
+        {
+          "rank": 4,
+          "host": "hongdaeskinclinicreberry.com",
+          "url": "https://hongdaeskinclinicreberry.com/%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%97%E3%83%88%E3%83%A9-%E5%BC%98%E5%A4%A7-%E3%82%BD%E3%82%A6%E3%83%AB-%E9%9F%93%E5%9B%BD/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "fukuokab.com",
+          "url": "https://fukuokab.com/kankoku-sculptra/",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "uhcell.com",
+          "url": "https://uhcell.com/ja/procedure/sculptra/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "seocho.uhcell.com",
+          "url": "https://seocho.uhcell.com/ja/procedure/sculptra/",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "drbaquo.com",
+          "url": "https://drbaquo.com/ja/sculptra-korea-4/",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "amredclinic.com",
+          "url": "https://amredclinic.com/ja/by-amred/sculptra",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 4,
+        "host": "hongdaeskinclinicreberry.com",
+        "url": "https://hongdaeskinclinicreberry.com/%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%97%E3%83%88%E3%83%A9-%E5%BC%98%E5%A4%A7-%E3%82%BD%E3%82%A6%E3%83%AB-%E9%9F%93%E5%9B%BD/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 3,
+      "clinicCount": 2
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "피코슈어",
+      "query": "韓国 ピコシュア クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=%E3%83%94%E3%82%B3%E3%82%B7%E3%83%A5%E3%82%A2&district=N97",
+          "kind": "media"
+        },
+        {
+          "rank": 2,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/9139/",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "myeongdongskinclinicreberry.com",
+          "url": "https://myeongdongskinclinicreberry.com/%E3%83%94%E3%82%B3%E3%82%B7%E3%83%A5%E3%82%A2-%E9%9F%93%E5%9B%BD/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "jpupic.com",
+          "url": "https://www.jpupic.com/picosure/",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "happygolucky.blog.jp",
+          "url": "https://happygolucky.blog.jp/archives/45734036.html",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "seyeclinic.com",
+          "url": "https://seyeclinic.com/ja/posts/picoplus-picosurepro-fraxel-price-seoul-gangnam",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "ameblo.jp",
+          "url": "https://ameblo.jp/diaclinicjp/entry-12956484568.html",
+          "kind": "media"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 3,
+        "host": "myeongdongskinclinicreberry.com",
+        "url": "https://myeongdongskinclinicreberry.com/%E3%83%94%E3%82%B3%E3%82%B7%E3%83%A5%E3%82%A2-%E9%9F%93%E5%9B%BD/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 3,
+      "clinicCount": 2
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "LDM",
+      "query": "韓国 LDM クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "fukuokab.com",
+          "url": "https://fukuokab.com/kankoku-ldm/",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/8481/",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "harpersbazaar.com",
+          "url": "https://www.harpersbazaar.com/jp/beauty/femtech/a43015507/k-beauty-skin-clinic-230318-hb/",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=LDM&district=N97",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "nero-drbeauty.com",
+          "url": "https://nero-drbeauty.com/dermatology/ldm-treatment-in-korea/",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "uhcell.com",
+          "url": "https://uhcell.com/ja/procedure/ldm/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "mionni.jp",
+          "url": "https://mionni.jp/ldm/",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": null,
+      "mediaCount": 2,
+      "clinicCount": 0
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "인모드",
+      "query": "韓国 インモード クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "koreaddicted.jp",
+          "url": "https://koreaddicted.jp/43423",
+          "kind": "media"
+        },
+        {
+          "rank": 2,
+          "host": "ameblo.jp",
+          "url": "https://ameblo.jp/u-travel2/entry-12894596143.html",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "clinic.beauty-park.jp",
+          "url": "https://clinic.beauty-park.jp/inmode-korea/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/1498/",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "kanbinavi.jp",
+          "url": "https://kanbinavi.jp/procedures/inmoodo",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "fukuokab.com",
+          "url": "https://fukuokab.com/kankoku-inmode/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%89&district=N97&s=HIGHEST_POPULARITY",
+          "kind": "media"
+        },
+        {
+          "rank": 8,
+          "host": "askkorea.io",
+          "url": "https://askkorea.io/ja/blogs/real-review-ja/%E9%9F%93%E5%9B%BD%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%89-%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "zuniv1.com",
+          "url": "https://zuniv1.com/inmode/",
+          "kind": "other"
+        },
+        {
+          "rank": 10,
+          "host": "harpersbazaar.com",
+          "url": "https://www.harpersbazaar.com/jp/beauty/femtech/a43015507/k-beauty-skin-clinic-230318-hb/",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 3,
+        "host": "clinic.beauty-park.jp",
+        "url": "https://clinic.beauty-park.jp/inmode-korea/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 5,
+      "clinicCount": 1
+    },
+    {
+      "market": "JP",
+      "marketLabel": "일본",
+      "treatment": "볼뉴머",
+      "query": "韓国 ボルニューマ クリニック",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "minfor.jp",
+          "url": "https://minfor.jp/beauty/9116/",
+          "kind": "media"
+        },
+        {
+          "rank": 2,
+          "host": "gangnamunni.com",
+          "url": "https://www.gangnamunni.com/jp/events?q=%E3%83%9C%E3%83%AB%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%9E&district=N97",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "fukuokab.com",
+          "url": "https://fukuokab.com/kankoku-volnewmer/",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "note.com",
+          "url": "https://note.com/minmiclinic/n/nd8bb8937ad51",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "hongdaeskinclinic.com",
+          "url": "https://www.hongdaeskinclinic.com/%E7%BE%8E%E5%AE%B9%E5%8C%BB%E7%99%82%E6%96%BD%E8%A1%93/%E3%83%9B%E3%83%AB%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%9E%E9%9F%93%E5%9B%BD",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "jplienjang.com",
+          "url": "https://jplienjang.com/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "ameblo.jp",
+          "url": "https://ameblo.jp/2pmichika117/entry-12963199464.html",
+          "kind": "media"
+        },
+        {
+          "rank": 8,
+          "host": "kmedicalbeauty.jp",
+          "url": "https://kmedicalbeauty.jp/volnewmer-korea-lifting-guide/",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "ohvelyjoo.com",
+          "url": "https://ohvelyjoo.com/ja/pages/Volnewmer",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 5,
+        "host": "hongdaeskinclinic.com",
+        "url": "https://www.hongdaeskinclinic.com/%E7%BE%8E%E5%AE%B9%E5%8C%BB%E7%99%82%E6%96%BD%E8%A1%93/%E3%83%9B%E3%83%AB%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%9E%E9%9F%93%E5%9B%BD",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 4,
+      "clinicCount": 1
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "리쥬란",
+      "query": "韓國 麗珠蘭 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "duckduckgo.com",
+          "url": "https://duckduckgo.com/y.js?ad_domain=jing%2Dchi.com.tw&ad_provider=bingv7aa&ad_type=txad&click_metadata=9Sfd2HpXj6PC9tBZv3qqtZEJldVQvMI67LCMo5qaB6P3fxTWZXtBR8hscPCiJTrTl%2DWt8Q4AbOAGcnfiyXgvZ0p8Fpqm5BZsfmyrmDjTQJ5c1ARJ26keab2ZfdneyDT2YyKhMWGMgNNctAbdg%2DkqnnPOM_cn6hHbVFrB0i6kfvQ.tPd7g2n6IQ6z3J9Hl6xHUw&rut=65ba8ca5f350f6536dd5ba11fce2a844dc246a60961fb202ce296626e3eca268&u3=https%3A%2F%2Fwww.bing.com%2Faclick%3Fld%3De82EBarMbNsMlpMXH9mFCo_jVUCUwSP8uEu6OwvjN51lqcH4SLZUGtU8omjUjfBbNE%2DJNwoqvkCueeU16AytCQe6MT3rR2JJ92pbBiIrLENF1as63NaWNKcIaHFlZqkObr_EKkvOKP5HzsJGAgoCexZzXZhLR3O_%2DuUCKd6jQoR1rXaZDSjlGLt2LkeB7prLJLH0aB5IYw1iux%2D3rKej94XxvKmHE%26u%3DaHR0cHMlM2ElMmYlMmZ3d3cuamluZy1jaGkuY29tLnR3JTJmcHJvZHVjdCUyZlJlanVyYW4lM2Z1dG1fc291cmNlJTNkeWFob28lMjZ1dG1fbWVkaXVtJTNkc2VhcmNoJTI2dXRtX2NhbXBhaWduJTNkUmVqdXJhbiUyNm1zY2xraWQlM2Q5MTgzZmFhMDMxOGMxY2MxMGE0ZTkwMjc4YjFkY2Q3Yw%26rlid%3D9183faa0318c1cc10a4e90278b1dcd7c&vqd=4-205175983098318089201710547704579588076&iurl=%7B1%7DIG%3D5C145067163A4516A1A7177A75A3956E%26CID%3D147704B4D3AA6DAD292A1308D27F6CB3%26ID%3DDevEx%2C5035.1",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "k-beautystation.com",
+          "url": "https://www.k-beautystation.com/zh-TW/magazines/%E9%9F%93%E5%9C%8B%E9%BA%97%E7%8F%A0%E8%98%AD-%E9%A0%90%E7%B4%84%E5%89%8D%E5%BF%85%E9%A0%88%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "classkim.com",
+          "url": "https://www.classkim.com/zh/blog/rejuran-3",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/zh-tw/%E9%BA%97%E7%8F%A0%E8%98%ADhealer-%E6%8E%A8%E8%96%A6-%E9%A6%96%E7%88%BE-%E9%9F%93%E5%9C%8B/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "skinseoulclinic.com",
+          "url": "https://www.skinseoulclinic.com/2026/01/rejuran.html",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "irisseoul.com",
+          "url": "https://irisseoul.com/211/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "oganamagokworld.com",
+          "url": "https://www.oganamagokworld.com/zh-TW/blog/hanguo-rijulan-gonglue",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "niceclinic.com.tw",
+          "url": "https://www.niceclinic.com.tw/zh_tw/services/content/517/rejuran-guide",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "linkpskorea.tw",
+          "url": "https://www.linkpskorea.tw/petit/rejuran.html",
+          "kind": "other"
+        },
+        {
+          "rank": 10,
+          "host": "myeongdongskinclinicreberry.com",
+          "url": "https://myeongdongskinclinicreberry.com/%E9%BA%97%E7%8F%A0%E8%98%ADhealer-%E9%9F%93%E5%9C%8B/",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 4,
+        "host": "thereberryclinic.com",
+        "url": "https://thereberryclinic.com/zh-tw/%E9%BA%97%E7%8F%A0%E8%98%ADhealer-%E6%8E%A8%E8%96%A6-%E9%A6%96%E7%88%BE-%E9%9F%93%E5%9C%8B/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 4
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "써마지",
+      "query": "韓國 鳳凰電波 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "duckduckgo.com",
+          "url": "https://duckduckgo.com/y.js?ad_domain=lexcellence.com.tw&ad_provider=bingv7aa&ad_type=txad&click_metadata=J1jYGL0CRUUKrUQ3icZahexVsQ77vEBCs7kE9TMfN3yvLvEcVzOja90piUUEGj3lV8Y_HRQY4inxT5ocuDHJKSaR58sIjhR1APBZNgNM_3Iag3QTa7uc94RclUigzI75LZxb%2DefT2lbZrYf8lbQGrAWLrq3%2DjBFYoD2G83p2Qc0.dLg%2D2dSkos7YPet_gCGyHw&rut=d87c3509ce5d90bd939141e4bcced9a0a882d3fc223a72928f8c71db32d012ae&u3=https%3A%2F%2Fwww.bing.com%2Faclick%3Fld%3De82h0FQPNv5LQ2JXAx%2DjtPKjVUCUweCXI_ojF97z1FBr30n041IksZNY9El77Fw3eh3vYS70V7%2Dmw6YxB%2DKjCbTIiYIDR9_edZQoAqWO6gX3t9TNZJ9mqZZwdgg6WzFxfE_jsCadKmdkI4FEUjnMCZrDZgK6kOEjDXwhkE3NC2TocLA3jZuBI3OZBpTFfPrMAJ_%2D8GHYZwnFmImCFoa1vLQc9hfoI%26u%3DaHR0cHMlM2ElMmYlMmZ3d3cubGV4Y2VsbGVuY2UuY29tLnR3JTJmJTI1ZTklMjViMyUyNWIzJTI1ZTUlMjU4NyUyNWIwJTI1ZTklMjU5YiUyNWJiJTI1ZTYlMjViMyUyNWEyLTIlMmYlM2Ztc2Nsa2lkJTNkYmIyODU5MTc3MWE5MWM3NTA0MmMzMzkwY2IzMDkxZTc%26rlid%3Dbb28591771a91c75042c3390cb3091e7&vqd=4-333065804360124772205481106389963604063&iurl=%7B1%7DIG%3DD48A400472A546E882743A2EA6BF0CE8%26CID%3D09E72B9F18B2697935573C23192568C7%26ID%3DDevEx%2C5035.1",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "dcard.tw",
+          "url": "https://www.dcard.tw/f/facelift/p/258421838",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "tone-seoul.com",
+          "url": "https://tone-seoul.com/tw/guide/seoul-thermage",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "seyeclinic.com",
+          "url": "https://seyeclinic.com/zh-TW/posts/korea-seoul-gangnam-xerf-vs-thermage-flx-ultherapy-rf-comparison-2026",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "koreanclinic.cceeo.com",
+          "url": "https://koreanclinic.cceeo.com/treatments/3583",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "oganamagokworld.com",
+          "url": "https://www.oganamagokworld.com/zh-TW/blog/hanguo-fenghuang-dianbo-feiyong-gonglue",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "seoul.cceeo.com",
+          "url": "https://seoul.cceeo.com/zh-tw/zhenshishili/445/",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "doctormellow-ss.com",
+          "url": "http://doctormellow-ss.com/tw/blog/%E9%9F%93%E5%9C%8Bthermage-flx%E9%B3%B3%E5%87%B0%E9%9B%BB%E6%B3%A2%E5%AE%8C%E6%95%B4%E6%94%BB%E7%95%A5%E4%B8%80%E6%AC%A1%E5%BC%84%E6%87%82%E8%B2%BB%E7%94%A8%E3%83%BB%E6%95%88%E6%9E%9C%E3%83%BB/",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "creatrip.com",
+          "url": "https://creatrip.com/zh-TW/blog/14909/%E9%9F%93%E5%9C%8B%E3%80%8C%E9%B3%B3%E5%87%B0%E9%9B%BB%E6%B3%A2%E3%80%8D%E5%83%B9%E5%B7%AE",
+          "kind": "media"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 4,
+        "host": "seyeclinic.com",
+        "url": "https://seyeclinic.com/zh-TW/posts/korea-seoul-gangnam-xerf-vs-thermage-flx-ultherapy-rf-comparison-2026",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 2,
+      "clinicCount": 2
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "울쎄라",
+      "query": "韓國 音波拉皮 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "duckduckgo.com",
+          "url": "https://duckduckgo.com/y.js?ad_domain=niceclinic.com.tw&ad_provider=bingv7aa&ad_type=txad&click_metadata=lBeSA0sZEuDyLQCzZrFFQSK3VgPYvsiOulSSx2JeqSKwop6N980WS38o4oF_ha7AFN8rCi5HL3U53bE1OzCTMA2e7ERMrttiDOfcT__9WS4s2XSMcddR4S_TcwKSgXVMQJniKHVr8XOYywkS3Ve_mc1lidp%2D3XozdgF2IgA0%2DE0.Tt80hbgNdUUeXG9TGx94_w&rut=4f9bafb4d3a990dfab9bf66445988b5062a91e20975f37ac5eb08630a0fd3d90&u3=https%3A%2F%2Fwww.bing.com%2Faclick%3Fld%3De8cJwPOb514eOWFb_2mmZ4kTVUCUxpa1zQqEBTrQx3LrBZgm53EXZW1kLcLyt6eqQOMh2qzsyMit%2D7D5Z7NVibkNer1gaM1297wJc36%2DvR5ZgIcQQPl7kPkKawoEek71EA%2DlpvSHehy0rUXY3IJEnyEqWG2iYtb7YYX3zht3DToYeACuISkH5Vt19aU_ZfXWIwbnvCZU%2DteCoOpDmuWLESDdHpI9g%26u%3DaHR0cHMlM2ElMmYlMmZ3d3cubmljZWNsaW5pYy5jb20udHclMmZ6aF90dyUyZnNlcnZpY2VzJTJmY29udGVudCUyZjM4JTJmRG91Ymxld2F2ZSUzZm1zY2xraWQlM2QzYTBlOTgyOTI5N2UxNGNhYjBhY2YyYWU5M2RlOTU0YyUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZDE1JWU5JTliJWJiJWU2JWIzJWEyJWU2JThiJTg5JWU3JTlhJWFlJTI2dXRtX3Rlcm0lM2QlZTklOWIlYmIlZTYlYjMlYTIlZTYlOGIlODklZTclOWElYWUlZTYlYWYlOTQlZTglYmMlODMlMjZ1dG1fY29udGVudCUzZCVlNiU4YiU4OSVlNyU5YSVhZV8lZTglODclODklZTklODMlYTg%26rlid%3D3a0e9829297e14cab0acf2ae93de954c&vqd=4-265773338162623856569466272586009774712&iurl=%7B1%7DIG%3D3AD53B5277D74771987BF8999E29E1FE%26CID%3D0700E4BE903B69502F4DF30291AC685E%26ID%3DDevEx%2C5035.1",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "oganamagokworld.com",
+          "url": "https://www.oganamagokworld.com/zh-TW/blog/hanguo-yinbo-lati-gonglue",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "siaclinic.net",
+          "url": "https://siaclinic.net/blog/2635/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "seyeclinic.com",
+          "url": "https://seyeclinic.com/zh-TW/posts/onda-ultherapy-combo-effect-seoul-gangnam",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "dcard.tw",
+          "url": "https://www.dcard.tw/f/facelift/p/261967853",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "delphicclinic.com",
+          "url": "https://www.delphicclinic.com/zh-TW/blog/ultherapy-in-korea-77",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "koreanclinic.cceeo.com",
+          "url": "https://koreanclinic.cceeo.com/treatments/3818",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "beautsgo.cceeo.com",
+          "url": "https://beautsgo.cceeo.com/news/ulthera-korea-clinic-guide-2026/",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 3,
+        "host": "siaclinic.net",
+        "url": "https://siaclinic.net/blog/2635/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 1,
+      "clinicCount": 4
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "온다",
+      "query": "韓國 ONDA 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "seyeclinic.com",
+          "url": "https://seyeclinic.com/zh-TW/posts/onda-ultherapy-combo-effect-seoul-gangnam",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 2,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/zh-tw/%E8%BA%AB%E9%AB%94onda-%E6%8E%A8%E8%96%A6-%E9%A6%96%E7%88%BE-%E9%9F%93%E5%9C%8B/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "verym.net",
+          "url": "https://www.verym.net/cosmetic/1427.html",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "dcard.tw",
+          "url": "https://www.dcard.tw/@aive_dr_jun/post/260290151",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "flytokorea.cceeo.com",
+          "url": "https://flytokorea.cceeo.com/korea-travel-guide/2488/",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "creatrip.com",
+          "url": "https://creatrip.com/zh-TW/blog/14867",
+          "kind": "media"
+        },
+        {
+          "rank": 7,
+          "host": "beauty.cceeo.com",
+          "url": "https://beauty.cceeo.com/by-area/889.html",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "abroad.cceeo.com",
+          "url": "https://abroad.cceeo.com/korean-ultrasound/2132.html",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "delphicclinic.com",
+          "url": "https://www.delphicclinic.com/zh-TW/blog/onda-lifting-in-korea-first-time-guide",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 1,
+        "host": "seyeclinic.com",
+        "url": "https://seyeclinic.com/zh-TW/posts/onda-ultherapy-combo-effect-seoul-gangnam",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 2,
+      "clinicCount": 3
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "포텐자",
+      "query": "韓國 波坦莎 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "tone-seoul.com",
+          "url": "https://tone-seoul.com/tw/procedures/461-%E9%BB%83%E9%87%91%E5%BE%AE%E9%87%9D%EF%BC%88Potenza%EF%BC%89",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "xn--8oup8f82hptukgms0k.com",
+          "url": "https://www.明洞醫美診所.com/音波拉提/Potenza-博坦薩微針電波-明洞-首爾",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "dcard.tw",
+          "url": "https://www.dcard.tw/f/korea_travel/p/258970339",
+          "kind": "media"
+        },
+        {
+          "rank": 4,
+          "host": "osongspringdayclinic.com",
+          "url": "https://osongspringdayclinic.com/best-aesthetic-clinics-in-korean/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "clinickorea.com",
+          "url": "https://clinickorea.com/tw",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "imreadygo.com",
+          "url": "https://imreadygo.com/234143/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "creatrip.com",
+          "url": "https://creatrip.com/zh-TW/blog/14547",
+          "kind": "media"
+        },
+        {
+          "rank": 8,
+          "host": "uptogo.com.tw",
+          "url": "https://uptogo.com.tw/%E5%81%A5%E5%BA%B7/%E9%86%AB%E5%AD%B8%E7%BE%8E%E5%AE%B9/%E9%9F%93%E5%9C%8B%E9%86%AB%E7%BE%8E%E6%8E%A8%E8%96%A6%E5%93%AA%E5%AE%B6%EF%BC%9F/",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "the-ginza-clinic.jp",
+          "url": "https://the-ginza-clinic.jp/zh/menu-zh/dermatology-zh/potenza-zh/",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 4,
+        "host": "osongspringdayclinic.com",
+        "url": "https://osongspringdayclinic.com/best-aesthetic-clinics-in-korean/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 2,
+      "clinicCount": 3
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "쥬베룩",
+      "query": "韓國 Juvelook 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "classkim.com",
+          "url": "https://www.classkim.com/zh/blog/2026-juvelook",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "koreanclinic.cceeo.com",
+          "url": "https://koreanclinic.cceeo.com/treatments/2490",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "gl.redi-global.com",
+          "url": "https://gl.redi-global.com/tw",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "skinpro.cceeo.com",
+          "url": "https://skinpro.cceeo.com/korean-dermatology-clinic/gangnam-nohd-clinic-juvelook-curejet-potentza-price-review-2026/",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "creatrip.com",
+          "url": "https://creatrip.com/zh-TW/blog/14923",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "myeongdongskinclinicreberry.com",
+          "url": "https://myeongdongskinclinicreberry.com/%E6%9C%B1%E5%BE%AE%E9%9C%B2-%E9%9F%93%E5%9C%8B/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "seyeclinic.com",
+          "url": "https://seyeclinic.com/zh-TW/posts/skin-booster-rejuran-juvelook-gangnam-seye",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "kbeautylabhk.online",
+          "url": "https://www.kbeautylabhk.online/2026/04/2026-juvelook2026.html",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/zh-tw/juvelook/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 10,
+          "host": "myeongdongaestheticclinic.com",
+          "url": "https://www.myeongdongaestheticclinic.com/%E5%96%AC%E9%9B%85%E9%9C%B2-%E6%98%8E%E6%B4%9E-%E9%A6%96%E7%88%BE",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 2,
+        "host": "koreanclinic.cceeo.com",
+        "url": "https://koreanclinic.cceeo.com/treatments/2490",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 1,
+      "clinicCount": 5
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "슈링크",
+      "query": "韓國 海芙音波 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "nuyoublog.com",
+          "url": "https://nuyoublog.com/ultraformer-mpt-hifu-guide/",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "skincake.tw",
+          "url": "https://skincake.tw/blog/%E9%9F%93%E5%9C%8B%E9%86%AB%E7%BE%8E-shinebeam-%E6%B5%B7%E8%8A%99%E9%9F%B3%E6%B3%A2",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "classyshifu.com",
+          "url": "https://www.classyshifu.com/certification-clinic.php",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "creatrip.com",
+          "url": "https://creatrip.com/zh-TW/blog/14381",
+          "kind": "media"
+        },
+        {
+          "rank": 5,
+          "host": "dcard.tw",
+          "url": "https://www.dcard.tw/f/facelift/p/257861157",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "yue-zhen.com",
+          "url": "https://yue-zhen.com/ultraformer-guide/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "koreanclinic.cceeo.com",
+          "url": "https://koreanclinic.cceeo.com/treatments/3818",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "brightclinic.com.tw",
+          "url": "https://brightclinic.com.tw/case-share/%E6%B5%B7%E8%8A%99%E9%9F%B3%E6%B3%A2%E7%AC%AC%E4%B8%89%E4%BB%A3hifu-case-2025-09-05/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "sy-bac.com.tw",
+          "url": "https://sy-bac.com.tw/%E9%86%AB%E5%AD%B8%E7%BE%8E%E5%AE%B9/%E6%8B%89%E6%8F%90/%E6%B5%B7%E8%8A%99%E9%9F%B3%E6%B3%A2/",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 7,
+        "host": "koreanclinic.cceeo.com",
+        "url": "https://koreanclinic.cceeo.com/treatments/3818",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 2,
+      "clinicCount": 2
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "스컬트라",
+      "query": "韓國 舒顏萃 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "duckduckgo.com",
+          "url": "https://duckduckgo.com/y.js?ad_domain=lexcellence.com.tw&ad_provider=bingv7aa&ad_type=txad&click_metadata=La2LekGBTadrBhZj9JQck_2heHOCxojqasLcOvwS8tZXs50AUe5EF8reAJBSAXt6UTZC4PGWIqDgCgs%2DJBky772PKdwxIjnQVDg8UG358eJ3U4B27PPXuLNenY3n7bOfeoOH8xCQihtu7hHstVoLQC7nb2SMXatBvSFlPCv9Two.rvyzpAPla81MRJ3qoeidbA&rut=a462b94a3ec454e1f789504c9887fe843fe0b05da9925e07c201a8578626ae7c&u3=https%3A%2F%2Fwww.bing.com%2Faclick%3Fld%3De82TMAeKfT6Z0dEO0gGBHyOTVUCUyVRkoo9zeuP9vEAeVC63xpxU1tF8nF25In0WV%2D8UiB4uzHQ2beaeqjiVKhgOc2ChTRj4jgptqSnwFkHVWx4bydKUrvuvmGIiQL6XRRtqJV2T6KM%2DxbcZkz3AmqhrUMIGV19u%2DrTrnQx4p_AnpxgFDgoVPX6BcQXIqos2_zxymvvody7BOy2VMJE_28A9JtUZc%26u%3DaHR0cHMlM2ElMmYlMmZ3d3cubGV4Y2VsbGVuY2UuY29tLnR3JTJmJTNmbXNjbGtpZCUzZDJkYTU5ZTY4NWJkNTFjYTU5NjkzZjRlZmUxMWE3NjNi%26rlid%3D2da59e685bd51ca59693f4efe11a763b&vqd=4-296287369348819097710481895641519350336&iurl=%7B1%7DIG%3DB36CFCC09C7044A982ED0785CB8C5A1F%26CID%3D0E2980F7B66463401A7E974BB7F36202%26ID%3DDevEx%2C5035.1",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "odeclinicseoul.com",
+          "url": "https://odeclinicseoul.com/zh-Hant/column/sculptra-before-and-after-photo-price-cost-zh-hant",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "drbaquo.com",
+          "url": "https://drbaquo.com/zh-tw/sculptra-korea-2/",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/zh-tw/%E8%88%92%E9%A1%8F%E8%90%83-%E6%8E%A8%E8%96%A6-%E6%B1%9F%E5%8D%97-%E9%A6%96%E7%88%BE-%E9%9F%93%E5%9C%8B/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "beautykoreanews.com",
+          "url": "https://beautykoreanews.com/sculptra-anti-aging-guide/",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "xn--8ouw96ae5jimkd6ip2l.com",
+          "url": "https://www.首爾醫美診所.com/皮膚科-美容醫學-服務項目/sculptra-舒顏萃-首爾-江南",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "uhcell.com",
+          "url": "https://uhcell.com/tw/procedure/sculptra/",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "myeongdongaestheticclinic.com",
+          "url": "https://www.myeongdongaestheticclinic.com/%E8%88%92%E9%A1%8F%E8%90%83-%E6%98%8E%E6%B4%9E-%E9%A6%96%E7%88%BE",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "seoulskinclinicforforeigners.com",
+          "url": "https://www.seoulskinclinicforforeigners.com/%E9%9F%93%E5%9C%8B%E9%86%AB%E7%BE%8E/%E8%88%92%E9%A1%8F%E8%90%83-%E6%B1%9F%E5%8D%97-%E9%A6%96%E7%88%BE",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 10,
+          "host": "xn--70xq8g32c38h5wc9u0bmvm.com",
+          "url": "https://www.首爾醫美皮膚科.com/雷射美膚-/膠原蛋白增生-/舒顏萃-首爾-韓國-sculptra",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 2,
+        "host": "odeclinicseoul.com",
+        "url": "https://odeclinicseoul.com/zh-Hant/column/sculptra-before-and-after-photo-price-cost-zh-hant",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 4
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "피코슈어",
+      "query": "韓國 皮秒雷射 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "duckduckgo.com",
+          "url": "https://duckduckgo.com/y.js?ad_domain=jing%2Dchi.com.tw&ad_provider=bingv7aa&ad_type=txad&click_metadata=%2DRgxkvFIKlG1cPusVR%2Dfvh%2DWs_kuWi%2D3EYxdn949qmiDWlEE6BcihKh67Bf73QRnNoUM9E7vEKGZEVjYk7rgqoGFNx%2Df9N80u8iekg%2D29Hhx2uNYv_H7XuTvNG40uuDjHgh4ahH_mXR8ZGqygrQTgkNzIGqeueSAf0kw7e2xM70.J8GKA8y2mQFnH2lqitSVdA&rut=a8e259c61fa3ec96a104580e17cfc961f48d0bc509ffdc724d9369c396b99373&u3=https%3A%2F%2Fwww.bing.com%2Faclick%3Fld%3De8owaeP_y0beky27KHTt1hyzVUCUzE83qvCBMLxNk6mudu84pJwm8Dk%2DtujBSf3vo7A5B1_qf8jPf_U6iB23ecblD7VRcERtiCdTeGEUOnI8KMgjAjz0UQnwpbSKlpbp7NVrBOtdzEz65_EbcsbVqwBZ%2DVnp6qJzDT4E660I1sPRGyM_wJf2PYrGyekTN_5ZALSMZPNeANehQDX6sA7XUneuo3V20%26u%3DaHR0cHMlM2ElMmYlMmZ3d3cuamluZy1jaGkuY29tLnR3JTJmcHJvZHVjdCUyZnBpY293YXklM2Z1dG1fc291cmNlJTNkeWFob28lMjZ1dG1fbWVkaXVtJTNkc2VhcmNoJTI2dXRtX2NhbXBhaWduJTNkcGljb3dheSUyNm1zY2xraWQlM2Q0ZjIxMjllNGYzNWYxN2ViZjFjYTQzNjM0OTg1MGRmMg%26rlid%3D4f2129e4f35f17ebf1ca436349850df2&vqd=4-161009178087191523558356847100000073757&iurl=%7B1%7DIG%3DEE23466B508B448F9BCAF0B91FE02E60%26CID%3D25CDD7690C2F6C7715F3C0D50DCB6D00%26ID%3DDevEx%2C5035.1",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "oganamagokworld.com",
+          "url": "https://www.oganamagokworld.com/zh-TW/blog/hanguo-pimiao-leishe-zhinan",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "kkday.com",
+          "url": "https://www.kkday.com/zh-hk/blog/115710/korea-pico-laser-analysis",
+          "kind": "media"
+        },
+        {
+          "rank": 4,
+          "host": "seyeclinic.com",
+          "url": "https://seyeclinic.com/zh-TW/posts/picoplus-picosurepro-fraxel-price-seoul-gangnam",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "siaclinic.net",
+          "url": "https://siaclinic.net/blog/2633/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "blog.yeoshin.co.kr",
+          "url": "https://blog.yeoshin.co.kr/zh/korea-freckle-removal-guide/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "myeongdongaestheticclinic.com",
+          "url": "https://www.myeongdongaestheticclinic.com/%E7%9A%AE%E7%A7%92%E9%9B%B7%E5%B0%84-%E6%98%8E%E6%B4%9E-%E9%A6%96%E7%88%BE",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "classkim.com",
+          "url": "https://www.classkim.com/zh/blog/picosure",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/zh-tw/%E7%9A%AE%E7%A7%92%E9%9B%B7%E5%B0%84-%E6%8E%A8%E8%96%A6-%E9%A6%96%E7%88%BE-%E9%9F%93%E5%9C%8B/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 10,
+          "host": "linkpskorea.tw",
+          "url": "https://www.linkpskorea.tw/blog/korean-skin-laser-treatments-pico-hifu-thermage-guide/",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 4,
+        "host": "seyeclinic.com",
+        "url": "https://seyeclinic.com/zh-TW/posts/picoplus-picosurepro-fraxel-price-seoul-gangnam",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 1,
+      "clinicCount": 5
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "LDM",
+      "query": "韓國 LDM 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "xn--pss11lkzcmv8bkfls0k.com",
+          "url": "https://www.弘大醫美診所.com/雷射光療/韓國-ldm-水雕雷射-弘大-首爾",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "delphicclinic.com",
+          "url": "https://www.delphicclinic.com/zh-TW/treatments/ldm",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "skincake.tw",
+          "url": "https://skincake.tw/blog/%E3%80%90%E9%9F%93%E5%9C%8B%E9%86%AB%E7%BE%8E%E5%BF%83%E5%BE%97%E3%80%91%E6%9C%AC%E6%80%9D%E9%86%AB%E9%99%A2%E5%AA%9A%E5%BF%85%E6%8F%90-900-%E7%99%BC-ldm-%E9%AB%94%E9%A9%97%E5%88%86%E4%BA%AB",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "sundaymore.com",
+          "url": "https://www.sundaymore.com/skin-care/%E9%9F%93%E5%9C%8B%E9%86%AB%E7%BE%8E%E6%8E%A8%E8%96%A6%E9%A0%85%E7%9B%AE-%E5%83%B9%E6%A0%BC-%E5%BC%98%E5%A4%A7-1364982/",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "twhk.idclinic.co.kr",
+          "url": "https://twhk.idclinic.co.kr/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "elle.com.hk",
+          "url": "https://www.elle.com.hk/beauty_and_health/best-korea-skincare-treatment-updates",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "myeongdongaestheticclinic.com",
+          "url": "https://www.myeongdongaestheticclinic.com/ldm-%E6%B0%B4%E6%BB%B4%E6%8F%90%E5%8D%87-%E6%98%8E%E6%B4%9E-%E9%A6%96%E7%88%BE",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "seocho.uhcell.com",
+          "url": "https://seocho.uhcell.com/tw/procedure/ldm/",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "koreaplastic.surgery",
+          "url": "https://www.koreaplastic.surgery/zh-tw/non-surgical-procedures-seoul/ldm-treatment",
+          "kind": "other"
+        },
+        {
+          "rank": 10,
+          "host": "kimbeauty.com.tw",
+          "url": "https://www.kimbeauty.com.tw/beauty-articles/kimbeauty/4875/",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 2,
+        "host": "delphicclinic.com",
+        "url": "https://www.delphicclinic.com/zh-TW/treatments/ldm",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 3
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "인모드",
+      "query": "韓國 InMode 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/zh-tw/%E8%BA%AB%E9%AB%94inmode-%E6%8E%A8%E8%96%A6-%E6%98%8E%E6%B4%9E-%E9%A6%96%E7%88%BE-%E9%9F%93%E5%9C%8B/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 2,
+          "host": "creatrip.com",
+          "url": "https://creatrip.com/zh-TW/blog/14816",
+          "kind": "media"
+        },
+        {
+          "rank": 3,
+          "host": "classkim.com",
+          "url": "https://www.classkim.com/zh/blog/60inmode2026",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "drxmedgroup.com.tw",
+          "url": "https://drxmedgroup.com.tw/laser-phototherapy/lifting/Inmode",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "seyeclinic.com",
+          "url": "https://seyeclinic.com/zh-TW/posts/inmode-vs-titanium-lifting-seoul-gangnam",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "delphicclinic.com",
+          "url": "https://www.delphicclinic.com/zh-TW/blog/inmode-in-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "blog.yeoshin.co.kr",
+          "url": "https://blog.yeoshin.co.kr/zh/%E9%9F%93%E5%9C%8B2026%E9%86%AB%E7%BE%8E%E6%8C%87%E5%8D%97/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "zh.beautsgo.com",
+          "url": "https://zh.beautsgo.com/doctor/inmode-202.html",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 1,
+        "host": "thereberryclinic.com",
+        "url": "https://thereberryclinic.com/zh-tw/%E8%BA%AB%E9%AB%94inmode-%E6%8E%A8%E8%96%A6-%E6%98%8E%E6%B4%9E-%E9%A6%96%E7%88%BE-%E9%9F%93%E5%9C%8B/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 1,
+      "clinicCount": 4
+    },
+    {
+      "market": "TW",
+      "marketLabel": "대만",
+      "treatment": "볼뉴머",
+      "query": "韓國 Volnewmer 診所",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/zh-tw/volnewmer%E9%9B%BB%E6%B3%A2-%E6%8E%A8%E8%96%A6-%E6%B1%9F%E5%8D%97-%E9%A6%96%E7%88%BE-%E9%9F%93%E5%9C%8B/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 2,
+          "host": "linkpskorea.tw",
+          "url": "https://www.linkpskorea.tw/laser-energy/volnewmer.html",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "xn--6krw06abthk3tkgms0k.com",
+          "url": "https://www.江南醫美診所.com/皮膚科-療程項目/volnewmer-海芙電波-江南-首爾",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "xn--8ouw96ae5jimkd6ip2l.com",
+          "url": "https://www.首爾醫美診所.com/皮膚科-美容醫學-服務項目/volnewmer-韓版熱瑪吉-首爾-江南",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "creatrip.com",
+          "url": "https://creatrip.com/zh-TW/landing-area/3532",
+          "kind": "media"
+        },
+        {
+          "rank": 6,
+          "host": "twhk.idclinic.co.kr",
+          "url": "https://twhk.idclinic.co.kr/procedures/laser-lifting/volnewmer",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "gangnamskinclinicreberry.com",
+          "url": "https://gangnamskinclinicreberry.com/%E6%B5%B7%E8%8A%99%E6%8B%89%E6%8F%90-%E9%9F%93%E5%9C%8B/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "blog.yeoshin.co.kr",
+          "url": "https://blog.yeoshin.co.kr/zh/volnewmer-monopolar-rf-korea-guide/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "xn--pss11lkzcmv8bkfls0k.com",
+          "url": "https://www.弘大醫美診所.com/緊緻拉提/韓國-volnewmer-海芙電波拉提-弘大-首爾",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 1,
+        "host": "thereberryclinic.com",
+        "url": "https://thereberryclinic.com/zh-tw/volnewmer%E9%9B%BB%E6%B3%A2-%E6%8E%A8%E8%96%A6-%E6%B1%9F%E5%8D%97-%E9%A6%96%E7%88%BE-%E9%9F%93%E5%9C%8B/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 1,
+      "clinicCount": 4
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "리쥬란",
+      "query": "rejuran seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "relieveclinicseoul.com",
+          "url": "https://relieveclinicseoul.com/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 2,
+          "host": "koreabeauty.guide",
+          "url": "https://koreabeauty.guide/rejuran-healer-korea/",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "tone-seoul.com",
+          "url": "https://tone-seoul.com/en/guide/seoul-rejuran",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "myeongdongbeautyclinic.com",
+          "url": "https://www.myeongdongbeautyclinic.com/cosmetic-dermatology-treatments/rejuran-healer-seoul",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "aiveclinicseoul.com",
+          "url": "https://aiveclinicseoul.com/rejuran-healer-korea-complete-guide-international-patients/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "clinicseoul.net",
+          "url": "https://www.clinicseoul.net/rejuran-korea/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/rejuran-healer-seoul-korea/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "seoulnonsurgicalclinic.com",
+          "url": "https://www.seoulnonsurgicalclinic.com/best-skin-booster-procddues/rejuran-healer-seoul",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "dermatologistsgangnam.com",
+          "url": "https://www.dermatologistsgangnam.com/rejuran-healer-seoul",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 10,
+          "host": "jivaka.kr",
+          "url": "https://jivaka.kr/blogs/blog/5-best-rejuran-healer-clinics-in-seoul-for-english-speaking-patients",
+          "kind": "media"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 1,
+        "host": "relieveclinicseoul.com",
+        "url": "https://relieveclinicseoul.com/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 1,
+      "clinicCount": 7
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "써마지",
+      "query": "thermage seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "gangnamwomenshealth.com",
+          "url": "https://www.gangnamwomenshealth.com/top-clinics-in-korea/best-thermage-clinics-in-seoul",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "seoulorthoclinic.com",
+          "url": "https://www.seoulorthoclinic.com/medical-tourism-korea/best-thermage-clinics-in-seoul",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "gangnamskinclinic.com",
+          "url": "https://www.gangnamskinclinic.com/thermage-seoul",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "thermagekorea.com",
+          "url": "https://thermagekorea.com/",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "damiseoulskinclinic.com",
+          "url": "https://damiseoulskinclinic.com/laser-center/thermage",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "seoullaserskinclinic.com",
+          "url": "https://www.seoullaserskinclinic.com/thermage",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "gangnamlasik.com",
+          "url": "https://www.gangnamlasik.com/blog/best-thermage-clinics-in-seoul",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "seoulskinclinic.directory",
+          "url": "https://www.seoulskinclinic.directory/treatments-guide/thermage",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "odeclinicseoul.com",
+          "url": "https://odeclinicseoul.com/en/procedures/thermage",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 2,
+        "host": "seoulorthoclinic.com",
+        "url": "https://www.seoulorthoclinic.com/medical-tourism-korea/best-thermage-clinics-in-seoul",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 6
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "울쎄라",
+      "query": "ultherapy seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "mybestseoul.com",
+          "url": "https://mybestseoul.com/ultherapy/",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "koreaclinicguide.com",
+          "url": "https://www.koreaclinicguide.com/blog/ultherapy-in-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "damiseoulskinclinic.com",
+          "url": "https://damiseoulskinclinic.com/laser-center/ultherapy",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "whatclinic.com",
+          "url": "https://www.whatclinic.com/beauty-clinics/south-korea/seoul/ultherapy",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "koreabeauty.guide",
+          "url": "https://koreabeauty.guide/ultherapy-korea/",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "gangnamskincareclinic.com",
+          "url": "https://www.gangnamskincareclinic.com/ultherapy-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "enyaanclinic.com",
+          "url": "https://enyaanclinic.com/ultherapy/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "koreanclinicreview.com",
+          "url": "https://koreanclinicreview.com/ultherapy-seoul/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "hifuseoul.com",
+          "url": "https://hifuseoul.com/procedures/ultherapy-seoul/",
+          "kind": "other"
+        },
+        {
+          "rank": 10,
+          "host": "seoulorthoclinic.com",
+          "url": "https://www.seoulorthoclinic.com/medical-tourism-korea/best-ultherapy-clinics-in-seoul",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 2,
+        "host": "koreaclinicguide.com",
+        "url": "https://www.koreaclinicguide.com/blog/ultherapy-in-korea",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 7
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "온다",
+      "query": "onda lifting seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "gangnamskincareclinic.com",
+          "url": "https://www.gangnamskincareclinic.com/onda-lifting-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 2,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/onda-lifting/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "forenaclinic.com",
+          "url": "https://www.forenaclinic.com/post/onda-lifting-seoul-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "lijinclinic.com",
+          "url": "https://www.lijinclinic.com/lifting/onda/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "skinclinicseoul.com",
+          "url": "https://www.skinclinicseoul.com/global-onda-lifting-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "seoulmedicalspa.com",
+          "url": "https://www.seoulmedicalspa.com/lifting/onda-lifting",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "pleasure-ps.com",
+          "url": "https://pleasure-ps.com/",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "everskinclinic7.wordpress.com",
+          "url": "https://everskinclinic7.wordpress.com/2026/08/21/onda-lifting-in-seoul-can-it-make-your-face-look-slimmer-what-to-check-before-treating-cheek-and-double-chin-fat/",
+          "kind": "media"
+        },
+        {
+          "rank": 9,
+          "host": "myeongdongskin.com",
+          "url": "https://www.myeongdongskin.com/laser-global/onda-lifting-korea",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 1,
+        "host": "gangnamskincareclinic.com",
+        "url": "https://www.gangnamskincareclinic.com/onda-lifting-korea",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 1,
+      "clinicCount": 5
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "포텐자",
+      "query": "potenza seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "myeongdongskincare.com",
+          "url": "https://www.myeongdongskincare.com/potenza-seoul",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "forenaclinic.com",
+          "url": "https://www.forenaclinic.com/post/potenza-rf-microneedling-in-seoul-forena-clinic-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "tuneclinic-global.com",
+          "url": "https://tuneclinic-global.com/potenza.html",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "enyaanclinic.com",
+          "url": "https://enyaanclinic.com/potenza/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "gangnamskincareclinic.com",
+          "url": "https://www.gangnamskincareclinic.com/picosure-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "eggclinicseoul.com",
+          "url": "https://eggclinicseoul.com/products/31247",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "en.brightskinseoul.com",
+          "url": "https://en.brightskinseoul.com/potenza",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "koreaclinicguide.com",
+          "url": "https://www.koreaclinicguide.com/blog/potenza-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "relieveclinicseoul.com",
+          "url": "https://relieveclinicseoul.com/potenza-international-patients/",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 2,
+        "host": "forenaclinic.com",
+        "url": "https://www.forenaclinic.com/post/potenza-rf-microneedling-in-seoul-forena-clinic-korea",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 7
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "쥬베룩",
+      "query": "juvelook seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "juvelookkorea.com",
+          "url": "https://juvelookkorea.com/",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "seoullaserskinclinic.com",
+          "url": "https://www.seoullaserskinclinic.com/juvelook",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "skinclinicseoul.com",
+          "url": "https://www.skinclinicseoul.com/juvelook",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "damiseoulskinclinic.com",
+          "url": "https://damiseoulskinclinic.com/injectable-treatments/juvelook",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "relieveclinicseoul.com",
+          "url": "https://relieveclinicseoul.com/juvelook-skin-booster-before-after-from-seoul-clinics/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "cheongdamdermatologyclinic.com",
+          "url": "https://www.cheongdamdermatologyclinic.com/skin-care-services-seoul/juvelook",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "seoulskin.health",
+          "url": "https://www.seoulskin.health/best-treatments/juvelook",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "jfeeldermatology.com",
+          "url": "http://www.jfeeldermatology.com/index.php?idx=c631180dc85752/c6311815885798/c63118173857a1",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "lijinclinic.com",
+          "url": "https://www.lijinclinic.com/contouring/juvelook/",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 2,
+        "host": "seoullaserskinclinic.com",
+        "url": "https://www.seoullaserskinclinic.com/juvelook",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 7
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "슈링크",
+      "query": "shurink seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "hongdaebeautyclinic.com",
+          "url": "https://www.hongdaebeautyclinic.com/skin-treatments/shurink",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 2,
+          "host": "koreabeauty.guide",
+          "url": "https://koreabeauty.guide/shurink-korea/",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "gangnam.health",
+          "url": "https://www.gangnam.health/dermatology/treatments-korea/shurink",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "koreaclinicguide.com",
+          "url": "https://www.koreaclinicguide.com/blog/shurink-lifting-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "tone-seoul.com",
+          "url": "https://tone-seoul.com/en/guide/seoul-shurink-universe",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "hongdaeskinclinic.com",
+          "url": "https://www.hongdaeskinclinic.com/non-surgical-facelift-seoul/shurink-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "gangnammedspa.com",
+          "url": "https://www.gangnammedspa.com/seoul-skin-clinic-services/shurink",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "hongdaeskincare.com",
+          "url": "https://www.hongdaeskincare.com/shurink",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 1,
+        "host": "hongdaebeautyclinic.com",
+        "url": "https://www.hongdaebeautyclinic.com/skin-treatments/shurink",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 3
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "스컬트라",
+      "query": "sculptra seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "koreaclinicguide.com",
+          "url": "https://www.koreaclinicguide.com/blog/sculptra-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 2,
+          "host": "koreabeauty.guide",
+          "url": "https://koreabeauty.guide/sculptra-korea/",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "damiseoulskinclinic.com",
+          "url": "https://damiseoulskinclinic.com/injectable-treatments/sculptra",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "sculptraseoul.com",
+          "url": "https://sculptraseoul.com/seoul-sculptra-clinic-guide/",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "sculptrakorea.com",
+          "url": "https://sculptrakorea.com/sculptra-seoul/",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "thermageflxseoul.com",
+          "url": "https://thermageflxseoul.com/sculptra/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "koreabeautyjournal.com",
+          "url": "https://koreabeautyjournal.com/best-sculptra-clinics-seoul/",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "stemcelltherapyseoul.com",
+          "url": "https://stemcelltherapyseoul.com/injectable-boosters/sculptra/",
+          "kind": "other"
+        },
+        {
+          "rank": 9,
+          "host": "gangnamskincareclinic.com",
+          "url": "https://www.gangnamskincareclinic.com/Sculptra-korea",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 1,
+        "host": "koreaclinicguide.com",
+        "url": "https://www.koreaclinicguide.com/blog/sculptra-korea",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 3
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "피코슈어",
+      "query": "picosure seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "seoulskin.health",
+          "url": "https://www.seoulskin.health/best-treatments/picosure",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "damiseoulskinclinic.com",
+          "url": "https://damiseoulskinclinic.com/laser-center/picosure-laser",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "koreabeauty.guide",
+          "url": "https://koreabeauty.guide/picosure-laser-korea-4/",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "gangnammedspa.com",
+          "url": "https://www.gangnammedspa.com/seoul-skin-clinic-services/picosure",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "forenaclinic.com",
+          "url": "https://www.forenaclinic.com/post/picosure-for-pigmentation-skin-clinic-in-seoul",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "seoulnonsurgicalclinic.com",
+          "url": "https://www.seoulnonsurgicalclinic.com/lasers-devices/picosure-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "seoullaserskinclinic.com",
+          "url": "https://www.seoullaserskinclinic.com/picosure",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "apgujeongdermatologyclinic.com",
+          "url": "https://www.apgujeongdermatologyclinic.com/skin-treatments-seoul/picosure-laser",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "gangnamskincareclinic.com",
+          "url": "https://www.gangnamskincareclinic.com/picosure",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 10,
+          "host": "myeongdong-skinclinic.com",
+          "url": "https://myeongdong-skinclinic.com/picosure-myeongdong-seoul-korea/",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 2,
+        "host": "damiseoulskinclinic.com",
+        "url": "https://damiseoulskinclinic.com/laser-center/picosure-laser",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 7
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "LDM",
+      "query": "ldm treatment seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "gangnammedspa.com",
+          "url": "https://www.gangnammedspa.com/seoul-skin-clinic-services/ldm-treatment",
+          "kind": "other"
+        },
+        {
+          "rank": 2,
+          "host": "seoulskin.health",
+          "url": "https://www.seoulskin.health/best-treatments/ldm",
+          "kind": "other"
+        },
+        {
+          "rank": 3,
+          "host": "enupic.com",
+          "url": "https://enupic.com/ldm-treatment-in-korea/",
+          "kind": "other"
+        },
+        {
+          "rank": 4,
+          "host": "hongdaebeautyclinic.com",
+          "url": "https://www.hongdaebeautyclinic.com/skin-treatments/ldm-treatment",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 5,
+          "host": "seoulskinclinicforforeigners.com",
+          "url": "https://www.seoulskinclinicforforeigners.com/gangnam-skin-rejuvenarion/ldm-treatment",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "damiseoulskinclinic.com",
+          "url": "https://damiseoulskinclinic.com/seoul-yeouido-dermatology-clinic/ldm-treatment",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "rappoel-clinic.com",
+          "url": "https://rappoel-clinic.com/en/ldm-ultrasound-skin-repair-seoul-rappoel-en/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "forenaclinic.com",
+          "url": "https://www.forenaclinic.com/post/ldm-treatment-seoul",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "eng.eclatde.com",
+          "url": "https://eng.eclatde.com/content/ldm_lifting",
+          "kind": "other"
+        },
+        {
+          "rank": 10,
+          "host": "koreaplastic.surgery",
+          "url": "https://www.koreaplastic.surgery/non-surgical-procedures-seoul/ldm-treatment",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 4,
+        "host": "hongdaebeautyclinic.com",
+        "url": "https://www.hongdaebeautyclinic.com/skin-treatments/ldm-treatment",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 5
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "인모드",
+      "query": "inmode seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "dermatologistsgangnam.com",
+          "url": "https://www.dermatologistsgangnam.com/inmode-seoul",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 2,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/body-inmodes/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "gangnamskinclinic.com",
+          "url": "https://www.gangnamskinclinic.com/inmode-seoul-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "enupic.com",
+          "url": "https://enupic.com/inmode-in-seoul/",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "myeongdongdermatologyclinic.com",
+          "url": "https://www.myeongdongdermatologyclinic.com/body-treatments/inmode-body-fx-seoul",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 6,
+          "host": "rappoel-clinic.com",
+          "url": "https://rappoel-clinic.com/en/inmode-rf-treatment-seoul-korea-en/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 7,
+          "host": "koreabeauty.guide",
+          "url": "https://koreabeauty.guide/inmode-korea/",
+          "kind": "other"
+        },
+        {
+          "rank": 8,
+          "host": "hongdaeskinclinic.com",
+          "url": "https://www.hongdaeskinclinic.com/non-surgical-facelift-seoul/inmode-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "skinclinicseoul.com",
+          "url": "https://www.skinclinicseoul.com/global-inmode-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 10,
+          "host": "tuneclinic-global.com",
+          "url": "https://tuneclinic-global.com/inmode.html",
+          "kind": "korean-clinic"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 1,
+        "host": "dermatologistsgangnam.com",
+        "url": "https://www.dermatologistsgangnam.com/inmode-seoul",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 8
+    },
+    {
+      "market": "EN",
+      "marketLabel": "영어권",
+      "treatment": "볼뉴머",
+      "query": "volnewmer seoul clinic",
+      "failed": false,
+      "results": [
+        {
+          "rank": 1,
+          "host": "thereberryclinic.com",
+          "url": "https://thereberryclinic.com/volnewmer-for-foreigners-seoul-korea/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 2,
+          "host": "lijinclinic.com",
+          "url": "https://www.lijinclinic.com/lifting/volnewmer/",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 3,
+          "host": "damiseoulskinclinic.com",
+          "url": "https://damiseoulskinclinic.com/laser-center/volnewmer",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 4,
+          "host": "myeongdongmedspa.com",
+          "url": "https://www.myeongdongmedspa.com/laser-global/volnewmer-lifting-korea",
+          "kind": "other"
+        },
+        {
+          "rank": 5,
+          "host": "myeongdongskin.com",
+          "url": "https://www.myeongdongskin.com/laser-global/volnewmer-lifting-korea",
+          "kind": "other"
+        },
+        {
+          "rank": 6,
+          "host": "thermageflxseoul.com",
+          "url": "https://thermageflxseoul.com/volnewmer/",
+          "kind": "other"
+        },
+        {
+          "rank": 7,
+          "host": "seoulskinclinic.directory",
+          "url": "https://www.seoulskinclinic.directory/treatments-guide/volnewmer",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 8,
+          "host": "seoulmedspaskinclinic.com",
+          "url": "https://www.seoulmedspaskinclinic.com/laser-global/volnewmer-lifting-korea",
+          "kind": "korean-clinic"
+        },
+        {
+          "rank": 9,
+          "host": "enupic.com",
+          "url": "https://enupic.com/volnewmer-lifting/",
+          "kind": "other"
+        }
+      ],
+      "weHold": null,
+      "rivalTop": null,
+      "clinicTop": {
+        "rank": 1,
+        "host": "thereberryclinic.com",
+        "url": "https://thereberryclinic.com/volnewmer-for-foreigners-seoul-korea/",
+        "kind": "korean-clinic"
+      },
+      "mediaCount": 0,
+      "clinicCount": 5
+    }
+  ]
+}

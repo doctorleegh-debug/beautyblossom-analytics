@@ -395,6 +395,11 @@
   </div>
 
   <div class="card" style="margin-top:14px">
+    <h3>③-2 그래서 어떻게 노출시키나 — 페이지를 손보는 방법</h3>
+    <div id="page-fix"></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
     <h3>④ 우리만 갖고 있는 것 — 경쟁사가 안 미는데 우리는 검색되는 시술</h3>
     <p class="sub" style="margin-bottom:10px">경쟁이 비어 있는 자리입니다. 광고비 없이 검색만으로 가져올 수 있는 구간이라
       가장 효율이 좋습니다.</p>
@@ -1743,6 +1748,20 @@ function fillTreatments() {
   ]));
 }
 
+function fillPageFix() {
+  const p = D.pageFix; const w = $('page-fix');
+  if (!p || !w) return;
+  w.innerHTML =
+    `<p class="why"><b>먼저 확인된 사실</b> ${p.finding}</p>` +
+    `<p class="why" style="color:var(--muted)">${p.caveat}</p>` +
+    `<p class="why" style="margin-top:12px"><b>${esc(p.notDesign)}</b></p>` +
+    `<ol class="actions">${p.steps.map(s =>
+      `<li><b>${esc(s.t)}</b> — ${esc(s.d)}</li>`).join('')}</ol>` +
+    `<p class="why" style="margin-top:12px"><b>순서</b> ${p.order}</p>` +
+    `<div class="fix"><b>이렇게 시험하십시오</b> ${p.experiment}</div>` +
+    `<p class="note" style="margin-top:10px"><b>확인하지 못한 것</b> ${p.unknown}</p>`;
+}
+
 function fillFooter() {
   $('footer').textContent =
     `생성 ${D.meta.builtAt.slice(0, 16).replace('T', ' ')} · 이 파일은 매달 하나씩 따로 보관됩니다. ` +
@@ -1754,7 +1773,7 @@ function drawAll() {
 }
 
 fillMarketTable(); fillCompetitors(); fillPrice(); fillCrossFindings();
-fillTiers(); fillChannels(); fillOrganic(); fillYouTube(); fillKeywordTable(); fillSerp(); fillKPI(); fillTreatments(); fillFooter();
+fillTiers(); fillChannels(); fillOrganic(); fillYouTube(); fillKeywordTable(); fillSerp(); fillKPI(); fillTreatments(); fillPageFix(); fillFooter();
 fillSummary();
 drawAll();
 addEventListener('resize', drawAll);

@@ -8,3 +8,4 @@ node_modules/
 naver-kr-test.json
 naver-tw.json
 *.png
+.cache/

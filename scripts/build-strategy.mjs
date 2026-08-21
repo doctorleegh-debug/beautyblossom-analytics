@@ -702,6 +702,30 @@ const payload = {
   ytAvailable: !!yt
 };
 
+// Everything derived from the raw ads - style counts, age spread, country matrix,
+// price scan - is computed above. The page itself only renders three ads per clinic,
+// so carrying all 648 inline would trip the file past a megabyte for data nothing
+// reads, and past the size an artifact link accepts.
+if (payload.competitors) {
+  const c = payload.competitors;
+  const slim = (a) => ({
+    libraryId: a.libraryId, adLibraryUrl: a.adLibraryUrl, country: a.country,
+    advertiser: a.advertiser, advertiserUrl: a.advertiserUrl,
+    startedRunning: a.startedRunning, multipleVersions: a.multipleVersions,
+    landingUrl: a.landingUrl, landingDomain: a.landingDomain,
+    creativeCount: a.creativeCount, creativeUrls: (a.creativeUrls || []).slice(0, 3),
+    copy: a.copy
+  });
+  if (c.deepDive) {
+    c.deepDive = c.deepDive.map(d => ({
+      ...d,
+      ads: (d.ads || []).filter(a => a.copy && a.copy.length > 20).slice(0, 3).map(slim)
+    }));
+  }
+  // Only used when a deep pass has not run; the deep data supersedes it.
+  c.ads = c.deepDive && c.deepDive.length ? [] : (c.ads || []).slice(0, 24).map(slim);
+}
+
 const TPL = join(ROOT, 'scripts', 'strategy-template.html');
 if (!existsSync(TPL)) { console.error('missing template', TPL); process.exit(1); }
 const tpl = readFileSync(TPL, 'utf8');

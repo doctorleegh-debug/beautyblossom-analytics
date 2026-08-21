@@ -24,6 +24,28 @@ start report\index.html
 node scripts\build-report.mjs                   # report/index.html 재생성
 ```
 
+## AI 분석 통합 전략 리포트
+
+성과 보고서가 "무슨 일이 있었나"라면, 이 리포트는 "지난달 실적을 근거로 다음 달에 무엇을 할 것인가"다.
+경쟁 병원 광고 해부·검색 결과 점유 조사·본원 시술 목록 대조를 한 문서에 모은다.
+월별로 파일이 쌓이므로 다음 달에 지난달 판단의 적중 여부를 검증할 수 있다.
+
+```powershell
+node scripts\collect-competitors.mjs --self-test   # 조회 계획만 점검
+node scripts\collect-competitors.mjs               # Meta 광고 라이브러리 탐색
+node scripts\collect-competitors.mjs --deep        # 선정 경쟁사·자사 국가별 심층 조회
+node scripts\collect-serp.mjs                      # 시술 검색어 1페이지 점유 조사
+node scripts\build-strategy.mjs                    # report/strategy-2026-09.html 생성
+```
+
+파일명은 `strategy-YYYY-MM.html` 로, **실행 대상 월**을 쓴다. 근거가 되는 실적은 그 전월이다.
+
+경쟁사 수집은 공개된 Meta 광고 라이브러리를 HTTP로만 읽는다. 로그인도, 브라우저 창도, 사용자 Chrome 프로필도 쓰지 않는다. 원본 응답은 `.cache/adlib/` 에 남으므로 파싱 로직을 고쳐 다시 돌려도 추가 조회가 발생하지 않는다.
+
+소재지·다국어 운영 구조는 광고 라이브러리에 없어 각 클리닉 사이트를 직접 확인해 `data/competitor-profiles.json` 에 출처와 함께 손으로 기록한다. 이 파일은 수집 스크립트가 덮어쓰지 않는다.
+
+설계 근거와 데이터 한계는 `docs/superpowers/specs/2026-08-21-september-marketing-strategy-design.md` 에 있다.
+
 모든 수집 스크립트는 `-SelfTest` 를 지원합니다 — 실제 호출 없이 설정만 점검합니다.
 
 ## 소스별 수집 방식

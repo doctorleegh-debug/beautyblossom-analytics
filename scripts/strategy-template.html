@@ -1,0 +1,1783 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 분석 · 뷰티블라썸 통합 전략 리포트</title>
+<style>
+  :root{
+    --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,0.10);
+    --good:#006300; --bad:#d03b3b; --warn:#fab219;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300;
+  }
+  :root[data-theme="dark"]{
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,0.10);
+    --good:#0ca30c; --bad:#d03b3b; --warn:#fab219;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+      --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,0.10);
+      --good:#0ca30c;
+      --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--ink);
+       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;line-height:1.55}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+  header{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;margin-bottom:6px}
+  h1{font-size:26px;margin:0;letter-spacing:-.01em}
+  .eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;
+     color:var(--s1);border:1px solid var(--s1);border-radius:999px;padding:2px 9px;margin-bottom:7px}
+  .period{font-size:14px;color:var(--ink);margin:5px 0 0;font-weight:600}
+  h2{font-size:18px;margin:38px 0 4px;letter-spacing:-.01em}
+  h3{font-size:14px;margin:0 0 10px;color:var(--ink2);font-weight:600}
+  .sub{color:var(--ink2);font-size:13px;margin:2px 0 0}
+  .card{background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:18px}
+  .grid{display:grid;gap:14px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:860px){.g2{grid-template-columns:1fr}}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:12px;margin-top:14px}
+  .tile{background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:14px 16px}
+  .tile .k{font-size:12px;color:var(--ink2);display:flex;align-items:center;gap:6px}
+  .tile .v{font-size:26px;font-weight:650;margin-top:4px;letter-spacing:-.02em}
+  .tile .d{font-size:12px;margin-top:2px;color:var(--ink2)}
+  .up{color:var(--good);font-weight:600} .dn{color:var(--bad);font-weight:600}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 10px;font-size:12px;color:var(--ink2)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--grid);font-variant-numeric:tabular-nums}
+  th:first-child,td:first-child{text-align:left;font-variant-numeric:normal}
+  th{color:var(--ink2);font-weight:600;font-size:12px}
+  tbody tr:hover{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+  .note{font-size:12px;color:var(--ink2);margin-top:10px}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 9px;border-radius:999px;border:1px solid var(--ring);color:var(--ink2)}
+  .pill.ok{color:var(--good)} .pill.pend{color:var(--warn)} .pill.no{color:var(--bad)}
+  button.theme{background:var(--surface);border:1px solid var(--ring);color:var(--ink2);
+     border-radius:8px;padding:7px 12px;cursor:pointer;font-size:12px;font-family:inherit}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .tt{position:fixed;pointer-events:none;background:var(--surface);border:1px solid var(--ring);
+      border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 6px 24px rgba(0,0,0,.13);
+      opacity:0;transition:opacity .1s;z-index:50;max-width:320px}
+  .tt b{font-weight:650}
+  .tt .r{display:flex;justify-content:space-between;gap:14px;align-items:center}
+  a{color:inherit}
+
+  /* strategy-specific */
+  .tier{border-left:3px solid var(--ink);padding-left:14px;margin:16px 0}
+  .tier h3{font-size:15px;color:var(--ink);margin-bottom:4px}
+  .tier .why{color:var(--ink2);font-size:13px;margin:0 0 8px}
+  .actions{margin:8px 0 0;padding-left:18px}
+  .actions li{margin:5px 0}
+  .fact{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .adcard{border:1px solid var(--ring);border-radius:10px;padding:14px;background:var(--surface);margin-top:12px}
+  .adcard .hd{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .adcard .nm{font-weight:650}
+  .adcard .copy{white-space:pre-wrap;font-size:12.5px;color:var(--ink2);margin-top:8px;
+       max-height:150px;overflow:auto;border-left:2px solid var(--grid);padding-left:10px}
+  .adcard .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:12px}
+  .adcard .links a{color:var(--s1);text-decoration:none;border:1px solid var(--ring);
+       border-radius:999px;padding:3px 9px}
+  .adcard .links a:hover{background:color-mix(in srgb,var(--s1) 10%,transparent)}
+  .thumbs{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+  .thumbs img{width:64px;height:64px;object-fit:cover;border-radius:8px;border:1px solid var(--ring)}
+  .lim{display:grid;grid-template-columns:150px 88px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--grid);font-size:13px}
+  .lim:last-child{border-bottom:0}
+  @media(max-width:700px){.lim{grid-template-columns:1fr;gap:4px}}
+  .fix{margin-top:8px;padding:9px 12px;border-radius:8px;line-height:1.6;
+       background:color-mix(in srgb,var(--good) 8%,transparent);
+       border-left:3px solid var(--good)}
+  .fix b{color:var(--good);margin-right:6px}
+  .term{border-bottom:1px dotted var(--axis);cursor:help}
+  .kwtag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:6px;
+       border:1px solid var(--ring);margin:3px 4px 0 0;font-variant-numeric:tabular-nums}
+  nav#toc{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:6px;
+       margin:14px 0 4px;padding:9px 0;background:var(--page);border-bottom:1px solid var(--ring)}
+  nav#toc a{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--ring);
+       color:var(--ink2);text-decoration:none;white-space:nowrap}
+  nav#toc a:hover{background:color-mix(in srgb,var(--ink) 6%,transparent);color:var(--ink)}
+  h2{scroll-margin-top:56px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">AI 분석</div>
+      <h1>뷰티블라썸 통합 전략 리포트</h1>
+      <p class="period" id="period"></p>
+      <p class="sub" id="basis"></p>
+    </div>
+    <button class="theme" id="theme">테마 전환</button>
+  </header>
+
+  <p class="sub" id="preface"></p>
+
+  <nav id="toc"></nav>
+
+  <div class="tiles" id="sum-tiles"></div>
+  <div class="card" style="margin-top:14px">
+    <h3>한눈에 보기 — 9월에 무엇을 왜 하는가</h3>
+    <ul class="actions" id="sum-points"></ul>
+  </div>
+
+  <h2>S1 · 홈페이지 접속이 어디서 오고 있나</h2>
+  <p class="sub">먼저 사실 확인부터 하겠습니다. 여섯 개 나라별 사이트에 사람들이 <b>어떤 경로로</b> 들어오고,
+    그중 <b>얼마나 문의로 이어지는지</b>를 봅니다. 여기서 나온 숫자가 이후 모든 판단의 근거입니다.</p>
+  <div class="card" style="margin-top:12px">
+    <h3>나라별 유입 경로와 문의 전환율</h3>
+    <p class="sub" style="margin-bottom:10px">막대 하나가 나라 하나입니다. 막대가 길수록 홈페이지 접속이 많고,
+      색깔은 그 접속이 <b>어떤 경로로</b> 들어왔는지를 나타냅니다.
+      주황색이 길수록 광고로 사 온 접속이 많다는 뜻입니다.</p>
+    <div class="legend" id="lg-ch"></div>
+    <svg id="ch-stack"></svg>
+    <p class="note" id="ch-note"></p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <table id="mk-table"><thead><tr>
+      <th>나라</th><th>홈페이지 접속 횟수</th><th>전월 대비</th><th>광고로 온 비율</th>
+      <th>스스로 찾아온 비율</th><th>문의 전환율</th><th>주요 접속 국가</th>
+    </tr></thead><tbody></tbody></table>
+    <p class="note"><b>홈페이지 접속 횟수</b>는 사람 수가 아니라 접속한 횟수입니다 — 한 사람이 세 번 오면 3으로 셉니다.
+      병원에 실제로 오신 분 수와는 무관하며, 광고 클릭 수와도 다릅니다(광고를 눌렀지만 페이지가 열리기 전에 나가면 잡히지 않습니다).
+      <b>스스로 찾아온 비율</b>은 광고를 거치지 않고 검색이나 주소 직접 입력으로 들어온 몫입니다.
+      이 비율이 높을수록 광고를 멈춰도 남는 자산이 많다는 뜻입니다.
+      <b>문의 전환율</b>은 접속 100회 중 몇 번이 문의·예약 같은 행동을 했는지를 말합니다.
+      전월 대비 비교는 <b>접속 횟수에만</b> 적용했습니다 — 문의 집계를 2026년 7월 14일부터 시작해서
+      비교 대상인 지난달이 절반만 측정된 구간이기 때문입니다. 9월이 지나면 정상 비교가 가능해집니다.</p>
+  </div>
+
+  <h2>S2 · 경쟁 병원은 해외 환자를 어떻게 데려오고 있나</h2>
+  <p class="sub">메타(페이스북·인스타그램)는 지금 집행 중인 모든 광고를 <b>누구나 볼 수 있게</b> 공개하고 있습니다.
+    그 공개 자료에서 해외 환자를 겨냥해 광고하는 한국 병원들을 찾아, 실제 광고 문구와 소재를 그대로 가져왔습니다.
+    아래 모든 항목에는 원본 광고 링크가 붙어 있어 직접 확인하실 수 있습니다.</p>
+  <div class="card" style="margin-top:12px">
+    <h3>어떻게 골랐나</h3>
+    <p class="sub" id="comp-method"></p>
+    <div class="tiles" id="comp-tiles"></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>경쟁 병원들이 공통으로 쓰고 있는 방법</h3>
+    <p class="sub" style="margin-bottom:10px">개별 병원 분석보다 이쪽이 더 중요합니다.
+      여러 병원이 <b>똑같이</b> 하고 있다면, 그건 효과가 검증됐다는 뜻일 가능성이 높기 때문입니다.</p>
+    <div id="cross-findings"></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>광고 문구를 어떤 식으로 쓰고 있나</h3>
+    <p class="sub" style="margin-bottom:10px">경쟁 병원 광고 문구를 하나하나 읽고 항목별로 개수를 셌습니다.
+      "공격적이다" 같은 인상평이 아니라, 몇 건 중 몇 건인지를 그대로 보여 드립니다.
+      비율이 낮은 항목은 <b>아직 아무도 안 하고 있는 영역</b>이라 우리가 먼저 치고 나갈 여지가 됩니다.</p>
+    <svg id="style-bars"></svg>
+    <p class="note" id="style-note"></p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>광고 소재를 얼마나 자주 바꾸나</h3>
+    <p class="sub" style="margin-bottom:10px">광고 라이브러리는 <b>광고 하나하나의 게재 시작일</b>만 알려줍니다.
+      소재를 새로 갈아끼우면 그 날짜가 다시 오늘로 잡히기 때문에,
+      "가장 오래된 광고가 며칠 됐나"를 그 병원의 총 광고 기간으로 읽으면 안 됩니다 —
+      소재를 자주 바꾸는 곳일수록 실제보다 짧아 보입니다.
+      대신 <b>지금 돌아가는 광고들이 각각 며칠 됐는지</b>를 보면 운영 방식이 드러납니다.
+      오른쪽이 두꺼우면 검증된 소재를 오래 유지하는 쪽, 왼쪽이 두꺼우면 주기적으로 갈아끼우는 쪽입니다.</p>
+    <div class="legend" id="lg-age"></div>
+    <svg id="gantt"></svg>
+    <p class="note" id="gantt-note"></p>
+  </div>
+  <h3 style="margin:28px 0 0">병원별 상세 — 실제 광고 문구와 소재</h3>
+  <p class="sub">각 카드의 회색 인용문이 그 병원이 실제로 내보내고 있는 광고 문구 전문입니다.
+    아래 링크를 누르시면 메타 광고 라이브러리에서 원본을 그대로 보실 수 있습니다.</p>
+  <div id="comp-cards"></div>
+
+  <h2>S2-1 · 병원명과 함께 시술 금액을 노출하는 광고</h2>
+  <p class="sub">메타 광고 라이브러리에서 본문이 확보된 병원 광고를 대상으로 금액 표기를 기계적으로 찾았습니다.
+    <b>이 표는 관측된 사실만 담으며 위법 여부를 판단하지 않습니다.</b>
+    참고로 의료법 제45조는 비급여 진료비용 고지를 의료기관의 <b>의무</b>로 정하고 있어 금액을 적는 것 자체는 문제가 되지 않습니다.
+    쟁점이 되는 쪽은 할인·이벤트가로 환자를 유인하는 행위(제27조 제3항)와 사전심의(제57조)이며,
+    해외에만 노출되는 광고에 국내법이 어디까지 미치는지는 별도 검토가 필요합니다.
+    실제 판단은 법률 검토를 받으시기 바랍니다.</p>
+  <div class="card" style="margin-top:12px">
+    <div class="tiles" id="price-tiles"></div>
+    <p class="note" id="price-self"></p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <table id="price-table"><thead><tr>
+      <th>광고주</th><th>노출국</th><th>게재 시작</th><th>표기된 금액</th><th>할인 표현</th><th>원본</th>
+    </tr></thead><tbody></tbody></table>
+    <p class="note" id="price-note"></p>
+  </div>
+
+  <h2>S3 · 경쟁 병원 광고가 어느 나라에 노출되고 있나</h2>
+  <p class="sub"><b>먼저 이 표가 무엇을 말하고 무엇을 말하지 않는지 짚겠습니다.</b>
+    메타 광고 라이브러리에서 병원 이름으로 나라별 조회를 하면
+    "지금 그 나라 화면에 그 병원 광고가 몇 건 뜨고 있는지"까지만 알 수 있습니다.
+    그 광고로 환자가 실제로 들어갔는지는 그 병원 내부 데이터라 알 수 없고,
+    그 나라를 <b>의도적으로 겨냥한 것인지</b>도 알 수 없습니다 — 전 세계 대상으로 걸어 둔 광고도 여러 나라에 함께 노출되기 때문입니다.
+    그래서 윗줄은 <b>광고 노출 건수</b>, 맨 아랫줄은 <b>우리 홈페이지에 접속한 사람 수</b>로 서로 다른 지표입니다.
+    아랫줄은 S1 표의 "접속 횟수"와도 단위가 다릅니다 — 여기는 <b>사람 수</b>(같은 사람이 여러 번 와도 1명)이고, S1은 횟수입니다.
+    병원에 내원하신 분 수가 아니라는 점도 유의해 주십시오.
+    건수를 함께 적어 두었으니 1건짜리와 20건짜리를 같은 것으로 보지 마시기 바랍니다.</p>
+  <div class="card" style="margin-top:12px">
+    <svg id="heatmap"></svg>
+    <p class="note" id="hm-note"></p>
+  </div>
+
+  <h2>S4 · 그래서 9월에 무엇을 할 것인가</h2>
+  <p class="sub">여섯 나라를 같은 무게로 다루면 힘이 분산됩니다.
+    <b>지킬 곳 · 키울 곳 · 손볼 곳 · 남길 곳</b>으로 나누고, 각각에 할 일을 붙였습니다.
+    나누는 기준은 접속 규모가 아니라 <b>광고 의존도와 문의 전환율</b>입니다 — 접속이 많아도 광고로만 유지되고
+    문의가 안 붙는 곳은 지금 손봐야 할 곳이지 지킬 곳이 아니기 때문입니다.</p>
+  <div id="tiers"></div>
+
+  <h2>S4-1 · 광고를 끄면 남는 것을 만드는 방법 — 돈 들이지 않고</h2>
+  <p class="sub">앞에서 <b>지금 홈페이지 접속의 73%가 광고로 사 온 것</b>이라고 말씀드렸습니다.
+    그러면 "광고 없이 들어오는 길을 어떻게 늘리나"가 다음 질문이 됩니다.
+    새로 돈을 쓰지 않고 <b>이미 가진 것으로</b> 할 수 있는 것부터 순서대로 정리했습니다.
+    각 항목에 중요도와 비용, 그리고 그렇게 판단한 근거를 함께 적었으니 취사선택하시면 됩니다.</p>
+  <div class="card" style="margin-top:12px">
+    <h3>어느 채널을 열지는 광고가 이미 답하고 있습니다</h3>
+    <p class="sub" style="margin-bottom:10px">"틱톡을 해야 하나, X를 해야 하나"는 플랫폼 인기도로 정할 문제가 아닙니다.
+      <b>같은 업종 병원들이 광고에서 실제로 어디로 사람을 보내는지</b>를 세면 답이 나옵니다.
+      아래는 경쟁사 광고와 우리 광고의 문구를 하나씩 읽고 채널 언급을 센 결과입니다.</p>
+    <table id="ch-table"><thead><tr>
+      <th>채널</th><th>경쟁사 광고 언급</th><th>광고 도착지로 사용</th><th>우리 광고 언급</th>
+    </tr></thead><tbody></tbody></table>
+    <p class="note" id="ch-note"></p>
+  </div>
+  <div id="organic-plays"></div>
+  <div class="card" style="margin-top:14px">
+    <h3>지금 유튜브 채널이 어떤 상태인가</h3>
+    <div class="tiles" id="yt-tiles"></div>
+    <div class="grid g2" style="margin-top:14px">
+      <div>
+        <h3 style="margin-bottom:8px">시청 국가</h3>
+        <svg id="yt-country"></svg>
+      </div>
+      <div>
+        <h3 style="margin-bottom:8px">조회수 상위 영상</h3>
+        <div id="yt-videos"></div>
+      </div>
+    </div>
+    <p class="note" id="yt-note"></p>
+  </div>
+
+  <h2>S5 · 어떤 검색어를 공략할 것인가</h2>
+  <div class="card">
+    <h3>이미 검색 결과에 뜨고 있는데 순위가 낮아 클릭을 놓치는 검색어</h3>
+    <p class="sub" style="margin-bottom:10px">가장 효율이 좋은 공략 대상은 <b>아직 아무도 모르는 검색어</b>가 아니라,
+      이미 우리 페이지가 검색 결과에 노출되고 있는데 순위가 뒤라 클릭이 안 되는 검색어입니다.
+      순위만 끌어올리면 바로 접속이 늘기 때문입니다. 아래 원 하나가 그런 검색어 하나입니다.</p>
+    <div class="legend" id="lg-kw"></div>
+    <svg id="kw-quad"></svg>
+    <p class="note" id="kw-note"></p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <table id="kw-table"><thead><tr>
+      <th>검색어</th><th>나라</th><th>검색 결과 노출</th><th>클릭</th><th>클릭률</th><th>평균 순위</th><th>더 얻을 수 있는 클릭(추정)</th>
+    </tr></thead><tbody></tbody></table>
+    <p class="note"><b>노출</b>은 검색 결과에 우리 페이지가 보인 횟수, <b>클릭</b>은 그중 실제로 눌린 횟수입니다.
+      <b>평균 순위</b>는 검색 결과에서 몇 번째에 나오는지를 말하며, 보통 10위 안에 들어야 클릭이 붙기 시작합니다.</p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>이미 통하고 있는 공식 — "시술 이름 + 지역 이름"</h3>
+    <p class="sub">아래는 저희가 만들어 본 가설이 아니라, <b>지금 실제로 노출과 클릭이 일어나고 있는</b> 검색어들입니다.
+      해외 환자는 "무엇을 어디서 받을까"로 검색하기 때문에 시술 이름에 지역 이름을 붙인 조합이 잘 걸립니다.
+      이미 통하는 것이 확인됐으니, 9월에는 같은 공식을 나머지 시술로 넓히면 됩니다.</p>
+    <div id="city-tags"></div>
+  </div>
+
+  <h2>S5-1 · 아직 우리가 없는 키워드 — 지금 누가 쥐고 있나</h2>
+  <p class="sub">앞의 S5는 <b>이미 우리가 검색에 뜨는</b> 검색어만 다룹니다.
+    우리가 아예 없는 검색어는 구글 서치콘솔에 잡히지 않아 구조적으로 보이지 않습니다.
+    그래서 시술 12개 × 일본·대만·영어권 3개 시장, 총 36개 검색어의 <b>실제 검색 결과를 직접 열어</b>
+    1페이지를 누가 차지하고 있는지 확인했습니다.</p>
+  <div class="card" style="margin-top:12px">
+    <h3>결과 요약</h3>
+    <div class="tiles" id="serp-tiles"></div>
+    <p class="note" id="serp-headline"></p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>시장별로 1페이지 성격이 다릅니다</h3>
+    <p class="sub" style="margin-bottom:10px">같은 시술이라도 시장마다 검색 결과를 채우는 주체가 다릅니다.
+      병원이 채우는 시장은 콘텐츠 싸움이고, 정보매체가 채우는 시장은 <b>병원 페이지로는 뚫기 어렵습니다</b> —
+      그런 곳은 매체에 실리는 쪽이 빠릅니다.</p>
+    <svg id="serp-market"></svg>
+    <table id="serp-easy" style="margin-top:14px"><thead><tr>
+      <th>시장</th><th>시술</th><th>실제 검색어</th><th>1페이지 한국 병원</th><th>정보매체</th>
+    </tr></thead><tbody></tbody></table>
+    <p class="note" id="serp-easy-note"></p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>검색에서 실제로 경쟁하는 병원 — 광고 경쟁사와 다릅니다</h3>
+    <p class="sub" style="margin-bottom:10px">S2에서 본 광고 경쟁사 7곳과 여기 목록은 거의 겹치지 않습니다.
+      광고를 많이 하는 병원과 검색을 잡는 병원이 서로 다른 집단이라는 뜻입니다.</p>
+    <table id="serp-rivals"><thead><tr>
+      <th>도메인</th><th>잡은 검색어</th><th>최고 순위</th><th>어디서</th>
+    </tr></thead><tbody></tbody></table>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>가장 빠른 길 — 이미 돈을 내고 있는 플랫폼이 1페이지에 있습니다</h3>
+    <p class="sub" style="margin-bottom:10px">우리 시술·가격 자료에 이미 제휴 시트가 있는 플랫폼들이
+      검색 1페이지를 차지하고 있습니다. 우리 사이트를 1페이지로 올리는 데는 몇 달이 걸리지만,
+      <b>이미 1페이지에 있는 곳 안에서 우리 노출을 강화하는 것</b>은 지금 당장 할 수 있고
+      추가 비용도 이미 나가는 제휴비 안에서 해결됩니다.</p>
+    <table id="serp-partners"><thead><tr>
+      <th>플랫폼</th><th>1페이지 점유</th><th>가장 높은 순위</th><th>어떤 검색어에서</th>
+    </tr></thead><tbody></tbody></table>
+    <p class="note" id="serp-partner-note"></p>
+  </div>
+
+  <h2>S6 · 9월 한 달을 어떤 순서로 진행할 것인가</h2>
+  <p class="sub">아래 그림은 9월에 무엇을 먼저 하고, 언제 결과를 확인하고, 결과에 따라 어떻게 갈라지는지를 정리한 것입니다.
+    마름모꼴은 <b>판단하는 지점</b>입니다. 각 판단마다 무엇을 얼마로 보고 정할지 기준을 미리 못 박아 두었기 때문에,
+    10월에 "잘한 건지 아닌지"를 감이 아니라 같은 기준으로 확인할 수 있습니다.</p>
+  <div class="card" style="margin-top:12px">
+    <svg id="flow"></svg>
+  </div>
+
+  <h2>S7 · 10월에 무엇을 보고 성공 여부를 판단할 것인가</h2>
+  <p class="sub">전략은 세울 때보다 되짚을 때 값이 나옵니다.
+    아래 표의 <b>8월 기준값</b>은 이번에 실제로 측정된 숫자이고, <b>9월 목표</b>는 이 보고서가 제안하는 값입니다.
+    확정된 목표가 아니라 논의를 위한 출발점이니 조정하셔도 됩니다.</p>
+  <div class="card" style="margin-top:12px">
+    <table id="kpi-table"><thead><tr>
+      <th>무엇을 볼 것인가</th><th>나라</th><th>8월 실측</th><th>9월 목표</th><th>이 숫자로 무엇을 정하나</th>
+    </tr></thead><tbody></tbody></table>
+  </div>
+
+  <h2>S8 · 공략 시술 키워드 리스트</h2>
+  <p class="sub">여기부터는 분석이 아니라 <b>바로 쓰실 목록</b>입니다.
+    같은 시술이라도 나라마다 부르는 이름이 달라서(라라필 / lala peel / 拉拉皮) 흩어져 보이지만, 하나로 묶어 정리했습니다.
+    검색 콘텐츠는 만든 즉시 순위가 오르지 않고 보통 한두 달 뒤부터 효과가 나오기 때문에,
+    <b>9월에 작업하면 10월부터</b> 유입으로 돌아옵니다.</p>
+
+  <div class="card" style="margin-top:12px">
+    <h3>① 먼저 손댈 것 — 이미 검색되고 있는데 순위가 뒤인 시술</h3>
+    <p class="sub" style="margin-bottom:10px">수요가 이미 확인된 시술입니다. 새로 만드는 게 아니라 기존 페이지를 손보는 일이라
+      가장 확실하고 비용도 적게 듭니다.</p>
+    <table id="tp-lift"><thead><tr>
+      <th>시술</th><th>검색되는 나라</th><th>노출 합계</th><th>클릭</th><th>가장 좋은 순위</th><th>가장 나쁜 순위</th><th>나라 간 격차</th>
+    </tr></thead><tbody></tbody></table>
+    <p class="note" id="tp-lift-note"></p>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>② 지킬 것 — 이미 상위권인 시술</h3>
+    <p class="sub" style="margin-bottom:10px">잘 되고 있으니 건드리지 마시고, 경쟁사가 치고 올라오는지만 확인하시면 됩니다.</p>
+    <table id="tp-hold"><thead><tr>
+      <th>시술</th><th>검색되는 나라</th><th>노출 합계</th><th>클릭</th><th>순위</th>
+    </tr></thead><tbody></tbody></table>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>③ 가장 큰 손실 — 하고 있는데 검색에서 안 잡히는 시술</h3>
+    <p class="sub" style="margin-bottom:10px">경쟁 병원이 광고비를 쏟는다는 건 그만큼 문의가 붙는 시술이라는 뜻입니다.
+      <b>본원 시술 목록을 대조한 결과 이 시술들은 전부 우리도 하고 있습니다.</b>
+      없는 시술이라 못 잡는 게 아니라, 하고 있는데 검색에 노출이 안 되고 있는 것입니다.
+      새 장비를 들이거나 새 시술을 시작할 필요 없이 <b>페이지만 만들면 되는 구간</b>이라 9월 우선순위가 가장 높습니다.</p>
+    <table id="tp-open"><thead><tr>
+      <th>시술</th><th>경쟁사 광고</th><th>본원 시술</th><th>우리 검색 노출</th><th>판단</th>
+    </tr></thead><tbody></tbody></table>
+    <p class="note" id="tp-open-note"></p>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>③-1 용어 불일치 — 고객이 쓰는 말과 우리 메뉴 이름이 다른 경우</h3>
+    <p class="sub" style="margin-bottom:10px">이건 순위 문제가 아니라 <b>말이 안 맞는 문제</b>입니다.
+      고객은 이미 그 말로 검색해서 우리 페이지까지 들어오고 있는데, 정작 사이트에서는 다른 이름으로 적혀 있어
+      원하는 시술을 못 찾고 나가게 됩니다. 페이지에 고객이 쓰는 표현을 함께 적어 주는 것만으로 해결됩니다.</p>
+    <table id="tp-word"><thead><tr>
+      <th>고객이 검색하는 말</th><th>우리 메뉴 표기</th><th>실측 근거</th>
+    </tr></thead><tbody></tbody></table>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>③-2 그래서 어떻게 노출시키나 — 페이지를 손보는 방법</h3>
+    <div id="page-fix"></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>④ 우리만 갖고 있는 것 — 경쟁사가 안 미는데 우리는 검색되는 시술</h3>
+    <p class="sub" style="margin-bottom:10px">경쟁이 비어 있는 자리입니다. 광고비 없이 검색만으로 가져올 수 있는 구간이라
+      가장 효율이 좋습니다.</p>
+    <table id="tp-own"><thead><tr>
+      <th>시술</th><th>노출 합계</th><th>클릭</th><th>순위</th><th>경쟁사 광고</th>
+    </tr></thead><tbody></tbody></table>
+  </div>
+
+  <p class="note" id="footer"></p>
+</div>
+
+<div class="tt" id="tt"></div>
+<script id="payload" type="application/json">/*__PAYLOAD__*/null</script>
+<script>
+(() => {
+const D = JSON.parse(document.getElementById('payload').textContent);
+const SVGNS = 'http://www.w3.org/2000/svg';
+const $ = (id) => document.getElementById(id);
+const el = (n, a = {}) => { const e = document.createElementNS(SVGNS, n);
+  for (const k in a) e.setAttribute(k, a[k]); return e; };
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, c =>
+  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const num = (n) => (n == null ? '—' : n.toLocaleString('en-US'));
+const pc = (n, d = 1) => (n == null ? '—' : (n * 100).toFixed(d) + '%');
+const cssv = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+// Country codes are how the ad library returns things; nobody reading a strategy
+// report should have to decode them.
+const CO_KO = {
+  KR: '한국', PH: '필리핀', ID: '인도네시아', AE: '아랍에미리트', IN: '인도',
+  SG: '싱가포르', VN: '베트남', TW: '대만', JP: '일본', TH: '태국',
+  US: '미국', HK: '홍콩', CN: '중국', MY: '말레이시아', QA: '카타르'
+};
+// GA4 reports countries by English name, so matching our own traffic needs this.
+const CO_GA4 = {
+  KR: 'South Korea', PH: 'Philippines', ID: 'Indonesia', AE: 'United Arab Emirates',
+  IN: 'India', SG: 'Singapore', VN: 'Vietnam', TW: 'Taiwan', JP: 'Japan', TH: 'Thailand'
+};
+const ko = (c) => CO_KO[c] || c;
+
+// ---- theme -------------------------------------------------------------
+$('theme').onclick = () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+  drawAll();
+};
+
+// ---- tooltip -----------------------------------------------------------
+const tt = $('tt');
+const showTT = (html, ev) => {
+  tt.innerHTML = html; tt.style.opacity = 1;
+  const r = tt.getBoundingClientRect();
+  let x = ev.clientX + 14, y = ev.clientY + 14;
+  if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - 14;
+  if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - 14;
+  tt.style.left = x + 'px'; tt.style.top = y + 'px';
+};
+const hideTT = () => { tt.style.opacity = 0; };
+const bindTT = (node, html) => {
+  node.addEventListener('mousemove', e => showTT(html, e));
+  node.addEventListener('mouseleave', hideTT);
+};
+
+// ---- header ------------------------------------------------------------
+const b = D.meta.basis;
+// The title no longer carries the month, so the period has to be unmissable here.
+$('period').textContent =
+  `${b.ga4.start.slice(0, 4)}년 ${+b.ga4.end.slice(5, 7)}월 실적 기준 · ` +
+  `${+b.ga4.end.slice(5, 7) + 1}월 실행안`;
+$('basis').textContent =
+  `근거: GA4 ${b.ga4.start}~${b.ga4.end}` +
+  (b.gsc ? ` · Search Console ${b.gsc.start}~${b.gsc.end}` : '') +
+  (b.competitors ? ` · 경쟁사 광고 수집 ${b.competitors.slice(0, 10)}` : '') +
+  ` · 생성 ${D.meta.builtAt.slice(0, 10)}`;
+
+$('preface').innerHTML =
+  '이 보고서는 8월 성과 데이터와 경쟁 병원 광고 조사를 근거로 <b>9월에 무엇을 할지</b> 정리한 문서입니다. ' +
+  '모든 숫자는 구글 애널리틱스·구글 검색·네이버·메타 광고 라이브러리에서 직접 받아 온 실측값이며, ' +
+  '추정이 섞인 부분은 그 자리에 "추정"이라고 표시했습니다. ' +
+  '확인하지 못한 것은 추측으로 채우지 않고 그 자리에 밝혀 두었습니다. ' +
+  '전문 용어는 처음 나올 때 풀어 썼으니 순서대로 읽으시면 됩니다. ' +
+  '바로 실행하실 목록만 필요하시면 <b>맨 아래 S8</b>부터 보셔도 됩니다.';
+
+// ---- summary -----------------------------------------------------------
+// Everything here restates figures computed elsewhere in the page. Nothing new is
+// asserted at the top that the sections below do not back up.
+function fillSummary() {
+  const nav = $('toc');
+  [...document.querySelectorAll('h2')].forEach((h, i) => {
+    h.id = h.id || 'sec' + i;
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.split('—')[0].trim();
+    nav.appendChild(a);
+  });
+
+  const big = D.markets.filter(m => m.sessions > 1000);
+  const best = [...big].sort((a, b) => b.convRate - a.convRate)[0];
+  const worst = [...big].sort((a, b) => a.convRate - b.convRate)[0];
+  const total = D.markets.reduce((s, m) => s + m.sessions, 0);
+  const paidTotal = D.markets.reduce((s, m) => s + m.sessions * m.paidShare, 0);
+  const bench = benchmarkSet();
+  const benchAds = bench.reduce((s, a) => s + a.activeAdCount, 0);
+  const grow = [...D.markets].sort((a, b) => (b.sessionsDelta || -9) - (a.sessionsDelta || -9))[0];
+
+  const tiles = [
+    { k: '전체 홈페이지 접속', v: num(total), d: `최근 ${D.meta.basis.ga4.days}일 · 6개 나라 합계` },
+    { k: '광고로 온 비율', v: pc(paidTotal / total, 0), d: '광고를 멈추면 사라지는 몫' },
+    { k: '문의 전환율 최고 / 최저', v: `${pc(best.convRate)} / ${pc(worst.convRate)}`, d: `${best.label} 대 ${worst.label}` },
+    { k: '가장 많이 성장', v: (grow.sessionsDelta >= 0 ? '+' : '') + (grow.sessionsDelta * 100).toFixed(0) + '%', d: `${grow.label} · 지난달 대비` },
+    { k: '조사한 경쟁 병원', v: num(bench.length), d: `이들이 돌리는 광고 ${num(benchAds)}건` },
+    { k: '공략할 검색어', v: num(D.keywordOps.length), d: '순위만 올리면 되는 것들' }
+  ];
+  const wrap = $('sum-tiles'); wrap.textContent = '';
+  tiles.forEach(t => {
+    const d = document.createElement('div');
+    d.className = 'tile';
+    d.innerHTML = `<div class="k">${esc(t.k)}</div><div class="v">${t.v}</div><div class="d">${esc(t.d)}</div>`;
+    wrap.appendChild(d);
+  });
+
+  const kr = D.markets.find(m => m.label === 'KR') || {};
+  const en = D.markets.find(m => m.label === 'EN') || {};
+  const pts = [
+    `<b>지금 홈페이지 접속의 ${pc(paidTotal / total, 0)}는 광고로 사 온 것입니다.</b> ` +
+      `광고를 멈추면 그만큼 사라진다는 뜻입니다. 광고 없이도 사람이 찾아오는 시장은 KR(${pc(kr.ownedShare, 0)}) 하나뿐이고, ` +
+      `가장 매출이 큰 EN은 ${pc(en.ownedShare, 0)}에 불과합니다. 매출이 광고비에 묶여 있는 구조입니다.`,
+    `<b>${esc(worst.label)}에서 돈이 새고 있습니다.</b> 광고 비중 ${pc(worst.paidShare, 0)}로 가장 많이 쓰는데 ` +
+      `문의 전환율은 ${pc(worst.convRate)}로 가장 낮습니다. ${esc(best.label)}(${pc(best.convRate)})의 약 ` +
+      `${(best.convRate / worst.convRate).toFixed(1)}분의 1이니, 같은 돈으로 문의를 그만큼 덜 받고 있다는 뜻입니다. 9월 1순위 점검 대상입니다.`,
+    (() => {
+      const s = D.serpScan;
+      if (!s) {
+        return `<b>경쟁 병원들도 광고에 의존하고 있습니다.</b> 조사한 ${bench.length}곳이 지금 ` +
+          `${num(benchAds)}건의 광고를 노출 중입니다(우리는 ${num((selfRow() || {}).activeAdCount || 0)}건).`;
+      }
+      return `<b>검색은 아직 아무도 잡지 않은 자리입니다.</b> 시술 검색어 ${s.totals.queries}개를 실제로 조회해 봤더니 ` +
+        `우리도, 광고 경쟁사 ${bench.length}곳도 <b>단 한 건도 1페이지에 없었습니다</b>. ` +
+        `이 업계가 전부 광고로만 환자를 사고 있다는 뜻입니다. ` +
+        `광고 의존을 줄이려면 이 빈 자리를 먼저 잡아야 하고, 지금은 빼앗을 상대도 없습니다.`;
+    })(),
+    `<b>영문 검색은 이미 우리 쪽이 잡고 있습니다.</b> ` +
+      `'sofwave seoul' 2.5위, 'sculptra seoul' 3.6위 등 시술명에 지역을 붙인 검색어 12개에서 상위권입니다. ` +
+      `이미 통하는 공식이 확인됐으니 나머지 시술로 넓히는 것이 9월에 가장 확실한 작업입니다.`
+  ];
+  const ul = $('sum-points'); ul.textContent = '';
+  pts.forEach(p => { const li = document.createElement('li'); li.innerHTML = p; ul.appendChild(li); });
+}
+
+// ---- S1: channel stack -------------------------------------------------
+const CH_GROUPS = [
+  { key: 'paidSocial', label: 'SNS 광고', v: '--s2', hint: '페이스북·인스타그램 유료 광고를 보고 들어온 방문' },
+  { key: 'paidOther', label: '검색 광고 등', v: '--s4', hint: '구글 등 검색 결과 상단 유료 광고로 들어온 방문' },
+  { key: 'organic', label: '검색으로 찾아옴', v: '--s6', hint: '광고가 아닌 일반 검색 결과를 눌러 들어온 방문' },
+  { key: 'direct', label: '직접 방문', v: '--s1', hint: '주소를 직접 입력하거나 즐겨찾기로 들어온 방문' },
+  { key: 'other', label: '기타', v: '--muted', hint: '다른 사이트 링크, 메일 등' }
+];
+
+function bucket(m) {
+  const g = { paidSocial: 0, paidOther: 0, organic: 0, direct: 0, other: 0 };
+  for (const c of m.channels) {
+    if (c.channel === 'Paid Social') g.paidSocial += c.sessions;
+    else if (/^Paid/.test(c.channel)) g.paidOther += c.sessions;
+    else if (/^Organic/.test(c.channel)) g.organic += c.sessions;
+    else if (c.channel === 'Direct') g.direct += c.sessions;
+    else g.other += c.sessions;
+  }
+  return g;
+}
+
+function drawChannelStack() {
+  const svg = $('ch-stack'); svg.textContent = '';
+  const rows = D.markets;
+  const W = 1080, rowH = 46, padL = 62, padR = 210, padT = 8;
+  const H = padT + rows.length * rowH + 10;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const barW = W - padL - padR;
+  const max = Math.max(...rows.map(m => m.sessions));
+
+  rows.forEach((m, i) => {
+    const y = padT + i * rowH;
+    const g = bucket(m);
+    const total = Object.values(g).reduce((s, v) => s + v, 0) || 1;
+    const full = (m.sessions / max) * barW;
+
+    svg.appendChild(Object.assign(el('text', {
+      x: padL - 10, y: y + 22, 'text-anchor': 'end', 'font-size': 13,
+      'font-weight': 600, fill: cssv('--ink')
+    }), { textContent: m.label }));
+
+    let x = padL;
+    CH_GROUPS.forEach(grp => {
+      const v = g[grp.key]; if (!v) return;
+      const w = (v / total) * full;
+      const rect = el('rect', {
+        x, y: y + 8, width: Math.max(w, 0.5), height: 24, fill: cssv(grp.v),
+        rx: 2, opacity: 0.92
+      });
+      bindTT(rect, `<b>${esc(m.label)} · ${esc(grp.label)}</b>
+        <div class="r"><span>접속 횟수</span><span>${num(v)}</span></div>
+        <div class="r"><span>비중</span><span>${pc(v / total)}</span></div>
+        <div style="margin-top:5px;color:var(--muted)">${esc(grp.hint)}</div>`);
+      svg.appendChild(rect);
+      x += w;
+    });
+
+    const paidPct = pc(m.paidShare, 0);
+    const conv = pc(m.convRate, 1);
+    svg.appendChild(Object.assign(el('text', {
+      x: padL + full + 12, y: y + 25, 'font-size': 12, fill: cssv('--ink2')
+    }), { textContent: `접속 ${num(m.sessions)}회 · 광고 ${paidPct} · 문의 ${conv}` }));
+  });
+
+  const lg = $('lg-ch'); lg.textContent = '';
+  CH_GROUPS.forEach(g => {
+    const s = document.createElement('span');
+    s.innerHTML = `<i class="dot" style="background:${cssv(g.v)}"></i>${esc(g.label)}`;
+    lg.appendChild(s);
+  });
+
+  const worst = [...D.markets].filter(m => m.sessions > 1000)
+    .sort((a, b) => a.convRate - b.convRate)[0];
+  const best = [...D.markets].filter(m => m.sessions > 1000)
+    .sort((a, b) => b.convRate - a.convRate)[0];
+  $('ch-note').innerHTML =
+    `여기서 눈여겨보실 대목은 <b>광고 비중이 비슷해도 성과는 전혀 다르다</b>는 점입니다. ` +
+    `접속 100회 중 문의로 이어지는 비율이 <b>${esc(best.label)}는 ${pc(best.convRate)}</b>인데 ` +
+    `<b>${esc(worst.label)}는 ${pc(worst.convRate)}</b>로, 약 ${(best.convRate / worst.convRate).toFixed(1)}배 차이가 납니다. ` +
+    `같은 돈을 써도 ${esc(worst.label)}에서는 그만큼 덜 건진다는 뜻이라, 9월에 손볼 곳이 어디인지가 여기서 정해집니다.`;
+}
+
+function fillMarketTable() {
+  const tb = $('mk-table').querySelector('tbody'); tb.textContent = '';
+  D.markets.forEach(m => {
+    const d = m.sessionsDelta;
+    const cls = d == null ? '' : d >= 0 ? 'up' : 'dn';
+    const sign = d == null ? '—' : (d >= 0 ? '+' : '') + (d * 100).toFixed(1) + '%';
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      `<td><b>${esc(m.label)}</b></td>` +
+      `<td>${num(m.sessions)}</td>` +
+      `<td class="${cls}">${sign}</td>` +
+      `<td>${pc(m.paidShare, 0)}</td>` +
+      `<td>${pc(m.ownedShare, 0)}</td>` +
+      `<td>${pc(m.convRate)}</td>` +
+      `<td style="text-align:left">${m.countries.slice(0, 3)
+        .map(c => `${esc(c.country)} ${num(c.sessions ?? c.activeUsers)}`).join(' · ')}</td>`;
+    tb.appendChild(tr);
+  });
+}
+
+// ---- S2: competitors ---------------------------------------------------
+// The deep pass is the better source when present: it queried each advertiser by
+// name per country, so it carries full ad copy and a confirmed country list. The
+// broad discovery pass is the fallback.
+// Beauty Blossom was collected the same way as the competitors, so it can sit on the
+// same axis. It is kept out of the competitor lists but shown in the comparisons,
+// because a benchmark chart without your own bar does not tell you anything.
+function selfRow() {
+  const c = D.competitors;
+  const d = (c && c.deepDive || []).find(x => x.isSelf);
+  if (!d) return null;
+  return {
+    name: '뷰티블라썸 (우리)', isSelf: true, reason: '자사 — 경쟁사와 같은 방식으로 수집',
+    url: null, activeAdCount: d.totalAds, countries: d.activeCountries,
+    countryCount: d.activeCountries.length, earliestStart: d.earliestStart,
+    runningDays: d.earliestStart ? Math.round((Date.now() - new Date(d.earliestStart)) / 86400000) : null,
+    creativeTotal: d.ads.reduce((s, a) => s + (a.creativeCount || 0), 0),
+    landingDomains: d.landingDomains, ads: d.ads, pages: d.pages, unresolved: d.unresolved
+  };
+}
+
+function benchmarkSet() {
+  const c = D.competitors;
+  if (!c) return [];
+  if (c.deepDive && c.deepDive.length) {
+    return c.deepDive.filter(d => !d.isSelf).map(d => ({
+      name: d.name,
+      reason: d.selectionReason,
+      url: (d.ads.find(a => a.advertiserUrl) || {}).advertiserUrl || null,
+      activeAdCount: d.totalAds,
+      countries: d.activeCountries,
+      countryCount: d.activeCountries.length,
+      earliestStart: d.earliestStart,
+      runningDays: d.earliestStart
+        ? Math.round((Date.now() - new Date(d.earliestStart)) / 86400000) : null,
+      creativeTotal: d.ads.reduce((s, a) => s + (a.creativeCount || 0), 0),
+      landingDomains: d.landingDomains,
+      ads: d.ads,
+      unresolved: d.unresolved
+    })).sort((a, b) => b.countryCount - a.countryCount || b.activeAdCount - a.activeAdCount);
+  }
+  return c.korean.slice(0, 6).map(a => ({
+    name: a.name, reason: a.classificationEvidence.join(' / '), url: a.url,
+    activeAdCount: a.activeAdCount, countries: a.countries, countryCount: a.countryCount,
+    earliestStart: a.earliestStart, runningDays: a.runningDays,
+    creativeTotal: a.creativeTotal, landingDomains: a.landingDomains,
+    ads: c.ads.filter(x => x.advertiser && a.name &&
+      x.advertiser.toLowerCase() === a.name.toLowerCase()),
+    unresolved: []
+  }));
+}
+
+function fillCompetitors() {
+  const c = D.competitors;
+  const method = $('comp-method');
+  if (!c) {
+    method.textContent = '경쟁사 광고 데이터가 아직 수집되지 않았다. scripts/collect-competitors.mjs 를 먼저 실행한다.';
+    return;
+  }
+  const selfNote = (c.self && c.self.length)
+    ? ` 참고로 같은 조회에 우리 계정도 함께 잡혔습니다 — ${c.self.map(s =>
+        `<b>${esc(s.name)}</b> ${num(s.activeAdCount)}건(${s.countries.map(ko).join(', ')})`).join(', ')}. ` +
+      '당연히 경쟁사 집계에서는 뺐습니다.'
+    : '';
+  method.innerHTML =
+    `열 개 나라 × 여러 검색어로 ${num(c.totals.requests ?? c.discovery.length)}번 조회해 ` +
+    `광고 ${num(c.totals.adsParsed)}건, 광고주 ${num(c.advertiserCount)}곳을 모았습니다. ` +
+    `이 중 랜딩 페이지 주소·병원 이름·광고 문구를 근거로 <b>한국 병원</b>만 추려 ${num(c.totals.koreanClinics)}곳을 찾았고, ` +
+    (c.deepDive && c.deepDive.length
+      ? `다시 그중 <b>${c.deepDive.length}곳</b>을 골라 나라별로 하나하나 재조회했습니다. ` +
+        '이렇게 하면 광고 문구 전문과 정확한 공략 국가까지 확인됩니다. 아래가 그 결과입니다.'
+      : '') +
+    selfNote +
+    `<div class="fact" style="margin-top:8px">${esc(c.note)}</div>`;
+
+  const top = benchmarkSet();
+  const tiles = $('comp-tiles'); tiles.textContent = '';
+  top.forEach(a => {
+    const d = document.createElement('div');
+    d.className = 'tile';
+    d.innerHTML =
+      `<div class="k">${esc(a.name || '(병원명 미확인)')}</div>` +
+      `<div class="v">${num(a.activeAdCount)}<span style="font-size:13px;font-weight:400;color:var(--ink2)"> 건 광고 중</span></div>` +
+      `<div class="d">${a.countryCount}개국 · ${a.runningDays != null ? '가장 오래된 광고 ' + a.runningDays + '일째' : '기간 미확인'}</div>` +
+      `<div class="d">${esc(a.landingDomains.slice(0, 2).join(', ') || '연결 페이지 미확인')}</div>`;
+    tiles.appendChild(d);
+  });
+
+  const wrap = $('comp-cards'); wrap.textContent = '';
+  top.forEach(a => {
+    const ads = (a.ads || []).filter(x => x.copy).slice(0, 3);
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.marginTop = '14px';
+    let html =
+      `<div class="adcard" style="border:0;padding:0;background:transparent">
+        <div class="hd">
+          <span class="nm">${esc(a.name || '(병원명 미확인)')}</span>
+          <span class="fact">광고 ${num(a.activeAdCount)}건 · 소재 ${num(a.creativeTotal)}개 ·
+            ${a.earliestStart ? '가장 오래된 광고 ' + esc(a.earliestStart) + ' 시작' : '시작일 미확인'}</span>
+        </div>
+        <div class="fact" style="margin-top:4px">광고를 내보내는 나라: <b>${a.countries.length ? a.countries.map(c => esc(ko(c))).join(' · ') : '확인 안 됨'}</b>
+          ${a.unresolved && a.unresolved.length ? ` (조회 실패: ${a.unresolved.map(c => esc(ko(c))).join(', ')})` : ''}</div>
+        <div class="fact">이 병원을 고른 이유: ${esc(a.reason || '')}</div>
+        ${a.landingDomains.length ? `<div class="fact">광고에서 연결되는 페이지: ${a.landingDomains.map(esc).join(', ')}</div>` : ''}
+        ${(() => {
+          const p = (D.competitors.profiles || []).find(x =>
+            a.name && (x.name.toLowerCase() === a.name.toLowerCase() ||
+              a.name.toLowerCase().includes(x.name.toLowerCase().slice(0, 10))));
+          if (!p) return '';
+          return `<div style="margin-top:8px;padding:10px;border:1px solid var(--ring);border-radius:8px">
+            <div><span class="pill">${esc(p.district)}</span>
+              ${p.koreanName ? `<b style="margin-left:8px">${esc(p.koreanName)}</b>` : ''}</div>
+            ${p.address ? `<div class="fact" style="margin-top:5px">${esc(p.address)}</div>` : ''}
+            ${p.multilingualSites ? `<div class="fact">외국인용 사이트: ${p.multilingualSites.map(esc).join(' · ')}</div>` : ''}
+            ${p.interpretation ? `<div class="fact">외국인 상담 지원: ${p.interpretation.map(esc).join(' · ')}</div>` : ''}
+            <div style="font-size:12.5px;color:var(--ink2);margin-top:6px">${esc(p.whyBenchmark)}</div>
+            <div class="links">${p.sources.map((s, i) =>
+              `<a href="${esc(s)}" target="_blank" rel="noopener">출처 ${i + 1}</a>`).join('')}</div>
+          </div>`;
+        })()}
+        <div class="links">
+          ${a.url ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">광고주 페이지</a>` : ''}
+        </div>
+      </div>`;
+    ads.forEach(ad => {
+      html +=
+        `<div class="adcard">
+          <div class="hd">
+            <span class="fact">${esc(ad.startedRunning || '시작일 미확인')}부터 · ${esc(ko(ad.country))}에 노출
+              ${ad.multipleVersions ? ' · 여러 버전을 동시에 테스트 중' : ''}
+              <span style="color:var(--muted)">(광고 번호 ${esc(ad.libraryId)})</span></span>
+          </div>
+          ${ad.copy ? `<div class="copy">${esc(ad.copy)}</div>` : ''}
+          ${ad.creativeUrls.length ? `<div class="thumbs">${ad.creativeUrls.slice(0, 5)
+            .map(u => `<img src="${esc(u)}" loading="lazy" alt="">`).join('')}</div>` : ''}
+          <div class="links">
+            <a href="${esc(ad.adLibraryUrl)}" target="_blank" rel="noopener">메타에서 원본 광고 보기</a>
+            ${ad.landingUrl ? `<a href="${esc(ad.landingUrl)}" target="_blank" rel="noopener">광고를 누르면 가는 페이지</a>` : ''}
+          </div>
+        </div>`;
+    });
+    card.innerHTML = html;
+    wrap.appendChild(card);
+  });
+}
+
+function fillCrossFindings() {
+  const w = $('cross-findings'); if (!w) return;
+  w.textContent = '';
+  const items = (D.competitors && D.competitors.crossFindings) || [];
+  if (!items.length) { w.innerHTML = '<p class="sub">확인된 공통 패턴이 없다.</p>'; return; }
+  items.forEach((f, i) => {
+    const d = document.createElement('div');
+    d.className = 'tier';
+    d.style.borderLeftColor = cssv(['--s1', '--s2', '--s3', '--s4'][i % 4]);
+    d.innerHTML =
+      `<h3>${esc(f.title)}</h3>` +
+      `<p class="why">${esc(f.detail)}</p>` +
+      `<div class="links">${(f.sources || []).map((s, j) =>
+        `<a href="${esc(s)}" target="_blank" rel="noopener">출처 ${j + 1}</a>`).join('')}</div>`;
+    w.appendChild(d);
+  });
+}
+
+function drawStyle() {
+  const svg = $('style-bars'); svg.textContent = '';
+  const s = D.competitors && D.competitors.styleOverall;
+  if (!s) { svg.setAttribute('viewBox', '0 0 10 10'); $('style-note').textContent = ''; return; }
+
+  const rows = s.signals;
+  const W = 1080, rowH = 34, padL = 190, padR = 120, padT = 6;
+  const H = padT + rows.length * rowH + 8;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const barW = W - padL - padR;
+
+  rows.forEach((r, i) => {
+    const y = padT + i * rowH;
+    svg.appendChild(Object.assign(el('text', {
+      x: padL - 10, y: y + 21, 'text-anchor': 'end', 'font-size': 12.5, fill: cssv('--ink')
+    }), { textContent: r.label }));
+    svg.appendChild(el('rect', {
+      x: padL, y: y + 7, width: barW, height: 18, rx: 4, fill: cssv('--grid'), opacity: 0.5
+    }));
+    const rect = el('rect', {
+      x: padL, y: y + 7, width: Math.max(barW * r.share, 1.5), height: 18, rx: 4,
+      fill: cssv('--s1'), opacity: 0.88
+    });
+    bindTT(rect, `<b>${esc(r.label)}</b>
+      <div class="r"><span>이렇게 쓴 광고</span><span>${r.count}건 / ${s.adsAnalysed}건</span></div>
+      <div class="r"><span>비율</span><span>${pc(r.share, 0)}</span></div>`);
+    svg.appendChild(rect);
+    svg.appendChild(Object.assign(el('text', {
+      x: padL + barW + 10, y: y + 21, 'font-size': 12, fill: cssv('--ink2')
+    }), { textContent: `${r.count}/${s.adsAnalysed} (${pc(r.share, 0)})` }));
+  });
+
+  const top = rows[0], low = [...rows].reverse().find(r => r.share < 0.35);
+  $('style-note').innerHTML =
+    `경쟁 병원 광고 <b>${s.adsAnalysed}건</b>의 문구를 그대로 읽고 셌습니다. ` +
+    `광고 하나의 길이는 평균 ${num(s.avgCopyLength)}자, 이모지는 평균 ${s.avgEmojiPerAd}개를 씁니다 — ` +
+    '짧고 담백한 문구가 아니라 <b>길고 친근한 SNS 게시글처럼</b> 쓴다는 뜻입니다.' +
+    (top ? ` 가장 많이 쓰는 방식은 <b>${esc(top.label)}</b>(${pc(top.share, 0)})입니다.` : '') +
+    (low ? ` 반대로 <b>${esc(low.label)}</b>은 ${pc(low.share, 0)}밖에 안 됩니다. ` +
+      '다들 안 하고 있다는 건 우리가 먼저 해볼 만하다는 뜻이기도 하고, 해봐도 효과가 없어서 다들 뺐다는 뜻일 수도 있습니다. ' +
+      '작게 테스트해 보고 판단하시길 권합니다.' : '');
+}
+
+function drawGantt() {
+  const svg = $('gantt'); svg.textContent = '';
+  const c = D.competitors;
+  const rows = ((c && c.deepDive) || []).filter(d => d.ageProfile)
+    .map(d => ({ name: d.isSelf ? '뷰티블라썸 (우리)' : d.name, isSelf: !!d.isSelf, p: d.ageProfile }))
+    .sort((a, b) => b.p.median - a.p.median);
+  if (!rows.length) { svg.setAttribute('viewBox', '0 0 10 10'); return; }
+
+  const BUCKETS = [
+    { label: '30일 이내', v: '--s2' },
+    { label: '1~3개월', v: '--s4' },
+    { label: '3~12개월', v: '--s3' },
+    { label: '1년 이상', v: '--s6' }
+  ];
+  const W = 1080, rowH = 38, padL = 168, padR = 200, padT = 8;
+  const H = padT + rows.length * rowH + 12;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const barW = W - padL - padR;
+
+  rows.forEach((r, i) => {
+    const y = padT + i * rowH;
+    svg.appendChild(Object.assign(el('text', {
+      x: padL - 10, y: y + 24, 'text-anchor': 'end', 'font-size': 12,
+      'font-weight': r.isSelf ? 700 : 400,
+      fill: r.isSelf ? cssv('--s1') : cssv('--ink')
+    }), { textContent: (r.name || '').slice(0, 22) }));
+
+    let x = padL;
+    r.p.buckets.forEach((b, bi) => {
+      if (!b.n) return;
+      const w = (b.n / r.p.count) * barW;
+      const rect = el('rect', {
+        x, y: y + 9, width: Math.max(w, 1), height: 20, rx: 2,
+        fill: cssv(BUCKETS[bi].v), opacity: 0.9
+      });
+      bindTT(rect, `<b>${esc(r.name)} · ${esc(b.label)}</b>
+        <div class="r"><span>광고</span><span>${b.n}건 / ${r.p.count}건</span></div>
+        <div class="r"><span>비중</span><span>${pc(b.n / r.p.count, 0)}</span></div>`);
+      svg.appendChild(rect);
+      if (w > 24) svg.appendChild(Object.assign(el('text', {
+        x: x + w / 2, y: y + 23, 'text-anchor': 'middle', 'font-size': 10.5,
+        fill: '#fff', 'font-weight': 600
+      }), { textContent: b.n }));
+      x += w;
+    });
+
+    svg.appendChild(Object.assign(el('text', {
+      x: padL + barW + 10, y: y + 24, 'font-size': 11.5,
+      'font-weight': r.isSelf ? 650 : 400,
+      fill: r.isSelf ? cssv('--s1') : cssv('--ink2')
+    }), { textContent: `광고 ${r.p.count}건 · 중앙 ${r.p.median}일` }));
+  });
+
+  const lg = $('lg-age'); lg.textContent = '';
+  BUCKETS.forEach(b => {
+    const s = document.createElement('span');
+    s.innerHTML = `<i class="dot" style="background:${cssv(b.v)}"></i>${esc(b.label)}`;
+    lg.appendChild(s);
+  });
+
+  const me = rows.find(r => r.isSelf);
+  const longest = rows[0];
+  if (me) {
+    $('gantt-note').innerHTML =
+      `<b>우리는 지금 돌아가는 광고 ${me.p.count}건이 전부 30일 이내입니다</b>(중앙 ${me.p.median}일). ` +
+      '매달 소재를 새로 갈아끼우는 운영입니다. ' +
+      (longest && !longest.isSelf
+        ? `반대쪽 끝은 ${esc(longest.name)}으로 중앙 ${longest.p.median}일이고, ${longest.p.buckets[3].n}건은 1년이 넘었습니다. `
+        : '') +
+      '<b>어느 쪽이 옳다고 이 데이터로 단정할 수는 없습니다.</b> 다만 차이는 분명합니다 — ' +
+      '오래 유지하는 쪽은 검증된 소재를 계속 쓰므로 제작 비용이 적게 들고 성과 데이터가 쌓입니다. ' +
+      '자주 바꾸는 쪽은 같은 사람에게 반복 노출되는 피로를 줄이는 대신, 매번 성과를 처음부터 다시 쌓게 됩니다. ' +
+      '9월에는 <b>성과가 좋은 소재 몇 개는 교체하지 않고 그대로 두는 방식</b>을 시험해 보시고, ' +
+      '10월에 유지한 소재와 교체한 소재의 문의 전환율을 나란히 비교해 보시길 권합니다. ' +
+      '이렇게 하면 우리 운영 방식이 맞는지를 남의 사례가 아니라 우리 숫자로 확인할 수 있습니다.';
+  }
+}
+
+// ---- S2-1: price disclosure --------------------------------------------
+function fillPrice() {
+  const p = D.priceDisclosure;
+  if (!p) return;
+
+  const tiles = [
+    { k: '조사한 병원 광고', v: num(p.sample.clinicAds), d: '본문이 확보된 건만' },
+    { k: '금액을 적은 광고', v: num(p.sample.priceAds), d: pc(p.sample.priceAds / p.sample.clinicAds, 1) + ' — 드문 편입니다' },
+    { k: '한국에 노출된 건', v: num(p.koreaExposed), d: '나머지는 해외 노출입니다' },
+    { k: '할인·특가 표현 포함', v: num(p.discountAds), d: '금액만 적은 것과 구분됩니다' }
+  ];
+  const tw = $('price-tiles'); tw.textContent = '';
+  tiles.forEach(t => {
+    const d = document.createElement('div');
+    d.className = 'tile';
+    d.innerHTML = `<div class="k">${esc(t.k)}</div><div class="v">${t.v}</div><div class="d">${esc(t.d)}</div>`;
+    tw.appendChild(d);
+  });
+
+  const s = p.self || {};
+  $('price-self').innerHTML =
+    `<b>우리 광고는 금액 표기가 ${num(s.priceAds)}건입니다.</b> ` +
+    `본문이 확보된 자사 광고 ${num(s.totalWithCopy)}건 가운데 금액을 적은 것은 ${num(s.priceAds)}건, ` +
+    `할인·특가 표현이 들어간 것은 ${num(s.discountAds)}건입니다. ` +
+    (s.priceAds === 0
+      ? '금액을 앞세우지 않는 방식으로 운영되고 있다는 뜻입니다. '
+      : '') +
+    '<span class="fact">다만 우리 광고 147건 중 본문이 확보된 것은 ' + num(s.totalWithCopy) + '건이라, ' +
+    '나머지는 이 집계에 들어가지 않았습니다. 확정 수치가 필요하면 원내에서 직접 확인하셔야 합니다.</span>';
+
+  const tb = $('price-table').querySelector('tbody'); tb.textContent = '';
+  (p.rows || []).forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      `<td style="text-align:left"><b>${esc((r.advertiser || '').slice(0, 34))}</b>` +
+      `<div class="fact" style="margin-top:3px">${esc(r.snippet.slice(0, 110))}…</div></td>` +
+      `<td>${r.country === 'KR'
+        ? '<b style="color:var(--bad)">' + esc(ko(r.country)) + '</b>'
+        : esc(ko(r.country))}</td>` +
+      `<td class="fact">${esc(r.started || '—')}</td>` +
+      `<td style="text-align:left" class="fact">${r.prices.map(esc).join(' · ')}</td>` +
+      `<td>${r.hasDiscount ? '<b style="color:var(--warn)">있음</b>' : '없음'}</td>` +
+      `<td><a href="${esc(r.adLibraryUrl)}" target="_blank" rel="noopener" style="color:var(--s1)">보기</a></td>`;
+    tb.appendChild(tr);
+  });
+
+  const kr = (p.rows || []).filter(r => r.country === 'KR');
+  $('price-note').innerHTML =
+    `금액을 적은 광고는 병원 광고 ${num(p.sample.clinicAds)}건 가운데 ${num(p.sample.priceAds)}건으로 소수입니다. ` +
+    (kr.length
+      ? `그중 <b>한국에 노출된 것은 ${kr.length}건</b>(${kr.map(r => esc(r.advertiser.slice(0, 24))).join(', ')})이고 ` +
+        '나머지는 대만·일본·싱가포르·인도네시아 등 해외 노출입니다. ' +
+        '국내 의료광고 규정과 직접 닿는 것은 한국 노출 건이므로, 검토가 필요하시면 이 건부터 보시면 됩니다. '
+      : '조사 범위에서 한국에 노출된 건은 없었고 전부 해외 노출이었습니다. ') +
+    '<b>할인 표현이 함께 들어간 건</b>은 금액만 적은 것과 성격이 다릅니다 — ' +
+    'PRIA Clinic 대만 광고는 "34% OFF · 52% OFF", PGC Clinic 일본 광고는 "Up to 65% OFF"처럼 ' +
+    '할인율을 앞세우고 있습니다. ' +
+    `<span class="fact">${esc(p.method)}</span>`;
+}
+
+// ---- S3: heatmap -------------------------------------------------------
+function drawHeatmap() {
+  const svg = $('heatmap'); svg.textContent = '';
+  const hm = D.countryMatrix;
+  if (!hm || !hm.rows.length) { svg.setAttribute('viewBox', '0 0 10 10'); return; }
+
+  const cols = hm.countries;
+  const W = 1080, padL = 168, padT = 62, cellH = 30;
+  const cellW = Math.min(90, (W - padL - 24) / cols.length);
+  const H = padT + (hm.rows.length + 1) * cellH + 30;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+  // our traffic per country market, for the comparison row
+  const ourByCountry = {};
+  D.markets.forEach(m => (m.countries || []).forEach(c => {
+    ourByCountry[c.country] = (ourByCountry[c.country] || 0) + (c.sessions ?? c.activeUsers ?? 0);
+  }));
+  const CC = CO_GA4;
+
+  cols.forEach((c, j) => {
+    const label = ko(c);
+    svg.appendChild(Object.assign(el('text', {
+      x: padL + j * cellW + cellW / 2, y: padT - 12, 'text-anchor': 'middle',
+      'font-size': label.length > 5 ? 11 : 12.5, 'font-weight': 600, fill: cssv('--ink')
+    }), { textContent: label }));
+  });
+
+  hm.rows.forEach((r, i) => {
+    const y = padT + i * cellH;
+    svg.appendChild(Object.assign(el('text', {
+      x: padL - 10, y: y + 20, 'text-anchor': 'end', 'font-size': 12,
+      'font-weight': r.isSelf ? 700 : 400,
+      fill: r.isSelf ? cssv('--s1') : cssv('--ink')
+    }), { textContent: (r.name || '(미확인)').slice(0, 26) }));
+    const STATE = {
+      active: { fill: r.isSelf ? '--s1' : '--s2', label: '광고 노출 중' },
+      absent: { fill: '--grid', label: '노출 없음 (조회는 성공)' },
+      unknown: { fill: '--warn', label: '조회 실패 — 판단 보류' }
+    };
+    // Shade by how many ads run there. A single ad and twenty ads are not the same
+    // thing, and a flat colour made them look identical.
+    const maxAds = Math.max(1, ...hm.rows.flatMap(x => x.cells.map(c => c.ads || 0)));
+    r.cells.forEach((cell, j) => {
+      const st = STATE[cell.state] || STATE.unknown;
+      const n = cell.ads || 0;
+      const op = cell.state === 'active' ? 0.28 + 0.65 * (n / maxAds)
+        : cell.state === 'unknown' ? 0.22 : 0.45;
+      const rect = el('rect', {
+        x: padL + j * cellW + 2, y: y + 4, width: cellW - 4, height: cellH - 8, rx: 4,
+        fill: cssv(st.fill), opacity: op
+      });
+      bindTT(rect, `<b>${esc(r.name || '')} · ${esc(ko(cell.country))}</b>
+        <div class="r"><span>상태</span><span>${st.label}</span></div>
+        ${cell.state === 'active' ? `<div class="r"><span>노출 중인 광고</span><span>${n}건</span></div>` : ''}
+        ${r.reason ? `<div style="margin-top:4px;color:var(--muted)">${esc(r.reason)}</div>` : ''}`);
+      svg.appendChild(rect);
+      if (n > 0) {
+        svg.appendChild(Object.assign(el('text', {
+          x: padL + j * cellW + cellW / 2, y: y + 20, 'text-anchor': 'middle',
+          'font-size': 11, 'font-weight': 600,
+          fill: n / maxAds > 0.45 ? '#fff' : cssv('--ink')
+        }), { textContent: n }));
+      }
+    });
+  });
+
+  // our traffic row
+  const yOur = padT + hm.rows.length * cellH + 8;
+  svg.appendChild(Object.assign(el('text', {
+    x: padL - 10, y: yOur + 20, 'text-anchor': 'end', 'font-size': 12,
+    'font-weight': 650, fill: cssv('--s1')
+  }), { textContent: '우리 홈페이지 접속자' }));
+  const maxOur = Math.max(1, ...cols.map(c => ourByCountry[CC[c]] || 0));
+  cols.forEach((c, j) => {
+    const v = ourByCountry[CC[c]] || 0;
+    const rect = el('rect', {
+      x: padL + j * cellW + 2, y: yOur + 4, width: cellW - 4, height: cellH - 8, rx: 4,
+      fill: cssv('--s1'), opacity: v ? 0.15 + 0.75 * (v / maxOur) : 0.08
+    });
+    bindTT(rect, `<b>${esc(ko(c))}</b>
+      <div class="r"><span>홈페이지 접속자</span><span>${num(v)}명</span></div>
+      <div style="margin-top:5px;color:var(--muted)">같은 사람이 여러 번 와도 1명으로 셉니다.
+        광고 클릭 수가 아니라 우리 사이트가 잰 값입니다.</div>`);
+    svg.appendChild(rect);
+    svg.appendChild(Object.assign(el('text', {
+      x: padL + j * cellW + cellW / 2, y: yOur + 23, 'text-anchor': 'middle',
+      'font-size': 10, fill: cssv('--ink')
+    }), { textContent: v ? (v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v) : '' }));
+  });
+
+  // Where rivals run ads and we run none. Our own row is excluded from the rival
+  // count so the gap is a real gap.
+  const meRow = hm.rows.find(r => r.isSelf);
+  const rivals = hm.rows.filter(r => !r.isSelf);
+  const gaps = cols.map(c => ({
+    c,
+    rivals: rivals.filter(r => ((r.cells.find(x => x.country === c) || {}).ads || 0) > 0).length,
+    mine: meRow ? ((meRow.cells.find(x => x.country === c) || {}).ads || 0) : null
+  })).filter(g => g.rivals >= 3 && g.mine === 0)
+    .sort((a, b) => b.rivals - a.rivals);
+
+  $('hm-note').innerHTML =
+    `<span style="color:var(--s2)">■</span> 경쟁 병원 광고 노출 중 · ` +
+    `<span style="color:var(--s1)">■</span> 우리 광고 노출 중 · ` +
+    `<span style="color:var(--muted)">■</span> 노출 없음 · ` +
+    `<span style="color:var(--warn)">■</span> 조회 실패. 칸 안 숫자가 그 나라에 노출 중인 광고 건수이고, 진할수록 많습니다.<br>` +
+    (hm.precise
+      ? '병원별로 나라를 하나하나 조회한 결과라, 회색은 <b>정말 노출이 없는 것</b>이고 노란색만 <b>확인하지 못한 것</b>입니다.'
+      : '<b>넓게 훑은 결과라 회색을 근거로 쓰면 안 됩니다.</b>') +
+    (gaps.length
+      ? `<br><b>가장 큰 공백은 ${ko(gaps[0].c)}입니다.</b> 경쟁 병원 ${gaps[0].rivals}곳이 광고를 노출하고 있는데 우리는 0건입니다. ` +
+        (gaps.length > 1 ? `${gaps.slice(1).map(g => `${ko(g.c)}(경쟁 ${g.rivals}곳)`).join(', ')}도 같은 상황입니다. ` : '') +
+        '여러 병원이 동시에 돈을 쓰고 있다는 건 그만한 수요를 봤다는 뜻이라 검토할 후보입니다. ' +
+        '다만 이 표로는 그들이 그 나라에서 <b>실제 성과를 내고 있는지</b>까지는 알 수 없다는 점을 감안해 주십시오.'
+      : '');
+}
+
+// ---- S4: tiers ---------------------------------------------------------
+const TIER_COUNTRIES = { EN: ['PH','ID','AE','IN','SG','VN'], TW: ['TW'], JP: ['JP'], KR: ['KR'], CN: [], TH: ['TH'] };
+
+function actionsFor(t, m) {
+  const kw = D.keywordOps.filter(k => k.market === t.market).slice(0, 3);
+  const kwStr = kw.map(k => `<code>${esc(k.query)}</code>(노출 ${num(k.impressions)}·순위 ${k.position.toFixed(1)})`).join(', ');
+  const cc = TIER_COUNTRIES[t.market] || [];
+  // Name the benchmark competitors actually advertising into this tier's countries,
+  // so the action points at a specific operation to copy or beat.
+  const comp = benchmarkSet().filter(a => a.countries.some(c => cc.includes(c)));
+  const compStr = comp.slice(0, 3).map(a =>
+    `<b>${esc(a.name)}</b>(노출 중인 광고 ${num(a.activeAdCount)}건)`).join(', ');
+  const out = [];
+
+  if (t.key === 'defend') {
+    out.push(`<b>광고는 그대로 두시길 권합니다.</b> 접속 100회 중 ${pc(m.convRate)}가 문의로 이어져 전 시장에서 가장 높습니다. 지금 줄일 이유가 없습니다.`);
+    out.push(`<b>대신 광고 없이 들어오는 길을 함께 늘립니다.</b> 지금은 ${pc(m.ownedShare, 0)}밖에 안 돼서, ` +
+      '광고를 멈추면 접속이 거의 남지 않습니다. 매출이 광고비에 통째로 묶여 있다는 뜻이라 위험합니다.');
+    if (kwStr) out.push(`먼저 손볼 검색어는 이것들입니다 — ${kwStr}. 이미 검색 결과에 뜨고 있으니 순위만 올리면 됩니다.`);
+    if (compStr) out.push(`같은 나라에서 광고 중인 병원: ${compStr}. 이들이 어떤 문구를 쓰는지는 S2에서 원본 그대로 확인하실 수 있습니다.`);
+    out.push('<b>영문 페이지는 이미 검색에서 통하고 있습니다.</b> ' +
+      "'sofwave seoul' 2.5위, 'sculptra seoul' 3.6위, 'mole removal seoul' 4.2위 등 12개 검색어가 상위권입니다. " +
+      '새 구조를 만들 게 아니라 지금 페이지에 시술을 더 붙이는 쪽이 확실합니다.');
+  }
+  if (t.key === 'accelerate') {
+    out.push(`접속이 지난달보다 ${m.sessionsDelta != null ? (m.sessionsDelta * 100).toFixed(0) + '%' : '—'} 늘었습니다. ` +
+      `다만 광고로 온 비율이 ${pc(m.paidShare, 0)}라, 이 증가가 광고를 더 산 결과인지 일본에서 진짜 수요가 늘어난 것인지 구분이 안 됩니다.`);
+    out.push('<b>확인 방법은 간단합니다.</b> 9월 한 달은 일본 광고비를 지금 수준으로 고정해 두고 접속 추이만 봅니다. ' +
+      '광고비가 그대로인데 접속이 계속 늘면 진짜 수요이고, 같이 멈추면 광고가 만든 숫자였다는 뜻입니다. ' +
+      '결과에 따라 10월에 얼마를 더 넣을지 정하면 됩니다.');
+    if (kwStr) out.push(`이미 우리 이름을 모르는 사람들의 검색도 잡히고 있습니다 — ${kwStr}. 좋은 신호입니다.`);
+    if (compStr) out.push(`일본을 노리고 있는 병원: ${compStr}. 특히 오션의원은 일본어 전용 사이트 주소를 따로 두고 운영합니다.`);
+  }
+  if (t.key === 'bleed') {
+    const en = D.markets.find(x => x.label === 'EN');
+    out.push(`광고로 온 접속이 ${pc(m.paidShare, 0)}인데 문의 전환율은 ${pc(m.convRate)}입니다. ` +
+      `가장 잘 나오는 EN(${pc(en ? en.convRate : 0)})과 비교하면 약 ${en ? (en.convRate / m.convRate).toFixed(1) : '—'}배 낮습니다. ` +
+      '쉽게 말해 <b>같은 광고비로 문의를 4분의 1밖에 못 받고 있다</b>는 뜻입니다.');
+    out.push('<b>9월 1~2주차:</b> 광고 문구와 노출 대상을 새로 짜서 기존 것과 나란히 돌려 비교합니다. ' +
+      '클릭 단가가 싸다는 이유로 관심 낮은 사람들에게 대량 노출하는 설정이 있다면 그것부터 끕니다. ' +
+      '접속은 줄겠지만 문의는 오히려 늘 수 있습니다.');
+    out.push(`<b>9월 3주차 판단:</b> 문의 전환율이 ${pc(m.convRate * 2, 1)}에 못 미치면, ` +
+      '대만 광고비를 EN과 일본으로 옮기시길 권합니다. 미리 기준을 정해 두어야 그때 가서 흔들리지 않습니다.');
+    if (compStr) out.push(`대만에 광고를 노출 중인 병원: ${compStr}. 이들의 실제 광고 문구를 S2에서 원본 그대로 비교해 보시길 권합니다.`);
+  }
+  if (t.key === 'asset') {
+    out.push(`광고 없이 스스로 찾아오는 접속이 ${pc(m.ownedShare, 0)}입니다. 유일하게 이 비율이 높은 시장이고, ` +
+      '이런 유입은 광고를 꺼도 남기 때문에 가장 값진 자산입니다.');
+    out.push('<b>문제는 그 검색의 대부분이 이미 우리를 아는 사람들이라는 점입니다.</b> ' +
+      '"뷰티블라썸"으로 검색해 들어오는 건 매출을 지키는 데는 도움이 되지만 새 고객을 만들지는 못합니다. ' +
+      '9월에는 병원 이름이 아닌 <b>시술 이름</b> 검색에서 순위를 올리는 데 집중하시길 권합니다.');
+    if (kwStr) out.push(`구체적인 대상은 이것들입니다 — ${kwStr}.`);
+    out.push('참고로 같은 양화로에 Kleam(141번지)·ShineBeam(151번지)·Cleor(165번지)가 모두 외국인 유치 사이트를 따로 운영 중입니다. ' +
+      '우리는 양화로 66번지(합정역)로 한 정거장 거리라 사실상 같은 상권으로 보시는 게 맞습니다.');
+  }
+  if (t.key === 'hold') {
+    out.push('<b>9월에는 이 두 곳에 새 예산을 넣지 마시길 권합니다.</b> 돈을 안 쓰는 대신 원인을 확인하는 달로 씁니다.');
+    D.markets.filter(x => ['CN', 'TH'].includes(x.label)).forEach(x => {
+      out.push(`<b>${x.label}</b> — 접속 ${num(x.sessions)}회, 지난달 대비 ${x.sessionsDelta != null ? (x.sessionsDelta * 100).toFixed(1) + '%' : '—'}. ` +
+        (x.label === 'CN'
+          ? '접속 대부분이 주소를 직접 입력해 들어온 것으로 잡히는데, 이건 보통 유입 경로 추적이 제대로 안 되고 있다는 신호입니다. ' +
+            '실제로 어디서 오는지 모르는 상태라 광고를 늘려도 효과를 확인할 방법이 없습니다. 측정부터 고쳐야 합니다.'
+          : '접속 자체가 사실상 없는 수준입니다. 광고 문제가 아니라 사이트가 검색엔진에 제대로 등록돼 있는지부터 확인해야 합니다.'));
+    });
+  }
+  return out;
+}
+
+function fillTiers() {
+  const wrap = $('tiers'); wrap.textContent = '';
+  D.tiers.forEach(t => {
+    const m = D.markets.find(x => x.label === t.market) || {};
+    const d = document.createElement('div');
+    d.className = 'card';
+    d.style.marginTop = '14px';
+    const names = [t.market, ...(t.extraMarkets || [])].join(' · ');
+    d.innerHTML =
+      `<div class="tier" style="border-left-color:var(${'--' + t.accent})">
+        <h3>${esc(t.title)} — ${esc(names)}</h3>
+        <p class="why">${esc(t.why)}</p>
+        <div class="fact">접속 ${num(m.sessions)}회 · 광고로 온 비율 ${pc(m.paidShare, 0)} ·
+          스스로 찾아온 비율 ${pc(m.ownedShare, 0)} · 문의 전환율 ${pc(m.convRate)}</div>
+        <ul class="actions">${actionsFor(t, m).map(a => `<li>${a}</li>`).join('')}</ul>
+      </div>`;
+    wrap.appendChild(d);
+  });
+}
+
+// ---- S4-1: organic plays -----------------------------------------------
+function fillChannels() {
+  const c = D.channelMentions; if (!c) return;
+  const tb = $('ch-table').querySelector('tbody'); tb.textContent = '';
+  c.rows.forEach(r => {
+    const strong = r.rival >= 40;
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      `<td style="text-align:left"><b>${esc(r.name)}</b></td>` +
+      `<td${strong ? ' style="font-weight:650"' : ''}>${num(r.rival)}건` +
+      `<span class="fact"> (${pc(r.rival / c.rivalTotal, 0)})</span></td>` +
+      `<td>${r.rivalLanding ? num(r.rivalLanding) + '건' : '—'}</td>` +
+      `<td>${r.self ? num(r.self) + '건' : '<span style="color:var(--muted)">0건</span>'}</td>`;
+    tb.appendChild(tr);
+  });
+  const tk = c.rows.find(r => r.name === '틱톡') || { rival: 0 };
+  const x = c.rows.find(r => r.name === 'X(트위터)') || { rival: 0 };
+  const top = c.rows[0];
+  $('ch-note').innerHTML =
+    `경쟁사 광고 ${num(c.rivalTotal)}건, 우리 광고 ${num(c.selfTotal)}건의 문구를 읽고 센 결과입니다. ` +
+    `<b>이 업종이 실제로 쓰는 채널은 메신저입니다</b> — ${esc(top.name)}가 ${num(top.rival)}건으로 가장 많습니다. ` +
+    `<b>틱톡은 ${tk.rival}건, X는 ${x.rival}건</b>으로 둘 다 광고에서는 거의 쓰이지 않습니다. ` +
+    '다만 광고에 안 쓴다고 계정이 없는 것은 아닙니다 — 틱톡은 경쟁 병원 계정이 실제로 확인됩니다(아래 3번 참조). ' +
+    '<b>정리하면 새 채널을 여는 문제보다, 이미 쓰는 채널로 사람을 어떻게 보내느냐가 먼저입니다.</b>';
+}
+
+function fillOrganic() {
+  const wrap = $('organic-plays'); if (!wrap) return;
+  wrap.textContent = '';
+  const PRI = {
+    '높음': { c: '--good', t: '지금 바로' },
+    '보통': { c: '--warn', t: '여력 되면' }
+  };
+  (D.organicPlays || []).forEach((p, i) => {
+    const k = Object.keys(PRI).find(x => p.priority.startsWith(x));
+    const pri = PRI[k] || { c: '--bad', t: '보류' };
+    const d = document.createElement('div');
+    d.className = 'card';
+    d.style.marginTop = '14px';
+    d.innerHTML =
+      `<div class="tier" style="border-left-color:${cssv(pri.c)}">
+        <div class="hd" style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap">
+          <h3 style="margin:0">${i + 1}. ${esc(p.title)}</h3>
+          <span class="pill" style="color:${cssv(pri.c)};border-color:${cssv(pri.c)}">중요도 ${esc(p.priority)}</span>
+          <span class="fact">${esc(p.cost)}</span>
+        </div>
+        <p class="why" style="margin-top:8px"><b>근거</b> ${esc(p.evidence)}</p>
+        <p class="why"><b>왜 이 순서인가</b> ${esc(p.why)}</p>
+        <p class="why"><b>어떻게</b> ${esc(p.how)}</p>
+        ${p.langOrder ? `<p class="why"><b>어느 언어부터</b> ${esc(p.langOrder)}</p>` : ''}
+        <div class="fix"><b>첫 걸음</b> ${esc(p.firstStep)}</div>
+        ${(p.sources || []).length ? `<div class="links">${p.sources.map((s, j) =>
+          `<a href="${esc(s)}" target="_blank" rel="noopener">근거 ${j + 1}</a>`).join('')}</div>` : ''}
+      </div>`;
+    wrap.appendChild(d);
+  });
+}
+
+function fillYouTube() {
+  const y = D.youtube; if (!y) return;
+  const c = y.current || {}, p = y.previous || {};
+  const delta = (a, b) => (b ? ((a / b - 1) * 100).toFixed(0) : null);
+  const tiles = [
+    { k: '구독자', v: num(y.channel?.subscribers), d: `영상 ${num(y.channel?.videoCount)}개 · 누적 ${num(y.channel?.totalViews)}회` },
+    { k: '이번 달 조회', v: num(c.views), d: `지난달 ${num(p.views)} → ${delta(c.views, p.views) >= 0 ? '+' : ''}${delta(c.views, p.views)}%` },
+    { k: '신규 구독', v: '+' + num(c.subsGained), d: `지난달 +${num(p.subsGained)}` },
+    { k: '쇼츠 비중', v: (() => {
+      const tot = (y.traffic || []).reduce((s, t) => s + t.views, 0);
+      const sh = (y.traffic || []).find(t => t.source === 'SHORTS');
+      return tot && sh ? pc(sh.views / tot, 0) : '—';
+    })(), d: '유입의 대부분이 쇼츠입니다' }
+  ];
+  const tw = $('yt-tiles'); tw.textContent = '';
+  tiles.forEach(t => {
+    const d = document.createElement('div');
+    d.className = 'tile';
+    d.innerHTML = `<div class="k">${esc(t.k)}</div><div class="v">${t.v}</div><div class="d">${esc(t.d)}</div>`;
+    tw.appendChild(d);
+  });
+
+  // country bars
+  const svg = $('yt-country'); svg.textContent = '';
+  const rows = (y.countries || []).slice(0, 7);
+  if (rows.length) {
+    const W = 520, rowH = 26, padL = 96, padR = 60, padT = 4;
+    const H = padT + rows.length * rowH + 6;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    const max = Math.max(...rows.map(r => r.views || 0));
+    const barW = W - padL - padR;
+    rows.forEach((r, i) => {
+      const yy = padT + i * rowH;
+      const isKR = /^(KR|South Korea)$/i.test(r.country);
+      svg.appendChild(Object.assign(el('text', {
+        x: padL - 8, y: yy + 16, 'text-anchor': 'end', 'font-size': 11.5,
+        'font-weight': isKR ? 700 : 400, fill: isKR ? cssv('--s2') : cssv('--ink2')
+      }), { textContent: r.country }));
+      svg.appendChild(el('rect', {
+        x: padL, y: yy + 4, width: Math.max((r.views / max) * barW, 1), height: 15, rx: 3,
+        fill: cssv(isKR ? '--s2' : '--s1'), opacity: 0.85
+      }));
+      svg.appendChild(Object.assign(el('text', {
+        x: padL + Math.max((r.views / max) * barW, 1) + 6, y: yy + 16,
+        'font-size': 11, fill: cssv('--ink2')
+      }), { textContent: num(r.views) }));
+    });
+  }
+
+  const vw = $('yt-videos'); vw.textContent = '';
+  (y.topVideos || []).slice(0, 6).forEach(v => {
+    const d = document.createElement('div');
+    d.className = 'fact';
+    d.style.padding = '5px 0';
+    d.style.borderBottom = '1px solid var(--grid)';
+    d.innerHTML = `<b>${num(v.views)}회</b> · ${esc((v.title || '').slice(0, 46))}`;
+    vw.appendChild(d);
+  });
+
+  const tot = (y.countries || []).reduce((s, x) => s + (x.views || 0), 0);
+  const kr = (y.countries || []).find(x => /^(KR|South Korea)$/i.test(x.country));
+  $('yt-note').innerHTML =
+    `시청자의 <b>${kr && tot ? pc(kr.views / tot, 0) : '대부분'}</b>가 한국에 있습니다. ` +
+    '영상을 만드는 힘은 이미 증명됐는데, 그 힘이 정작 매출이 나오는 나라에는 닿지 않고 있습니다. ' +
+    '상위 영상 제목을 보시면 포텐자·리쥬란·온다·코필러인데, ' +
+    'S8에서 <b>"하고 있는데 검색이 비어 있다"</b>고 나온 바로 그 시술들입니다. ' +
+    '이 영상들에 자막과 번역 제목만 붙여도 두 가지 문제를 동시에 건드리게 됩니다.';
+}
+
+// ---- S5: keywords ------------------------------------------------------
+const MK_COLOR = { EN: '--s1', TW: '--s2', KR: '--s6', JP: '--s3', CN: '--s4', TH: '--s5' };
+
+function drawKeywords() {
+  const svg = $('kw-quad'); svg.textContent = '';
+  const pts = D.keywordOps.filter(k => k.headroom > 0).slice(0, 30);
+  if (!pts.length) { svg.setAttribute('viewBox', '0 0 10 10'); return; }
+
+  const W = 1080, H = 400, padL = 62, padR = 24, padT = 16, padB = 44;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const maxPos = Math.max(...pts.map(p => p.position));
+  const maxImp = Math.max(...pts.map(p => p.impressions));
+  const maxHr = Math.max(...pts.map(p => p.headroom));
+  const X = (p) => padL + (p / Math.ceil(maxPos)) * pw;
+  const Y = (v) => padT + ph - (v / maxImp) * ph;
+  const R = (h) => 5 + 20 * Math.sqrt(h / maxHr);
+
+  for (let p = 0; p <= Math.ceil(maxPos); p += 5) {
+    svg.appendChild(el('line', { x1: X(p), x2: X(p), y1: padT, y2: padT + ph, stroke: cssv('--grid') }));
+    svg.appendChild(Object.assign(el('text', {
+      x: X(p), y: padT + ph + 18, 'text-anchor': 'middle', 'font-size': 11, fill: cssv('--muted')
+    }), { textContent: p === 0 ? '순위 1' : p }));
+  }
+  [0, 0.5, 1].forEach(f => {
+    const v = maxImp * f;
+    svg.appendChild(el('line', { x1: padL, x2: padL + pw, y1: Y(v), y2: Y(v), stroke: cssv('--grid') }));
+    svg.appendChild(Object.assign(el('text', {
+      x: padL - 8, y: Y(v) + 4, 'text-anchor': 'end', 'font-size': 11, fill: cssv('--muted')
+    }), { textContent: num(Math.round(v)) }));
+  });
+
+  // "top of page" band — rank 1-10 is where clicks actually happen
+  svg.appendChild(el('rect', {
+    x: padL, y: padT, width: X(10) - padL, height: ph,
+    fill: cssv('--good'), opacity: 0.05
+  }));
+  svg.appendChild(Object.assign(el('text', {
+    x: X(10) - 8, y: padT + 14, 'text-anchor': 'end', 'font-size': 11, fill: cssv('--good')
+  }), { textContent: '1페이지 권역' }));
+
+  pts.forEach(p => {
+    const c = el('circle', {
+      cx: X(p.position), cy: Y(p.impressions), r: R(p.headroom),
+      fill: cssv(MK_COLOR[p.market] || '--muted'), opacity: 0.62,
+      stroke: cssv(MK_COLOR[p.market] || '--muted'), 'stroke-opacity': 0.9
+    });
+    bindTT(c, `<b>${esc(p.query)}</b>
+      <div class="r"><span>나라</span><span>${esc(p.market)}</span></div>
+      <div class="r"><span>검색 결과에 뜬 횟수</span><span>${num(p.impressions)}</span></div>
+      <div class="r"><span>실제 클릭</span><span>${num(p.clicks)} (${pc(p.ctr)})</span></div>
+      <div class="r"><span>평균 순위</span><span>${p.position.toFixed(1)}위</span></div>
+      <div class="r"><span>더 얻을 수 있는 클릭</span><span>+${num(p.headroom)} (추정)</span></div>`);
+    svg.appendChild(c);
+  });
+
+  const km = D.keywordMethod || {};
+  $('kw-note').innerHTML =
+    '<b>보는 법:</b> 가로축은 검색 순위로 <b>왼쪽일수록 위쪽에 노출</b>되고 있다는 뜻이고, 세로축은 그 검색어가 얼마나 많이 노출됐는지입니다. ' +
+    '<b>원이 클수록 순위를 올렸을 때 얻는 게 큽니다.</b> 따라서 오른쪽 위의 큰 원부터 손대시면 됩니다 — ' +
+    '많이 노출되는데 순위가 뒤라 클릭을 놓치고 있는 검색어라는 뜻이니까요.<br>' +
+    `노출이 ${num(km.minImpressions)}회 이상이면서 순위가 ${km.rankBand ? km.rankBand.join('~') : ''}위인 검색어만 담았고, ` +
+    '"뷰티블라썸" 같은 우리 이름 검색은 뺐습니다. 이미 아는 사람이 찾아오는 건 새 고객이 아니기 때문입니다.<br>' +
+    `<b>원 크기는 추정값입니다.</b> 1위에 올랐을 때의 클릭률을 ${pc(km.topCtrAssumed, 0)}로 가정하고 ` +
+    '"지금 노출 수 × 그 비율 − 지금 클릭 수"로 계산했습니다. 정확한 예측이라기보다 <b>어느 것부터 손댈지 순서를 정하는 용도</b>로 봐 주십시오.';
+
+  const lg = $('lg-kw'); lg.textContent = '';
+  [...new Set(pts.map(p => p.market))].forEach(mk => {
+    const s = document.createElement('span');
+    s.innerHTML = `<i class="dot" style="background:${cssv(MK_COLOR[mk] || '--muted')}"></i>${esc(mk)}`;
+    lg.appendChild(s);
+  });
+}
+
+function fillKeywordTable() {
+  const tb = $('kw-table').querySelector('tbody'); tb.textContent = '';
+  D.keywordOps.slice(0, 18).forEach(k => {
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      `<td>${esc(k.query)}</td><td style="text-align:left">${esc(k.market)}</td>` +
+      `<td>${num(k.impressions)}</td><td>${num(k.clicks)}</td><td>${pc(k.ctr)}</td>` +
+      `<td>${k.position.toFixed(1)}</td><td>+${num(k.headroom)}</td>`;
+    tb.appendChild(tr);
+  });
+  const ct = $('city-tags'); ct.textContent = '';
+  (D.cityPattern.length ? D.cityPattern : D.keywordOps.slice(0, 8)).forEach(k => {
+    const s = document.createElement('span');
+    s.className = 'kwtag';
+    s.style.borderColor = cssv(MK_COLOR[k.market] || '--ring');
+    s.textContent = `${k.query} — ${k.market} · 노출 ${k.impressions}회 · ${k.position.toFixed(1)}위`;
+    ct.appendChild(s);
+  });
+}
+
+// ---- S5-1: SERP scan ---------------------------------------------------
+function fillSerp() {
+  const s = D.serpScan;
+  if (!s) return;
+
+  const tiles = [
+    { k: '조사한 검색어', v: num(s.totals.queries), d: '시술 12개 × 시장 3곳' },
+    { k: '우리가 1페이지에 있는 수', v: num(s.totals.weHoldAny), d: s.totals.weHoldAny === 0 ? '한 건도 없습니다' : '' },
+    { k: '조회 실패', v: num(s.totals.failed), d: '실패 없이 전부 확인' },
+    { k: '이미 제휴 중인 플랫폼', v: num(s.partners.reduce((a, p) => a + p.count, 0)) + '건', d: '이들은 1페이지에 있습니다' }
+  ];
+  const tw = $('serp-tiles'); tw.textContent = '';
+  tiles.forEach(t => {
+    const d = document.createElement('div');
+    d.className = 'tile';
+    d.innerHTML = `<div class="k">${esc(t.k)}</div><div class="v">${t.v}</div><div class="d">${esc(t.d)}</div>`;
+    tw.appendChild(d);
+  });
+
+  $('serp-headline').innerHTML =
+    `<b>조사한 ${s.totals.queries}개 검색어 전부에서 우리 페이지는 1페이지에 없습니다.</b> ` +
+    'S2에서 본 광고 경쟁사 7곳도 마찬가지로 한 건도 없었습니다 — 그들 역시 검색이 아니라 광고로만 하고 있다는 뜻입니다. ' +
+    '즉 여기는 <b>누군가에게서 빼앗아야 하는 자리가 아니라, 광고 경쟁자들이 아직 손대지 않은 자리</b>입니다. ' +
+    `<span class="fact">${esc(s.note)}</span>`;
+
+  // market composition
+  const svg = $('serp-market'); svg.textContent = '';
+  const rows = s.byMarket;
+  const W = 1080, rowH = 40, padL = 110, padR = 150, padT = 6;
+  const H = padT + rows.length * rowH + 8;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const barW = W - padL - padR;
+  rows.forEach((r, i) => {
+    const y = padT + i * rowH;
+    svg.appendChild(Object.assign(el('text', {
+      x: padL - 10, y: y + 24, 'text-anchor': 'end', 'font-size': 12.5,
+      'font-weight': 600, fill: cssv('--ink')
+    }), { textContent: r.label }));
+    const segs = [
+      { v: r.clinicShare, c: '--s2', t: '한국 병원' },
+      { v: r.mediaShare, c: '--s4', t: '정보매체·후기' },
+      { v: Math.max(0, 1 - r.clinicShare - r.mediaShare), c: '--grid', t: '기타' }
+    ];
+    let x = padL;
+    segs.forEach(sg => {
+      if (sg.v <= 0) return;
+      const w = sg.v * barW;
+      const rect = el('rect', { x, y: y + 10, width: Math.max(w, 1), height: 20, rx: 2, fill: cssv(sg.c), opacity: 0.9 });
+      bindTT(rect, `<b>${esc(r.label)} · ${esc(sg.t)}</b><div class="r"><span>1페이지 비중</span><span>${pc(sg.v, 0)}</span></div>`);
+      svg.appendChild(rect);
+      if (w > 46) svg.appendChild(Object.assign(el('text', {
+        x: x + w / 2, y: y + 24, 'text-anchor': 'middle', 'font-size': 11,
+        fill: sg.c === '--grid' ? cssv('--ink2') : '#fff', 'font-weight': 600
+      }), { textContent: pc(sg.v, 0) }));
+      x += w;
+    });
+    svg.appendChild(Object.assign(el('text', {
+      x: padL + barW + 10, y: y + 24, 'font-size': 11.5, fill: cssv('--ink2')
+    }), { textContent: `검색어 ${r.keywords}개` }));
+  });
+
+  const tb = $('serp-easy').querySelector('tbody'); tb.textContent = '';
+  rows.forEach(r => r.easiest.forEach(e => {
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      `<td style="text-align:left">${esc(r.label)}</td>` +
+      `<td style="text-align:left"><b>${esc(e.treatment)}</b></td>` +
+      `<td style="text-align:left" class="fact">${esc(e.query)}</td>` +
+      `<td>${e.clinics === 0 ? '<b style="color:var(--good)">0곳</b>' : e.clinics + '곳'}</td>` +
+      `<td>${e.media}곳</td>`;
+    tb.appendChild(tr);
+  }));
+
+  const jp = rows.find(r => r.market === 'JP');
+  const en = rows.find(r => r.market === 'EN');
+  $('serp-easy-note').innerHTML =
+    (jp ? `<b>일본은 1페이지에 한국 병원이 거의 없습니다</b>(병원 ${pc(jp.clinicShare, 0)} 대 정보매체 ${pc(jp.mediaShare, 0)}). ` +
+      '리쥬란·울쎄라·쥬베룩·슈링크·LDM은 한국 병원이 아예 0곳이었습니다. ' +
+      '다만 그 자리를 일본어 정보매체와 후기 블로그가 채우고 있어, 병원 소개 페이지를 새로 만든다고 바로 올라가기는 어렵습니다. ' +
+      '<b>일본은 우리 페이지를 올리는 것보다 그 매체에 실리는 쪽이 빠릅니다.</b> ' : '') +
+    (en ? `반대로 영어권은 한국 병원이 ${pc(en.clinicShare, 0)}를 차지하고 있어 이미 자리가 찼습니다. ` +
+      '여기는 콘텐츠 품질로 밀어야 하는 구간입니다.' : '');
+
+  const rb = $('serp-rivals').querySelector('tbody'); rb.textContent = '';
+  s.searchRivals.forEach(h => {
+    const where = [...new Set(h.hits.map(x => x.market))].join(' · ');
+    const kw = h.hits.slice(0, 4).map(x => x.treatment).join(', ');
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      `<td style="text-align:left"><b>${esc(h.host)}</b><div class="fact">${esc(kw)}</div></td>` +
+      `<td>${h.hits.length}개</td><td>${h.best}위</td>` +
+      `<td style="text-align:left">${esc(where)}</td>`;
+    rb.appendChild(tr);
+  });
+
+  const pb = $('serp-partners').querySelector('tbody'); pb.textContent = '';
+  s.partners.forEach(p => {
+    const top = p.hits[0];
+    const kw = p.hits.slice(0, 4).map(x => `${x.market} ${x.treatment}(${x.rank}위)`).join(', ');
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      `<td style="text-align:left"><b>${esc(p.name)}</b></td>` +
+      `<td>${p.count}건</td>` +
+      `<td>${top ? top.rank + '위' : '—'}</td>` +
+      `<td style="text-align:left" class="fact">${esc(kw)}</td>`;
+    pb.appendChild(tr);
+  });
+  const best = s.partners[0];
+  $('serp-partner-note').innerHTML = best
+    ? `<b>${esc(best.name)}이 가장 넓게 잡고 있습니다 — ${best.count}건, 최고 ${best.hits[0].rank}위.</b> ` +
+      '우리 시술·가격 자료에 이 플랫폼들의 제휴 시트가 이미 들어 있으니, 새로 계약할 것은 없습니다. ' +
+      '9월에는 이 플랫폼 안의 우리 페이지에 시술 설명과 사진이 제대로 들어가 있는지, ' +
+      '위에 나온 검색어들이 그 페이지에 쓰여 있는지부터 점검해 보시길 권합니다. ' +
+      '<b>이건 검색 순위를 새로 만드는 일이 아니라, 이미 1페이지에 있는 자리에 우리 이름을 채워 넣는 일입니다.</b>'
+    : '';
+}
+
+// ---- S6: flow ----------------------------------------------------------
+function drawFlow() {
+  const svg = $('flow'); svg.textContent = '';
+  const W = 1080, H = 575;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+  const tw = D.markets.find(m => m.label === 'TW') || {};
+  const en = D.markets.find(m => m.label === 'EN') || {};
+  const jp = D.markets.find(m => m.label === 'JP') || {};
+  const kr = D.markets.find(m => m.label === 'KR') || {};
+  const thr = pc((tw.convRate || 0) * 2, 1);
+
+  const COL = [140, 380, 620, 880];
+  const nodes = [
+    { id: 'start', x: COL[0], y: 40, w: 190, h: 44, t: '9월 시작', kind: 'start' },
+    { id: 'tw1', x: COL[0], y: 130, w: 200, h: 60, t: `대만 광고 다시 짜기\n광고 ${pc(tw.paidShare, 0)} / 문의 ${pc(tw.convRate)}`, kind: 'act', c: '--s2' },
+    { id: 'twq', x: COL[1], y: 130, w: 205, h: 66, t: `3주차에 확인\n문의율 ${thr} 넘었나?`, kind: 'dec', c: '--s2' },
+    { id: 'twy', x: COL[2], y: 92, w: 195, h: 46, t: '유지하거나 늘리기', kind: 'act', c: '--s6' },
+    { id: 'twn', x: COL[2], y: 172, w: 195, h: 46, t: '예산을 EN·일본으로', kind: 'act', c: '--bad' },
+
+    { id: 'en1', x: COL[0], y: 245, w: 200, h: 60, t: `EN 광고는 그대로\n문의 ${pc(en.convRate)} · 가장 좋음`, kind: 'act', c: '--s1' },
+    { id: 'en2', x: COL[1], y: 245, w: 205, h: 60, t: '"시술명 + 지역명"\n검색 노출 넓히기', kind: 'act', c: '--s1' },
+    { id: 'enq', x: COL[2], y: 245, w: 195, h: 62, t: `광고 없이 온 비율\n${pc(en.ownedShare, 0)}보다 올랐나?`, kind: 'dec', c: '--s1' },
+
+    { id: 'jp1', x: COL[0], y: 360, w: 200, h: 60, t: `일본 광고비 고정\n지난달 ${jp.sessionsDelta != null ? (jp.sessionsDelta * 100).toFixed(0) + '%' : '—'} 성장`, kind: 'act', c: '--s3' },
+    { id: 'jpq', x: COL[1], y: 360, w: 205, h: 66, t: '광고비 그대로인데\n접속이 계속 느나?', kind: 'dec', c: '--s3' },
+    { id: 'jpy', x: COL[2], y: 360, w: 195, h: 46, t: '진짜 수요 → 늘리기', kind: 'act', c: '--s6' },
+
+    { id: 'kr1', x: COL[0], y: 470, w: 200, h: 60, t: `국내 시술명 검색 순위 올리기\n스스로 접속 ${pc(kr.ownedShare, 0)}`, kind: 'act', c: '--s6' },
+    { id: 'krq', x: COL[1], y: 470, w: 205, h: 62, t: '병원명 아닌 검색\n클릭이 늘었나?', kind: 'dec', c: '--s6' },
+    { id: 'end', x: COL[3], y: 305, w: 180, h: 62, t: '10월에 되짚기\n같은 기준으로 판단', kind: 'start' }
+  ];
+  const N = Object.fromEntries(nodes.map(n => [n.id, n]));
+  const edges = [
+    ['start', 'tw1'], ['tw1', 'twq'], ['twq', 'twy', '예'], ['twq', 'twn', '아니오'],
+    ['en1', 'en2'], ['en2', 'enq'],
+    ['jp1', 'jpq'], ['jpq', 'jpy', '예'],
+    ['kr1', 'krq'],
+    ['twy', 'end'], ['twn', 'end'], ['enq', 'end'], ['jpy', 'end'], ['krq', 'end']
+  ];
+
+  const defs = el('defs');
+  const mk = el('marker', { id: 'ah', viewBox: '0 0 10 10', refX: 9, refY: 5,
+    markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' });
+  mk.appendChild(el('path', { d: 'M0,0 L10,5 L0,10 z', fill: cssv('--axis') }));
+  defs.appendChild(mk); svg.appendChild(defs);
+
+  edges.forEach(([a, b, label]) => {
+    const A = N[a], B = N[b];
+    const x1 = A.x + A.w / 2, y1 = A.y + A.h / 2;
+    const x2 = B.x - B.w / 2, y2 = B.y + B.h / 2;
+    const mx = (x1 + x2) / 2;
+    const d = `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
+    svg.appendChild(el('path', { d, fill: 'none', stroke: cssv('--axis'),
+      'stroke-width': 1.4, 'marker-end': 'url(#ah)' }));
+    if (label) {
+      svg.appendChild(Object.assign(el('text', {
+        x: mx, y: (y1 + y2) / 2 - 6, 'text-anchor': 'middle', 'font-size': 11,
+        fill: cssv('--ink2')
+      }), { textContent: label }));
+    }
+  });
+
+  nodes.forEach(n => {
+    const g = el('g');
+    const cx = n.x, cy = n.y + n.h / 2;
+    const color = cssv(n.c || '--ink2');
+    if (n.kind === 'dec') {
+      const hw = n.w / 2, hh = n.h / 2;
+      g.appendChild(el('path', {
+        d: `M ${cx} ${cy - hh} L ${cx + hw} ${cy} L ${cx} ${cy + hh} L ${cx - hw} ${cy} Z`,
+        fill: cssv('--surface'), stroke: color, 'stroke-width': 1.6
+      }));
+    } else {
+      g.appendChild(el('rect', {
+        x: cx - n.w / 2, y: n.y, width: n.w, height: n.h,
+        rx: n.kind === 'start' ? 22 : 8,
+        fill: cssv('--surface'), stroke: color, 'stroke-width': 1.6
+      }));
+    }
+    const lines = n.t.split('\n');
+    lines.forEach((ln, i) => {
+      g.appendChild(Object.assign(el('text', {
+        x: cx, y: cy + (i - (lines.length - 1) / 2) * 15 + 4,
+        'text-anchor': 'middle', 'font-size': i === 0 ? 12.5 : 11,
+        'font-weight': i === 0 ? 600 : 400,
+        fill: i === 0 ? cssv('--ink') : cssv('--ink2')
+      }), { textContent: ln }));
+    });
+    svg.appendChild(g);
+  });
+}
+
+// ---- S7: KPI -----------------------------------------------------------
+function fillKPI() {
+  const tb = $('kpi-table').querySelector('tbody'); tb.textContent = '';
+  const rows = [];
+  const tw = D.markets.find(m => m.label === 'TW');
+  const en = D.markets.find(m => m.label === 'EN');
+  const jp = D.markets.find(m => m.label === 'JP');
+  const kr = D.markets.find(m => m.label === 'KR');
+
+  if (tw) rows.push(['문의 전환율', 'TW', pc(tw.convRate), pc(tw.convRate * 2, 1),
+    '목표에 못 미치면 대만 광고비를 EN·일본으로 옮깁니다']);
+  if (en) rows.push(['광고 없이 들어온 비율', 'EN', pc(en.ownedShare, 0), pc(Math.min(en.ownedShare * 1.5, 1), 0),
+    '광고에만 의존하는 구조가 풀리고 있는지 봅니다']);
+  if (jp) rows.push(['접속 횟수 (광고비 고정한 채)', 'JP', num(jp.sessions), num(Math.round(jp.sessions * 1.1)),
+    '늘면 진짜 수요, 멈추면 광고가 만든 숫자였다는 뜻입니다']);
+  if (kr) {
+    const krKw = D.keywordOps.filter(k => k.market === 'KR');
+    const hr = krKw.reduce((s, k) => s + Math.max(0, k.headroom), 0);
+    rows.push(['병원 이름이 아닌 검색으로 들어온 클릭', 'KR', num(krKw.reduce((s, k) => s + k.clicks, 0)),
+      `+${num(Math.round(hr * 0.3))}`, '새 고객이 실제로 늘고 있는지 봅니다']);
+  }
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${esc(r[0])}</td><td style="text-align:left">${esc(r[1])}</td>` +
+      `<td>${esc(r[2])}</td><td>${esc(r[3])}</td><td style="text-align:left">${esc(r[4])}</td>`;
+    tb.appendChild(tr);
+  });
+}
+
+// ---- limits ------------------------------------------------------------
+// ---- S8: treatment keyword plan ----------------------------------------
+function fillTreatments() {
+  const P = D.treatmentPlan || [];
+  const row = (tb, cells) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = cells.map((c, i) =>
+      `<td${i === 0 ? '' : ''}>${c}</td>`).join('');
+    tb.appendChild(tr);
+  };
+  const mk = (m) => `<span class="kwtag" style="border-color:${cssv(MK_COLOR[m] || '--ring')}">${esc(m)}</span>`;
+
+  // ① lift
+  const lift = P.filter(t => t.bucket === 'lift')
+    .sort((a, b) => (b.crossMarketGap || 0) - (a.crossMarketGap || 0) || b.totalImpressions - a.totalImpressions);
+  const tb1 = $('tp-lift').querySelector('tbody'); tb1.textContent = '';
+  lift.forEach(t => row(tb1, [
+    `<b>${esc(t.name)}</b>`,
+    `<div style="text-align:left">${t.markets.map(mk).join('')}</div>`,
+    num(t.totalImpressions), num(t.totalClicks),
+    t.bestPosition != null ? `${t.bestPosition.toFixed(1)}위 <span class="fact">(${esc(t.bestMarket)})</span>` : '—',
+    t.worstPosition != null ? `${t.worstPosition.toFixed(1)}위 <span class="fact">(${esc(t.worstMarket)})</span>` : '—',
+    t.crossMarketGap != null
+      ? `<b style="color:var(--bad)">${t.crossMarketGap.toFixed(1)}위</b>` : '—'
+  ]));
+  const biggest = lift.find(t => t.crossMarketGap);
+  $('tp-lift-note').innerHTML = biggest
+    ? `<b>나라 간 격차</b>는 같은 시술인데 나라마다 순위가 얼마나 벌어져 있는지입니다. ` +
+      `예를 들어 <b>${esc(biggest.name)}</b>은 ${esc(biggest.bestMarket)}에서 ${biggest.bestPosition.toFixed(1)}위인데 ` +
+      `${esc(biggest.worstMarket)}에서는 ${biggest.worstPosition.toFixed(1)}위입니다. ` +
+      `한 나라에서 이미 잘 되고 있다는 건 그 시술 페이지 자체는 문제가 없다는 뜻이므로, ` +
+      `뒤처진 나라 페이지만 손보면 됩니다. 새로 만드는 것보다 훨씬 빠릅니다.`
+    : '';
+
+  // ② hold
+  const hold = P.filter(t => t.bucket === 'hold').sort((a, b) => b.totalImpressions - a.totalImpressions);
+  const tb2 = $('tp-hold').querySelector('tbody'); tb2.textContent = '';
+  hold.forEach(t => row(tb2, [
+    `<b>${esc(t.name)}</b>`,
+    `<div style="text-align:left">${t.markets.map(mk).join('')}</div>`,
+    num(t.totalImpressions), num(t.totalClicks),
+    `${t.bestPosition.toFixed(1)}위 <span class="fact">(${esc(t.bestMarket)})</span>`
+  ]));
+
+  // ③ open — competitors push it, we have nothing
+  const open = P.filter(t => t.totalImpressions === 0 && t.competitorAds > 0)
+    .sort((a, b) => b.competitorAds - a.competitorAds);
+  const tb3 = $('tp-open').querySelector('tbody'); tb3.textContent = '';
+  open.forEach(t => row(tb3, [
+    `<b>${esc(t.name)}</b>`,
+    `${num(t.competitorAds)}건`,
+    t.offered
+      ? `<span style="color:var(--good);font-weight:650">있음</span> <span class="fact">(${num(t.menuItemCount)}개 항목)</span>`
+      : '<span style="color:var(--bad)">확인 안 됨</span>',
+    '없음',
+    !t.offered ? '본원 시술 목록에서 확인되지 않아 원내 확인이 필요합니다'
+      : t.competitorAds >= 40 ? '<b>1순위</b> — 하고 있는데 검색이 비어 있습니다'
+        : '<b>2순위</b> — 하고 있는데 검색이 비어 있습니다'
+  ]));
+  const offeredCount = open.filter(t => t.offered).length;
+  $('tp-open-note').innerHTML = open.length
+    ? `이 ${open.length}개 시술 중 <b>${offeredCount}개는 본원에서 실제로 시행 중인 시술입니다.</b> ` +
+      `경쟁사는 이 시술들로 광고 ${num(open.reduce((s, t) => s + t.competitorAds, 0))}건을 돌리는데 우리 검색 노출은 0입니다. ` +
+      '장비도 인력도 이미 있으니 추가 투자 없이 페이지와 콘텐츠만으로 메울 수 있는 구간입니다. ' +
+      (D.offeredNote ? `<span class="fact">${esc(D.offeredNote)}</span>` : '')
+    : '';
+
+  // ③-1 wording gaps
+  const tbw = $('tp-word').querySelector('tbody'); tbw.textContent = '';
+  (D.wordingGaps || []).forEach(w => row(tbw, [
+    `<b>${esc(w.searched)}</b>`,
+    `<div style="text-align:left">${esc(w.menu)}</div>`,
+    `<div style="text-align:left" class="fact">${esc(w.evidence)}</div>`
+  ]));
+
+  // ④ ours alone
+  const own = P.filter(t => t.totalImpressions > 0 && t.competitorAds <= 3)
+    .sort((a, b) => b.totalImpressions - a.totalImpressions);
+  const tb4 = $('tp-own').querySelector('tbody'); tb4.textContent = '';
+  own.forEach(t => row(tb4, [
+    `<b>${esc(t.name)}</b>`, num(t.totalImpressions), num(t.totalClicks),
+    t.bestPosition != null ? `${t.bestPosition.toFixed(1)}위` : '—',
+    t.competitorAds ? `${t.competitorAds}건` : '<span style="color:var(--good)">없음</span>'
+  ]));
+}
+
+function fillPageFix() {
+  const p = D.pageFix; const w = $('page-fix');
+  if (!p || !w) return;
+  w.innerHTML =
+    `<p class="why"><b>먼저 확인된 사실</b> ${p.finding}</p>` +
+    `<p class="why" style="color:var(--muted)">${p.caveat}</p>` +
+    `<p class="why" style="margin-top:12px"><b>${esc(p.notDesign)}</b></p>` +
+    `<ol class="actions">${p.steps.map(s =>
+      `<li><b>${esc(s.t)}</b> — ${esc(s.d)}</li>`).join('')}</ol>` +
+    `<p class="why" style="margin-top:12px"><b>순서</b> ${p.order}</p>` +
+    `<div class="fix"><b>이렇게 시험하십시오</b> ${p.experiment}</div>` +
+    `<p class="note" style="margin-top:10px"><b>확인하지 못한 것</b> ${p.unknown}</p>`;
+}
+
+function fillFooter() {
+  $('footer').textContent =
+    `생성 ${D.meta.builtAt.slice(0, 16).replace('T', ' ')} · 이 파일은 매달 하나씩 따로 보관됩니다. ` +
+    '10월 보고서에서 위와 같은 기준으로 9월 전략이 맞았는지 되짚어 보겠습니다.';
+}
+
+function drawAll() {
+  drawChannelStack(); drawStyle(); drawGantt(); drawHeatmap(); drawKeywords(); drawFlow();
+}
+
+fillMarketTable(); fillCompetitors(); fillPrice(); fillCrossFindings();
+fillTiers(); fillChannels(); fillOrganic(); fillYouTube(); fillKeywordTable(); fillSerp(); fillKPI(); fillTreatments(); fillPageFix(); fillFooter();
+fillSummary();
+drawAll();
+addEventListener('resize', drawAll);
+})();
+</script>
+</body>
+</html>

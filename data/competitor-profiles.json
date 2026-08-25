@@ -1,0 +1,138 @@
+{
+  "generated_at_utc": "2026-08-21",
+  "note": "병원 위치와 외국인 대응 구조는 광고 라이브러리에 나오지 않아 각 병원 공식 사이트를 직접 열어 확인했습니다. 확인하지 못한 항목은 비워 두고 추측으로 채우지 않았습니다.",
+  "crossFindings": [
+    {
+      "title": "홍대 양화로 한 축에 해외환자 유치 병원이 몰려 있습니다",
+      "detail": "양화로는 합정역과 홍대입구역을 잇는 길입니다. 뷰티블라썸의원은 양화로 66번지(메디원메디컬센터 6·8층, 합정역 3번 출구 앞)이고, 벤치마크 세 곳은 Kleam 141번지·ShineBeam 151번지·Cleor 165번지입니다. 지하철로 한 정거장, 도보 15분 안쪽이라 사실상 같은 상권으로 보는 것이 맞습니다. 세 곳 모두 외국인 전용 사이트를 따로 두고 메타 광고를 상시 집행 중이며, 이는 이 상권에서 해외환자 유치가 이미 표준 전략이 되었다는 뜻입니다.",
+      "sources": [
+        "https://eng.kleam.kr/page/location.html",
+        "https://hongdae.shinebeam.co.kr/?lang=eng",
+        "https://hongdae.cleorclinic.com/en",
+        "https://beautyblossom.kr/149"
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "name": "Kleam Clinic English",
+      "koreanName": "클림의원",
+      "district": "홍대",
+      "address": "서울 마포구 양화로 141, 3층 (홍대점) / 서울 중구 명동길 43, 4~5층 (명동점)",
+      "multilingualSites": [
+        "eng.kleam.kr",
+        "eng.myeongdong.kleam.kr",
+        "myeongdongbeautyclinic.com"
+      ],
+      "interpretation": [
+        "English",
+        "Chinese",
+        "Japanese",
+        "Thai"
+      ],
+      "whyBenchmark": "뷰티블라썸과 같은 홍대 상권에 있습니다. 광고를 노출 중인 나라가 7개로 가장 넓고, 소재 운영이 특징적입니다 — 지금 돌아가는 광고 58건 중 19건이 1년을 넘겼고 중앙값이 240일입니다. 즉 검증된 소재를 갈아치우지 않고 계속 쓰는 방식입니다. 영어·중국어·일본어·태국어 통역을 상시 제공하는 점도 확인됩니다.",
+      "sources": [
+        "https://eng.kleam.kr/page/location.html",
+        "https://www.myeongdongbeautyclinic.com/",
+        "https://www.trazy.com/experience/detail/kleam-beauty-clinic-hongdae-seoul",
+        "https://www.facebook.com/kleamclinicinseoul/",
+        "https://www.facebook.com/kleamhongdaeclinic/"
+      ]
+    },
+    {
+      "name": "ShineBeam Hongdae",
+      "koreanName": null,
+      "district": "홍대",
+      "address": "서울 마포구 양화로 151",
+      "multilingualSites": [
+        "hongdae.shinebeam.co.kr/?lang=eng"
+      ],
+      "interpretation": null,
+      "whyBenchmark": "뷰티블라썸과 같은 양화로에 있습니다. 영어 페이지(?lang=eng)로 싱가포르·인도네시아에 직접 광고하며, 광고 문구에 이달의 프로모션과 평일 특가를 그대로 적어 넣는 방식을 씁니다. 다른 병원 대부분이 상담 유도형인 것과 달리 혜택을 앞세우는 쪽입니다. 홍대점과 강남점만 집계했고, 강서점은 상권이 달라 제외했습니다.",
+      "sources": [
+        "https://www.facebook.com/ads/library/?id=1420377419916816",
+        "https://hongdae.shinebeam.co.kr/?lang=eng"
+      ]
+    },
+    {
+      "name": "PRIA Clinic",
+      "koreanName": "프리아의원",
+      "district": "강남",
+      "address": "서울 서초구 강남대로 349 우남빌딩 13~14층 (강남역 2호선 7번 출구 도보 2~3분)",
+      "multilingualSites": [
+        "pria.clinic"
+      ],
+      "interpretation": null,
+      "whyBenchmark": "이번 조사에서 지금 돌리고 있는 광고 수가 가장 많습니다. 강남역 바로 앞 대형 병원이 인도네시아·싱가포르를 겨냥하고 있습니다.",
+      "sources": [
+        "https://www.pria.clinic/"
+      ]
+    },
+    {
+      "name": "오션클리닉",
+      "koreanName": "오션의원",
+      "district": "강남",
+      "address": "서울 서초구 강남대로 363, 6~7층",
+      "multilingualSites": [
+        "gangnam.oceanclinic.co.kr",
+        "ja.gangnam.oceanclinic.co.kr"
+      ],
+      "interpretation": [
+        "WhatsApp",
+        "WeChat",
+        "Line"
+      ],
+      "whyBenchmark": "일본어 전용 사이트 주소(ja.)를 따로 두고, 나라별로 상담 메신저를 각각 붙여 두었습니다(WhatsApp·WeChat·Line). 226일째 광고 중이며 일본·싱가포르·대만·인도네시아를 동시에 공략하고 있습니다.",
+      "sources": [
+        "https://gangnam.oceanclinic.co.kr/"
+      ]
+    },
+    {
+      "name": "Cleor Clinic",
+      "koreanName": "클레오르의원 (홍대점 · 강남점)",
+      "district": "홍대",
+      "address": "서울 마포구 양화로 165 상진빌딩 4층 (홍대입구역 앞) / 서울 서초구 강남대로 447 남서울빌딩 12층 (강남점)",
+      "multilingualSites": [
+        "hongdae.cleorclinic.com/en",
+        "gangnam.cleorclinic.com",
+        "seoulhongdaeskinclinic.com"
+      ],
+      "interpretation": null,
+      "whyBenchmark": "뷰티블라썸과 같은 홍대 양화로에 있습니다. 시장마다 브랜드 이름을 현지식으로 바꿔 쓰는 점이 특징입니다(중화권 克蕾歐, 일본 クレオル). 대만과 일본에 각각 광고를 노출 중입니다.",
+      "sources": [
+        "https://hongdae.cleorclinic.com/en",
+        "https://gangnam.cleorclinic.com/",
+        "https://seoulhongdaeskinclinic.com/",
+        "https://www.instagram.com/cleorclinic_hd/"
+      ]
+    },
+    {
+      "name": "Journey of Beauty, Primi Clinic",
+      "koreanName": "프리미의원",
+      "district": "성수",
+      "address": "서울 성동구 성수동 일대 (뚝섬역 5번 출구 도보 4분 / 성수역 4번 출구 도보 7분)",
+      "multilingualSites": [
+        "primiclinic.com",
+        "enprimiclinic.com"
+      ],
+      "interpretation": null,
+      "whyBenchmark": "성수 상권이라 입지로 겹치는 경쟁자는 아닙니다. 광고 수는 적지만 중동(UAE)까지 노리고 있어, 우리가 아직 안 보고 있는 시장을 확인하는 참고 사례로만 넣었습니다.",
+      "sources": [
+        "https://primiclinic.com/",
+        "https://enprimiclinic.com/intro"
+      ]
+    },
+    {
+      "name": "Selenaclinic Beauty Skin Anti-aging Clinic in Korea",
+      "koreanName": null,
+      "district": "홍대",
+      "address": null,
+      "multilingualSites": null,
+      "interpretation": null,
+      "whyBenchmark": "광고 문구에 韓國弘大(한국 홍대) 표기가 있어 홍대 상권임이 확인됩니다. 지금 돌리는 광고가 가장 많은 축에 들고, 인도네시아·필리핀·태국·베트남 등 동남아에 집중하고 있습니다.",
+      "sources": [
+        "https://www.facebook.com/ads/library/"
+      ]
+    }
+  ]
+}

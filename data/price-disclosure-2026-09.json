@@ -1,0 +1,151 @@
+{
+  "generated_at_utc": "2026-08-21T03:07:09.482Z",
+  "method": "메타 광고 라이브러리에서 본문이 확보된 광고 370건(병원 광고만, K-뷰티 제품·제휴 광고 제외)을 대상으로 통화 기호와 금액 패턴을 기계적으로 탐지했습니다.",
+  "legalNote": "이 표는 관측된 사실만 담습니다. 위법 여부를 판단하지 않았고 판단할 수도 없습니다. 참고로 의료법 제45조는 비급여 진료비용의 고지를 의료기관의 의무로 정하고 있어 금액 표시 자체는 문제가 되지 않습니다. 쟁점이 되는 것은 할인·이벤트가로 환자를 유인하는 행위(의료법 제27조 제3항)와 사전심의(제57조)이며, 해외에만 노출되는 광고의 국내법 적용 범위는 별도 검토가 필요합니다. 실제 판단은 법률 검토를 받으시기 바랍니다.",
+  "sample": {
+    "copyCaptured": 400,
+    "clinicAds": 370,
+    "priceAds": 11
+  },
+  "self": {
+    "totalWithCopy": 30,
+    "priceAds": 0,
+    "discountAds": 1
+  },
+  "koreaExposed": 1,
+  "discountAds": 3,
+  "rows": [
+    {
+      "advertiser": "Selenaclinic Beauty Skin Anti-aging Clinic in Korea",
+      "country": "KR",
+      "started": "Jun 8, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=1532126995281967",
+      "prices": [
+        "₩249,000"
+      ],
+      "hasDiscount": false,
+      "snippet": "ONE-DAY SELENA DOUBLE CHIN BREAKDOWN PROGRAM / “One day. Three technologies. One defined jawline.” / 1,990,000 KRW / Ultherapy × ONDA × Korean Kybella / Complimentary Soothing Modeling Pack / Korean K"
+    },
+    {
+      "advertiser": "오션클리닉",
+      "country": "TW",
+      "started": "Jan 20, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=1439387104274679",
+      "prices": [
+        "₩690,000",
+        "NT$15,600",
+        "₩790,000",
+        "NT$17,850",
+        "₩2,190,000",
+        "NT$49,400"
+      ],
+      "hasDiscount": true,
+      "snippet": "💜韓國熱銷緊緻項目 #鈦提升💜 / 💎鈦提升是什麼？ / 利用三種不同波長激光同時作用的醫美療程，能深入皮膚不同層次，促進膠原蛋白增生，達到緊緻、提拉和亮白肌膚的效果。 / 🔸刺激膠原蛋白生 / 🔸緊緻輪廓、收緊鬆弛肌膚 / 🔸改善法令紋、木偶紋 / 🔸打造小V臉、自然拉提感 / ⏰單次療程：：通常可維持約1-2個月 / ⏰建議療程（如4次）：：效果可延長至約一年 / ❤️10月限定"
+    },
+    {
+      "advertiser": "PRIA Clinic - Taiwan",
+      "country": "TW",
+      "started": "Jul 21, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=28098722259731992",
+      "prices": [
+        "₩9,900",
+        "₩143,100",
+        "₩99,000",
+        "₩990,000",
+        "₩379,000",
+        "₩570,000"
+      ],
+      "hasDiscount": true,
+      "snippet": "8月來首爾，這些療程先存起來 🏖️暑假還沒結束 / 來韓國玩的同時 / 順便把一直想做的通通解決吧 👇 / 🔥 8月超殺限時優惠！每人限參加一次 / 皺紋肉毒 1部位｜₩9,900 🔥 34% OFF / 額頭、眉間、眼尾、眼下任選 / 菲歐曼 NCTF135 3cc｜₩143,100 🔥 52% OFF / 超過半折！保濕美白修復三效合一 / 肌膚像從裡面亮起來 ✨ / ✔️ 黃金微針"
+    },
+    {
+      "advertiser": "지유클리닉event",
+      "country": "ID",
+      "started": "Jul 2, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=1964965310843511",
+      "prices": [
+        "₩250,000",
+        "₩400,000"
+      ],
+      "hasDiscount": false,
+      "snippet": "✨ Sylfirm X Special Promotion / 💰 Now ₩250,000 (Regular ₩400,000) / 💛 Improve pigmentation / 💛 Reduce redness / 💛 Boost collagen & skin firmness / 💛 Faster recovery with internationally recognize"
+    },
+    {
+      "advertiser": "PRIA Clinic",
+      "country": "SG",
+      "started": "May 29, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=1024279950269527",
+      "prices": [
+        "₩590,000"
+      ],
+      "hasDiscount": false,
+      "snippet": "📣 For those concerned about neck wrinkles / Why do neck wrinkles form & how can we get rid of them? / 📍[Derma Ulthera 100 shots + Neck Filler 1cc (Belotero Soft) + Neck Botox 1cc] / ₩590,000 (VAT 10"
+    },
+    {
+      "advertiser": "PRIA Clinic - Taiwan",
+      "country": "TW",
+      "started": "May 27, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=2740335986335408",
+      "prices": [
+        "₩590,000"
+      ],
+      "hasDiscount": false,
+      "snippet": "📣 有頸紋困擾的朋友請看這裡～ / 頸紋為什麼會產生？該怎麼改善？ / 【德瑪極線拉提 100發 + 頸紋玻尿酸 1cc（Belotero Soft）+ 頸紋肉毒 1cc】 / ₩590,000（未稅） / 💌 預約請加 LINE @priaclinic.tw / #頸紋玻尿酸 #頸紋拉提 #頸紋肉毒 #頸部保養 #韓國醫美 #韓國皮膚管理 #韓國微整形 #江南皮膚科 #首爾皮膚科 #韓國玻尿"
+    },
+    {
+      "advertiser": "지유클리닉event",
+      "country": "ID",
+      "started": "Jul 10, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=878560838201243",
+      "prices": [
+        "₩2,220,000"
+      ],
+      "hasDiscount": false,
+      "snippet": "✨ APTOS Thread Lift / ✔ Lift sagging skin / ✔ Reduce double chin / ✔ Sculpt a defined jawline / ✔ Natural collagen stimulation / 💜 Limited-Time Promotion / ₩2,220,000 (VAT Included) / Book your consu"
+    },
+    {
+      "advertiser": "지유클리닉event",
+      "country": "ID",
+      "started": "Jul 22, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=4409658785940685",
+      "prices": [
+        "₩330,000"
+      ],
+      "hasDiscount": false,
+      "snippet": "💛 Experience Korea's premium ultrasound lifting treatment. / ✨ Includes MetaVu Skin Analysis / 💰 Ultherapy PRIME 100 Shots – ₩330,000 (VAT Included) / 📅 Limited-Time Offer until August 31 / Reserve"
+    },
+    {
+      "advertiser": "Cleor Clinic 江南｜克蕾歐",
+      "country": "TW",
+      "started": "Jun 30, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=1735591950784761",
+      "prices": [
+        "₩1,590,000"
+      ],
+      "hasDiscount": false,
+      "snippet": "鳳凰電波 FLX 限定活動 / 緊緻輪廓、提升肌膚彈性與密度 / ₩1,590,000（未稅）起，先評估再決定"
+    },
+    {
+      "advertiser": "PGC Clinic",
+      "country": "JP",
+      "started": "Aug 4, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=2220743125433592",
+      "prices": [
+        "¥3,900"
+      ],
+      "hasDiscount": true,
+      "snippet": "☀️ Is your skin feeling tired and unbalanced after the summer heat? / Discover PGC Clinic’s most popular skin treatments at special August prices! ✨ / Pico Toning · LDM · Rejuran Healer · Fillers & mo"
+    },
+    {
+      "advertiser": "ベターミークリニック 江南",
+      "country": "JP",
+      "started": "Jul 8, 2026",
+      "adLibraryUrl": "https://www.facebook.com/ads/library/?id=1283601970308413",
+      "prices": [
+        "¥2,550"
+      ],
+      "hasDiscount": false,
+      "snippet": "オンダリフティング 10,000J ❤️ / ✨約 ¥2,550🎁"
+    }
+  ]
+}

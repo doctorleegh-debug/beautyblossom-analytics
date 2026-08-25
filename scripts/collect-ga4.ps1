@@ -1,6 +1,6 @@
 ﻿param(
     [int]$Days = 30,
-    [string]$OutFile = 'C:\Users\metic\Desktop\paseo\project(1)\data\ga4-latest.json'
+    [string]$OutFile = "$PSScriptRoot\..\data\ga4-latest.json"
 )
 # Collects GA4 metrics for the six Beauty Blossom properties.
 # Excludes "Beauty Blossom - Link" (549949719) by design.
@@ -15,8 +15,8 @@ $props = @(
     @{ id = '537583229'; label = 'TH'; name = 'Beauty Blossom Thailand' }
 )
 
-$cfgPath = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets\google-oauth.local.json'
-$tokPath = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets\google-oauth-token.local.json'
+$cfgPath = "$PSScriptRoot\..\.secrets\google-oauth.local.json"
+$tokPath = "$PSScriptRoot\..\.secrets\google-oauth-token.local.json"
 $cfg = (Get-Content $cfgPath -Raw | ConvertFrom-Json).web
 $tok = Get-Content $tokPath -Raw | ConvertFrom-Json
 

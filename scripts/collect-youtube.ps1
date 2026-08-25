@@ -1,12 +1,12 @@
 param(
     [int]$Days = 30,
-    [string]$OutFile = 'C:\Users\metic\Desktop\paseo\project(1)\data\youtube-latest.json'
+    [string]$OutFile = "$PSScriptRoot\..\data\youtube-latest.json"
 )
 # Collects YouTube channel + Analytics metrics for the Beauty Blossom channel.
 $ErrorActionPreference = 'Stop'
 
-$cfgPath = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets\google-oauth.local.json'
-$tokPath = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets\google-oauth-youtube-token.local.json'
+$cfgPath = "$PSScriptRoot\..\.secrets\google-oauth.local.json"
+$tokPath = "$PSScriptRoot\..\.secrets\google-oauth-youtube-token.local.json"
 $cfg = (Get-Content $cfgPath -Raw | ConvertFrom-Json).web
 $tok = Get-Content $tokPath -Raw | ConvertFrom-Json
 

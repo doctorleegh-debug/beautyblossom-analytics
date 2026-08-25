@@ -6,17 +6,17 @@
 
 ## 0. 먼저 확인할 세 가지
 
-**작업 위치가 메인 체크아웃이 아니라 git worktree 입니다.**
+**작업 위치는 단일 체크아웃입니다.** 예전에 쓰던 파세오 worktree 는 폐기했습니다.
 
-| | 경로 | 브랜치 | 커밋 |
-|---|---|---|---|
-| 메인 | `C:\Users\metic\Desktop\paseo\project(1)` | `master` | `191d250` |
-| **작업 중** | `C:\Users\metic\.paseo\worktrees\193ybytg\youthful-mole` | `greeting-no-task` | `0e67179` |
+| | 경로 | 브랜치 |
+|---|---|---|
+| 메인 | `C:\Users\metic\Desktop\로컬llm\리서치보고서\analytics` | `master` |
 
 원격: `https://github.com/doctorleegh-debug/beautyblossom-analytics.git`
 
-**커밋 7건이 아직 푸시되지 않았고 master 에 병합되지도 않았습니다.** 이어받는 첫 작업은
-푸시할지 병합할지 결정하는 것입니다. 병호에게 확인하고 진행하십시오.
+**푸시되지 않은 커밋은 없습니다.** 예전 worktree(`greeting-no-task`)의 커밋은 전부
+`origin/master` 에 병합·푸시됐습니다. 그 worktree 는 `C:\Users\metic\.paseo\` 안에
+있었으므로 파세오 삭제와 함께 사라집니다.
 
 **비밀정보는 저장소에 없습니다.** 메인 체크아웃의 `.secrets/` 와 `.env.local` 에만 있고
 `.gitignore` 로 제외돼 있습니다. 새 환경에서는 이 파일들을 따로 옮겨야 수집이 돕니다.
@@ -55,7 +55,7 @@
 .\scripts\collect-ga4.ps1            -Days 30
 .\scripts\collect-youtube.ps1        -Days 30
 .\scripts\collect-searchconsole.ps1  -Days 30
-.\scripts\collect-naver.ps1
+node scripts\collect-naver.mjs
 node scripts\build-report.mjs
 
 # 전략 리포트 (신규)
@@ -184,14 +184,18 @@ Jina 가 JS 렌더 완료 전에 스냅샷하면 "결과 없음" 과 똑같이 �
 
 - `data/competitors-2026-09.json` 이 1.65MB 입니다. 저장소 관례상 `data/` 는 커밋하지만
   매월 쌓이면 커집니다.
-- 리포트에 실린 광고 소재 썸네일은 Facebook CDN 주소라 만료 파라미터가 붙어 있어
-  며칠 뒤 깨집니다. 광고 원본 링크는 계속 유효합니다. 다음 수집 때 자동 갱신됩니다.
-- `.cache/` 는 4.4MB 이고 `.gitignore` 에 있습니다. 원본 응답이 남아 있어 파싱 로직을
-  고쳐 다시 돌려도 조회 비용이 0 입니다. 수집 방식을 바꾸면 구버전 캐시를 지우십시오.
-- 기존 스크립트 두 개가 경로를 하드코딩하고 있습니다 —
-  `build-report.mjs:6`, `collect-naver.mjs:29` 가 `C:/Users/metic/Desktop/paseo/project(1)`
-  를 가리킵니다. 폴더를 옮기면 여기를 고쳐야 합니다. 신규 스크립트 세 개는 스크립트
-  위치 기준 상대 경로라 영향받지 않습니다.
+- 리포트에 실린 광고 소재 썸네일은 리포트 파일 안에 이미지로 들어 있습니다. 수집 단계에서
+  `.cache/creatives/` 에 128px 로 축소해 두고 빌드가 base64 로 박습니다. 축소에는 ffmpeg 가
+  필요하며, 없는 환경에서는 아무것도 캐시하지 않고 예전처럼 Facebook CDN 주소를 씁니다 —
+  그 주소는 수집 며칠 뒤 만료돼 이미지가 깨집니다.
+- `.cache/` 는 7.0MB 이고 `.gitignore` 에 있습니다. 수집 원문(`adlib/` 124건 · `serp/` 36건)이
+  남아 있어 파싱 로직을 고쳐 다시 돌려도 조회 비용이 0 입니다. `creatives/` 397장은
+  2026-08-25 에 원본 링크가 만료돼 다시 받을 수 없으므로 이 사본이 유일본입니다.
+  수집 방식을 바꿔 구버전 캐시를 지우실 때 `creatives/` 는 남기십시오.
+- 모든 스크립트가 스크립트 위치 기준 상대 경로를 씁니다 — `.ps1` 은 `$PSScriptRoot\..`,
+  `.mjs` 는 `import.meta.url`. 폴더를 옮겨도 고칠 곳이 없습니다. 예전에는 저장소 루트를
+  절대 경로로 박아 두어 이사할 때마다 12개 파일을 고쳐야 했고, 경로에 한글이 들어가자
+  BOM 없는 `.ps1` 이 UTF-8 을 ANSI 로 읽어 조용히 깨졌습니다.
 
 ---
 

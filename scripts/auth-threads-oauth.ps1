@@ -2,7 +2,7 @@
     [Parameter(Mandatory = $true)][string]$Label,
     [int]$Port = 53682,
     [string]$AppId = '1393578062743171',
-    [string]$TokenDir = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets',
+    [string]$TokenDir = "$PSScriptRoot\..\.secrets",
     [int]$TimeoutSec = 300,
     [switch]$SelfTest
 )
@@ -82,7 +82,7 @@ if (-not $code) { 'RESULT=TIMEOUT'; exit 1 }
 
 # Threads exchanges the code on its own graph host, and the app secret is the
 # Facebook app secret of the same app.
-$envPath = 'C:\Users\metic\Desktop\paseo\project(1)\.env.local'
+$envPath = "$PSScriptRoot\..\.env.local"
 $cfg = @{}
 foreach ($line in Get-Content $envPath) { if ($line -match '^\s*([A-Za-z0-9_]+)\s*=(.*)$') { $cfg[$Matches[1]] = $Matches[2].Trim() } }
 $secret = $cfg['THREADS_APP_SECRET']

@@ -1,7 +1,7 @@
 param(
     [int]$Port = 53682,
     [string]$AppId = '1393578062743171',
-    [string]$OutFile = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets\meta-token.local.json',
+    [string]$OutFile = "$PSScriptRoot\..\.secrets\meta-token.local.json",
     [string]$GraphVersion = 'v23.0',
     [int]$TimeoutSec = 300,
     [switch]$SelfTest

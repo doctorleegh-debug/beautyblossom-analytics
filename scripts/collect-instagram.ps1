@@ -1,6 +1,6 @@
 ﻿param(
-    [string]$OutFile = 'C:\Users\metic\Desktop\paseo\project(1)\data\instagram-latest.json',
-    [string]$HistFile = 'C:\Users\metic\Desktop\paseo\project(1)\data\instagram-history.json',
+    [string]$OutFile = "$PSScriptRoot\..\data\instagram-latest.json",
+    [string]$HistFile = "$PSScriptRoot\..\data\instagram-history.json",
     [int]$Days = 30,
     [switch]$SelfTest
 )
@@ -16,7 +16,7 @@
 # month-over-month deltas for views, reach and every other account metric.
 $ErrorActionPreference = 'Stop'
 
-$envPath = 'C:\Users\metic\Desktop\paseo\project(1)\.env.local'
+$envPath = "$PSScriptRoot\..\.env.local"
 $cfg = @{}
 foreach ($line in Get-Content $envPath) {
     if ($line -match '^\s*([A-Za-z0-9_]+)\s*=(.*)$') { $cfg[$Matches[1]] = $Matches[2].Trim() }

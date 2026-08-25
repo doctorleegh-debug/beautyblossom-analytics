@@ -1,7 +1,7 @@
 param(
     [int]$Port = 53682,
-    [string]$ClientFile = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets\google-oauth.local.json',
-    [string]$OutFile    = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets\google-oauth-youtube-token.local.json',
+    [string]$ClientFile = "$PSScriptRoot\..\.secrets\google-oauth.local.json",
+    [string]$OutFile    = "$PSScriptRoot\..\.secrets\google-oauth-youtube-token.local.json",
     [int]$TimeoutSec = 300,
     [switch]$SelfTest
 )

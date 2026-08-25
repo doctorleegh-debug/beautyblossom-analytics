@@ -11,7 +11,8 @@
 //
 // Headline totals are abbreviated on screen (1.9천); the table rows are exact.
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { attach, hide, isLoggedIn } from './naver-session.mjs';
 
 const SITES = [
@@ -26,7 +27,7 @@ const NOTE = '헤드라인 합계는 네이버가 화면에 축약 표기한 값
 const MAX_PAGES = Number(process.env.BB_NAVER_PAGES || 3);
 
 const argOut = process.argv.find(a => a.startsWith('--out='));
-const OUT = argOut ? argOut.slice(6) : 'C:\\Users\\metic\\Desktop\\paseo\\project(1)\\data\\naver-latest.json';
+const OUT = argOut ? argOut.slice(6) : join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'naver-latest.json');
 const argOnly = process.argv.find(a => a.startsWith('--only='));
 const ONLY = argOnly ? argOnly.slice(7).split(',').map(s => s.trim().toUpperCase()) : null;
 const sites = ONLY ? SITES.filter(s => ONLY.includes(s.label)) : SITES;

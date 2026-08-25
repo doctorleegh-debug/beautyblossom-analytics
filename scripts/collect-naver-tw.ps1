@@ -1,5 +1,5 @@
 ﻿param(
-    [string]$OutFile = 'C:\Users\metic\Desktop\paseo\project(1)\data\naver-tw.json',
+    [string]$OutFile = "$PSScriptRoot\..\data\naver-tw.json",
     [switch]$SelfTest
 )
 # Scrapes Naver Search Advisor "content exposure/click" report for each site.

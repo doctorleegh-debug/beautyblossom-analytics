@@ -2,7 +2,7 @@
 # Health check for every data-source credential the report depends on.
 # Never prints a token; only lengths, expiry and the probe result.
 $ErrorActionPreference = 'Continue'
-$root = 'C:\Users\metic\Desktop\paseo\project(1)'
+$root = "$PSScriptRoot\.."
 $sec  = Join-Path $root '.secrets'
 
 if ($SelfTest) { 'SelfTest'; "  secrets=$(Test-Path $sec)"; 'SelfTestPassed=true'; return }

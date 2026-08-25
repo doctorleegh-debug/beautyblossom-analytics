@@ -1,5 +1,5 @@
 param(
-    [string]$EnvFile = 'C:\Users\metic\Desktop\paseo\project(1)\.env.local',
+    [string]$EnvFile = "$PSScriptRoot\..\.env.local",
     [string]$GraphVersion = 'v23.0',
     [switch]$SelfTest
 )

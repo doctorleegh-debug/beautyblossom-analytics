@@ -7,7 +7,7 @@ GA4 · YouTube · Google Search Console · 네이버 서치어드바이저 · In
 
 | 항목 | 값 |
 |---|---|
-| 작업 폴더 | `C:\Users\metic\Desktop\paseo\project(1)` |
+| 작업 폴더 | `C:\Users\metic\Desktop\로컬llm\리서치보고서\analytics` |
 | 저장소 | https://github.com/doctorleegh-debug/beautyblossom-analytics |
 | 공개 보고서 | https://doctorleegh-debug.github.io/beautyblossom-analytics/ |
 | 배포 방식 | GitHub Pages, `master` 브랜치 **저장소 루트** |
@@ -19,8 +19,10 @@ GA4 · YouTube · Google Search Console · 네이버 서치어드바이저 · In
 
 ### 같은 PC 에서 IDE 만 바꾸는 경우
 
-**옮길 것이 없습니다.** 스크립트가 절대 경로를 쓰고, 인증 파일도 크롬 프로필도 제자리에
-있습니다. 작업 폴더만 열면 됩니다.
+**옮길 것이 없습니다.** 스크립트가 자기 위치를 기준으로 경로를 잡고, 인증 파일도 크롬 프로필도
+제자리에 있습니다. 작업 폴더만 열면 됩니다. 폴더를 통째로 옮겨도 고칠 곳은 없습니다 —
+`.secrets/` · `.env.local` · `.cache/` 는 `.gitignore` 대상이라 복사할 때 빠지기 쉬우니 함께
+가져가십시오.
 
 단, 네이버 세션 브라우저는 **PC 재시작·크롬 종료로 죽습니다.** 아래 한 줄로 확인하고,
 `NOT_RUNNING` 이면 재로그인하세요.

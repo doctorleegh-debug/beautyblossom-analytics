@@ -1,6 +1,6 @@
 ﻿param(
     [int]$Days = 30,
-    [string]$OutFile = 'C:\Users\metic\Desktop\paseo\project(1)\data\searchconsole-latest.json',
+    [string]$OutFile = "$PSScriptRoot\..\data\searchconsole-latest.json",
     [int]$TopRows = 25,
     [switch]$SelfTest
 )
@@ -8,8 +8,8 @@
 # Search Console data lags ~2 days, so the window ends 3 days back.
 $ErrorActionPreference = 'Stop'
 
-$cfgPath = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets\google-oauth.local.json'
-$tokPath = 'C:\Users\metic\Desktop\paseo\project(1)\.secrets\google-oauth-gsc-token.local.json'
+$cfgPath = "$PSScriptRoot\..\.secrets\google-oauth.local.json"
+$tokPath = "$PSScriptRoot\..\.secrets\google-oauth-gsc-token.local.json"
 
 if ($SelfTest) {
     'SelfTest'

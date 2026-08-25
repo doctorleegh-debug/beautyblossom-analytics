@@ -2,8 +2,9 @@
 // Data is embedded inline so the page works from file:// and GitHub Pages alike.
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = 'C:/Users/metic/Desktop/paseo/project(1)';
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = join(ROOT, 'data');
 const OUT  = join(ROOT, 'report', 'index.html');
 

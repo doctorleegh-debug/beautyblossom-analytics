@@ -17,6 +17,21 @@ GA4 · YouTube · Google Search Console · 네이버 서치어드바이저 · In
 
 ## 1. 이사 체크리스트 — 이것부터 읽으세요
 
+### 같은 PC 에서 IDE 만 바꾸는 경우
+
+**옮길 것이 없습니다.** 스크립트가 절대 경로를 쓰고, 인증 파일도 크롬 프로필도 제자리에
+있습니다. 작업 폴더만 열면 됩니다.
+
+단, 네이버 세션 브라우저는 **PC 재시작·크롬 종료로 죽습니다.** 아래 한 줄로 확인하고,
+`NOT_RUNNING` 이면 재로그인하세요.
+
+```powershell
+node scripts\naver-session.mjs status   # NOT_RUNNING 이면 → start
+node scripts\naver-session.mjs start
+```
+
+### 다른 PC 로 옮기는 경우
+
 `git clone` 만으로는 **동작하지 않습니다.** 인증 정보와 브라우저 세션이 저장소 밖에 있습니다.
 
 ### 반드시 수동으로 옮겨야 하는 것 (git 에 없음)

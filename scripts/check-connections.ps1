@@ -84,4 +84,18 @@ try {
 
 ''
 '=== 네이버 (브라우저 로그인 세션 - API 없음) ==='
-Say 'MANUAL' '네이버' '토큰이 아니라 크롬 로그인 세션이라 여기서 확인 불가. 마지막 수집 시 만료 확인됨.'
+# Naver has no token to test; the session lives in a long-running Chrome, so ask it.
+try {
+    # node, like gh, is not on PowerShell's PATH on this machine.
+    $node = (Get-Command node -ErrorAction SilentlyContinue).Source
+    if (-not $node) { $node = 'C:\Program Files\nodejs\node.exe' }
+    if (-not (Test-Path $node)) { throw 'node 를 찾을 수 없습니다.' }
+    Push-Location $root
+    $out = & $node 'scripts\naver-session.mjs' status 2>&1
+    $code = $LASTEXITCODE
+    Pop-Location
+    $line = @($out | Where-Object { $_ -match '^RESULT' }) | Select-Object -First 1
+    if ($code -eq 0) { Say 'OK' '네이버' '세션 살아 있음 · 로그인 상태' }
+    elseif ($line -match 'NOT_RUNNING') { Say 'FAIL' '네이버' '세션 브라우저가 꺼져 있습니다 → node scripts\naver-session.mjs start' }
+    else { Say 'FAIL' '네이버' '로그인이 만료됐습니다 → node scripts\naver-session.mjs start' }
+} catch { Say 'FAIL' '네이버' (ErrText $_) }

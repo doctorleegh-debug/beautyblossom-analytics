@@ -2,6 +2,9 @@
 
 GA4 · YouTube · Google Search Console · 네이버 서치어드바이저 · Instagram 성과를 하나의 HTML 대시보드로 모으는 수집·리포팅 파이프라인.
 
+> 이 저장소를 새로 넘겨받았다면 **[HANDOFF.md](HANDOFF.md)** 를 먼저 읽으세요.
+> `git clone` 만으로는 동작하지 않습니다 (인증 정보·브라우저 세션이 저장소 밖에 있음).
+
 ## 보고서 열기
 
 `report/index.html` 을 브라우저로 열면 됩니다. 데이터가 파일 안에 들어 있어 서버 없이 동작합니다.
@@ -20,7 +23,10 @@ start report\index.html
 .\scripts\collect-ga4.ps1            -Days 30   # GA4 6개 속성
 .\scripts\collect-youtube.ps1        -Days 30   # YouTube 채널
 .\scripts\collect-searchconsole.ps1  -Days 30   # Search Console 9개 속성
-.\scripts\collect-naver.ps1                     # 네이버 (로그인된 콘솔 UI 수집)
+.\scripts\collect-instagram.ps1        -Days 30   # Instagram 5개 계정
+node scripts
+aver-session.mjs start            # 네이버 세션 1회 로그인 (창 뜸)
+node scripts\collect-naver.mjs                  # 네이버 (CDP, 창 안 뜸)
 node scripts\build-report.mjs                   # report/index.html 재생성
 ```
 

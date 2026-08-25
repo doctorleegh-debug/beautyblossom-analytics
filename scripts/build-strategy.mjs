@@ -9,7 +9,7 @@
 // re-collection regenerates a consistent report instead of leaving stale figures in
 // the prose.
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { basename, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -702,6 +702,19 @@ const payload = {
   ytAvailable: !!yt
 };
 
+// Creative links carry a signed expiry a few days out from collection, so a report
+// holding the link goes blank while it is still the current month's file. The
+// collector mirrors each creative locally at the size the page renders it; embedding
+// the mirror keeps the pictures for as long as the report is kept. Falls back to the
+// link when no mirror is there, which is what a run without ffmpeg leaves behind.
+const CREATIVES = join(ROOT, '.cache', 'creatives');
+const inlineCreative = (u) => {
+  try {
+    const p = join(CREATIVES, basename(new URL(u).pathname));
+    return existsSync(p) ? 'data:image/jpeg;base64,' + readFileSync(p).toString('base64') : u;
+  } catch { return u; }
+};
+
 // Everything derived from the raw ads - style counts, age spread, country matrix,
 // price scan - is computed above. The page itself only renders three ads per clinic,
 // so carrying all 648 inline would trip the file past a megabyte for data nothing
@@ -713,7 +726,8 @@ if (payload.competitors) {
     advertiser: a.advertiser, advertiserUrl: a.advertiserUrl,
     startedRunning: a.startedRunning, multipleVersions: a.multipleVersions,
     landingUrl: a.landingUrl, landingDomain: a.landingDomain,
-    creativeCount: a.creativeCount, creativeUrls: (a.creativeUrls || []).slice(0, 3),
+    creativeCount: a.creativeCount,
+    creativeUrls: (a.creativeUrls || []).slice(0, 3).map(inlineCreative),
     copy: a.copy
   });
   if (c.deepDive) {

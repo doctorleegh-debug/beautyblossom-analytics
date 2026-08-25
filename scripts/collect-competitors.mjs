@@ -16,13 +16,16 @@
 // therefore classified against explicit markers and retried until it is conclusive.
 //
 // Raw responses are cached so re-runs cost no requests.
-import { writeFileSync, readFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { writeFileSync, readFileSync, existsSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
+import { basename, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE = join(ROOT, '.cache', 'adlib');
 const OUT = join(ROOT, 'data', 'competitors-2026-09.json');
+
+const CREATIVES = join(ROOT, '.cache', 'creatives');
 
 // Discovery matrix. Countries are the markets Beauty Blossom actually draws traffic
 // from (GA4 2026-07-21~08-19) plus the home market; queries are in the language the
@@ -376,8 +379,49 @@ async function deepDive(targets, countries) {
   return out;
 }
 
+// Creative thumbnails are Facebook CDN links carrying a signed expiry a few days out
+// from collection. The strategy report is kept per month so the next month can check
+// last month's judgement against it, and a kept report whose pictures have gone blank
+// is worth less than one that still shows what the competitor was running. Each
+// creative is mirrored here at the size the page renders it - 64px, doubled for dense
+// screens - which is about 4KB against 48KB for the original the library serves.
+//
+// Needs ffmpeg. Without it nothing is mirrored and the report keeps the link, which
+// is what it did before.
+async function mirrorCreatives(adSets) {
+  const urls = new Set();
+  for (const ads of adSets) for (const a of ads || []) (a.creativeUrls || []).forEach(u => urls.add(u));
+  if (!urls.size) return;
+  try { execFileSync('ffmpeg', ['-version'], { stdio: 'ignore' }); }
+  catch { console.log('mirror: ffmpeg not on PATH, leaving creative links as they are'); return; }
+
+  mkdirSync(CREATIVES, { recursive: true });
+  const queue = [...urls];
+  let cached = 0, unavailable = 0;
+
+  const one = async (url) => {
+    const dst = join(CREATIVES, basename(new URL(url).pathname));
+    if (existsSync(dst)) { cached++; return; }
+    const raw = dst + '.raw';
+    try {
+      const res = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0' } });
+      if (!res.ok) { unavailable++; return; }
+      writeFileSync(raw, Buffer.from(await res.arrayBuffer()));
+      execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-vf',
+        'scale=128:128:force_original_aspect_ratio=increase,crop=128:128', '-q:v', '5', dst],
+      { stdio: 'ignore' });
+      cached++;
+    } catch { unavailable++; }
+    finally { rmSync(raw, { force: true }); }
+  };
+
+  await Promise.all(Array.from({ length: 8 }, async () => { while (queue.length) await one(queue.pop()); }));
+  console.log(`mirror: ${cached} creatives cached, ${unavailable} unavailable`);
+}
+
 async function main() {
   const selfTest = process.argv.includes('--self-test');
+
   if (selfTest) {
     const cached = existsSync(CACHE) ? readdirSync(CACHE).length : 0;
     console.log('matrix:', MATRIX.length, 'countries,',
@@ -419,6 +463,8 @@ async function main() {
     console.log(`\ndeep dive: ${targets.length} advertisers x ${MATRIX.length} countries`);
     deep = await deepDive(targets, MATRIX.map(m => m.country));
   }
+
+  await mirrorCreatives([ads, ...(deep || []).map(d => d.ads)]);
 
   const payload = {
     generated_at_utc: new Date().toISOString(),

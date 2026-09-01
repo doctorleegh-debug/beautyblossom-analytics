@@ -1,0 +1,483 @@
+{
+  "method": "Google Ads Transparency Center, region KR, read through Jina Reader; per-advertiser format filter separates display (IMAGE/VIDEO = GDN) from search text ads (TEXT)",
+  "limitation": "Prices in display ads are drawn inside the banner image, so a price cannot be read from the page text. Creatives are mirrored for visual confirmation instead of being asserted.",
+  "region": "KR",
+  "clinics": [
+    {
+      "name": "셀레나의원",
+      "domain": "selenaskin.com",
+      "addr": "마포구 양화로 162, 9층 (동교동)",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=selenaskin.com",
+      "totalAds": 1,
+      "accounts": [
+        {
+          "advertiserId": "AR10912254684899049473",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR10912254684899049473?region=KR"
+        }
+      ],
+      "accountName": "홍대 셀레나의원",
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=selenaskin.com&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=selenaskin.com&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "포레나의원",
+      "domain": "forenaclinic.com",
+      "addr": "마포구 (홍대)",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=forenaclinic.com",
+      "totalAds": 32,
+      "accounts": [
+        {
+          "advertiserId": "AR13216553679139635201",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR13216553679139635201?region=KR"
+        }
+      ],
+      "accountName": "포레나의원",
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 3,
+          "url": "https://adstransparency.google.com/?region=KR&domain=forenaclinic.com&format=IMAGE",
+          "creativeImages": [
+            "https://tpc.googlesyndication.com/archive/simgad/4316031962936344270",
+            "https://tpc.googlesyndication.com/archive/simgad/11167442470467725661"
+          ],
+          "creativePages": [
+            "https://adstransparency.google.com/advertiser/AR13216553679139635201/creative/CR04856972640084033537?region=KR&format=IMAGE",
+            "https://adstransparency.google.com/advertiser/AR13216553679139635201/creative/CR04374281537932230657?region=KR&format=IMAGE",
+            "https://adstransparency.google.com/advertiser/AR13216553679139635201/creative/CR10674042647473029121?region=KR&format=IMAGE"
+          ]
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 2,
+          "url": "https://adstransparency.google.com/?region=KR&domain=forenaclinic.com&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": [
+            "https://adstransparency.google.com/advertiser/AR13216553679139635201/creative/CR14764343713752678401?region=KR&format=VIDEO",
+            "https://adstransparency.google.com/advertiser/AR13216553679139635201/creative/CR16672362525316087809?region=KR&format=VIDEO"
+          ]
+        }
+      },
+      "gdnAds": 5
+    },
+    {
+      "name": "샤인빔의원 홍대",
+      "domain": "shinebeam.co.kr",
+      "addr": "마포구 (홍대)",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=shinebeam.co.kr",
+      "totalAds": 1,
+      "accounts": [
+        {
+          "advertiserId": "AR03224113098772185089",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR03224113098772185089?region=KR"
+        }
+      ],
+      "accountName": null,
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=shinebeam.co.kr&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=shinebeam.co.kr&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "쁨의원",
+      "domain": "ppeum16.com",
+      "addr": "마포구 (홍대)",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=ppeum16.com",
+      "totalAds": 300,
+      "accounts": [
+        {
+          "advertiserId": "AR00129062513114349569",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR00129062513114349569?region=KR"
+        }
+      ],
+      "accountName": "주식회사 커넥트웰",
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 200,
+          "url": "https://adstransparency.google.com/?region=KR&domain=ppeum16.com&format=IMAGE",
+          "creativeImages": [
+            "https://tpc.googlesyndication.com/archive/simgad/15100672483839333895",
+            "https://tpc.googlesyndication.com/archive/simgad/7018333709236397389",
+            "https://tpc.googlesyndication.com/archive/simgad/5895259218358806479",
+            "https://tpc.googlesyndication.com/archive/simgad/13655237336075886410"
+          ],
+          "creativePages": [
+            "https://adstransparency.google.com/advertiser/AR00129062513114349569/creative/CR08992704195383525377?region=KR&format=IMAGE",
+            "https://adstransparency.google.com/advertiser/AR00129062513114349569/creative/CR05689426568649113601?region=KR&format=IMAGE",
+            "https://adstransparency.google.com/advertiser/AR00129062513114349569/creative/CR09074997624200757249?region=KR&format=IMAGE",
+            "https://adstransparency.google.com/advertiser/AR00129062513114349569/creative/CR12971734178126102529?region=KR&format=IMAGE"
+          ]
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 39,
+          "url": "https://adstransparency.google.com/?region=KR&domain=ppeum16.com&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": [
+            "https://adstransparency.google.com/advertiser/AR00129062513114349569/creative/CR16264244124280946689?region=KR&format=VIDEO",
+            "https://adstransparency.google.com/advertiser/AR00129062513114349569/creative/CR11193813705529753601?region=KR&format=VIDEO",
+            "https://adstransparency.google.com/advertiser/AR00129062513114349569/creative/CR14204859807529172993?region=KR&format=VIDEO",
+            "https://adstransparency.google.com/advertiser/AR00129062513114349569/creative/CR02221315037761372161?region=KR&format=VIDEO"
+          ]
+        }
+      },
+      "gdnAds": 239
+    },
+    {
+      "name": "뷰티블라썸의원",
+      "domain": "beautyblossom.kr",
+      "addr": "마포구 (홍대·합정) — 자사",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=beautyblossom.kr",
+      "totalAds": 0,
+      "accounts": [],
+      "accountName": null,
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=beautyblossom.kr&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=beautyblossom.kr&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "클레오르의원 홍대점",
+      "domain": "cleorclinic.com",
+      "addr": "마포구 양화로 165, 4층",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=cleorclinic.com",
+      "totalAds": 0,
+      "accounts": [],
+      "accountName": null,
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=cleorclinic.com&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=cleorclinic.com&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "클림의원",
+      "domain": "kleam.kr",
+      "addr": "마포구 양화로 141, L7홍대 3층",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=kleam.kr",
+      "totalAds": 1,
+      "accounts": [
+        {
+          "advertiserId": "AR03224113098772185089",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR03224113098772185089?region=KR"
+        }
+      ],
+      "accountName": null,
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=kleam.kr&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=kleam.kr&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "아르스킨의원 홍대",
+      "domain": "arskinclinic.co.kr",
+      "addr": "마포구 (홍대)",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=arskinclinic.co.kr",
+      "totalAds": 0,
+      "accounts": [],
+      "accountName": null,
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=arskinclinic.co.kr&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=arskinclinic.co.kr&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "블리비의원(Velyb)",
+      "domain": "velyb.kr",
+      "addr": "마포구 양화로 161, 4층 (동교동)",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=velyb.kr",
+      "totalAds": 2,
+      "accounts": [
+        {
+          "advertiserId": "AR04968514426819837953",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR04968514426819837953?region=KR"
+        }
+      ],
+      "accountName": null,
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=velyb.kr&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=velyb.kr&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "홍대 톡스앤필의원",
+      "domain": "toxnfill50.com",
+      "addr": "마포구 (홍대)",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=toxnfill50.com",
+      "totalAds": 22,
+      "accounts": [
+        {
+          "advertiserId": "AR06137798519873863681",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR06137798519873863681?region=KR"
+        },
+        {
+          "advertiserId": "AR06590640174844084225",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR06590640174844084225?region=KR"
+        }
+      ],
+      "accountName": "비비지네트웍스",
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 10,
+          "url": "https://adstransparency.google.com/?region=KR&domain=toxnfill50.com&format=IMAGE",
+          "creativeImages": [
+            "https://tpc.googlesyndication.com/archive/simgad/12510128657941375370",
+            "https://tpc.googlesyndication.com/archive/simgad/18292811763941843648",
+            "https://tpc.googlesyndication.com/archive/simgad/1187320978405412163"
+          ],
+          "creativePages": [
+            "https://adstransparency.google.com/advertiser/AR06137798519873863681/creative/CR07320631783047823361?region=KR&format=IMAGE",
+            "https://adstransparency.google.com/advertiser/AR06137798519873863681/creative/CR18439935975019773953?region=KR&format=IMAGE",
+            "https://adstransparency.google.com/advertiser/AR06137798519873863681/creative/CR16943720070905856001?region=KR&format=IMAGE",
+            "https://adstransparency.google.com/advertiser/AR06137798519873863681/creative/CR13304283806409162753?region=KR&format=IMAGE"
+          ]
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=toxnfill50.com&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 10
+    },
+    {
+      "name": "프로젝트유의원",
+      "domain": "projectuclinic.com",
+      "addr": "마포구 양화로 162, 6층",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=projectuclinic.com",
+      "totalAds": 0,
+      "accounts": [],
+      "accountName": null,
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=projectuclinic.com&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=projectuclinic.com&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "에스리본의원",
+      "domain": "s-reborn.com",
+      "addr": "마포구 양화로 162, 8층 (동교동)",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=s-reborn.com",
+      "totalAds": 0,
+      "accounts": [],
+      "accountName": null,
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=s-reborn.com&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=s-reborn.com&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "닥터에버스의원 홍대",
+      "domain": "evers12.co.kr",
+      "addr": "마포구 (홍대)",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=evers12.co.kr",
+      "totalAds": 0,
+      "accounts": [],
+      "accountName": null,
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=evers12.co.kr&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=evers12.co.kr&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "유픽의원 홍대",
+      "domain": "upicclinic.com",
+      "addr": "마포구 양화로 140, H-CUBE 9층",
+      "status": "collected",
+      "atcDomainUrl": "https://adstransparency.google.com/?region=KR&domain=upicclinic.com",
+      "totalAds": 11,
+      "accounts": [
+        {
+          "advertiserId": "AR09265514127114108929",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR09265514127114108929?region=KR"
+        },
+        {
+          "advertiserId": "AR02542864026438729729",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR02542864026438729729?region=KR"
+        },
+        {
+          "advertiserId": "AR01504968858484604929",
+          "atcUrl": "https://adstransparency.google.com/advertiser/AR01504968858484604929?region=KR"
+        }
+      ],
+      "accountName": "유픽의원",
+      "formats": {
+        "IMAGE": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=upicclinic.com&format=IMAGE",
+          "creativeImages": [],
+          "creativePages": []
+        },
+        "VIDEO": {
+          "status": "collected",
+          "ads": 0,
+          "url": "https://adstransparency.google.com/?region=KR&domain=upicclinic.com&format=VIDEO",
+          "creativeImages": [],
+          "creativePages": []
+        }
+      },
+      "gdnAds": 0
+    },
+    {
+      "name": "엔봄의원",
+      "domain": null,
+      "addr": "마포구 (홍대) — 홈페이지 미확인",
+      "status": "NOT COLLECTED - domain unresolved"
+    },
+    {
+      "name": "데이뷰의원",
+      "domain": null,
+      "addr": "마포구 양화로 165, 4층 — 네이버예약만 운영, 자체 도메인 없음",
+      "status": "NOT COLLECTED - domain unresolved"
+    }
+  ]
+}

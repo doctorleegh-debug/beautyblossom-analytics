@@ -1,0 +1,35 @@
+{
+  "_note": "Display-ad prices live inside the banner image, so each mirrored creative was opened and read by eye. Only what was actually seen is recorded; a clinic with no entry has not been reviewed.",
+  "_reviewedOn": "2026-09-01",
+  "ppeum16.com": {
+    "clinic": "쁨의원 (PPEUM GLOBAL)",
+    "name": true,
+    "price": true,
+    "reviewed": 4,
+    "findings": [
+      { "label": "병원명 노출", "price": false, "detail": "배너 상단에 PPEUM GLOBAL 로고와 PPEUM GLOBAL CLINIC 표기" },
+      { "label": "금액 노출 · 59萬韓元 (약 ₩590,000)", "price": true, "detail": "CellREDM 진피 콜라겐 물광 7cc, 번체 중국어 소재. 대만·홍콩 타겟" },
+      { "label": "금액 노출 · 150,000 KRW", "price": true, "detail": "POTENZA RF 1세션, 영어 소재. 팁 별도 표기" }
+    ]
+  },
+  "toxnfill50.com": {
+    "clinic": "홍대 톡스앤필의원",
+    "name": true,
+    "price": false,
+    "reviewed": 3,
+    "findings": [
+      { "label": "병원명 노출", "price": false, "detail": "홍대입구 피부과 + toxnfill50.com 표기" },
+      { "label": "금액 미노출", "price": false, "detail": "3건 모두 동일 캠페인 변형. 시술 효능 문구만 있고 금액 없음. 한국어 국내 타겟" }
+    ]
+  },
+  "forenaclinic.com": {
+    "clinic": "포레나의원",
+    "name": true,
+    "price": false,
+    "reviewed": 2,
+    "findings": [
+      { "label": "병원명 노출", "price": false, "detail": "FORENA CLINIC 로고 및 Forena Clinic / forenaclinic.com 표기" },
+      { "label": "금액 미노출", "price": false, "detail": "영어·일본어 해외 타겟 소재. 외국인 응대·홍대 1위 등 문구 중심, 금액 없음" }
+    ]
+  }
+}

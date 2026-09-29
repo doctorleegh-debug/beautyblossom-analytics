@@ -12,8 +12,12 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const CACHE = join(ROOT, '.cache', 'serp');
-const OUT = join(ROOT, 'data', 'serp-2026-09.json');
+// A month's result pages are cached in their own folder so a re-run in a later month reads fresh
+// pages. Without --month the original September paths are kept.
+const MONTH = (process.argv.find(a => a.startsWith('--month=')) || '').slice(8);
+if (MONTH && !/^\d{4}-\d{2}$/.test(MONTH)) { console.error('--month=yyyy-mm'); process.exit(1); }
+const CACHE = MONTH ? join(ROOT, '.cache', 'serp', MONTH) : join(ROOT, '.cache', 'serp');
+const OUT = join(ROOT, 'data', `serp-${MONTH || '2026-09'}.json`);
 
 // Treatments confirmed against the clinic's own menu, weighted towards the ones
 // competitors advertise hardest.

@@ -62,7 +62,8 @@ node scripts\build-report.mjs
 node scripts\collect-competitors.mjs          # Meta 광고 라이브러리 탐색
 node scripts\collect-competitors.mjs --deep   # 선정 경쟁사·자사 국가별 심층 조회
 node scripts\collect-serp.mjs                 # 시술 검색어 1페이지 점유 조사
-node scripts\build-strategy.mjs               # 리포트 생성
+node scripts\build-strategy.mjs               # 리포트 생성 (2026-09 판)
+# 2026-10 판부터는 README "AI 분석 통합 전략 리포트" 의 --month 실행 순서를 따릅니다
 
 # 공유 링크 갱신 (share 를 다시 쓰면 안 됩니다)
 orca artifacts update .\report\strategy-2026-09.html
@@ -114,6 +115,10 @@ Jina 가 JS 렌더 완료 전에 스냅샷하면 "결과 없음" 과 똑같이 �
 | 차단 | `requiring CAPTCHA` |
 | 렌더 미완 | 위 셋 다 없음 → 재시도 |
 
+**2026-10 수집에서 확인:** 렌더가 끝난 "No ads match" 도 믿을 수 없습니다. Cleor 는 페이지 조회·페이지 ID 조회 모두 0건이었지만
+키워드 탐색에서 대만·일본 광고 22건이 나왔습니다. 그래서 빌드는 심층 조회와 탐색 결과를 병원별로 합치고,
+나라는 "보임 / 확인 안 됨" 둘로만 표시합니다. "안 함" 으로 적지 않습니다. 광고 건수는 하한값입니다.
+
 ### 3.4 게재 시작일은 총 광고 기간이 아닙니다
 
 `Started running on` 은 광고 하나하나의 시작일이라 소재를 교체하면 리셋됩니다.
@@ -125,6 +130,10 @@ Jina 가 JS 렌더 완료 전에 스냅샷하면 "결과 없음" 과 똑같이 �
 "검색 노출 0" 이 진짜 0이 아닙니다. EN 은 25번째가 14회, KR 은 15회이므로 그보다 적은
 검색어는 애초에 보이지 않습니다. JP·TW·CN 은 최소값이 1회라 사실상 완전합니다.
 수집 설정의 `rowLimit` 을 올리면 해결됩니다.
+
+**해결됨 (2026-10):** `collect-strategy-inputs.mjs` 가 `rowLimit 25000` 으로 받습니다. 기본 정렬이 클릭순이라
+잘리면 클릭 0 검색어가 통째로 빠집니다. 2026-09 판 S8 의 "노출 0" 시술 목록은 이 때문에 틀렸고
+(쥬베룩 실제 노출 4,632회 등), 2026-10 판 S0 에서 정정했습니다.
 
 ### 3.6 GA4 전환 이벤트 측정 시작일
 

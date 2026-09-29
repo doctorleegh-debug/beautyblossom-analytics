@@ -22,8 +22,13 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const CACHE = join(ROOT, '.cache', 'adlib');
-const OUT = join(ROOT, 'data', 'competitors-2026-09.json');
+// Each month is a fresh read of the library, so a month's responses live in their own folder and
+// last month's are never served as this month's. Without --month the original September paths
+// are kept, which is what the September report was built from.
+const MONTH = (process.argv.find(a => a.startsWith('--month=')) || '').slice(8);
+if (MONTH && !/^\d{4}-\d{2}$/.test(MONTH)) { console.error('--month=yyyy-mm'); process.exit(1); }
+const CACHE = MONTH ? join(ROOT, '.cache', 'adlib', MONTH) : join(ROOT, '.cache', 'adlib');
+const OUT = join(ROOT, 'data', `competitors-${MONTH || '2026-09'}.json`);
 
 const CREATIVES = join(ROOT, '.cache', 'creatives');
 

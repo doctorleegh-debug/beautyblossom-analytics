@@ -44,6 +44,18 @@ node scripts\collect-serp.mjs                      # 시술 검색어 1페이지
 node scripts\build-strategy.mjs                    # report/strategy-2026-09.html 생성
 ```
 
+2026-10 판부터는 월을 지정해 실행한다 (예: 10월 판 = 9월 실적 기준).
+
+```powershell
+node scripts\collect-strategy-inputs.mjs --month=2026-10 --end=2026-09-28 --baseline-ga4=2026-07-21:2026-08-19 --baseline-gsc=2026-07-19:2026-08-17
+node scripts\collect-competitors.mjs --month=2026-10          # .cache/adlib/2026-10 → data/competitors-2026-10.json
+node scripts\collect-competitors.mjs --month=2026-10 --deep
+node scripts\collect-serp.mjs --month=2026-10                 # data/serp-2026-10.json
+node scripts\build-strategy.mjs --month=2026-10 --monthly=data/monthly-2026-09-28.json
+```
+
+빌드는 전월 리포트(`report/strategy-<전월>.html`)에 박힌 목표를 읽어 S0 적중 검증을 만든다. 전월 파일은 수정하지 않는다.
+
 파일명은 `strategy-YYYY-MM.html` 로, **실행 대상 월**을 쓴다. 근거가 되는 실적은 그 전월이다.
 
 ### 공유 링크

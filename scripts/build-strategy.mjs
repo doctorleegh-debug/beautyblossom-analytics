@@ -350,32 +350,6 @@ const ytShare = (short, key) => {
   const tot = sum(rows, 'views'); const kr = sum(rows.filter((r) => r.country === 'KR'), 'views');
   return { total: tot, abroad: tot - kr, abroadShare: pct(tot - kr, tot), top: rows.filter((r) => r.country !== 'KR').slice(0, 4) };
 };
-const followups = [
-  { item: '대만 광고 문구·노출 대상을 새로 짜서 비교', status: '확인하지 못했습니다',
-    fact: `광고 관리자 자료를 받지 못해 실행 여부를 확인하지 못했습니다. 대만 사이트의 SNS 광고 접속은 ${M.compare} ${num(sum(channelsOf('TW', COMPARE).filter((c) => c.channel === 'Paid Social'), 'sessions'))}회 → ${M.base} ${num(sum(channelsOf('TW', BASE).filter((c) => c.channel === 'Paid Social'), 'sessions'))}회였습니다.` },
-  { item: '일본 광고비를 고정하고 접속 추이 보기', status: '확인하지 못했습니다',
-    fact: `광고비 자료가 없습니다. 광고로 들어온 접속은 하루 평균 ${sign(MK.JP.paidDelta)} 변했는데, 이 변화가 광고비를 바꾼 결과인지는 확인하지 못했습니다. 그래서 S0 표의 일본 항목을 판정하지 않았습니다.` },
-  { item: '리쥬란·써마지 페이지에 시술 이름 주소 달기', status: '반영되지 않았습니다',
-    fact: `${inputs.sources.sitemaps[0]?.fetched_at_utc?.slice(0, 10) || ''} 사이트맵 기준으로 리쥬란·써마지·온다·포텐자·쥬베룩 이름이 들어간 주소는 5개 사이트 어디에도 없습니다.` },
-  { item: '유튜브 영상에 외국어 제목·자막 달기', status: '확인하지 못했습니다',
-    fact: (() => { const a = ytShare('블라썸1호', COMPARE), b = ytShare('블라썸1호', BASE);
-      return a && b ? `블라썸1호 채널의 해외 시청 비중은 ${M.compare} ${pc(a.abroadShare, 0)} → ${M.base} ${pc(b.abroadShare, 0)}로 늘지 않았습니다.` : '유튜브 국가별 자료가 없습니다.'; })() },
-  { item: '광고 도착지를 홈페이지·인스타로 나눠 비교 (대만)', status: '확인하지 못했습니다',
-    fact: '광고 관리자 자료가 필요합니다.' },
-  // Last month's "performed but zero search presence" list came from the top 25 queries per site only.
-  // With every query in hand the same treatments do show up, so the finding is corrected here rather
-  // than silently dropped from S8.
-  ...(() => {
-    const was = (prev?.treatmentPlan || []).filter((t) => t.totalImpressions === 0 && t.competitorAds > 0).map((t) => t.name);
-    const now = treatmentPlan.filter((t) => was.includes(t.name) && t.totalImpressions > 0);
-    if (!now.length) return [];
-    return [{ item: `S8 ③ "하고 있는데 검색 노출이 0인 시술" (${now.map((t) => t.name.split(' ')[0]).join('·')})`, status: '정정합니다',
-      fact: `지난달은 사이트당 상위 25개 검색어만 받아 노출이 0으로 보였습니다. 이번에 검색어 전체를 받아 보니 ${M.base}에 ` +
-        now.map((t) => `${t.name.split(' ')[0]} 노출 ${num(t.totalImpressions)}회·클릭 ${num(t.totalClicks)}회`).join(', ') +
-        '이었습니다. 노출은 되지만 클릭이 거의 없는 상태라, 이번 리포트에서는 S8 ①(순위가 뒤인 시술)에 넣었습니다. 이름 주소 페이지가 없다는 사실(③-2)은 그대로입니다.' }];
-  })()
-];
-
 // ---------------------------------------------------------------------------
 // Competitors (same method as last month, so the two months are comparable)
 // ---------------------------------------------------------------------------
@@ -757,7 +731,7 @@ const payload = {
     basis: { ga4: { start: PERIOD[BASE].start, end: PERIOD[BASE].end, days: baseDays }, ga4Prev: { start: PERIOD[COMPARE].start, end: PERIOD[COMPARE].end, days: compareDays },
       gsc: { start: PERIOD[BASE].start, end: gscLast, days: gscBaseDays }, competitors: comp?.generated_at_utc || null, competitorsPrev: compPrev?.generated_at_utc || null }
   },
-  text, summary, verify, koreaShare, formDaily, followups,
+  text, summary, verify, koreaShare, formDaily,
   markets, tiers, keywordOps: keywordOps.slice(0, 40), treatmentPlan, offeredNote: offered ? offered.note : null, wordingGaps,
   keywordMethod: { topCtrAssumed: TOP_CTR, minImpressions: MIN_IMPRESSIONS, rankBand: RANK_BAND },
   cityPattern, competitors, compChange, countryMatrix, organicPlays, channelMentions, priceDisclosure, pageFix,

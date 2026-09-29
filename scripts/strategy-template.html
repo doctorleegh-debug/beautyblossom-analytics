@@ -150,12 +150,6 @@
     </tr></thead><tbody></tbody></table>
     <p class="note" id="korea-note"></p>
   </div>
-  <div class="card" style="margin-top:14px">
-    <h3>지난달 권고는 실행됐나</h3>
-    <table id="followup-table"><thead><tr>
-      <th>{{BASE}} 리포트 권고</th><th>확인 결과</th><th>근거</th>
-    </tr></thead><tbody></tbody></table>
-  </div>
 
   <h2>S1 · 홈페이지 접속이 어디서 오고 있나</h2>
   <p class="sub">먼저 사실 확인부터 하겠습니다. 여섯 개 나라별 사이트에 사람들이 <b>어떤 경로로</b> 들어오고,
@@ -1585,17 +1579,6 @@ function fillKorea() {
   $('korea-note').innerHTML = D.text.koreaNote;
 }
 
-function fillFollowups() {
-  const tb = $('followup-table').querySelector('tbody'); tb.textContent = '';
-  (D.followups || []).forEach(f => {
-    const c = /^(반영되지|정정)/.test(f.status) ? '--bad' : '--warn';
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td style="text-align:left"><b>${esc(f.item)}</b></td>` +
-      `<td><b style="color:var(${c})">${esc(f.status)}</b></td><td style="text-align:left" class="fact">${esc(f.fact)}</td>`;
-    tb.appendChild(tr);
-  });
-}
-
 function fillCompChange() {
   const tb = $('comp-change').querySelector('tbody'); tb.textContent = '';
   (D.compChange || []).forEach(r => {
@@ -1680,7 +1663,7 @@ function fillTreatments() {
       '장비도 인력도 이미 있으니 추가 투자 없이 페이지와 콘텐츠만으로 메울 수 있는 구간입니다. ' +
       (D.offeredNote ? `<span class="fact">${esc(D.offeredNote)}</span>` : '')
     : '이번 달은 사이트별 검색어를 전부 받아서 봤고, 경쟁사가 광고하는 시술 중 <b>우리 검색 노출이 0인 시술은 없었습니다.</b> ' +
-      '노출은 되지만 순위가 뒤라 클릭이 거의 없는 시술은 ①에 있습니다(지난달 목록의 정정은 S0 참고).';
+      '노출은 되지만 순위가 뒤라 클릭이 거의 없는 시술은 ①에 있습니다.';
 
   // ③-1 wording gaps
   const tbw = $('tp-word').querySelector('tbody'); tbw.textContent = '';
@@ -1723,7 +1706,7 @@ function drawAll() {
   drawChannelStack(); drawStyle(); drawGantt(); drawHeatmap(); drawKeywords(); drawFlow();
 }
 
-fillVerify(); fillKorea(); fillFollowups();
+fillVerify(); fillKorea();
 fillMarketTable(); fillCompetitors(); fillCompChange(); fillPrice(); fillCrossFindings();
 fillTiers(); fillChannels(); fillOrganic(); fillInstagram(); fillYouTube(); fillKeywordTable(); fillSerp(); fillKPI(); fillTreatments(); fillPageFix(); fillFooter();
 fillSummary();

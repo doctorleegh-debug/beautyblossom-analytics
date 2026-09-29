@@ -1,0 +1,7824 @@
+{
+ "generated_at_utc": "2026-09-29T00:01:24.479Z",
+ "requested": {
+  "months": [
+   "2026-07",
+   "2026-08",
+   "2026-09"
+  ],
+  "end": "2026-09-28"
+ },
+ "periods": [
+  {
+   "key": "2026-07",
+   "start": "2026-07-01",
+   "end": "2026-07-31",
+   "days": 31
+  },
+  {
+   "key": "2026-08",
+   "start": "2026-08-01",
+   "end": "2026-08-31",
+   "days": 31
+  },
+  {
+   "key": "2026-09",
+   "start": "2026-09-01",
+   "end": "2026-09-28",
+   "days": 28
+  }
+ ],
+ "sources": {
+  "ga4": [
+   {
+    "label": "KR",
+    "id": "526090588",
+    "months": {
+     "2026-08": {
+      "activeUsers": 10143,
+      "newUsers": 9557,
+      "sessions": 12712,
+      "screenPageViews": 34523,
+      "keyEvents": 454,
+      "averageSessionDuration": 141.2943411197294,
+      "bounceRate": 0.47545626179987416,
+      "engagementRate": 0.5245437382001259
+     },
+     "2026-07": {
+      "activeUsers": 9459,
+      "newUsers": 8960,
+      "sessions": 12396,
+      "screenPageViews": 30878,
+      "keyEvents": 169,
+      "averageSessionDuration": 128.97426970813166,
+      "bounceRate": 0.5,
+      "engagementRate": 0.5
+     },
+     "2026-09": {
+      "activeUsers": 8360,
+      "newUsers": 7955,
+      "sessions": 10773,
+      "screenPageViews": 27954,
+      "keyEvents": 326,
+      "averageSessionDuration": 164.60055233156967,
+      "bounceRate": 0.4768402487700733,
+      "engagementRate": 0.5231597512299266
+     }
+    },
+    "channels": {
+     "2026-08": {
+      "Direct": {
+       "sessions": 4633,
+       "keyEvents": 72
+      },
+      "Organic Search": {
+       "sessions": 4201,
+       "keyEvents": 252
+      },
+      "Paid Social": {
+       "sessions": 2032,
+       "keyEvents": 6
+      },
+      "Referral": {
+       "sessions": 1122,
+       "keyEvents": 98
+      },
+      "Organic Social": {
+       "sessions": 404,
+       "keyEvents": 18
+      },
+      "AI Assistant": {
+       "sessions": 101,
+       "keyEvents": 8
+      },
+      "Paid Search": {
+       "sessions": 64,
+       "keyEvents": 0
+      },
+      "Unassigned": {
+       "sessions": 19,
+       "keyEvents": 0
+      },
+      "Organic Video": {
+       "sessions": 12,
+       "keyEvents": 0
+      },
+      "Paid Other": {
+       "sessions": 1,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     },
+     "2026-07": {
+      "Organic Search": {
+       "sessions": 4334,
+       "keyEvents": 96
+      },
+      "Direct": {
+       "sessions": 3718,
+       "keyEvents": 33
+      },
+      "Paid Social": {
+       "sessions": 2718,
+       "keyEvents": 4
+      },
+      "Referral": {
+       "sessions": 1074,
+       "keyEvents": 31
+      },
+      "Organic Social": {
+       "sessions": 221,
+       "keyEvents": 2
+      },
+      "AI Assistant": {
+       "sessions": 76,
+       "keyEvents": 2
+      },
+      "Paid Search": {
+       "sessions": 57,
+       "keyEvents": 1
+      },
+      "Unassigned": {
+       "sessions": 20,
+       "keyEvents": 0
+      },
+      "Organic Video": {
+       "sessions": 6,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 1,
+       "keyEvents": 0
+      },
+      "Paid Other": {
+       "sessions": 1,
+       "keyEvents": 0
+      }
+     },
+     "2026-09": {
+      "Organic Search": {
+       "sessions": 3694,
+       "keyEvents": 168
+      },
+      "Direct": {
+       "sessions": 3161,
+       "keyEvents": 78
+      },
+      "Paid Social": {
+       "sessions": 2407,
+       "keyEvents": 0
+      },
+      "Referral": {
+       "sessions": 987,
+       "keyEvents": 68
+      },
+      "Unassigned": {
+       "sessions": 252,
+       "keyEvents": 4
+      },
+      "Organic Social": {
+       "sessions": 216,
+       "keyEvents": 2
+      },
+      "AI Assistant": {
+       "sessions": 87,
+       "keyEvents": 2
+      },
+      "Cross-network": {
+       "sessions": 80,
+       "keyEvents": 1
+      },
+      "Paid Other": {
+       "sessions": 65,
+       "keyEvents": 0
+      },
+      "Paid Search": {
+       "sessions": 47,
+       "keyEvents": 2
+      },
+      "Organic Video": {
+       "sessions": 11,
+       "keyEvents": 1
+      }
+     }
+    },
+    "daily": [
+     {
+      "date": "2026-07-01",
+      "sessions": 418,
+      "activeUsers": 363,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-02",
+      "sessions": 457,
+      "activeUsers": 405,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-03",
+      "sessions": 478,
+      "activeUsers": 430,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-04",
+      "sessions": 403,
+      "activeUsers": 359,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-05",
+      "sessions": 394,
+      "activeUsers": 351,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-06",
+      "sessions": 394,
+      "activeUsers": 332,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-07",
+      "sessions": 368,
+      "activeUsers": 319,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-08",
+      "sessions": 525,
+      "activeUsers": 462,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-09",
+      "sessions": 389,
+      "activeUsers": 315,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-10",
+      "sessions": 355,
+      "activeUsers": 303,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-11",
+      "sessions": 341,
+      "activeUsers": 307,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-12",
+      "sessions": 309,
+      "activeUsers": 277,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-13",
+      "sessions": 378,
+      "activeUsers": 330,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-14",
+      "sessions": 384,
+      "activeUsers": 330,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-07-15",
+      "sessions": 334,
+      "activeUsers": 288,
+      "keyEvents": 11
+     },
+     {
+      "date": "2026-07-16",
+      "sessions": 277,
+      "activeUsers": 233,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-17",
+      "sessions": 222,
+      "activeUsers": 184,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-07-18",
+      "sessions": 218,
+      "activeUsers": 189,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-19",
+      "sessions": 347,
+      "activeUsers": 305,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-07-20",
+      "sessions": 458,
+      "activeUsers": 393,
+      "keyEvents": 23
+     },
+     {
+      "date": "2026-07-21",
+      "sessions": 517,
+      "activeUsers": 455,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-07-22",
+      "sessions": 389,
+      "activeUsers": 327,
+      "keyEvents": 11
+     },
+     {
+      "date": "2026-07-23",
+      "sessions": 326,
+      "activeUsers": 277,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-07-24",
+      "sessions": 307,
+      "activeUsers": 260,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-07-25",
+      "sessions": 344,
+      "activeUsers": 310,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-07-26",
+      "sessions": 339,
+      "activeUsers": 308,
+      "keyEvents": 11
+     },
+     {
+      "date": "2026-07-27",
+      "sessions": 409,
+      "activeUsers": 361,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-07-28",
+      "sessions": 383,
+      "activeUsers": 340,
+      "keyEvents": 13
+     },
+     {
+      "date": "2026-07-29",
+      "sessions": 373,
+      "activeUsers": 320,
+      "keyEvents": 12
+     },
+     {
+      "date": "2026-07-30",
+      "sessions": 568,
+      "activeUsers": 502,
+      "keyEvents": 13
+     },
+     {
+      "date": "2026-07-31",
+      "sessions": 684,
+      "activeUsers": 623,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-08-01",
+      "sessions": 388,
+      "activeUsers": 353,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-02",
+      "sessions": 452,
+      "activeUsers": 424,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-03",
+      "sessions": 624,
+      "activeUsers": 551,
+      "keyEvents": 15
+     },
+     {
+      "date": "2026-08-04",
+      "sessions": 489,
+      "activeUsers": 438,
+      "keyEvents": 14
+     },
+     {
+      "date": "2026-08-05",
+      "sessions": 651,
+      "activeUsers": 592,
+      "keyEvents": 14
+     },
+     {
+      "date": "2026-08-06",
+      "sessions": 415,
+      "activeUsers": 374,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-08-07",
+      "sessions": 460,
+      "activeUsers": 395,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-08",
+      "sessions": 378,
+      "activeUsers": 337,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-09",
+      "sessions": 348,
+      "activeUsers": 315,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-08-10",
+      "sessions": 428,
+      "activeUsers": 355,
+      "keyEvents": 20
+     },
+     {
+      "date": "2026-08-11",
+      "sessions": 410,
+      "activeUsers": 347,
+      "keyEvents": 17
+     },
+     {
+      "date": "2026-08-12",
+      "sessions": 434,
+      "activeUsers": 385,
+      "keyEvents": 12
+     },
+     {
+      "date": "2026-08-13",
+      "sessions": 387,
+      "activeUsers": 336,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-08-14",
+      "sessions": 402,
+      "activeUsers": 340,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-15",
+      "sessions": 328,
+      "activeUsers": 290,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-08-16",
+      "sessions": 294,
+      "activeUsers": 260,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-08-17",
+      "sessions": 341,
+      "activeUsers": 301,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-18",
+      "sessions": 346,
+      "activeUsers": 289,
+      "keyEvents": 43
+     },
+     {
+      "date": "2026-08-19",
+      "sessions": 355,
+      "activeUsers": 301,
+      "keyEvents": 16
+     },
+     {
+      "date": "2026-08-20",
+      "sessions": 401,
+      "activeUsers": 346,
+      "keyEvents": 17
+     },
+     {
+      "date": "2026-08-21",
+      "sessions": 414,
+      "activeUsers": 362,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-08-22",
+      "sessions": 428,
+      "activeUsers": 382,
+      "keyEvents": 12
+     },
+     {
+      "date": "2026-08-23",
+      "sessions": 372,
+      "activeUsers": 335,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-24",
+      "sessions": 403,
+      "activeUsers": 333,
+      "keyEvents": 40
+     },
+     {
+      "date": "2026-08-25",
+      "sessions": 365,
+      "activeUsers": 297,
+      "keyEvents": 29
+     },
+     {
+      "date": "2026-08-26",
+      "sessions": 484,
+      "activeUsers": 426,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-08-27",
+      "sessions": 378,
+      "activeUsers": 340,
+      "keyEvents": 14
+     },
+     {
+      "date": "2026-08-28",
+      "sessions": 356,
+      "activeUsers": 293,
+      "keyEvents": 34
+     },
+     {
+      "date": "2026-08-29",
+      "sessions": 457,
+      "activeUsers": 419,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-30",
+      "sessions": 264,
+      "activeUsers": 220,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-31",
+      "sessions": 476,
+      "activeUsers": 396,
+      "keyEvents": 43
+     },
+     {
+      "date": "2026-09-01",
+      "sessions": 500,
+      "activeUsers": 424,
+      "keyEvents": 23
+     },
+     {
+      "date": "2026-09-02",
+      "sessions": 416,
+      "activeUsers": 344,
+      "keyEvents": 13
+     },
+     {
+      "date": "2026-09-03",
+      "sessions": 394,
+      "activeUsers": 336,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-09-04",
+      "sessions": 390,
+      "activeUsers": 328,
+      "keyEvents": 19
+     },
+     {
+      "date": "2026-09-05",
+      "sessions": 335,
+      "activeUsers": 304,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-09-06",
+      "sessions": 329,
+      "activeUsers": 287,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-07",
+      "sessions": 332,
+      "activeUsers": 285,
+      "keyEvents": 25
+     },
+     {
+      "date": "2026-09-08",
+      "sessions": 264,
+      "activeUsers": 221,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-09-09",
+      "sessions": 372,
+      "activeUsers": 308,
+      "keyEvents": 11
+     },
+     {
+      "date": "2026-09-10",
+      "sessions": 401,
+      "activeUsers": 326,
+      "keyEvents": 14
+     },
+     {
+      "date": "2026-09-11",
+      "sessions": 369,
+      "activeUsers": 302,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-12",
+      "sessions": 365,
+      "activeUsers": 325,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-13",
+      "sessions": 319,
+      "activeUsers": 286,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-14",
+      "sessions": 421,
+      "activeUsers": 338,
+      "keyEvents": 24
+     },
+     {
+      "date": "2026-09-15",
+      "sessions": 290,
+      "activeUsers": 222,
+      "keyEvents": 14
+     },
+     {
+      "date": "2026-09-16",
+      "sessions": 483,
+      "activeUsers": 417,
+      "keyEvents": 14
+     },
+     {
+      "date": "2026-09-17",
+      "sessions": 489,
+      "activeUsers": 436,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-09-18",
+      "sessions": 335,
+      "activeUsers": 269,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-09-19",
+      "sessions": 374,
+      "activeUsers": 319,
+      "keyEvents": 16
+     },
+     {
+      "date": "2026-09-20",
+      "sessions": 374,
+      "activeUsers": 327,
+      "keyEvents": 12
+     },
+     {
+      "date": "2026-09-21",
+      "sessions": 529,
+      "activeUsers": 450,
+      "keyEvents": 20
+     },
+     {
+      "date": "2026-09-22",
+      "sessions": 403,
+      "activeUsers": 327,
+      "keyEvents": 16
+     },
+     {
+      "date": "2026-09-23",
+      "sessions": 522,
+      "activeUsers": 441,
+      "keyEvents": 12
+     },
+     {
+      "date": "2026-09-24",
+      "sessions": 359,
+      "activeUsers": 300,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-25",
+      "sessions": 361,
+      "activeUsers": 319,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-26",
+      "sessions": 339,
+      "activeUsers": 311,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-27",
+      "sessions": 398,
+      "activeUsers": 354,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-09-28",
+      "sessions": 404,
+      "activeUsers": 351,
+      "keyEvents": 14
+     }
+    ],
+    "key_events_from": "2026-07-14",
+    "last_date": "2026-09-28"
+   },
+   {
+    "label": "EN",
+    "id": "534100156",
+    "months": {
+     "2026-09": {
+      "activeUsers": 33389,
+      "newUsers": 31115,
+      "sessions": 40978,
+      "screenPageViews": 60495,
+      "keyEvents": 1132,
+      "averageSessionDuration": 56.20179910654497,
+      "bounceRate": 0.5462931329005808,
+      "engagementRate": 0.4537068670994192
+     },
+     "2026-07": {
+      "activeUsers": 33316,
+      "newUsers": 31333,
+      "sessions": 41752,
+      "screenPageViews": 53513,
+      "keyEvents": 842,
+      "averageSessionDuration": 61.8007491866737,
+      "bounceRate": 0.6422686338379,
+      "engagementRate": 0.3577313661621
+     },
+     "2026-08": {
+      "activeUsers": 32040,
+      "newUsers": 29704,
+      "sessions": 37450,
+      "screenPageViews": 55202,
+      "keyEvents": 1442,
+      "averageSessionDuration": 65.49567571671561,
+      "bounceRate": 0.5353538050734312,
+      "engagementRate": 0.4646461949265688
+     }
+    },
+    "channels": {
+     "2026-07": {
+      "Paid Social": {
+       "sessions": 34146,
+       "keyEvents": 123
+      },
+      "Paid Search": {
+       "sessions": 3804,
+       "keyEvents": 553
+      },
+      "Organic Search": {
+       "sessions": 1539,
+       "keyEvents": 109
+      },
+      "Direct": {
+       "sessions": 1151,
+       "keyEvents": 37
+      },
+      "Referral": {
+       "sessions": 349,
+       "keyEvents": 16
+      },
+      "Organic Social": {
+       "sessions": 327,
+       "keyEvents": 0
+      },
+      "Paid Other": {
+       "sessions": 69,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 42,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 34,
+       "keyEvents": 3
+      },
+      "Unassigned": {
+       "sessions": 20,
+       "keyEvents": 1
+      },
+      "Organic Video": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     },
+     "2026-09": {
+      "Paid Social": {
+       "sessions": 32787,
+       "keyEvents": 208
+      },
+      "Organic Search": {
+       "sessions": 1916,
+       "keyEvents": 303
+      },
+      "Paid Search": {
+       "sessions": 1875,
+       "keyEvents": 432
+      },
+      "Direct": {
+       "sessions": 1507,
+       "keyEvents": 101
+      },
+      "Unassigned": {
+       "sessions": 1040,
+       "keyEvents": 16
+      },
+      "Paid Other": {
+       "sessions": 819,
+       "keyEvents": 10
+      },
+      "Cross-network": {
+       "sessions": 731,
+       "keyEvents": 5
+      },
+      "Organic Social": {
+       "sessions": 398,
+       "keyEvents": 6
+      },
+      "Referral": {
+       "sessions": 265,
+       "keyEvents": 42
+      },
+      "AI Assistant": {
+       "sessions": 55,
+       "keyEvents": 9
+      },
+      "Organic Video": {
+       "sessions": 1,
+       "keyEvents": 0
+      }
+     },
+     "2026-08": {
+      "Paid Social": {
+       "sessions": 29773,
+       "keyEvents": 249
+      },
+      "Paid Search": {
+       "sessions": 2900,
+       "keyEvents": 703
+      },
+      "Organic Search": {
+       "sessions": 1809,
+       "keyEvents": 306
+      },
+      "Direct": {
+       "sessions": 1670,
+       "keyEvents": 105
+      },
+      "Organic Social": {
+       "sessions": 508,
+       "keyEvents": 4
+      },
+      "Referral": {
+       "sessions": 366,
+       "keyEvents": 52
+      },
+      "Paid Other": {
+       "sessions": 198,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 72,
+       "keyEvents": 20
+      },
+      "Cross-network": {
+       "sessions": 22,
+       "keyEvents": 3
+      },
+      "Unassigned": {
+       "sessions": 17,
+       "keyEvents": 0
+      },
+      "Organic Video": {
+       "sessions": 1,
+       "keyEvents": 0
+      }
+     }
+    },
+    "daily": [
+     {
+      "date": "2026-07-01",
+      "sessions": 961,
+      "activeUsers": 920,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-02",
+      "sessions": 1438,
+      "activeUsers": 1359,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-03",
+      "sessions": 1489,
+      "activeUsers": 1386,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-04",
+      "sessions": 1810,
+      "activeUsers": 1685,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-05",
+      "sessions": 1734,
+      "activeUsers": 1596,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-06",
+      "sessions": 1379,
+      "activeUsers": 1250,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-07",
+      "sessions": 1326,
+      "activeUsers": 1201,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-08",
+      "sessions": 1362,
+      "activeUsers": 1232,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-09",
+      "sessions": 1167,
+      "activeUsers": 1069,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-10",
+      "sessions": 1077,
+      "activeUsers": 1010,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-11",
+      "sessions": 1554,
+      "activeUsers": 1408,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-12",
+      "sessions": 1675,
+      "activeUsers": 1539,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-13",
+      "sessions": 1341,
+      "activeUsers": 1217,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-14",
+      "sessions": 1373,
+      "activeUsers": 1273,
+      "keyEvents": 36
+     },
+     {
+      "date": "2026-07-15",
+      "sessions": 816,
+      "activeUsers": 752,
+      "keyEvents": 44
+     },
+     {
+      "date": "2026-07-16",
+      "sessions": 207,
+      "activeUsers": 194,
+      "keyEvents": 20
+     },
+     {
+      "date": "2026-07-17",
+      "sessions": 214,
+      "activeUsers": 202,
+      "keyEvents": 21
+     },
+     {
+      "date": "2026-07-18",
+      "sessions": 313,
+      "activeUsers": 295,
+      "keyEvents": 48
+     },
+     {
+      "date": "2026-07-19",
+      "sessions": 1681,
+      "activeUsers": 1616,
+      "keyEvents": 65
+     },
+     {
+      "date": "2026-07-20",
+      "sessions": 1706,
+      "activeUsers": 1588,
+      "keyEvents": 36
+     },
+     {
+      "date": "2026-07-21",
+      "sessions": 1755,
+      "activeUsers": 1614,
+      "keyEvents": 40
+     },
+     {
+      "date": "2026-07-22",
+      "sessions": 1579,
+      "activeUsers": 1446,
+      "keyEvents": 53
+     },
+     {
+      "date": "2026-07-23",
+      "sessions": 1096,
+      "activeUsers": 1016,
+      "keyEvents": 55
+     },
+     {
+      "date": "2026-07-24",
+      "sessions": 232,
+      "activeUsers": 215,
+      "keyEvents": 43
+     },
+     {
+      "date": "2026-07-25",
+      "sessions": 1892,
+      "activeUsers": 1810,
+      "keyEvents": 58
+     },
+     {
+      "date": "2026-07-26",
+      "sessions": 2075,
+      "activeUsers": 1883,
+      "keyEvents": 61
+     },
+     {
+      "date": "2026-07-27",
+      "sessions": 1813,
+      "activeUsers": 1673,
+      "keyEvents": 59
+     },
+     {
+      "date": "2026-07-28",
+      "sessions": 1717,
+      "activeUsers": 1556,
+      "keyEvents": 40
+     },
+     {
+      "date": "2026-07-29",
+      "sessions": 1688,
+      "activeUsers": 1518,
+      "keyEvents": 56
+     },
+     {
+      "date": "2026-07-30",
+      "sessions": 1425,
+      "activeUsers": 1298,
+      "keyEvents": 34
+     },
+     {
+      "date": "2026-07-31",
+      "sessions": 1274,
+      "activeUsers": 1194,
+      "keyEvents": 73
+     },
+     {
+      "date": "2026-08-01",
+      "sessions": 872,
+      "activeUsers": 833,
+      "keyEvents": 28
+     },
+     {
+      "date": "2026-08-02",
+      "sessions": 1500,
+      "activeUsers": 1421,
+      "keyEvents": 41
+     },
+     {
+      "date": "2026-08-03",
+      "sessions": 1334,
+      "activeUsers": 1251,
+      "keyEvents": 88
+     },
+     {
+      "date": "2026-08-04",
+      "sessions": 1490,
+      "activeUsers": 1407,
+      "keyEvents": 54
+     },
+     {
+      "date": "2026-08-05",
+      "sessions": 1336,
+      "activeUsers": 1285,
+      "keyEvents": 21
+     },
+     {
+      "date": "2026-08-06",
+      "sessions": 452,
+      "activeUsers": 430,
+      "keyEvents": 26
+     },
+     {
+      "date": "2026-08-07",
+      "sessions": 1058,
+      "activeUsers": 1018,
+      "keyEvents": 25
+     },
+     {
+      "date": "2026-08-08",
+      "sessions": 1478,
+      "activeUsers": 1371,
+      "keyEvents": 42
+     },
+     {
+      "date": "2026-08-09",
+      "sessions": 1773,
+      "activeUsers": 1669,
+      "keyEvents": 55
+     },
+     {
+      "date": "2026-08-10",
+      "sessions": 1826,
+      "activeUsers": 1747,
+      "keyEvents": 36
+     },
+     {
+      "date": "2026-08-11",
+      "sessions": 1354,
+      "activeUsers": 1282,
+      "keyEvents": 158
+     },
+     {
+      "date": "2026-08-12",
+      "sessions": 1211,
+      "activeUsers": 1152,
+      "keyEvents": 49
+     },
+     {
+      "date": "2026-08-13",
+      "sessions": 1057,
+      "activeUsers": 998,
+      "keyEvents": 43
+     },
+     {
+      "date": "2026-08-14",
+      "sessions": 1228,
+      "activeUsers": 1139,
+      "keyEvents": 19
+     },
+     {
+      "date": "2026-08-15",
+      "sessions": 1383,
+      "activeUsers": 1312,
+      "keyEvents": 38
+     },
+     {
+      "date": "2026-08-16",
+      "sessions": 1461,
+      "activeUsers": 1374,
+      "keyEvents": 41
+     },
+     {
+      "date": "2026-08-17",
+      "sessions": 1284,
+      "activeUsers": 1223,
+      "keyEvents": 37
+     },
+     {
+      "date": "2026-08-18",
+      "sessions": 1006,
+      "activeUsers": 946,
+      "keyEvents": 30
+     },
+     {
+      "date": "2026-08-19",
+      "sessions": 1098,
+      "activeUsers": 1050,
+      "keyEvents": 30
+     },
+     {
+      "date": "2026-08-20",
+      "sessions": 1220,
+      "activeUsers": 1147,
+      "keyEvents": 36
+     },
+     {
+      "date": "2026-08-21",
+      "sessions": 1325,
+      "activeUsers": 1244,
+      "keyEvents": 33
+     },
+     {
+      "date": "2026-08-22",
+      "sessions": 1546,
+      "activeUsers": 1475,
+      "keyEvents": 106
+     },
+     {
+      "date": "2026-08-23",
+      "sessions": 1501,
+      "activeUsers": 1435,
+      "keyEvents": 69
+     },
+     {
+      "date": "2026-08-24",
+      "sessions": 1006,
+      "activeUsers": 931,
+      "keyEvents": 32
+     },
+     {
+      "date": "2026-08-25",
+      "sessions": 935,
+      "activeUsers": 891,
+      "keyEvents": 36
+     },
+     {
+      "date": "2026-08-26",
+      "sessions": 1257,
+      "activeUsers": 1193,
+      "keyEvents": 21
+     },
+     {
+      "date": "2026-08-27",
+      "sessions": 1513,
+      "activeUsers": 1458,
+      "keyEvents": 45
+     },
+     {
+      "date": "2026-08-28",
+      "sessions": 1254,
+      "activeUsers": 1208,
+      "keyEvents": 62
+     },
+     {
+      "date": "2026-08-29",
+      "sessions": 1297,
+      "activeUsers": 1250,
+      "keyEvents": 38
+     },
+     {
+      "date": "2026-08-30",
+      "sessions": 415,
+      "activeUsers": 388,
+      "keyEvents": 42
+     },
+     {
+      "date": "2026-08-31",
+      "sessions": 436,
+      "activeUsers": 399,
+      "keyEvents": 61
+     },
+     {
+      "date": "2026-09-01",
+      "sessions": 963,
+      "activeUsers": 903,
+      "keyEvents": 22
+     },
+     {
+      "date": "2026-09-02",
+      "sessions": 1445,
+      "activeUsers": 1385,
+      "keyEvents": 31
+     },
+     {
+      "date": "2026-09-03",
+      "sessions": 1744,
+      "activeUsers": 1665,
+      "keyEvents": 38
+     },
+     {
+      "date": "2026-09-04",
+      "sessions": 1597,
+      "activeUsers": 1526,
+      "keyEvents": 34
+     },
+     {
+      "date": "2026-09-05",
+      "sessions": 1825,
+      "activeUsers": 1731,
+      "keyEvents": 81
+     },
+     {
+      "date": "2026-09-06",
+      "sessions": 1830,
+      "activeUsers": 1735,
+      "keyEvents": 31
+     },
+     {
+      "date": "2026-09-07",
+      "sessions": 871,
+      "activeUsers": 825,
+      "keyEvents": 28
+     },
+     {
+      "date": "2026-09-08",
+      "sessions": 203,
+      "activeUsers": 179,
+      "keyEvents": 43
+     },
+     {
+      "date": "2026-09-09",
+      "sessions": 1094,
+      "activeUsers": 1034,
+      "keyEvents": 46
+     },
+     {
+      "date": "2026-09-10",
+      "sessions": 1564,
+      "activeUsers": 1463,
+      "keyEvents": 23
+     },
+     {
+      "date": "2026-09-11",
+      "sessions": 1630,
+      "activeUsers": 1540,
+      "keyEvents": 37
+     },
+     {
+      "date": "2026-09-12",
+      "sessions": 1958,
+      "activeUsers": 1862,
+      "keyEvents": 49
+     },
+     {
+      "date": "2026-09-13",
+      "sessions": 1700,
+      "activeUsers": 1602,
+      "keyEvents": 47
+     },
+     {
+      "date": "2026-09-14",
+      "sessions": 749,
+      "activeUsers": 697,
+      "keyEvents": 33
+     },
+     {
+      "date": "2026-09-15",
+      "sessions": 211,
+      "activeUsers": 173,
+      "keyEvents": 39
+     },
+     {
+      "date": "2026-09-16",
+      "sessions": 228,
+      "activeUsers": 202,
+      "keyEvents": 33
+     },
+     {
+      "date": "2026-09-17",
+      "sessions": 215,
+      "activeUsers": 190,
+      "keyEvents": 40
+     },
+     {
+      "date": "2026-09-18",
+      "sessions": 1377,
+      "activeUsers": 1326,
+      "keyEvents": 52
+     },
+     {
+      "date": "2026-09-19",
+      "sessions": 2524,
+      "activeUsers": 2391,
+      "keyEvents": 68
+     },
+     {
+      "date": "2026-09-20",
+      "sessions": 2518,
+      "activeUsers": 2383,
+      "keyEvents": 61
+     },
+     {
+      "date": "2026-09-21",
+      "sessions": 2051,
+      "activeUsers": 1928,
+      "keyEvents": 44
+     },
+     {
+      "date": "2026-09-22",
+      "sessions": 1664,
+      "activeUsers": 1606,
+      "keyEvents": 56
+     },
+     {
+      "date": "2026-09-23",
+      "sessions": 1783,
+      "activeUsers": 1700,
+      "keyEvents": 57
+     },
+     {
+      "date": "2026-09-24",
+      "sessions": 1693,
+      "activeUsers": 1601,
+      "keyEvents": 19
+     },
+     {
+      "date": "2026-09-25",
+      "sessions": 1824,
+      "activeUsers": 1738,
+      "keyEvents": 14
+     },
+     {
+      "date": "2026-09-26",
+      "sessions": 1708,
+      "activeUsers": 1635,
+      "keyEvents": 23
+     },
+     {
+      "date": "2026-09-27",
+      "sessions": 1563,
+      "activeUsers": 1506,
+      "keyEvents": 43
+     },
+     {
+      "date": "2026-09-28",
+      "sessions": 1872,
+      "activeUsers": 1782,
+      "keyEvents": 40
+     }
+    ],
+    "key_events_from": "2026-07-14",
+    "last_date": "2026-09-28"
+   },
+   {
+    "label": "JP",
+    "id": "534097409",
+    "months": {
+     "2026-08": {
+      "activeUsers": 10446,
+      "newUsers": 10241,
+      "sessions": 11643,
+      "screenPageViews": 16822,
+      "keyEvents": 274,
+      "averageSessionDuration": 62.20715544060808,
+      "bounceRate": 0.6743966331701452,
+      "engagementRate": 0.32560336682985486
+     },
+     "2026-07": {
+      "activeUsers": 7551,
+      "newUsers": 7380,
+      "sessions": 8493,
+      "screenPageViews": 11534,
+      "keyEvents": 57,
+      "averageSessionDuration": 46.92368680007064,
+      "bounceRate": 0.7269516072059343,
+      "engagementRate": 0.2730483927940657
+     },
+     "2026-09": {
+      "activeUsers": 6329,
+      "newUsers": 6038,
+      "sessions": 7543,
+      "screenPageViews": 10252,
+      "keyEvents": 150,
+      "averageSessionDuration": 57.620785392681945,
+      "bounceRate": 0.6708206283971895,
+      "engagementRate": 0.3291793716028106
+     }
+    },
+    "channels": {
+     "2026-08": {
+      "Paid Social": {
+       "sessions": 4857,
+       "keyEvents": 10
+      },
+      "Paid Search": {
+       "sessions": 3405,
+       "keyEvents": 29
+      },
+      "Direct": {
+       "sessions": 2150,
+       "keyEvents": 85
+      },
+      "Organic Search": {
+       "sessions": 733,
+       "keyEvents": 64
+      },
+      "Organic Social": {
+       "sessions": 411,
+       "keyEvents": 55
+      },
+      "Referral": {
+       "sessions": 132,
+       "keyEvents": 29
+      },
+      "Unassigned": {
+       "sessions": 21,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 15,
+       "keyEvents": 2
+      },
+      "Cross-network": {
+       "sessions": 2,
+       "keyEvents": 0
+      },
+      "Paid Other": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     },
+     "2026-07": {
+      "Paid Social": {
+       "sessions": 4816,
+       "keyEvents": 6
+      },
+      "Paid Search": {
+       "sessions": 1653,
+       "keyEvents": 13
+      },
+      "Direct": {
+       "sessions": 866,
+       "keyEvents": 8
+      },
+      "Organic Search": {
+       "sessions": 655,
+       "keyEvents": 22
+      },
+      "Organic Social": {
+       "sessions": 274,
+       "keyEvents": 5
+      },
+      "Referral": {
+       "sessions": 87,
+       "keyEvents": 3
+      },
+      "Unassigned": {
+       "sessions": 11,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 7,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 5,
+       "keyEvents": 0
+      },
+      "Paid Other": {
+       "sessions": 1,
+       "keyEvents": 0
+      }
+     },
+     "2026-09": {
+      "Paid Social": {
+       "sessions": 3638,
+       "keyEvents": 15
+      },
+      "Paid Search": {
+       "sessions": 1459,
+       "keyEvents": 16
+      },
+      "Direct": {
+       "sessions": 828,
+       "keyEvents": 50
+      },
+      "Organic Search": {
+       "sessions": 641,
+       "keyEvents": 60
+      },
+      "Unassigned": {
+       "sessions": 202,
+       "keyEvents": 1
+      },
+      "Organic Social": {
+       "sessions": 200,
+       "keyEvents": 0
+      },
+      "Paid Other": {
+       "sessions": 155,
+       "keyEvents": 2
+      },
+      "Cross-network": {
+       "sessions": 132,
+       "keyEvents": 0
+      },
+      "Referral": {
+       "sessions": 103,
+       "keyEvents": 5
+      },
+      "AI Assistant": {
+       "sessions": 8,
+       "keyEvents": 1
+      }
+     }
+    },
+    "daily": [
+     {
+      "date": "2026-07-01",
+      "sessions": 302,
+      "activeUsers": 275,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-02",
+      "sessions": 389,
+      "activeUsers": 369,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-03",
+      "sessions": 420,
+      "activeUsers": 405,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-04",
+      "sessions": 376,
+      "activeUsers": 359,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-05",
+      "sessions": 393,
+      "activeUsers": 374,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-06",
+      "sessions": 281,
+      "activeUsers": 272,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-07",
+      "sessions": 299,
+      "activeUsers": 286,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-08",
+      "sessions": 300,
+      "activeUsers": 283,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-09",
+      "sessions": 213,
+      "activeUsers": 200,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-10",
+      "sessions": 184,
+      "activeUsers": 178,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-11",
+      "sessions": 259,
+      "activeUsers": 253,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-12",
+      "sessions": 267,
+      "activeUsers": 261,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-13",
+      "sessions": 265,
+      "activeUsers": 253,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-14",
+      "sessions": 198,
+      "activeUsers": 183,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-15",
+      "sessions": 119,
+      "activeUsers": 110,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-07-16",
+      "sessions": 25,
+      "activeUsers": 21,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-17",
+      "sessions": 34,
+      "activeUsers": 29,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-18",
+      "sessions": 38,
+      "activeUsers": 35,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-19",
+      "sessions": 246,
+      "activeUsers": 238,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-20",
+      "sessions": 345,
+      "activeUsers": 339,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-07-21",
+      "sessions": 292,
+      "activeUsers": 284,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-22",
+      "sessions": 274,
+      "activeUsers": 262,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-07-23",
+      "sessions": 197,
+      "activeUsers": 191,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-24",
+      "sessions": 171,
+      "activeUsers": 165,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-07-25",
+      "sessions": 392,
+      "activeUsers": 385,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-26",
+      "sessions": 389,
+      "activeUsers": 375,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-27",
+      "sessions": 380,
+      "activeUsers": 370,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-28",
+      "sessions": 329,
+      "activeUsers": 318,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-07-29",
+      "sessions": 303,
+      "activeUsers": 290,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-07-30",
+      "sessions": 372,
+      "activeUsers": 357,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-31",
+      "sessions": 331,
+      "activeUsers": 325,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-08-01",
+      "sessions": 431,
+      "activeUsers": 425,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-02",
+      "sessions": 497,
+      "activeUsers": 470,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-03",
+      "sessions": 389,
+      "activeUsers": 372,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-04",
+      "sessions": 382,
+      "activeUsers": 366,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-08-05",
+      "sessions": 674,
+      "activeUsers": 658,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-06",
+      "sessions": 712,
+      "activeUsers": 698,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-07",
+      "sessions": 259,
+      "activeUsers": 243,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-08",
+      "sessions": 449,
+      "activeUsers": 438,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-09",
+      "sessions": 470,
+      "activeUsers": 449,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-10",
+      "sessions": 310,
+      "activeUsers": 298,
+      "keyEvents": 17
+     },
+     {
+      "date": "2026-08-11",
+      "sessions": 307,
+      "activeUsers": 295,
+      "keyEvents": 12
+     },
+     {
+      "date": "2026-08-12",
+      "sessions": 429,
+      "activeUsers": 415,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-13",
+      "sessions": 421,
+      "activeUsers": 402,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-14",
+      "sessions": 352,
+      "activeUsers": 333,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-08-15",
+      "sessions": 469,
+      "activeUsers": 448,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-16",
+      "sessions": 335,
+      "activeUsers": 330,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-17",
+      "sessions": 356,
+      "activeUsers": 333,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-08-18",
+      "sessions": 203,
+      "activeUsers": 196,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-19",
+      "sessions": 311,
+      "activeUsers": 292,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-08-20",
+      "sessions": 301,
+      "activeUsers": 268,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-21",
+      "sessions": 302,
+      "activeUsers": 278,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-22",
+      "sessions": 356,
+      "activeUsers": 348,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-23",
+      "sessions": 294,
+      "activeUsers": 286,
+      "keyEvents": 24
+     },
+     {
+      "date": "2026-08-24",
+      "sessions": 248,
+      "activeUsers": 229,
+      "keyEvents": 11
+     },
+     {
+      "date": "2026-08-25",
+      "sessions": 305,
+      "activeUsers": 287,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-08-26",
+      "sessions": 335,
+      "activeUsers": 326,
+      "keyEvents": 13
+     },
+     {
+      "date": "2026-08-27",
+      "sessions": 364,
+      "activeUsers": 355,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-08-28",
+      "sessions": 265,
+      "activeUsers": 245,
+      "keyEvents": 23
+     },
+     {
+      "date": "2026-08-29",
+      "sessions": 456,
+      "activeUsers": 437,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-08-30",
+      "sessions": 265,
+      "activeUsers": 254,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-31",
+      "sessions": 515,
+      "activeUsers": 484,
+      "keyEvents": 50
+     },
+     {
+      "date": "2026-09-01",
+      "sessions": 315,
+      "activeUsers": 297,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-09-02",
+      "sessions": 256,
+      "activeUsers": 247,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-03",
+      "sessions": 266,
+      "activeUsers": 258,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-09-04",
+      "sessions": 247,
+      "activeUsers": 237,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-05",
+      "sessions": 300,
+      "activeUsers": 291,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-06",
+      "sessions": 331,
+      "activeUsers": 322,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-09-07",
+      "sessions": 154,
+      "activeUsers": 145,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-08",
+      "sessions": 99,
+      "activeUsers": 97,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-09-09",
+      "sessions": 244,
+      "activeUsers": 234,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-10",
+      "sessions": 262,
+      "activeUsers": 246,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-09-11",
+      "sessions": 254,
+      "activeUsers": 236,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-12",
+      "sessions": 328,
+      "activeUsers": 312,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-09-13",
+      "sessions": 317,
+      "activeUsers": 294,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-09-14",
+      "sessions": 139,
+      "activeUsers": 117,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-15",
+      "sessions": 141,
+      "activeUsers": 130,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-09-16",
+      "sessions": 171,
+      "activeUsers": 162,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-17",
+      "sessions": 100,
+      "activeUsers": 81,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-18",
+      "sessions": 238,
+      "activeUsers": 225,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-09-19",
+      "sessions": 370,
+      "activeUsers": 355,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-09-20",
+      "sessions": 365,
+      "activeUsers": 349,
+      "keyEvents": 11
+     },
+     {
+      "date": "2026-09-21",
+      "sessions": 377,
+      "activeUsers": 355,
+      "keyEvents": 17
+     },
+     {
+      "date": "2026-09-22",
+      "sessions": 243,
+      "activeUsers": 229,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-09-23",
+      "sessions": 248,
+      "activeUsers": 230,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-09-24",
+      "sessions": 268,
+      "activeUsers": 250,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-09-25",
+      "sessions": 204,
+      "activeUsers": 192,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-26",
+      "sessions": 273,
+      "activeUsers": 249,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-27",
+      "sessions": 307,
+      "activeUsers": 281,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-28",
+      "sessions": 357,
+      "activeUsers": 339,
+      "keyEvents": 1
+     }
+    ],
+    "key_events_from": "2026-07-15",
+    "last_date": "2026-09-28"
+   },
+   {
+    "label": "CN",
+    "id": "534099303",
+    "months": {
+     "2026-09": {
+      "activeUsers": 10324,
+      "newUsers": 9784,
+      "sessions": 10393,
+      "screenPageViews": 12499,
+      "keyEvents": 88,
+      "averageSessionDuration": 21.31100910718753,
+      "bounceRate": 0.8080438756855576,
+      "engagementRate": 0.19195612431444242
+     },
+     "2026-08": {
+      "activeUsers": 5094,
+      "newUsers": 4795,
+      "sessions": 5637,
+      "screenPageViews": 8480,
+      "keyEvents": 135,
+      "averageSessionDuration": 58.78195041759801,
+      "bounceRate": 0.602980308674827,
+      "engagementRate": 0.39701969132517295
+     },
+     "2026-07": {
+      "activeUsers": 4967,
+      "newUsers": 4638,
+      "sessions": 5425,
+      "screenPageViews": 7257,
+      "keyEvents": 32,
+      "averageSessionDuration": 55.240916968479254,
+      "bounceRate": 0.7288479262672811,
+      "engagementRate": 0.2711520737327189
+     }
+    },
+    "channels": {
+     "2026-09": {
+      "Direct": {
+       "sessions": 9646,
+       "keyEvents": 53
+      },
+      "Unassigned": {
+       "sessions": 752,
+       "keyEvents": 3
+      },
+      "Organic Search": {
+       "sessions": 209,
+       "keyEvents": 14
+      },
+      "Referral": {
+       "sessions": 124,
+       "keyEvents": 18
+      },
+      "Organic Social": {
+       "sessions": 24,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 3,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 1,
+       "keyEvents": 0
+      },
+      "Organic Video": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     },
+     "2026-08": {
+      "Direct": {
+       "sessions": 4837,
+       "keyEvents": 92
+      },
+      "Organic Search": {
+       "sessions": 310,
+       "keyEvents": 19
+      },
+      "Unassigned": {
+       "sessions": 252,
+       "keyEvents": 0
+      },
+      "Referral": {
+       "sessions": 148,
+       "keyEvents": 24
+      },
+      "Organic Social": {
+       "sessions": 27,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 8,
+       "keyEvents": 0
+      },
+      "Organic Video": {
+       "sessions": 1,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     },
+     "2026-07": {
+      "Direct": {
+       "sessions": 4643,
+       "keyEvents": 17
+      },
+      "Organic Search": {
+       "sessions": 387,
+       "keyEvents": 9
+      },
+      "Unassigned": {
+       "sessions": 287,
+       "keyEvents": 0
+      },
+      "Referral": {
+       "sessions": 90,
+       "keyEvents": 6
+      },
+      "Organic Social": {
+       "sessions": 28,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 5,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 0,
+       "keyEvents": 0
+      },
+      "Organic Video": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     }
+    },
+    "daily": [
+     {
+      "date": "2026-07-01",
+      "sessions": 196,
+      "activeUsers": 179,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-02",
+      "sessions": 190,
+      "activeUsers": 177,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-03",
+      "sessions": 196,
+      "activeUsers": 184,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-04",
+      "sessions": 166,
+      "activeUsers": 165,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-05",
+      "sessions": 185,
+      "activeUsers": 175,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-06",
+      "sessions": 228,
+      "activeUsers": 214,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-07",
+      "sessions": 212,
+      "activeUsers": 202,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-08",
+      "sessions": 281,
+      "activeUsers": 271,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-09",
+      "sessions": 180,
+      "activeUsers": 173,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-10",
+      "sessions": 203,
+      "activeUsers": 186,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-11",
+      "sessions": 192,
+      "activeUsers": 181,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-12",
+      "sessions": 159,
+      "activeUsers": 153,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-13",
+      "sessions": 179,
+      "activeUsers": 169,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-14",
+      "sessions": 198,
+      "activeUsers": 187,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-15",
+      "sessions": 175,
+      "activeUsers": 167,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-16",
+      "sessions": 151,
+      "activeUsers": 144,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-17",
+      "sessions": 88,
+      "activeUsers": 82,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-18",
+      "sessions": 155,
+      "activeUsers": 147,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-19",
+      "sessions": 179,
+      "activeUsers": 171,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-20",
+      "sessions": 184,
+      "activeUsers": 175,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-21",
+      "sessions": 170,
+      "activeUsers": 157,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-22",
+      "sessions": 158,
+      "activeUsers": 146,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-23",
+      "sessions": 174,
+      "activeUsers": 165,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-24",
+      "sessions": 145,
+      "activeUsers": 141,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-25",
+      "sessions": 168,
+      "activeUsers": 161,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-26",
+      "sessions": 154,
+      "activeUsers": 144,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-27",
+      "sessions": 161,
+      "activeUsers": 144,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-07-28",
+      "sessions": 180,
+      "activeUsers": 168,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-29",
+      "sessions": 152,
+      "activeUsers": 143,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-30",
+      "sessions": 166,
+      "activeUsers": 154,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-31",
+      "sessions": 125,
+      "activeUsers": 119,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-01",
+      "sessions": 129,
+      "activeUsers": 125,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-02",
+      "sessions": 157,
+      "activeUsers": 151,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-03",
+      "sessions": 175,
+      "activeUsers": 159,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-04",
+      "sessions": 160,
+      "activeUsers": 145,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-05",
+      "sessions": 169,
+      "activeUsers": 157,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-06",
+      "sessions": 184,
+      "activeUsers": 171,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-07",
+      "sessions": 190,
+      "activeUsers": 168,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-08",
+      "sessions": 225,
+      "activeUsers": 216,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-09",
+      "sessions": 193,
+      "activeUsers": 184,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-08-10",
+      "sessions": 211,
+      "activeUsers": 200,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-11",
+      "sessions": 171,
+      "activeUsers": 169,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-12",
+      "sessions": 199,
+      "activeUsers": 191,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-13",
+      "sessions": 167,
+      "activeUsers": 159,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-14",
+      "sessions": 178,
+      "activeUsers": 170,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-15",
+      "sessions": 157,
+      "activeUsers": 154,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-16",
+      "sessions": 164,
+      "activeUsers": 161,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-17",
+      "sessions": 162,
+      "activeUsers": 160,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-18",
+      "sessions": 171,
+      "activeUsers": 163,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-19",
+      "sessions": 181,
+      "activeUsers": 167,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-20",
+      "sessions": 123,
+      "activeUsers": 109,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-21",
+      "sessions": 181,
+      "activeUsers": 174,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-22",
+      "sessions": 175,
+      "activeUsers": 163,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-23",
+      "sessions": 146,
+      "activeUsers": 143,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-24",
+      "sessions": 185,
+      "activeUsers": 176,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-25",
+      "sessions": 214,
+      "activeUsers": 199,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-26",
+      "sessions": 176,
+      "activeUsers": 173,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-27",
+      "sessions": 219,
+      "activeUsers": 210,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-08-28",
+      "sessions": 197,
+      "activeUsers": 187,
+      "keyEvents": 24
+     },
+     {
+      "date": "2026-08-29",
+      "sessions": 176,
+      "activeUsers": 172,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-30",
+      "sessions": 197,
+      "activeUsers": 194,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-31",
+      "sessions": 198,
+      "activeUsers": 188,
+      "keyEvents": 31
+     },
+     {
+      "date": "2026-09-01",
+      "sessions": 209,
+      "activeUsers": 200,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-02",
+      "sessions": 192,
+      "activeUsers": 189,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-09-03",
+      "sessions": 253,
+      "activeUsers": 246,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-04",
+      "sessions": 272,
+      "activeUsers": 265,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-05",
+      "sessions": 252,
+      "activeUsers": 248,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-06",
+      "sessions": 310,
+      "activeUsers": 301,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-07",
+      "sessions": 251,
+      "activeUsers": 240,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-08",
+      "sessions": 256,
+      "activeUsers": 249,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-09",
+      "sessions": 219,
+      "activeUsers": 214,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-10",
+      "sessions": 250,
+      "activeUsers": 239,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-11",
+      "sessions": 202,
+      "activeUsers": 195,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-12",
+      "sessions": 204,
+      "activeUsers": 201,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-13",
+      "sessions": 214,
+      "activeUsers": 211,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-14",
+      "sessions": 182,
+      "activeUsers": 176,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-15",
+      "sessions": 213,
+      "activeUsers": 197,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-09-16",
+      "sessions": 191,
+      "activeUsers": 183,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-17",
+      "sessions": 197,
+      "activeUsers": 197,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-18",
+      "sessions": 261,
+      "activeUsers": 257,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-19",
+      "sessions": 396,
+      "activeUsers": 391,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-20",
+      "sessions": 659,
+      "activeUsers": 646,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-09-21",
+      "sessions": 648,
+      "activeUsers": 637,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-22",
+      "sessions": 696,
+      "activeUsers": 688,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-23",
+      "sessions": 697,
+      "activeUsers": 687,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-09-24",
+      "sessions": 651,
+      "activeUsers": 645,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-25",
+      "sessions": 621,
+      "activeUsers": 617,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-26",
+      "sessions": 641,
+      "activeUsers": 638,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-27",
+      "sessions": 689,
+      "activeUsers": 687,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-28",
+      "sessions": 697,
+      "activeUsers": 692,
+      "keyEvents": 3
+     }
+    ],
+    "key_events_from": "2026-07-15",
+    "last_date": "2026-09-28"
+   },
+   {
+    "label": "TW",
+    "id": "534131940",
+    "months": {
+     "2026-08": {
+      "activeUsers": 20536,
+      "newUsers": 19870,
+      "sessions": 24302,
+      "screenPageViews": 33911,
+      "keyEvents": 353,
+      "averageSessionDuration": 57.480652954324746,
+      "bounceRate": 0.7526952514196362,
+      "engagementRate": 0.24730474858036375
+     },
+     "2026-09": {
+      "activeUsers": 18693,
+      "newUsers": 18182,
+      "sessions": 21929,
+      "screenPageViews": 31518,
+      "keyEvents": 164,
+      "averageSessionDuration": 44.12434107414838,
+      "bounceRate": 0.7554836061835924,
+      "engagementRate": 0.2445163938164075
+     },
+     "2026-07": {
+      "activeUsers": 17772,
+      "newUsers": 16671,
+      "sessions": 21707,
+      "screenPageViews": 31137,
+      "keyEvents": 103,
+      "averageSessionDuration": 79.25423404924679,
+      "bounceRate": 0.7786428341088129,
+      "engagementRate": 0.22135716589118717
+     }
+    },
+    "channels": {
+     "2026-08": {
+      "Paid Social": {
+       "sessions": 21130,
+       "keyEvents": 53
+      },
+      "Direct": {
+       "sessions": 1583,
+       "keyEvents": 84
+      },
+      "Organic Search": {
+       "sessions": 640,
+       "keyEvents": 69
+      },
+      "Organic Social": {
+       "sessions": 315,
+       "keyEvents": 10
+      },
+      "Paid Search": {
+       "sessions": 189,
+       "keyEvents": 8
+      },
+      "Referral": {
+       "sessions": 150,
+       "keyEvents": 128
+      },
+      "Paid Other": {
+       "sessions": 134,
+       "keyEvents": 1
+      },
+      "Unassigned": {
+       "sessions": 9,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 3,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 1,
+       "keyEvents": 0
+      },
+      "Organic Video": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     },
+     "2026-09": {
+      "Paid Social": {
+       "sessions": 18120,
+       "keyEvents": 26
+      },
+      "Direct": {
+       "sessions": 1397,
+       "keyEvents": 50
+      },
+      "Paid Other": {
+       "sessions": 883,
+       "keyEvents": 0
+      },
+      "Organic Search": {
+       "sessions": 492,
+       "keyEvents": 43
+      },
+      "Organic Social": {
+       "sessions": 441,
+       "keyEvents": 8
+      },
+      "Unassigned": {
+       "sessions": 421,
+       "keyEvents": 3
+      },
+      "Cross-network": {
+       "sessions": 348,
+       "keyEvents": 0
+      },
+      "Paid Search": {
+       "sessions": 212,
+       "keyEvents": 13
+      },
+      "Referral": {
+       "sessions": 167,
+       "keyEvents": 20
+      },
+      "AI Assistant": {
+       "sessions": 5,
+       "keyEvents": 1
+      },
+      "Organic Video": {
+       "sessions": 1,
+       "keyEvents": 0
+      }
+     },
+     "2026-07": {
+      "Paid Social": {
+       "sessions": 17899,
+       "keyEvents": 22
+      },
+      "Direct": {
+       "sessions": 1622,
+       "keyEvents": 40
+      },
+      "Organic Search": {
+       "sessions": 662,
+       "keyEvents": 29
+      },
+      "Paid Search": {
+       "sessions": 658,
+       "keyEvents": 7
+      },
+      "Organic Social": {
+       "sessions": 325,
+       "keyEvents": 2
+      },
+      "Referral": {
+       "sessions": 182,
+       "keyEvents": 3
+      },
+      "Unassigned": {
+       "sessions": 11,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 8,
+       "keyEvents": 0
+      },
+      "Paid Other": {
+       "sessions": 6,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 1,
+       "keyEvents": 0
+      },
+      "Organic Video": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     }
+    },
+    "daily": [
+     {
+      "date": "2026-07-01",
+      "sessions": 611,
+      "activeUsers": 577,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-02",
+      "sessions": 831,
+      "activeUsers": 764,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-03",
+      "sessions": 767,
+      "activeUsers": 695,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-04",
+      "sessions": 1037,
+      "activeUsers": 975,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-05",
+      "sessions": 1071,
+      "activeUsers": 988,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-06",
+      "sessions": 730,
+      "activeUsers": 684,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-07",
+      "sessions": 655,
+      "activeUsers": 611,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-08",
+      "sessions": 710,
+      "activeUsers": 677,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-09",
+      "sessions": 633,
+      "activeUsers": 588,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-10",
+      "sessions": 601,
+      "activeUsers": 574,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-11",
+      "sessions": 992,
+      "activeUsers": 934,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-12",
+      "sessions": 1049,
+      "activeUsers": 1004,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-13",
+      "sessions": 653,
+      "activeUsers": 607,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-14",
+      "sessions": 773,
+      "activeUsers": 702,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-07-15",
+      "sessions": 369,
+      "activeUsers": 338,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-16",
+      "sessions": 102,
+      "activeUsers": 75,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-07-17",
+      "sessions": 111,
+      "activeUsers": 79,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-18",
+      "sessions": 114,
+      "activeUsers": 85,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-19",
+      "sessions": 905,
+      "activeUsers": 860,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-07-20",
+      "sessions": 828,
+      "activeUsers": 773,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-21",
+      "sessions": 773,
+      "activeUsers": 703,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-07-22",
+      "sessions": 696,
+      "activeUsers": 640,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-07-23",
+      "sessions": 610,
+      "activeUsers": 571,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-07-24",
+      "sessions": 120,
+      "activeUsers": 96,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-07-25",
+      "sessions": 865,
+      "activeUsers": 828,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-07-26",
+      "sessions": 983,
+      "activeUsers": 933,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-07-27",
+      "sessions": 818,
+      "activeUsers": 773,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-07-28",
+      "sessions": 789,
+      "activeUsers": 745,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-07-29",
+      "sessions": 726,
+      "activeUsers": 693,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-30",
+      "sessions": 637,
+      "activeUsers": 603,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-07-31",
+      "sessions": 613,
+      "activeUsers": 572,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-08-01",
+      "sessions": 804,
+      "activeUsers": 760,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-02",
+      "sessions": 1145,
+      "activeUsers": 1092,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-03",
+      "sessions": 972,
+      "activeUsers": 900,
+      "keyEvents": 11
+     },
+     {
+      "date": "2026-08-04",
+      "sessions": 835,
+      "activeUsers": 790,
+      "keyEvents": 13
+     },
+     {
+      "date": "2026-08-05",
+      "sessions": 705,
+      "activeUsers": 660,
+      "keyEvents": 17
+     },
+     {
+      "date": "2026-08-06",
+      "sessions": 138,
+      "activeUsers": 125,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-08-07",
+      "sessions": 634,
+      "activeUsers": 607,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-08",
+      "sessions": 960,
+      "activeUsers": 921,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-09",
+      "sessions": 1109,
+      "activeUsers": 1070,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-08-10",
+      "sessions": 954,
+      "activeUsers": 929,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-11",
+      "sessions": 752,
+      "activeUsers": 720,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-12",
+      "sessions": 683,
+      "activeUsers": 653,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-13",
+      "sessions": 708,
+      "activeUsers": 653,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-08-14",
+      "sessions": 829,
+      "activeUsers": 790,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-15",
+      "sessions": 1032,
+      "activeUsers": 985,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-08-16",
+      "sessions": 992,
+      "activeUsers": 948,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-17",
+      "sessions": 766,
+      "activeUsers": 731,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-18",
+      "sessions": 531,
+      "activeUsers": 498,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-08-19",
+      "sessions": 681,
+      "activeUsers": 633,
+      "keyEvents": 21
+     },
+     {
+      "date": "2026-08-20",
+      "sessions": 723,
+      "activeUsers": 674,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-08-21",
+      "sessions": 904,
+      "activeUsers": 873,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-08-22",
+      "sessions": 1073,
+      "activeUsers": 1026,
+      "keyEvents": 15
+     },
+     {
+      "date": "2026-08-23",
+      "sessions": 1076,
+      "activeUsers": 1043,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-24",
+      "sessions": 768,
+      "activeUsers": 714,
+      "keyEvents": 33
+     },
+     {
+      "date": "2026-08-25",
+      "sessions": 667,
+      "activeUsers": 629,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-26",
+      "sessions": 829,
+      "activeUsers": 784,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-08-27",
+      "sessions": 771,
+      "activeUsers": 726,
+      "keyEvents": 12
+     },
+     {
+      "date": "2026-08-28",
+      "sessions": 765,
+      "activeUsers": 731,
+      "keyEvents": 25
+     },
+     {
+      "date": "2026-08-29",
+      "sessions": 770,
+      "activeUsers": 733,
+      "keyEvents": 25
+     },
+     {
+      "date": "2026-08-30",
+      "sessions": 68,
+      "activeUsers": 51,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-08-31",
+      "sessions": 114,
+      "activeUsers": 82,
+      "keyEvents": 54
+     },
+     {
+      "date": "2026-09-01",
+      "sessions": 840,
+      "activeUsers": 748,
+      "keyEvents": 15
+     },
+     {
+      "date": "2026-09-02",
+      "sessions": 884,
+      "activeUsers": 788,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-09-03",
+      "sessions": 845,
+      "activeUsers": 752,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-04",
+      "sessions": 838,
+      "activeUsers": 748,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-05",
+      "sessions": 961,
+      "activeUsers": 893,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-06",
+      "sessions": 1094,
+      "activeUsers": 996,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-07",
+      "sessions": 403,
+      "activeUsers": 348,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-09-08",
+      "sessions": 84,
+      "activeUsers": 65,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-09-09",
+      "sessions": 647,
+      "activeUsers": 569,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-10",
+      "sessions": 798,
+      "activeUsers": 737,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-09-11",
+      "sessions": 791,
+      "activeUsers": 717,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-12",
+      "sessions": 1070,
+      "activeUsers": 970,
+      "keyEvents": 9
+     },
+     {
+      "date": "2026-09-13",
+      "sessions": 949,
+      "activeUsers": 857,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-09-14",
+      "sessions": 321,
+      "activeUsers": 283,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-09-15",
+      "sessions": 78,
+      "activeUsers": 60,
+      "keyEvents": 12
+     },
+     {
+      "date": "2026-09-16",
+      "sessions": 136,
+      "activeUsers": 114,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-17",
+      "sessions": 77,
+      "activeUsers": 58,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-09-18",
+      "sessions": 677,
+      "activeUsers": 628,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-19",
+      "sessions": 1195,
+      "activeUsers": 1077,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-09-20",
+      "sessions": 1348,
+      "activeUsers": 1232,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-21",
+      "sessions": 975,
+      "activeUsers": 865,
+      "keyEvents": 12
+     },
+     {
+      "date": "2026-09-22",
+      "sessions": 914,
+      "activeUsers": 843,
+      "keyEvents": 11
+     },
+     {
+      "date": "2026-09-23",
+      "sessions": 911,
+      "activeUsers": 806,
+      "keyEvents": 6
+     },
+     {
+      "date": "2026-09-24",
+      "sessions": 927,
+      "activeUsers": 835,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-09-25",
+      "sessions": 1033,
+      "activeUsers": 951,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-26",
+      "sessions": 1070,
+      "activeUsers": 1006,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-09-27",
+      "sessions": 1043,
+      "activeUsers": 963,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-09-28",
+      "sessions": 961,
+      "activeUsers": 849,
+      "keyEvents": 2
+     }
+    ],
+    "key_events_from": "2026-07-14",
+    "last_date": "2026-09-28"
+   },
+   {
+    "label": "TH",
+    "id": "537583229",
+    "months": {
+     "2026-09": {
+      "activeUsers": 811,
+      "newUsers": 809,
+      "sessions": 1052,
+      "screenPageViews": 1980,
+      "keyEvents": 242,
+      "averageSessionDuration": 122.19956232984791,
+      "bounceRate": 0.6017110266159695,
+      "engagementRate": 0.3982889733840304
+     },
+     "2026-07": {
+      "activeUsers": 569,
+      "newUsers": 566,
+      "sessions": 801,
+      "screenPageViews": 1668,
+      "keyEvents": 15,
+      "averageSessionDuration": 181.91564315980025,
+      "bounceRate": 0.6367041198501873,
+      "engagementRate": 0.36329588014981273
+     },
+     "2026-08": {
+      "activeUsers": 186,
+      "newUsers": 176,
+      "sessions": 371,
+      "screenPageViews": 1395,
+      "keyEvents": 29,
+      "averageSessionDuration": 255.3755733018868,
+      "bounceRate": 0.4501347708894879,
+      "engagementRate": 0.5498652291105122
+     }
+    },
+    "channels": {
+     "2026-09": {
+      "Paid Search": {
+       "sessions": 479,
+       "keyEvents": 151
+      },
+      "Direct": {
+       "sessions": 205,
+       "keyEvents": 19
+      },
+      "Referral": {
+       "sessions": 187,
+       "keyEvents": 14
+      },
+      "Cross-network": {
+       "sessions": 79,
+       "keyEvents": 21
+      },
+      "Organic Search": {
+       "sessions": 78,
+       "keyEvents": 1
+      },
+      "Unassigned": {
+       "sessions": 49,
+       "keyEvents": 35
+      },
+      "Organic Social": {
+       "sessions": 15,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 2,
+       "keyEvents": 1
+      },
+      "Paid Social": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     },
+     "2026-07": {
+      "Paid Social": {
+       "sessions": 402,
+       "keyEvents": 0
+      },
+      "Referral": {
+       "sessions": 203,
+       "keyEvents": 8
+      },
+      "Direct": {
+       "sessions": 152,
+       "keyEvents": 6
+      },
+      "Organic Search": {
+       "sessions": 32,
+       "keyEvents": 1
+      },
+      "Paid Search": {
+       "sessions": 11,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 1,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 0,
+       "keyEvents": 0
+      },
+      "Organic Social": {
+       "sessions": 0,
+       "keyEvents": 0
+      },
+      "Unassigned": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     },
+     "2026-08": {
+      "Referral": {
+       "sessions": 196,
+       "keyEvents": 25
+      },
+      "Direct": {
+       "sessions": 91,
+       "keyEvents": 0
+      },
+      "Organic Search": {
+       "sessions": 59,
+       "keyEvents": 4
+      },
+      "Paid Search": {
+       "sessions": 19,
+       "keyEvents": 0
+      },
+      "Organic Social": {
+       "sessions": 3,
+       "keyEvents": 0
+      },
+      "AI Assistant": {
+       "sessions": 2,
+       "keyEvents": 0
+      },
+      "Unassigned": {
+       "sessions": 1,
+       "keyEvents": 0
+      },
+      "Cross-network": {
+       "sessions": 0,
+       "keyEvents": 0
+      },
+      "Paid Social": {
+       "sessions": 0,
+       "keyEvents": 0
+      }
+     }
+    },
+    "daily": [
+     {
+      "date": "2026-07-01",
+      "sessions": 9,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-02",
+      "sessions": 9,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-03",
+      "sessions": 13,
+      "activeUsers": 8,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-04",
+      "sessions": 5,
+      "activeUsers": 4,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-05",
+      "sessions": 9,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-06",
+      "sessions": 12,
+      "activeUsers": 5,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-07",
+      "sessions": 12,
+      "activeUsers": 9,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-08",
+      "sessions": 20,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-09",
+      "sessions": 8,
+      "activeUsers": 3,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-10",
+      "sessions": 10,
+      "activeUsers": 9,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-11",
+      "sessions": 7,
+      "activeUsers": 5,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-12",
+      "sessions": 17,
+      "activeUsers": 10,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-13",
+      "sessions": 14,
+      "activeUsers": 9,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-14",
+      "sessions": 278,
+      "activeUsers": 256,
+      "keyEvents": 7
+     },
+     {
+      "date": "2026-07-15",
+      "sessions": 179,
+      "activeUsers": 159,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-07-16",
+      "sessions": 13,
+      "activeUsers": 8,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-17",
+      "sessions": 10,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-18",
+      "sessions": 6,
+      "activeUsers": 3,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-19",
+      "sessions": 5,
+      "activeUsers": 5,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-20",
+      "sessions": 6,
+      "activeUsers": 5,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-21",
+      "sessions": 9,
+      "activeUsers": 8,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-22",
+      "sessions": 9,
+      "activeUsers": 7,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-23",
+      "sessions": 22,
+      "activeUsers": 19,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-24",
+      "sessions": 4,
+      "activeUsers": 3,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-25",
+      "sessions": 19,
+      "activeUsers": 18,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-26",
+      "sessions": 14,
+      "activeUsers": 13,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-27",
+      "sessions": 29,
+      "activeUsers": 21,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-07-28",
+      "sessions": 6,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-29",
+      "sessions": 33,
+      "activeUsers": 23,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-07-30",
+      "sessions": 6,
+      "activeUsers": 3,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-07-31",
+      "sessions": 8,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-01",
+      "sessions": 2,
+      "activeUsers": 2,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-02",
+      "sessions": 5,
+      "activeUsers": 5,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-03",
+      "sessions": 13,
+      "activeUsers": 10,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-04",
+      "sessions": 14,
+      "activeUsers": 9,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-05",
+      "sessions": 9,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-06",
+      "sessions": 9,
+      "activeUsers": 4,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-07",
+      "sessions": 14,
+      "activeUsers": 11,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-08-08",
+      "sessions": 8,
+      "activeUsers": 7,
+      "keyEvents": 16
+     },
+     {
+      "date": "2026-08-09",
+      "sessions": 15,
+      "activeUsers": 10,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-10",
+      "sessions": 18,
+      "activeUsers": 11,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-11",
+      "sessions": 14,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-12",
+      "sessions": 8,
+      "activeUsers": 7,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-13",
+      "sessions": 8,
+      "activeUsers": 5,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-08-14",
+      "sessions": 11,
+      "activeUsers": 5,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-15",
+      "sessions": 16,
+      "activeUsers": 14,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-16",
+      "sessions": 6,
+      "activeUsers": 5,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-17",
+      "sessions": 15,
+      "activeUsers": 14,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-18",
+      "sessions": 9,
+      "activeUsers": 8,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-08-19",
+      "sessions": 21,
+      "activeUsers": 13,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-20",
+      "sessions": 20,
+      "activeUsers": 9,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-21",
+      "sessions": 17,
+      "activeUsers": 7,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-22",
+      "sessions": 4,
+      "activeUsers": 4,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-23",
+      "sessions": 12,
+      "activeUsers": 7,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-24",
+      "sessions": 13,
+      "activeUsers": 7,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-25",
+      "sessions": 4,
+      "activeUsers": 3,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-26",
+      "sessions": 7,
+      "activeUsers": 6,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-27",
+      "sessions": 5,
+      "activeUsers": 4,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-28",
+      "sessions": 13,
+      "activeUsers": 12,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-29",
+      "sessions": 18,
+      "activeUsers": 11,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-08-30",
+      "sessions": 13,
+      "activeUsers": 11,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-08-31",
+      "sessions": 30,
+      "activeUsers": 24,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-01",
+      "sessions": 15,
+      "activeUsers": 15,
+      "keyEvents": 5
+     },
+     {
+      "date": "2026-09-02",
+      "sessions": 31,
+      "activeUsers": 27,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-03",
+      "sessions": 31,
+      "activeUsers": 31,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-04",
+      "sessions": 23,
+      "activeUsers": 22,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-05",
+      "sessions": 29,
+      "activeUsers": 28,
+      "keyEvents": 10
+     },
+     {
+      "date": "2026-09-06",
+      "sessions": 66,
+      "activeUsers": 63,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-07",
+      "sessions": 17,
+      "activeUsers": 14,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-08",
+      "sessions": 7,
+      "activeUsers": 4,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-09",
+      "sessions": 19,
+      "activeUsers": 8,
+      "keyEvents": 3
+     },
+     {
+      "date": "2026-09-10",
+      "sessions": 8,
+      "activeUsers": 5,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-11",
+      "sessions": 12,
+      "activeUsers": 9,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-12",
+      "sessions": 15,
+      "activeUsers": 10,
+      "keyEvents": 2
+     },
+     {
+      "date": "2026-09-13",
+      "sessions": 8,
+      "activeUsers": 7,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-14",
+      "sessions": 25,
+      "activeUsers": 19,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-15",
+      "sessions": 19,
+      "activeUsers": 16,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-16",
+      "sessions": 39,
+      "activeUsers": 28,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-17",
+      "sessions": 38,
+      "activeUsers": 37,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-18",
+      "sessions": 19,
+      "activeUsers": 15,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-19",
+      "sessions": 14,
+      "activeUsers": 11,
+      "keyEvents": 1
+     },
+     {
+      "date": "2026-09-20",
+      "sessions": 19,
+      "activeUsers": 11,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-21",
+      "sessions": 20,
+      "activeUsers": 17,
+      "keyEvents": 0
+     },
+     {
+      "date": "2026-09-22",
+      "sessions": 46,
+      "activeUsers": 43,
+      "keyEvents": 4
+     },
+     {
+      "date": "2026-09-23",
+      "sessions": 62,
+      "activeUsers": 48,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-09-24",
+      "sessions": 69,
+      "activeUsers": 60,
+      "keyEvents": 8
+     },
+     {
+      "date": "2026-09-25",
+      "sessions": 45,
+      "activeUsers": 40,
+      "keyEvents": 13
+     },
+     {
+      "date": "2026-09-26",
+      "sessions": 114,
+      "activeUsers": 101,
+      "keyEvents": 53
+     },
+     {
+      "date": "2026-09-27",
+      "sessions": 126,
+      "activeUsers": 119,
+      "keyEvents": 63
+     },
+     {
+      "date": "2026-09-28",
+      "sessions": 114,
+      "activeUsers": 101,
+      "keyEvents": 66
+     }
+    ],
+    "key_events_from": "2026-07-14",
+    "last_date": "2026-09-28"
+   }
+  ],
+  "searchconsole": [
+   {
+    "url": "https://beautyblossom.kr/",
+    "label": "KR",
+    "group": "home",
+    "months": {
+     "2026-07": {
+      "clicks": 1092,
+      "impressions": 65757,
+      "ctr": 0.01660659701628724,
+      "position": 6.743145216478854
+     },
+     "2026-08": {
+      "clicks": 1195,
+      "impressions": 65225,
+      "ctr": 0.018321195860482944,
+      "position": 7.063211958604829
+     },
+     "2026-09": {
+      "clicks": 939,
+      "impressions": 50731,
+      "ctr": 0.018509392679032545,
+      "position": 6.8589816877254535
+     }
+    },
+    "top_queries": [
+     {
+      "query": "뷰티블라썸의원",
+      "clicks": 204,
+      "impressions": 444,
+      "ctr": 0.4594594594594595,
+      "position": 1.385135135135135
+     },
+     {
+      "query": "뷰티블라썸",
+      "clicks": 41,
+      "impressions": 94,
+      "ctr": 0.43617021276595747,
+      "position": 2.4680851063829787
+     },
+     {
+      "query": "유지인대 필러",
+      "clicks": 13,
+      "impressions": 128,
+      "ctr": 0.1015625,
+      "position": 1.984375
+     },
+     {
+      "query": "ldm",
+      "clicks": 11,
+      "impressions": 3173,
+      "ctr": 0.0034667507091080997,
+      "position": 6.016073116924047
+     },
+     {
+      "query": "스킨바이브",
+      "clicks": 11,
+      "impressions": 610,
+      "ctr": 0.018032786885245903,
+      "position": 3.7573770491803278
+     },
+     {
+      "query": "뷰티블라썸의원 홍대합정",
+      "clicks": 10,
+      "impressions": 72,
+      "ctr": 0.1388888888888889,
+      "position": 1.8055555555555556
+     },
+     {
+      "query": "홍대 피부과",
+      "clicks": 9,
+      "impressions": 233,
+      "ctr": 0.03862660944206009,
+      "position": 8.55793991416309
+     },
+     {
+      "query": "beauty blossom clinic",
+      "clicks": 7,
+      "impressions": 125,
+      "ctr": 0.056,
+      "position": 4.5600000000000005
+     },
+     {
+      "query": "beauty blossom clinic korea",
+      "clicks": 6,
+      "impressions": 89,
+      "ctr": 0.06741573033707865,
+      "position": 1.3820224719101124
+     },
+     {
+      "query": "beauty blossom clinic seoul",
+      "clicks": 6,
+      "impressions": 104,
+      "ctr": 0.057692307692307696,
+      "position": 4.413461538461538
+     }
+    ],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://en.beautyblossom.kr/",
+    "label": "EN",
+    "group": "home",
+    "months": {
+     "2026-07": {
+      "clicks": 1175,
+      "impressions": 64968,
+      "ctr": 0.01808582686861224,
+      "position": 8.036448713212659
+     },
+     "2026-08": {
+      "clicks": 1490,
+      "impressions": 58665,
+      "ctr": 0.025398448819568736,
+      "position": 8.789346288246826
+     },
+     "2026-09": {
+      "clicks": 1415,
+      "impressions": 55215,
+      "ctr": 0.02562709408675179,
+      "position": 7.740577741555737
+     }
+    },
+    "top_queries": [
+     {
+      "query": "beauty blossom clinic seoul",
+      "clicks": 94,
+      "impressions": 208,
+      "ctr": 0.4519230769230769,
+      "position": 1.1682692307692308
+     },
+     {
+      "query": "beauty blossom clinic",
+      "clicks": 68,
+      "impressions": 253,
+      "ctr": 0.26877470355731226,
+      "position": 2.4466403162055337
+     },
+     {
+      "query": "elravie re2o",
+      "clicks": 65,
+      "impressions": 1178,
+      "ctr": 0.055178268251273345,
+      "position": 2.729202037351443
+     },
+     {
+      "query": "skin analysis seoul",
+      "clicks": 25,
+      "impressions": 609,
+      "ctr": 0.041050903119868636,
+      "position": 6.307060755336617
+     },
+     {
+      "query": "beauty blossom",
+      "clicks": 21,
+      "impressions": 148,
+      "ctr": 0.14189189189189189,
+      "position": 8.756756756756758
+     },
+     {
+      "query": "beauty blossom clinic hongdae",
+      "clicks": 19,
+      "impressions": 50,
+      "ctr": 0.38,
+      "position": 1.08
+     },
+     {
+      "query": "beauty blossom seoul",
+      "clicks": 14,
+      "impressions": 39,
+      "ctr": 0.358974358974359,
+      "position": 1.0256410256410255
+     },
+     {
+      "query": "elravie re20",
+      "clicks": 14,
+      "impressions": 549,
+      "ctr": 0.025500910746812388,
+      "position": 3.859744990892532
+     },
+     {
+      "query": "sculptra seoul",
+      "clicks": 13,
+      "impressions": 54,
+      "ctr": 0.24074074074074073,
+      "position": 1.8703703703703702
+     },
+     {
+      "query": "aqua peel seoul",
+      "clicks": 9,
+      "impressions": 158,
+      "ctr": 0.056962025316455694,
+      "position": 3.810126582278481
+     }
+    ],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://jp.beautyblossom.kr/",
+    "label": "JP",
+    "group": "home",
+    "months": {
+     "2026-07": {
+      "clicks": 432,
+      "impressions": 11910,
+      "ctr": 0.036272040302267,
+      "position": 10.280100755667506
+     },
+     "2026-08": {
+      "clicks": 473,
+      "impressions": 11889,
+      "ctr": 0.039784674909580285,
+      "position": 11.059634956682649
+     },
+     "2026-09": {
+      "clicks": 361,
+      "impressions": 9273,
+      "ctr": 0.03893022754232719,
+      "position": 10.206190014019196
+     }
+    },
+    "top_queries": [
+     {
+      "query": "ビューティーブロッサムクリニック",
+      "clicks": 17,
+      "impressions": 30,
+      "ctr": 0.5666666666666667,
+      "position": 1
+     },
+     {
+      "query": "ビューティーブロッサム 韓国",
+      "clicks": 15,
+      "impressions": 27,
+      "ctr": 0.5555555555555556,
+      "position": 1
+     },
+     {
+      "query": "デンシティ 韓国",
+      "clicks": 6,
+      "impressions": 81,
+      "ctr": 0.07407407407407407,
+      "position": 6.012345679012346
+     },
+     {
+      "query": "デンシティ 韓国クリニック",
+      "clicks": 5,
+      "impressions": 16,
+      "ctr": 0.3125,
+      "position": 2.75
+     },
+     {
+      "query": "ニュービジュ",
+      "clicks": 4,
+      "impressions": 44,
+      "ctr": 0.09090909090909091,
+      "position": 5.7272727272727275
+     },
+     {
+      "query": "ビューティーブロッサム医院",
+      "clicks": 4,
+      "impressions": 17,
+      "ctr": 0.23529411764705882,
+      "position": 1
+     },
+     {
+      "query": "beauty blossom",
+      "clicks": 2,
+      "impressions": 7,
+      "ctr": 0.2857142857142857,
+      "position": 3
+     },
+     {
+      "query": "vレーザー 韓国",
+      "clicks": 2,
+      "impressions": 50,
+      "ctr": 0.04,
+      "position": 8.120000000000001
+     },
+     {
+      "query": "クアトロリフティング",
+      "clicks": 2,
+      "impressions": 72,
+      "ctr": 0.027777777777777776,
+      "position": 6.875
+     },
+     {
+      "query": "ソウル ほくろ除去",
+      "clicks": 2,
+      "impressions": 33,
+      "ctr": 0.06060606060606061,
+      "position": 7.242424242424242
+     }
+    ],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://cn.beautyblossom.kr/",
+    "label": "CN",
+    "group": "home",
+    "months": {
+     "2026-07": {
+      "clicks": 220,
+      "impressions": 16691,
+      "ctr": 0.013180756096099694,
+      "position": 11.07081660775268
+     },
+     "2026-08": {
+      "clicks": 197,
+      "impressions": 17327,
+      "ctr": 0.01136953886997172,
+      "position": 11.99278582559012
+     },
+     "2026-09": {
+      "clicks": 101,
+      "impressions": 18099,
+      "ctr": 0.005580418807668932,
+      "position": 12.195204154925687
+     }
+    },
+    "top_queries": [
+     {
+      "query": "beauty blossom clinic",
+      "clicks": 7,
+      "impressions": 95,
+      "ctr": 0.07368421052631578,
+      "position": 4.042105263157895
+     },
+     {
+      "query": "beautyblossom",
+      "clicks": 4,
+      "impressions": 26,
+      "ctr": 0.15384615384615385,
+      "position": 4.576923076923077
+     },
+     {
+      "query": "beauty blossom clinic 評價",
+      "clicks": 3,
+      "impressions": 18,
+      "ctr": 0.16666666666666666,
+      "position": 1
+     },
+     {
+      "query": "麗朵皮膚科",
+      "clicks": 3,
+      "impressions": 40,
+      "ctr": 0.075,
+      "position": 2.7
+     },
+     {
+      "query": "麗朵 弘大",
+      "clicks": 2,
+      "impressions": 11,
+      "ctr": 0.18181818181818182,
+      "position": 3.272727272727273
+     },
+     {
+      "query": "accu toning",
+      "clicks": 1,
+      "impressions": 7,
+      "ctr": 0.14285714285714285,
+      "position": 2.428571428571429
+     },
+     {
+      "query": "beauty blossom clinic seoul",
+      "clicks": 1,
+      "impressions": 19,
+      "ctr": 0.05263157894736842,
+      "position": 5.631578947368421
+     },
+     {
+      "query": "blossom beauty",
+      "clicks": 1,
+      "impressions": 2,
+      "ctr": 0.5,
+      "position": 5.5
+     },
+     {
+      "query": "density 美容",
+      "clicks": 1,
+      "impressions": 4,
+      "ctr": 0.25,
+      "position": 5
+     },
+     {
+      "query": "exohealer",
+      "clicks": 1,
+      "impressions": 8,
+      "ctr": 0.125,
+      "position": 4.625
+     }
+    ],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://tw.beautyblossom.kr/",
+    "label": "TW",
+    "group": "home",
+    "months": {
+     "2026-07": {
+      "clicks": 436,
+      "impressions": 11284,
+      "ctr": 0.038638780574264446,
+      "position": 10.022421127259838
+     },
+     "2026-08": {
+      "clicks": 350,
+      "impressions": 9360,
+      "ctr": 0.03739316239316239,
+      "position": 11.517094017094017
+     },
+     "2026-09": {
+      "clicks": 268,
+      "impressions": 7161,
+      "ctr": 0.037424940650747106,
+      "position": 11.67197318810222
+     }
+    },
+    "top_queries": [
+     {
+      "query": "beauty blossom clinic",
+      "clicks": 25,
+      "impressions": 94,
+      "ctr": 0.26595744680851063,
+      "position": 1.925531914893617
+     },
+     {
+      "query": "beauty blossom",
+      "clicks": 15,
+      "impressions": 52,
+      "ctr": 0.28846153846153844,
+      "position": 1.6730769230769231
+     },
+     {
+      "query": "麗朵皮膚科",
+      "clicks": 9,
+      "impressions": 43,
+      "ctr": 0.20930232558139536,
+      "position": 1.3488372093023255
+     },
+     {
+      "query": "麗朵 弘大",
+      "clicks": 5,
+      "impressions": 14,
+      "ctr": 0.35714285714285715,
+      "position": 1.1428571428571428
+     },
+     {
+      "query": "弘大beauty blossom clinic",
+      "clicks": 4,
+      "impressions": 21,
+      "ctr": 0.19047619047619047,
+      "position": 1.2857142857142856
+     },
+     {
+      "query": "beauty blossom clinic 評價",
+      "clicks": 3,
+      "impressions": 48,
+      "ctr": 0.0625,
+      "position": 2.770833333333333
+     },
+     {
+      "query": "re2o",
+      "clicks": 3,
+      "impressions": 296,
+      "ctr": 0.010135135135135136,
+      "position": 9.885135135135135
+     },
+     {
+      "query": "弘大麗朵",
+      "clicks": 3,
+      "impressions": 10,
+      "ctr": 0.3,
+      "position": 1
+     },
+     {
+      "query": "ldm",
+      "clicks": 2,
+      "impressions": 516,
+      "ctr": 0.003875968992248062,
+      "position": 7.5523255813953485
+     },
+     {
+      "query": "黃金ptt醫美",
+      "clicks": 2,
+      "impressions": 8,
+      "ctr": 0.25,
+      "position": 4.125
+     }
+    ],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://hk.beautyblossom.kr/",
+    "label": "HK",
+    "group": "home",
+    "months": {
+     "2026-07": {
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": null,
+      "position": null,
+      "empty": true
+     },
+     "2026-08": {
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": null,
+      "position": null,
+      "empty": true
+     },
+     "2026-09": {
+      "clicks": 30,
+      "impressions": 2847,
+      "ctr": 0.01053740779768177,
+      "position": 29.63997190024587
+     }
+    },
+    "top_queries": [
+     {
+      "query": "beauty blossom",
+      "clicks": 3,
+      "impressions": 16,
+      "ctr": 0.1875,
+      "position": 3.75
+     },
+     {
+      "query": "beauty blossom clinic",
+      "clicks": 2,
+      "impressions": 16,
+      "ctr": 0.125,
+      "position": 6.6875
+     },
+     {
+      "query": "re2o 香港",
+      "clicks": 2,
+      "impressions": 33,
+      "ctr": 0.06060606060606061,
+      "position": 8.121212121212121
+     },
+     {
+      "query": "picosure zoom pass",
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 1,
+      "position": 2
+     },
+     {
+      "query": "sculptra 香港",
+      "clicks": 1,
+      "impressions": 26,
+      "ctr": 0.038461538461538464,
+      "position": 45.80769230769231
+     },
+     {
+      "query": "yes peel",
+      "clicks": 1,
+      "impressions": 3,
+      "ctr": 0.3333333333333333,
+      "position": 4.666666666666666
+     },
+     {
+      "query": "香港onda",
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 1,
+      "position": 54
+     },
+     {
+      "query": "\"skinvive\"",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3
+     },
+     {
+      "query": "ai肌膚護理方案",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 38
+     },
+     {
+      "query": "alltite",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 36.25
+     }
+    ],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "sc-domain:beautyblossomth.kr",
+    "label": "TH",
+    "group": "home",
+    "note": "도메인 전체(웹블로그 EN·TH 포함)",
+    "months": {
+     "2026-07": {
+      "clicks": 29,
+      "impressions": 2560,
+      "ctr": 0.011328125,
+      "position": 19.67421875
+     },
+     "2026-08": {
+      "clicks": 64,
+      "impressions": 3342,
+      "ctr": 0.019150209455415918,
+      "position": 18.87342908438061
+     },
+     "2026-09": {
+      "clicks": 78,
+      "impressions": 4042,
+      "ctr": 0.01929737753587333,
+      "position": 12.716476991588323
+     }
+    },
+    "top_queries": [
+     {
+      "query": "re2o skin booster",
+      "clicks": 8,
+      "impressions": 52,
+      "ctr": 0.15384615384615385,
+      "position": 2.3269230769230766
+     },
+     {
+      "query": "beauty blossom clinic",
+      "clicks": 4,
+      "impressions": 9,
+      "ctr": 0.4444444444444444,
+      "position": 5.555555555555555
+     },
+     {
+      "query": "beauty blossom clinic seoul",
+      "clicks": 3,
+      "impressions": 25,
+      "ctr": 0.12,
+      "position": 6.16
+     },
+     {
+      "query": "nuviju",
+      "clicks": 2,
+      "impressions": 6,
+      "ctr": 0.3333333333333333,
+      "position": 3.6666666666666665
+     },
+     {
+      "query": "re2o",
+      "clicks": 2,
+      "impressions": 131,
+      "ctr": 0.015267175572519083,
+      "position": 7.6106870229007635
+     },
+     {
+      "query": "alltite",
+      "clicks": 1,
+      "impressions": 12,
+      "ctr": 0.08333333333333333,
+      "position": 2.583333333333333
+     },
+     {
+      "query": "alltite lifting",
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 1,
+      "position": 5
+     },
+     {
+      "query": "beauty blossom clinic hongdae",
+      "clicks": 1,
+      "impressions": 7,
+      "ctr": 0.14285714285714285,
+      "position": 6.142857142857143
+     },
+     {
+      "query": "clinic hongdae",
+      "clicks": 1,
+      "impressions": 5,
+      "ctr": 0.2,
+      "position": 5.4
+     },
+     {
+      "query": "dca injection",
+      "clicks": 1,
+      "impressions": 3,
+      "ctr": 0.3333333333333333,
+      "position": 1.6666666666666665
+     }
+    ],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://beautyblossomth.kr/blog/en/",
+    "label": "웹블로그 EN",
+    "group": "blog",
+    "note": "TH 도메인의 하위 경로",
+    "months": {
+     "2026-07": {
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 8.11111111111111
+     },
+     "2026-08": {
+      "clicks": 3,
+      "impressions": 210,
+      "ctr": 0.014285714285714285,
+      "position": 10.128571428571428
+     },
+     "2026-09": {
+      "clicks": 8,
+      "impressions": 1450,
+      "ctr": 0.005517241379310344,
+      "position": 9.117241379310345
+     }
+    },
+    "top_queries": [],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://beautyblossomth.kr/blog/th/",
+    "label": "웹블로그 TH",
+    "group": "blog",
+    "note": "TH 도메인의 하위 경로",
+    "months": {
+     "2026-07": {
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 6.125
+     },
+     "2026-08": {
+      "clicks": 5,
+      "impressions": 106,
+      "ctr": 0.04716981132075472,
+      "position": 5.8584905660377355
+     },
+     "2026-09": {
+      "clicks": 8,
+      "impressions": 206,
+      "ctr": 0.038834951456310676,
+      "position": 8.480582524271846
+     }
+    },
+    "top_queries": [],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://hongdaebeautyblossom.blogspot.com/",
+    "label": "블로그스팟 EN",
+    "group": "blog",
+    "months": {
+     "2026-07": {
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0,
+      "position": 0
+     },
+     "2026-08": {
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0,
+      "position": 0
+     },
+     "2026-09": {
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+     }
+    },
+    "top_queries": [],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://ameblo.jp/beautyblossom-clinic/",
+    "label": "아메바 JP",
+    "group": "blog",
+    "months": {
+     "2026-07": {
+      "clicks": 15,
+      "impressions": 305,
+      "ctr": 0.04918032786885246,
+      "position": 20.875409836065575
+     },
+     "2026-08": {
+      "clicks": 26,
+      "impressions": 404,
+      "ctr": 0.06435643564356436,
+      "position": 16.48267326732673
+     },
+     "2026-09": {
+      "clicks": 7,
+      "impressions": 302,
+      "ctr": 0.023178807947019868,
+      "position": 16.086092715231786
+     }
+    },
+    "top_queries": [],
+    "last_date": "2026-09-26"
+   },
+   {
+    "url": "https://note.com/beautyblossom/",
+    "label": "note JP",
+    "group": "blog",
+    "months": {},
+    "top_queries": [],
+    "last_date": null,
+    "error": "HTTP 403 403 User does not have sufficient permission for site 'https://note.com/beautyblossom/'. See also: https://support.google.com/webmasters/answer/2451999."
+   }
+  ],
+  "youtube": [
+   {
+    "name": "블라썸1호 | K-Beauty No.1, Beauty Blossom",
+    "short": "블라썸1호",
+    "months": {
+     "2026-07": {
+      "days": 31,
+      "views": 16738,
+      "mins": 3993,
+      "gain": 129,
+      "lost": 15,
+      "avd": 31
+     },
+     "2026-08": {
+      "days": 31,
+      "views": 29839,
+      "mins": 4981,
+      "gain": 22,
+      "lost": 9,
+      "avd": 28
+     },
+     "2026-09": {
+      "days": 26,
+      "views": 22030,
+      "mins": 3874,
+      "gain": 12,
+      "lost": 8,
+      "avd": 27
+     }
+    },
+    "daily": [
+     {
+      "date": "2026-07-01",
+      "views": 125,
+      "mins": 57,
+      "avd": 35,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-02",
+      "views": 307,
+      "mins": 75,
+      "avd": 36,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-03",
+      "views": 379,
+      "mins": 61,
+      "avd": 29,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-04",
+      "views": 122,
+      "mins": 50,
+      "avd": 41,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-05",
+      "views": 77,
+      "mins": 28,
+      "avd": 30,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-06",
+      "views": 105,
+      "mins": 59,
+      "avd": 49,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-07",
+      "views": 415,
+      "mins": 71,
+      "avd": 31,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-07-08",
+      "views": 84,
+      "mins": 43,
+      "avd": 42,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-09",
+      "views": 325,
+      "mins": 134,
+      "avd": 72,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-07-10",
+      "views": 414,
+      "mins": 61,
+      "avd": 28,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-11",
+      "views": 97,
+      "mins": 44,
+      "avd": 37,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-12",
+      "views": 75,
+      "mins": 46,
+      "avd": 51,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-13",
+      "views": 120,
+      "mins": 62,
+      "avd": 48,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-07-14",
+      "views": 98,
+      "mins": 49,
+      "avd": 43,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-15",
+      "views": 980,
+      "mins": 281,
+      "avd": 26,
+      "gain": 0,
+      "lost": 3
+     },
+     {
+      "date": "2026-07-16",
+      "views": 2788,
+      "mins": 461,
+      "avd": 39,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-17",
+      "views": 541,
+      "mins": 87,
+      "avd": 27,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-07-18",
+      "views": 405,
+      "mins": 70,
+      "avd": 30,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-19",
+      "views": 114,
+      "mins": 98,
+      "avd": 70,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-20",
+      "views": 125,
+      "mins": 75,
+      "avd": 51,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-21",
+      "views": 624,
+      "mins": 71,
+      "avd": 20,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-22",
+      "views": 97,
+      "mins": 32,
+      "avd": 28,
+      "gain": 1,
+      "lost": 1
+     },
+     {
+      "date": "2026-07-23",
+      "views": 104,
+      "mins": 48,
+      "avd": 37,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-24",
+      "views": 324,
+      "mins": 66,
+      "avd": 33,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-25",
+      "views": 315,
+      "mins": 57,
+      "avd": 32,
+      "gain": 4,
+      "lost": 1
+     },
+     {
+      "date": "2026-07-26",
+      "views": 152,
+      "mins": 83,
+      "avd": 48,
+      "gain": 94,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-27",
+      "views": 1869,
+      "mins": 208,
+      "avd": 16,
+      "gain": 24,
+      "lost": 2
+     },
+     {
+      "date": "2026-07-28",
+      "views": 1764,
+      "mins": 307,
+      "avd": 27,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-29",
+      "views": 1612,
+      "mins": 899,
+      "avd": 41,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-30",
+      "views": 1605,
+      "mins": 213,
+      "avd": 18,
+      "gain": 0,
+      "lost": 4
+     },
+     {
+      "date": "2026-07-31",
+      "views": 576,
+      "mins": 97,
+      "avd": 27,
+      "gain": 3,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-01",
+      "views": 2543,
+      "mins": 415,
+      "avd": 18,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-02",
+      "views": 304,
+      "mins": 89,
+      "avd": 30,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-03",
+      "views": 1606,
+      "mins": 198,
+      "avd": 16,
+      "gain": 2,
+      "lost": 1
+     },
+     {
+      "date": "2026-08-04",
+      "views": 342,
+      "mins": 56,
+      "avd": 27,
+      "gain": 1,
+      "lost": 1
+     },
+     {
+      "date": "2026-08-05",
+      "views": 264,
+      "mins": 48,
+      "avd": 28,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-06",
+      "views": 319,
+      "mins": 66,
+      "avd": 32,
+      "gain": 2,
+      "lost": 1
+     },
+     {
+      "date": "2026-08-07",
+      "views": 1859,
+      "mins": 196,
+      "avd": 17,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-08",
+      "views": 1433,
+      "mins": 150,
+      "avd": 17,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-09",
+      "views": 562,
+      "mins": 154,
+      "avd": 43,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-10",
+      "views": 604,
+      "mins": 70,
+      "avd": 21,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-08-11",
+      "views": 325,
+      "mins": 51,
+      "avd": 22,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-12",
+      "views": 327,
+      "mins": 49,
+      "avd": 28,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-13",
+      "views": 324,
+      "mins": 116,
+      "avd": 52,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-14",
+      "views": 1191,
+      "mins": 125,
+      "avd": 16,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-15",
+      "views": 958,
+      "mins": 114,
+      "avd": 18,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-16",
+      "views": 396,
+      "mins": 112,
+      "avd": 35,
+      "gain": 1,
+      "lost": 1
+     },
+     {
+      "date": "2026-08-17",
+      "views": 283,
+      "mins": 86,
+      "avd": 43,
+      "gain": 2,
+      "lost": 1
+     },
+     {
+      "date": "2026-08-18",
+      "views": 486,
+      "mins": 56,
+      "avd": 23,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-19",
+      "views": 516,
+      "mins": 92,
+      "avd": 32,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-20",
+      "views": 323,
+      "mins": 105,
+      "avd": 44,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-08-21",
+      "views": 1197,
+      "mins": 153,
+      "avd": 19,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-22",
+      "views": 1204,
+      "mins": 169,
+      "avd": 18,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-23",
+      "views": 126,
+      "mins": 67,
+      "avd": 44,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-24",
+      "views": 514,
+      "mins": 157,
+      "avd": 28,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-25",
+      "views": 1389,
+      "mins": 329,
+      "avd": 57,
+      "gain": 2,
+      "lost": 1
+     },
+     {
+      "date": "2026-08-26",
+      "views": 2469,
+      "mins": 459,
+      "avd": 29,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-27",
+      "views": 2502,
+      "mins": 390,
+      "avd": 21,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-28",
+      "views": 1783,
+      "mins": 142,
+      "avd": 19,
+      "gain": 2,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-29",
+      "views": 1837,
+      "mins": 175,
+      "avd": 21,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-30",
+      "views": 701,
+      "mins": 131,
+      "avd": 37,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-31",
+      "views": 1152,
+      "mins": 461,
+      "avd": 113,
+      "gain": 1,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-01",
+      "views": 1467,
+      "mins": 176,
+      "avd": 21,
+      "gain": 2,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-02",
+      "views": 525,
+      "mins": 73,
+      "avd": 27,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-03",
+      "views": 548,
+      "mins": 84,
+      "avd": 31,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-04",
+      "views": 1543,
+      "mins": 196,
+      "avd": 21,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-05",
+      "views": 1195,
+      "mins": 213,
+      "avd": 32,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-06",
+      "views": 896,
+      "mins": 167,
+      "avd": 30,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-07",
+      "views": 1025,
+      "mins": 159,
+      "avd": 21,
+      "gain": 1,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-08",
+      "views": 1475,
+      "mins": 211,
+      "avd": 19,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-09",
+      "views": 283,
+      "mins": 65,
+      "avd": 33,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-10",
+      "views": 312,
+      "mins": 84,
+      "avd": 41,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-11",
+      "views": 403,
+      "mins": 68,
+      "avd": 26,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-12",
+      "views": 1211,
+      "mins": 122,
+      "avd": 18,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-13",
+      "views": 381,
+      "mins": 66,
+      "avd": 31,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-14",
+      "views": 440,
+      "mins": 105,
+      "avd": 42,
+      "gain": 1,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-15",
+      "views": 488,
+      "mins": 101,
+      "avd": 38,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-16",
+      "views": 344,
+      "mins": 92,
+      "avd": 41,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-17",
+      "views": 2518,
+      "mins": 412,
+      "avd": 23,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-18",
+      "views": 1573,
+      "mins": 240,
+      "avd": 18,
+      "gain": 2,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-19",
+      "views": 1751,
+      "mins": 236,
+      "avd": 19,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-20",
+      "views": 327,
+      "mins": 116,
+      "avd": 43,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-21",
+      "views": 265,
+      "mins": 90,
+      "avd": 44,
+      "gain": 1,
+      "lost": 2
+     },
+     {
+      "date": "2026-09-22",
+      "views": 991,
+      "mins": 226,
+      "avd": 41,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-23",
+      "views": 296,
+      "mins": 254,
+      "avd": 114,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-24",
+      "views": 203,
+      "mins": 109,
+      "avd": 64,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-25",
+      "views": 1325,
+      "mins": 142,
+      "avd": 18,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-26",
+      "views": 245,
+      "mins": 67,
+      "avd": 38,
+      "gain": 0,
+      "lost": 0
+     }
+    ],
+    "last_date": "2026-09-26",
+    "first_date": "2026-07-01",
+    "subscribers": 1370
+   },
+   {
+    "name": "K-Beauty Doctor Lee",
+    "short": "Doctor Lee",
+    "months": {
+     "2026-07": {
+      "days": 31,
+      "views": 0,
+      "mins": 0,
+      "gain": 0,
+      "lost": 0,
+      "avd": null
+     },
+     "2026-08": {
+      "days": 31,
+      "views": 1068,
+      "mins": 96,
+      "gain": 4,
+      "lost": 0,
+      "avd": 19
+     },
+     "2026-09": {
+      "days": 26,
+      "views": 6371,
+      "mins": 1942,
+      "gain": 55,
+      "lost": 10,
+      "avd": 39
+     }
+    },
+    "daily": [
+     {
+      "date": "2026-07-01",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-02",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-03",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-04",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-05",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-06",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-07",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-08",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-09",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-10",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-11",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-12",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-13",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-14",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-15",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-16",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-17",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-18",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-19",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-20",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-21",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-22",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-23",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-24",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-25",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-26",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-27",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-28",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-29",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-30",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-07-31",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-01",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-02",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-03",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-04",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-05",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-06",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-07",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-08",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-09",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-10",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-11",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-12",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-13",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-14",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-15",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-16",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-17",
+      "views": 0,
+      "mins": 0,
+      "avd": 0,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-18",
+      "views": 33,
+      "mins": 3,
+      "avd": 14,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-19",
+      "views": 137,
+      "mins": 8,
+      "avd": 14,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-20",
+      "views": 55,
+      "mins": 10,
+      "avd": 34,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-21",
+      "views": 65,
+      "mins": 4,
+      "avd": 16,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-22",
+      "views": 128,
+      "mins": 6,
+      "avd": 8,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-23",
+      "views": 32,
+      "mins": 3,
+      "avd": 21,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-24",
+      "views": 84,
+      "mins": 5,
+      "avd": 22,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-25",
+      "views": 26,
+      "mins": 7,
+      "avd": 35,
+      "gain": 3,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-26",
+      "views": 24,
+      "mins": 2,
+      "avd": 16,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-27",
+      "views": 80,
+      "mins": 11,
+      "avd": 19,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-28",
+      "views": 110,
+      "mins": 11,
+      "avd": 15,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-29",
+      "views": 129,
+      "mins": 7,
+      "avd": 14,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-30",
+      "views": 73,
+      "mins": 7,
+      "avd": 26,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-08-31",
+      "views": 92,
+      "mins": 12,
+      "avd": 36,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-01",
+      "views": 48,
+      "mins": 11,
+      "avd": 33,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-02",
+      "views": 503,
+      "mins": 47,
+      "avd": 13,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-03",
+      "views": 251,
+      "mins": 23,
+      "avd": 14,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-04",
+      "views": 902,
+      "mins": 139,
+      "avd": 9,
+      "gain": 18,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-05",
+      "views": 224,
+      "mins": 23,
+      "avd": 34,
+      "gain": 5,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-06",
+      "views": 148,
+      "mins": 23,
+      "avd": 48,
+      "gain": 0,
+      "lost": 5
+     },
+     {
+      "date": "2026-09-07",
+      "views": 251,
+      "mins": 53,
+      "avd": 22,
+      "gain": 0,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-08",
+      "views": 23,
+      "mins": 13,
+      "avd": 54,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-09",
+      "views": 168,
+      "mins": 35,
+      "avd": 40,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-10",
+      "views": 73,
+      "mins": 18,
+      "avd": 34,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-11",
+      "views": 143,
+      "mins": 87,
+      "avd": 109,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-12",
+      "views": 112,
+      "mins": 11,
+      "avd": 20,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-13",
+      "views": 491,
+      "mins": 192,
+      "avd": 39,
+      "gain": 10,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-14",
+      "views": 355,
+      "mins": 221,
+      "avd": 44,
+      "gain": 13,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-15",
+      "views": 99,
+      "mins": 56,
+      "avd": 76,
+      "gain": 5,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-16",
+      "views": 80,
+      "mins": 60,
+      "avd": 86,
+      "gain": 0,
+      "lost": 2
+     },
+     {
+      "date": "2026-09-17",
+      "views": 198,
+      "mins": 58,
+      "avd": 50,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-18",
+      "views": 215,
+      "mins": 82,
+      "avd": 52,
+      "gain": 1,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-19",
+      "views": 402,
+      "mins": 111,
+      "avd": 29,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-20",
+      "views": 666,
+      "mins": 103,
+      "avd": 22,
+      "gain": 1,
+      "lost": 1
+     },
+     {
+      "date": "2026-09-21",
+      "views": 126,
+      "mins": 34,
+      "avd": 34,
+      "gain": 1,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-22",
+      "views": 231,
+      "mins": 125,
+      "avd": 46,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-23",
+      "views": 142,
+      "mins": 73,
+      "avd": 72,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-24",
+      "views": 148,
+      "mins": 76,
+      "avd": 84,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-25",
+      "views": 218,
+      "mins": 181,
+      "avd": 158,
+      "gain": 0,
+      "lost": 0
+     },
+     {
+      "date": "2026-09-26",
+      "views": 154,
+      "mins": 87,
+      "avd": 76,
+      "gain": 0,
+      "lost": 0
+     }
+    ],
+    "last_date": "2026-09-26",
+    "first_date": "2026-08-18",
+    "subscribers": 51
+   }
+  ],
+  "instagram": [
+   {
+    "label": "KR",
+    "months": {
+     "2026-07": {
+      "reach": 27933,
+      "views": 55986,
+      "profile_views": 1101,
+      "accounts_engaged": 1360,
+      "total_interactions": 1706,
+      "likes": 1544,
+      "comments": 4,
+      "saves": 78,
+      "shares": 40,
+      "profile_links_taps": 2,
+      "follows": 55,
+      "unfollows": 69
+     },
+     "2026-08": {
+      "reach": 36532,
+      "views": 71688,
+      "profile_views": 872,
+      "accounts_engaged": 138,
+      "total_interactions": 349,
+      "likes": 257,
+      "comments": 6,
+      "saves": 55,
+      "shares": 14,
+      "profile_links_taps": 7,
+      "follows": 44,
+      "unfollows": 89
+     },
+     "2026-09": {
+      "reach": 182440,
+      "views": 251818,
+      "profile_views": 1320,
+      "accounts_engaged": 559,
+      "total_interactions": 883,
+      "likes": 408,
+      "comments": 8,
+      "saves": 102,
+      "shares": 172,
+      "profile_links_taps": 12,
+      "follows": 102,
+      "unfollows": 54
+     }
+    },
+    "posts": {
+     "2026-09": {
+      "total": 40,
+      "FEED": 16,
+      "REELS": 24
+     },
+     "2026-08": {
+      "total": 63,
+      "REELS": 45,
+      "FEED": 18
+     },
+     "2026-07": {
+      "total": 61,
+      "REELS": 26,
+      "FEED": 35
+     }
+    },
+    "errors": [],
+    "username": "beautyblossom_clinic",
+    "followers": 1735,
+    "media_count": 372
+   },
+   {
+    "label": "EN",
+    "months": {
+     "2026-07": {
+      "reach": 270112,
+      "views": 137306,
+      "profile_views": 1385,
+      "accounts_engaged": 2101,
+      "total_interactions": 2363,
+      "likes": 2008,
+      "comments": 47,
+      "saves": 153,
+      "shares": 77,
+      "profile_links_taps": 1,
+      "follows": 160,
+      "unfollows": 169
+     },
+     "2026-08": {
+      "reach": 130282,
+      "views": 234472,
+      "profile_views": 1478,
+      "accounts_engaged": 2338,
+      "total_interactions": 2417,
+      "likes": 1850,
+      "comments": 41,
+      "saves": 288,
+      "shares": 118,
+      "profile_links_taps": 0,
+      "follows": 118,
+      "unfollows": 138
+     },
+     "2026-09": {
+      "reach": 87772,
+      "views": 125825,
+      "profile_views": 1466,
+      "accounts_engaged": 1337,
+      "total_interactions": 1573,
+      "likes": 1145,
+      "comments": 20,
+      "saves": 242,
+      "shares": 80,
+      "profile_links_taps": 2,
+      "follows": 79,
+      "unfollows": 108
+     }
+    },
+    "posts": {
+     "2026-09": {
+      "total": 39,
+      "REELS": 26,
+      "FEED": 13
+     },
+     "2026-08": {
+      "total": 37,
+      "REELS": 31,
+      "FEED": 6
+     },
+     "2026-07": {
+      "total": 33,
+      "REELS": 19,
+      "FEED": 14
+     }
+    },
+    "errors": [],
+    "username": "beautyblossom_global",
+    "followers": 4335,
+    "media_count": 498
+   },
+   {
+    "label": "JP",
+    "months": {
+     "2026-07": {
+      "reach": 39032,
+      "views": 88139,
+      "profile_views": 1005,
+      "accounts_engaged": 936,
+      "total_interactions": 1128,
+      "likes": 806,
+      "comments": 48,
+      "saves": 266,
+      "shares": 4,
+      "profile_links_taps": 0,
+      "follows": 32,
+      "unfollows": 28
+     },
+     "2026-08": {
+      "reach": 47004,
+      "views": 74682,
+      "profile_views": 1366,
+      "accounts_engaged": 209,
+      "total_interactions": 276,
+      "likes": 160,
+      "comments": 4,
+      "saves": 106,
+      "shares": 2,
+      "profile_links_taps": 0,
+      "follows": 45,
+      "unfollows": 20
+     },
+     "2026-09": {
+      "reach": 28555,
+      "views": 47804,
+      "profile_views": 892,
+      "accounts_engaged": 117,
+      "total_interactions": 140,
+      "likes": 100,
+      "comments": 2,
+      "saves": 38,
+      "shares": 0,
+      "profile_links_taps": 0,
+      "follows": 28,
+      "unfollows": 10
+     }
+    },
+    "posts": {
+     "2026-09": {
+      "total": 40,
+      "REELS": 27,
+      "FEED": 13
+     },
+     "2026-08": {
+      "total": 52,
+      "REELS": 46,
+      "FEED": 6
+     },
+     "2026-07": {
+      "total": 31,
+      "REELS": 19,
+      "FEED": 12
+     }
+    },
+    "errors": [],
+    "username": "beautyblossom_jp",
+    "followers": 1444,
+    "media_count": 468
+   },
+   {
+    "label": "TW",
+    "months": {
+     "2026-07": {
+      "reach": 15629,
+      "views": 49803,
+      "profile_views": 1580,
+      "accounts_engaged": 84,
+      "total_interactions": 116,
+      "likes": 52,
+      "comments": 0,
+      "saves": 24,
+      "shares": 20,
+      "profile_links_taps": 0,
+      "follows": 74,
+      "unfollows": 33
+     },
+     "2026-08": {
+      "reach": 17666,
+      "views": 70627,
+      "profile_views": 1330,
+      "accounts_engaged": 75,
+      "total_interactions": 106,
+      "likes": 46,
+      "comments": 2,
+      "saves": 22,
+      "shares": 18,
+      "profile_links_taps": 0,
+      "follows": 53,
+      "unfollows": 15
+     },
+     "2026-09": {
+      "reach": 15267,
+      "views": 43769,
+      "profile_views": 1537,
+      "accounts_engaged": 126,
+      "total_interactions": 226,
+      "likes": 103,
+      "comments": 2,
+      "saves": 37,
+      "shares": 41,
+      "profile_links_taps": 0,
+      "follows": 54,
+      "unfollows": 21
+     }
+    },
+    "posts": {
+     "2026-09": {
+      "total": 47,
+      "FEED": 16,
+      "REELS": 31
+     },
+     "2026-08": {
+      "total": 41,
+      "REELS": 34,
+      "FEED": 7
+     },
+     "2026-07": {
+      "total": 33,
+      "REELS": 20,
+      "FEED": 13
+     }
+    },
+    "errors": [],
+    "username": "beautyblossom_tw",
+    "followers": 2102,
+    "media_count": 431
+   },
+   {
+    "label": "TH",
+    "months": {
+     "2026-07": {
+      "reach": 10731,
+      "views": 20147,
+      "profile_views": 606,
+      "accounts_engaged": 35,
+      "total_interactions": 73,
+      "likes": 55,
+      "comments": 0,
+      "saves": 2,
+      "shares": 7,
+      "profile_links_taps": 0,
+      "follows": 536,
+      "unfollows": 61
+     },
+     "2026-08": {
+      "reach": 2401,
+      "views": 4691,
+      "profile_views": 64,
+      "accounts_engaged": 27,
+      "total_interactions": 59,
+      "likes": 47,
+      "comments": 0,
+      "saves": 9,
+      "shares": 1,
+      "profile_links_taps": 0,
+      "follows": 10,
+      "unfollows": 93
+     },
+     "2026-09": {
+      "reach": 2338,
+      "views": 3257,
+      "profile_views": 87,
+      "accounts_engaged": 20,
+      "total_interactions": 35,
+      "likes": 26,
+      "comments": 0,
+      "saves": 0,
+      "shares": 4,
+      "profile_links_taps": 0,
+      "follows": 8,
+      "unfollows": 31
+     }
+    },
+    "posts": {
+     "2026-09": {
+      "total": 33,
+      "REELS": 20,
+      "FEED": 13
+     },
+     "2026-08": {
+      "total": 37,
+      "REELS": 31,
+      "FEED": 6
+     },
+     "2026-07": {
+      "total": 32,
+      "REELS": 19,
+      "FEED": 13
+     }
+    },
+    "errors": [],
+    "username": "beautyblossom_th",
+    "followers": 376,
+    "media_count": 118
+   }
+  ],
+  "threads": [
+   {
+    "label": "KR",
+    "months": {
+     "2026-07": {
+      "views": 28471,
+      "likes": 2231,
+      "replies": 1788,
+      "reposts": 1022,
+      "quotes": 2
+     },
+     "2026-08": {
+      "views": 4553,
+      "likes": 226,
+      "replies": 130,
+      "reposts": 91,
+      "quotes": 0
+     },
+     "2026-09": {
+      "views": 6026,
+      "likes": 512,
+      "replies": 654,
+      "reposts": 184,
+      "quotes": 0
+     }
+    },
+    "posts": {
+     "2026-07": {
+      "original": 38,
+      "reposts": 1314
+     },
+     "2026-08": {
+      "original": 39,
+      "reposts": 82
+     },
+     "2026-09": {
+      "original": 38,
+      "reposts": 418
+     }
+    },
+    "username": "beautyblossom_clinic",
+    "followers": 1144
+   },
+   {
+    "label": "EN",
+    "months": {
+     "2026-07": {
+      "views": 1197,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0
+     },
+     "2026-08": {
+      "views": 1048,
+      "likes": 1,
+      "replies": 1,
+      "reposts": 0,
+      "quotes": 0
+     },
+     "2026-09": {
+      "views": 1088,
+      "likes": 3,
+      "replies": 1,
+      "reposts": 0,
+      "quotes": 0
+     }
+    },
+    "posts": {
+     "2026-07": {
+      "original": 24,
+      "reposts": 0
+     },
+     "2026-08": {
+      "original": 10,
+      "reposts": 0
+     },
+     "2026-09": {
+      "original": 16,
+      "reposts": 0
+     }
+    },
+    "username": "beautyblossom_global",
+    "followers": 62
+   },
+   {
+    "label": "JP",
+    "months": {
+     "2026-07": {
+      "views": 529,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0
+     },
+     "2026-08": {
+      "views": 1307,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0
+     },
+     "2026-09": {
+      "views": 487,
+      "likes": 2,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0
+     }
+    },
+    "posts": {
+     "2026-07": {
+      "original": 25,
+      "reposts": 0
+     },
+     "2026-08": {
+      "original": 22,
+      "reposts": 0
+     },
+     "2026-09": {
+      "original": 8,
+      "reposts": 0
+     }
+    },
+    "username": "beautyblossom_jp",
+    "followers": 10
+   },
+   {
+    "label": "TW",
+    "months": {
+     "2026-07": {
+      "views": 20652,
+      "likes": 210,
+      "replies": 51,
+      "reposts": 1,
+      "quotes": 0
+     },
+     "2026-08": {
+      "views": 13655,
+      "likes": 123,
+      "replies": 11,
+      "reposts": 5,
+      "quotes": 1
+     },
+     "2026-09": {
+      "views": 18865,
+      "likes": 399,
+      "replies": 36,
+      "reposts": 12,
+      "quotes": 0
+     }
+    },
+    "posts": {
+     "2026-07": {
+      "original": 17,
+      "reposts": 0
+     },
+     "2026-08": {
+      "original": 4,
+      "reposts": 0
+     },
+     "2026-09": {
+      "original": 28,
+      "reposts": 0
+     }
+    },
+    "username": "beautyblossom_tw",
+    "followers": 121
+   },
+   {
+    "label": "TH",
+    "months": {
+     "2026-07": {
+      "views": 623,
+      "likes": 14,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0
+     },
+     "2026-08": {
+      "views": 3292,
+      "likes": 28,
+      "replies": 5,
+      "reposts": 2,
+      "quotes": 0
+     },
+     "2026-09": {
+      "views": 4130,
+      "likes": 11,
+      "replies": 0,
+      "reposts": 2,
+      "quotes": 0
+     }
+    },
+    "posts": {
+     "2026-07": {
+      "original": 26,
+      "reposts": 0
+     },
+     "2026-08": {
+      "original": 32,
+      "reposts": 0
+     },
+     "2026-09": {
+      "original": 29,
+      "reposts": 0
+     }
+    },
+    "username": "beautyblossom_th",
+    "followers": 4
+   }
+  ],
+  "naver": [
+   {
+    "label": "KR",
+    "status": "OK",
+    "first": "20260701",
+    "last": "20260928",
+    "latest": "20260928",
+    "months": {
+     "2026-07": {
+      "clicks": 2087,
+      "impressions": 290265,
+      "days": 31,
+      "ctr": 0.0071899815685666545
+     },
+     "2026-08": {
+      "clicks": 2069,
+      "impressions": 319661,
+      "days": 31,
+      "ctr": 0.006472481785391399
+     },
+     "2026-09": {
+      "clicks": 1678,
+      "impressions": 275187,
+      "days": 28,
+      "ctr": 0.00609767176501797
+     }
+    },
+    "top_queries_90d": [
+     {
+      "query": "뷰티블라썸의원",
+      "clicks": 914,
+      "impressions": 11759,
+      "ctr": 7.8,
+      "rank": 1.5
+     },
+     {
+      "query": "ldm",
+      "clicks": 282,
+      "impressions": 39453,
+      "ctr": 0.7,
+      "rank": 1
+     },
+     {
+      "query": "ldm 효과",
+      "clicks": 215,
+      "impressions": 44324,
+      "ctr": 0.5,
+      "rank": 1
+     },
+     {
+      "query": "유지인대 리프팅",
+      "clicks": 187,
+      "impressions": 3190,
+      "ctr": 5.9,
+      "rank": 1
+     },
+     {
+      "query": "유지인대 필러",
+      "clicks": 168,
+      "impressions": 2997,
+      "ctr": 5.6,
+      "rank": 1
+     },
+     {
+      "query": "뷰티블라썸",
+      "clicks": 67,
+      "impressions": 768,
+      "ctr": 8.7,
+      "rank": 1.3
+     },
+     {
+      "query": "합정 뷰티블라썸의원",
+      "clicks": 52,
+      "impressions": 694,
+      "ctr": 7.5,
+      "rank": 1.5
+     },
+     {
+      "query": "유지인대필러",
+      "clicks": 51,
+      "impressions": 432,
+      "ctr": 11.8,
+      "rank": 1
+     },
+     {
+      "query": "라라필",
+      "clicks": 42,
+      "impressions": 7488,
+      "ctr": 0.6,
+      "rank": 4
+     },
+     {
+      "query": "볼뉴머",
+      "clicks": 40,
+      "impressions": 60332,
+      "ctr": 0.1,
+      "rank": 2
+     }
+    ],
+    "top_urls_90d": [
+     {
+      "url": "https://beautyblossom.kr/",
+      "clicks": 1215,
+      "impressions": 20560,
+      "ctr": 5.9
+     },
+     {
+      "url": "https://beautyblossom.kr/141",
+      "clicks": 747,
+      "impressions": 106869,
+      "ctr": 0.7
+     },
+     {
+      "url": "https://beautyblossom.kr/yujiin-lifting",
+      "clicks": 578,
+      "impressions": 11019,
+      "ctr": 5.2
+     },
+     {
+      "url": "https://beautyblossom.kr/124",
+      "clicks": 161,
+      "impressions": 7790,
+      "ctr": 2.1
+     },
+     {
+      "url": "https://beautyblossom.kr/alltite-lifting",
+      "clicks": 144,
+      "impressions": 9000,
+      "ctr": 1.6
+     }
+    ]
+   },
+   {
+    "label": "EN",
+    "status": "OK",
+    "first": "20260701",
+    "last": "20260928",
+    "latest": "20260928",
+    "months": {
+     "2026-07": {
+      "clicks": 4,
+      "impressions": 73,
+      "days": 31,
+      "ctr": 0.0547945205479452
+     },
+     "2026-08": {
+      "clicks": 0,
+      "impressions": 74,
+      "days": 31,
+      "ctr": 0
+     },
+     "2026-09": {
+      "clicks": 1,
+      "impressions": 112,
+      "days": 28,
+      "ctr": 0.008928571428571428
+     }
+    },
+    "top_queries_90d": [
+     {
+      "query": "beauty blossom",
+      "clicks": 3,
+      "impressions": 35,
+      "ctr": 8.6,
+      "rank": 1
+     },
+     {
+      "query": "beauty blossom clinic hapjeong",
+      "clicks": 1,
+      "impressions": 4,
+      "ctr": 25,
+      "rank": 1.5
+     },
+     {
+      "query": "beautyblossom clinic",
+      "clicks": 1,
+      "impressions": 2,
+      "ctr": 50,
+      "rank": 2.5
+     },
+     {
+      "query": "서울 바디필러",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "rank": 1
+     },
+     {
+      "query": "linetox",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "rank": 1.5
+     },
+     {
+      "query": "soi clinic in seoul: consultation, travel and beauty tips",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "rank": 4.5
+     },
+     {
+      "query": "exoheal",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "rank": 8
+     },
+     {
+      "query": "brighten dermatology",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "rank": 1
+     },
+     {
+      "query": "soi clinic: what to ask during a beauty consultation",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "rank": 1
+     },
+     {
+      "query": "beauty blossom clinic",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "rank": 3
+     }
+    ],
+    "top_urls_90d": [
+     {
+      "url": "https://en.beautyblossom.kr/",
+      "clicks": 5,
+      "impressions": 120,
+      "ctr": 4.2
+     },
+     {
+      "url": "https://en.beautyblossom.kr/25",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0
+     },
+     {
+      "url": "https://en.beautyblossom.kr/18",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0
+     },
+     {
+      "url": "https://en.beautyblossom.kr/118",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0
+     },
+     {
+      "url": "https://en.beautyblossom.kr/110",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0
+     }
+    ]
+   },
+   {
+    "label": "JP",
+    "status": "OK",
+    "first": "20260701",
+    "last": "20260928",
+    "latest": "20260928",
+    "months": {
+     "2026-07": {
+      "clicks": 0,
+      "impressions": 150,
+      "days": 31,
+      "ctr": 0
+     },
+     "2026-08": {
+      "clicks": 0,
+      "impressions": 247,
+      "days": 31,
+      "ctr": 0
+     },
+     "2026-09": {
+      "clicks": 0,
+      "impressions": 217,
+      "days": 28,
+      "ctr": 0
+     }
+    },
+    "top_queries_90d": [
+     {
+      "query": "弘大",
+      "clicks": 0,
+      "impressions": 578,
+      "ctr": 0,
+      "rank": 1
+     },
+     {
+      "query": "弘大美容医院",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "rank": 3.5
+     },
+     {
+      "query": "弘大 皮膚科",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "rank": 2.5
+     },
+     {
+      "query": "ブロッサム",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "rank": 9
+     },
+     {
+      "query": "beautyblossom",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 5
+     },
+     {
+      "query": "弘大 昼",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 3.5
+     },
+     {
+      "query": "美容弘大",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 6.5
+     },
+     {
+      "query": "弘大皮膚科",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 6.5
+     },
+     {
+      "query": "リリイドm",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 11.5
+     },
+     {
+      "query": "ゴノ",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 2
+     }
+    ],
+    "top_urls_90d": [
+     {
+      "url": "https://jp.beautyblossom.kr/",
+      "clicks": 0,
+      "impressions": 598,
+      "ctr": 0
+     },
+     {
+      "url": "https://jp.beautyblossom.kr/53",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0
+     },
+     {
+      "url": "https://jp.beautyblossom.kr/67",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0
+     }
+    ]
+   },
+   {
+    "label": "CN",
+    "status": "OK",
+    "first": "20260701",
+    "last": "20260928",
+    "latest": "20260928",
+    "months": {
+     "2026-07": {
+      "clicks": 0,
+      "impressions": 2,
+      "days": 31,
+      "ctr": 0
+     },
+     "2026-08": {
+      "clicks": 0,
+      "impressions": 12,
+      "days": 31,
+      "ctr": 0
+     },
+     "2026-09": {
+      "clicks": 1,
+      "impressions": 30,
+      "days": 28,
+      "ctr": 0.03333333333333333
+     }
+    },
+    "top_queries_90d": [
+     {
+      "query": "beautyblossom",
+      "clicks": 1,
+      "impressions": 12,
+      "ctr": 8.3,
+      "rank": 4.5
+     },
+     {
+      "query": "beauty blossom",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "rank": 10
+     },
+     {
+      "query": "데이원의원강남본점|韩国皮肤科|dayonekoreandermatologistgangnamheadquarters|皮肤管理|koreanskintreatmentclinic",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "rank": 9
+     },
+     {
+      "query": "乾镐",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "rank": 1.5
+     },
+     {
+      "query": "beauty blosson",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 14
+     },
+     {
+      "query": "瘦腿针首尔",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 2
+     },
+     {
+      "query": "身材管理",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 5
+     },
+     {
+      "query": "瘦腿针医院",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "rank": 6
+     },
+     {
+      "query": "艾莉皮肤科",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "rank": 8
+     },
+     {
+      "query": "beauty blossm",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "rank": 11
+     }
+    ],
+    "top_urls_90d": [
+     {
+      "url": "https://cn.beautyblossom.kr/",
+      "clicks": 1,
+      "impressions": 37,
+      "ctr": 2.7
+     },
+     {
+      "url": "https://cn.beautyblossom.kr/23",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0
+     }
+    ]
+   },
+   {
+    "label": "TW",
+    "status": "OK",
+    "first": "20260701",
+    "last": "20260928",
+    "latest": "20260928",
+    "months": {
+     "2026-07": {
+      "clicks": 0,
+      "impressions": 1,
+      "days": 31,
+      "ctr": 0
+     },
+     "2026-08": {
+      "clicks": 0,
+      "impressions": 7,
+      "days": 31,
+      "ctr": 0
+     },
+     "2026-09": {
+      "clicks": 0,
+      "impressions": 74,
+      "days": 28,
+      "ctr": 0
+     }
+    },
+    "top_queries_90d": [
+     {
+      "query": "뷰티블라썸",
+      "clicks": 0,
+      "impressions": 47,
+      "ctr": 0,
+      "rank": 14
+     },
+     {
+      "query": "beauty blossom",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "rank": 6
+     },
+     {
+      "query": "beautyblossom",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "rank": 2
+     },
+     {
+      "query": "beauty blosson",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 10
+     },
+     {
+      "query": "皮膚管理",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 7
+     },
+     {
+      "query": "뷰티브라썸",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 16
+     },
+     {
+      "query": "뷰티플라썸",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "rank": 15
+     },
+     {
+      "query": "beauty blosso.",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "rank": 9
+     },
+     {
+      "query": "補假",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "rank": 11
+     },
+     {
+      "query": "beauty blossm",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "rank": 6
+     }
+    ],
+    "top_urls_90d": [
+     {
+      "url": "https://tw.beautyblossom.kr/",
+      "clicks": 0,
+      "impressions": 81,
+      "ctr": 0
+     },
+     {
+      "url": "https://tw.beautyblossom.kr/400",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0
+     }
+    ]
+   },
+   {
+    "label": "TH",
+    "status": "OK",
+    "first": "20260701",
+    "last": "20260928",
+    "latest": "20260928",
+    "months": {
+     "2026-07": {
+      "clicks": 0,
+      "impressions": 0,
+      "days": 31,
+      "ctr": null
+     },
+     "2026-08": {
+      "clicks": 0,
+      "impressions": 4,
+      "days": 31,
+      "ctr": 0
+     },
+     "2026-09": {
+      "clicks": 0,
+      "impressions": 14,
+      "days": 28,
+      "ctr": 0
+     }
+    },
+    "top_queries_90d": [
+     {
+      "query": "beauty blossom",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "rank": 10
+     },
+     {
+      "query": "beautyblossom",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 11
+     },
+     {
+      "query": "beauty blossom clinic hapjeong",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "rank": 5
+     },
+     {
+      "query": "ออนด้า",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "rank": 4
+     },
+     {
+      "query": "beauty blossm",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "rank": 9
+     }
+    ],
+    "top_urls_90d": [
+     {
+      "url": "https://www.beautyblossomth.kr/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0
+     }
+    ]
+   },
+   {
+    "label": "HK",
+    "status": "NOT_REGISTERED",
+    "message": "FAIL_NOT_EXIST_SITE_OR_USER",
+    "note": "네이버 서치어드바이저에 등록되지 않은 사이트"
+   }
+  ],
+  "naver_meta": {
+   "method": "Orca 로그인 탭에서 서치어드바이저 콘솔 API(period=90, 일별 logs) 호출 후 월별 합산",
+   "fetched_at_utc": "2026-09-29T00:07:14.712Z"
+  }
+ },
+ "errors": [
+  {
+   "source": "GSC note JP",
+   "message": "HTTP 403 403 User does not have sufficient permission for site 'https://note.com/beautyblossom/'. See also: https://support.google.com/webmasters/answer/2451999."
+  }
+ ]
+}

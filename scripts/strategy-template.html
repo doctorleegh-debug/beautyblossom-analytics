@@ -110,6 +110,19 @@
        color:var(--ink2);text-decoration:none;white-space:nowrap}
   nav#toc a:hover{background:color-mix(in srgb,var(--ink) 6%,transparent);color:var(--ink)}
   h2{scroll-margin-top:56px}
+  /* Readability: larger type, and long explanations folded behind "자세히" (see foldLong). */
+  body{font-size:16px;line-height:1.7}
+  h1{font-size:30px} h2{font-size:22px;margin-top:48px} h3{font-size:16.5px} .period{font-size:16px}
+  .sub{font-size:15px} .note{font-size:14.5px;margin-top:12px} .fact{font-size:13.5px}
+  table{font-size:15px} th{font-size:14px} th,td{padding:10px 12px}
+  .tile .k{font-size:14px} .tile .v{font-size:30px} .tile .d{font-size:13.5px}
+  .tier h3{font-size:17px} .tier .why{font-size:15px} .legend{font-size:14px}
+  .adcard .copy{font-size:14px} .adcard .links{font-size:13.5px} .lim{font-size:15px}
+  .chip,.kwtag,.pill,nav#toc a{font-size:13.5px}
+  #sum-points li{margin-bottom:10px}
+  details.more{display:inline} details.more>summary{display:inline;cursor:pointer;color:var(--s1);font-size:13.5px;font-weight:600;list-style:none;margin-left:4px}
+  details.more>summary::-webkit-details-marker{display:none}
+  details.more[open]>summary{display:none}
 </style>
 </head>
 <body>
@@ -1718,6 +1731,20 @@ fillVerify(); fillKorea();
 fillMarketTable(); fillCompetitors(); fillCompChange(); fillPrice(); fillCrossFindings();
 fillTiers(); fillChannels(); fillOrganic(); fillInstagram(); fillYouTube(); fillKeywordTable(); fillSerp(); fillKPI(); fillTreatments(); fillPageFix(); fillFooter();
 fillSummary();
+// Long explanations keep their first sentence on screen; the rest opens with "자세히".
+// The cut is made only where every tag opened so far is closed, so no markup is split.
+function foldLong() {
+  const balanced = (s) => ['b', 'span', 'code', 'a'].every(t =>
+    (s.match(new RegExp(`<${t}[\\s>]`, 'g')) || []).length === (s.match(new RegExp(`</${t}>`, 'g')) || []).length);
+  document.querySelectorAll('.note, .sub, .tier .why, #sum-points li, td > .fact, td > div.fact').forEach(el => {
+    if (el.textContent.length < 110 || el.querySelector('details.more')) return;
+    const html = el.innerHTML, re = /다\.(?:<\/b>)?\s/g; let m, cut = -1;
+    while ((m = re.exec(html))) { const end = m.index + m[0].length; if (balanced(html.slice(0, end)) && html.slice(0, end).replace(/<[^>]+>/g, '').length >= 20) { cut = end; break; } }
+    if (cut < 0 || html.slice(cut).replace(/<[^>]+>/g, '').trim().length < 30) return;
+    el.innerHTML = html.slice(0, cut) + `<details class="more"><summary>자세히 ▾</summary>${html.slice(cut)}</details>`;
+  });
+}
+foldLong();
 drawAll();
 addEventListener('resize', drawAll);
 })();

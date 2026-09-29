@@ -56,6 +56,12 @@
   th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--grid);font-variant-numeric:tabular-nums}
   th:first-child,td:first-child{text-align:left;font-variant-numeric:normal}
   th{color:var(--ink2);font-weight:600;font-size:12px}
+  table.cells{border:1px solid var(--grid);table-layout:fixed}
+  table.cells th,table.cells td{text-align:center;border:1px solid var(--grid);vertical-align:middle}
+  table.cells th:first-child,table.cells td:first-child{text-align:left}
+  table.cells thead th{background:color-mix(in srgb,var(--ink2) 10%,transparent);white-space:normal}
+  .chip{display:inline-block;padding:1px 8px;margin:2px;border-radius:999px;font-size:12px;border:1px solid var(--grid);white-space:nowrap}
+  .chip.new{border-color:var(--good);color:var(--good)}
   tbody tr:hover{background:color-mix(in srgb,var(--ink) 4%,transparent)}
   .note{font-size:12px;color:var(--ink2);margin-top:10px}
   .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 9px;border-radius:999px;border:1px solid var(--ring);color:var(--ink2)}
@@ -182,8 +188,10 @@
   </div>
   <div class="card" style="margin-top:14px">
     <h3>지난달과 비교 — 같은 병원을 같은 방법으로 다시 조회했습니다</h3>
-    <table id="comp-change"><thead><tr>
-      <th>병원</th><th>{{BASE}} 조사 광고</th><th>{{EXEC}} 조사 광고</th><th>노출 국가 수</th><th>새로 노출된 나라</th><th>노출이 확인되지 않은 나라</th>
+    <table id="comp-change" class="cells">
+      <colgroup><col style="width:18%"><col style="width:12%"><col style="width:13%"><col style="width:11%"><col style="width:23%"><col style="width:23%"></colgroup>
+      <thead><tr>
+      <th>병원</th><th>{{BASE}} 조사 광고</th><th>{{EXEC}} 조사 광고</th><th>노출 국가 수<br><span class="fact">{{BASE}} → {{EXEC}}</span></th><th>새로 노출된 나라</th><th>노출이 확인되지 않은 나라</th>
     </tr></thead><tbody></tbody></table>
     <p class="note" id="comp-change-note"></p>
   </div>
@@ -1585,12 +1593,12 @@ function fillCompChange() {
     const d = r.adsPrev == null ? null : r.adsNow - r.adsPrev;
     const tr = document.createElement('tr');
     tr.innerHTML =
-      `<td style="text-align:left"><b>${esc(r.name)}</b></td>` +
+      `<td><b>${esc(r.name)}</b></td>` +
       `<td>${r.adsPrev == null ? '—' : num(r.adsPrev) + '건'}</td>` +
       `<td><b>${num(r.adsNow)}건</b> <span class="fact">이상</span></td>` +
       `<td>${r.countriesPrev == null ? '—' : r.countriesPrev} → ${r.countriesNow}</td>` +
-      `<td style="text-align:left">${r.started.map(c => esc(ko(c))).join(', ') || '—'}</td>` +
-      `<td style="text-align:left">${r.stopped.map(c => esc(ko(c))).join(', ') || '—'}` +
+      `<td>${r.started.map(c => `<span class="chip new">${esc(ko(c))}</span>`).join('') || '—'}</td>` +
+      `<td>${r.stopped.map(c => `<span class="chip">${esc(ko(c))}</span>`).join('') || '—'}` +
       `${r.unresolvedNow.length ? `<div class="fact">조회 실패: ${r.unresolvedNow.map(c => esc(ko(c))).join(', ')}</div>` : ''}</td>`;
     tb.appendChild(tr);
   });

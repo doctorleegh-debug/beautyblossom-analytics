@@ -6,46 +6,63 @@
 <title>뷰티블라썸 보고서 · 2026-10-30</title>
 <meta name="robots" content="noindex">
 <style>
-:root{--page:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--ring:rgba(11,11,11,.10)}
-@media (prefers-color-scheme:dark){:root{--page:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#898781;--ring:rgba(255,255,255,.10)}}
+:root{--side:#1e2230;--side-ink:#e9eaf0;--side-muted:#9aa0b4;--accent:#e2567c;--accent-label:#f27a98;--page:#f9f9f7}
+@media (prefers-color-scheme:dark){:root{--page:#0d0d0d}}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
-body{display:flex;flex-direction:column;background:var(--page);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
-.bar{display:flex;align-items:center;gap:12px;padding:8px clamp(12px,3vw,48px);border-bottom:1px solid var(--ring);background:var(--page)}
-.brand{font-weight:650;font-size:14px;white-space:nowrap}
-.tabs{display:flex;gap:6px;flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tabs button{flex:0 0 auto;font:inherit;font-size:13px;font-weight:600;line-height:1.3;text-align:left;padding:6px 14px;border-radius:12px;border:1px solid var(--ring);background:var(--surface);color:var(--ink2);cursor:pointer}
-.tabs button small{display:block;font-size:11px;font-weight:400;color:var(--muted)}
-.tabs button[aria-selected="true"]{background:var(--ink);color:var(--page);border-color:var(--ink)}
-.tabs button[aria-selected="true"] small{color:inherit;opacity:.75}
-.open{font-size:12px;color:var(--ink2);white-space:nowrap}
-main{position:relative;flex:1 1 auto;min-height:0}
+body{display:flex;background:var(--page);font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
+aside{flex:0 0 232px;display:flex;flex-direction:column;gap:6px;padding:22px 14px;background:var(--side);color:var(--side-ink)}
+.label{font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--accent-label);padding:0 10px 14px}
+.nav{display:flex;flex-direction:column;gap:6px}
+.nav button{display:flex;align-items:center;gap:12px;width:100%;font:inherit;text-align:left;color:var(--side-ink);background:transparent;border:0;border-radius:12px;padding:11px 12px;cursor:pointer}
+.nav button:hover{background:rgba(255,255,255,.06)}
+.nav button[aria-selected="true"]{background:var(--accent);color:#fff}
+.nav svg{flex:0 0 18px;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav b{display:block;font-size:14px;font-weight:650;line-height:1.3}
+.nav small{display:block;font-size:11px;color:var(--side-muted);line-height:1.35;margin-top:1px}
+.nav button[aria-selected="true"] small{color:rgba(255,255,255,.82)}
+.open{margin-top:auto;padding:10px 12px 0;font-size:12px;color:var(--side-muted)}
+main{position:relative;flex:1 1 auto;min-width:0}
 iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--page)}
 [hidden]{display:none!important}
-@media (max-width:640px){.bar{gap:8px;padding:6px 8px}.brand,.open{display:none}.tabs button{padding:5px 11px}}
+/* 휴대폰: 왼쪽 메뉴를 같은 색의 상단 막대로 */
+@media (max-width:640px){
+  body{flex-direction:column}
+  aside{flex:0 0 auto;flex-direction:row;align-items:center;gap:8px;padding:8px 10px}
+  .label,.open{display:none}
+  .nav{flex-direction:row;gap:6px;overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav button{flex:0 0 auto;width:auto;gap:8px;padding:8px 12px}
+  .nav small{display:none}
+}
 </style>
 </head>
 <body>
-<div class="bar">
-  <span class="brand">뷰티블라썸 보고서</span>
-  <div class="tabs" role="tablist" aria-label="보고서 선택">
-    <button type="button" role="tab" data-r="monthly" aria-selected="true">월간 성과보고서<small>8월~10월 비교 · 발행 10/30</small></button>
-    <button type="button" role="tab" data-r="strategy" aria-selected="false">통합 전략 리포트<small>10월 실적 기준 · 11월 실행안</small></button>
-  </div>
+<aside>
+  <div class="label">REPORTS</div>
+  <nav class="nav" role="tablist" aria-label="보고서 선택" aria-orientation="vertical">
+    <button type="button" role="tab" data-r="monthly" aria-selected="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+      <span><b>월간 성과보고서</b><small>8월~10월 비교 · 발행 10/30</small></span>
+    </button>
+    <button type="button" role="tab" data-r="strategy" aria-selected="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg>
+      <span><b>통합 전략 리포트</b><small>10월 실적 기준 · 11월 실행안</small></span>
+    </button>
+  </nav>
   <a class="open" id="open" href="../r/2026-10-30/" target="_blank" rel="noopener">새 창으로 열기</a>
-</div>
+</aside>
 <main>
   <iframe id="f-monthly" title="월간 성과보고서"></iframe>
   <iframe id="f-strategy" title="통합 전략 리포트" hidden></iframe>
 </main>
 <script>
 // 보고서는 고칠 필요 없이 그대로 띄운다. 처음 고를 때만 불러오고 이후에는 보던 위치를 유지한다.
-// ?r=monthly|strategy 로 시작 탭, ?c=TW 처럼 나라를 주면 월간 보고서의 나라 탭으로 넘긴다.
+// ?r=monthly|strategy 로 시작 화면, ?c=TW 처럼 나라를 주면 월간 보고서의 나라 탭으로 넘긴다.
 (function () {
   var q = new URLSearchParams(location.search), c = q.get('c');
   var SRC = { monthly: '../r/2026-10-30/' + (c ? '?c=' + encodeURIComponent(c) : ''), strategy: '../report/strategy-2026-11.html' };
-  var tabs = document.querySelectorAll('.tabs button'), open = document.getElementById('open');
+  var tabs = document.querySelectorAll('.nav button'), open = document.getElementById('open');
   function show(r) {
     for (var k in SRC) {
       var f = document.getElementById('f-' + k);

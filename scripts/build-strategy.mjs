@@ -42,6 +42,11 @@ const comp = read(`competitors-${MONTH}.json`);
 const compPrev = read(`competitors-${BASE}.json`);
 // Last month's inputs, for what changed on the sites since then (sitemaps).
 const prevInputs = read(`strategy-inputs-${BASE}.json`);
+// What the GA4 admin screens showed, read by hand because the Data API cannot see settings.
+const adminCheck = read('ga4-admin-check.json');
+const filterStates = adminCheck ? Object.values(adminCheck.data_filters || {}).map((f) => f.state) : [];
+const filterAllTest = filterStates.length > 0 && filterStates.every((s) => s === '테스트');
+const markedInternal = adminCheck ? Object.values(adminCheck.test_filter_matches?.sessions_marked_internal || {}).reduce((a, b) => a + b, 0) : null;
 const serp = read(`serp-${MONTH}.json`);
 const serpPrev = read(`serp-${BASE}.json`);
 // Location and multilingual setup are not in the ad library; they were read off each clinic's own
@@ -341,6 +346,12 @@ const verify = (() => {
     }
     if (k.metric.startsWith('해외 사이트 문의 중 한국')) {
       const act = kShare('base');
+      if (filterAllTest) {
+        return { metric: k.metric, market: k.market, baseline: k.now, target: k.target, actual: `${pc(act, 0)} · 필터 테스트 상태`, verdict: '미달',
+          note: `${filterStates.length}개 사이트 모두 "Internal Traffic" 필터가 "테스트" 상태입니다(${adminCheck.checked_at} GA4 관리 화면 확인). 테스트 상태는 표시만 하고 실제로 빼지는 않습니다. ` +
+            (markedInternal === 0 ? `9~10월에 내부 트래픽으로 표시된 접속도 0회라 원내 인터넷 주소(IP) 규칙이 등록돼 있는지 확인이 필요합니다. ` : '') +
+            `한국에서 접속한 문의 비율은 ${k.now}에서 ${pc(act, 0)}가 됐습니다.` };
+      }
       return { metric: k.metric, market: k.market, baseline: k.now, target: k.target, actual: pc(act, 0), verdict: '판정 불가',
         note: `GA4 관리 화면은 읽지 못해 원내 접속 제외를 설정했는지는 확인하지 못했습니다. 한국에서 접속한 문의 비율은 ${k.now}에서 ${pc(act, 0)}가 됐습니다.` };
     }
@@ -663,7 +674,8 @@ const kpi = [
   { metric: '하루 평균 현지 문의 발생 접속', market: 'TH', now: `${d1(TH.inquiryPerDay)}회`, target: `${d1(TH.inquiryPerDayPrev)}회`, use: `${M.compare} 수준입니다. 검색광고 변경 내역과 함께 봅니다` },
   { metric: '현지 문의 발생률', market: 'JP', now: pc(JP.localRate, 2), target: pc(JP.localRatePrev, 2), use: `${M.compare} 수준입니다. 검색광고와 SNS 광고 접속을 나눠 기록합니다` },
   { metric: '현지 문의 발생률', market: 'TW', now: pc(TW.localRate, 2), target: pc(P0.TW?.localRatePrev ?? TW.localRate, 2), use: `${M.base} 리포트가 정한 목표를 그대로 둡니다` },
-  { metric: '병원 이름이 아닌 검색 클릭 (하루)', market: 'KR', now: krNB.base ? (krNB.base.clicks / gscBaseDays).toFixed(1) + '회' : '-', target: krNB.prev ? (krNB.prev.clicks / compareDays).toFixed(1) + '회' : '-', use: `${M.compare} 수준입니다. 새 고객이 검색으로 들어오는지 봅니다` }
+  { metric: '병원 이름이 아닌 검색 클릭 (하루)', market: 'KR', now: krNB.base ? (krNB.base.clicks / gscBaseDays).toFixed(1) + '회' : '-', target: krNB.prev ? (krNB.prev.clicks / compareDays).toFixed(1) + '회' : '-', use: `${M.compare} 수준입니다. 새 고객이 검색으로 들어오는지 봅니다` },
+  ...(filterAllTest ? [{ metric: '해외 사이트 문의 중 한국에서 접속한 비율', market: '전체', now: `${pc(sum(koreaShare, (k) => k.base.korea || 0) / sum(koreaShare, (k) => k.base.inquiry || 0), 0)} · 필터 테스트`, target: '필터 활성', use: '원내 IP 규칙을 확인한 뒤 필터를 "활성"으로 바꾸면 그날부터 원내 접속이 빠집니다. 지난 자료는 바뀌지 않습니다' }] : [])
 ];
 const flow = {
   nodes: [
@@ -703,7 +715,8 @@ const summary = {
     `<b>EN 접속은 하루 평균 ${sign(EN.sessionsDelta)} 늘었는데 현지 문의는 늘지 않았습니다.</b> 늘어난 접속 중 ${enLow.map((c) => koName(c.country)).join('·')} ${num(enLowS)}회에서 문의가 나온 접속은 ${num(enLowQ)}회입니다. 필리핀은 문의도 ${num(enPH.prev.inquirySessions)} → ${num(enPH.now.inquirySessions)}회로 늘었습니다(S4).`,
     `<b>HK의 현지 문의 발생률은 ${pc(HK.localRate, 2)}로 ${hkRank === 1 ? '중국을 뺀 여섯 시장 중 가장 높습니다' : `중국을 뺀 여섯 시장 중 ${hkRank}번째입니다`}.</b> 대만 사이트로 들어온 홍콩 접속은 문의 발생률이 ${pc(pct(hkOnTW.inquirySessions, hkOnTW.sessions), 1)}입니다. 홍콩 대상 광고는 HK 사이트로 보내 비교하시길 권합니다(S4).`,
     `<b>태국과 일본은 현지 문의가 줄었습니다.</b> 태국은 검색광고 접속이 줄지 않았는데 문의 발생 접속이 ${num(TH.localPrev?.inquirySessions)} → ${num(TH.local?.inquirySessions)}회입니다. 일본은 검색광고 접속이 ${num(jpSearch.prev.sessions)} → ${num(jpSearch.now.sessions)}회로 줄었습니다. 두 시장 모두 광고 설정 확인이 먼저입니다(S4).`,
-    `<b>${M.exec}에 가장 먼저 필요한 것은 나라별 광고비 자료입니다.</b> EN·태국·일본의 판단이 모두 문의 1건당 광고비에 달려 있는데 이 리포트는 광고비를 받지 못했습니다.`
+    `<b>${M.exec}에 가장 먼저 필요한 것은 나라별 광고비 자료입니다.</b> EN·태국·일본의 판단이 모두 문의 1건당 광고비에 달려 있는데 이 리포트는 광고비를 받지 못했습니다.`,
+    filterAllTest ? `<b>GA4의 원내 접속 제외 필터가 ${filterStates.length}개 사이트 모두 "테스트" 상태입니다.</b> 그래서 원내에서 접속한 문의가 있더라도 지금은 빠지지 않습니다. 원내 IP 규칙을 확인하고 필터를 "활성"으로 바꾸는 것이 필요합니다(S0).` : ''
   ].filter(Boolean)
 };
 
@@ -725,7 +738,8 @@ const text = {
     const nfKr = sum(nf.filter((r) => r.country === 'South Korea'), 'keyEvents'), nfAll = sum(nf, 'keyEvents');
     return `<b>폼 문의</b>는 사이트의 문의 양식 제출이고 <b>문의 발생 접속</b>은 폼·메신저·전화 버튼 중 하나라도 누른 접속입니다. ` +
       `폼이 아닌 메신저·전화 버튼 문의는 ${M.base} ${num(nfAll)}건 중 ${num(nfKr)}건(${pc(nfKr / nfAll, 0)})만 한국에서 눌렸습니다. ` +
-      '<b>원내에서 쓰는 PC·휴대폰의 인터넷 주소를 GA4에서 "내부 트래픽"으로 제외하면</b> 이런 보정 없이 바로 현지 기준 수치가 나옵니다.';
+      '<b>원내에서 쓰는 PC·휴대폰의 인터넷 주소를 GA4에서 "내부 트래픽"으로 제외하면</b> 이런 보정 없이 바로 현지 기준 수치가 나옵니다.' +
+      (filterAllTest ? ` 지금은 제외 필터가 "테스트" 상태라 아무것도 빠지지 않고 있습니다(${adminCheck.checked_at} 확인).` : '');
   })(),
   compChangeNote: `<b>조사 광고</b>는 병원 이름 조회와 본문 검색 조회 중 어느 쪽에서든 보인 광고를 합친 수입니다. ` +
     `이름 조회가 광고가 있는 병원도 "없음"으로 돌려주는 경우가 있어 ${M.exec} 숫자는 <b>확인된 최소치</b>입니다. ` +

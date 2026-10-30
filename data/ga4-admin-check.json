@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-30",
+  "method": "GA4 관리 화면(데이터 수집 및 수정 > 데이터 필터)을 Orca 브라우저에서 읽었고, 테스트 중 필터 표시는 Data API testDataFilterName 으로 셌다. 설정은 바꾸지 않았다.",
+  "data_filters": {
+    "KR": { "name": "Internal Traffic", "type": "내부 트래픽", "action": "제외", "state": "테스트" },
+    "EN": { "name": "Internal Traffic", "type": "내부 트래픽", "action": "제외", "state": "테스트" },
+    "JP": { "name": "Internal Traffic", "type": "내부 트래픽", "action": "제외", "state": "테스트" },
+    "CN": { "name": "Internal Traffic", "type": "내부 트래픽", "action": "제외", "state": "테스트" },
+    "TW": { "name": "Internal Traffic", "type": "내부 트래픽", "action": "제외", "state": "테스트" },
+    "TH": { "name": "Internal Traffic", "type": "내부 트래픽", "action": "제외", "state": "테스트" },
+    "HK": { "name": "Internal Traffic", "type": "내부 트래픽", "action": "제외", "state": "테스트" }
+  },
+  "test_filter_matches": {
+    "period": "2026-09-01~2026-10-29 (HK 2026-09-14부터)",
+    "sessions_marked_internal": { "KR": 0, "EN": 0, "JP": 0, "CN": 0, "TW": 0, "TH": 0, "HK": 0 }
+  },
+  "not_checked": "내부 트래픽 IP 규칙 목록(데이터 스트림 > 태그 설정 구성 > 내부 트래픽 정의). 버튼이 Orca 밖 새 창으로 열려 읽지 못했다."
+}

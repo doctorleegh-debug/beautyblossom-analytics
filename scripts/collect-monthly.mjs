@@ -50,7 +50,7 @@ const inPeriod = (d) => PERIODS.find((p) => d >= p.start && d <= p.end)?.key;
 // ---------------- GA4 ----------------
 const GA4_PROPS = [
   { id: '526090588', label: 'KR' }, { id: '534100156', label: 'EN' }, { id: '534097409', label: 'JP' },
-  { id: '534099303', label: 'CN' }, { id: '534131940', label: 'TW' }, { id: '537583229', label: 'TH' },
+  { id: '534099303', label: 'CN' }, { id: '534131940', label: 'TW' }, { id: '537583229', label: 'TH' }, { id: '553883641', label: 'HK' },
 ];
 const GA4_METRICS = ['activeUsers', 'newUsers', 'sessions', 'screenPageViews', 'keyEvents', 'averageSessionDuration', 'bounceRate', 'engagementRate'];
 async function ga4() {
@@ -106,6 +106,7 @@ async function gsc() {
       const dt = await q(s.url, { startDate: START, endDate: END, dimensions: ['date'], rowLimit: 400 });
       const rows = (dt.rows || []).map((r) => ({ date: r.keys[0], clicks: r.clicks, impressions: r.impressions }));
       rec.last_date = rows.map((r) => r.date).sort().at(-1) ?? null;
+      rec.daily = rows.sort((u, w) => (u.date < w.date ? -1 : 1));
       for (const p of PERIODS) {
         const t = await q(s.url, { startDate: p.start, endDate: p.end });
         const r = t.rows?.[0];

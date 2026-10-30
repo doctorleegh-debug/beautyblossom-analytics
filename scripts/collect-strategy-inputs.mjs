@@ -69,7 +69,7 @@ async function getJson(url, init = {}, tries = 3) {
 // ---------------- GA4: 나라별 접속 · 문의 이벤트 이름 ----------------
 const GA4_PROPS = [
   { id: '526090588', label: 'KR' }, { id: '534100156', label: 'EN' }, { id: '534097409', label: 'JP' },
-  { id: '534099303', label: 'CN' }, { id: '534131940', label: 'TW' }, { id: '537583229', label: 'TH' },
+  { id: '534099303', label: 'CN' }, { id: '534131940', label: 'TW' }, { id: '537583229', label: 'TH' }, { id: '553883641', label: 'HK' },
 ];
 async function ga4() {
   console.log('-- GA4');
@@ -78,7 +78,7 @@ async function ga4() {
     { method: 'POST', headers: { Authorization: `Bearer ${tok}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
   const out = [];
   for (const p of GA4_PROPS) {
-    const rec = { ...p, countries: {}, key_events: {}, key_events_by_country: {}, session_key_event_rate: {}, key_events_daily: null };
+    const rec = { ...p, countries: {}, key_events: {}, key_events_by_country: {}, session_key_event_rate: {}, sources: {}, key_events_daily: null };
     for (const per of GA4_PERIODS) {
       const range = [{ startDate: per.start, endDate: per.end }];
       try {
@@ -112,6 +112,15 @@ async function ga4() {
           .map((x) => ({ country: x.dimensionValues[0].value, event: x.dimensionValues[1].value,
             keyEvents: +x.metricValues[0].value, users: +x.metricValues[1].value }));
       } catch (e) { rec.key_events_by_country[per.key] = null; err(`GA4 ${p.label} key_events_by_country ${per.key}`, e.message); }
+      // Where sessions came from, by referring site - a channel group alone hides which social app it was.
+      try {
+        const r = await run(p.id, { dateRanges: range, dimensions: [{ name: 'sessionSource' }, { name: 'sessionMedium' }, { name: 'landingPage' }],
+          metrics: [{ name: 'sessions' }, { name: 'keyEvents' }, { name: 'sessionKeyEventRate' }],
+          orderBys: [{ metric: { metricName: 'sessions' }, desc: true }], limit: 25 });
+        rec.sources[per.key] = (r.rows || []).map((x) => ({ source: x.dimensionValues[0].value, medium: x.dimensionValues[1].value,
+          landingPage: x.dimensionValues[2].value, sessions: +x.metricValues[0].value, keyEvents: +x.metricValues[1].value,
+          inquirySessions: Math.round(+x.metricValues[2].value * +x.metricValues[0].value) }));
+      } catch (e) { rec.sources[per.key] = null; err(`GA4 ${p.label} sources ${per.key}`, e.message); }
     }
     // Daily series per inquiry type across both months, to date any step change in one type.
     try {

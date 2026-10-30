@@ -40,6 +40,8 @@ const monthly = need(readPath(join(ROOT, MONTHLY)), MONTHLY);
 const inputs = need(read(`strategy-inputs-${MONTH}.json`), `strategy-inputs-${MONTH}.json`);
 const comp = read(`competitors-${MONTH}.json`);
 const compPrev = read(`competitors-${BASE}.json`);
+// Last month's inputs, for what changed on the sites since then (sitemaps).
+const prevInputs = read(`strategy-inputs-${BASE}.json`);
 const serp = read(`serp-${MONTH}.json`);
 const serpPrev = read(`serp-${BASE}.json`);
 // Location and multilingual setup are not in the ad library; they were read off each clinic's own
@@ -64,10 +66,10 @@ function prevPayload() {
 const prev = prevPayload();
 
 const pct = (n, d) => (d ? n / d : null);
-const num = (n) => (n == null ? '—' : Math.round(n).toLocaleString('en-US'));
+const num = (n) => (n == null ? '-' : Math.round(n).toLocaleString('en-US'));
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const pc = (n, d = 1) => (n == null ? '—' : (n * 100).toFixed(d) + '%');
-const sign = (n, d = 0) => (n == null ? '—' : (n >= 0 ? '+' : '') + (n * 100).toFixed(d) + '%');
+const pc = (n, d = 1) => (n == null ? '-' : (n * 100).toFixed(d) + '%');
+const sign = (n, d = 0) => (n == null ? '-' : (n >= 0 ? '+' : '') + (n * 100).toFixed(d) + '%');
 const sum = (a, f) => a.reduce((s, x) => s + (typeof f === 'function' ? f(x) : x[f] || 0), 0);
 
 const PERIOD = Object.fromEntries(monthly.periods.map((p) => [p.key, p]));
@@ -87,9 +89,14 @@ const gscBaseDays = Math.round((Date.parse(gscLast) - Date.parse(PERIOD[BASE].st
 // ---------------------------------------------------------------------------
 const PAID = /^Paid/;
 const OWNED = /^(Direct|Organic)/;
-const LABELS = ['EN', 'TW', 'KR', 'JP', 'CN', 'TH'];
+const LABELS = ['EN', 'TW', 'KR', 'JP', 'CN', 'TH', 'HK'];
 const ga4In = Object.fromEntries(inputs.sources.ga4.map((g) => [g.label, g]));
 const ga4M = Object.fromEntries(monthly.sources.ga4.map((g) => [g.label, g]));
+// A site that started measuring mid-month (HK from 9/14) is averaged over the days it has data.
+const mDays = (label, key) => {
+  const p = PERIOD[key], d = (ga4M[label]?.daily || []).find((r) => r.date >= p.start && r.date <= p.end && r.sessions > 0);
+  return d ? Math.round((Date.parse(p.end) - Date.parse(d.date)) / 86400000) + 1 : p.days;
+};
 
 function local(label, key) {
   const rows = ga4In[label]?.countries?.[key];
@@ -114,11 +121,12 @@ const markets = LABELS.map((label) => {
   const totalPrev = sum(chPrev, 'sessions') || pre.sessions;
   const share = (list, re, t) => pct(sum(list.filter((c) => re.test(c.channel)), 'sessions'), t);
   const L = local(label, BASE), Lp = local(label, COMPARE), Lb = local(label, 'baseline');
-  const perDay = cur.sessions / baseDays, perDayPrev = pre.sessions / compareDays;
-  const paidPerDay = sum(ch.filter((c) => PAID.test(c.channel)), 'sessions') / baseDays;
-  const paidPerDayPrev = sum(chPrev.filter((c) => PAID.test(c.channel)), 'sessions') / compareDays;
+  const bD = mDays(label, BASE), cD = mDays(label, COMPARE);
+  const perDay = cur.sessions / bD, perDayPrev = pre.sessions / cD;
+  const paidPerDay = sum(ch.filter((c) => PAID.test(c.channel)), 'sessions') / bD;
+  const paidPerDayPrev = sum(chPrev.filter((c) => PAID.test(c.channel)), 'sessions') / cD;
   return {
-    label, days: baseDays,
+    label, days: bD, daysPrev: cD,
     sessions: cur.sessions, sessionsPerDay: perDay, sessionsDelta: pct(perDay - perDayPrev, perDayPrev),
     keyEvents: cur.keyEvents, convRate: pct(cur.keyEvents, cur.sessions),
     channels: ch,
@@ -127,9 +135,9 @@ const markets = LABELS.map((label) => {
     paidPerDay, paidDelta: pct(paidPerDay - paidPerDayPrev, paidPerDayPrev),
     local: L, localPrev: Lp, localBaseline: Lb,
     localRate: L?.rate ?? null, localRatePrev: Lp?.rate ?? null,
-    inquiryPerDay: L ? L.inquirySessions / baseDays : null,
-    inquiryPerDayPrev: Lp ? Lp.inquirySessions / compareDays : null,
-    inquiryDelta: L && Lp ? pct(L.inquirySessions / baseDays - Lp.inquirySessions / compareDays, Lp.inquirySessions / compareDays) : null,
+    inquiryPerDay: L ? L.inquirySessions / bD : null,
+    inquiryPerDayPrev: Lp ? Lp.inquirySessions / cD : null,
+    inquiryDelta: L && Lp ? pct(L.inquirySessions / bD - Lp.inquirySessions / cD, Lp.inquirySessions / cD) : null,
     // Twelve so the heatmap in S3 finds every discovery country, not only each site's top few.
     countries: (ga4In[label]?.countries?.[BASE] || []).slice(0, 12)
       .map((c) => ({ country: c.country, sessions: c.sessions, activeUsers: c.activeUsers, inquirySessions: c.inquirySessions })),
@@ -298,47 +306,46 @@ const wordingGaps = [
   { searched: 'tattoo removal seoul', menu: '문신제거 / 500원크기 · 명함크기', evidence: gapStat(/tattoo\s*removal/i).text },
   { searched: 'skin analysis seoul / 韓国 肌診断', menu: '3D 피부진단', evidence: gapStat(/skin\s*analysis|肌診断/i).text },
   { searched: 'alltite / hilo wave', menu: `홈페이지에는 전용 페이지가 있습니다(${['alltite-lifting', 'hilo-wave'].filter((p) => namedPaths('beautyblossom.kr').includes(p)).map((p) => '/' + p).join(', ')}). 내부 시술 자료 33개 시트에서는 확인되지 않았습니다.`,
-    evidence: gapStat(/alltite|올타이트|hilo\s*wave|hilowave|하이로/i).text + ' — 두 자료가 서로 다르니 실제 운영 여부를 원내에서 확인해 주십시오' }
+    evidence: gapStat(/alltite|올타이트|hilo\s*wave|hilowave|하이로/i).text + '. 두 자료가 서로 다르니 실제 운영 여부를 원내에서 확인해 주십시오' }
 ];
 
 // ---------------------------------------------------------------------------
 // S0: last month's targets against this month's results
 // ---------------------------------------------------------------------------
+// Each target is read from last month's S7 table and its market figures, so the check uses exactly
+// what was published. Rows whose outcome the data cannot show are marked so rather than guessed.
 const verify = (() => {
-  if (!prev) return null;
+  if (!prev?.kpi) return null;
   const P = Object.fromEntries(prev.markets.map((m) => [m.label, m]));
-  const pDays = prev.meta.basis.ga4.days || 30;
-  const rows = [];
-  const tw = P.TW, en = P.EN, jp = P.JP;
-  if (tw) {
-    const act = MK.TW.convRate;
-    rows.push({ metric: '문의 전환율', market: 'TW', baseline: pc(tw.convRate, 2), target: pc(tw.convRate * 2, 1),
-      actual: pc(act, 2), verdict: act >= tw.convRate * 2 ? '달성' : '미달',
-      note: `같은 정의(문의 이벤트 수 ÷ 접속)입니다. 한국에서 접속한 문의를 뺀 현지 기준으로는 ${pc(MK.TW.localBaseline?.rate, 2)} → ${pc(MK.TW.localRate, 2)}입니다.` });
-  }
-  if (en) {
-    const act = MK.EN.ownedShare;
-    rows.push({ metric: '광고 없이 들어온 비율', market: 'EN', baseline: pc(en.ownedShare, 1), target: pc(Math.min(en.ownedShare * 1.5, 1), 0),
-      actual: pc(act, 1), verdict: act >= Math.min(en.ownedShare * 1.5, 1) ? '달성' : '미달',
-      note: `${M.compare}은 ${pc(MK.EN.ownedSharePrev, 1)}였습니다.` });
-  }
-  if (jp) {
-    const basePD = jp.sessions / pDays, act = MK.JP.sessionsPerDay;
-    rows.push({ metric: '하루 평균 접속 (광고비 고정)', market: 'JP', baseline: `${num(basePD)}회`, target: `${num(basePD * 1.1)}회`,
-      actual: `${num(act)}회`, verdict: '판정 불가',
-      note: `이 기준은 광고비를 고정했을 때만 의미가 있는데, 광고비를 고정했는지는 확인하지 못했습니다. 광고로 들어온 접속이 ${M.compare} 대비 하루 평균 ${sign(MK.JP.paidDelta)} 변했습니다.` });
-  }
-  const krOps = (prev.keywordOps || []).filter((k) => k.market === 'KR');
-  if (krOps.length) {
-    const hr = sum(krOps, (k) => Math.max(0, k.headroom));
-    const bl = nonBrand('baseline'), cur = nonBrand(BASE);
-    const blDays = inputs.baseline?.gsc ? Math.round((Date.parse(inputs.baseline.gsc.end) - Date.parse(inputs.baseline.gsc.start)) / 86400000) + 1 : 30;
-    rows.push({ metric: '병원 이름이 아닌 검색 클릭', market: 'KR', baseline: `${num(sum(krOps, 'clicks'))}회`, target: `+${num(hr * 0.3)}회`,
-      // The target was an increase over a 30-day window, so the result is expressed the same way.
-      actual: bl && cur ? `${sign((cur.bandClicks / gscBaseDays - bl.bandClicks / blDays) / (bl.bandClicks / blDays))} (30일 환산 ${((cur.bandClicks / gscBaseDays - bl.bandClicks / blDays) * 30) >= 0 ? '+' : ''}${num((cur.bandClicks / gscBaseDays - bl.bandClicks / blDays) * 30)}회)` : '—',
-      verdict: bl && cur && (cur.bandClicks / gscBaseDays - bl.bandClicks / blDays) * 30 >= hr * 0.3 ? '달성' : '미달',
-      note: bl && cur ? `지난달 기준값 ${num(sum(krOps, 'clicks'))}회는 상위 25개 검색어만 센 값이라, 이번에 같은 조건으로 전체 검색어를 다시 세었습니다. 기준 기간 ${num(bl.bandClicks)}회(${blDays}일, 하루 ${(bl.bandClicks / blDays).toFixed(1)}회) → ${M.base} ${num(cur.bandClicks)}회(${gscBaseDays}일, 하루 ${(cur.bandClicks / gscBaseDays).toFixed(1)}회). 조건 없이 센 병원 이름 아닌 검색 클릭 전체는 하루 ${(bl.clicks / blDays).toFixed(1)}회 → ${(cur.clicks / gscBaseDays).toFixed(1)}회입니다.` : '' });
-  }
+  const fig = (s) => parseFloat(String(s).replace(/[^0-9.\-]/g, ''));
+  const kShare = (side) => pct(sum(koreaShare, (k) => k[side].korea || 0), sum(koreaShare, (k) => k[side].inquiry || 0));
+  const rows = prev.kpi.map((k) => {
+    const cur = MK[k.market], was = P[k.market];
+    if (k.metric === '현지 문의 발생률' && cur && was) {
+      const target = was.localRatePrev, act = cur.localRate;
+      return { metric: k.metric, market: k.market, baseline: pc(was.localRate, 2), target: pc(target, 2), actual: pc(act, 2),
+        verdict: act >= target ? '달성' : '미달',
+        note: `현지 접속 ${num(cur.local?.sessions)}회 가운데 문의가 나온 접속이 ${num(cur.local?.inquirySessions)}회입니다.` };
+    }
+    if (k.metric.startsWith('하루 평균 현지 문의') && cur && was) {
+      const target = was.inquiryPerDay, act = cur.inquiryPerDay;
+      return { metric: k.metric, market: k.market, baseline: `${target.toFixed(1)}회`, target: `${target.toFixed(1)}회 이상`, actual: `${act.toFixed(1)}회`,
+        verdict: act >= target ? '달성' : '미달',
+        note: `${M.base} 현지 문의 발생 접속은 ${num(cur.local?.inquirySessions)}회(${cur.days}일)입니다.` };
+    }
+    if (k.metric.startsWith('병원 이름이 아닌 검색 클릭')) {
+      const nb = nonBrand(BASE), act = nb ? nb.clicks / gscBaseDays : null, target = fig(k.target);
+      return { metric: '병원 이름이 아닌 검색 클릭 (하루)', market: k.market, baseline: k.now, target: k.target, actual: act == null ? '-' : `${act.toFixed(1)}회`,
+        verdict: act != null && act >= target ? '달성' : '미달',
+        note: nb ? `${M.base} 1~${gscBaseDays}일 동안 ${num(nb.clicks)}회입니다. 노출은 ${num(nb.impressions)}회입니다.` : '' };
+    }
+    if (k.metric.startsWith('해외 사이트 문의 중 한국')) {
+      const act = kShare('base');
+      return { metric: k.metric, market: k.market, baseline: k.now, target: k.target, actual: pc(act, 0), verdict: '판정 불가',
+        note: `GA4 관리 화면은 읽지 못해 원내 접속 제외를 설정했는지는 확인하지 못했습니다. 한국에서 접속한 문의 비율은 ${k.now}에서 ${pc(act, 0)}가 됐습니다.` };
+    }
+    return null;
+  }).filter(Boolean);
   return { basis: prev.meta.basis, rows,
     met: rows.filter((r) => r.verdict === '달성').length, judged: rows.filter((r) => r.verdict !== '판정 불가').length };
 })();
@@ -444,7 +451,7 @@ const priceDisclosure = (() => {
     adLibraryUrl: a.adLibraryUrl, prices: prices.slice(0, 4), hasDiscount: DISCOUNT.test(a.copy), snippet: a.copy.replace(/\n+/g, ' / ').slice(0, 200) }));
   return {
     method: `메타 광고 라이브러리에서 경쟁 병원 광고로 확인된 것 중 본문이 확보된 ${rivals.length}건을 대상으로 통화 기호와 금액 표기를 기계적으로 찾았습니다.`,
-    legalNote: '이 표는 관측된 사실만 담습니다. 위법 여부를 판단하지 않았고 판단할 수도 없습니다. 실제 판단은 법률 검토를 받으시기 바랍니다.',
+    legalNote: '위법 여부는 이 표에서 판단하지 않았습니다.',
     sample: { copyCaptured: withCopy.length, clinicAds: rivals.length, priceAds: rows.length },
     self: { totalWithCopy: mine.length, totalAds: all.filter((a) => a.self).length, priceAds: mine.filter((a) => HAS_PRICE.test(a.copy)).length, discountAds: mine.filter((a) => DISCOUNT.test(a.copy)).length },
     koreaExposed: rows.filter((r) => r.country === 'KR').length, discountAds: rows.filter((r) => r.hasDiscount).length, rows
@@ -527,200 +534,240 @@ const orgSocial = (label, key) => (ga4M[label]?.channels?.[key]?.['Organic Socia
 // ---------------------------------------------------------------------------
 // Judgements. Assigned from the data above; every sentence restates a figure computed here.
 // ---------------------------------------------------------------------------
-const TH = MK.TH, EN = MK.EN, TW = MK.TW, JP = MK.JP, KR = MK.KR, CN = MK.CN;
-const enCountry = (key, name) => (ga4In.EN.countries[key] || []).find((c) => c.country === name) || { sessions: 0, inquirySessions: 0 };
-const cnChina = { now: (ga4In.CN.countries[BASE] || []).find((c) => c.country === 'China') || {}, prev: (ga4In.CN.countries[COMPARE] || []).find((c) => c.country === 'China') || {} };
-const krPaidSocial = { now: ga4M.KR.channels[BASE]?.['Paid Social'] || {}, prev: ga4M.KR.channels[COMPARE]?.['Paid Social'] || {} };
+const TH = MK.TH, EN = MK.EN, TW = MK.TW, JP = MK.JP, KR = MK.KR, CN = MK.CN, HK = MK.HK;
+// GA4 names countries in English; the report reads them in Korean.
+const KO_NAME = { 'South Korea': '한국', Philippines: '필리핀', Indonesia: '인도네시아', 'United Arab Emirates': '아랍에미리트',
+  Qatar: '카타르', Malaysia: '말레이시아', 'South Africa': '남아공', India: '인도', 'United States': '미국', Canada: '캐나다',
+  'Hong Kong': '홍콩', Taiwan: '대만', China: '중국', Japan: '일본', Thailand: '태국', Singapore: '싱가포르', Vietnam: '베트남',
+  Macao: '마카오', 'United Kingdom': '영국', Australia: '호주', 'New Zealand': '뉴질랜드', 'Saudi Arabia': '사우디아라비아' };
+const koName = (c) => KO_NAME[c] || c;
+const cRow = (label, key, name) => (ga4In[label]?.countries?.[key] || []).find((c) => c.country === name) || { sessions: 0, inquirySessions: 0 };
+const chOf = (label, key, name) => ga4M[label]?.channels?.[key]?.[name] || { sessions: 0, keyEvents: 0 };
+// Top referring rows only (25 per site and month), so a source's figure is what those rows show.
+const srcOf = (label, key, re) => { const rows = (ga4In[label]?.sources?.[key] || []).filter((r) => re.test(r.source));
+  return { sessions: sum(rows, 'sessions'), keyEvents: sum(rows, 'keyEvents'), inquirySessions: sum(rows, 'inquirySessions'),
+    pages: [...new Set(rows.map((r) => r.landingPage).filter((p) => p && p !== '(not set)'))] }; };
 const kwFor = (mk) => keywordOps.filter((k) => k.market === mk).slice(0, 3)
   .map((k) => `<code>${esc(k.query)}</code>(노출 ${num(k.impressions)}·${k.position.toFixed(1)}위)`).join(', ');
 const krNB = { base: nonBrand(BASE), prev: nonBrand(COMPARE) };
+const d1 = (n) => (n == null ? '-' : n.toFixed(1));
+const evRate = (c) => (c.sessions ? c.keyEvents / c.sessions : null);
+const P0 = Object.fromEntries((prev?.markets || []).map((m) => [m.label, m]));
+
+// EN: countries that at least doubled to 1,000+ sessions while returning almost no inquiries.
+const enLow = (ga4In.EN.countries[BASE] || []).filter((c) => c.country !== 'South Korea' && c.sessions >= 1000
+  && c.sessions >= 2 * cRow('EN', COMPARE, c.country).sessions && pct(c.inquirySessions, c.sessions) < 0.003);
+const enLowS = sum(enLow, 'sessions'), enLowQ = sum(enLow, 'inquirySessions');
+const enPH = { now: cRow('EN', BASE, 'Philippines'), prev: cRow('EN', COMPARE, 'Philippines') };
+const enID = { now: cRow('EN', BASE, 'Indonesia'), prev: cRow('EN', COMPARE, 'Indonesia') };
+const enDrop = (ga4In.EN.countries[COMPARE] || []).filter((c) => c.country !== 'South Korea')
+  .map((c) => ({ country: c.country, prev: c.inquirySessions, now: cRow('EN', BASE, c.country).inquirySessions }))
+  .filter((d) => d.now < d.prev).sort((a, b) => (a.now - a.prev) - (b.now - b.prev)).slice(0, 2);
+// HK: the same city's visitors on the HK site and on the TW site.
+const hkOnHK = cRow('HK', BASE, 'Hong Kong'), hkOnTW = cRow('TW', BASE, 'Hong Kong'), hkOnTWPrev = cRow('TW', COMPARE, 'Hong Kong');
+const hkThreads = srcOf('HK', BASE, /threads/i);
+// TH and JP: inquiry users and the ad channel split.
+const thTH = { now: cRow('TH', BASE, 'Thailand'), prev: cRow('TH', COMPARE, 'Thailand') };
+const thSearch = { now: chOf('TH', BASE, 'Paid Search'), prev: chOf('TH', COMPARE, 'Paid Search') };
+const jpSearch = { now: chOf('JP', BASE, 'Paid Search'), prev: chOf('JP', COMPARE, 'Paid Search') };
+const jpSocial = { now: chOf('JP', BASE, 'Paid Social'), prev: chOf('JP', COMPARE, 'Paid Social') };
+const cnChina = { now: cRow('CN', BASE, 'China'), prev: cRow('CN', COMPARE, 'China') };
+const krPaidSocial = { now: chOf('KR', BASE, 'Paid Social'), prev: chOf('KR', COMPARE, 'Paid Social') };
+const hkRank = markets.filter((m) => m.label !== 'CN' && m.localRate != null).sort((a, b) => b.localRate - a.localRate).findIndex((m) => m.label === 'HK') + 1;
+const hkStart = (ga4M.HK?.daily || []).find((r) => r.sessions > 0)?.date;
+const igOf = (l) => igAcc.find((a) => a.label === l) || {}, igpOf = (l) => igPosts.find((a) => a.label === l);
 
 const tiers = [
-  { key: 'grow', title: '키울 곳', market: 'TH', accent: 's3',
-    why: `${M.base}에 검색광고가 시작된 뒤 현지 문의가 발생한 접속이 ${num(TH.localPrev?.inquirySessions)}회에서 ${num(TH.local?.inquirySessions)}회로 늘었습니다. 문의가 늘어난 유일한 시장입니다. 다만 한 달치이고 규모가 작습니다.`,
+  { key: 'grow', title: '키울 곳', market: 'HK', accent: 's3',
+    why: `${M.base}에 처음으로 한 달을 다 채운 시장입니다. 현지 접속 ${num(HK.local?.sessions)}회에서 문의가 나온 접속이 ${num(HK.local?.inquirySessions)}회로 현지 문의 발생률이 ${pc(HK.localRate, 2)}입니다. 광고 없이 들어온 접속이 ${pc(HK.ownedShare, 0)}입니다.`,
     actions: [
-      `<b>검색광고를 그대로 유지하시길 권합니다.</b> ${M.base} 검색광고 접속 ${num(ga4M.TH.channels[BASE]?.['Paid Search']?.sessions)}회에서 문의 이벤트 ${num(ga4M.TH.channels[BASE]?.['Paid Search']?.keyEvents)}건이 나왔고, 현지 문의 발생률은 ${pc(TH.localRate)}(${M.compare} ${pc(TH.localRatePrev)})입니다.`,
-      '<b>광고비를 알려 주시면 문의 1건당 광고비를 계산할 수 있습니다.</b> 지금은 광고비 자료가 없어 다른 시장과 효율을 비교하지 못합니다. 예산을 늘릴지는 그 비교가 나온 뒤에 정하는 것이 안전합니다.',
-      `태국 인스타는 ${M.base} 게시물 ${num(igPosts.find((a) => a.label === 'TH')?.count)}개의 도달 합계가 ${num(igPosts.find((a) => a.label === 'TH')?.reachSum)}회로, 다섯 계정 중 가장 작습니다. 문의는 인스타가 아니라 검색광고에서 나오고 있습니다.`
-    ] },
-  { key: 'defend', title: '지킬 곳', market: 'EN', accent: 's1',
-    why: `현지 문의가 발생한 접속이 ${num(EN.local?.inquirySessions)}회로 여전히 가장 많습니다. 그러나 접속은 하루 평균 ${sign(EN.sessionsDelta)} 늘었는데 현지 문의 발생률은 ${pc(EN.localRatePrev)}에서 ${pc(EN.localRate)}로 내려갔습니다.`,
-    actions: [
-      `<b>나라 구성이 바뀌었습니다.</b> 인도네시아 문의 발생 접속이 ${num(enCountry(COMPARE, 'Indonesia').inquirySessions)}회 → ${num(enCountry(BASE, 'Indonesia').inquirySessions)}회로 줄었고, 인도가 접속 ${num(enCountry(COMPARE, 'India').sessions)} → ${num(enCountry(BASE, 'India').sessions)}회·문의 발생 ${num(enCountry(COMPARE, 'India').inquirySessions)} → ${num(enCountry(BASE, 'India').inquirySessions)}회로 늘었습니다. 필리핀은 접속 ${num(enCountry(COMPARE, 'Philippines').sessions)} → ${num(enCountry(BASE, 'Philippines').sessions)}회, 문의 발생 ${num(enCountry(COMPARE, 'Philippines').inquirySessions)} → ${num(enCountry(BASE, 'Philippines').inquirySessions)}회입니다.`,
-      `<b>${M.base}에 광고 대상 국가를 바꾸셨는지 확인이 필요합니다.</b> 광고 설정 자료가 없어 이 변화가 설정 변경 때문인지 확인하지 못했습니다. 설정을 바꾸지 않았다면 인도네시아 광고 성과가 떨어진 것이므로 그쪽부터 보셔야 합니다.`,
-      kwFor('EN') ? `영문 검색에서 순위만 올리면 되는 검색어 — ${kwFor('EN')}.` : ''
+      `<b>홍콩 사람은 HK 사이트에서 더 많이 문의합니다.</b> ${M.base}에 HK 사이트로 들어온 홍콩 접속 ${num(hkOnHK.sessions)}회에서 문의가 나온 접속은 ${num(hkOnHK.inquirySessions)}회(${pc(pct(hkOnHK.inquirySessions, hkOnHK.sessions), 1)})였습니다. 같은 달 대만 사이트로 들어온 홍콩 접속은 ${num(hkOnTWPrev.sessions)}회에서 ${num(hkOnTW.sessions)}회로 늘었는데 문의가 나온 접속은 ${num(hkOnTW.inquirySessions)}회(${pc(pct(hkOnTW.inquirySessions, hkOnTW.sessions), 1)})입니다. 대만 광고가 홍콩에도 노출되고 있다면 홍콩 대상 광고의 도착지를 HK 사이트로 바꿔 비교하시길 권합니다.`,
+      hkThreads.sessions ? `<b>스레드 링크가 HK 사이트 접속의 큰 몫을 만들었습니다.</b> 스레드에서 들어온 접속이 ${num(hkThreads.sessions)}회이고 문의 이벤트는 ${num(hkThreads.keyEvents)}건입니다. 도착 페이지는 ${hkThreads.pages.map((p) => `<code>${esc(p)}</code>`).join(', ')}입니다. 어느 계정의 어떤 글에서 들어왔는지는 이 자료로 확인하지 못했습니다.` : '',
+      '<b>HK 인스타그램 계정은 수집 대상에 없습니다.</b> 홍콩용 SNS 계정을 운영하고 계시면 알려 주십시오. 다음 달부터 함께 집계하겠습니다.'
     ].filter(Boolean) },
-  { key: 'fix', title: '손볼 곳', market: 'TW', accent: 's2',
-    why: (() => { const big = markets.filter((m) => m.sessions >= 10000 && m.label !== 'CN').sort((a, b) => a.localRate - b.localRate);
-      return `접속은 하루 평균 ${sign(TW.sessionsDelta)}로 거의 그대로인데, 현지 문의가 발생한 접속은 하루 ${(TW.inquiryPerDayPrev || 0).toFixed(1)}회에서 ${(TW.inquiryPerDay || 0).toFixed(1)}회로 줄었습니다. ` +
-        (big[0]?.label === 'TW' ? `현지 문의 발생률 ${pc(TW.localRate, 2)}는 접속 1만 회 이상 시장 중 가장 낮습니다(판단을 보류한 중국 제외).` : `현지 문의 발생률은 ${pc(TW.localRate, 2)}입니다.`); })(),
+  { key: 'fix', title: '손볼 곳', market: 'EN', accent: 's1',
+    why: `접속은 하루 평균 ${sign(EN.sessionsDelta)} 늘었는데 현지 문의가 나온 접속은 ${num(EN.localPrev?.inquirySessions)}회에서 ${num(EN.local?.inquirySessions)}회로 늘지 않았습니다. 그래서 현지 문의 발생률이 ${pc(EN.localRatePrev, 2)}에서 ${pc(EN.localRate, 2)}로 내려갔습니다.`,
     actions: [
-      `<b>${M.base} 리포트가 정한 규칙상 대만 예산을 옮길 조건에 해당합니다.</b> 목표 문의 전환율 ${verify?.rows.find((r) => r.market === 'TW')?.target || '—'}에 대해 실적 ${verify?.rows.find((r) => r.market === 'TW')?.actual || '—'}입니다. 다만 그 규칙이 옮길 곳으로 정한 EN도 ${M.base}에 문의 발생률이 내려갔으니, 옮기기 전에 시장별 문의 1건당 광고비부터 비교하시길 권합니다.`,
-      `홍콩에서 온 접속이 ${num((ga4In.TW.countries[COMPARE] || []).find((c) => c.country === 'Hong Kong')?.sessions)}회 → ${num((ga4In.TW.countries[BASE] || []).find((c) => c.country === 'Hong Kong')?.sessions)}회로 늘었고, 그중 문의가 발생한 접속은 ${num((ga4In.TW.countries[BASE] || []).find((c) => c.country === 'Hong Kong')?.inquirySessions)}회입니다. ${M.base}에 새로 잡힌 기타 유료 광고 유입 ${num(ga4M.TW.channels[BASE]?.['Paid Other']?.sessions)}회에서는 문의가 ${num(ga4M.TW.channels[BASE]?.['Paid Other']?.keyEvents)}건이었습니다.`,
-      `대만 인스타는 ${M.base} 조회가 ${num(igAcc.find((a) => a.label === 'TW')?.viewsPrev)} → ${num(igAcc.find((a) => a.label === 'TW')?.views)}회로 줄었습니다.`
+      enLow.length ? `<b>늘어난 접속의 상당 부분이 문의가 거의 없는 나라에서 왔습니다.</b> ${enLow.map((c) => `${koName(c.country)} ${num(cRow('EN', COMPARE, c.country).sessions)} → ${num(c.sessions)}회`).join(', ')}입니다. 이 ${enLow.length}개 나라 접속 ${num(enLowS)}회에서 문의가 나온 접속은 ${num(enLowQ)}회입니다.` : '',
+      `<b>필리핀은 접속이 늘어난 만큼 문의도 늘었습니다.</b> 접속 ${num(enPH.prev.sessions)} → ${num(enPH.now.sessions)}회, 문의가 나온 접속 ${num(enPH.prev.inquirySessions)} → ${num(enPH.now.inquirySessions)}회입니다. 인도네시아는 접속 ${num(enID.prev.sessions)} → ${num(enID.now.sessions)}회, 문의가 나온 접속 ${num(enID.prev.inquirySessions)} → ${num(enID.now.inquirySessions)}회입니다.`,
+      enDrop.length ? `문의가 가장 많이 줄어든 나라는 ${enDrop.map((d) => `${koName(d.country)}(${num(d.prev)} → ${num(d.now)}회)`).join(', ')}입니다.` : '',
+      `<b>${M.base}에 광고 노출 국가를 넓히셨는지 확인이 필요합니다.</b> 광고 설정과 광고비 자료가 없어 확인하지 못했습니다. 넓혔다면 위 ${enLow.length}개 나라에 들어간 광고비를 필리핀·인도네시아와 문의 1건당 비용으로 비교한 뒤 유지 여부를 정하시길 권합니다.`
+    ].filter(Boolean) },
+  { key: 'check', title: '확인할 곳', market: 'TH', accent: 's2',
+    why: `현지 문의가 나온 접속이 ${num(TH.localPrev?.inquirySessions)}회에서 ${num(TH.local?.inquirySessions)}회로 줄었습니다. 같은 기간 검색광고 접속은 ${num(thSearch.prev.sessions)}회에서 ${num(thSearch.now.sessions)}회로 줄지 않았습니다.`,
+    actions: [
+      `<b>검색광고 접속은 그대로인데 문의가 줄었습니다.</b> 검색광고 접속의 문의 이벤트는 ${num(thSearch.prev.keyEvents)}건에서 ${num(thSearch.now.keyEvents)}건이 됐습니다. 태국에서 접속한 문의 발생 접속은 ${num(thTH.prev.inquirySessions)}회에서 ${num(thTH.now.inquirySessions)}회입니다.`,
+      `<b>${M.base}에 검색광고의 검색어나 도착 페이지를 바꾸셨는지 확인이 필요합니다.</b> 광고 관리자 자료가 없어 확인하지 못했습니다. ${M.base}에 새로 잡힌 SNS 광고 접속은 ${num(chOf('TH', BASE, 'Paid Social').sessions)}회이고 문의 이벤트는 ${num(chOf('TH', BASE, 'Paid Social').keyEvents)}건입니다.`
     ] },
-  { key: 'check', title: '확인할 곳', market: 'JP', accent: 's4',
-    why: `광고로 들어온 접속이 하루 평균 ${sign(JP.paidDelta)} 줄면서 전체 접속도 ${sign(JP.sessionsDelta)} 줄었습니다. 현지 문의 발생률은 ${pc(JP.localRatePrev)}에서 ${pc(JP.localRate)}로 올랐습니다.`,
+  { key: 'check2', title: '확인할 곳', market: 'JP', accent: 's4',
+    why: `현지 문의 발생률이 ${pc(JP.localRatePrev, 2)}에서 ${pc(JP.localRate, 2)}로 내려갔습니다. 접속은 하루 평균 ${sign(JP.sessionsDelta)}로 비슷했습니다.`,
     actions: [
-      '<b>광고비가 줄었는지부터 확인이 필요합니다.</b> 광고비가 줄어 접속이 줄었다면, 줄어든 만큼보다 문의가 덜 줄었다는 뜻이라 광고 효율은 나빠지지 않은 것입니다. 광고비가 그대로였다면 같은 돈으로 덜 사 온 것입니다. 두 경우의 대응이 반대입니다.',
-      `문의가 발생한 접속은 하루 ${(JP.inquiryPerDayPrev || 0).toFixed(1)}회 → ${(JP.inquiryPerDay || 0).toFixed(1)}회입니다.`,
-      kwFor('JP') ? `일본어 검색에서 순위만 올리면 되는 검색어 — ${kwFor('JP')}.` : ''
+      `<b>검색광고 접속이 줄고 SNS 광고 접속이 늘었습니다.</b> 검색광고 ${num(jpSearch.prev.sessions)} → ${num(jpSearch.now.sessions)}회, SNS 광고 ${num(jpSocial.prev.sessions)} → ${num(jpSocial.now.sessions)}회입니다.`,
+      `<b>접속 100회당 문의 이벤트는 검색광고가 더 많습니다.</b> ${M.base} 검색광고 ${pc(evRate(jpSearch.now), 1)}, SNS 광고 ${pc(evRate(jpSocial.now), 1)}입니다(${M.compare} ${pc(evRate(jpSearch.prev), 1)}, ${pc(evRate(jpSocial.prev), 1)}). 광고비가 검색광고에서 SNS 광고로 옮겨 갔는지 확인이 필요합니다.`,
+      kwFor('JP') ? `일본어 검색에서 순위만 올리면 되는 검색어는 ${kwFor('JP')}입니다.` : ''
+    ].filter(Boolean) },
+  { key: 'keep', title: '이어갈 곳', market: 'TW', accent: 's2',
+    why: `현지 문의 발생률이 ${pc(TW.localRatePrev, 2)}에서 ${pc(TW.localRate, 2)}로 올랐습니다. 대만에서 접속한 문의 발생 접속이 ${num(cRow('TW', COMPARE, 'Taiwan').inquirySessions)}회에서 ${num(cRow('TW', BASE, 'Taiwan').inquirySessions)}회로 늘었습니다.`,
+    actions: [
+      `<b>${M.base} 리포트가 정한 목표(${pc(P0.TW?.localRatePrev, 2)})에는 못 미쳤습니다.</b> ${M.compare}보다는 올랐으니 지금 광고 구성을 유지하고 한 달 더 보시길 권합니다.`,
+      igpOf('TW')?.top[0] ? `대만 인스타 릴스 1개("${esc(igpOf('TW').top[0].caption)}")의 도달이 ${num(igpOf('TW').top[0].reach)}회였습니다. 같은 달 대만 사이트에 광고가 아닌 SNS로 들어온 접속은 ${num(orgSocial('TW', BASE))}회이고 문의 이벤트는 ${num(chOf('TW', BASE, 'Organic Social').keyEvents)}건입니다.` : ''
     ].filter(Boolean) },
   { key: 'asset', title: '키워둘 곳', market: 'KR', accent: 's6',
-    why: `광고 없이 들어오는 접속이 ${pc(KR.ownedShare, 0)}로 여전히 가장 높은 시장입니다. 문의가 발생한 접속은 하루 ${(KR.inquiryPerDayPrev || 0).toFixed(1)}회 → ${(KR.inquiryPerDay || 0).toFixed(1)}회입니다.`,
+    why: `광고 없이 들어오는 접속이 ${pc(KR.ownedShare, 0)}로 가장 높은 시장입니다. 문의가 나온 접속은 하루 ${d1(KR.inquiryPerDayPrev)}회에서 ${d1(KR.inquiryPerDay)}회입니다.`,
     actions: [
-      `<b>병원 이름이 아닌 검색으로 들어온 클릭이 줄었습니다</b> — 하루 ${krNB.prev ? (krNB.prev.clicks / compareDays).toFixed(1) : '—'}회 → ${krNB.base ? (krNB.base.clicks / gscBaseDays).toFixed(1) : '—'}회. 새 고객을 데려오는 검색이 줄었다는 뜻입니다.${kwFor('KR') ? ` 우선 대상 — ${kwFor('KR')}.` : ''}`,
-      `<b>SNS 광고로 들어온 접속 ${num(krPaidSocial.now.sessions)}회에서 문의는 ${num(krPaidSocial.now.keyEvents)}건이었습니다</b>(${M.compare} ${num(krPaidSocial.prev.sessions)}회에서 ${num(krPaidSocial.prev.keyEvents)}건). 국내 SNS 광고의 목적이 문의가 아니라 인지도라면 그대로 두셔도 되지만, 문의가 목적이라면 점검 대상입니다.`,
-      `인스타 KR 도달은 ${num(igAcc.find((a) => a.label === 'KR')?.reachPrev)} → ${num(igAcc.find((a) => a.label === 'KR')?.reach)}회로 늘었지만, 인스타·SNS에서 홈페이지로 들어온 접속은 ${num(orgSocial('KR', COMPARE))} → ${num(orgSocial('KR', BASE))}회였습니다(S4-1 참조).`
+      `<b>병원 이름이 아닌 검색으로 들어온 클릭은 하루 ${krNB.prev ? (krNB.prev.clicks / compareDays).toFixed(1) : '-'}회에서 ${krNB.base ? (krNB.base.clicks / gscBaseDays).toFixed(1) : '-'}회입니다.</b> 새 고객이 검색으로 들어오는 길입니다.${kwFor('KR') ? ` 우선 대상은 ${kwFor('KR')}입니다.` : ''}`,
+      `<b>SNS 광고 접속 ${num(krPaidSocial.now.sessions)}회에서 문의 이벤트는 ${num(krPaidSocial.now.keyEvents)}건이었습니다</b>(${M.compare} ${num(krPaidSocial.prev.sessions)}회에서 ${num(krPaidSocial.prev.keyEvents)}건). 국내 SNS 광고의 목적이 인지도라면 그대로 두셔도 됩니다. 문의가 목적이라면 점검이 필요합니다.`
     ] },
-  { key: 'hold', title: '판단 보류', market: 'CN', accent: 's5',
-    why: `접속이 ${num(ga4M.CN.months[COMPARE].sessions)}회에서 ${num(CN.sessions)}회로 늘었는데, 늘어난 몫은 거의 전부 중국에서 주소를 직접 입력한 것으로 잡힌 접속이고 문의는 늘지 않았습니다.`,
+  { key: 'hold', title: '지켜볼 곳', market: 'CN', accent: 's5',
+    why: `중국에서 온 접속이 ${num(cnChina.prev.sessions)}회에서 ${num(cnChina.now.sessions)}회로 또 늘었습니다. 거의 전부 주소를 직접 입력한 것으로 잡힌 접속이고 문의는 늘지 않았습니다.`,
     actions: [
-      `중국에서 온 접속 ${num(cnChina.prev.sessions)}회 → ${num(cnChina.now.sessions)}회, 그중 문의가 발생한 접속 ${num(cnChina.prev.inquirySessions)}회 → ${num(cnChina.now.inquirySessions)}회입니다. <b>이 접속이 어디서 오는지는 확인하지 못했습니다.</b> 원인을 확인하기 전까지는 중국 사이트 수치로 판단하지 않으시길 권합니다.`,
-      `중국 사이트의 현지 문의 발생 접속은 ${num(CN.localPrev?.inquirySessions)}회 → ${num(CN.local?.inquirySessions)}회로 거의 그대로입니다.`
+      `중국에서 접속한 문의 발생 접속은 ${num(cnChina.prev.inquirySessions)}회에서 ${num(cnChina.now.inquirySessions)}회입니다. <b>이 접속이 어디서 오는지는 이번에도 확인하지 못했습니다.</b> 출처가 확인될 때까지 중국 사이트 접속 수는 성과 판단에 쓰지 않으시길 권합니다.`
     ] }
 ];
 
 const organicPlays = [
   (() => {
-    const kr = igPosts.find((a) => a.label === 'KR'); const top = kr?.top[0];
-    const same = igPosts.filter((a) => a.label !== 'KR' && a.top[0] && /fish|魚|물고기|camera|カメラ/i.test(a.top[0].caption)).map((a) => a.label);
-    return { title: '인스타는 기획형 릴스가 도달을 만들고, 홈페이지로는 아직 이어지지 않습니다', priority: '높음',
+    const tw = igpOf('TW')?.top[0], kr = igpOf('KR');
+    return { title: '인스타 도달이 크게 늘었지만 홈페이지로 오는 길은 아직 좁습니다', priority: '높음',
       cost: '추가 비용 없음 (게시물 구성 변경)',
-      evidence: top ? `KR 계정의 ${M.base} 게시물 ${kr.count}개 도달 합계 ${num(kr.reachSum)}회 가운데 ${num(top.reach)}회(${pc(top.reach / kr.reachSum, 0)})가 릴스 1개("${top.caption}")에서 나왔습니다. 두 번째로 높은 게시물은 ${num(kr.top[1]?.reach)}회입니다. 같은 영상이 ${same.join('·') || '다른 계정'}에서도 그 계정의 1위였습니다. 그런데 인스타 등 SNS에서 홈페이지로 들어온 접속은 ${num(orgSocial('KR', COMPARE))} → ${num(orgSocial('KR', BASE))}회, 프로필 링크 클릭은 ${num(igAcc.find((a) => a.label === 'KR')?.tapsPrev)} → ${num(igAcc.find((a) => a.label === 'KR')?.taps)}회였습니다.` : '게시물 자료가 없습니다.',
-      why: '도달은 기획 영상이 만들고 문의는 홈페이지에서 나옵니다. 지금은 둘 사이에 연결이 없어, 많이 본 영상이 문의로 이어졌는지 확인할 길이 없습니다.',
-      how: '기획형 릴스는 계속 만들되, 영상 끝이나 캡션 첫 줄에 해당 시술 한 가지와 프로필 링크를 넣고, 넣은 영상과 넣지 않은 영상의 프로필 링크 클릭 수를 비교합니다.',
-      firstStep: `${M.exec}에 올리는 기획형 릴스 2개에만 시술 안내와 링크 유도를 넣고, ${M.next} 리포트에서 링크 클릭 수를 비교하시길 권합니다.`,
-      langOrder: null, sources: top ? [top.permalink] : [] };
+      evidence: `${M.base} 계정 도달은 ${['KR', 'EN', 'TW'].map((l) => `${l} ${num(igOf(l).reachPrev)} → ${num(igOf(l).reach)}회`).join(', ')}입니다. ` +
+        (tw ? `대만은 릴스 1개가 ${num(tw.reach)}회로 계정 도달의 ${pc(tw.reach / igOf('TW').reach, 0)}를 차지했습니다. ` : '') +
+        (kr ? `KR 계정이 ${M.base}에 올린 게시물 ${kr.count}개의 도달 합계는 ${num(kr.reachSum)}회입니다. 계정 도달의 나머지가 어느 게시물에서 나왔는지는 이 자료로 확인하지 못했습니다. ` : '') +
+        `프로필 링크 클릭은 ${['KR', 'EN', 'TW'].map((l) => `${l} ${num(igOf(l).tapsPrev)} → ${num(igOf(l).taps)}회`).join(', ')}입니다.`,
+      why: '도달은 영상이 만들고 문의는 홈페이지에서 나옵니다. 링크 클릭이 한 자릿수라 많이 본 영상이 문의로 이어졌는지 확인할 길이 없습니다.',
+      how: '도달이 큰 릴스의 캡션 첫 줄과 고정 댓글에 시술 한 가지와 해당 국가 사이트 주소를 넣고 넣은 영상과 넣지 않은 영상의 링크 클릭 수를 비교합니다.',
+      firstStep: `${M.exec}에 올리는 릴스 중 2개에만 사이트 주소를 넣고 ${M.next} 리포트에서 링크 클릭 수를 비교하시길 권합니다.`,
+      langOrder: null, sources: tw ? [tw.permalink] : [] };
   })(),
+  { title: '스레드 링크가 HK 사이트 문의를 만들었습니다', priority: '높음', cost: '추가 비용 없음',
+    evidence: hkThreads.sessions ? `${M.base}에 스레드에서 HK 사이트로 들어온 접속은 ${num(hkThreads.sessions)}회로 HK 사이트 전체 접속 ${num(HK.sessions)}회 가운데 ${pc(hkThreads.sessions / HK.sessions, 0)}입니다. 문의 이벤트는 ${num(hkThreads.keyEvents)}건입니다.` : '스레드 유입 자료가 없습니다.',
+    why: '광고비 없이 들어온 접속에서 문의가 나온 사례입니다. 같은 방식이 다른 시장에서도 통하는지는 아직 확인한 적이 없습니다.',
+    how: '이 링크가 걸린 스레드 글을 찾아 형식(이벤트 소개·링크 위치)을 정리하고 같은 형식으로 대만 계정에도 대만 사이트 링크를 걸어 비교합니다.',
+    firstStep: `${M.exec} 첫 주에 HK 접속을 만든 스레드 글을 확인하고 같은 형식의 글을 대만 계정에 1개 올리시길 권합니다.`,
+    langOrder: null, sources: [] },
   (() => {
-    const a = yt.find((y) => y.short === '블라썸1호'), b = yt.find((y) => y.short === 'Doctor Lee');
-    return { title: '해외 시청은 이미 Doctor Lee 채널에서 나오고 있습니다', priority: '보통',
-      cost: '추가 비용 없음',
-      evidence: `블라썸1호 채널은 ${M.base} 조회 ${num(a?.views)}회(${a?.days}일) 중 해외 비중 ${pc(a?.share?.abroadShare, 0)}(${M.compare} ${pc(a?.sharePrev?.abroadShare, 0)})입니다. Doctor Lee 채널은 ${M.base} 조회 ${num(b?.views)}회 중 해외 비중 ${pc(b?.share?.abroadShare, 0)}이고, 상위 국가는 ${(b?.share?.top || []).map((c) => `${c.country} ${num(c.views)}`).join(' · ')}회입니다.`,
-      why: `${M.base} 리포트는 블라썸1호 영상에 외국어 자막을 달자고 권했는데, 실행 여부는 확인하지 못했고 해외 비중은 늘지 않았습니다. 해외 시청이 실제로 일어나고 있는 곳은 Doctor Lee 채널입니다.`,
-      how: 'Doctor Lee 채널 영상 설명란과 고정 댓글에 시청 국가에 맞는 사이트 주소(en·jp·tw)를 넣습니다. 블라썸1호는 국내 시청자용으로 두고 두 채널의 역할을 나눕니다.',
-      firstStep: 'Doctor Lee 채널 조회 상위 영상 5개의 설명란에 en.beautyblossom.kr 링크를 넣고, 다음 달 GA4에서 유튜브 유입을 확인합니다.',
+    const b = yt.find((y) => y.short === 'Doctor Lee');
+    return { title: '해외 시청은 Doctor Lee 채널에서 나오고 있습니다', priority: '보통', cost: '추가 비용 없음',
+      evidence: `Doctor Lee 채널의 ${M.base} 조회는 ${num(b?.views)}회입니다. 나라가 확인된 조회 ${num(b?.share?.total)}회 가운데 해외 비중이 ${pc(b?.share?.abroadShare, 0)}이고 상위 국가는 ${(b?.share?.top || []).map((c) => `${c.country} ${num(c.views)}`).join(' · ')}회입니다.`,
+      why: `${M.base} 리포트는 이 채널 영상 설명란에 해외 사이트 링크를 넣자고 권했습니다. 실행 여부는 확인하지 못했습니다.`,
+      how: '조회 상위 영상의 설명란과 고정 댓글에 시청 국가에 맞는 사이트 주소(en·jp·tw)를 넣습니다.',
+      firstStep: 'Doctor Lee 채널 조회 상위 영상 5개의 설명란에 en.beautyblossom.kr 링크를 넣고 다음 달 GA4에서 유튜브 유입을 확인합니다.',
       langOrder: null, sources: [] };
-  })(),
-  { title: '광고를 눌렀을 때 어디로 보낼지 나눠서 비교하기 (지난달 권고 유지)', priority: '보통',
-    cost: '추가 비용 없음 (광고 설정 변경)',
-    evidence: channelMentions ? `경쟁사 광고 ${num(channelMentions.rivalTotal)}건 중 인스타그램으로 보내는 광고가 ${num(channelMentions.rows.find((r) => r.name === '인스타그램')?.rivalLanding)}건입니다. ${M.base} 리포트에서 권한 이 비교는 실행 여부를 확인하지 못했습니다.` : '',
-    why: '어느 쪽이 나은지는 우리 숫자로 비교해 본 적이 없습니다.',
-    how: '같은 광고를 두 벌로 나눠 한쪽은 홈페이지, 한쪽은 해당 국가 인스타 계정으로 보내고 문의 발생률을 비교합니다.',
-    firstStep: `문의 발생률이 가장 낮은 대만(${pc(TW.localRate, 2)})부터 시작하시길 권합니다.`,
-    langOrder: null, sources: [] }
+  })()
 ];
 
 // S6 flow and S7 targets. Each target is the market's own most recent good level, not a forecast.
 const kpi = [
-  { metric: '현지 문의 발생률', market: 'TW', now: pc(TW.localRate, 2), target: pc(TW.localRatePrev, 2), use: `${M.compare} 수준입니다. 못 미치면 대만 광고 예산을 줄이고, 옮길 곳은 시장별 문의 1건당 광고비를 비교해 정합니다` },
-  { metric: '하루 평균 현지 문의 발생 접속', market: 'TH', now: `${(TH.inquiryPerDay || 0).toFixed(1)}회`, target: `${(TH.inquiryPerDay || 0).toFixed(1)}회 이상`, use: '광고 첫 달 수준이 유지되는지 봅니다. 유지되면 광고비 자료와 함께 증액을 검토합니다' },
-  { metric: '현지 문의 발생률', market: 'EN', now: pc(EN.localRate, 2), target: pc(EN.localRatePrev, 2), use: `${M.compare} 수준입니다. 인도·인도네시아·필리핀을 나눠 함께 기록합니다` },
-  { metric: '병원 이름이 아닌 검색 클릭 (하루)', market: 'KR', now: krNB.base ? (krNB.base.clicks / gscBaseDays).toFixed(1) + '회' : '—', target: krNB.prev ? (krNB.prev.clicks / compareDays).toFixed(1) + '회' : '—', use: `${M.compare} 수준입니다. 새 고객이 검색으로 들어오는지 봅니다` },
-  { metric: '해외 사이트 문의 중 한국에서 접속한 비율', market: '전체', now: pc(sum(koreaShare, (k) => k.base.korea || 0) / sum(koreaShare, (k) => k.base.inquiry || 0), 0), target: '원내 접속 제외 설정', use: '원내 PC·휴대폰 접속을 GA4에서 제외해야 모든 시장의 문의 수를 같은 기준으로 셀 수 있습니다' }
+  { metric: '하루 평균 현지 문의 발생 접속', market: 'HK', now: `${d1(HK.inquiryPerDay)}회`, target: `${d1(HK.inquiryPerDay)}회 이상`, use: '첫 달 수준이 유지되는지 봅니다. 홍콩 대상 광고의 도착지를 바꿨다면 그 효과도 함께 봅니다' },
+  { metric: '현지 문의 발생률', market: 'EN', now: pc(EN.localRate, 2), target: pc(EN.localRatePrev, 2), use: `${M.compare} 수준입니다. 필리핀·인도네시아와 새로 늘어난 나라를 나눠 함께 기록합니다` },
+  { metric: '하루 평균 현지 문의 발생 접속', market: 'TH', now: `${d1(TH.inquiryPerDay)}회`, target: `${d1(TH.inquiryPerDayPrev)}회`, use: `${M.compare} 수준입니다. 검색광고 변경 내역과 함께 봅니다` },
+  { metric: '현지 문의 발생률', market: 'JP', now: pc(JP.localRate, 2), target: pc(JP.localRatePrev, 2), use: `${M.compare} 수준입니다. 검색광고와 SNS 광고 접속을 나눠 기록합니다` },
+  { metric: '현지 문의 발생률', market: 'TW', now: pc(TW.localRate, 2), target: pc(P0.TW?.localRatePrev ?? TW.localRate, 2), use: `${M.base} 리포트가 정한 목표를 그대로 둡니다` },
+  { metric: '병원 이름이 아닌 검색 클릭 (하루)', market: 'KR', now: krNB.base ? (krNB.base.clicks / gscBaseDays).toFixed(1) + '회' : '-', target: krNB.prev ? (krNB.prev.clicks / compareDays).toFixed(1) + '회' : '-', use: `${M.compare} 수준입니다. 새 고객이 검색으로 들어오는지 봅니다` }
 ];
 const flow = {
   nodes: [
     { id: 'start', col: 0, y: 40, w: 190, h: 44, t: `${M.exec} 시작`, kind: 'start' },
-    { id: 'd1', col: 0, y: 118, w: 210, h: 60, t: '문의 집계 정리\n원내 접속 제외 설정', kind: 'act', c: '--ink2' },
-    { id: 'th1', col: 0, y: 210, w: 210, h: 60, t: `태국 검색광고 유지\n현지 문의 ${num(TH.local?.inquirySessions)}회/월`, kind: 'act', c: '--s3' },
-    { id: 'thq', col: 1, y: 210, w: 210, h: 66, t: `하루 ${(TH.inquiryPerDay || 0).toFixed(1)}회\n유지되나?`, kind: 'dec', c: '--s3' },
-    { id: 'thy', col: 2, y: 210, w: 200, h: 46, t: '광고비 확인 후 증액 검토', kind: 'act', c: '--s6' },
-    { id: 'tw1', col: 0, y: 305, w: 210, h: 60, t: `대만 광고 점검\n현지 문의율 ${pc(TW.localRate, 2)}`, kind: 'act', c: '--s2' },
-    { id: 'twq', col: 1, y: 305, w: 210, h: 66, t: `${pc(TW.localRatePrev, 2)}로\n회복했나?`, kind: 'dec', c: '--s2' },
-    { id: 'twn', col: 2, y: 305, w: 200, h: 46, t: '대만 예산 축소', kind: 'act', c: '--bad' },
-    { id: 'en1', col: 0, y: 400, w: 210, h: 60, t: 'EN 광고 대상 국가 확인\n인도네시아↓ 인도↑', kind: 'act', c: '--s1' },
-    { id: 'enq', col: 1, y: 400, w: 210, h: 66, t: `문의율 ${pc(EN.localRatePrev, 2)}로\n회복했나?`, kind: 'dec', c: '--s1' },
-    { id: 'jp1', col: 0, y: 495, w: 210, h: 60, t: '일본 광고비 확인\n광고 접속 ' + sign(JP.paidDelta), kind: 'act', c: '--s4' },
-    { id: 'jpq', col: 1, y: 495, w: 210, h: 66, t: '문의 1건당\n광고비 계산', kind: 'act', c: '--s4' },
+    { id: 'd1', col: 0, y: 118, w: 210, h: 60, t: '나라별 광고비 자료 받기\n광고 관리자', kind: 'act', c: '--ink2' },
+    { id: 'hk1', col: 0, y: 210, w: 210, h: 60, t: `홍콩 광고 도착지 HK로\n현지 문의 ${d1(HK.inquiryPerDay)}회/일`, kind: 'act', c: '--s3' },
+    { id: 'hkq', col: 1, y: 210, w: 210, h: 66, t: `하루 ${d1(HK.inquiryPerDay)}회\n유지되나?`, kind: 'dec', c: '--s3' },
+    { id: 'hky', col: 2, y: 210, w: 200, h: 46, t: '스레드 형식 대만에 적용', kind: 'act', c: '--s6' },
+    { id: 'en1', col: 0, y: 305, w: 210, h: 60, t: `EN 늘어난 나라 점검\n문의 ${num(enLowQ)}회/${num(enLowS)}회`, kind: 'act', c: '--s1' },
+    { id: 'enq', col: 1, y: 305, w: 210, h: 66, t: `문의율 ${pc(EN.localRatePrev, 2)}로\n회복했나?`, kind: 'dec', c: '--s1' },
+    { id: 'enn', col: 2, y: 305, w: 200, h: 46, t: '늘어난 나라 광고 축소 검토', kind: 'act', c: '--bad' },
+    { id: 'th1', col: 0, y: 400, w: 210, h: 60, t: `태국 검색광고 변경 확인\n현지 문의 ${d1(TH.inquiryPerDay)}회/일`, kind: 'act', c: '--s2' },
+    { id: 'thq', col: 1, y: 400, w: 210, h: 66, t: `${d1(TH.inquiryPerDayPrev)}회로\n돌아왔나?`, kind: 'dec', c: '--s2' },
+    { id: 'jp1', col: 0, y: 495, w: 210, h: 60, t: '일본 검색광고·SNS 광고\n광고비 비율 확인', kind: 'act', c: '--s4' },
+    { id: 'jpq', col: 1, y: 495, w: 210, h: 66, t: '문의 1건당\n광고비 비교', kind: 'act', c: '--s4' },
     { id: 'end', col: 3, y: 300, w: 180, h: 62, t: `${M.next}에 되짚기\n같은 기준으로 판단`, kind: 'start' }
   ],
-  edges: [['start', 'd1'], ['d1', 'th1'], ['th1', 'thq'], ['thq', 'thy', '예'], ['tw1', 'twq'], ['twq', 'twn', '아니오'],
-    ['en1', 'enq'], ['jp1', 'jpq'], ['thy', 'end'], ['twn', 'end'], ['twq', 'end', '예'], ['enq', 'end'], ['jpq', 'end']]
+  edges: [['start', 'd1'], ['d1', 'hk1'], ['hk1', 'hkq'], ['hkq', 'hky', '예'], ['en1', 'enq'], ['enq', 'enn', '아니오'],
+    ['th1', 'thq'], ['jp1', 'jpq'], ['hky', 'end'], ['enn', 'end'], ['enq', 'end', '예'], ['thq', 'end'], ['jpq', 'end']]
 };
 
 // Summary: restates figures above; nothing new is asserted at the top.
 const totalSessions = sum(markets, 'sessions');
 const paidTotal = sum(markets, (m) => m.sessions * (m.paidShare || 0));
-const foreignInq = sum(koreaShare, (k) => k.compare.form.total), foreignInqKr = sum(koreaShare, (k) => k.compare.form.korea);
+const localQ = sum(markets, (m) => m.local?.inquirySessions || 0), localQPrev = sum(markets, (m) => (m.localPrev?.inquirySessions || 0));
 const summary = {
   tiles: [
-    { k: `${M.base} 홈페이지 접속`, v: num(totalSessions / baseDays), d: `하루 평균 · 6개 사이트 (${M.base} 1~${baseDays}일)` },
+    { k: `${M.base} 홈페이지 접속`, v: num(totalSessions / baseDays), d: `하루 평균 · ${markets.length}개 사이트 (${M.base} 1~${baseDays}일)` },
     { k: '광고로 온 비율', v: pc(paidTotal / totalSessions, 0), d: '광고를 멈추면 사라지는 몫' },
-    { k: `${M.base} 목표 달성`, v: verify ? `${verify.met} / ${verify.judged}` : '—', d: verify ? `판정 가능한 ${verify.judged}개 기준${verify.rows.length > verify.judged ? ` · ${verify.rows.length - verify.judged}개는 판정 불가` : ''}` : '지난달 리포트 없음' },
-    { k: `해외 사이트 폼 문의 중 한국 접속`, v: pc(foreignInqKr / foreignInq, 0), d: `${M.compare} ${num(foreignInq)}건 중 ${num(foreignInqKr)}건` },
+    { k: `${M.base} 목표 달성`, v: verify ? `${verify.met} / ${verify.judged}` : '-', d: verify ? `판정 가능한 ${verify.judged}개 기준${verify.rows.length > verify.judged ? ` · ${verify.rows.length - verify.judged}개는 판정 불가` : ''}` : '지난달 리포트 없음' },
+    { k: '현지 문의가 나온 접속', v: num(localQ), d: `${M.compare} ${num(localQPrev)}회 · 한국 접속 제외` },
     { k: '현지 문의가 는 시장', v: markets.filter((m) => m.label !== 'CN' && m.inquiryDelta > 0.1).map((m) => m.label).join(' · ') || '없음', d: `하루 평균 기준 · ${M.compare} 대비` },
     { k: '조사한 경쟁 병원', v: num((competitors?.deepDive || []).filter((d) => !d.isSelf).length), d: `이들의 광고 ${num(sum((competitors?.deepDive || []).filter((d) => !d.isSelf), 'totalAds'))}건` }
   ],
   points: [
-    verify ? `<b>${M.base} 리포트가 정한 목표 ${verify.rows.length}개 중 판정 가능한 ${verify.judged}개에서 ${verify.met ? verify.met + '개를 달성했습니다' : '하나도 달성하지 못했습니다'}.</b> ${verify.rows.filter((r) => r.verdict === '미달').map((r) => `${r.market} ${r.metric}(목표 ${r.target}, 실적 ${r.actual})`).join(', ')}. ${verify.rows.some((r) => r.verdict === '판정 불가') ? verify.rows.filter((r) => r.verdict === '판정 불가').map((r) => r.market).join('·') + '은 광고비 자료가 없어 판정하지 않았습니다' : ''}(S0).` : '',
-    `<b>문의 집계를 바로잡았습니다.</b> ${M.compare} 해외 사이트 폼 문의 ${num(foreignInq)}건 중 ${num(foreignInqKr)}건이 한국에서 접속한 소수 인원이 보낸 것이었습니다. 지난달 리포트의 문의 전환율은 이것을 포함한 값입니다. 이번 리포트는 모든 시장을 한국 접속을 뺀 <b>현지 기준</b>으로 판단합니다(S0).`,
-    (() => { const up = markets.filter((m) => m.label !== 'CN' && m.inquiryDelta > 0.1), down = markets.filter((m) => m.label !== 'CN' && m.inquiryDelta < -0.1);
-      return `<b>현지 기준으로 문의가 는 곳은 ${up.map((m) => m.label).join('·') || '없습니다'}${up.length ? '입니다' : ''}.</b> ` +
-        (up.some((m) => m.label === 'TH') ? `태국은 검색광고를 시작한 ${M.base}에 문의 발생 접속이 ${num(TH.localPrev?.inquirySessions)} → ${num(TH.local?.inquirySessions)}회가 됐습니다. ` : '') +
-        (down.length ? `${down.map((m) => `${m.label}(${sign(m.inquiryDelta)})`).join('·')}은 하루 평균으로 줄었습니다.` : ''); })(),
-    (() => { const kr = igPosts.find((a) => a.label === 'KR'); return kr?.top[0] ? `<b>인스타 KR 도달이 ${num(igAcc.find((a) => a.label === 'KR')?.reachPrev)} → ${num(igAcc.find((a) => a.label === 'KR')?.reach)}회로 늘었는데, ${pc(kr.top[0].reach / kr.reachSum, 0)}가 릴스 1개에서 나왔습니다.</b> 같은 달 SNS에서 홈페이지로 온 접속은 오히려 줄어, 도달이 문의로 이어지는 연결을 만드는 것이 ${M.exec} 과제입니다(S4-1).` : ''; })(),
-    `<b>${M.exec}에 가장 먼저 필요한 것은 시장별 광고비 자료입니다.</b> 일본·대만·EN의 판단이 모두 "문의 1건당 광고비"에 달려 있는데, 이 리포트는 광고비를 받지 못했습니다.`
+    verify ? `<b>${M.base} 리포트가 정한 목표 ${verify.rows.length}개 중 판정 가능한 ${verify.judged}개에서 ${verify.met ? verify.met + '개를 달성했습니다' : '하나도 달성하지 못했습니다'}.</b> ${verify.rows.filter((r) => r.verdict === '미달').map((r) => `${r.market} ${r.metric.replace(' (하루)', '')}(목표 ${r.target}, 실적 ${r.actual})`).join(', ')}(S0).` : '',
+    `<b>EN 접속은 하루 평균 ${sign(EN.sessionsDelta)} 늘었는데 현지 문의는 늘지 않았습니다.</b> 늘어난 접속 중 ${enLow.map((c) => koName(c.country)).join('·')} ${num(enLowS)}회에서 문의가 나온 접속은 ${num(enLowQ)}회입니다. 필리핀은 문의도 ${num(enPH.prev.inquirySessions)} → ${num(enPH.now.inquirySessions)}회로 늘었습니다(S4).`,
+    `<b>HK의 현지 문의 발생률은 ${pc(HK.localRate, 2)}로 ${hkRank === 1 ? '중국을 뺀 여섯 시장 중 가장 높습니다' : `중국을 뺀 여섯 시장 중 ${hkRank}번째입니다`}.</b> 대만 사이트로 들어온 홍콩 접속은 문의 발생률이 ${pc(pct(hkOnTW.inquirySessions, hkOnTW.sessions), 1)}입니다. 홍콩 대상 광고는 HK 사이트로 보내 비교하시길 권합니다(S4).`,
+    `<b>태국과 일본은 현지 문의가 줄었습니다.</b> 태국은 검색광고 접속이 줄지 않았는데 문의 발생 접속이 ${num(TH.localPrev?.inquirySessions)} → ${num(TH.local?.inquirySessions)}회입니다. 일본은 검색광고 접속이 ${num(jpSearch.prev.sessions)} → ${num(jpSearch.now.sessions)}회로 줄었습니다. 두 시장 모두 광고 설정 확인이 먼저입니다(S4).`,
+    `<b>${M.exec}에 가장 먼저 필요한 것은 나라별 광고비 자료입니다.</b> EN·태국·일본의 판단이 모두 문의 1건당 광고비에 달려 있는데 이 리포트는 광고비를 받지 못했습니다.`
   ].filter(Boolean)
 };
 
 const text = {
-  preface: `이 보고서는 ${M.base} 성과 데이터와 ${M.exec} 초 경쟁 병원 광고 조사를 근거로 <b>${M.exec}에 무엇을 할지</b> 정리한 문서입니다. ` +
-    `맨 앞 S0에서 <b>${M.base} 리포트의 판단이 맞았는지</b>를 같은 기준으로 먼저 확인했습니다. ` +
-    '모든 숫자는 구글 애널리틱스·구글 검색·유튜브·인스타그램·메타 광고 라이브러리에서 직접 받아 온 실측값입니다. ' +
-    '확인하지 못한 것은 추측으로 채우지 않고 그 자리에 밝혀 두었습니다. 전문 용어는 처음 나올 때 풀어 썼습니다.',
-  chNote: `<b>막대 옆의 "현지 문의율"은 한국에서 접속한 문의를 뺀 값입니다.</b> 가장 높은 곳은 태국 ${pc(TH.localRate)}, EN ${pc(EN.localRate)}이고 가장 낮은 곳은 대만 ${pc(TW.localRate, 2)}입니다. ` +
-    `중국은 ${M.base}에 중국발 직접 접속이 크게 늘어 문의율이 낮아졌습니다 — 이 접속의 출처는 확인하지 못했습니다(S4 판단 보류).`,
+  preface: `이 보고서는 ${M.base} 성과 데이터와 ${M.exec} 직전 경쟁 병원 광고 조사를 근거로 <b>${M.exec}에 무엇을 할지</b> 정리한 문서입니다. ` +
+    `맨 앞 S0에서 <b>${M.base} 리포트가 정한 목표를 이뤘는지</b> 같은 기준으로 먼저 확인했습니다. ` +
+    `이번 달부터 ${hkStart ? `${+hkStart.slice(5, 7)}월 ${+hkStart.slice(8, 10)}일에 ` : ''}측정을 시작한 HK 사이트를 일곱 번째 시장으로 넣었습니다. ` +
+    '모든 숫자는 구글 애널리틱스·구글 검색·유튜브·인스타그램·메타 광고 라이브러리에서 직접 받아 온 값입니다. ' +
+    '확인하지 못한 것은 그 자리에 확인하지 못했다고 적었습니다. 전문 용어는 처음 나올 때 풀어 썼습니다.',
+  chNote: (() => { const r = markets.filter((m) => m.label !== 'CN' && m.localRate != null).sort((a, b) => b.localRate - a.localRate);
+    return `<b>막대 옆의 "현지 문의율"은 한국에서 접속한 문의를 뺀 값입니다.</b> 가장 높은 곳은 ${r.slice(0, 2).map((m) => `${m.label} ${pc(m.localRate, 2)}`).join(', ')}이고 가장 낮은 곳은 ${r.at(-1).label} ${pc(r.at(-1).localRate, 2)}입니다. ` +
+      `중국은 출처를 알 수 없는 직접 접속이 많아 순위에서 뺐습니다(S4 지켜볼 곳).`; })(),
   marketNote: '<b>홈페이지 접속 횟수</b>는 사람 수가 아니라 접속한 횟수입니다. 병원에 실제로 오신 분 수와는 무관합니다. ' +
-    `<b>하루 평균</b>으로 비교한 것은 ${M.base} 자료가 ${baseDays}일, ${M.compare}이 ${compareDays}일이라 길이가 다르기 때문입니다. ` +
+    `<b>하루 평균</b>으로 비교한 것은 ${M.base}이 ${baseDays}일, ${M.compare}이 ${compareDays}일로 길이가 다르기 때문입니다. HK는 ${M.compare}에 ${HK.daysPrev}일치 자료만 있어 그 일수로 나눴습니다. ` +
     '<b>현지 문의 발생률</b>은 한국 밖에서 접속한 횟수 100회 중 문의(폼 제출·메신저·전화 버튼)가 한 번이라도 나온 접속이 몇 번인지입니다. ' +
     '한 사람이 버튼을 여러 번 눌러도 한 번으로 셉니다. KR 사이트는 국내 환자와 원내 접속을 구분할 수 없어 전체를 그대로 셉니다.',
   koreaNote: (() => {
-    // Non-form inquiries (messenger and phone buttons) from Korea, as a share of all non-form ones.
-    const nf = inputs.sources.ga4.filter((g) => g.label !== 'KR').flatMap((g) => (g.key_events_by_country?.[COMPARE] || []).filter((r) => r.event !== 'form_submit'));
+    const nf = inputs.sources.ga4.filter((g) => g.label !== 'KR').flatMap((g) => (g.key_events_by_country?.[BASE] || []).filter((r) => r.event !== 'form_submit'));
     const nfKr = sum(nf.filter((r) => r.country === 'South Korea'), 'keyEvents'), nfAll = sum(nf, 'keyEvents');
-    const peak = [...formDaily].sort((a, b) => b.foreign - a.foreign).slice(0, 3).map((d) => `${+d.date.slice(4, 6)}/${+d.date.slice(6)} ${d.foreign}건`).join(', ');
-    return `<b>폼 문의</b>는 사이트의 문의 양식 제출이고, <b>문의 발생 접속</b>은 폼·메신저·전화 버튼 중 하나라도 누른 접속입니다. ` +
-      `해외 사이트 폼 문의가 가장 많았던 날은 ${peak}입니다. ` +
-      `폼이 아닌 메신저·전화 버튼 문의는 ${M.compare} ${num(nfAll)}건 중 ${num(nfKr)}건(${pc(nfKr / nfAll, 0)})만 한국에서 눌렸습니다. ` +
+    return `<b>폼 문의</b>는 사이트의 문의 양식 제출이고 <b>문의 발생 접속</b>은 폼·메신저·전화 버튼 중 하나라도 누른 접속입니다. ` +
+      `폼이 아닌 메신저·전화 버튼 문의는 ${M.base} ${num(nfAll)}건 중 ${num(nfKr)}건(${pc(nfKr / nfAll, 0)})만 한국에서 눌렸습니다. ` +
       '<b>원내에서 쓰는 PC·휴대폰의 인터넷 주소를 GA4에서 "내부 트래픽"으로 제외하면</b> 이런 보정 없이 바로 현지 기준 수치가 나옵니다.';
   })(),
   compChangeNote: `<b>조사 광고</b>는 병원 이름 조회와 본문 검색 조회 중 어느 쪽에서든 보인 광고를 합친 수입니다. ` +
-    `이번 달은 이름 조회가 광고가 있는 병원도 "없음"으로 돌려준 경우가 있어, ${M.exec} 숫자는 <b>확인된 최소치</b>입니다. ` +
-    `그래서 광고 수가 줄었거나 어느 나라에서 광고를 멈췄다고는 판단하지 않았습니다. "노출이 확인되지 않은 나라"는 ${M.base}에는 보였는데 이번에는 보이지 않은 나라이며, 멈췄다는 뜻이 아닙니다.`,
+    `이름 조회가 광고가 있는 병원도 "없음"으로 돌려주는 경우가 있어 ${M.exec} 숫자는 <b>확인된 최소치</b>입니다. ` +
+    `그래서 광고 수가 줄었거나 어느 나라에서 광고를 멈췄다고는 판단하지 않았습니다. "노출이 확인되지 않은 나라"는 ${M.base}에는 보였는데 이번에는 보이지 않은 나라이며 멈췄다는 뜻이 아닙니다.`,
   absenceNote: (() => {
     const ex = deepNow.find((d) => !d.isSelf && d.byNameAds === 0 && d.totalAds > 0);
-    return '<b>노란 칸은 "광고가 없다"는 뜻이 아닙니다.</b> 이번 달 메타 광고 라이브러리는 병원 이름이나 페이지 번호로 조회하면 ' +
-      '같은 날 본문 검색에서 광고가 보이는 병원도 "광고 없음"으로 돌려줬습니다' +
-      (ex ? `(예: ${esc(ex.name)}는 이름 조회 0건, 본문 검색 ${ex.totalAds}건 — ${ex.activeCountries.join('·')})` : '') + '. ' +
-      '그래서 두 조회에서 실제로 보인 광고만 칠했고, 보이지 않은 칸은 판단하지 않았습니다. ' +
-      `${M.base} 리포트는 같은 표의 회색 칸을 "정말 노출이 없는 것"으로 설명했는데, 이번 확인으로 그 설명은 맞다고 볼 수 없게 됐습니다.`;
+    return '<b>노란 칸은 "광고가 없다"는 뜻이 아닙니다.</b> 메타 광고 라이브러리는 병원 이름이나 페이지 번호로 조회하면 ' +
+      '같은 날 본문 검색에서 광고가 보이는 병원도 "광고 없음"으로 돌려주는 경우가 있습니다' +
+      (ex ? `(예: ${esc(ex.name)}는 이름 조회 0건, 본문 검색 ${ex.totalAds}건)` : '') + '. ' +
+      '그래서 두 조회에서 실제로 보인 광고만 칠했고 보이지 않은 칸은 판단하지 않았습니다.';
   })(),
   ytNote: (() => { const a = yt.find((y) => y.short === '블라썸1호'), b = yt.find((y) => y.short === 'Doctor Lee');
     return `블라썸1호의 시청은 ${pc(1 - (a?.share?.abroadShare || 0), 0)}가 한국입니다. Doctor Lee 채널은 반대로 ${pc(b?.share?.abroadShare, 0)}가 해외입니다. ` +
-      '같은 병원의 두 채널이 서로 다른 시청자를 만나고 있으니, 해외 시장용 영상 링크는 Doctor Lee 채널에 두는 것이 이미 있는 시청을 쓰는 방법입니다.'; })(),
+      `두 비중은 유튜브가 나라를 알려 준 조회만으로 계산했습니다(블라썸1호 ${num(a?.share?.total)}/${num(a?.views)}회, Doctor Lee ${num(b?.share?.total)}/${num(b?.views)}회). ` +
+      '같은 병원의 두 채널이 서로 다른 시청자를 만나고 있으니 해외 시장용 영상 링크는 Doctor Lee 채널에 두는 것이 이미 있는 시청을 쓰는 방법입니다.'; })(),
   footer: `이 파일은 매달 하나씩 따로 보관됩니다. ${M.next} 보고서에서 S7의 기준으로 ${M.exec} 판단이 맞았는지 되짚어 보겠습니다.`
 };
 
-// Page fix (S8 ③-2): last month's recommendation, re-checked against today's sitemaps and pages.
+// Page fix (S8 ③-2): named addresses added since last month, and whether they already earn impressions.
 const pageFix = (() => {
-  const kr = sitemapOf('beautyblossom.kr'), en = sitemapOf('en.beautyblossom.kr');
+  const kr = sitemapOf('beautyblossom.kr');
+  const prevNamed = new Set(((prevInputs?.sources?.sitemaps || []).find((x) => x.host === 'beautyblossom.kr')?.named || [])
+    .map((u) => new URL(u).pathname.replace(/\/$/, '')));
   const pagesOf = (label) => gscIn.find((s) => s.label === label)?.pages?.[BASE] || [];
-  const named = (label, re) => pagesOf(label).filter((p) => re.test(new URL(p.page).pathname)).map((p) => `${new URL(p.page).pathname}(노출 ${num(p.impressions)}·${p.position.toFixed(1)}위)`);
+  const NAMED = /^\/[a-z][a-z0-9-]*\/?$/;
+  const krNew = (kr.named || []).map((u) => new URL(u).pathname.replace(/\/$/, '')).filter((p) => !prevNamed.has(p));
+  const hits = pagesOf('KR').filter((p) => { const path = new URL(p.page).pathname.replace(/\/$/, ''); return NAMED.test(path) && krNew.includes(path) && path !== '/price'; })
+    .sort((a, b) => b.impressions - a.impressions);
+  const missing = ['rejuran', 'thermage', 'onda', 'potenza', 'juvelook'].filter((s) => !(kr.named || []).some((u) => u.includes(s)));
   return {
-    finding: `${kr.fetched_at_utc?.slice(0, 10)} 사이트맵을 다시 받아 보니 한국 ${kr.urls?.length}개·영문 ${en.urls?.length}개 주소 가운데 숫자가 아닌 이름 주소는 각각 ${kr.named?.length}개·${en.named?.length}개입니다. ` +
-      '<b>리쥬란·써마지·온다·포텐자·쥬베룩은 여전히 이름 주소가 없습니다</b> — 지난달 권고는 반영되지 않았습니다. ' +
-      `반대로 이름 주소가 있는 페이지는 검색 노출이 잡힙니다: ${[...named('KR', /hilo|alltite|re2o/i), ...named('EN', /re2o|sculptra|ldm|hilo|alltite/i).map((s) => 'EN ' + s)].slice(0, 6).join(', ')}.`,
-    caveat: '이건 상관관계이지 인과관계는 아닙니다. 이름 주소를 붙인 페이지가 원래 더 공들여 만든 페이지일 수도 있습니다.',
+    finding: `${kr.fetched_at_utc?.slice(0, 10)} 사이트맵 기준으로 한국 사이트의 이름 주소는 ${prevNamed.size ? `${prevNamed.size}개에서 ` : ''}${kr.named?.length}개가 됐습니다. ` +
+      (hits.length ? `<b>새로 생긴 이름 주소 페이지는 첫 달부터 검색에 잡혔습니다.</b> ${hits.slice(0, 6).map((p) => `${new URL(p.page).pathname}(노출 ${num(p.impressions)}·클릭 ${num(p.clicks)}·${p.position.toFixed(1)}위)`).join(', ')}입니다. ` : '') +
+      (missing.length ? `<b>${missing.length === 5 ? '리쥬란·써마지·온다·포텐자·쥬베룩' : missing.join('·')}은 아직 이름 주소가 없습니다.</b>` : ''),
+    caveat: '새 이름 주소 페이지가 원래 더 공들여 만든 페이지일 수도 있어 주소만의 효과라고 단정할 수는 없습니다.',
     notDesign: '"리디자인"으로 진행하시면 원하는 결과가 안 나옵니다. 순위를 만드는 것은 보이는 디자인이 아니라 아래 세 가지입니다.',
     steps: [
       { t: '주소에 시술 이름 넣기', d: '/16 → /rejuran 처럼 바꿉니다. 검색엔진과 사람 모두 주소만 보고 무슨 페이지인지 알 수 있어야 합니다.' },
       { t: '제목과 본문을 고객이 쓰는 말로', d: '③-1의 문제와 같습니다. 시술 정식 명칭과 고객이 쓰는 말을 함께 적어야 합니다.' },
       { t: '시술 하나에 페이지 하나', d: '여러 시술을 한 페이지에 몰아 넣으면 어느 검색어로도 잡히지 않습니다.' }
     ],
-    order: '주소를 바꾸면 기존 순위가 한동안 흔들립니다. 그래서 <b>이미 순위가 나오는 이름 주소 페이지는 건드리지 마시고</b>, 순위가 없는 것부터 손대십시오.',
-    experiment: '<b>다섯 개를 한꺼번에 바꾸지 마십시오.</b> 리쥬란·써마지 두 개만 먼저 하고 나머지 셋은 그대로 두시면 6~8주 뒤 둘을 비교해 답을 얻을 수 있습니다. 지난달과 같은 권고입니다.',
+    order: '주소를 바꾸면 기존 순위가 한동안 흔들립니다. 그래서 <b>이미 순위가 나오는 이름 주소 페이지는 건드리지 마시고</b> 순위가 없는 것부터 손대십시오.',
+    experiment: `<b>${M.base}에 이름 주소를 붙인 방식 그대로</b> 리쥬란·써마지부터 같은 작업을 하시길 권합니다. 두 달째 같은 권고입니다.`,
     unknown: '우리 사이트가 자동 접속을 차단해 페이지 내용을 직접 읽지 못했습니다. 숫자 주소 페이지 중 어느 것이 리쥬란·써마지 페이지인지는 확인하지 못했습니다.'
   };
 })();

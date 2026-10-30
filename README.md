@@ -55,6 +55,9 @@ node scripts\build-strategy.mjs --month=2026-10 --monthly=data/monthly-2026-09-2
 ```
 
 빌드는 전월 리포트(`report/strategy-<전월>.html`)에 박힌 목표를 읽어 S0 적중 검증을 만든다. 전월 파일은 수정하지 않는다.
+S0 은 전월 리포트의 S7 표(`kpi`)를 행 이름으로 읽어 판정한다. 전월 S7 에 새 지표를 넣었다면 `build-strategy.mjs` 의 `verify` 에도 같은 이름의 처리를 추가해야 한다.
+
+2026-11 판부터 HK 사이트(GA4 `553883641`, 2026-09-14 측정 시작)를 일곱 번째 시장으로 넣었다. 측정을 중간에 시작한 달은 데이터가 있는 일수로 나눠 하루 평균을 낸다(`mDays`). 수집기는 사이트별 유입 출처(`sessionSource`·매체·도착 페이지 상위 25행)도 `sources` 로 받는다.
 
 파일명은 `strategy-YYYY-MM.html` 로, **실행 대상 월**을 쓴다. 근거가 되는 실적은 그 전월이다.
 

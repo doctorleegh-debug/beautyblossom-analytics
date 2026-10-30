@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>뷰티블라썸 보고서 · 2026-10-30</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--page:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--ring:rgba(11,11,11,.10)}
+@media (prefers-color-scheme:dark){:root{--page:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#898781;--ring:rgba(255,255,255,.10)}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:flex;flex-direction:column;background:var(--page);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
+.bar{display:flex;align-items:center;gap:12px;padding:8px clamp(12px,3vw,48px);border-bottom:1px solid var(--ring);background:var(--page)}
+.brand{font-weight:650;font-size:14px;white-space:nowrap}
+.tabs{display:flex;gap:6px;flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;font:inherit;font-size:13px;font-weight:600;line-height:1.3;text-align:left;padding:6px 14px;border-radius:12px;border:1px solid var(--ring);background:var(--surface);color:var(--ink2);cursor:pointer}
+.tabs button small{display:block;font-size:11px;font-weight:400;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--page);border-color:var(--ink)}
+.tabs button[aria-selected="true"] small{color:inherit;opacity:.75}
+.open{font-size:12px;color:var(--ink2);white-space:nowrap}
+main{position:relative;flex:1 1 auto;min-height:0}
+iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--page)}
+[hidden]{display:none!important}
+@media (max-width:640px){.bar{gap:8px;padding:6px 8px}.brand,.open{display:none}.tabs button{padding:5px 11px}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <span class="brand">뷰티블라썸 보고서</span>
+  <div class="tabs" role="tablist" aria-label="보고서 선택">
+    <button type="button" role="tab" data-r="monthly" aria-selected="true">월간 성과보고서<small>8월~10월 비교 · 발행 10/30</small></button>
+    <button type="button" role="tab" data-r="strategy" aria-selected="false">통합 전략 리포트<small>10월 실적 기준 · 11월 실행안</small></button>
+  </div>
+  <a class="open" id="open" href="../r/2026-10-30/" target="_blank" rel="noopener">새 창으로 열기</a>
+</div>
+<main>
+  <iframe id="f-monthly" title="월간 성과보고서"></iframe>
+  <iframe id="f-strategy" title="통합 전략 리포트" hidden></iframe>
+</main>
+<script>
+// 보고서는 고칠 필요 없이 그대로 띄운다. 처음 고를 때만 불러오고 이후에는 보던 위치를 유지한다.
+// ?r=monthly|strategy 로 시작 탭, ?c=TW 처럼 나라를 주면 월간 보고서의 나라 탭으로 넘긴다.
+(function () {
+  var q = new URLSearchParams(location.search), c = q.get('c');
+  var SRC = { monthly: '../r/2026-10-30/' + (c ? '?c=' + encodeURIComponent(c) : ''), strategy: '../report/strategy-2026-11.html' };
+  var tabs = document.querySelectorAll('.tabs button'), open = document.getElementById('open');
+  function show(r) {
+    for (var k in SRC) {
+      var f = document.getElementById('f-' + k);
+      f.hidden = k !== r;
+      if (k === r && !f.getAttribute('src')) f.setAttribute('src', SRC[k]);
+    }
+    tabs.forEach(function (b) { b.setAttribute('aria-selected', String(b.getAttribute('data-r') === r)); });
+    open.href = SRC[r];
+    try { var u = new URL(location.href); u.searchParams.set('r', r); history.replaceState(null, '', u); } catch (e) {}
+  }
+  tabs.forEach(function (b) { b.onclick = function () { show(b.getAttribute('data-r')); }; });
+  show(SRC[q.get('r')] ? q.get('r') : 'monthly');
+})();
+</script>
+</body>
+</html>
